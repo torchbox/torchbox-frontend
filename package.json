@@ -1,11 +1,12 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "tbx-frontend",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "The client facing gatsby frontend for tbx.com (Connects to Wagtail CMS instance via GraphQL)",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Nathan Horrigan <Nathan.Horrigan@torchbox.com>",
   "dependencies": {
-    "gatsby": "^2.0.76",
+    "@babel/plugin-syntax-export-default-from": "^7.2.0",
+    "gatsby": "2.0.23",
     "gatsby-image": "^2.0.20",
     "gatsby-plugin-manifest": "^2.0.9",
     "gatsby-plugin-offline": "^2.0.16",
@@ -27,16 +28,24 @@
     "develop": "gatsby develop",
     "start": "npm run develop",
     "format": "prettier --write \"src/**/*.js\"",
-    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
+    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@storybook/addon-actions": "^4.1.4",
+    "@storybook/addon-links": "^4.1.4",
+    "@storybook/addons": "^4.1.4",
+    "@storybook/react": "^4.1.4",
+    "babel-loader": "^8.0.4",
     "prettier": "^1.15.2"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/torchbox/tbx-frontend/"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/torchbox/tbx-frontend/issues"
   }
 }
