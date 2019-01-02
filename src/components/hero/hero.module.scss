@@ -1,0 +1,102 @@
+@import '../../styles/app.scss';
+
+.hero {
+
+    &Container {
+        width: 100vw;
+        background: white;
+
+        @include for-desktop-up {
+            width: 85.34vw;
+            padding-left: 14.66vw;
+        }
+
+    }
+
+    &Content {
+        @include mobile-container;
+        @include for-tablet-landscape-up {
+            @include container;
+        }
+
+        padding-top: 60px;
+        padding-bottom: 20px;
+        z-index: 2;
+    }
+
+    &Title {
+        color: $primary;
+        font-weight: 600;
+        line-height: 1.4em;
+        font-size: 40px;
+        @include for-tablet-landscape-up {
+            font-size: 70px;
+        }
+    }
+
+    &Links {
+
+        &Container {
+            margin-top: 15px;
+            width: 100%;
+        }
+
+        &List {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            padding-top: 25px;
+
+            @include for-tablet-landscape-up {
+                flex-direction: row;
+                padding-top: 0px;
+            }
+        }
+
+        &Item {
+            display: flex;
+            align-items: center;
+
+            padding-right: 40px;
+            padding-bottom: 25px;
+            @include for-tablet-landscape-up {
+                padding-bottom: 0px;
+            }
+
+            &Arrow {
+                width: 12px;
+                margin-right: 20px;
+                @include for-tablet-landscape-up {
+                    display: none;
+                }
+            }
+
+            a {
+                color: $primary;
+                font-size: 19px;
+                font-family: $mainFont;
+                text-decoration: none;
+
+                &:hover {
+                    color: $accent;
+                }
+            }
+        }
+
+    }
+
+}
+
+.collapsedHeroContainer {
+    @extend .heroContainer;
+    @include for-tablet-landscape-up {
+        .heroLinksContainer {
+            animation: fadeOut 0.2s forwards;
+            pointer-events: none;
+        }
+    }
+}
+
+.accent {
+    color: $accent !important;
+}

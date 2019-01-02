@@ -1,0 +1,28 @@
+@import '../../styles/app.scss';
+
+.footer {
+    background-color: white;
+    padding: 30px 0;
+
+    &Content {
+        @include mobile-container;
+        @include for-tablet-landscape-up {
+            @include container;
+        }
+    }
+
+    &Copyright {
+        font-size: 0.7em;
+        color: #444;
+        margin-right: 10px;
+    }
+
+    &Link {
+        margin-left: 15px;
+        font-size: 0.7em;
+        color: $blue;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+}

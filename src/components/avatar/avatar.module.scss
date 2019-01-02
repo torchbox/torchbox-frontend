@@ -1,0 +1,14 @@
+@import '../../styles/app.scss';
+
+.avatar {
+    height: 90px;
+    width: 90px;
+    border-radius: 90px;
+    border: 2px solid $accent;
+
+    &Image {
+        height: 100%;
+        border-radius: 100%;
+    }
+
+}

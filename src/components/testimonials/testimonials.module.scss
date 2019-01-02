@@ -1,0 +1,136 @@
+@import '../../styles/app.scss';
+
+.testimonials {
+    background-color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    &Container {
+        @include container;
+        padding: 100px 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    &Block {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-column-gap: 50px;
+        padding-bottom: 30px;
+    }
+
+    &Icon {
+        width: 8.33vw;
+        @include for-tablet-landscape-up {
+            margin-left: 4.33vw;
+        }
+    }
+
+    &Slider {
+        position: relative;
+        grid-column-start: span 2;
+        margin-top: 20px;
+        @include for-tablet-landscape-up {
+            margin-top: 0px;
+            grid-column-start: 2;
+        }
+
+        &Bullets {
+            transition: 0.2s all ease;
+            display: flex;
+            align-items: center;
+            margin-top: 40px;
+        }
+
+        &Bullet {
+            width: 9px;
+            height: 15px;
+            content: '';
+            background: rgba(0, 0, 0, 0.1);
+            transform: rotate(30deg);
+            margin-right: 20px;
+            cursor: pointer;
+
+            &Active {
+                @extend .testimonialsSliderBullet;
+                width: 14px;
+                height: 20px;
+                background: #fd5765;
+            }
+        }
+    }
+
+    &Slide {
+        display: flex;
+        flex-direction: column;
+
+        &Quote {
+            font-style: normal;
+            margin: 0 0 20px;
+            padding: 0 0 0;
+            color: #231749;
+            line-height: 1.5em;
+            font-size: 24px;
+
+            @include for-phone-only {
+                font-size: 18px;
+            }
+
+            &::after {
+                content: '”';
+                font-style: italic;
+            }
+        }
+
+        &Cite {
+            color: #444;
+            font-size: 13px;
+            margin: 0 0 15px;
+            font-style: normal;
+
+            &Author {
+                font-weight: bold;
+                padding-right: 8px;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    &Icons {
+
+        &List {
+            display: grid;
+            grid-template-columns: repeat(3, auto);
+            @include for-tablet-landscape-up {
+                grid-template-columns: repeat(4, auto);
+            }
+            @include for-desktop-up {
+                grid-template-columns: repeat(6, auto);
+            }
+        }
+
+        &Item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            filter: grayscale(100%);
+            padding: 15px;
+
+            @include for-tablet-landscape-up {
+                padding: 30px;
+            }
+
+            @include for-desktop-up {
+                padding: 40px;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+
+        }
+    }
+
+}
+

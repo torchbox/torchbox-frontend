@@ -1,0 +1,120 @@
+@import '../../styles/app';
+
+.navLink {
+  position: relative;
+  display: block;
+  padding: 0px 0 20px 0;
+  margin-right: 50px;
+  line-height: 20px;
+
+  font-family: $mainFont;
+  text-decoration: none;
+  transition: all 0.2s ease;
+
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+
+  color: $primary;
+
+  &.active {
+    &::after {
+      content: '';
+      position: absolute;
+      width: calc(100% - 0px);
+      height: 5px;
+      bottom: 0px;
+      left: 0;
+      background: $accent;
+    }
+  }
+
+  .title {
+    position: relative;
+    transition: all 0.2s ease;
+    font-size: 18px;
+    line-height: 24px;
+    font-family: $mainFont;
+    font-weight: bold;
+    margin: 5px 0 5px;
+  }
+
+  .strap {
+    font-size: 14px;
+    font-family: $mainFont;
+    color: #888;
+    max-width: 175px;
+    transition: all 0.2s ease;
+  }
+
+  .badge {
+    position: absolute;
+    top: -10px;
+    right: 25px;
+    font-size: 14px;
+    line-height: 25px;
+    color: white;
+    z-index: 5;
+
+    &::before {
+      width: 18px;
+      height: 22px;
+      content: '';
+      background: $accent;
+      position: absolute;
+      z-index: -1;
+      transform: rotate(30deg);
+      left: -5px;
+      top: 0;
+    }
+  }
+}
+
+.collapsedNavLink {
+  @extend .navLink;
+  @include for-desktop-up {
+    padding-bottom: 7px;
+    color: rgba(0, 0, 0, 0.4);
+
+    .title {
+      font-size: 16px !important;
+    }
+
+    .strap {
+      height: 0 !important;
+      font-size: 0px !important;
+    }
+
+    &.active {
+      color: $primary !important;
+
+      &::after {
+        content: '';
+        position: absolute;
+        width: calc(100% - 0px);
+        height: 2px;
+        bottom: 0px;
+        left: 0;
+        background: $accent;
+      }
+    }
+
+    .badge {
+      top: -15px;
+      right: -20px;
+    }
+  }
+}
+
+.alignRight {
+  padding-right: 0;
+  margin-right: 0;
+
+  .title {
+    font-weight: 400;
+  }
+
+  .strap {
+    font-weight: 300;
+  }
+
+}

@@ -1,0 +1,111 @@
+@import '../../styles/app.scss';
+
+.block {
+    background-color: white;
+    padding: 20px 0;
+
+    &Content {
+        @include mobile-container;
+        @include for-tablet-landscape-up {
+            @include container;
+        }
+    }
+
+    &Intro {
+        padding-bottom: 40px;
+        @include for-tablet-landscape-up {
+            padding-bottom: 60px;
+        }
+
+        &Opinion {
+            position: relative;
+            padding-top: 20px;
+
+            @include for-tablet-landscape-up {
+                width: 60%;
+            }
+
+            &Title {
+                color: #fd5765;
+            }
+
+            &Text {
+                line-height: 30px;
+                margin: 0 0 40px;
+                color: #231749;
+                @include for-tablet-landscape-up {
+                    line-height: 42px;
+                }
+            }
+
+            &::before {
+                position: absolute;
+                content: '';
+                width: 60px;
+                height: 8px;
+                left: 0;
+                top: 0;
+                background: #fd5765;
+            }
+        }
+    }
+
+    &BlogList {
+        display: grid;
+        grid-template-columns: 1fr;
+        @include for-tablet-landscape-up {
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: 8.33vw;
+        }
+    }
+
+    &BlogLink {
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 40px 0 60px 0;
+        text-decoration: none;
+
+        &Meta {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        &Title {
+            font-size: 1.4em;
+            font-weight: bold;
+            line-height: 40px;
+            margin: 0 0 10px;
+            padding: 20px 0 0;
+            color: #231749;
+        }
+
+        &Image {
+            width: 55px;
+            height: 55px;
+            margin-right: 15px;
+        }
+
+        &Author {
+            display: flex;
+            flex-direction: column;
+
+            &Name {
+                color: #231749;
+                font-size: 20px;
+                margin-bottom: 5px;
+            }
+
+            &Role {
+                margin: 0 0 2px;
+                line-height: 1.4;
+                color: $accent;
+                text-transform: uppercase;
+                letter-spacing: 0.15em;
+                font-weight: bold;
+                font-size: 13px;
+            }
+        }
+
+    }
+
+}

@@ -1,0 +1,65 @@
+@import '../../styles/app.scss';
+
+.teaserBlock {
+    background-color: white;
+    padding: 30px 0;
+
+    @include for-tablet-landscape-up {
+        padding: 60px 0;
+    }
+
+    &List {
+        @include mobile-container;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        @include for-tablet-landscape-up {
+            @include container;
+            flex-direction: row;
+        }
+    }
+
+    &Item {
+        flex: 1;
+        text-decoration: none;
+
+        padding: 30px 8.33vw 30px 8.33vw;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+        @include for-tablet-landscape-up {
+            padding: 30px 8.33vw 30px 8.33vw;
+            border-bottom: none;
+            border-right: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        &Image {
+            width: 60px;
+            margin: 0 0 20px;
+        }
+
+        &Title {
+            display: flex;
+            align-items: center;
+            font-size: 1.7em;
+
+            img {
+                width: 20px;
+                height: 30px;
+                margin-left: 20px;
+            }
+        }
+
+        &Desc {
+            line-height: 1.5em;
+            margin: 0 0 10px;
+            color: #444;
+        }
+
+        &:last-of-type {
+            border-bottom: none;
+            border-right: none;
+        }
+    }
+
+}

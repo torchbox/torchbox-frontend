@@ -1,0 +1,28 @@
+@import '~breakpoint-sass';
+
+// Responsive Mixins
+@mixin for-phone-only {
+  @media (max-width: 599px) { @content; }
+}
+@mixin for-tablet-portrait-up {
+  @media (min-width: 600px) { @content; }
+}
+@mixin for-tablet-landscape-up {
+  @media (min-width: 900px) { @content; }
+}
+@mixin for-desktop-up {
+  @media (min-width: 1200px) { @content; }
+}
+@mixin for-big-desktop-up {
+  @media (min-width: 1800px) { @content; }
+}
+
+@mixin mobile-container {
+    margin: 0px 20px;
+    position: relative;
+}
+
+@mixin container {
+    margin: 0 8.33vw 0;
+    position: relative;
+}

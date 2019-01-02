@@ -1,0 +1,97 @@
+@import '../../styles/app.scss';
+
+.block {
+
+    &Container {
+        position: relative;
+        width: 100vw;
+        background: white;
+        padding-top: 10px;
+        padding-bottom: 40px;
+    }
+
+    &Image {
+        width: 50vw;
+        @include for-tablet-landscape-up {
+            width: 29.17vw;
+        }
+    }
+
+    &Content {
+        @include mobile-container;
+        @include for-tablet-landscape-up {
+            @include container;
+        }
+        padding-top: 20px;
+    }
+
+    &Title {
+        color: $primary;
+    }
+
+    &Links {
+        &Container {
+            margin-top: 30px;
+            padding-left: 20px;
+            @include  for-tablet-landscape-up {
+                padding-left: 12.66vw;
+            }
+        }
+
+        &List {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+        }
+
+        &Item {
+            padding-bottom: 10px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            &Icon {
+                transform: rotate(30deg);
+                width: 20px;
+                @include for-tablet-landscape-up {
+                    width: 25px;
+                }
+            }
+
+            a {
+                color: $primary;
+                font-family: $mainFont;
+                text-decoration: none;
+                line-height: 40px;
+                font-weight: 500;
+
+                margin: 0 0 5px 30px;
+                padding: 20px 0 0;
+                border-bottom: 2px solid white;
+
+                &:hover {
+                    border-bottom: 2px solid $accent;
+                }
+            }
+        }
+    }
+
+    &Contact {
+        @include for-tablet-landscape-up {
+            padding-left: 8vw !important;
+        }
+    }
+
+}
+
+.collapsedblockContainer {
+    @extend .blockContainer;
+    .blockLinksContainer {
+        animation: fadeOut 0.2s forwards;
+        pointer-events: none;
+    }
+}
+
+.accent {
+    color: $accent !important;
+}

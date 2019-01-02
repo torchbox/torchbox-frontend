@@ -1,0 +1,61 @@
+@import '../../styles/app.scss';
+
+.contactBlock {
+    background-color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    &Content {
+        display: flex;
+        @include mobile-container;
+        @include for-tablet-landscape-up {
+            @include container;
+        }
+    }
+
+    &Image {
+        margin-right: 20px !important;
+    }
+
+    &Details {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    &Title {
+        width: 100%;
+        color: $primary;
+        font-size: 26px;
+        line-height: 30px;
+        margin: 0 0 5px;
+        font-weight: bold;
+    }
+
+    &Email {
+        height: 24px;
+        color: #2f128d;
+        font-size: 20px;
+        line-height: 24px;
+        text-decoration: none;
+        border-bottom: 2px solid #fd5765;
+        margin: 0px 15px 0 0;
+        @include for-phone-only {
+            margin: 10px 15px 0 0;
+        }
+    }
+
+    &Number {
+        height: 24px;
+        line-height: 24px;
+        text-decoration: none;
+        font-size: 20px;
+        color: #fd5765;
+        margin: 0px 15px 0 0;
+        @include for-phone-only {
+            margin: 10px 15px 0 0;
+        }
+    }
+
+}

@@ -1,0 +1,16 @@
+@mixin menu-animation ($time: 350ms) {
+	transition: all $time cubic-bezier(0.705, 0.000, 1.000, 1.130);
+	transition-timing-function: cubic-bezier(0.705, 0.000, 1.000, 1.130);
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        display: block;
+    }
+
+    100% {
+        opacity: 0;
+        display: none !important;
+    }
+}

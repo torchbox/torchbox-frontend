@@ -1,0 +1,143 @@
+@import '../../styles/app.scss';
+
+.block {
+    background: white;
+
+    &Title {
+        margin-left: 8.33vw;
+        max-width: 400px;
+    }
+
+    &List {
+        padding-top: 40px;
+    }
+
+    .caseStudy {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        border-top: 4px solid $accent;
+        background-size: cover;
+
+        @include for-tablet-landscape-up {
+            background: white !important;
+            border-top: 0 !important;
+            border-bottom: none !important;
+        }
+
+        &:nth-child(even) {
+            flex-direction: row-reverse;
+
+            @include for-tablet-landscape-up {
+                .caseStudyMeta {
+                    padding-top: 120px;
+                    * {
+                        padding-left: 0px;
+                    }
+                }
+            }
+
+            .caseStudyClusterIcon {
+                display: none;
+            }
+
+            .caseStudyImage {
+                &:before {
+                    left: auto;
+                    right: 0;
+                    border-width: 0 0 50vw 25vw;
+                    border-color: transparent transparent white transparent;
+                    bottom: auto;
+                    top: 0;
+                }
+            }
+        }
+
+        &Meta {
+            position: relative;
+            width: 100%;
+            min-height: 200px;
+            @include mobile-container;
+
+            margin: 30px;
+            padding: 15px;
+            background-color: rgba(white, 0.9);
+
+            @include for-tablet-landscape-up {
+                padding-top: 60px;
+                margin: 0;
+                padding: 0;
+                padding-top: 60px;
+                width: 50%;
+                * {
+                    padding-left: 8.33vw;
+                }
+            }
+
+            &Client {
+                text-transform: uppercase;
+                font-weight: bold;
+                letter-spacing: 0.15em;
+                font-size: 13px;
+                color: #fd5765;
+            }
+
+            &Title {
+                font-size: 38px;
+                line-height: 44px;
+                margin: 0 0 10px;
+                color: #231749;
+            }
+
+            &Desc {
+                color: #444;
+                line-height: 1.5;
+            }
+
+            &::after {
+                //@include split-triangle;
+            }
+        }
+
+        &Image {
+            width: 0%;
+            overflow: hidden;
+
+            @include for-tablet-landscape-up {
+                position: relative;
+                width: 50%;
+                &:before {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 50vw 25vw 0 0;
+                    border-color: white transparent transparent transparent;
+                    z-index: 2;
+                }
+            }
+
+            img {
+                width: 100%;
+            }
+
+        }
+
+        &ClusterIcon {
+            display: none;
+            @include for-desktop-up {
+                display: block;
+                position: absolute;
+                width: 80px;
+                top: -70px;
+                right: -20.66vw;
+                z-index: 100;
+            }
+        }
+
+    }
+
+}

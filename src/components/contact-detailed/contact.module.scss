@@ -1,0 +1,122 @@
+@import '../../styles/app.scss';
+
+.contactBlock {
+    background-color: $primary;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: white !important;
+
+    &Container {
+        @include mobile-container;
+        @include for-tablet-landscape-up {
+            @include container;
+        }
+    }
+
+    &Reasons {
+        h1 {
+            color: white;
+        }
+
+        &List {
+            display: flex;
+            justify-content: space-between;
+            margin: 50px 0 0px;
+            flex-direction: column;
+            @include for-tablet-landscape-up {
+                flex-direction: row;
+                align-items: center;
+            }
+        }
+
+        &Item {
+            padding: 40px 30px;
+            position: relative;
+
+            @include for-tablet-landscape-up {
+                padding: 20px 40px 40px;
+            }
+
+            &Num {
+                position: absolute;
+                top: 0;
+                left: 10px;
+                font-size: 22px;
+                color: white;
+
+                span {
+                    z-index: 1;
+                    position: relative;
+                    top: 5px;
+                }
+
+                &::before {
+                    width: 25px;
+                    height: 40px;
+                    content: '';
+                    background: $accent;
+                    position: absolute;
+                    z-index: 0;
+                    transform: rotate(30deg);
+                    left: -6px;
+                    top: -4px;
+                }
+            }
+
+            &Title {
+                color: white;
+                margin: 0 0 5px;
+                font-size: 24px;
+                font-weight: bold;
+            }
+
+            &Text {
+                margin: 0;
+                color: rgba(255, 255, 255, 0.8);
+                line-height: 1.4;
+                font-size: 0.8em;
+            }
+        }
+    }
+
+    &Details {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+
+        &Meta {
+            display: flex;
+            flex-direction: column;
+            @include for-tablet-portrait-up {
+                flex-direction: row;
+            }
+        }
+
+        &Email {
+            height: 24px;
+            color: white;
+            line-height: 24px;
+            text-decoration: none;
+            border-bottom: 2px solid $accent;
+            @include for-phone-only {
+
+            }
+        }
+
+        &Number {
+            line-height: 24px;
+            text-decoration: none;
+            color: $accent;
+            margin: 0px 0px 0px 15px;
+            @include for-phone-only {
+                margin: 10px 15px 0 0;
+            }
+        }
+
+        &Image {
+            margin-right: 20px !important;
+        }
+    }
+
+}

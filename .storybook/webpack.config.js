@@ -1,3 +1,5 @@
+const path = require('path')
+
 module.exports = (baseConfig, env, defaultConfig) => {
   // Transpile Gatsby module because Gatsby includes un-transpiled ES6 code.
   defaultConfig.module.rules[0].exclude = [/node_modules\/(?!(gatsby)\/)/]
@@ -10,6 +12,23 @@ module.exports = (baseConfig, env, defaultConfig) => {
     require.resolve("@babel/plugin-proposal-class-properties"),
     // require.resolve("@babel/plugin-syntax-export-default-from")
   ]
+
+  // SCSS Support
+  defaultConfig.module.rules.push({
+    test: /\.scss$/,
+    loaders: [
+      "style-loader",
+      {
+        loader: 'css-loader',
+        options: {
+          modules: true,
+          importLoaders: 1,
+        },
+      },
+      "sass-loader"
+    ],
+    include: path.resolve(__dirname, "../src/")
+  })
 
   // use @babel/preset-react for JSX and env (instead of staged presets)
   defaultConfig.module.rules[0].use[0].options.presets = [
