@@ -3,10 +3,10 @@ import PropTypes from 'prop-types'
 
 import styles from './menu-button.module.scss'
 
-const MenuButton = ({ onClick, isOpen }) => (
+const MenuButton = ({ onClick, isOpen, className }) => (
   <a
     onClick={onClick}
-    className={[styles.menuButton, isOpen ? styles.twist : null].join(' ')}
+    className={[styles.menuButton, className, isOpen ? styles.twist : null].join(' ')}
   >
     <span />
     <span />
@@ -17,6 +17,7 @@ const MenuButton = ({ onClick, isOpen }) => (
 MenuButton.propTypes = {
   onClick: PropTypes.func.isRequired,
   isOpen: PropTypes.bool.isRequired,
+  className: PropTypes.string,
 }
 
 MenuButton.defaultProps = {

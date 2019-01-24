@@ -10,7 +10,7 @@ const Contact = ({ email, number, className, reasons }) => (
 
       {reasons.length > 0 ?
         <div className={styles.contactBlockReasons}>
-          <h1>3 reasons to get in touch</h1>
+          <h1>Get in touch to talk about your project</h1>
           <ul className={styles.contactBlockReasonsList}>
             {reasons.map((reason, index) => (
               <li className={styles.contactBlockReasonsItem}>

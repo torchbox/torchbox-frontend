@@ -1,0 +1,11 @@
+.darkTheme {
+
+  // Base colors:
+  --color-primary: #{$dark-blue};
+  --color-accent: #{$green};
+
+  // Hero Component
+  --hero-background: #{$primary};
+  --hero-text-color: white;
+
+}

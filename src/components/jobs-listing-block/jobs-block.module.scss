@@ -1,0 +1,113 @@
+@import '../../styles/app.scss';
+
+.block {
+    position: relative;
+    background-color: white;
+    padding: 40px 0 20px;
+
+    &Image {
+        position: absolute;
+        top: 40px;
+        width: 28vw;
+        max-width: 380px;
+        @include for-tablet-landscape-up {
+            width: 20vw;        }
+    }
+
+    &Content {
+        padding: calc(0.75 * 28vw + 40px) 0 0 0;
+        @include mobile-container;
+        @include for-tablet-landscape-up {
+            @include container;
+            padding: 0 16.66vw;
+        }
+    }
+
+    &Intro {
+        padding-bottom: 40px;
+        @include for-tablet-landscape-up {
+            padding-bottom: 60px;
+        }
+
+        &Opinion {
+            position: relative;
+            padding-top: 20px;
+
+            @include for-tablet-landscape-up {
+                width: 60%;
+            }
+
+            &Title {
+                color: $accent;
+            }
+
+            &Text {
+                line-height: 30px;
+                margin: 0 0 40px;
+                color: $primary;
+                @include for-tablet-landscape-up {
+                    line-height: 42px;
+                }
+            }
+
+            &::before {
+                position: absolute;
+                content: '';
+                width: 60px;
+                height: 8px;
+                left: 0;
+                top: 0;
+                background: $accent;
+            }
+        }
+    }
+
+    &JobList {
+        display: grid;
+        grid-template-columns: 1fr;
+        //margin-left: 8.33vw;
+    }
+
+    &JobLink {
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 40px 0 40px 0;
+        text-decoration: none;
+        border-bottom: none;
+
+        &Title {
+            font-size: 30px;
+            font-weight: bold;
+            line-height: 40px;
+            margin: 0 0 15px;
+            padding: 30px 0 0;
+            color: $primary;
+
+            &:hover {
+                color: $blue;
+            }
+        }
+
+        &Level {
+            color: $primary;
+            font-size: 20px;
+        }
+
+        &Location {
+            margin: 0 0 2px;
+            line-height: 1.4;
+            color: $accent;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+
+    }
+
+}
+
+.pageSectionTitle {
+    //position: relative;
+    top: -50px;
+}

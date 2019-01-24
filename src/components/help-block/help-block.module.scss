@@ -12,29 +12,36 @@
 
     &Image {
         width: 50vw;
+        max-width: 380px;
         @include for-tablet-landscape-up {
-            width: 29.17vw;
+            width: 28vw;
         }
     }
 
     &Content {
+        padding-top: 80px;
         @include mobile-container;
         @include for-tablet-landscape-up {
             @include container;
+            padding-top: 20px;
         }
-        padding-top: 20px;
     }
 
     &Title {
         color: $primary;
+        font-size: 36px;
+        line-height: 50px;
+        @include for-tablet-landscape-up {
+            padding-left: 17vw;
+        }
     }
 
     &Links {
         &Container {
             margin-top: 30px;
             padding-left: 20px;
-            @include  for-tablet-landscape-up {
-                padding-left: 12.66vw;
+            @include for-tablet-landscape-up {
+                padding-left: 17vw;
             }
         }
 
@@ -45,7 +52,7 @@
         }
 
         &Item {
-            padding-bottom: 10px;
+            padding-bottom: 15px;
             display: flex;
             flex-direction: row;
             align-items: center;
@@ -53,8 +60,13 @@
             &Icon {
                 transform: rotate(30deg);
                 width: 20px;
+                height: 20px;
+                background-color: $accent;
+                -webkit-mask: url("../../images/icons/tick.svg") no-repeat center;
+                -webkit-mask-size: contain;
                 @include for-tablet-landscape-up {
-                    width: 25px;
+                    width: 22px;
+                    height: 22px;
                 }
             }
 
@@ -63,14 +75,15 @@
                 font-family: $mainFont;
                 text-decoration: none;
                 line-height: 40px;
-                font-weight: 500;
+                font-weight: 400;
 
-                margin: 0 0 5px 30px;
-                padding: 20px 0 0;
+                margin: 0 0 5px 60px;
+                padding: 10px 0 0;
                 border-bottom: 2px solid white;
 
                 &:hover {
                     border-bottom: 2px solid $accent;
+                    font-weight: 800;
                 }
             }
         }
@@ -78,7 +91,8 @@
 
     &Contact {
         @include for-tablet-landscape-up {
-            padding-left: 8vw !important;
+            margin-top: 15px;
+            padding-left: 13vw !important;
         }
     }
 

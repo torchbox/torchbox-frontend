@@ -27,8 +27,6 @@ const NavLink = ({
       {title}
       {badge != null ? <div className={styles.badge}>{badge}</div> : null}
     </div>
-
-    <div className={styles.strap}>{strap}</div>
   </Link>
 )
 

@@ -1,68 +1,74 @@
 @import '../../styles/app';
 
-// LEGACY TBX COLORS:
-$blue: #23b0b0;
-$coral: $accent;
-$coral-lt: lighten($coral, 10%);
-$orange: #fd5938;
-$orange-lt: #fc8977;
-$dark: #2b3033;
-$grey: #f7f7f7;
-$green: #68aa6c;
-$green-lt: #93c296;
-$yellow: #f5c157;
-
 .menuButton {
-    position: absolute;
-    right: 0;
-    top: 40px;
-    display: block;
-    float: right;
-    width: 30px;
-    height: 25px;
-    @include menu-animation;
-    @include for-tablet-landscape-up {
-      display: none;
-    }
-    
-    span {
+  position: absolute;
+  top: -12px;
+  right: -15px;
+  width: 80px;
+  height: 100%;
+  display: block;
+  border: none;
+  text-align: center;
+  z-index: 999;
+  cursor: pointer;
+  @include for-tablet-landscape-up {
+    display: none;
+  }
+
+  span {
+    &:nth-child(1) {
+      transition: all 0.2s ease-in;
       position: absolute;
-      right: 0;
-      top: 0;
+      width: 20px;
+      background-color: $primary;
       height: 3px;
-      width: 100%;
-      background: $dark;
-      border-radius: 100px;
-      @include menu-animation;
-      &:nth-child(2) {
-        top: 11px;
-        width: 70%;
-        background: $coral;
-      }
-      &:nth-child(3) {
-        width: 85%;
-        top: auto;
-        bottom: 0;
-        background: $blue;
-      }
+      left: 37%;
+      top: 40px;
+      transform: translateX(0);
     }
-    &.twist {
-      span {
-        width: 100%;
-        &:nth-child(1) {
-          opacity: 0;
-        }
-        &:nth-child(2) {
-          transform: rotate(45deg);
-          -webkit-transform: rotate(45deg);
-          top: 10px;
-        }
-        &:nth-child(3) {
-          transform: rotate(-45deg);
-          -webkit-transform: rotate(-45deg);
-          bottom: 12px;
-        }
-      }
+    &:nth-child(2) {
+      transition: all 0.2s ease-in;
+      background-color: $primary;
+      position: absolute;
+      width: 16px;
+      height: 3px;
+      left: 45%;
+      top: 48px;
+    }
+    &:nth-child(3) {
+      transition: all 0.2s ease-in;
+      background-color: $primary;
+      position: absolute;
+      width: 12px;
+      height: 3px;
+      left: 41%;
+      top: 55px;
     }
   }
-  
+  &.twist {
+    span {
+      &:nth-child(1) {
+        opacity: 0;
+      }
+
+      &:nth-child(2) {
+        background-color: white;
+        transform: rotate(-45deg) scale(2);
+        top: 50px;
+        left: 40%;
+        height: 2px;
+        width: 12px;
+      }
+
+      &:nth-child(3) {
+        background-color: white;
+        transform: rotate(45deg) scale(2);
+        top: 50px;
+        left: 40%;
+        height: 2px;
+        width: 12px;
+      }
+
+    }
+  }
+}

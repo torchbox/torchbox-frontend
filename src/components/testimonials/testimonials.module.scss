@@ -2,26 +2,25 @@
 
 .testimonials {
     background-color: white;
-    padding-top: 20px;
     padding-bottom: 20px;
 
     &Container {
         @include container;
         padding: 100px 0;
-        border-top: 1px solid rgba(0, 0, 0, 0.1);
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     }
 
     &Block {
         display: grid;
         grid-template-columns: auto 1fr;
         grid-column-gap: 50px;
-        padding-bottom: 30px;
     }
 
     &Icon {
-        width: 8.33vw;
+        width: 20vw;
+        max-width: 100px;
         @include for-tablet-landscape-up {
+            max-width: none;
+            width: 8.33vw;
             margin-left: 4.33vw;
         }
     }
@@ -55,7 +54,7 @@
                 @extend .testimonialsSliderBullet;
                 width: 14px;
                 height: 20px;
-                background: #fd5765;
+                background: $accent;
             }
         }
     }
@@ -68,7 +67,7 @@
             font-style: normal;
             margin: 0 0 20px;
             padding: 0 0 0;
-            color: #231749;
+            color: $primary;
             line-height: 1.5em;
             font-size: 24px;
 
@@ -83,15 +82,24 @@
         }
 
         &Cite {
-            color: #444;
-            font-size: 13px;
+            color: $dark-grey;
+            font-size: 12px;
             margin: 0 0 15px;
-            font-style: normal;
 
             &Author {
                 font-weight: bold;
                 padding-right: 8px;
                 text-transform: uppercase;
+                color: $accent;
+
+                &::after {
+                    width: 10px;
+                    content: '|';
+                    color: rgba(black, 0.2);
+                    font-weight: 100;
+                    padding-left: 10px;
+                }
+
             }
         }
     }
@@ -99,6 +107,8 @@
     &Icons {
 
         &List {
+            padding-bottom: 100px;
+
             display: grid;
             grid-template-columns: repeat(3, auto);
             @include for-tablet-landscape-up {
@@ -113,7 +123,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            filter: grayscale(100%);
             padding: 15px;
 
             @include for-tablet-landscape-up {

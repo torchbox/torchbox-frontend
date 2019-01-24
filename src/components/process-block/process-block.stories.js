@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 
 import ProcessBlock from './process-block'
 
-storiesOf('Landing Page', module).add('Process Block', () => {
+storiesOf('Landing Page', module).add('Process block', () => {
   return (
     <ProcessBlock processes={[
       {

@@ -3,9 +3,11 @@ import { storiesOf } from '@storybook/react'
 
 import CaseStudiesBlock from './case-studies-block'
 
-storiesOf('Landing Page', module).add('Case Studies Block', () => {
+storiesOf('Landing Page', module).add('Case Studies block', () => {
   return (
-    <CaseStudiesBlock caseStudies={[
+    <CaseStudiesBlock
+      listingUrl={'#'}
+      caseStudies={[
       {
         client: 'YOUTH SPORT TRUST',
         title: 'Reimagining the School Games custom application',

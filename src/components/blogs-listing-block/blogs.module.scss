@@ -2,7 +2,7 @@
 
 .block {
     background-color: white;
-    padding: 20px 0;
+    padding: 95px 0 20px;
 
     &Content {
         @include mobile-container;
@@ -26,13 +26,13 @@
             }
 
             &Title {
-                color: #fd5765;
+                color: $accent;
             }
 
             &Text {
                 line-height: 30px;
                 margin: 0 0 40px;
-                color: #231749;
+                color: $primary;
                 @include for-tablet-landscape-up {
                     line-height: 42px;
                 }
@@ -45,7 +45,7 @@
                 height: 8px;
                 left: 0;
                 top: 0;
-                background: #fd5765;
+                background: $accent;
             }
         }
     }
@@ -63,6 +63,7 @@
         border-top: 1px solid rgba(0, 0, 0, 0.1);
         padding: 40px 0 60px 0;
         text-decoration: none;
+        border-bottom: none;
 
         &Meta {
             display: flex;
@@ -71,12 +72,28 @@
         }
 
         &Title {
-            font-size: 1.4em;
+            font-size: 30px;
             font-weight: bold;
             line-height: 40px;
             margin: 0 0 10px;
-            padding: 20px 0 0;
-            color: #231749;
+            padding: 30px 0 0;
+            color: $primary;
+
+            &:hover {
+                color: $blue;
+            }
+        }
+
+        &BigTitle {
+            @extend .blockBlogLinkTitle;
+            font-size: 65px !important;
+            line-height: 80px;
+        }
+
+        &Desc {
+            margin: 0 0 30px;
+            color: $grey;
+            max-width: 80%;
         }
 
         &Image {
@@ -90,7 +107,7 @@
             flex-direction: column;
 
             &Name {
-                color: #231749;
+                color: $primary;
                 font-size: 20px;
                 margin-bottom: 5px;
             }
@@ -102,10 +119,15 @@
                 text-transform: uppercase;
                 letter-spacing: 0.15em;
                 font-weight: bold;
-                font-size: 13px;
+                font-size: 12px;
             }
         }
 
     }
 
+}
+
+.pageSectionTitle {
+    //position: relative;
+    top: -50px;
 }

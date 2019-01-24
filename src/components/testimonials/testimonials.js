@@ -8,12 +8,24 @@ class TestimonialsBlock extends React.Component {
 
   render() {
     const { currentIndex } = this.state
-    const { testimonials, logos, className } = this.props
+    const { testimonials, logos, className, sectionTitle } = this.props
     const currentTestimonial = testimonials[currentIndex]
-    console.log(styles)
+
     return (
       <div className={[styles.testimonials, className].join(' ')}>
         <div className={styles.testimonialsContainer}>
+          <span className={styles.pageSectionTitle}>{sectionTitle}</span>
+
+          <section className={styles.testimonialsIconsBlock}>
+            <ul className={styles.testimonialsIconsList}>
+              {logos.map(logo => (
+                <li className={styles.testimonialsIconsItem}>
+                  <img src={logo.image} aria-label={logo.label} />
+                </li>
+              ))}
+            </ul>
+          </section>
+
           <section className={styles.testimonialsBlock}>
             <img
               src={require('../../images/icons/quote.svg')}
@@ -47,16 +59,6 @@ class TestimonialsBlock extends React.Component {
               </ul>
             </div>
           </section>
-
-          <section className={styles.testimonialsIconsBlock}>
-            <ul className={styles.testimonialsIconsList}>
-              {logos.map(logo => (
-                <li className={styles.testimonialsIconsItem}>
-                  <img src={logo.image} aria-label={logo.label} />
-                </li>
-              ))}
-            </ul>
-          </section>
         </div>
       </div>
     )
@@ -70,11 +72,13 @@ class TestimonialsBlock extends React.Component {
 TestimonialsBlock.propTypes = {
   testimonials: PropTypes.array.isRequired,
   className: PropTypes.string,
+  sectionTitle: PropTypes.string.isRequired
 }
 
 TestimonialsBlock.defaultProps = {
   testimonials: [],
   className: '',
+  sectionTitle: 'Clients'
 }
 
 export default TestimonialsBlock

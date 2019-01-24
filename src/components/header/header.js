@@ -24,7 +24,7 @@ class Header extends React.Component {
   }
 
   render() {
-    const { links, currentUrl, navigateTo, logoClick } = this.props
+    const { links, currentUrl, navigateTo, logoClick, activeNestedLink } = this.props
 
     let nestedLinks = null
     const currentLink = links.find(({ href }) => href == currentUrl)
@@ -39,18 +39,32 @@ class Header extends React.Component {
         }
       >
         <div className={styles.headerInner}>
-          <div className={styles.logoContainer}>
-            <img
-              src={require('../../images/logo.svg')}
-              className={styles.logo}
-              onClick={logoClick}
-            />
-          </div>
+          { this.state.collapsed
+            ? (
+              <div className={styles.collapsedLogoContainer}>
+                <img
+                  src={require('../../images/tbx-flame.svg')}
+                  className={styles.logo}
+                  onClick={logoClick}
+                />
+                <span className={styles.logoText}>Design + build products</span>
+              </div>
+            )
+            : (
+              <div className={styles.logoContainer}>
+                <img
+                  src={require('../../images/logo.svg')}
+                  className={styles.logo}
+                  onClick={logoClick}
+                />
+              </div>
+            )
+          }
 
           <div className={styles.primaryNavContainer}>
             <ul className={styles.primaryNavList}>
               {links.map(link => (
-                <li className={link.alignRight ? styles.alignRight : ''}>
+                <li>
                   <NavLink
                     {...link}
                     collapsed={this.state.collapsed}
@@ -60,23 +74,27 @@ class Header extends React.Component {
                 </li>
               ))}
             </ul>
-
-            {nestedLinks != null ? (
-              <div className={styles.nestedNavContainer}>
-                <ul className={styles.nestedNavList}>
-                  {nestedLinks.map(link => (
-                    <li className={styles.nestedNavItem}>
-                      <Link onClick={link.onClick} to={link.href}>
-                        {link.title}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ) : null}
           </div>
 
+          {nestedLinks != null ? (
+            <div className={styles.nestedNavContainer}>
+              <ul className={styles.nestedNavList}>
+                {nestedLinks.map(link => (
+                  <li className={ activeNestedLink == link.href
+                    ? styles.nestedNavItemActive
+                    : styles.nestedNavItem
+                  }>
+                    <Link onClick={link.onClick} to={link.href}>
+                      {link.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
+
           <MenuButton
+            className={styles.headerMenuButton}
             isOpen={this.state.mobileNavOpen}
             onClick={() =>
               this.setState({ mobileNavOpen: !this.state.mobileNavOpen })

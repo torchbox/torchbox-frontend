@@ -1,6 +1,5 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { action, configureActions } from '@storybook/addon-actions'
 import { State, Store } from '@sambego/storybook-state'
 
 const store = new Store({
@@ -8,8 +7,9 @@ const store = new Store({
 })
 
 import Hero from './hero'
+import styles from './hero.module.scss'
 
-storiesOf('Landing Page', module).add('Hero Block', () => {
+const HeroComp = () => {
   window.addEventListener('scroll', () => {
     if (window.scrollY > 0) {
       if (!store.state.collapsed) {
@@ -48,4 +48,12 @@ storiesOf('Landing Page', module).add('Hero Block', () => {
       </div>
     </State>
   )
-})
+}
+
+storiesOf('Landing Page', module)
+  .add('Hero block', HeroComp)
+  .add('Hero Block (Dark Theme)', () => (
+    <div className={styles.darkTheme}>
+      <HeroComp />
+    </div>
+  ))

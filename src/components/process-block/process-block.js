@@ -4,19 +4,16 @@ import { Link } from 'gatsby'
 
 import styles from './process-block.module.scss'
 
-const ProcessBlock = ({ processes, className }) => (
+const ProcessBlock = ({ processes, className, sectionTitle }) => (
   <div className={[styles.processBlock, className].join(' ')}>
     <div className={styles.processContainer}>
-      <h1 className={styles.processTitle}>Products in five simple steps…</h1>
+      <span className={styles.pageSectionTitle}>{sectionTitle}</span>
+      <h1 className={styles.processTitle}>Ten weeks to launch a new product</h1>
 
-      <ul className={styles.processList}>
-        { processes.map(process => (
-          <li className={styles.processBox}>
-            <h3>{process.title}</h3>
-            <p>{process.description}</p>
-          </li>
-        )) }
-      </ul>
+      <div className={styles.processImageContainer}>
+        <img className={styles.processDesktopImage} src={require('../../images/processes-desktop.png')} alt=""/>
+        <img className={styles.processMobileImage} src={require('../../images/processes-mobile.png')} alt=""/>
+      </div>
 
     </div>
   </div>
@@ -24,10 +21,12 @@ const ProcessBlock = ({ processes, className }) => (
 
 ProcessBlock.propTypes = {
   className: PropTypes.string,
+  pageSectionTitle: PropTypes.string,
 }
 
 ProcessBlock.defaultProps = {
   className: '',
+  sectionTitle: 'Process'
 }
 
 export default ProcessBlock

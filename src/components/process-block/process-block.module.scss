@@ -4,7 +4,7 @@
 
   &Block {
     background-color: white;
-    padding: 100px 0 40px;
+    padding: 90px 0 40px;
   }
 
   &Container {
@@ -15,68 +15,36 @@
   }
 
   &Title {
-    font-size: 55px;
-    line-height: 60px;
-    color: #231749;
-    margin: 0 0 10px;
+    font-size: 45px;
+    line-height: 50px;
+    color: $primary;
     font-weight: bold;
   }
 
-  &List {
-    margin: 60px 0 0;
+  &ImageContainer {
+    padding: 20px 0;
+    @include for-tablet-landscape-up {
+      padding: 60px 60px 0;
+    }
   }
 
-  &Box {
-    $spacing: 8.33vw;
-    padding: 30px 20px;
-    background-repeat: no-repeat;
-    background-size: 85%;
-    border: 1px dashed rgba(0, 0, 0, 0.2);
-    margin-bottom: 30px;
-
-    h3 {
-      font-size: 24px;
-      line-height: 30px;
-      color: #231749;
-      font-weight: bold;
+  &DesktopImage {
+    width: 100%;
+    display: none;
+    @include for-tablet-landscape-up {
+      display: block;
     }
-
-    p {
-      font-size: 16px;
-      line-height: 22px;
-      margin: 0;
-      color: #444;
-    }
-
-    @include for-tablet-portrait-up {
-      width: 41.66vw;
-
-      &:nth-of-type(1) {
-        border-bottom: none;
-      }
-
-      &:nth-of-type(2) {
-        border-top: none;
-        margin-left: 8.33vw;
-      }
-
-      &:nth-of-type(3) {
-        border-top: none;
-        border-bottom: none;
-        margin-left: calc(#{$spacing} * 2);
-      }
-
-      &:nth-of-type(4) {
-        border-top: none;
-        margin-left: calc(#{$spacing} * 3);
-      }
-
-      &:nth-of-type(5) {
-        border-top: none;
-        margin-left: calc(#{$spacing} * 4);
-      }
-    }
-
   }
 
+  &MobileImage {
+    width: 100%;
+    @include for-tablet-landscape-up {
+      display: none;
+    }
+  }
+
+}
+
+.pageSectionTitle {
+  top: -45px !important;
 }

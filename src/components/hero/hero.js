@@ -10,7 +10,7 @@ const Hero = ({ links, collapsed }) => (
   >
     <section className={styles.heroContent}>
       <h1 className={styles.heroTitle}>
-        The digital product agency{' '}
+        The digital product agency
         <p className={styles.accent}>for tomorrow's non-profits.</p>
       </h1>
       {links != null ? (
@@ -18,10 +18,6 @@ const Hero = ({ links, collapsed }) => (
           <ul className={styles.heroLinksList}>
             {links.map(link => (
               <li className={styles.heroLinksItem}>
-                <img
-                  src={require('../../images/icons/chevron.png')}
-                  className={styles.heroLinksItemArrow}
-                />
                 <Link onClick={link.onClick} to={link.href}>
                   {link.title}
                 </Link>

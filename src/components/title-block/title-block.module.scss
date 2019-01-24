@@ -1,0 +1,13 @@
+@import '../../styles/app.scss';
+
+.block {
+    padding: 100px 0 20px;
+    background: white;
+
+    &Title {
+        font-size: 70px;
+        //font-weight: 800;
+        line-height: 80px;
+        margin: 0 8.33vw 20px 16.66vw;
+    }
+}

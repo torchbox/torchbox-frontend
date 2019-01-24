@@ -1,10 +1,14 @@
 @import '../../styles/app.scss';
 
+// Component theme overrides:
+$hero-background: var(--hero-background, white);
+$hero-text-color: var(--hero-text-color, $primary);
+
 .hero {
 
     &Container {
         width: 100vw;
-        background: white;
+        background: $hero-background;
 
         @include for-desktop-up {
             width: 85.34vw;
@@ -19,25 +23,26 @@
             @include container;
         }
 
+        position: relative;
         padding-top: 60px;
         padding-bottom: 20px;
         z-index: 2;
     }
 
     &Title {
-        color: $primary;
-        font-weight: 600;
-        line-height: 1.4em;
-        font-size: 40px;
+        color: $hero-text-color;
+        font-weight: 800;
+        font-size: 2.8em;
+        line-height: 1.2em;
         @include for-tablet-landscape-up {
-            font-size: 70px;
+            font-size: 3.5em;
         }
     }
 
     &Links {
 
         &Container {
-            margin-top: 15px;
+            margin-top: 35px;
             width: 100%;
         }
 
@@ -46,39 +51,50 @@
             display: flex;
             flex-direction: column;
             padding-top: 25px;
+            margin-left: 20px;
 
             @include for-tablet-landscape-up {
                 flex-direction: row;
                 padding-top: 0px;
+                margin: 0;
             }
         }
 
         &Item {
             display: flex;
             align-items: center;
-
+            position: relative;
             padding-right: 40px;
             padding-bottom: 25px;
             @include for-tablet-landscape-up {
                 padding-bottom: 0px;
             }
 
-            &Arrow {
-                width: 12px;
-                margin-right: 20px;
-                @include for-tablet-landscape-up {
-                    display: none;
-                }
-            }
-
             a {
-                color: $primary;
+                transition: all 0.2s ease;
+                color: $hero-text-color !important;
                 font-size: 19px;
                 font-family: $mainFont;
                 text-decoration: none;
-
+                border-bottom: 2px solid $hero-background;
+                margin-left: 15px;
                 &:hover {
-                    color: $accent;
+                    border-bottom: 2px solid $accent;
+                }
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    margin-top: 2px;
+                    right: 100%;
+                    width: 12px;
+                    height: 18px;
+                    -webkit-mask: url("../../images/icons/chevron.svg") no-repeat center;
+                    -webkit-mask-size: contain;
+                    background-color: $accent;
+                    @include for-tablet-landscape-up {
+                        display: none;
+                    }
                 }
             }
         }

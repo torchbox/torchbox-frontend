@@ -7,14 +7,24 @@
 
     &Content {
         display: flex;
+        flex-direction: column;
+        align-items: flex-start;
         @include mobile-container;
+        @include for-tablet-portrait-up {
+            flex-direction: row;
+            align-items: center;
+        }
         @include for-tablet-landscape-up {
             @include container;
         }
     }
 
     &Image {
-        margin-right: 20px !important;
+        margin-bottom: 20px;
+        @include for-tablet-portrait-up {
+            margin-right: 20px !important;
+            margin-bottom: 0px;
+        }
     }
 
     &Details {
@@ -22,6 +32,7 @@
         flex-direction: row;
         flex-wrap: wrap;
         align-items: center;
+        height: 80px;
     }
 
     &Title {
@@ -35,12 +46,13 @@
 
     &Email {
         height: 24px;
-        color: #2f128d;
+        color: $primary;
         font-size: 20px;
         line-height: 24px;
         text-decoration: none;
-        border-bottom: 2px solid #fd5765;
+        border-bottom: 2px solid $accent;
         margin: 0px 15px 0 0;
+        font-weight: bold;
         @include for-phone-only {
             margin: 10px 15px 0 0;
         }
@@ -51,8 +63,9 @@
         line-height: 24px;
         text-decoration: none;
         font-size: 20px;
-        color: #fd5765;
+        color: $accent;
         margin: 0px 15px 0 0;
+        border-bottom: none;
         @include for-phone-only {
             margin: 10px 15px 0 0;
         }

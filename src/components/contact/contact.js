@@ -6,12 +6,12 @@ import Avatar from '../avatar'
 
 import styles from './contact.module.scss'
 
-const Contact = ({ title, email, number, className }) => (
+const Contact = ({ title, email, number, className, avatar }) => (
   <div className={[styles.contactBlock, className].join(' ')}>
     <div className={styles.contactBlockContent}>
       <Avatar
         containerClassName={styles.contactBlockImage}
-        src={require('../../images/will.jpg')}
+        src={avatar}
       />
 
       <div className={styles.contactBlockDetails}>
@@ -32,6 +32,7 @@ Contact.propTypes = {
   email: PropTypes.string,
   number: PropTypes.string,
   className: PropTypes.string,
+  avatar: PropTypes.string
 }
 
 Contact.defaultProps = {
@@ -39,6 +40,7 @@ Contact.defaultProps = {
   email: '',
   number: '',
   className: '',
+  avatar: require('../../images/will.jpg')
 }
 
 export default Contact

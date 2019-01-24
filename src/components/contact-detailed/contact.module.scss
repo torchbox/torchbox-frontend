@@ -47,7 +47,9 @@
                 span {
                     z-index: 1;
                     position: relative;
-                    top: 5px;
+                    top: 3px;
+                    left: 1px;
+                    font-weight: bold;
                 }
 
                 &::before {
@@ -99,9 +101,7 @@
             line-height: 24px;
             text-decoration: none;
             border-bottom: 2px solid $accent;
-            @include for-phone-only {
-
-            }
+            font-weight: bold;
         }
 
         &Number {
@@ -109,6 +109,7 @@
             text-decoration: none;
             color: $accent;
             margin: 0px 0px 0px 15px;
+            border-bottom: none;
             @include for-phone-only {
                 margin: 10px 15px 0 0;
             }

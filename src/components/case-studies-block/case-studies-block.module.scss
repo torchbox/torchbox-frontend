@@ -2,6 +2,8 @@
 
 .block {
     background: white;
+    padding-top: 100px;
+    padding-bottom: 10px;
 
     &Title {
         margin-left: 8.33vw;
@@ -15,48 +17,50 @@
     .caseStudy {
         position: relative;
         display: flex;
-        flex-direction: row;
-        border-top: 4px solid $accent;
-        background-size: cover;
+        flex-direction: column-reverse;
+        border-bottom: none;
+        line-height: 0;
 
-        @include for-tablet-landscape-up {
-            background: white !important;
-            border-top: 0 !important;
-            border-bottom: none !important;
+        &:hover {
+            .caseStudyMetaTitle {
+                color: $blue !important;
+            }
         }
 
-        &:nth-child(even) {
-            flex-direction: row-reverse;
+        @include for-tablet-landscape-up {
+            flex-direction: row;
+            background-size: cover;
 
-            @include for-tablet-landscape-up {
-                .caseStudyMeta {
-                    padding-top: 120px;
-                    * {
-                        padding-left: 0px;
+            &:nth-child(even) {
+                flex-direction: row-reverse;
+
+                @include for-tablet-landscape-up {
+                    .caseStudyMeta {
+                        padding-top: 120px;
+                        * {
+                            padding-left: 0px;
+                        }
                     }
                 }
-            }
 
-            .caseStudyClusterIcon {
-                display: none;
-            }
+                .caseStudyClusterIcon {
+                    display: none;
+                }
 
-            .caseStudyImage {
-                &:before {
-                    left: auto;
-                    right: 0;
-                    border-width: 0 0 50vw 25vw;
-                    border-color: transparent transparent white transparent;
-                    bottom: auto;
-                    top: 0;
+                .caseStudyImage {
+                    &:before {
+                        left: auto;
+                        right: 0;
+                        border-width: 0 0 50vw 25vw;
+                        border-color: transparent transparent white transparent;
+                        bottom: auto;
+                        top: 0;
+                    }
                 }
             }
         }
 
         &Meta {
-            position: relative;
-            width: 100%;
-            min-height: 200px;
             @include mobile-container;
 
             margin: 30px;
@@ -64,10 +68,9 @@
             background-color: rgba(white, 0.9);
 
             @include for-tablet-landscape-up {
-                padding-top: 60px;
+                min-height: 200px;
                 margin: 0;
-                padding: 0;
-                padding-top: 60px;
+                padding: 60px 0 0;
                 width: 50%;
                 * {
                     padding-left: 8.33vw;
@@ -78,19 +81,21 @@
                 text-transform: uppercase;
                 font-weight: bold;
                 letter-spacing: 0.15em;
-                font-size: 13px;
-                color: #fd5765;
+                font-size: 12px;
+                color: $accent;
+                margin-bottom: 20px;
             }
 
             &Title {
                 font-size: 38px;
                 line-height: 44px;
                 margin: 0 0 10px;
-                color: #231749;
+                color: $primary;
+                font-weight: bold;
             }
 
             &Desc {
-                color: #444;
+                color: $dark-grey;
                 line-height: 1.5;
             }
 
@@ -100,7 +105,7 @@
         }
 
         &Image {
-            width: 0%;
+            width: 100%;
             overflow: hidden;
 
             @include for-tablet-landscape-up {
@@ -140,4 +145,11 @@
 
     }
 
+}
+
+.pageSectionTitle {
+    left: 15px;
+    @include for-tablet-landscape-up {
+        left: 8.33vw;
+    }
 }

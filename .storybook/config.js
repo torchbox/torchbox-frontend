@@ -2,6 +2,7 @@ import { addDecorator } from '@storybook/react'; // <- or your storybook framewo
 import { withBackgrounds } from '@storybook/addon-backgrounds';
 import { configure } from '@storybook/react';
 import 'reset-css'
+import '../src/styles/_fonts.scss'
 
 // automatically import all files ending in *.stories.js
 const req = require.context('../src', true, /.stories.js$/);

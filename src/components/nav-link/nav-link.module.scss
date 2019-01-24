@@ -1,49 +1,38 @@
 @import '../../styles/app';
 
 .navLink {
+  height: 40px;
   position: relative;
   display: block;
-  padding: 0px 0 20px 0;
   margin-right: 50px;
   line-height: 20px;
 
+  color: $primary;
   font-family: $mainFont;
   text-decoration: none;
+  border-bottom: none;
   transition: all 0.2s ease;
 
-  border-left: 1px solid rgba(255, 255, 255, 0.1);
-  border-right: 1px solid rgba(255, 255, 255, 0.1);
-
-  color: $primary;
+  &:hover {
+    @include for-tablet-landscape-up {
+      border-bottom: 5px solid $accent;
+    }
+  }
 
   &.active {
-    &::after {
-      content: '';
-      position: absolute;
-      width: calc(100% - 0px);
-      height: 5px;
-      bottom: 0px;
-      left: 0;
-      background: $accent;
-    }
+    border-bottom: 5px solid $accent;
   }
 
   .title {
     position: relative;
     transition: all 0.2s ease;
-    font-size: 18px;
+    font-size: 24px;
     line-height: 24px;
     font-family: $mainFont;
-    font-weight: bold;
     margin: 5px 0 5px;
-  }
-
-  .strap {
-    font-size: 14px;
-    font-family: $mainFont;
-    color: #888;
-    max-width: 175px;
-    transition: all 0.2s ease;
+    @include for-tablet-landscape-up {
+      font-size: 18px;
+    }
   }
 
   .badge {
@@ -54,6 +43,10 @@
     line-height: 25px;
     color: white;
     z-index: 5;
+
+    @include for-tablet-landscape-up {
+      right: -25px;
+    }
 
     &::before {
       width: 18px;
@@ -71,50 +64,7 @@
 
 .collapsedNavLink {
   @extend .navLink;
-  @include for-desktop-up {
-    padding-bottom: 7px;
-    color: rgba(0, 0, 0, 0.4);
-
-    .title {
-      font-size: 16px !important;
-    }
-
-    .strap {
-      height: 0 !important;
-      font-size: 0px !important;
-    }
-
-    &.active {
-      color: $primary !important;
-
-      &::after {
-        content: '';
-        position: absolute;
-        width: calc(100% - 0px);
-        height: 2px;
-        bottom: 0px;
-        left: 0;
-        background: $accent;
-      }
-    }
-
-    .badge {
-      top: -15px;
-      right: -20px;
-    }
-  }
-}
-
-.alignRight {
-  padding-right: 0;
-  margin-right: 0;
-
-  .title {
-    font-weight: 400;
-  }
-
-  .strap {
-    font-weight: 300;
-  }
-
+  height: 0;
+  opacity: 0;
+  border-bottom: none;
 }

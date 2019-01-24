@@ -1,0 +1,67 @@
+@import '../../styles/app.scss';
+
+.block {
+    background-color: white;
+    padding: 95px 0 20px;
+
+    &Image {
+        position: absolute;
+        width: 40vw;
+        margin-top: 20px;
+        @include for-tablet-landscape-up {
+            position: absolute;
+            width: 19vw;
+            top: 145px;
+            margin-top: 0;
+        }
+    }
+
+    &Content {
+        @include mobile-container;
+        @include for-tablet-landscape-up {
+            @include container;
+        }
+
+        padding: calc(0.7 * 40vw + 60px) 0 80px 40px;
+        @include for-tablet-landscape-up {
+            padding: 55px 0 80px 16.66vw;
+        }
+    }
+
+    &ServiceList {
+        display: grid;
+        grid-template-columns: 1fr;
+        @include for-tablet-landscape-up {
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: 8.33vw;
+        }
+    }
+
+    &Service {
+        padding: 0 0 60px 0;
+        text-decoration: none;
+        border-bottom: none;
+
+        &Title {
+            font-size: 30px;
+            font-weight: 800;
+            line-height: 40px;
+            margin: 0 0 10px;
+            color: $blue;
+        }
+
+        &Desc {
+            font-size: 17px;
+            line-height: 26px;
+            margin: 10px 0 0;
+            color: rgba(51, 51, 51, 0.9);
+        }
+
+    }
+
+}
+
+.pageSectionTitle {
+    //position: relative;
+    top: -45px;
+}

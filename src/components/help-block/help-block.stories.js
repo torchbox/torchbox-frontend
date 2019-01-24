@@ -2,8 +2,9 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 
 import HelpBlock from './help-block'
+import Contact from '../contact/contact'
 
-storiesOf('Landing Page', module).add('Help Block', () => {
+storiesOf('Landing Page', module).add('Help block', () => {
   return (
     <HelpBlock
       title="We can help you…"
@@ -22,6 +23,11 @@ storiesOf('Landing Page', module).add('Help Block', () => {
           title: 'Build a mission-critical enterprise digital service',
         },
       ]}
+      contactDetails={{
+        title: "Get in touch about your project",
+        email: "will@torchbox.com",
+        number: "+44 (0) 7545 468483",
+      }}
     />
   )
 })

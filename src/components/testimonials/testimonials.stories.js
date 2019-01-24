@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 
 import TestimonialsBlock from './testimonials'
 
-storiesOf('Landing Page', module).add('Testimonials Block', () => {
+storiesOf('Landing Page', module).add('Testimonials block', () => {
   return (
     <TestimonialsBlock
       testimonials={[

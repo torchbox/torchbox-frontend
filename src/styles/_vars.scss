@@ -1,7 +1,16 @@
 // Colours
-$primary: #231749;
-$accent: #fd5765;
+$coral: #fd5765;
 $blue: #2f128d;
+$dark-blue: #231749;
+$light-grey: #f4f3f6;
+$grey: #444;
+$green: #3BECCD;
+$dark-grey: #444;
+
+$primary: var(--color-primary, #{$dark-blue});
+$accent: var(--color-accent, #{$coral});
+
+//$accent: $coral;
 
 // Fonts
 $mainFont: 'Apercu Pro';
