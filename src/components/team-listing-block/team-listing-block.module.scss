@@ -1,0 +1,62 @@
+@import '../../styles/app.scss';
+
+.block {
+    position: relative;
+    background-color: white;
+    padding: 20px 0;
+
+    &Content {
+        @include mobile-container;
+        @include for-tablet-landscape-up {
+            @include container;
+        }
+    }
+
+    &PersonList {
+        display: grid;
+        grid-template-columns: repeat(1 , 1fr);
+        @include for-tablet-portrait-up {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @include for-tablet-landscape-up {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        @include for-desktop-up {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    &PersonLink {
+        padding-bottom: 50px;
+        text-decoration: none;
+        border-bottom: none;
+
+        &Avatar {
+            width: 100%;
+        }
+
+        &Name {
+            margin: 20px 0 5px;
+            line-height: 1;
+            font-size: 22px;
+            font-weight: 800;
+            color: $primary;
+
+            &:hover {
+                color: $blue;
+            }
+        }
+
+        &Role {
+            line-height: 1.4;
+            color: $accent;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-weight: bold;
+            font-size: 11px;
+        }
+
+
+    }
+
+}
