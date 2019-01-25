@@ -41,7 +41,6 @@
         border-bottom: none;
 
         @include for-tablet-landscape-up {
-            padding: 30px 8.33vw 30px 8.33vw;
             margin-right: 2px;
         }
 
@@ -61,6 +60,10 @@
                 background-color: $green;
                 -webkit-mask: url("../../images/icons/chevron.svg") no-repeat center;
                 -webkit-mask-size: contain;
+
+                @include for-tablet-landscape-up {
+                    margin-top: 10px;
+                }
             }
         }
 

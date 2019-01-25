@@ -44,5 +44,9 @@ body {
         text-decoration: none;
         font-weight: bold;
         border-bottom: 2px solid $accent;
+
+        &:hover {
+            border-bottom: 2px solid $green;
+        }
     }
 }

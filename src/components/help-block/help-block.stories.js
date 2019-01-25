@@ -7,7 +7,7 @@ import Contact from '../contact/contact'
 storiesOf('Landing Page', module).add('Help block', () => {
   return (
     <HelpBlock
-      title="We can help you…"
+      title="{We make products fast} and transform the way your organisation works at the same time..."
       links={[
         { href: '#1', title: 'Understand your users' },
         { href: '#1', title: 'Kick start a product idea with a design sprint' },

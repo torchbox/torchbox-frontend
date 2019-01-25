@@ -3,57 +3,35 @@ import { storiesOf } from '@storybook/react'
 import { State, Store } from '@sambego/storybook-state'
 
 import TitleBlock from './title-block'
-import styles from './title-block.module.scss'
+import { parseToHtml } from '../../utils/torchup'
+
 
 const store = new Store({
-  title: 'Meet the team, your swell digital pals.'
+  title: 'Meet the team, your swell digital pals.',
 })
 
-storiesOf('Shared Components', module).add('Title Block', () => {
+storiesOf('Shared Components', module).add('Title Block (+ Test TorchUp)', () => {
   const { title } = store.state
 
-  const renderFormattedText = text => {
-    let formattedText = [],
-        isCurrentlyBold = false
-
-    for(let i = 0; i < text.length; i++) {
-      const char = text[i]
-
-      switch (char) {
-        case '*':
-          formattedText.push(isCurrentlyBold ? '</strong>' : '<strong>')
-          isCurrentlyBold = !isCurrentlyBold
-          break
-
-        case '[':
-          formattedText.push(`<span class='${styles.accentedText}'>`)
-          break
-
-        case ']':
-          formattedText.push('</span>')
-          break
-
-        default:
-          formattedText.push(char)
-          break
-      }
-
-    }
-
-    return formattedText
-  }
-
   const updateTitle = event => {
-    const title = renderFormattedText(event.target.value)
-    store.set({ title: title.join('') })
+    store.set({ title: event.target.value })
   }
 
   return (
     <State store={store}>
-      <TitleBlock title={<div dangerouslySetInnerHTML={title} />}/>
+      <TitleBlock title={title}/>
       <div style={helper.container}>
         <label style={helper.label}>Type Here:</label>
         <input style={helper.input} defaultValue={title} onChange={updateTitle}/>
+      </div>
+      <div style={helper.codeContainer}>
+        <div style={helper.code}>
+          // TorchUp Syntax:<br/>
+          *foo* => foo (in bold)<br/>
+          {'{ foo }'} => foo (in heavy-bold/black)<br/>
+          [ foo ] => foo (with text in accent color)<br/>
+          \ => Escape next special character
+        </div>
       </div>
     </State>
   )
@@ -88,6 +66,21 @@ const helper = {
     padding: '5px 10px',
     fontSize: 16,
     fontWeight: 600,
+  },
+
+  codeContainer: {
+    padding: 40,
+    paddingBottom: 20,
+    backgroundColor: '#fd5765',
+
+  },
+
+  code: {
+    background: 'rgba(0, 0, 0, 0.15)',
+    color: 'rgba(255, 255, 255, 0.9)',
+    borderRadius: 3,
+    padding: 10,
+    width: '100%'
   }
 
 }

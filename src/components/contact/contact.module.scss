@@ -32,7 +32,6 @@
         flex-direction: row;
         flex-wrap: wrap;
         align-items: center;
-        height: 80px;
     }
 
     &Title {
@@ -40,13 +39,13 @@
         color: $primary;
         font-size: 26px;
         line-height: 30px;
-        margin: 0 0 5px;
-        font-weight: bold;
+        margin: 0 0 0px;
+        font-weight: 800;
     }
 
     &Email {
         height: 24px;
-        color: $primary;
+        color: $blue;
         font-size: 20px;
         line-height: 24px;
         text-decoration: none;

@@ -31,6 +31,7 @@
         color: $primary;
         font-size: 36px;
         line-height: 50px;
+        font-weight: 100;
         @include for-tablet-landscape-up {
             padding-left: 17vw;
         }

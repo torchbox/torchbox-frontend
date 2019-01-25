@@ -16,12 +16,13 @@
     &Reasons {
         h1 {
             color: white;
+            font-weight: 800;
         }
 
         &List {
             display: flex;
             justify-content: space-between;
-            margin: 50px 0 0px;
+            margin: 35px 0 0;
             flex-direction: column;
             @include for-tablet-landscape-up {
                 flex-direction: row;

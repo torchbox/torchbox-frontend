@@ -6,8 +6,9 @@ import ContactBlock from '../contact'
 
 import styles from './help-block.module.scss'
 import Contact from '../contact/contact'
+import { renderTorchUp } from '../../utils/torchup'
 
-const HelpBlock = ({ links, sectionTitle, greetingImage, contactDetails }) => (
+const HelpBlock = ({ title, links, sectionTitle, greetingImage, contactDetails }) => (
   <div className={styles.blockContainer}>
     <img
       className={styles.blockImage}
@@ -16,7 +17,7 @@ const HelpBlock = ({ links, sectionTitle, greetingImage, contactDetails }) => (
 
     <section className={styles.blockContent}>
       <span className={styles.pageSectionTitle}>{sectionTitle}</span>
-      <h1 className={styles.blockTitle}>We make products fast and transform the way your organisation works at the same time...</h1>
+      <h1 className={styles.blockTitle} {...renderTorchUp(title)} />
 
       {links != null ? (
         <div className={styles.blockLinksContainer}>

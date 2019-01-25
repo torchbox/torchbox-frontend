@@ -3,12 +3,13 @@ import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
 import styles from './process-block.module.scss'
+import { renderTorchUp } from '../../utils/torchup'
 
-const ProcessBlock = ({ processes, className, sectionTitle }) => (
+const ProcessBlock = ({ title, processes, className, sectionTitle }) => (
   <div className={[styles.processBlock, className].join(' ')}>
     <div className={styles.processContainer}>
       <span className={styles.pageSectionTitle}>{sectionTitle}</span>
-      <h1 className={styles.processTitle}>Ten weeks to launch a new product</h1>
+      <h1 className={styles.processTitle} {...renderTorchUp(title)} />
 
       <div className={styles.processImageContainer}>
         <img className={styles.processDesktopImage} src={require('../../images/processes-desktop.png')} alt=""/>
@@ -20,8 +21,9 @@ const ProcessBlock = ({ processes, className, sectionTitle }) => (
 )
 
 ProcessBlock.propTypes = {
+  title: PropTypes.string,
   className: PropTypes.string,
-  pageSectionTitle: PropTypes.string,
+  sectionTitle: PropTypes.string,
 }
 
 ProcessBlock.defaultProps = {

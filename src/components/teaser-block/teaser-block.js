@@ -3,11 +3,12 @@ import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
 import styles from './teaser-block.scss'
+import { renderTorchUp } from '../../utils/torchup'
 
-const TeaserBlock = ({ teasers, className }) => (
+const TeaserBlock = ({ title, teasers, className }) => (
   <div className={[styles.teaserBlock, className].join(' ')}>
     <div className={styles.teaserBlockContainer}>
-      <h3 className={styles.teaserBlockTitle}>More from Torchbox...</h3>
+      <h3 className={styles.teaserBlockTitle} {...renderTorchUp(title)} />
       <div className={styles.teaserBlockList}>
         {teasers.map(teaser => (
           <Link to={teaser.link} className={styles.teaserBlockItem}>
@@ -23,6 +24,7 @@ const TeaserBlock = ({ teasers, className }) => (
 )
 
 TeaserBlock.propTypes = {
+  title: PropTypes.string,
   src: PropTypes.string,
   className: PropTypes.string,
 }

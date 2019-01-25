@@ -1,0 +1,20 @@
+@import '../../styles/app.scss';
+
+.filter {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+
+    &Tag {
+        font-size: 14px !important;
+        padding: 0 8px !important;
+
+        &Active {
+            @extend .filterTag;
+            border: 2px solid #fd5765 !important;
+            color: #fd5765 !important;
+        }
+    }
+
+}

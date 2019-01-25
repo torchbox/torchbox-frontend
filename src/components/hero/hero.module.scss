@@ -2,7 +2,8 @@
 
 // Component theme overrides:
 $hero-background: var(--hero-background, white);
-$hero-text-color: var(--hero-text-color, $primary);
+$hero-title-color: var(--hero-title-color, $primary);
+$hero-link-color: var(--hero-link-color, $blue);
 
 .hero {
 
@@ -30,19 +31,24 @@ $hero-text-color: var(--hero-text-color, $primary);
     }
 
     &Title {
-        color: $hero-text-color;
+        color: $hero-title-color;
         font-weight: 800;
         font-size: 2.8em;
         line-height: 1.2em;
+        margin-bottom: 20px;
         @include for-tablet-landscape-up {
             font-size: 3.5em;
         }
     }
 
+    &Desc {
+      color: $hero-title-color;
+      margin-bottom: 40px;
+    }
+
     &Links {
 
         &Container {
-            margin-top: 35px;
             width: 100%;
         }
 
@@ -50,7 +56,6 @@ $hero-text-color: var(--hero-text-color, $primary);
             list-style: none;
             display: flex;
             flex-direction: column;
-            padding-top: 25px;
             margin-left: 20px;
 
             @include for-tablet-landscape-up {
@@ -72,15 +77,20 @@ $hero-text-color: var(--hero-text-color, $primary);
 
             a {
                 transition: all 0.2s ease;
-                color: $hero-text-color !important;
+                color: $hero-link-color !important;
                 font-size: 19px;
                 font-family: $mainFont;
                 text-decoration: none;
                 border-bottom: 2px solid $hero-background;
-                margin-left: 15px;
+                margin-right: 10px;
+                padding-left: 10px;
                 &:hover {
                     border-bottom: 2px solid $accent;
                 }
+                @include for-tablet-landscape-up {
+                  padding: 0;
+                }
+
 
                 &::before {
                     content: '';
