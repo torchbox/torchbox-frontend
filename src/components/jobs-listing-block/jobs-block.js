@@ -5,20 +5,22 @@ import { Link } from 'gatsby'
 import styles from './jobs-block.module.scss'
 import Avatar from '../avatar/avatar'
 
-const JobsBlock = ({ jobs, className, sectionTitle, listingUrl, greetingImage }) => {
+const JobsBlock = ({
+  jobs,
+  className,
+  sectionTitle,
+  listingUrl,
+  greetingImage,
+}) => {
   const featuredPost = jobs[0]
   return (
     <div className={[styles.block, className].join(' ')}>
-
-      <img
-        className={styles.blockImage}
-        src={greetingImage}
-      />
+      <img className={styles.blockImage} src={greetingImage} />
 
       <div className={styles.blockContent}>
         <div className={styles.blockJobList}>
           {jobs.map(job => (
-            <a className={styles.blockJobLink} href={job.href} target='_blank '>
+            <a className={styles.blockJobLink} href={job.href} target="_blank ">
               <span className={styles.blockJobLinkTitle}>{job.title}</span>
               <h4 className={styles.blockJobLinkLevel}>{job.level}</h4>
               <h5 className={styles.blockJobLinkLocation}>{job.location}</h5>
@@ -26,12 +28,11 @@ const JobsBlock = ({ jobs, className, sectionTitle, listingUrl, greetingImage })
           ))}
         </div>
 
-        { listingUrl ? (
+        {listingUrl ? (
           <div className={styles.seeMore}>
             <Link to={listingUrl}>See more jobs</Link>
           </div>
         ) : null}
-
       </div>
     </div>
   )
@@ -48,7 +49,7 @@ JobsBlock.defaultProps = {
   className: '',
   jobs: [],
   sectionTitle: 'Thinking',
-  greetingImage: require('../../images/help-character.svg')
+  greetingImage: require('../../images/help-character.svg'),
 }
 
 export default JobsBlock

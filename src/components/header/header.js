@@ -24,7 +24,13 @@ class Header extends React.Component {
   }
 
   render() {
-    const { links, currentUrl, navigateTo, logoClick, activeNestedLink } = this.props
+    const {
+      links,
+      currentUrl,
+      navigateTo,
+      logoClick,
+      activeNestedLink,
+    } = this.props
 
     let nestedLinks = null
     const currentLink = links.find(({ href }) => href == currentUrl)
@@ -39,27 +45,24 @@ class Header extends React.Component {
         }
       >
         <div className={styles.headerInner}>
-          { this.state.collapsed
-            ? (
-              <div className={styles.collapsedLogoContainer}>
-                <img
-                  src={require('../../images/tbx-flame.svg')}
-                  className={styles.logo}
-                  onClick={logoClick}
-                />
-                <span className={styles.logoText}>Design + build products</span>
-              </div>
-            )
-            : (
-              <div className={styles.logoContainer}>
-                <img
-                  src={require('../../images/logo.svg')}
-                  className={styles.logo}
-                  onClick={logoClick}
-                />
-              </div>
-            )
-          }
+          {this.state.collapsed ? (
+            <div className={styles.collapsedLogoContainer}>
+              <img
+                src={require('../../images/tbx-flame.svg')}
+                className={styles.logo}
+                onClick={logoClick}
+              />
+              <span className={styles.logoText}>Design + build products</span>
+            </div>
+          ) : (
+            <div className={styles.logoContainer}>
+              <img
+                src={require('../../images/logo.svg')}
+                className={styles.logo}
+                onClick={logoClick}
+              />
+            </div>
+          )}
 
           <div className={styles.primaryNavContainer}>
             <ul className={styles.primaryNavList}>
@@ -80,10 +83,13 @@ class Header extends React.Component {
             <div className={styles.nestedNavContainer}>
               <ul className={styles.nestedNavList}>
                 {nestedLinks.map(link => (
-                  <li className={ activeNestedLink == link.href
-                    ? styles.nestedNavItemActive
-                    : styles.nestedNavItem
-                  }>
+                  <li
+                    className={
+                      activeNestedLink == link.href
+                        ? styles.nestedNavItemActive
+                        : styles.nestedNavItem
+                    }
+                  >
                     <Link onClick={link.onClick} to={link.href}>
                       {link.title}
                     </Link>

@@ -9,32 +9,30 @@ import TeaserBlock from '../../components/teaser-block/teaser-block'
 import Footer from '../../components/footer/footer'
 
 export class JobsListingPage extends React.Component {
-
   render() {
     const { title, jobs, teasers } = this.props
 
-    const listing = jobs
-      .map(job => {
-        return {
-          title: job.title,
-          level: job.level,
-          location: job.location,
-          href: job.url,
-        }
-      })
+    const listing = jobs.map(job => {
+      return {
+        title: job.title,
+        level: job.level,
+        location: job.location,
+        href: job.url,
+      }
+    })
 
     return (
       <div className={styles.page}>
         <TitleBlock
           className={styles.pageTitle}
-          title={listing.length
-            ? title
-            : 'Sorry, [We have no jobs currently].' }/>
+          title={listing.length ? title : 'Sorry, [We have no jobs currently].'}
+        />
         <JobsBlock
           className={styles.pageJobListing}
           listingUrl={null}
-          jobs={listing}/>
-        <Contact className={styles.pageContact}/>
+          jobs={listing}
+        />
+        <Contact className={styles.pageContact} />
         <TeaserBlock teasers={teasers} />
         <Footer />
       </div>
@@ -49,7 +47,7 @@ JobsListingPage.propTypes = {
 
 JobsListingPage.defaultProps = {
   jobs: [],
-  teasers: []
+  teasers: [],
 }
 
 export default JobsListingPage

@@ -41,13 +41,13 @@ class TestimonialsBlock extends React.Component {
 TestimonialsBlock.propTypes = {
   testimonials: PropTypes.array.isRequired,
   className: PropTypes.string,
-  sectionTitle: PropTypes.string.isRequired
+  sectionTitle: PropTypes.string.isRequired,
 }
 
 TestimonialsBlock.defaultProps = {
   testimonials: [],
   className: '',
-  sectionTitle: 'Clients'
+  sectionTitle: 'Clients',
 }
 
 export default TestimonialsBlock

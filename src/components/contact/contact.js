@@ -9,10 +9,7 @@ import styles from './contact.module.scss'
 const Contact = ({ title, email, number, className, avatar }) => (
   <div className={[styles.contactBlock, className].join(' ')}>
     <div className={styles.contactBlockContent}>
-      <Avatar
-        containerClassName={styles.contactBlockImage}
-        src={avatar}
-      />
+      <Avatar containerClassName={styles.contactBlockImage} src={avatar} />
 
       <div className={styles.contactBlockDetails}>
         <h3 className={styles.contactBlockTitle}>{title}</h3>
@@ -32,7 +29,7 @@ Contact.propTypes = {
   email: PropTypes.string,
   number: PropTypes.string,
   className: PropTypes.string,
-  avatar: PropTypes.string
+  avatar: PropTypes.string,
 }
 
 Contact.defaultProps = {
@@ -40,7 +37,7 @@ Contact.defaultProps = {
   email: '',
   number: '',
   className: '',
-  avatar: require('../../images/will.jpg')
+  avatar: require('../../images/will.jpg'),
 }
 
 export default Contact

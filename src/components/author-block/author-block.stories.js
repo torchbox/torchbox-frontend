@@ -5,7 +5,8 @@ import AuthorBlock from './author-block'
 
 storiesOf('Components/Shared Components', module).add('Author Block', () => {
   return (
-    <div style={{
+    <div
+      style={{
         margin: 50,
         padding: 20,
         background: 'white',
@@ -16,7 +17,7 @@ storiesOf('Components/Shared Components', module).add('Author Block', () => {
         author={{
           avatar: require('../../images/will.jpg'),
           name: 'Olly Willans',
-          role: 'Creative Director'
+          role: 'Creative Director',
         }}
         datePublished={Date.now()}
         readTime={7}
@@ -24,7 +25,8 @@ storiesOf('Components/Shared Components', module).add('Author Block', () => {
           { label: 'Digital Products', href: '#' },
           { label: 'Design Sprints', href: '#' },
           { label: 'Wagtail', href: '#' },
-        ]} />
+        ]}
+      />
     </div>
   )
 })

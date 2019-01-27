@@ -10,30 +10,37 @@ import Blogs from '../../components/blogs-listing-block'
 import TeaserBlock from '../../components/teaser-block/teaser-block'
 import Footer from '../../components/footer/footer'
 
-const BlogPostPage = ({ title, author, datePublished, readTime, tags, streamfield, blogs, teasers }) => (
+const BlogPostPage = ({
+  title,
+  author,
+  datePublished,
+  readTime,
+  tags,
+  streamfield,
+  blogs,
+  teasers,
+}) => (
   <div className={styles.page}>
-    <TitleBlock
-      className={styles.pageTitle}
-      title={title}/>
+    <TitleBlock className={styles.pageTitle} title={title} />
     <AuthorBlock
       className={styles.pageAuthor}
       author={author}
       datePublished={datePublished}
       readTime={readTime}
-      tags={tags} />
+      tags={tags}
+    />
     <StreamfieldBlock
       className={styles.pageStreamfield}
-      streamfield={streamfield}/>
-    <AuthorBlock
-      className={styles.pageAuthor}
-      author={author}
-      tags={tags}/>
+      streamfield={streamfield}
+    />
+    <AuthorBlock className={styles.pageAuthor} author={author} tags={tags} />
     <Blogs
       className={styles.pageShowcase}
-      sectionTitle='More of our thinking'
+      sectionTitle="More of our thinking"
       blogs={blogs}
       showFeatured={false}
-      listingUrl={'#'}/>
+      listingUrl={'#'}
+    />
     <Contact className={styles.pageContact} />
     <TeaserBlock teasers={teasers} />
     <Footer />
@@ -55,7 +62,7 @@ BlogPostPage.defaultProps = {
   tags: [],
   streamfield: [],
   caseStudies: [],
-  teasers: []
+  teasers: [],
 }
 
 export default BlogPostPage

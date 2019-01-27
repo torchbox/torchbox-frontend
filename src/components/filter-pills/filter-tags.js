@@ -8,11 +8,13 @@ const FilterTags = ({ tags, onChange, activeTag, className }) => (
   <div className={[styles.filter, className].join(' ')}>
     {tags.map((tag, index) => (
       <Tag
-        className={activeTag === index ? styles.filterTagActive : styles.filterTag}
+        className={
+          activeTag === index ? styles.filterTagActive : styles.filterTag
+        }
         onClick={() => onChange(tag, index)}
         href={tag.href || '#'}
-        label={tag.label || tag}>
-      </Tag>
+        label={tag.label || tag}
+      />
     ))}
   </div>
 )

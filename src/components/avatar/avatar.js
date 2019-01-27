@@ -5,10 +5,7 @@ import styles from './avatar.module.scss'
 
 const Avatar = ({ src, className, containerClassName }) => (
   <div className={[styles.avatar, containerClassName].join(' ')}>
-    <img
-      className={[styles.avatarImage, className].join(' ')}
-      src={src}
-    />
+    <img className={[styles.avatarImage, className].join(' ')} src={src} />
   </div>
 )
 

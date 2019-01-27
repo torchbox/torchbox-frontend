@@ -8,7 +8,6 @@ const store = new Store({
   activeOption: 0,
 })
 
-
 storiesOf('Components/Shared Components', module).add('Filter Tags', () => {
   return (
     <div
@@ -25,7 +24,8 @@ storiesOf('Components/Shared Components', module).add('Filter Tags', () => {
           activeOption={store.state.activeOption}
           onChange={(option, index) => {
             store.set({ activeOption: index })
-          }}/>
+          }}
+        />
       </State>
     </div>
   )

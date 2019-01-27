@@ -5,14 +5,15 @@ import { Link } from 'gatsby'
 import styles from './services-block.module.scss'
 import Avatar from '../avatar/avatar'
 
-const ServicesBlock = ({ services, className, sectionTitle, greetingImage }) => {
+const ServicesBlock = ({
+  services,
+  className,
+  sectionTitle,
+  greetingImage,
+}) => {
   return (
     <div className={[styles.block, className].join(' ')}>
-
-      <img
-        className={styles.blockImage}
-        src={greetingImage}
-      />
+      <img className={styles.blockImage} src={greetingImage} />
 
       <div className={styles.blockContent}>
         <span className={styles.pageSectionTitle}>{sectionTitle}</span>
@@ -25,7 +26,6 @@ const ServicesBlock = ({ services, className, sectionTitle, greetingImage }) => 
           ))}
         </div>
       </div>
-
     </div>
   )
 }
@@ -33,14 +33,14 @@ const ServicesBlock = ({ services, className, sectionTitle, greetingImage }) => 
 ServicesBlock.propTypes = {
   services: PropTypes.array,
   className: PropTypes.string,
-  listingUrl: PropTypes.string.isRequired
+  listingUrl: PropTypes.string.isRequired,
 }
 
 ServicesBlock.defaultProps = {
   className: '',
   services: [],
   sectionTitle: 'Wagtail design, build + support',
-  greetingImage: require('../../images/toolkit.svg')
+  greetingImage: require('../../images/toolkit.svg'),
 }
 
 export default ServicesBlock

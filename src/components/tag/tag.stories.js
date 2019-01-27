@@ -2,7 +2,6 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 
-
 import Tag from './tag'
 
 storiesOf('Components/Shared Components', module).add('Tag', () => {
@@ -15,7 +14,7 @@ storiesOf('Components/Shared Components', module).add('Tag', () => {
         borderRadius: 5,
       }}
     >
-      <Tag label='Digital Products' onClick={action('Tag Pressed!')} />
+      <Tag label="Digital Products" onClick={action('Tag Pressed!')} />
     </divs>
   )
 })

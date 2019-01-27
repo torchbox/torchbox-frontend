@@ -5,37 +5,46 @@ import { State, Store } from '@sambego/storybook-state'
 import TitleBlock from './title-block'
 import { parseToHtml } from '../../utils/torchup'
 
-
 const store = new Store({
   title: 'Meet the team, your swell digital pals.',
 })
 
-storiesOf('Components/Shared Components', module).add('Title Block (+ Test TorchUp)', () => {
-  const { title } = store.state
+storiesOf('Components/Shared Components', module).add(
+  'Title Block (+ Test TorchUp)',
+  () => {
+    const { title } = store.state
 
-  const updateTitle = event => {
-    store.set({ title: event.target.value })
-  }
+    const updateTitle = event => {
+      store.set({ title: event.target.value })
+    }
 
-  return (
-    <State store={store}>
-      <TitleBlock title={title}/>
-      <div style={helper.container}>
-        <label style={helper.label}>Type Here:</label>
-        <input style={helper.input} defaultValue={title} onChange={updateTitle}/>
-      </div>
-      <div style={helper.codeContainer}>
-        <div style={helper.code}>
-          // TorchUp Syntax:<br/>
-          *foo* => foo (in bold)<br/>
-          {'{ foo }'} => foo (in heavy-bold/black)<br/>
-          [ foo ] => foo (with text in accent color)<br/>
-          \ => Escape next special character
+    return (
+      <State store={store}>
+        <TitleBlock title={title} />
+        <div style={helper.container}>
+          <label style={helper.label}>Type Here:</label>
+          <input
+            style={helper.input}
+            defaultValue={title}
+            onChange={updateTitle}
+          />
         </div>
-      </div>
-    </State>
-  )
-})
+        <div style={helper.codeContainer}>
+          <div style={helper.code}>
+            // TorchUp Syntax:
+            <br />
+            *foo* => foo (in bold)
+            <br />
+            {'{ foo }'} => foo (in heavy-bold/black)
+            <br />
+            [ foo ] => foo (with text in accent color)
+            <br />\ => Escape next special character
+          </div>
+        </div>
+      </State>
+    )
+  }
+)
 
 const helper = {
   container: {
@@ -44,7 +53,7 @@ const helper = {
     alignItems: 'center',
     padding: 40,
     paddingBottom: 20,
-    backgroundColor: '#3BECCD'
+    backgroundColor: '#3BECCD',
   },
 
   label: {
@@ -72,7 +81,6 @@ const helper = {
     padding: 40,
     paddingBottom: 20,
     backgroundColor: '#fd5765',
-
   },
 
   code: {
@@ -80,7 +88,6 @@ const helper = {
     color: 'rgba(255, 255, 255, 0.9)',
     borderRadius: 3,
     padding: 10,
-    width: '100%'
-  }
-
+    width: '100%',
+  },
 }

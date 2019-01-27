@@ -10,7 +10,6 @@ import CaseStudiesBlock from '../../components/case-studies-block/case-studies-b
 import TeaserBlock from '../../components/teaser-block/teaser-block'
 import Footer from '../../components/footer/footer'
 
-
 export class CaseStudyListingPage extends React.Component {
   state = { selectedTag: 0 }
 
@@ -18,10 +17,13 @@ export class CaseStudyListingPage extends React.Component {
     const { title, streamfield, caseStudies, teasers } = this.props
     const { selectedTag } = this.state
 
-    const tags = [{ label: 'All', href: '#' }, ...getUniqueTagsFromPosts(caseStudies).map(tag => ({
-      label: tag.name,
-      href: '#',
-    }))]
+    const tags = [
+      { label: 'All', href: '#' },
+      ...getUniqueTagsFromPosts(caseStudies).map(tag => ({
+        label: tag.name,
+        href: '#',
+      })),
+    ]
 
     const listing = this.props.caseStudies
       .map(caseStudy => {
@@ -30,28 +32,31 @@ export class CaseStudyListingPage extends React.Component {
           tags: caseStudy.tags,
           title: caseStudy.title,
           description: caseStudy.listingSummary,
-          image: 'http://playground.torchboxapps.com/tbx-rebrand/assets/images/cs3.jpg',
+          image:
+            'http://playground.torchboxapps.com/tbx-rebrand/assets/images/cs3.jpg',
         }
       })
-      .filter(caseStudy => selectedTag === 0
-        ? true
-        : postContainsTag(caseStudy.tags, tags[selectedTag].label))
+      .filter(caseStudy =>
+        selectedTag === 0
+          ? true
+          : postContainsTag(caseStudy.tags, tags[selectedTag].label)
+      )
 
     return (
       <div className={styles.page}>
-        <TitleBlock
-          className={styles.pageTitle}
-          title={title}/>
+        <TitleBlock className={styles.pageTitle} title={title} />
         <FilterTags
           className={styles.pageFilterTags}
           tags={tags}
           activeTag={this.state.selectedTag}
-          onChange={(tag, index) => this.setState({ selectedTag: index })}/>
+          onChange={(tag, index) => this.setState({ selectedTag: index })}
+        />
         <CaseStudiesBlock
           caseStudies={listing}
           sectionTitle={null}
-          listingUrl={null}/>
-        <Contact className={styles.pageContact}/>
+          listingUrl={null}
+        />
+        <Contact className={styles.pageContact} />
         <TeaserBlock teasers={teasers} />
         <Footer />
       </div>
@@ -66,14 +71,14 @@ CaseStudyListingPage.propTypes = {
   readTime: PropTypes.number,
   tags: PropTypes.array,
   caseStudies: PropTypes.array,
-  teasers: []
+  teasers: [],
 }
 
 CaseStudyListingPage.defaultProps = {
   tags: [],
   streamfield: [],
   caseStudies: [],
-  teasers: []
+  teasers: [],
 }
 
 export default CaseStudyListingPage

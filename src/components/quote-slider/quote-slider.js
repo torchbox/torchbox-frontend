@@ -18,39 +18,40 @@ class QuoteSlider extends React.Component {
         />
 
         <div className={styles.quoteSlider}>
-
           <div className={styles.quoteSlides}>
-          {quotes.map((quote, index) => (
-            <blockquote className={currentIndex == index
-              ? styles.quoteSlideActive
-              : styles.quoteSlide}>
-              <p className={styles.quoteSlideQuote}>
-                {quote.quote}
-              </p>
-              <cite className={styles.quoteSlideCite}>
-                <span className={styles.quoteSlideCiteAuthor}>
-                  {quote.person}
-                </span>
-                {quote.role}
-              </cite>
-            </blockquote>
-          ))}
+            {quotes.map((quote, index) => (
+              <blockquote
+                className={
+                  currentIndex == index
+                    ? styles.quoteSlideActive
+                    : styles.quoteSlide
+                }
+              >
+                <p className={styles.quoteSlideQuote}>{quote.quote}</p>
+                <cite className={styles.quoteSlideCite}>
+                  <span className={styles.quoteSlideCiteAuthor}>
+                    {quote.person}
+                  </span>
+                  {quote.role}
+                </cite>
+              </blockquote>
+            ))}
           </div>
 
           {quotes.length > 1 ? (
-              <ul className={styles.quoteSliderBullets}>
-                {quotes.map((quote, index) => (
-                  <li
-                    onClick={() => this.changeSlide(index)}
-                    className={
-                      index == currentIndex
-                        ? styles.quoteSliderBulletActive
-                        : styles.quoteSliderBullet
-                    }
-                  />
-                ))}
-              </ul>
-            ) : null}
+            <ul className={styles.quoteSliderBullets}>
+              {quotes.map((quote, index) => (
+                <li
+                  onClick={() => this.changeSlide(index)}
+                  className={
+                    index == currentIndex
+                      ? styles.quoteSliderBulletActive
+                      : styles.quoteSliderBullet
+                  }
+                />
+              ))}
+            </ul>
+          ) : null}
         </div>
       </div>
     )
@@ -60,7 +61,6 @@ class QuoteSlider extends React.Component {
     this.setState({ currentIndex: index })
   }
 }
-
 
 QuoteSlider.propTypes = {
   quotes: PropTypes.array,

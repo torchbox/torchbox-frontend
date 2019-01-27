@@ -10,28 +10,34 @@ import Contact from '../../components/contact-detailed'
 import TeaserBlock from '../../components/teaser-block/teaser-block'
 import Footer from '../../components/footer/footer'
 
-const CaseStudyPage = ({ title, author, tags, readTime, streamfield, caseStudies, teasers }) => (
+const CaseStudyPage = ({
+  title,
+  author,
+  tags,
+  readTime,
+  streamfield,
+  caseStudies,
+  teasers,
+}) => (
   <div className={styles.page}>
-    <TitleBlock
-      className={styles.pageTitle}
-      title={title}/>
+    <TitleBlock className={styles.pageTitle} title={title} />
     <AuthorBlock
       className={styles.pageAuthor}
       author={author}
       tags={tags}
-      readTime={readTime} />
+      readTime={readTime}
+    />
     <StreamfieldBlock
       className={styles.pageStreamfield}
-      streamfield={streamfield}/>
-    <AuthorBlock
-      className={styles.pageAuthor}
-      author={author}
-      tags={tags}/>
+      streamfield={streamfield}
+    />
+    <AuthorBlock className={styles.pageAuthor} author={author} tags={tags} />
     <CaseStudiesBlock
       className={styles.pageShowcase}
-      sectionTitle='More of our work'
+      sectionTitle="More of our work"
       caseStudies={caseStudies}
-      listingUrl={'#'}/>
+      listingUrl={'#'}
+    />
     <Contact className={styles.pageContact} />
     <TeaserBlock teasers={teasers} />
     <Footer />
@@ -53,7 +59,7 @@ CaseStudyPage.defaultProps = {
   streamfield: [],
   caseStudies: [],
   className: '',
-  teasers: []
+  teasers: [],
 }
 
 export default CaseStudyPage

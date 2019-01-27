@@ -4,7 +4,7 @@ export const parseToHtml = text => {
   let formattedText = [],
     isCurrentlyBold = false
 
-  for(let i = 0; i < text.length; i++) {
+  for (let i = 0; i < text.length; i++) {
     const char = text[i]
 
     // TorchUp Syntax:
@@ -36,9 +36,9 @@ export const parseToHtml = text => {
 
       // Escape and insert 'special' char
       case '\\':
-        i++;
+        i++
         formattedText.push(text[i])
-        break;
+        break
 
       default:
         formattedText.push(char)
@@ -52,13 +52,13 @@ export const parseToHtml = text => {
 export const renderTorchUp = text => {
   console.log({
     dangerouslySetInnerHTML: {
-      __html: parseToHtml(text)
-    }
+      __html: parseToHtml(text),
+    },
   })
   return {
     dangerouslySetInnerHTML: {
-      __html: parseToHtml(text)
-    }
+      __html: parseToHtml(text),
+    },
   }
 }
 

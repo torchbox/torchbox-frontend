@@ -1,9 +1,9 @@
 export const safeGet = (obj, key, defaultValue) => {
   try {
-    return key.split(".").reduce((o, x) => {
-      return (typeof o == "undefined" || o === null) ? defaultValue : o[x]
+    return key.split('.').reduce((o, x) => {
+      return typeof o == 'undefined' || o === null ? defaultValue : o[x]
     }, obj)
-  } catch(e) {
+  } catch (e) {
     return defaultValue
   }
 }

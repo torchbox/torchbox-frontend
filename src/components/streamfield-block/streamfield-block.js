@@ -11,20 +11,23 @@ const StreamfieldBlock = ({ streamfield, className }) => {
     <div className={[styles.streamfield, className].join(' ')}>
       {streamfield.map(block => {
         switch (block.type) {
-
           case 'intro':
-            return <div
-              className={styles.streamfieldIntro}
-              dangerouslySetInnerHTML={{ __html: block.value }}
-            />
+            return (
+              <div
+                className={styles.streamfieldIntro}
+                dangerouslySetInnerHTML={{ __html: block.value }}
+              />
+            )
 
           case 'aligned_image':
-            return <BustOut
-              src={block.value.src}
-              align={block.value.alignment}
-              title={'TODO: Ask about title'} // TODO
-              caption={block.value.caption}
-            />
+            return (
+              <BustOut
+                src={block.value.src}
+                align={block.value.alignment}
+                title={'TODO: Ask about title'} // TODO
+                caption={block.value.caption}
+              />
+            )
 
           case 'h1':
             return <h1 className={styles.streamfieldHeading}>{block.value}</h1>
@@ -42,26 +45,42 @@ const StreamfieldBlock = ({ streamfield, className }) => {
             return <h5 className={styles.streamfieldHeading}>{block.value}</h5>
 
           case 'embed':
-            return <iframe className={styles.streamfieldEmbed} src={block.value.url} />
+            return (
+              <iframe
+                className={styles.streamfieldEmbed}
+                src={block.value.url}
+              />
+            )
 
           case 'pullquote':
-            return <QuoteSlider
-              className={styles.streamfieldQuote}
-              quotes={[{
-                person: block.value.attribution,
-                role: '',
-                quote: block.value.quote
-              }]} />
+            return (
+              <QuoteSlider
+                className={styles.streamfieldQuote}
+                quotes={[
+                  {
+                    person: block.value.attribution,
+                    role: '',
+                    quote: block.value.quote,
+                  },
+                ]}
+              />
+            )
 
           case 'paragraph':
-            return <p
-              className={styles.streamfieldParagraph}
-              dangerouslySetInnerHTML={{ __html: block.value }}
-            />
+            return (
+              <p
+                className={styles.streamfieldParagraph}
+                dangerouslySetInnerHTML={{ __html: block.value }}
+              />
+            )
 
           default:
-            return <div className={`block-${block.type}`} dangerouslySetInnerHTML={{ __html: block.value }}/>
-
+            return (
+              <div
+                className={`block-${block.type}`}
+                dangerouslySetInnerHTML={{ __html: block.value }}
+              />
+            )
         }
       })}
     </div>

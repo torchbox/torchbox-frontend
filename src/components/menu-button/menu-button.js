@@ -6,7 +6,11 @@ import styles from './menu-button.module.scss'
 const MenuButton = ({ onClick, isOpen, className }) => (
   <a
     onClick={onClick}
-    className={[styles.menuButton, className, isOpen ? styles.twist : null].join(' ')}
+    className={[
+      styles.menuButton,
+      className,
+      isOpen ? styles.twist : null,
+    ].join(' ')}
   >
     <span />
     <span />

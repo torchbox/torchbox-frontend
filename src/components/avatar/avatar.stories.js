@@ -5,7 +5,8 @@ import Avatar from './avatar'
 
 storiesOf('Components/Shared Components', module).add('Avatar', () => {
   return (
-    <div style={{
+    <div
+      style={{
         margin: 50,
         padding: 20,
         background: 'white',

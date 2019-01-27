@@ -7,16 +7,67 @@ storiesOf('Components/Listing Pages', module).add('Team listing block', () => {
   return (
     <TeamListingBlock
       team={[
-        { name: 'Will Heinemann', role: 'Head of New Business', avatar: require('../../images/will.jpg'), href: '#'},
-        { name: 'Will Heinemann', role: 'Head of New Business', avatar: require('../../images/will.jpg'), href: '#'},
-        { name: 'Will Heinemann', role: 'Head of New Business', avatar: require('../../images/will.jpg'), href: '#'},
-        { name: 'Will Heinemann', role: 'Head of New Business', avatar: require('../../images/will.jpg'), href: '#'},
-        { name: 'Will Heinemann', role: 'Head of New Business', avatar: require('../../images/will.jpg'), href: '#'},
-        { name: 'Will Heinemann', role: 'Head of New Business', avatar: require('../../images/will.jpg'), href: '#'},
-        { name: 'Will Heinemann', role: 'Head of New Business', avatar: require('../../images/will.jpg'), href: '#'},
-        { name: 'Will Heinemann', role: 'Head of New Business', avatar: require('../../images/will.jpg'), href: '#'},
-        { name: 'Will Heinemann', role: 'Head of New Business', avatar: require('../../images/will.jpg'), href: '#'},
-        { name: 'Will Heinemann', role: 'Head of New Business', avatar: require('../../images/will.jpg'), href: '#'},
-    ]} />
+        {
+          name: 'Will Heinemann',
+          role: 'Head of New Business',
+          avatar: require('../../images/will.jpg'),
+          href: '#',
+        },
+        {
+          name: 'Will Heinemann',
+          role: 'Head of New Business',
+          avatar: require('../../images/will.jpg'),
+          href: '#',
+        },
+        {
+          name: 'Will Heinemann',
+          role: 'Head of New Business',
+          avatar: require('../../images/will.jpg'),
+          href: '#',
+        },
+        {
+          name: 'Will Heinemann',
+          role: 'Head of New Business',
+          avatar: require('../../images/will.jpg'),
+          href: '#',
+        },
+        {
+          name: 'Will Heinemann',
+          role: 'Head of New Business',
+          avatar: require('../../images/will.jpg'),
+          href: '#',
+        },
+        {
+          name: 'Will Heinemann',
+          role: 'Head of New Business',
+          avatar: require('../../images/will.jpg'),
+          href: '#',
+        },
+        {
+          name: 'Will Heinemann',
+          role: 'Head of New Business',
+          avatar: require('../../images/will.jpg'),
+          href: '#',
+        },
+        {
+          name: 'Will Heinemann',
+          role: 'Head of New Business',
+          avatar: require('../../images/will.jpg'),
+          href: '#',
+        },
+        {
+          name: 'Will Heinemann',
+          role: 'Head of New Business',
+          avatar: require('../../images/will.jpg'),
+          href: '#',
+        },
+        {
+          name: 'Will Heinemann',
+          role: 'Head of New Business',
+          avatar: require('../../images/will.jpg'),
+          href: '#',
+        },
+      ]}
+    />
   )
 })

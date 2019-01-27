@@ -4,9 +4,17 @@ import { Link } from 'gatsby'
 
 import styles from './case-studies-block.module.scss'
 
-const CaseStudiesBlock = ({ title, caseStudies, className, sectionTitle, listingUrl }) => (
+const CaseStudiesBlock = ({
+  title,
+  caseStudies,
+  className,
+  sectionTitle,
+  listingUrl,
+}) => (
   <div className={[styles.block, className].join(' ')}>
-    {sectionTitle ? <span className={styles.pageSectionTitle}>{sectionTitle}</span> : null }
+    {sectionTitle ? (
+      <span className={styles.pageSectionTitle}>{sectionTitle}</span>
+    ) : null}
     <div className={styles.blockList}>
       {caseStudies.map(caseStudy => (
         <Link className={styles.caseStudy}>
@@ -18,33 +26,37 @@ const CaseStudiesBlock = ({ title, caseStudies, className, sectionTitle, listing
                 {caseStudy.description}
               </p>
             </div>
-            <img src={require('../../images/icons/cluster.png')} alt="" className={styles.caseStudyClusterIcon}/>
+            <img
+              src={require('../../images/icons/cluster.png')}
+              alt=""
+              className={styles.caseStudyClusterIcon}
+            />
           </div>
 
           <div className={styles.caseStudyImage}>
-            <img src={caseStudy.image}/>
+            <img src={caseStudy.image} />
           </div>
         </Link>
       ))}
     </div>
-    { listingUrl ? (
+    {listingUrl ? (
       <div className={styles.seeMore}>
         <Link to={listingUrl}>See more case studies</Link>
       </div>
-    ) : null }
+    ) : null}
   </div>
 )
 
 CaseStudiesBlock.propTypes = {
   caseStudies: PropTypes.array.isRequired,
   className: PropTypes.string,
-  listingUrl: PropTypes.string.isRequired
+  listingUrl: PropTypes.string.isRequired,
 }
 
 CaseStudiesBlock.defaultProps = {
   className: '',
   caseStudies: [],
-  sectionTitle: 'Work'
+  sectionTitle: 'Work',
 }
 
 export default CaseStudiesBlock

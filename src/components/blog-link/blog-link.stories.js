@@ -5,7 +5,8 @@ import BlogLink from './blog-link'
 
 storiesOf('Components/Shared Components', module).add('BlogLink', () => {
   return (
-    <div style={{
+    <div
+      style={{
         margin: 50,
         padding: 20,
         background: 'white',

@@ -8,12 +8,15 @@ import styles from './help-block.module.scss'
 import Contact from '../contact/contact'
 import { renderTorchUp } from '../../utils/torchup'
 
-const HelpBlock = ({ title, links, sectionTitle, greetingImage, contactDetails }) => (
+const HelpBlock = ({
+  title,
+  links,
+  sectionTitle,
+  greetingImage,
+  contactDetails,
+}) => (
   <div className={styles.blockContainer}>
-    <img
-      className={styles.blockImage}
-      src={greetingImage}
-    />
+    <img className={styles.blockImage} src={greetingImage} />
 
     <section className={styles.blockContent}>
       <span className={styles.pageSectionTitle}>{sectionTitle}</span>
@@ -38,14 +41,14 @@ const HelpBlock = ({ title, links, sectionTitle, greetingImage, contactDetails }
       ) : null}
     </section>
 
-    { contactDetails ? (
+    {contactDetails ? (
       <Contact
         className={styles.blockContact}
         title={contactDetails.title}
         email={contactDetails.email}
         number={contactDetails.phone}
         avatar={contactDetails.avatar}
-        />
+      />
     ) : null}
 
     <div className={styles.blockBorder} />
@@ -57,14 +60,14 @@ HelpBlock.propTypes = {
   links: PropTypes.array,
   sectionTitle: PropTypes.string.isRequired,
   greetingImage: PropTypes.string,
-  contactDetails: PropTypes.object
+  contactDetails: PropTypes.object,
 }
 
 HelpBlock.defaultProps = {
   title: 'We can help you…',
   links: [],
   sectionTitle: 'Services',
-  greetingImage: require('../../images/help-character.svg')
+  greetingImage: require('../../images/help-character.svg'),
 }
 
 export default HelpBlock

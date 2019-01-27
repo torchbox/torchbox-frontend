@@ -10,7 +10,7 @@ const Hero = ({ title, description, links, collapsed }) => (
     className={collapsed ? styles.collapsedHeroContainer : styles.heroContainer}
   >
     <section className={styles.heroContent}>
-      <h1 className={styles.heroTitle} {...renderTorchUp(title)}/>
+      <h1 className={styles.heroTitle} {...renderTorchUp(title)} />
       <p className={styles.heroDesc}>{description}</p>
       {links != null ? (
         <div className={styles.heroLinksContainer}>

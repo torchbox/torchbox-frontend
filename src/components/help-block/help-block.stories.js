@@ -24,9 +24,9 @@ storiesOf('Components/Landing Page', module).add('Help block', () => {
         },
       ]}
       contactDetails={{
-        title: "Get in touch about your project",
-        email: "will@torchbox.com",
-        number: "+44 (0) 7545 468483",
+        title: 'Get in touch about your project',
+        email: 'will@torchbox.com',
+        number: '+44 (0) 7545 468483',
       }}
     />
   )

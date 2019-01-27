@@ -9,13 +9,24 @@ import Tag from '../tag/tag'
 const AuthorBlock = ({ author, datePublished, tags, readTime, className }) => (
   <div className={[styles.authorBlock, className].join(' ')}>
     <div className={styles.authorBlockContainer}>
-      <Avatar src={author.avatar} containerClassName={styles.authorBlockImage}/>
+      <Avatar
+        src={author.avatar}
+        containerClassName={styles.authorBlockImage}
+      />
       <div className={styles.authorBlockDetails}>
         <span className={styles.authorBlockName}>{author.name}</span>
         <p className={styles.authorBlockMeta}>
           <span className={styles.authorBlockMetaRole}>{author.role}</span>
-          {datePublished ? <span className={styles.authorBlockMetaDate}>{dayjs(datePublished).format(`DD MMM 'YY`)}</span> : null }
-          {readTime ? <span className={styles.authorBlockMetaReadTime}>{readTime} min read</span> : null }
+          {datePublished ? (
+            <span className={styles.authorBlockMetaDate}>
+              {dayjs(datePublished).format(`DD MMM 'YY`)}
+            </span>
+          ) : null}
+          {readTime ? (
+            <span className={styles.authorBlockMetaReadTime}>
+              {readTime} min read
+            </span>
+          ) : null}
         </p>
         {tags.length ? (
           <div className={styles.authorBlockTags}>
@@ -23,7 +34,7 @@ const AuthorBlock = ({ author, datePublished, tags, readTime, className }) => (
               <Tag label={tag.label} href={tag.href} />
             ))}
           </div>
-        ) : null }
+        ) : null}
       </div>
     </div>
   </div>

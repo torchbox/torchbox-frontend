@@ -18,7 +18,7 @@ ParentPageLink.propTypes = {
 
 ParentPageLink.defaultProps = {
   className: '',
-  href: '#'
+  href: '#',
 }
 
 export default ParentPageLink

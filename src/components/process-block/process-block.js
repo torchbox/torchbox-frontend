@@ -12,10 +12,17 @@ const ProcessBlock = ({ title, processes, className, sectionTitle }) => (
       <h1 className={styles.processTitle} {...renderTorchUp(title)} />
 
       <div className={styles.processImageContainer}>
-        <img className={styles.processDesktopImage} src={require('../../images/processes-desktop.png')} alt=""/>
-        <img className={styles.processMobileImage} src={require('../../images/processes-mobile.png')} alt=""/>
+        <img
+          className={styles.processDesktopImage}
+          src={require('../../images/processes-desktop.png')}
+          alt=""
+        />
+        <img
+          className={styles.processMobileImage}
+          src={require('../../images/processes-mobile.png')}
+          alt=""
+        />
       </div>
-
     </div>
   </div>
 )
@@ -28,7 +35,7 @@ ProcessBlock.propTypes = {
 
 ProcessBlock.defaultProps = {
   className: '',
-  sectionTitle: 'Process'
+  sectionTitle: 'Process',
 }
 
 export default ProcessBlock

@@ -12,7 +12,6 @@ import BlogLink from '../../components/blog-link/blog-link'
 import TeaserBlock from '../../components/teaser-block/teaser-block'
 import Footer from '../../components/footer/footer'
 
-
 export class BlogListingPage extends React.Component {
   state = { selectedTag: 0, currentLimit: 10 }
 
@@ -20,10 +19,13 @@ export class BlogListingPage extends React.Component {
     const { title, streamfield, blogs, teasers } = this.props
     const { selectedTag, currentLimit } = this.state
 
-    const tags = [{ label: 'All', href: '#' }, ...getUniqueTagsFromPosts(blogs).map(tag => ({
-      label: tag.name,
-      href: '#'
-    }))]
+    const tags = [
+      { label: 'All', href: '#' },
+      ...getUniqueTagsFromPosts(blogs).map(tag => ({
+        label: tag.name,
+        href: '#',
+      })),
+    ]
 
     const listing = this.props.blogs
       .map(blog => {
@@ -36,23 +38,25 @@ export class BlogListingPage extends React.Component {
           authorAvatar: safeGet(blog, 'authors.0.personPage.image.src', ''),
         }
       })
-      .filter(blog => selectedTag === 0
-        ? true
-        : postContainsTag(blog.tags, tags[selectedTag].label))
+      .filter(blog =>
+        selectedTag === 0
+          ? true
+          : postContainsTag(blog.tags, tags[selectedTag].label)
+      )
 
     return (
       <div className={styles.page}>
-        <TitleBlock
-          className={styles.pageTitle}
-          title={title}/>
+        <TitleBlock className={styles.pageTitle} title={title} />
         <FilterTags
           className={styles.pageFilterTags}
           tags={tags}
           activeTag={this.state.selectedTag}
-          onChange={(tag, index) => this.setState({ selectedTag: index })}/>
+          onChange={(tag, index) => this.setState({ selectedTag: index })}
+        />
         <StreamfieldBlock
           className={styles.pageStreamfield}
-          streamfield={streamfield}/>
+          streamfield={streamfield}
+        />
 
         <div className={styles.pageBlogListing}>
           {listing.slice(0, currentLimit).map(blog => (
@@ -63,7 +67,8 @@ export class BlogListingPage extends React.Component {
               datePublished={blog.datePublished}
               authorAvatar={blog.authorAvatar}
               authorName={blog.authorName}
-              authorRole={blog.authorRole} />
+              authorRole={blog.authorRole}
+            />
           ))}
           {listing.length > currentLimit ? (
             <div className={styles.seeMore}>
@@ -72,14 +77,15 @@ export class BlogListingPage extends React.Component {
           ) : null}
         </div>
 
-        <Contact className={styles.pageContact}/>
+        <Contact className={styles.pageContact} />
         <TeaserBlock teasers={teasers} />
         <Footer />
       </div>
     )
   }
 
-  loadMoreBlogs = () => this.setState({ currentLimit: this.state.currentLimit + 10 })
+  loadMoreBlogs = () =>
+    this.setState({ currentLimit: this.state.currentLimit + 10 })
 }
 
 BlogListingPage.propTypes = {
@@ -97,7 +103,7 @@ BlogListingPage.defaultProps = {
   tags: [],
   streamfield: [],
   caseStudies: [],
-  teasers: []
+  teasers: [],
 }
 
 export default BlogListingPage
