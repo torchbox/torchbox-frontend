@@ -1,29 +1,55 @@
 @import '../../styles/app';
 
 .navLink {
+  display: block;
   height: 40px;
   position: relative;
-  display: block;
-  margin-right: 50px;
-  line-height: 20px;
 
-  color: $primary;
+  line-height: 20px;
   font-family: $mainFont;
   text-decoration: none;
   border-bottom: none;
   transition: all 0.2s ease;
 
+  color: white;
+  margin-bottom: 20px !important;
+  margin-right: 0;
+  padding: 30px 0;
+
+  @include for-tablet-landscape-up {
+    color: $primary;
+    margin-right: 58px;
+    margin-bottom: 0;
+    padding: 0;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: calc(100% - 0px);
+    height: 1px;
+    bottom: 0px;
+    left: 0;
+    background: rgba(white, 0.2);
+  }
+
   &:hover {
+    color: $green;
     @include for-tablet-landscape-up {
+      color: $primary;
       border-bottom: 5px solid $accent;
     }
   }
 
   &.active {
-    border-bottom: 5px solid $accent;
+    border-bottom: none;
+    @include for-tablet-landscape-up {
+      border-bottom: 5px solid $accent;
+    }
   }
 
   .title {
+    display: flex;
     position: relative;
     transition: all 0.2s ease;
     font-size: 24px;
@@ -36,15 +62,18 @@
   }
 
   .badge {
-    position: absolute;
-    top: -10px;
-    right: 25px;
+    position: relative;
+    top: -15px;
+    right: -15px;
+
     font-size: 14px;
     line-height: 25px;
     color: white;
     z-index: 5;
 
     @include for-tablet-landscape-up {
+      position: absolute;
+      top: -10px;
       right: -25px;
     }
 

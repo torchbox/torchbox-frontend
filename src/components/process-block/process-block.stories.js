@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 
 import ProcessBlock from './process-block'
 
-storiesOf('Landing Page', module).add('Process block', () => {
+storiesOf('Components/Landing Page', module).add('Process block', () => {
   return (
     <ProcessBlock
       title={`{Ten weeks to launch a [new] product}`}

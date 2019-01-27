@@ -1,0 +1,14 @@
+@import '../../styles/app.scss';
+
+.page {
+
+  &JobListing {
+    @include for-tablet-landscape-up {
+      padding-top: 100px;
+    }
+  }
+
+  &Contact {
+    margin-top: 60px;
+  }
+}

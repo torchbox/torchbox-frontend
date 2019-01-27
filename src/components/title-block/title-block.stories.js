@@ -10,7 +10,7 @@ const store = new Store({
   title: 'Meet the team, your swell digital pals.',
 })
 
-storiesOf('Shared Components', module).add('Title Block (+ Test TorchUp)', () => {
+storiesOf('Components/Shared Components', module).add('Title Block (+ Test TorchUp)', () => {
   const { title } = store.state
 
   const updateTitle = event => {

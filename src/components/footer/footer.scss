@@ -6,10 +6,7 @@
     padding: 100px 0 30px;
 
     &Content {
-        @include mobile-container;
-        @include for-tablet-landscape-up {
-            @include container;
-        }
+        @include container;
     }
 
     &Address {

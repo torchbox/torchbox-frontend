@@ -31,6 +31,8 @@ TeaserBlock.propTypes = {
 
 TeaserBlock.defaultProps = {
   className: '',
+  teasers: [],
+  title: 'More from Torchbox...'
 }
 
 export default TeaserBlock

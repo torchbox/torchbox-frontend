@@ -9,13 +9,10 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        @include mobile-container;
+        @include container;
         @include for-tablet-portrait-up {
             flex-direction: row;
             align-items: center;
-        }
-        @include for-tablet-landscape-up {
-            @include container;
         }
     }
 
@@ -23,7 +20,7 @@
         margin-bottom: 20px;
         @include for-tablet-portrait-up {
             margin-right: 20px !important;
-            margin-bottom: 0px;
+            margin-bottom: 0;
         }
     }
 
@@ -39,7 +36,7 @@
         color: $primary;
         font-size: 26px;
         line-height: 30px;
-        margin: 0 0 0px;
+        margin: 0 0 5px;
         font-weight: 800;
     }
 

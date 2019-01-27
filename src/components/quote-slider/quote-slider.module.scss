@@ -1,15 +1,8 @@
 @import '../../styles/app.scss';
 
-.testimonials {
-    background-color: white;
-    padding-bottom: 20px;
+.quote {
 
-    &Container {
-        @include container;
-        padding: 100px 0;
-    }
-
-    &Block {
+    &SliderBlock {
         display: grid;
         grid-template-columns: auto 1fr;
         grid-column-gap: 50px;
@@ -38,10 +31,10 @@
             transition: 0.2s all ease;
             display: flex;
             align-items: center;
-            margin-top: 40px;
         }
 
         &Bullet {
+            transition: 0.2s all ease;
             width: 9px;
             height: 15px;
             content: '';
@@ -51,7 +44,7 @@
             cursor: pointer;
 
             &Active {
-                @extend .testimonialsSliderBullet;
+                @extend .quoteSliderBullet;
                 width: 14px;
                 height: 20px;
                 background: $accent;
@@ -59,9 +52,24 @@
         }
     }
 
+    &Slides {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+
     &Slide {
+        transition: all 0.2s ease-in;
         display: flex;
         flex-direction: column;
+        grid-column: 1;
+        grid-row: 1;
+        opacity: 0;
+
+        &Active {
+            @extend .quoteSlide;
+            opacity: 1;
+        }
 
         &Quote {
             font-style: normal;
@@ -85,6 +93,7 @@
             color: $dark-grey;
             font-size: 12px;
             margin: 0 0 15px;
+            line-height: 1;
 
             &Author {
                 font-weight: bold;
@@ -103,43 +112,4 @@
             }
         }
     }
-
-    &Icons {
-
-        &List {
-            padding-bottom: 100px;
-
-            display: grid;
-            grid-template-columns: repeat(3, auto);
-            @include for-tablet-landscape-up {
-                grid-template-columns: repeat(4, auto);
-            }
-            @include for-desktop-up {
-                grid-template-columns: repeat(6, auto);
-            }
-        }
-
-        &Item {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 15px;
-
-            @include for-tablet-landscape-up {
-                padding: 30px;
-            }
-
-            @include for-desktop-up {
-                padding: 40px;
-            }
-
-            img {
-                width: 100%;
-                height: 100%;
-            }
-
-        }
-    }
-
 }
-

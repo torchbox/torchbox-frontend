@@ -1,9 +1,9 @@
 @import '../../styles/app.scss';
 
 .block {
+    position: relative;
     background: white;
     padding-top: 100px;
-    padding-bottom: 10px;
 
     &Title {
         margin-left: 8.33vw;
@@ -35,11 +35,8 @@
                 flex-direction: row-reverse;
 
                 @include for-tablet-landscape-up {
-                    .caseStudyMeta {
-                        padding-top: 120px;
-                        * {
-                            padding-left: 0px;
-                        }
+                    .caseStudyMetaContainer  {
+                        padding: 8.33vw 8.33vw 0 0;
                     }
                 }
 
@@ -61,7 +58,7 @@
         }
 
         &Meta {
-            @include mobile-container;
+            @include container();
 
             margin: 30px;
             padding: 15px;
@@ -72,8 +69,9 @@
                 margin: 0;
                 padding: 60px 0 0;
                 width: 50%;
-                * {
-                    padding-left: 8.33vw;
+
+                &Container {
+                    padding: 60px 0 0 8.33vw;
                 }
             }
 
@@ -97,10 +95,6 @@
             &Desc {
                 color: $dark-grey;
                 line-height: 1.5;
-            }
-
-            &::after {
-                //@include split-triangle;
             }
         }
 

@@ -1,0 +1,56 @@
+@import '../../styles/app.scss';
+
+.testimonials {
+    background-color: white;
+    padding-bottom: 20px;
+
+    &Container {
+        @include container;
+        padding: 100px 0;
+    }
+
+    &Block {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-column-gap: 50px;
+    }
+
+    &Icons {
+
+        &List {
+            padding-bottom: 100px;
+
+            display: grid;
+            grid-template-columns: repeat(3, auto);
+            @include for-tablet-landscape-up {
+                grid-template-columns: repeat(4, auto);
+            }
+            @include for-desktop-up {
+                grid-template-columns: repeat(6, auto);
+            }
+        }
+
+        &Item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+
+            @include for-tablet-landscape-up {
+                padding: 30px;
+            }
+
+            @include for-desktop-up {
+                padding: 40px;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+
+        }
+    }
+
+}
+

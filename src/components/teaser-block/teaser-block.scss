@@ -9,11 +9,8 @@
     }
 
     &Container {
+        @include container;
         margin-bottom: 2px;
-        @include mobile-container;
-        @include for-tablet-landscape-up {
-            @include container;
-        }
     }
 
     &Title {
@@ -46,9 +43,14 @@
 
         &Title {
             color: $blue;
-            font-size: 1.7em;
-            margin: 0;
             font-weight: 800;
+            font-size: 35px;
+            line-height: 40px;
+            @include for-tablet-landscape-up {
+                font-size: 45px;
+                line-height: 50px;
+            }
+            margin: 0;
 
             &::after {
                 position: absolute;
@@ -68,9 +70,9 @@
         }
 
         &Desc {
-            font-size: 0.9em;
+            font-size: 20px;
+            line-height: 30px;
             color: $dark-grey;
-            line-height: 1.3em;
             display: block;
             margin: 10px 0;
         }

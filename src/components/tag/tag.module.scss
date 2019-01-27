@@ -13,6 +13,10 @@
     font-weight: bold;
     cursor: pointer;
 
+    display: inline-flex;
+    height: 26px;
+    align-items: center;
+
     &:hover {
         border: 2px solid #fd5765;
         color: #fd5765;

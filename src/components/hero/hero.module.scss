@@ -7,122 +7,121 @@ $hero-link-color: var(--hero-link-color, $blue);
 
 .hero {
 
+  &Container {
+    width: 100vw;
+    background: $hero-background;
+
+    @include for-desktop-up {
+      width: 85.34vw;
+      padding-left: 14.66vw;
+    }
+
+  }
+
+  &Content {
+    @include container;
+    position: relative;
+    padding-top: 60px;
+    padding-bottom: 20px;
+    z-index: 2;
+  }
+
+  &Title {
+    color: $hero-title-color;
+    font-weight: 800;
+    font-size: 60px;
+    line-height: 70px;
+    margin-bottom: 20px;
+    @include for-tablet-landscape-up {
+      font-size: 80px;
+    }
+  }
+
+  &Desc {
+    color: $hero-title-color;
+    margin-bottom: 40px;
+    line-height: 30px;
+    @include for-tablet-landscape-up {
+      line-height: 42px;
+    }
+  }
+
+  &Links {
+
     &Container {
-        width: 100vw;
-        background: $hero-background;
-
-        @include for-desktop-up {
-            width: 85.34vw;
-            padding-left: 14.66vw;
-        }
-
+      width: 100%;
     }
 
-    &Content {
-        @include mobile-container;
+    &List {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      margin-left: 20px;
+
+      @include for-tablet-landscape-up {
+        flex-direction: row;
+        padding-top: 0px;
+        margin: 0;
+      }
+    }
+
+    &Item {
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding-right: 40px;
+      padding-bottom: 25px;
+      @include for-tablet-landscape-up {
+        padding-bottom: 0px;
+      }
+
+      a {
+        transition: all 0.2s ease;
+        color: $hero-link-color !important;
+        font-size: 19px;
+        font-family: $mainFont;
+        text-decoration: none;
+        border-bottom: 2px solid $hero-background;
+        margin-right: 10px;
+        margin-left: 10px;
+        &:hover {
+          border-bottom: 2px solid $accent;
+        }
         @include for-tablet-landscape-up {
-            @include container;
+          padding: 0;
         }
 
-        position: relative;
-        padding-top: 60px;
-        padding-bottom: 20px;
-        z-index: 2;
+        &::before {
+          content: '';
+          position: absolute;
+          margin-top: 2px;
+          right: 100%;
+          width: 12px;
+          height: 18px;
+          -webkit-mask: url("../../images/icons/chevron.svg") no-repeat center;
+          -webkit-mask-size: contain;
+          background-color: $accent;
+          @include for-tablet-landscape-up {
+            display: none;
+          }
+        }
+      }
     }
 
-    &Title {
-        color: $hero-title-color;
-        font-weight: 800;
-        font-size: 2.8em;
-        line-height: 1.2em;
-        margin-bottom: 20px;
-        @include for-tablet-landscape-up {
-            font-size: 3.5em;
-        }
-    }
-
-    &Desc {
-      color: $hero-title-color;
-      margin-bottom: 40px;
-    }
-
-    &Links {
-
-        &Container {
-            width: 100%;
-        }
-
-        &List {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            margin-left: 20px;
-
-            @include for-tablet-landscape-up {
-                flex-direction: row;
-                padding-top: 0px;
-                margin: 0;
-            }
-        }
-
-        &Item {
-            display: flex;
-            align-items: center;
-            position: relative;
-            padding-right: 40px;
-            padding-bottom: 25px;
-            @include for-tablet-landscape-up {
-                padding-bottom: 0px;
-            }
-
-            a {
-                transition: all 0.2s ease;
-                color: $hero-link-color !important;
-                font-size: 19px;
-                font-family: $mainFont;
-                text-decoration: none;
-                border-bottom: 2px solid $hero-background;
-                margin-right: 10px;
-                padding-left: 10px;
-                &:hover {
-                    border-bottom: 2px solid $accent;
-                }
-                @include for-tablet-landscape-up {
-                  padding: 0;
-                }
-
-
-                &::before {
-                    content: '';
-                    position: absolute;
-                    margin-top: 2px;
-                    right: 100%;
-                    width: 12px;
-                    height: 18px;
-                    -webkit-mask: url("../../images/icons/chevron.svg") no-repeat center;
-                    -webkit-mask-size: contain;
-                    background-color: $accent;
-                    @include for-tablet-landscape-up {
-                        display: none;
-                    }
-                }
-            }
-        }
-
-    }
+  }
 
 }
 
 .collapsedHeroContainer {
-    @extend .heroContainer;
-    @include for-tablet-landscape-up {
-        .heroLinksContainer {
-            animation: fadeOut 0.2s forwards;
-            pointer-events: none;
-        }
+  @extend .heroContainer;
+  @include for-tablet-landscape-up {
+    .heroLinksContainer {
+      animation: fadeOut 0.2s forwards;
+      pointer-events: none;
     }
+  }
 }
 
 .accent {
-    color: $accent !important;
+  color: $accent !important;
 }

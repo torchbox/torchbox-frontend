@@ -1,9 +1,9 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 
-import TestimonialsBlock from './testimonials'
+import TestimonialsBlock from './testimonials-block'
 
-storiesOf('Landing Page', module).add('Testimonials block', () => {
+storiesOf('Components/Landing Page', module).add('Testimonials block', () => {
   return (
     <TestimonialsBlock
       testimonials={[

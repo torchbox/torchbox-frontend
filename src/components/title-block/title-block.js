@@ -5,7 +5,7 @@ import styles from './title-block.module.scss'
 import { renderTorchUp } from '../../utils/torchup'
 
 const TitleBlock = ({ title, className }) => (
-  <div className={[styles.block].join(' ')}>
+  <div className={[styles.block, className].join(' ')}>
     <h1 className={styles.blockTitle} {...renderTorchUp(title)} />
   </div>
 )

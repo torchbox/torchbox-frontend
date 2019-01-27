@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react'
 import ServicesBlock from './services-block'
 import styles from './services-block.module.scss'
 
-storiesOf('Landing Page', module).add('Services listing block', () => {
+storiesOf('Components/Landing Page', module).add('Services listing block', () => {
   return (
     <div className={styles.darkTheme}>
       <ServicesBlock

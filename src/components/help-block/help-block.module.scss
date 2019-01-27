@@ -20,9 +20,8 @@
 
     &Content {
         padding-top: 80px;
-        @include mobile-container;
+        @include container;
         @include for-tablet-landscape-up {
-            @include container;
             padding-top: 20px;
         }
     }

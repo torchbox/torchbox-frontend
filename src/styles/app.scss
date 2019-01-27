@@ -1,6 +1,11 @@
+// Dependencies
+@import '~animate-scss';
+
+// Local Styles
 @import 'grid';
 @import 'vars';
 @import 'animations';
 @import 'typography';
 @import 'themes';
 @import 'global';
+@import 'base-page';

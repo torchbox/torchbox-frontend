@@ -9,7 +9,7 @@ const store = new Store({
   currentUrl: '#1',
 })
 
-storiesOf('Shared Components', module).add('Header', () => {
+storiesOf('Components/Shared Components', module).add('Header', () => {
   return (
     <State store={store}>
       <Header

@@ -14,6 +14,7 @@ addDecorator(
   withBackgrounds([
     { name: 'tbx-accent', value: '#fd5765', default: true },
     { name: 'tbx-purple', value: '#231749' },
+    { name: 'white', value: '#FFF' },
   ])
 )
 

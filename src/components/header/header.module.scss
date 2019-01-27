@@ -11,15 +11,13 @@
   }
 
   &Inner {
-    @include mobile-container;
-
+    @include container;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     padding: 10px 0px;
 
     @include for-desktop-up {
-     @include container;
      flex-direction: row;
      padding: 40px 0px;
     }
@@ -81,7 +79,9 @@
     width: 16.66vw;
     height: 100%;
     @include for-desktop-up {
+      position: relative;
       margin-top: -15px;
+      left: -50px;
     }
   }
 }
@@ -138,11 +138,24 @@
     background-color: $primary;
     overflow-x: hidden;
     transition: all 0.4s ease-in;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: -50vh;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 100vh 50vh 0 0;
+      border-color: #231749 transparent transparent transparent;
+      z-index: 2;
+    }
   }
 
   &ModalOpen {
     @extend .mobileNavModal;
-    display: block;
+    //display: block;
     transform: translateX(0);
   }
 
@@ -157,32 +170,6 @@
       margin-left: 0 !important;
 
       a {
-        margin-bottom: 20px !important;
-        margin-right: 0 !important;
-        color: white;
-        border-bottom-color: $green !important;
-        padding: 30px 0;
-
-        .badge {
-          top: 0px !important;
-        }
-
-        &::after {
-          content: '';
-          position: absolute;
-          width: calc(100% - 0px);
-          height: 1px;
-          bottom: 0px;
-          left: 0;
-          background: rgba(white, 0.2);
-        }
-
-        &:hover {
-          div {
-            color: $green;
-          }
-        }
-
 
 
       }

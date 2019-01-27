@@ -8,10 +8,7 @@
   }
 
   &Container {
-    @include mobile-container;
-    @include for-desktop-up {
-      @include container;
-    }
+    @include container;
   }
 
   &Title {

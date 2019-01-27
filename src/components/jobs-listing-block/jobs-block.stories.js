@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 
 import JobsBlock from './jobs-block'
 
-storiesOf('Listing Pages', module).add('Jobs listing block', () => {
+storiesOf('Components/Listing Pages', module).add('Jobs listing block', () => {
   return (
     <JobsBlock
       jobs={[

@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 
 import Contact from './contact'
 
-storiesOf('Shared Components', module).add('Contact Block (Minimal)', () => {
+storiesOf('Components/Shared Components', module).add('Contact Block (Minimal)', () => {
   return (
     <Contact
       title="Get in touch about your project"

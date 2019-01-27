@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 
 import CaseStudiesBlock from './case-studies-block'
 
-storiesOf('Landing Page', module).add('Case Studies block', () => {
+storiesOf('Components/Landing Page', module).add('Case Studies block', () => {
   return (
     <CaseStudiesBlock
       listingUrl={'#'}

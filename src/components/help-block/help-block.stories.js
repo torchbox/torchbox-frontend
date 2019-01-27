@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react'
 import HelpBlock from './help-block'
 import Contact from '../contact/contact'
 
-storiesOf('Landing Page', module).add('Help block', () => {
+storiesOf('Components/Landing Page', module).add('Help block', () => {
   return (
     <HelpBlock
       title="{We make products fast} and transform the way your organisation works at the same time..."

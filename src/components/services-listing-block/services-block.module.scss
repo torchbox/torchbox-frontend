@@ -17,11 +17,7 @@
     }
 
     &Content {
-        @include mobile-container;
-        @include for-tablet-landscape-up {
-            @include container;
-        }
-
+        @include container;
         padding: calc(0.7 * 40vw + 60px) 0 80px 40px;
         @include for-tablet-landscape-up {
             padding: 55px 0 80px 16.66vw;

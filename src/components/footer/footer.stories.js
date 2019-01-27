@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 
 import Footer from './footer'
 
-storiesOf('Shared Components', module).add('Footer', () => {
+storiesOf('Components/Shared Components', module).add('Footer', () => {
   return (
     <Footer links={[
       {

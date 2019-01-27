@@ -64,7 +64,7 @@ HelpBlock.defaultProps = {
   title: 'We can help you…',
   links: [],
   sectionTitle: 'Services',
-  greetingImage: require('../../images/help-character.png')
+  greetingImage: require('../../images/help-character.svg')
 }
 
 export default HelpBlock

@@ -1,0 +1,81 @@
+@import '../../styles/app.scss';
+
+.streamfield {
+  @include container();
+  background-color: white;
+  padding-top: 40px;
+
+  &Intro {
+    @include streamblockPadding;
+    font-size: 22px;
+    line-height: 36px;
+    margin: 0 0 40px;
+    color: $primary !important;
+
+    p {
+      color: $primary !important;
+    }
+
+    @include for-tablet-landscape-up {
+      font-size: 24px;
+      line-height: 42px;
+    }
+  }
+
+  &Heading {
+    @include streamblockPadding;
+  }
+
+  &Embed {
+    @include streamblockPadding;
+    width: 100%;
+  }
+
+  &Paragraph {
+    @include streamblockPadding;
+  }
+
+  &Quote {
+    padding: 60px 0;
+    width: 75vw;
+    margin-left: 1vw;
+  }
+
+  p {
+    line-height: 1.7;
+  }
+
+  a {
+    cursor: pointer;
+    font-weight: bold;
+    color: $blue;
+    &:hover {
+      border-bottom: 2px solid $green;
+    }
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    position: relative;
+    padding: 0 0 25px calc(8.33vw + 10px);
+    color: #333;
+    //font-size: 18px !important;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      background: url('../../images/icons/chevron.png') no-repeat;
+      background-size: 100%;
+      left: 6vw;
+      top: 3px;
+      width: 12px;
+      height: 30px;}
+  }
+
+
+}

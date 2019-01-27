@@ -17,12 +17,19 @@
   @media (min-width: 1800px) { @content; }
 }
 
-@mixin mobile-container {
-    margin: 0px 20px;
-    position: relative;
+@mixin container {
+  position: relative;
+  margin: 0px 20px;
+
+  @include for-tablet-landscape-up {
+    margin: 0 8.33vw 0;
+  }
 }
 
-@mixin container {
-    margin: 0 8.33vw 0;
-    position: relative;
+@mixin streamblockPadding {
+  @include for-tablet-landscape-up {
+    max-width: 50vw;
+    margin-left: 16.66vw;
+  }
 }
+

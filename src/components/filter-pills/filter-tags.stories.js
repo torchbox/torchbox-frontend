@@ -9,7 +9,7 @@ const store = new Store({
 })
 
 
-storiesOf('Shared Components', module).add('Filter Tags', () => {
+storiesOf('Components/Shared Components', module).add('Filter Tags', () => {
   return (
     <div
       style={{
@@ -21,7 +21,7 @@ storiesOf('Shared Components', module).add('Filter Tags', () => {
     >
       <State store={store}>
         <FilterTags
-          options={['All', 'Digital Products', 'Wagtail', 'Data']}
+          tags={['All', 'Digital Products', 'Wagtail', 'Data']}
           activeOption={store.state.activeOption}
           onChange={(option, index) => {
             store.set({ activeOption: index })

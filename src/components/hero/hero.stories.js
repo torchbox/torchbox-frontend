@@ -34,7 +34,7 @@ const HeroComp = () => {
           { href: '#1', title: 'Case studies' },
           { href: '#1', title: 'Out thinking' },
         ]}
-        description={`Torchbox offer PPC management for the world's leading charities, nonprofits and higher education organisations. Whether you’re looking to increase donations, drive event signups or raise your charity’s profile, we’re experts at delivering the results that matter to you.`}
+        // description={`Torchbox offer PPC management for the world's leading charities, nonprofits and higher education organisations. Whether you’re looking to increase donations, drive event signups or raise your charity’s profile, we’re experts at delivering the results that matter to you.`}
       />
       <div
         style={{
@@ -52,7 +52,7 @@ const HeroComp = () => {
   )
 }
 
-storiesOf('Landing Page', module)
+storiesOf('Components/Landing Page', module)
   .add('Hero block', HeroComp)
   .add('Hero Block (Dark Theme)', () => (
     <div className={styles.darkTheme}>

@@ -6,16 +6,18 @@ import styles from './case-studies-block.module.scss'
 
 const CaseStudiesBlock = ({ title, caseStudies, className, sectionTitle, listingUrl }) => (
   <div className={[styles.block, className].join(' ')}>
-    <span className={styles.pageSectionTitle}>{sectionTitle}</span>
+    {sectionTitle ? <span className={styles.pageSectionTitle}>{sectionTitle}</span> : null }
     <div className={styles.blockList}>
       {caseStudies.map(caseStudy => (
         <Link className={styles.caseStudy}>
           <div className={styles.caseStudyMeta}>
-            <h4 className={styles.caseStudyMetaClient}>{caseStudy.client}</h4>
-            <h3 className={styles.caseStudyMetaTitle}>{caseStudy.title}</h3>
-            <p className={styles.caseStudyMetaDesc}>
-              {caseStudy.description}
-            </p>
+            <div className={styles.caseStudyMetaContainer}>
+              <h4 className={styles.caseStudyMetaClient}>{caseStudy.client}</h4>
+              <h3 className={styles.caseStudyMetaTitle}>{caseStudy.title}</h3>
+              <p className={styles.caseStudyMetaDesc}>
+                {caseStudy.description}
+              </p>
+            </div>
             <img src={require('../../images/icons/cluster.png')} alt="" className={styles.caseStudyClusterIcon}/>
           </div>
 
@@ -25,9 +27,11 @@ const CaseStudiesBlock = ({ title, caseStudies, className, sectionTitle, listing
         </Link>
       ))}
     </div>
-    <div className={styles.seeMore}>
-      <Link to={listingUrl}>See more case studies</Link>
-    </div>
+    { listingUrl ? (
+      <div className={styles.seeMore}>
+        <Link to={listingUrl}>See more case studies</Link>
+      </div>
+    ) : null }
   </div>
 )
 

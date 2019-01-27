@@ -5,16 +5,12 @@
     padding: 95px 0 20px;
 
     &Content {
-        @include mobile-container;
-        @include for-tablet-landscape-up {
-            @include container;
-        }
+        @include container;
     }
 
     &Intro {
-        padding-bottom: 40px;
         @include for-tablet-landscape-up {
-            padding-bottom: 60px;
+            padding-bottom: 20px;
         }
 
         &Opinion {
@@ -57,23 +53,14 @@
             grid-template-columns: 1fr 1fr;
             grid-column-gap: 8.33vw;
         }
+        padding-bottom: 50px;
     }
 
     &BlogLink {
-        border-top: 1px solid rgba(0, 0, 0, 0.1);
-        padding: 40px 0 60px 0;
-        text-decoration: none;
-        border-bottom: none;
-
-        &Meta {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-        }
 
         &Title {
             font-size: 30px;
-            font-weight: 800;
+            font-weight: bold;
             line-height: 40px;
             margin: 0 0 10px;
             color: $primary;
@@ -86,6 +73,7 @@
         &BigTitle {
             @extend .blockBlogLinkTitle;
             font-size: 65px !important;
+            font-weight: 800;
             line-height: 80px;
         }
 
@@ -94,33 +82,6 @@
             color: $grey;
             max-width: 80%;
         }
-
-        &Image {
-            width: 55px;
-            height: 55px;
-            margin-right: 15px;
-        }
-
-        &Author {
-            display: flex;
-            flex-direction: column;
-
-            &Name {
-                color: $primary;
-                font-size: 20px;
-            }
-
-            &Role {
-                margin: 0 0 2px;
-                line-height: 1.4;
-                color: $accent;
-                text-transform: uppercase;
-                letter-spacing: 0.15em;
-                font-weight: bold;
-                font-size: 12px;
-            }
-        }
-
     }
 
 }

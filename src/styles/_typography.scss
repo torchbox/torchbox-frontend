@@ -6,12 +6,31 @@ h1 {
   font-weight: bold;
 }
 
+h2 {
+  font-weight: 800;
+  //font-family: $mainFont;
+  font-size: 32px;
+  line-height: 38px;
+  margin: 60px 0 20px;
+  color: $dark-blue;
+
+  @include for-tablet-landscape-up {
+    font-size: 36px;
+    line-height: 44px;
+  }
+}
+
 h3 {
   color: $primary;
   font-size: 26px;
   font-weight: bold;
   line-height: 1.2em;
   margin: 60px 0 10px;
+}
+
+p {
+  margin: 0 0 30px;
+  color: #333;
 }
 
 a {
@@ -22,6 +41,10 @@ a {
   &:hover {
     color: $blue;
   }
+}
+
+b {
+  font-weight: bold;
 }
 
 strong {

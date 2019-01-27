@@ -1,15 +1,14 @@
 body {
     font-family: $mainFont;
     font-size: 18px;
-    line-height: 25px;
+    line-height: 1.4;
 
     @include for-tablet-landscape-up {
-        font-size: 20px;
-        line-height: 34px;
+        font-size: 18px;
     }
 
     @include for-desktop-up {
-        font-size: 22px;
+        font-size: 20px;
     }
 }
 
@@ -44,6 +43,7 @@ body {
         text-decoration: none;
         font-weight: bold;
         border-bottom: 2px solid $accent;
+        cursor: pointer !important;
 
         &:hover {
             border-bottom: 2px solid $green;

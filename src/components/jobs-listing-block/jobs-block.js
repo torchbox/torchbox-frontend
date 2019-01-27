@@ -17,18 +17,20 @@ const JobsBlock = ({ jobs, className, sectionTitle, listingUrl, greetingImage })
 
       <div className={styles.blockContent}>
         <div className={styles.blockJobList}>
-          {jobs.slice(1).map(job => (
-            <Link className={styles.blockJobLink} to={job.href}>
+          {jobs.map(job => (
+            <a className={styles.blockJobLink} href={job.href} target='_blank '>
               <span className={styles.blockJobLinkTitle}>{job.title}</span>
               <h4 className={styles.blockJobLinkLevel}>{job.level}</h4>
               <h5 className={styles.blockJobLinkLocation}>{job.location}</h5>
-            </Link>
+            </a>
           ))}
         </div>
 
-        <div className={styles.seeMore}>
-          <Link to={listingUrl}>See more jobs</Link>
-        </div>
+        { listingUrl ? (
+          <div className={styles.seeMore}>
+            <Link to={listingUrl}>See more jobs</Link>
+          </div>
+        ) : null}
 
       </div>
     </div>
@@ -46,7 +48,7 @@ JobsBlock.defaultProps = {
   className: '',
   jobs: [],
   sectionTitle: 'Thinking',
-  greetingImage: require('../../images/help-character.png')
+  greetingImage: require('../../images/help-character.svg')
 }
 
 export default JobsBlock

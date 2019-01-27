@@ -1,0 +1,32 @@
+.page {
+  background-color: white;
+  padding: 100px 0 0;
+
+  &Title {
+    margin-bottom: 20px;
+    @include for-tablet-landscape-up {
+      margin-bottom: 30px;
+    }
+    h1 {
+      font-weight: 800;
+    }
+  }
+
+  &Author {
+    @include for-tablet-landscape-up {
+      margin: 0 0 0 16.66vw;
+    }
+    padding-bottom: 40px;
+  }
+
+  &Streamfield {}
+
+  &Showcase {
+    margin-top: 100px;
+  }
+
+  &Contact {
+    margin-top: 130px;
+  }
+
+}

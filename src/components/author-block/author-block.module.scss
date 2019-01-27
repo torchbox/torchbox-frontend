@@ -1,0 +1,68 @@
+@import '../../styles/app.scss';
+
+.authorBlock {
+
+    &Container {
+        @include container();
+        display: flex;
+        align-items: flex-start;
+    }
+
+    &Image {
+        width: 80px !important;
+        height: 80px !important;
+        margin-right: 20px;
+    }
+
+    &Details {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &Name {
+        color: $primary;
+        font-size: 20px;
+        margin-bottom: 2px;
+    }
+
+    &Meta {
+        font-size: 12px;
+        line-height: 1.4;
+        margin: 0 0 0;
+
+        &Role {
+            margin: 0 0 2px;
+            line-height: 1.4;
+            color: $accent;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        &Date {
+            font-size: 12px;
+            text-transform: none;
+            letter-spacing: 0;
+            color: #333;
+            margin-left: 5px;
+            padding-left: 5px;
+            border-left: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        &ReadTime {
+            font-size: 12px;
+            text-transform: none;
+            letter-spacing: 0;
+            color: #333;
+            margin-left: 5px;
+            padding-left: 5px;
+            border-left: 1px solid rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    &Tags {
+        margin: 10px 0 0;
+    }
+
+}

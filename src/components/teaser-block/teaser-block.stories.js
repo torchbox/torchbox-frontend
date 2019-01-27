@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 
 import TeaserBlock from './teaser-block'
 
-storiesOf('Shared Components', module).add('Teaser block', () => {
+storiesOf('Components/Shared Components', module).add('Teaser block', () => {
   return (
     <TeaserBlock
       title={`More from Torchbox...`}

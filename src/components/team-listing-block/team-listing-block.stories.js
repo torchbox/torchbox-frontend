@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 
 import TeamListingBlock from './team-listing-block'
 
-storiesOf('Listing Pages', module).add('Team listing block', () => {
+storiesOf('Components/Listing Pages', module).add('Team listing block', () => {
   return (
     <TeamListingBlock
       team={[

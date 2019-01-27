@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions'
 
 import Tag from './tag'
 
-storiesOf('Shared Components', module).add('Tag', () => {
+storiesOf('Components/Shared Components', module).add('Tag', () => {
   return (
     <divs
       style={{
