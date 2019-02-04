@@ -39,7 +39,7 @@ export class CaseStudyListingPage extends React.Component {
           client: 'BLAH BLAH BLAH',
           tags: caseStudy.tags,
           title: caseStudy.title,
-          href: `/case-studies/${caseStudy.slug}`,
+          href: caseStudiesUrl(caseStudy.slug),
           description: caseStudy.listingSummary,
           image: safeGet(caseStudy, 'feedImage.src.url', 'https://images.pexels.com/photos/1054289/pexels-photo-1054289.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')
           // image: 'http://localhost:8000/media/images/hq-5787.width-1280.jpg'
