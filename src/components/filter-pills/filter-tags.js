@@ -4,7 +4,7 @@ import Tag from '../tag'
 
 import styles from './filter-tags.module.scss'
 
-const FilterTags = ({ tags, onChange, activeTag, className }) => (
+const FilterTags = ({ tags, onChange = () => null, activeTag, className }) => (
   <div className={[styles.filter, className].join(' ')}>
     {tags.map((tag, index) => (
       <Tag

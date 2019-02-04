@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Torchbox`,
-    description: ``
+    description: ``,
     author: `@Torchbox`,
   },
   plugins: [
@@ -14,8 +14,8 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -25,7 +25,18 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/tbx-flame.svg`, // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: "gatsby-source-graphql",
+      options: {
+        // This type will contain remote schema Query type
+        typeName: "Wagtail",
+        // This is field under which it's accessible
+        fieldName: 'wagtail',
+        // Url to query from
+        url: 'http://localhost:8000/graphql/',
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

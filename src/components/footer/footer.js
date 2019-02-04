@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 
-import styles from './footer.scss'
+import styles from './footer.module.scss'
 
 const Footer = ({ links, className }) => (
   <div className={[styles.footer, className].join(' ')}>

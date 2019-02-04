@@ -36,18 +36,22 @@ const Contact = ({ title, email, number, className, reasons }) => (
           src={require('../../images/will.jpg')}
         />
         <div className={styles.contactBlockDetailsMeta}>
+          <div>
           <a
             href={`mailto://${email}`}
             className={styles.contactBlockDetailsEmail}
           >
             {email}
           </a>
+          </div>
+          <div>
           <a
             href={`tel://${number}`}
             className={styles.contactBlockDetailsNumber}
           >
             {number}
           </a>
+          </div>
         </div>
       </section>
     </div>

@@ -1,4 +1,4 @@
-@import '../../styles/app.scss';
+@import '../../styles/app.module';
 
 .block {
 
@@ -28,18 +28,19 @@
 
     &Title {
         color: $primary;
-        font-size: 36px;
-        line-height: 50px;
+        font-size: 35px;
+        line-height: 45px;
         font-weight: 100;
         @include for-tablet-landscape-up {
             padding-left: 17vw;
+            font-size: 36px;
+            line-height: 50px;
         }
     }
 
     &Links {
         &Container {
             margin-top: 30px;
-            padding-left: 20px;
             @include for-tablet-landscape-up {
                 padding-left: 17vw;
             }
@@ -55,15 +56,16 @@
             padding-bottom: 15px;
             display: flex;
             flex-direction: row;
-            align-items: center;
+            align-items: flex-start;    
 
             &Icon {
                 transform: rotate(30deg);
-                width: 20px;
-                height: 20px;
+                width: 18px;
+                height: 18px;
                 background-color: $accent;
                 -webkit-mask: url("../../images/icons/tick.svg") no-repeat center;
                 -webkit-mask-size: contain;
+                margin-top: 20px;   
                 @include for-tablet-landscape-up {
                     width: 22px;
                     height: 22px;
@@ -74,12 +76,19 @@
                 color: $primary;
                 font-family: $mainFont;
                 text-decoration: none;
-                line-height: 40px;
+                line-height: 30px;
                 font-weight: 400;
 
-                margin: 0 0 5px 60px;
-                padding: 10px 0 0;
+                margin: 0 0 5px 30px;
+                padding: 15px 0 0;
                 border-bottom: 2px solid white;
+
+                @include for-tablet-landscape-up {
+                    padding: 15px 0 0;
+                    margin: 0 0 5px 60px !important;
+                    line-height: 40px;
+                    font-size: 24px;        
+                }
 
                 &:hover {
                     border-bottom: 2px solid $accent;

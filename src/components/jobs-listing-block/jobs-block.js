@@ -21,7 +21,7 @@ const JobsBlock = ({
         <div className={styles.blockJobList}>
           {jobs.map(job => (
             <a className={styles.blockJobLink} href={job.href} target="_blank ">
-              <span className={styles.blockJobLinkTitle}>{job.title}</span>
+              <h3 className={styles.blockJobLinkTitle}>{job.title}</h3>
               <h4 className={styles.blockJobLinkLevel}>{job.level}</h4>
               <h5 className={styles.blockJobLinkLocation}>{job.location}</h5>
             </a>

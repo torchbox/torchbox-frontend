@@ -1,4 +1,4 @@
-@import '../../styles/app.scss';
+@import '../../styles/app.module';
 
 .contactBlock {
     background-color: $primary;
@@ -27,10 +27,12 @@
         }
 
         &Item {
+            margin: 20px 10px;
             padding: 60px 30px;
             position: relative;
 
             @include for-tablet-landscape-up {
+                margin: 0;
                 padding: 20px 40px 40px;
             }
 
@@ -89,15 +91,29 @@
 
     &Details {
         display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
+        flex-direction: column;
         align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        @include for-tablet-portrait-up {
+            flex-wrap: nowrap;
+            flex-direction: row;
+        }
 
         &Meta {
+            width: 100%;
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: wrap;
             @include for-tablet-portrait-up {
                 flex-direction: row;
+                justify-content: flex-start;
+            }
+
+            div {
+                margin: 5px 0;
             }
         }
 

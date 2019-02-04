@@ -1,2 +1,2 @@
-import Avatar from './case-studies-block'
-export default Avatar
+import CaseStudiesBlock from './case-studies-block'
+export default CaseStudiesBlock

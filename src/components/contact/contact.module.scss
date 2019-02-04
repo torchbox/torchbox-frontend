@@ -1,4 +1,4 @@
-@import '../../styles/app.scss';
+@import '../../styles/app.module';
 
 .contactBlock {
     background-color: white;
@@ -8,7 +8,7 @@
     &Content {
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         @include container;
         @include for-tablet-portrait-up {
             flex-direction: row;

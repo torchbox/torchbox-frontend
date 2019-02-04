@@ -36,5 +36,7 @@ module.exports = (baseConfig, env, defaultConfig) => {
     require.resolve("@babel/preset-env"),
   ]
 
+  defaultConfig.resolve.mainFields = ["browser", "module", "main"]
+
   return defaultConfig
 }

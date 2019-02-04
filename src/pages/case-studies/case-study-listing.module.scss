@@ -1,0 +1,16 @@
+@import '../../styles/app.module';
+
+.page {
+
+  &FilterTags {
+    @include container;
+    @include for-tablet-landscape-up {
+      padding-left: 16.66vw;
+      padding-top: 10px;
+    }
+  }
+
+  &Contact {
+    margin-top: 0px;
+  }
+}

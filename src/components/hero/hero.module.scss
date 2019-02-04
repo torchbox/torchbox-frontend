@@ -1,4 +1,4 @@
-@import '../../styles/app.scss';
+@import '../../styles/app.module';
 
 // Component theme overrides:
 $hero-background: var(--hero-background, white);
@@ -33,7 +33,8 @@ $hero-link-color: var(--hero-link-color, $blue);
     line-height: 70px;
     margin-bottom: 20px;
     @include for-tablet-landscape-up {
-      font-size: 80px;
+      font-size: 70px;
+      line-height: 80px;
     }
   }
 

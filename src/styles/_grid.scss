@@ -19,7 +19,7 @@
 
 @mixin container {
   position: relative;
-  margin: 0px 20px;
+  margin: 0px 8.33vw;
 
   @include for-tablet-landscape-up {
     margin: 0 8.33vw 0;

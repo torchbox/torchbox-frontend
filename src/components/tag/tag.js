@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link } from 'gatsby'
 
+import { Link } from 'gatsby'
 import styles from './tag.module.scss'
 
 const Tag = ({ label, className, onClick, href }) => (

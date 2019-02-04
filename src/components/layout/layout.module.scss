@@ -1,0 +1,7 @@
+@import "../../styles/app.module";
+.pageContainer {
+  padding-top: 70px;
+  @include for-tablet-landscape-up {
+    padding-top: 120px;
+  }
+}

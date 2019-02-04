@@ -1,4 +1,4 @@
-@import '../../styles/app';
+@import '../../styles/app.module';
 
 .navLink {
   display: block;
@@ -18,7 +18,7 @@
 
   @include for-tablet-landscape-up {
     color: $primary;
-    margin-right: 58px;
+    margin-right: 70px;
     margin-bottom: 0;
     padding: 0;
   }

@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import dayjs from 'dayjs'
+import { Link } from 'gatsby'
 
 import styles from './author-block.module.scss'
 import Avatar from '../avatar/avatar'
@@ -14,7 +15,7 @@ const AuthorBlock = ({ author, datePublished, tags, readTime, className }) => (
         containerClassName={styles.authorBlockImage}
       />
       <div className={styles.authorBlockDetails}>
-        <span className={styles.authorBlockName}>{author.name}</span>
+        <Link to={`/team/${author.slug}`} className={styles.authorBlockName}>{author.name}</Link>
         <p className={styles.authorBlockMeta}>
           <span className={styles.authorBlockMetaRole}>{author.role}</span>
           {datePublished ? (

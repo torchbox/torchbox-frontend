@@ -1,0 +1,81 @@
+@import '../../styles/app.module';
+
+.footer {
+    position: relative;
+    background-color: $light-grey;
+    padding: 100px 0 30px;
+
+    &Content {
+        @include container;
+    }
+
+    &Address {
+        position: relative;
+        padding: 0px 80px 20px 0px;
+
+        &List {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            margin: 0 0 60px;
+        }
+
+        &Title {
+            font-size: 20px;
+            font-weight: bold;
+            color: $primary;
+
+            &::after {
+                position: absolute;
+                top: -6px;
+                margin-left: 10px;
+                content: '';
+                width: 20px;
+                height: 30px;
+                background: url("../../images/icons/diamond.svg");
+                transform: rotate(30deg);
+            }
+        }
+
+        p {
+            line-height: 22px;
+            color: $grey;
+            font-size: 14px;
+            max-width: 300px;
+        }
+    }
+
+    &Copyright {
+        font-size: 0.7em;
+        color: $dark-grey;
+        margin-right: 10px;
+    }
+
+    &Link {
+        display: inline-block;
+        height: 30px;
+        font-size: 14px;
+        margin-right: 10px;
+    }
+
+    a {
+        font-size: 14px;
+        height: 23px;
+        font-weight: 800;
+        border-bottom: 2px solid $green;
+    }
+
+    &Image {
+        position: absolute;
+        bottom: 0;
+        right: 20px;
+        width: 25vw;
+        display: block;
+        z-index: 20;
+
+        @include for-phone-only {
+            display: none   ;
+        }
+    }
+
+}

@@ -1,4 +1,4 @@
-@import '../../styles/app.scss';
+@import '../../styles/app.module';
 
 .blogLink {
     border-top: 1px solid rgba(0, 0, 0, 0.1);
@@ -60,5 +60,26 @@
             padding-left: 5px;
             border-left: 1px solid rgba(0, 0, 0, 0.1);
         }
+    }
+
+    &Featured {
+        @extend .blogLink;
+        
+        .blogLinkTitle {
+            font-size: 65px !important;
+            font-weight: 800;
+            line-height: 80px;
+        }
+
+        .blogLinkDesc {
+            margin: 0 0 30px;
+            color: $grey;
+            max-width: 80%;
+            @include for-tablet-portrait-up {
+                line-height: 34px;
+                font-size: 20px ;
+            }
+        }
+        
     }
 }

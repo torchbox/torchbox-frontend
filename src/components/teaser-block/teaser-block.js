@@ -2,26 +2,28 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
-import styles from './teaser-block.scss'
+import styles from './teaser-block.module.scss'
 import { renderTorchUp } from '../../utils/torchup'
 
-const TeaserBlock = ({ title, teasers, className }) => (
-  <div className={[styles.teaserBlock, className].join(' ')}>
-    <div className={styles.teaserBlockContainer}>
-      <h3 className={styles.teaserBlockTitle} {...renderTorchUp(title)} />
-      <div className={styles.teaserBlockList}>
-        {teasers.map(teaser => (
-          <Link to={teaser.link} className={styles.teaserBlockItem}>
-            <h1 className={styles.teaserBlockItemTitle}>{teaser.title}</h1>
-            <span className={styles.teaserBlockItemDesc}>
+const TeaserBlock = ({ title, teasers, className }) => {
+  return (
+    <div className={[styles.teaserBlock, className].join(' ')}>
+      <div className={styles.teaserBlockContainer}>
+        <h3 className={styles.teaserBlockTitle} {...renderTorchUp(title)} />
+        <div className={styles.teaserBlockList}>
+          {teasers.map(teaser => (
+            <Link to={teaser.link} className={styles.teaserBlockItem}>
+              <h1 className={styles.teaserBlockItemTitle}>{teaser.title}</h1>
+              <span className={styles.teaserBlockItemDesc}>
               {teaser.description}
             </span>
-          </Link>
-        ))}
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
-  </div>
-)
+  )
+}
 
 TeaserBlock.propTypes = {
   title: PropTypes.string,

@@ -12,7 +12,7 @@ storiesOf('Components/Shared Components', module).add('Bustout', () => {
         background: 'white',
       }}
     >
-      <Bustout />
+      <Bustout caption={'lorem'} align={'left'}/>
     </div>
   )
 })

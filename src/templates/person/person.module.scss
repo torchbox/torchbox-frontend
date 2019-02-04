@@ -1,0 +1,53 @@
+@import '../../styles/app.module';
+
+.page {
+
+  &Container {
+    @include container();
+  }
+
+  &Title {
+    width: 100%;
+    margin: 0;
+
+    h1 {
+      margin-bottom: 0 !important;
+      p {
+        color: $primary !important
+      }
+    }
+  }
+
+  &Avatar {
+    @include streamblockPadding;
+    position: relative;
+    margin: 40px 0 20px;
+    min-height: 100px;
+
+    &Icon {
+      position: absolute;
+      z-index: 2;
+
+      right: 0px;
+      top: -40px;
+      width: 80px;
+
+      @include for-tablet-portrait-up {
+        right: 20px;
+        top: -40px;
+        width: 120px;
+      }
+
+      @include for-tablet-landscape-up {
+        right: -25px;
+        top: -40px;
+        width: 180px;
+      }
+    }
+
+    &Image {
+      position: relative;
+      width: 100%;
+    }
+  }
+}

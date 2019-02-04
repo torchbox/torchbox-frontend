@@ -1,4 +1,4 @@
-@import '../../styles/app.scss';
+@import '../../styles/app.module';
 
 .block {
     position: relative;
@@ -85,11 +85,15 @@
             }
 
             &Title {
-                font-size: 38px;
+                font-size: 32px;
                 line-height: 44px;
                 margin: 0 0 10px;
                 color: $primary;
                 font-weight: 800;
+
+                @include for-desktop-up {
+                    font-size: 38px
+                }
             }
 
             &Desc {

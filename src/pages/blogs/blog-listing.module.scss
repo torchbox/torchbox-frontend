@@ -1,0 +1,24 @@
+@import '../../styles/app.module';
+
+.page {
+
+  &FilterTags {
+    @include container;
+    @include for-tablet-landscape-up {
+      padding-left: 16.66vw;
+      padding-top: 10px;
+    }
+  }
+
+  &BlogListing {
+    @include container;
+    @include for-tablet-landscape-up {
+      padding: 0 16.66vw;
+    }
+    margin-top: 125px;
+
+    &Link {
+      display: block;
+    }
+  }
+}

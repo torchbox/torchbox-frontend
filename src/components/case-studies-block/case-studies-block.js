@@ -5,39 +5,48 @@ import { Link } from 'gatsby'
 import styles from './case-studies-block.module.scss'
 
 const CaseStudiesBlock = ({
-  title,
-  caseStudies,
-  className,
-  sectionTitle,
-  listingUrl,
-}) => (
+                            title,
+                            caseStudies,
+                            className,
+                            sectionTitle,
+                            listingUrl,
+                          }) => (
   <div className={[styles.block, className].join(' ')}>
     {sectionTitle ? (
       <span className={styles.pageSectionTitle}>{sectionTitle}</span>
     ) : null}
     <div className={styles.blockList}>
-      {caseStudies.map(caseStudy => (
-        <Link className={styles.caseStudy}>
-          <div className={styles.caseStudyMeta}>
-            <div className={styles.caseStudyMetaContainer}>
-              <h4 className={styles.caseStudyMetaClient}>{caseStudy.client}</h4>
-              <h3 className={styles.caseStudyMetaTitle}>{caseStudy.title}</h3>
-              <p className={styles.caseStudyMetaDesc}>
-                {caseStudy.description}
-              </p>
+      {caseStudies.map(caseStudy => {
+        let img = React.createRef()
+        return (
+          <Link className={styles.caseStudy} to={caseStudy.href}>
+            <div className={styles.caseStudyMeta}>
+              <div className={styles.caseStudyMetaContainer}>
+                <h4 className={styles.caseStudyMetaClient}>{caseStudy.client}</h4>
+                <h3 className={styles.caseStudyMetaTitle}>{caseStudy.title}</h3>
+                <p className={styles.caseStudyMetaDesc}>
+                  {caseStudy.description}
+                </p>
+              </div>
+              <img
+                src={require('../../images/icons/cluster.png')}
+                alt=""
+                className={styles.caseStudyClusterIcon}
+              />
             </div>
-            <img
-              src={require('../../images/icons/cluster.png')}
-              alt=""
-              className={styles.caseStudyClusterIcon}
-            />
-          </div>
 
-          <div className={styles.caseStudyImage}>
-            <img src={caseStudy.image} />
-          </div>
-        </Link>
-      ))}
+            <div className={styles.caseStudyImage}>
+              <img
+                ref={ref => img = ref}
+                src={caseStudy.image || 'https://via.placeholder.com/800x500/'}
+                onError={() => {
+                  img.src = 'https://via.placeholder.com/800x500/'
+                }}/>
+            </div>
+          </Link>
+        )
+      })
+      }
     </div>
     {listingUrl ? (
       <div className={styles.seeMore}>

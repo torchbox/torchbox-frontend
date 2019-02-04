@@ -1,4 +1,4 @@
-@import '../../styles/app.scss';
+@import '../../styles/app.module';
 
 .block {
     position: relative;
@@ -24,6 +24,7 @@
     }
 
     &PersonLink {
+        cursor: pointer;
         padding-bottom: 50px;
         text-decoration: none;
         border-bottom: none;
@@ -52,6 +53,12 @@
             letter-spacing: 0.15em;
             font-weight: bold;
             font-size: 11px;
+        }
+
+        &:hover {
+            &Name {
+                color: $blue !important;
+            }
         }
 
     }

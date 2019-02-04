@@ -1,4 +1,4 @@
-@import '../../styles/app.scss';
+@import '../../styles/app.module';
 
 .block {
     position: relative;
@@ -78,6 +78,7 @@
             font-weight: bold;
             line-height: 40px;
             margin: 0 0 15px;
+            margin-bottom: 10px;
             padding: 30px 0 0;
             color: $primary;
 

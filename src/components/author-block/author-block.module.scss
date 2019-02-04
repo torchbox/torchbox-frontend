@@ -1,4 +1,4 @@
-@import '../../styles/app.scss';
+@import '../../styles/app.module';
 
 .authorBlock {
 
@@ -23,6 +23,7 @@
         color: $primary;
         font-size: 20px;
         margin-bottom: 2px;
+        border-bottom: none;
     }
 
     &Meta {

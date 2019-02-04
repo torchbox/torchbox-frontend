@@ -1,4 +1,4 @@
-@import '../../styles/app.scss';
+@import '../../styles/app.module';
 
 .avatar {
     height: 100px;
@@ -8,6 +8,7 @@
 
     &Image {
         height: 100%;
+        width: 100%;
         border-radius: 100%;
     }
 

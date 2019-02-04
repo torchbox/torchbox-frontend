@@ -20,28 +20,15 @@ const Blogs = ({
         <span className={styles.pageSectionTitle}>{sectionTitle}</span>
         {showFeatured ? (
           <section className={styles.blockIntro}>
-            <Link className={styles.blockBlogLink} to={featuredPost.href}>
-              <h1 className={styles.blockBlogLinkBigTitle}>
-                {featuredPost.title}
-              </h1>
-              <p className={styles.blockBlogLinkDesc}>
-                {featuredPost.description}
-              </p>
-              <div className={styles.blockBlogLinkMeta}>
-                <Avatar
-                  src={featuredPost.authorAvatar}
-                  containerClassName={styles.blockBlogLinkImage}
-                />
-                <div className={styles.blockBlogLinkAuthor}>
-                  <span className={styles.blockBlogLinkAuthorName}>
-                    {featuredPost.authorName}
-                  </span>
-                  <span className={styles.blockBlogLinkAuthorRole}>
-                    {featuredPost.authorRole}
-                  </span>
-                </div>
-              </div>
-            </Link>
+            <BlogLink
+              featured={true}
+              href={featuredPost.href}
+              title={featuredPost.title}
+              description={featuredPost.description}
+              authorAvatar={featuredPost.authorAvatar}
+              authorName={featuredPost.authorName}
+              authorRole={featuredPost.authorRole}
+            />
           </section>
         ) : null}
 

@@ -1,6 +1,6 @@
 // Colours
 $coral: #fd5765;
-$blue: #2f128d;
+$blue: #251657;
 $dark-blue: #231749;
 $light-grey: #f4f3f6;
 $grey: #444;
@@ -9,6 +9,7 @@ $dark-grey: #444;
 
 $primary: var(--color-primary, #{$dark-blue});
 $accent: var(--color-accent, #{$coral});
+$link-color: var(--color-link, #{$blue});
 
 //$accent: $coral;
 

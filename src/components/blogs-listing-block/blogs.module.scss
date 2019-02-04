@@ -1,4 +1,4 @@
-@import '../../styles/app.scss';
+@import '../../styles/app.module';
 
 .block {
     background-color: white;
@@ -9,9 +9,6 @@
     }
 
     &Intro {
-        @include for-tablet-landscape-up {
-            padding-bottom: 20px;
-        }
 
         &Opinion {
             position: relative;
@@ -55,38 +52,8 @@
         }
         padding-bottom: 50px;
     }
-
-    &BlogLink {
-
-        &Title {
-            font-size: 30px;
-            font-weight: bold;
-            line-height: 40px;
-            margin: 0 0 10px;
-            color: $primary;
-
-            &:hover {
-                color: $blue;
-            }
-        }
-
-        &BigTitle {
-            @extend .blockBlogLinkTitle;
-            font-size: 65px !important;
-            font-weight: 800;
-            line-height: 80px;
-        }
-
-        &Desc {
-            margin: 0 0 30px;
-            color: $grey;
-            max-width: 80%;
-        }
-    }
-
 }
 
 .pageSectionTitle {
-    //position: relative;
     top: -50px;
 }

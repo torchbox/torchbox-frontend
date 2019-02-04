@@ -10,17 +10,19 @@ class Header extends React.Component {
   state = { mobileNavOpen: false, collapsed: false }
 
   componentDidMount() {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 0) {
-        if (!this.state.collapsed) {
-          this.setState({ collapsed: true })
+    if (this.props.shouldCollapse) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 0) {
+          if (!this.state.collapsed) {
+            this.setState({ collapsed: true })
+          }
+        } else {
+          if (this.state.collapsed) {
+            this.setState({ collapsed: false })
+          }
         }
-      } else {
-        if (this.state.collapsed) {
-          this.setState({ collapsed: false })
-        }
-      }
-    })
+      })
+    }
   }
 
   render() {
@@ -137,10 +139,12 @@ class Header extends React.Component {
 
 Header.propTypes = {
   links: PropTypes.array,
+  shouldCollapse: PropTypes.bool
 }
 
 Header.defaultProps = {
   links: [],
+  shouldCollapse: false
 }
 
 export default Header

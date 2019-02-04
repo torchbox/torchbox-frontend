@@ -1,4 +1,4 @@
-import styles from '../styles/app.scss'
+import styles from '../styles/app.module.scss'
 
 export const parseToHtml = text => {
   let formattedText = [],
@@ -50,11 +50,6 @@ export const parseToHtml = text => {
 }
 
 export const renderTorchUp = text => {
-  console.log({
-    dangerouslySetInnerHTML: {
-      __html: parseToHtml(text),
-    },
-  })
   return {
     dangerouslySetInnerHTML: {
       __html: parseToHtml(text),
