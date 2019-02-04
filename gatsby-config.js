@@ -36,7 +36,7 @@ module.exports = {
         // This is field under which it's accessible
         fieldName: 'wagtail',
         // Url to query from
-        url: 'http://localhost:8000/graphql/', 
+        url: process.env.GATSBY_WAGTAIL_ENDPOINT || 'http://localhost:8000/graphql/', 
       },
     } ,
     // this (optional) plugin enables Progressive Web App + Offline functionality
