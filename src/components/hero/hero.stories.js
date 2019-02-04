@@ -10,17 +10,19 @@ import Hero from './hero'
 import styles from './hero.module.scss'
 
 const HeroComp = () => {
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 0) {
-      if (!store.state.collapsed) {
-        store.set({ collapsed: true })
+  if (typeof window !== `undefined`) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 0) {
+        if (!store.state.collapsed) {
+          store.set({ collapsed: true })
+        }
+      } else {
+        if (store.state.collapsed) {
+          store.set({ collapsed: false })
+        }
       }
-    } else {
-      if (store.state.collapsed) {
-        store.set({ collapsed: false })
-      }
-    }
-  })
+    })
+  }
 
   return (
     <State store={store}>

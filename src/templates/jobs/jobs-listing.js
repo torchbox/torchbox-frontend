@@ -18,9 +18,7 @@ export class JobsListingPage extends React.Component {
         href: job.url,
       }
     })
-
-    console.log(listing)
-
+    
     return (
       <div className={styles.page}>
         <TitleBlock

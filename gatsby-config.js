@@ -36,9 +36,9 @@ module.exports = {
         // This is field under which it's accessible
         fieldName: 'wagtail',
         // Url to query from
-        url: process.env.GATSBY_WAGTAIL_ENDPOINT || 'http://localhost:8000/graphql/',
+        url: 'http://localhost:8000/graphql/', 
       },
-    },
+    } ,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',

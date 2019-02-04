@@ -46,7 +46,7 @@ const BlogPostPage = ({
 BlogPostPage.propTypes = {
   title: PropTypes.string,
   author: PropTypes.string,
-  datePublished: PropTypes.number,
+  datePublished: PropTypes.string,
   readTime: PropTypes.number,
   tags: PropTypes.array,
   streamfield: PropTypes.array,

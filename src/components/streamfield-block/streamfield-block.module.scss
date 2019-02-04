@@ -42,10 +42,31 @@
   }
 
   &WideImage {
-    @include streamblockPadding;
     margin: 60px 0 60px;
+    width: 100vw;
+    margin-left: -8.3vw;
+  }
+
+  &AlignedImage {
+    @include streamblockPadding;
+    display: flex;
+    flex-direction: column;
     width: 100%;
+    margin: 60px 0 60px;
     border: 1px solid rgba(black, 0.05);  
+    
+    &Img {
+      width: 100%;
+    }
+
+    &Caption {
+      padding: 10px 20px;
+      background: $blue;
+
+      * {
+        color: white
+      }
+    }
   }
 
   p {

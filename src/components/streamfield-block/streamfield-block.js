@@ -7,14 +7,6 @@ import QuoteSlider from '../quote-slider/quote-slider'
 
 class StreamfieldBlock extends React.Component {
 
-  componentDidMount() {
-    document.addEventListener("click", e => {
-      const id = e.target.id
-      const linkType = e.target.getAttribute('linktype')
-      console.log(id, linkType);
-    })
-  }
-
   render() {
     const { streamfield, className } = this.props
     return (
@@ -30,15 +22,23 @@ class StreamfieldBlock extends React.Component {
               )
 
             case 'aligned_image':
-              const aligned_image = React.createRef()
+            const aligned_image = React.createRef()
               return (
-                <BustOut
-                  ref={aligned_image}
-                  src={block.value.image.src}
-                  align={block.value.alignment}
-                  title={'TODO: Ask about title'} // TODO
-                  caption={block.value.caption}
-                />
+                <div className={styles.streamfieldAlignedImage}>
+                  <img
+                    ref={aligned_image}
+                    src={block.value.image.src}
+                    alt={block.value.image.alt}
+                    className={styles.streamfieldAlignedImageImg}
+                    onError={() => {
+                      aligned_image.src = require('../../images/will.jpg')
+                    }}
+                  />
+                  <div className={styles.streamfieldAlignedImageCaption}>
+                    <p>{block.value.caption}</p>
+                  </div>
+                </div>
+
               )
 
             case 'wide_image':
@@ -52,6 +52,16 @@ class StreamfieldBlock extends React.Component {
                   onError={() => {
                     wide_image.src = require('../../images/will.jpg')
                   }}
+                />
+              )
+
+            case 'bustout':
+              return (
+                <BustOut
+                  src={block.value.image.src}
+                  align={block.value.alignment}
+                  title={'TODO: Ask about title'} // TODO
+                  caption={block.value.caption}
                 />
               )
 
@@ -99,6 +109,14 @@ class StreamfieldBlock extends React.Component {
                   dangerouslySetInnerHTML={{ __html: block.value }}
                 />
               )
+
+            case 'raw_html':
+                return (
+                    <div dangerouslySetInnerHTML={{ __html: block.value }} />
+                )
+
+            case 'markdown':
+                  return null
 
             default:
               console.log("Unknown Streamfield Block: ", block.type)

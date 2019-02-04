@@ -7,9 +7,7 @@ import { authorDetails, postTags } from '../../utils/selectors'
 import { caseStudiesUrl } from '../../utils/urls'
 
 export default ({data}) => {
-  console.log(data)
   const page = data.wagtail.caseStudies[0]
-  console.log(authorDetails(page.authors))
   return (
     <Layout>
       <CaseStudy
@@ -24,7 +22,7 @@ export default ({data}) => {
 
 
 export const query = graphql`
-  query CaseStudyQuery($slug: String) {
+  query($slug: String) {
     wagtail {
       caseStudies(slug: $slug) {
         title

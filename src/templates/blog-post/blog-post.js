@@ -31,7 +31,7 @@ const BlogPostPage = ({
       className={styles.pageStreamfield}
       streamfield={streamfield}
     />
-    <AuthorBlock className={styles.pageAuthor} author={author} tags={tags} />
+    <AuthorBlock className  ={styles.pageAuthor} author={author} tags={tags} />
     <Blogs
       className={styles.pageShowcase}
       sectionTitle="More of our thinking"
@@ -45,8 +45,8 @@ const BlogPostPage = ({
 
 BlogPostPage.propTypes = {
   title: PropTypes.string,
-  author: PropTypes.string,
-  datePublished: PropTypes.number,
+  author: PropTypes.object,
+  datePublished: PropTypes.string,
   readTime: PropTypes.number,
   tags: PropTypes.array,
   streamfield: PropTypes.array,

@@ -25,6 +25,15 @@ exports.createPages = ({ graphql, actions }) => {
       throw result.errors
     }
 
+    [
+      { component: path.resolve('src/templates/blogs/index.js'), path: '/blogs/' },
+      { component: path.resolve('src/templates/case-studies/index.js'), path: '/work/' },
+      { component: path.resolve('src/templates/team/index.js'), path: '/team/' },
+      { component: path.resolve('src/templates/jobs/index.js'), path: '/jobs/' },
+    ].map(page => {
+      createPage({ ...page })
+    })  
+
     // Create all blog post pages.
     result.data.wagtail.blogPosts.map(({slug}) => {
       createPage({

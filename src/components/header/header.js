@@ -10,7 +10,7 @@ class Header extends React.Component {
   state = { mobileNavOpen: false, collapsed: false }
 
   componentDidMount() {
-    if (this.props.shouldCollapse) {
+    if (this.props.shouldCollapse && typeof window !== `undefined`) {
       window.addEventListener('scroll', () => {
         if (window.scrollY > 0) {
           if (!this.state.collapsed) {

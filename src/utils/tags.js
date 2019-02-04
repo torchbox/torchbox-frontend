@@ -23,16 +23,18 @@ export const getUniqueTagsFromPosts = posts => {
 }
 
 export const getCurrentFilterIndex = tags => {
-  const { filter } = qs.parse(window.location.hash)
-  let selectedIndex = 0;
-  if (tags && filter) {
-    tags.map((tag, index) => {
-      console.log(tag.slug, tag.slug === filter, index)
-      if (tag.slug === filter) {
-        selectedIndex = index
-      }
-    })
+  if (typeof window !== `undefined`) {
+    const { filter } = qs.parse(window.location.hash)
+    let selectedIndex = 0;
+    if (tags && filter) {
+      tags.map((tag, index) => {
+        if (tag.slug === filter) {
+          selectedIndex = index
+        }
+      })
+    }
+    return selectedIndex
   }
-  return selectedIndex
+  return 0
 }
 
