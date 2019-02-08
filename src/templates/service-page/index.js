@@ -101,20 +101,20 @@ export default ({ data, pageContext }) => {
 
       }
     })
-  } else {
-    blocks = []
-  }
 
-  return (
-    <Layout
-      title={page.title}
-      darkTheme={page.isDarktheme}
-      headerNestedNav={nestedNav}
-      headerShouldCollapse={true}
-      nestedLinks={nestedNav}>
-      <ServicePage blocks={blocks} darkTheme={page.isDarktheme}/>
-    </Layout>
-  )
+    return (
+      <Layout
+        title={page.title}
+        darkTheme={page.isDarktheme}
+        headerNestedNav={nestedNav}
+        headerShouldCollapse={true}
+        nestedLinks={nestedNav}>
+        <ServicePage blocks={blocks} darkTheme={page.isDarktheme}/>
+      </Layout>
+    )
+  } else {
+    return null
+  }
 }
 
 export const query = graphql`
