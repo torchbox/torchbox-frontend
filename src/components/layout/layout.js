@@ -12,57 +12,38 @@ class Layout extends React.Component {
   state = { currentUrl: '#1' }
 
   render() {
-    const { children, headerShouldCollapse } = this.props
+    const { children, headerShouldCollapse, darkTheme, title, nestedLinks } = this.props
     return (
-      <>
+      <div className={darkTheme ? styles.darkTheme : ''}>
         <Header
+          title={title}
           logoClick={action('Go to Homepage')}
           currentUrl={this.state.currentUrl}
           shouldCollapse={headerShouldCollapse}
           links={[
             {
-              href: '#1',
-              title: 'Digital product agency',
+              href: '/',
+              title: 'Design + build products',
               strap: 'For digital design and engineering services',
-              links: [
-                { href: '#1', title: 'How can we help' },
-                { href: '#1', title: 'Testimonials' },
-                { href: '#1', title: 'Our process' },
-                { href: '#1', title: 'Case studies' },
-                { href: '#1', title: 'Out thinking' },
-              ],
             },
             {
-              href: '#2',
-              title: 'Wagtail CMS',
+              href: '/wagtail',
+              title: 'Wagtail CMS services',
               strap: 'For web builds with the Wagtail open source CMS',
-              links: [
-                { href: '#1', title: 'How can we help' },
-                { href: '#1', title: 'Testimonials' },
-                { href: '#1', title: 'Our process' },
-                { href: '#1', title: 'Case studies' },
-                { href: '#1', title: 'Out thinking' },
-              ],
             },
             {
-              href: '#3',
-              title: 'Data + acquisition',
+              href: '/digital-marketing',
+              title: 'Digital marketing',
               strap: 'For our data driven digital marketing services',
-              links: [
-                { href: '#1', title: 'How can we help' },
-                { href: '#1', title: 'Testimonials' },
-                { href: '#1', title: 'Our process' },
-                { href: '#1', title: 'Case studies' },
-                { href: '#1', title: 'Out thinking' },
-              ],
             },
             {
               href: '#4',
-              title: 'Culture + Jobs',
+              title: 'Culture + jobs',
               strap: 'For our data driven digital marketing services',
               badge: 5,
             },
           ]}
+          nestedLinks={nestedLinks}
           navigateTo={url => {
             this.setState({ currentUrl: url })
           }}
@@ -111,18 +92,20 @@ class Layout extends React.Component {
             ]}
           />
         </div>
-      </>
+      </div>
     )
   }
 }
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  nestedLinks: PropTypes.array,
   headerShouldCollapse: PropTypes.bool
 }
 
 Layout.defaultProps = {
-  headerShouldCollapse: false
+  headerShouldCollapse: false,
+  darkTheme: false
 }
 
 export default Layout

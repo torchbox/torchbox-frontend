@@ -25,6 +25,7 @@ export const query = graphql`
         lastName
         slug
         role
+        isSenior
         image {
           ...largeIconImage
         }

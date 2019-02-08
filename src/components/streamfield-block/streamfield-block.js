@@ -94,7 +94,7 @@ class StreamfieldBlock extends React.Component {
                   className={styles.streamfieldQuote}
                   quotes={[
                     {
-                      person: block.value.attribution,
+                      name: block.value.attribution,
                       role: '',
                       quote: block.value.quote,
                     },

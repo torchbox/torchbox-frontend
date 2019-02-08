@@ -10,16 +10,8 @@
         padding-bottom: 40px;
     }
 
-    &Image {
-        width: 50vw;
-        max-width: 380px;
-        @include for-tablet-landscape-up {
-            width: 28vw;
-        }
-    }
-
     &Content {
-        padding-top: 80px;
+        padding-top: 70px;
         @include container;
         @include for-tablet-landscape-up {
             padding-top: 20px;
@@ -27,7 +19,6 @@
     }
 
     &Title {
-        color: $primary;
         font-size: 35px;
         line-height: 45px;
         font-weight: 100;
@@ -35,6 +26,10 @@
             padding-left: 17vw;
             font-size: 36px;
             line-height: 50px;
+        }
+
+        * {
+            color: $primary;
         }
     }
 
@@ -56,7 +51,7 @@
             padding-bottom: 15px;
             display: flex;
             flex-direction: row;
-            align-items: flex-start;    
+            align-items: flex-start;
 
             &Icon {
                 transform: rotate(30deg);
@@ -65,7 +60,7 @@
                 background-color: $accent;
                 -webkit-mask: url("../../images/icons/tick.svg") no-repeat center;
                 -webkit-mask-size: contain;
-                margin-top: 20px;   
+                margin-top: 20px;
                 @include for-tablet-landscape-up {
                     width: 22px;
                     height: 22px;
@@ -87,7 +82,7 @@
                     padding: 15px 0 0;
                     margin: 0 0 5px 60px !important;
                     line-height: 40px;
-                    font-size: 24px;        
+                    font-size: 24px;
                 }
 
                 &:hover {

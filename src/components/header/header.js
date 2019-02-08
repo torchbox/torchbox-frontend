@@ -4,6 +4,8 @@ import { Link } from 'gatsby'
 
 import MenuButton from '../menu-button'
 import NavLink from '../nav-link'
+import { ReactComponent as Logo } from '../../images/logo.svg'
+import { ReactComponent as Flame } from '../../images/tbx-flame.svg'
 import styles from './header.module.scss'
 
 class Header extends React.Component {
@@ -27,18 +29,14 @@ class Header extends React.Component {
 
   render() {
     const {
+      title,
       links,
       currentUrl,
       navigateTo,
       logoClick,
       activeNestedLink,
+      nestedLinks
     } = this.props
-
-    let nestedLinks = null
-    const currentLink = links.find(({ href }) => href == currentUrl)
-    if (currentLink) {
-      nestedLinks = currentLink.links
-    }
 
     return (
       <div
@@ -49,17 +47,15 @@ class Header extends React.Component {
         <div className={styles.headerInner}>
           {this.state.collapsed ? (
             <div className={styles.collapsedLogoContainer}>
-              <img
-                src={require('../../images/tbx-flame.svg')}
-                className={styles.logo}
+              <Flame
+                className={styles.logoFlame}
                 onClick={logoClick}
               />
-              <span className={styles.logoText}>Design + build products</span>
+              <span className={styles.logoText}>{title}</span>
             </div>
           ) : (
             <div className={styles.logoContainer}>
-              <img
-                src={require('../../images/logo.svg')}
+              <Logo
                 className={styles.logo}
                 onClick={logoClick}
               />
@@ -144,6 +140,7 @@ Header.propTypes = {
 
 Header.defaultProps = {
   links: [],
+  nestedLinks: [],
   shouldCollapse: false
 }
 

@@ -33,7 +33,7 @@ Contact.propTypes = {
 }
 
 Contact.defaultProps = {
-  title: '',
+  title: 'Get in touch about your project',
   email: '',
   number: '',
   className: '',

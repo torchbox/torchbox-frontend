@@ -36,9 +36,21 @@ module.exports = {
         // This is field under which it's accessible
         fieldName: 'wagtail',
         // Url to query from
-        url: process.env.GATSBY_WAGTAIL_ENDPOINT || 'http://localhost:8000/graphql/', 
+        url: process.env.GATSBY_WAGTAIL_ENDPOINT || 'http://localhost:8000/graphql/',
+        // refetchInterval: 10,
       },
-    } ,
+    },
+    {
+      resolve: 'gatsby-plugin-svgr',
+      options: {
+        prettier: true,         // use prettier to format JS code output (default)
+        svgo: true,             // use svgo to optimize SVGs (default)
+        svgoConfig: {
+          removeViewBox: true, // remove viewBox even when doing so is possible (default)
+          cleanupIDs: false,    // remove unused IDs and minify remaining IDs (default)
+        },
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',

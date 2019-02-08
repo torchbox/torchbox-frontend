@@ -1,1 +1,9 @@
 @import '../../styles/app.module';
+
+.page {
+  padding: 0;
+
+  &Contact {
+    margin-top: 0px;
+  }
+}

@@ -9,6 +9,7 @@
     }
 
     &Icon {
+        fill: $accent;
         width: 20vw;
         max-width: 100px;
         @include for-tablet-landscape-up {

@@ -6,6 +6,7 @@
 
     @include for-tablet-landscape-up {
         padding: 60px 0 0;
+        //margin-bottom: 2px;
     }
 
     &Container {
@@ -31,9 +32,14 @@
         text-decoration: none;
         background-color: white;
 
+        margin-bottom: 2px;
         padding: 50px 50px;
         border-radius: 3px;
         border-bottom: none;
+
+        @include for-tablet-landscape-up {
+            margin-right: 2px;
+        }
 
         &Title {
             color: $blue;

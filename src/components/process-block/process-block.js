@@ -3,26 +3,24 @@ import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
 import styles from './process-block.module.scss'
+import { ReactComponent as ToolkitImage } from '../../images/toolkit.svg'
 import { renderTorchUp } from '../../utils/torchup'
 
-const ProcessBlock = ({ title, processes, className, sectionTitle }) => (
+const ProcessBlock = ({ title = '', className, sectionTitle, processes }) => (
   <div className={[styles.processBlock, className].join(' ')}>
     <div className={styles.processContainer}>
       <span className={styles.pageSectionTitle}>{sectionTitle}</span>
       <h1 className={styles.processTitle} {...renderTorchUp(title)} />
+      <ToolkitImage className={styles.processImage} />
+      <ul className={styles.processList}>
+        { processes.map(process => (
+          <li className={styles.processItem}>
+            <h3 className={styles.processItemTitle}>{process.title}</h3>
+            <p className={styles.processItemDesc}>{process.description}</p>
+          </li>
+        )) }
+      </ul>
 
-      <div className={styles.processImageContainer}>
-        <img
-          className={styles.processDesktopImage}
-          src={require('../../images/processes-desktop.png')}
-          alt=""
-        />
-        <img
-          className={styles.processMobileImage}
-          src={require('../../images/processes-mobile.png')}
-          alt=""
-        />
-      </div>
     </div>
   </div>
 )
@@ -31,11 +29,13 @@ ProcessBlock.propTypes = {
   title: PropTypes.string,
   className: PropTypes.string,
   sectionTitle: PropTypes.string,
+  processes: PropTypes.array,
 }
 
 ProcessBlock.defaultProps = {
   className: '',
   sectionTitle: 'Process',
+  processes: []
 }
 
 export default ProcessBlock

@@ -7,19 +7,65 @@ $hero-link-color: var(--hero-link-color, $blue);
 
 .hero {
 
+  &Image {
+    position: relative;
+    width: 50vw;
+    max-width: 380px;
+    margin-top: 40px;
+    z-index: 2;
+    @include for-desktop-up {
+      width: 28vw;
+      left: -14.66vw;
+      margin-top: 0px;
+    }
+
+    &Right {
+      @extend .heroImage;
+      margin-left: auto;
+      margin-top: 20px;
+      left: 0;
+
+      @include for-tablet-portrait-up {
+        margin-top: 60px;
+      }
+
+      @include for-tablet-landscape-up {
+        margin-top: 140px;
+      }
+    }
+  }
+
   &Container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
     width: 100vw;
     background: $hero-background;
+    padding-top: 70px;
+    @include for-tablet-landscape-up {
+      padding-top: 120px;
+    }
 
     @include for-desktop-up {
       width: 85.34vw;
       padding-left: 14.66vw;
     }
 
+    &::after {
+      position: absolute;
+      content: ' ';
+      display: block;
+      height: 80px;
+      width: 100%;
+      background-color: white;
+      top: calc(100% - 50px);
+      left: 0;
+    }
+
   }
 
   &Content {
-    @include container;
+    margin: 50px 10.33vw 0;
     position: relative;
     padding-top: 60px;
     padding-bottom: 20px;
@@ -58,6 +104,7 @@ $hero-link-color: var(--hero-link-color, $blue);
       display: flex;
       flex-direction: column;
       margin-left: 20px;
+      margin-top: 80px;
 
       @include for-tablet-landscape-up {
         flex-direction: row;
@@ -83,13 +130,14 @@ $hero-link-color: var(--hero-link-color, $blue);
         font-family: $mainFont;
         text-decoration: none;
         border-bottom: 2px solid $hero-background;
-        margin-right: 10px;
         margin-left: 10px;
         &:hover {
           border-bottom: 2px solid $accent;
         }
         @include for-tablet-landscape-up {
           padding: 0;
+          margin-left: 0;
+          margin-right: 20px;
         }
 
         &::before {
@@ -125,4 +173,11 @@ $hero-link-color: var(--hero-link-color, $blue);
 
 .accent {
   color: $accent !important;
+}
+
+.darkTheme {
+  margin-bottom: 50px !important;
+  @include for-tablet-landscape-up {
+    min-height: calc(100vh - 180px) !important;
+  }
 }

@@ -39,6 +39,7 @@ class TestimonialsBlock extends React.Component {
 }
 
 TestimonialsBlock.propTypes = {
+  logos: PropTypes.array,
   testimonials: PropTypes.array.isRequired,
   className: PropTypes.string,
   sectionTitle: PropTypes.string.isRequired,

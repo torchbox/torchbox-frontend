@@ -21,6 +21,7 @@ export const query = graphql`
       caseStudies {
         slug
         title
+        client
         listingSummary
         tags: relatedServices {
           name

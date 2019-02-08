@@ -7,37 +7,58 @@
     padding: 90px 0 40px;
   }
 
+  &Image {
+    width: 40vw;
+    position: absolute;
+    left: -8.33vw;
+    top: 20px;
+    @include for-tablet-landscape-up {
+      width: 19vw;
+      top: 60px;
+    }
+
+  }
+
   &Container {
     @include container;
   }
 
-  &Title {
-    font-size: 45px;
-    line-height: 50px;
-    color: $primary;
-    font-weight: bold;
-  }
+  &List {
+    display: grid;
+    grid-column-gap: 110px;
+    grid-template-columns: auto;
+    grid-row-gap: 60px;
 
-  &ImageContainer {
-    padding: 20px 0;
+    margin: 0;
+    padding-top: calc((40vw * 0.6) + 60px);
+
     @include for-tablet-landscape-up {
-      padding: 60px 60px 0;
+      grid-template-columns: auto auto;
+      margin: 60px 0 80px 16.66vw;
+      padding-top: 50px;
     }
   }
 
-  &DesktopImage {
-    width: 100%;
-    display: none;
-    @include for-tablet-landscape-up {
-      display: block;
-    }
-  }
+  &Item {
 
-  &MobileImage {
-    width: 100%;
-    @include for-tablet-landscape-up {
-      display: none;
+    &Title {
+      font-size: 34px;
+      line-height: 40px;
+      color: #2f128d;
+      font-weight: 800;
+      background: white;
+      padding: 10px 0 0;
+      margin: 0 0 0;
     }
+
+    &Desc {
+      font-size: 17px;
+      line-height: 26px;
+      margin: 10px 0 0;
+      color: rgba(51, 51, 51, 0.9);
+      width: calc(100% - 20px);
+    }
+
   }
 
 }

@@ -1,0 +1,47 @@
+@import '../../styles/app.module';
+
+.process {
+
+  &Block {
+    background-color: white;
+    padding: 90px 0 40px;
+  }
+
+  &Container {
+    @include container;
+  }
+
+  &Title {
+    font-size: 45px;
+    line-height: 50px;
+    color: $primary;
+    font-weight: bold;
+  }
+
+  &ImageContainer {
+    padding: 20px 0;
+    @include for-tablet-landscape-up {
+      padding: 60px 60px 0;
+    }
+  }
+
+  &DesktopImage {
+    width: 100%;
+    display: none;
+    @include for-tablet-landscape-up {
+      display: block;
+    }
+  }
+
+  &MobileImage {
+    width: 100%;
+    @include for-tablet-landscape-up {
+      display: none;
+    }
+  }
+
+}
+
+.pageSectionTitle {
+  top: -45px !important;
+}

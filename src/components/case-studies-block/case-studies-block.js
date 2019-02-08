@@ -38,9 +38,9 @@ const CaseStudiesBlock = ({
             <div className={styles.caseStudyImage}>
               <img
                 ref={ref => img = ref}
-                src={caseStudy.image || 'https://via.placeholder.com/800x500/'}
+                src={caseStudy.image || require('../../images/default-featured.png')}
                 onError={() => {
-                  img.src = 'https://via.placeholder.com/800x500/'
+                  img.src = require('../../images/default-featured.png')
                 }}/>
             </div>
           </Link>

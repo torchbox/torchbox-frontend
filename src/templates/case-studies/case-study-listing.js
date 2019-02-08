@@ -8,7 +8,7 @@ import { getCurrentFilterIndex, getUniqueTagsFromPosts, postContainsTag } from '
 import FilterTags from '../../components/filter-pills/filter-tags'
 import CaseStudiesBlock from '../../components/case-studies-block/case-studies-block'
 import { caseStudiesUrl } from '../../utils/urls'
-import safeGet from '../../utils/safeget'
+import { caseStudyListing } from '../../utils/selectors'
 
 export class CaseStudyListingPage extends React.Component {
   state = { selectedTag: 0, currentLimit: 10 }
@@ -34,17 +34,7 @@ export class CaseStudyListingPage extends React.Component {
 
 
     const listing = caseStudies
-      .map(caseStudy => {
-        return {
-          client: 'BLAH BLAH BLAH',
-          tags: caseStudy.tags,
-          title: caseStudy.title,
-          href: caseStudiesUrl(caseStudy.slug),
-          description: caseStudy.listingSummary,
-          image: safeGet(caseStudy, 'feedImage.src.url', 'https://images.pexels.com/photos/1054289/pexels-photo-1054289.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')
-          // image: 'http://localhost:8000/media/images/hq-5787.width-1280.jpg'
-        }
-      })
+      .map(caseStudyListing)
       .filter(caseStudy =>
         selectedTag === 0
           ? true

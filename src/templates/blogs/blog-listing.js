@@ -10,6 +10,7 @@ import { getUniqueTagsFromPosts, postContainsTag, getCurrentFilterIndex } from '
 import FilterTags from '../../components/filter-pills/filter-tags'
 import BlogLink from '../../components/blog-link/blog-link'
 import { blogsUrl } from '../../utils/urls'
+import { blogListing } from '../../utils/selectors'
 
 export class BlogListingPage extends React.Component {
   state = { selectedTag: 0, currentLimit: 10 }
@@ -34,17 +35,7 @@ export class BlogListingPage extends React.Component {
     const { selectedTag, currentLimit, tags = []} = this.state
 
     const listing = this.props.blogs
-      .map(blog => {
-        return {
-          title: blog.title,
-          tags: blog.tags,
-          href: `/blogs/${blog.slug}`,
-          datePublished: new Date(blog.date).getTime(),
-          authorName: safeGet(blog, 'authors.0.name', ''),
-          authorRole: safeGet(blog, 'authors.0.role', ''),
-          authorAvatar: safeGet(blog, 'authors.0.personPage.image.src', ''),
-        }
-      })
+      .map(blogListing)
       .filter(blog =>
         selectedTag === 0
           ? true

@@ -1,11 +1,11 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 
-import ProcessBlock from './process-block'
+import ProcessImageBlock from './process-image-block'
 
 storiesOf('Components/Landing Page', module).add('Process (image) block', () => {
   return (
-    <ProcessBlock
+    <ProcessImageBlock
       title={`{Ten weeks to launch a [new] product}`}
       processes={[
         {

@@ -12,12 +12,9 @@ const HelpBlock = ({
   title,
   links,
   sectionTitle,
-  greetingImage,
   contactDetails,
 }) => (
   <div className={styles.blockContainer}>
-    <img className={styles.blockImage} src={greetingImage} />
-
     <section className={styles.blockContent}>
       <span className={styles.pageSectionTitle}>{sectionTitle}</span>
       <h1 className={styles.blockTitle} {...renderTorchUp(title)} />
@@ -67,7 +64,6 @@ HelpBlock.defaultProps = {
   title: 'We can help you…',
   links: [],
   sectionTitle: 'Services',
-  greetingImage: require('../../images/help-character.svg'),
 }
 
 export default HelpBlock

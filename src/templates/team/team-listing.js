@@ -11,14 +11,15 @@ export class TeamListingPage extends React.Component {
   render() {
     const { title, team } = this.props
 
-    const listing = team.map(person => {
-      return {
+    const listing = team
+      .map(person => ({
         name: person.firstName + ' ' + person.lastName,
         role: person.role,
         avatar: person.image.src.url,
         href: teamUrl(person.slug),
-      }
-    })
+        isSenior: person.isSenior
+      }))
+      .sort(person => person.isSenior ? -1 : 1)
 
     return (
       <div className={styles.page}>
