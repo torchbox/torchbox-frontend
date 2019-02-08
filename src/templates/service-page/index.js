@@ -10,14 +10,16 @@ export default ({ data, pageContext }) => {
   const page = data.wagtail.servicePages[0]
   let { blocks } = pageContext
 
-  let nestedNav = [];
-  ['keyPointsSectionTitle', 'testimonialsSectionTitle', 'caseStudiesSectionTitle', 'blogsSectionTitle']
-    .map(id => {
-      const sectionTitle = page[id]
-      if (sectionTitle) {
-        nestedNav.push({ title: sectionTitle, href: `#section=${sectionTitle}` })
-      }
-    })
+  if (page) {
+    let nestedNav = [];
+    ['keyPointsSectionTitle', 'testimonialsSectionTitle', 'caseStudiesSectionTitle', 'blogsSectionTitle']
+      .map(id => {
+        const sectionTitle = page[id]
+        if (sectionTitle) {
+          nestedNav.push({ title: sectionTitle, href: `#section=${sectionTitle}` })
+        }
+      })
+  } 
 
   blocks = blocks.map(block => {
     switch (block) {
