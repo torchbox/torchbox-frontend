@@ -19,89 +19,91 @@ export default ({ data, pageContext }) => {
           nestedNav.push({ title: sectionTitle, href: `#section=${sectionTitle}` })
         }
       })
-  } 
 
-  blocks = blocks.map(block => {
-    switch (block) {
+    blocks = blocks.map(block => {
+      switch (block) {
 
-      case 'hero-block':
-        return (page.strapline || page.intro) ? {
-          type: 'hero-block',
-          data: {
-            strapline: page.strapline,
-            intro: page.intro,
-            links: nestedNav,
-            greetingImage: page.isDarktheme
-              ? require('../../images/wagtail-greeting.svg').default
-              : require('../../images/help-character.svg').default,
-            alignImageRight: page.isDarktheme
-          },
-        } : {}
-
-      case 'help-block':
-        return (page.keyPoints) ? {
-          type: 'help-block',
-          data: {
-            sectionTitle: page.keyPointsSectionTitle,
-            heading: page.headingForKeyPoints,
-            links: page.keyPoints.map(keyPoint => ({
-              title: keyPoint.text,
-              href: pageUrl(keyPoint.linkedPage),
-            })),
-            contact: {
-              email: page.contact.emailAddress,
-              phone: page.contact.phoneNumber,
+        case 'hero-block':
+          return (page.strapline || page.intro) ? {
+            type: 'hero-block',
+            data: {
+              strapline: page.strapline,
+              intro: page.intro,
+              links: nestedNav,
+              greetingImage: page.isDarktheme
+                ? require('../../images/wagtail-greeting.svg').default
+                : require('../../images/help-character.svg').default,
+              alignImageRight: page.isDarktheme
             },
-          },
-        } : {}
+          } : {}
 
-      case 'testimonials-block':
-        return (page.clientLogos || page.usaClientLogos || page.testimonials) ? {
-          type: 'testimonials-block',
-          data: {
-            sectionTitle: page.testimonialsSectionTitle,
-            logos: page.clientLogos.concat(page.usaClientLogos),
-            testimonials: page.testimonials,
-          },
-        } : {}
+        case 'help-block':
+          return (page.keyPoints) ? {
+            type: 'help-block',
+            data: {
+              sectionTitle: page.keyPointsSectionTitle,
+              heading: page.headingForKeyPoints,
+              links: page.keyPoints.map(keyPoint => ({
+                title: keyPoint.text,
+                href: pageUrl(keyPoint.linkedPage),
+              })),
+              contact: {
+                email: page.contact.emailAddress,
+                phone: page.contact.phoneNumber,
+              },
+            },
+          } : {}
+
+        case 'testimonials-block':
+          return (page.clientLogos || page.usaClientLogos || page.testimonials) ? {
+            type: 'testimonials-block',
+            data: {
+              sectionTitle: page.testimonialsSectionTitle,
+              logos: page.clientLogos.concat(page.usaClientLogos),
+              testimonials: page.testimonials,
+            },
+          } : {}
 
 
-      case 'process-block':
-        return (page.useProcessBlockImage) ? {
-          type: 'process-image-block',
-          data: {
-            sectionTitle: page.processSectionTitle
-          },
-        } : (page.processes) ? {
-          type: 'process-block',
-          data: {
-            sectionTitle: page.processSectionTitle,
-            processes: page.processes
-          }
-        } : {}
+        case 'process-block':
+          return (page.useProcessBlockImage) ? {
+            type: 'process-image-block',
+            data: {
+              sectionTitle: page.processSectionTitle
+            },
+          } : (page.processes) ? {
+            type: 'process-block',
+            data: {
+              sectionTitle: page.processSectionTitle,
+              processes: page.processes
+            }
+          } : {}
 
-      case 'case-studies-block':
-        return (page.caseStudies) ? {
-          type: 'case-studies-block',
-          data: {
-            sectionTitle: page.caseStudiesSectionTitle,
-            caseStudies: page.caseStudies.map(caseStudyListing),
-            listingUrl: caseStudiesUrl(),
-          },
-        } : {}
+        case 'case-studies-block':
+          return (page.caseStudies) ? {
+            type: 'case-studies-block',
+            data: {
+              sectionTitle: page.caseStudiesSectionTitle,
+              caseStudies: page.caseStudies.map(caseStudyListing),
+              listingUrl: caseStudiesUrl(),
+            },
+          } : {}
 
-      case 'blogs-block':
-        return (page.blogPosts) ? {
-          type: 'blogs-block',
-          data: {
-            sectionTitle: page.blogsSectionTitle,
-            blogs: page.blogPosts.map(blogListing),
-            listingUrl: blogsUrl(),
-          },
-        } : {}
+        case 'blogs-block':
+          return (page.blogPosts) ? {
+            type: 'blogs-block',
+            data: {
+              sectionTitle: page.blogsSectionTitle,
+              blogs: page.blogPosts.map(blogListing),
+              listingUrl: blogsUrl(),
+            },
+          } : {}
 
-    }
-  })
+      }
+    })
+  } else {
+    blocks = []
+  }
 
   return (
     <Layout
