@@ -6,16 +6,18 @@ import Layout from '../../components/layout'
 
 export default ({ data }) => {
   const page = data.wagtail.culturePages[0]
-  console.log(page)
-  return (
-    <Layout darkTheme={true}>
-      <CulturePage
-        strapline={page.strapline}
-        heroImage={page.heroImage.src.url}
-        intro={page.intro}
-      />
-    </Layout>
-  )
+  if(page) {
+    return (
+      <Layout darkTheme={true}>
+        <CulturePage
+          strapline={page.strapline}
+          heroImage={page.heroImage.src.url}
+          intro={page.intro}
+        />
+      </Layout>
+    )
+  }
+  return null
 }
 
 export const query = graphql`
