@@ -6,7 +6,6 @@ import Layout from '../../components/layout'
 
 export default ({ data }) => {
   const page = data.wagtail.culturePages[0]
-  console.log(page)
   if(page) {
     return (
       <Layout theme={'dark--transparent'}>

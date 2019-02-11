@@ -44,12 +44,12 @@ export const query = graphql`
         authors {
           name
           personPage {
+            role
             slug
             image {
               ...iconImage
             }
           }
-          role
         }
         body
       }

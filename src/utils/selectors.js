@@ -15,19 +15,16 @@ export const postTags = (tags, hrefPrefix = '') => tags
     href: hrefPrefix + tag.slug,
   }))
 
-export const blogListing = blog => {
-  console.log(authorDetails(blog.authors))
-  return {
-    title: blog.title,
-    tags: blog.tags,
-    description: blog.listingSummary,
-    href: blogsUrl(blog.slug),
-    datePublished: blog.date,
-    authorRole: authorDetails(blog.authors).role,
-    authorName: authorDetails(blog.authors).name,
-    authorAvatar: authorDetails(blog.authors).avatar,
-  }
-}
+export const blogListing = blog => ({
+  title: blog.title,
+  tags: blog.tags,
+  description: blog.listingSummary,
+  href: blogsUrl(blog.slug),
+  datePublished: blog.date,
+  authorRole: authorDetails(blog.authors).role,
+  authorName: authorDetails(blog.authors).name,
+  authorAvatar: authorDetails(blog.authors).avatar,
+})
 
 export const caseStudyListing = caseStudy => ({
   client: caseStudy.client,

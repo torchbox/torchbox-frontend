@@ -15,7 +15,6 @@ import ProcessBlock from '../../components/process-block/process-block'
 class ServicePage extends React.Component {
   constructor (props) {
     super(props)
-
     this.sectionRefs = {}
     props.blocks.map(({ type, data }) => {
       if (data) {
