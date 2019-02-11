@@ -45,7 +45,7 @@ class Layout extends React.Component {
         badge: 5,
       },
     ].map(link => {
-      if (window) {
+      if (typeof window !== `undefined`) {
         if (link == window.location.pathname.replace('/', '')) {
           return {
             ...link,

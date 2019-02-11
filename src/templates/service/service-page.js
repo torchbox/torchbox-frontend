@@ -27,7 +27,7 @@ class ServicePage extends React.Component {
   }
 
   componentDidMount() {
-    if (window) {
+    if (typeof window !== `undefined`) {
       const { section } = qs.parse(window.location.hash)
       if (section) {
       }
