@@ -147,19 +147,19 @@ export const query = graphql`
           emailAddress
           phoneNumber
           image {
-            src
+            ...iconImage
           }
         }
         
         testimonialsSectionTitle
         clientLogos {
           image {
-            src
+            ...largeIconImage
           }
         }
         usaClientLogos {
           image {
-            src
+            ...largeIconImage
           }
         }
         testimonials {
@@ -187,9 +187,7 @@ export const query = graphql`
           client
           listingSummary
           feedImage {
-            rendition(format: "full") {
-              url
-            }
+            ...fullImage
           }
         }
         
@@ -236,19 +234,19 @@ export const query = graphql`
           emailAddress
           phoneNumber
           image {
-            src
+            ...iconImage
           }
         }
         
         testimonialsSectionTitle
         clientLogos {
           image {
-            src
+            ...largeIconImage
           }
         }
         usaClientLogos {
           image {
-            src
+            ...largeIconImage
           }
         }
         testimonials {
@@ -276,9 +274,7 @@ export const query = graphql`
           client
           listingSummary
           feedImage {
-            rendition(format: "full") {
-              url
-            }
+            ...fullImage
           }
         }
         
