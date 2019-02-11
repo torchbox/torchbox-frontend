@@ -11,6 +11,7 @@ import { caseStudiesUrl } from '../../utils/urls'
 
 const CaseStudyPage = ({
   title,
+  client,
   author,
   tags,
   readTime,
@@ -19,6 +20,9 @@ const CaseStudyPage = ({
   teasers,
 }) => (
   <div className={styles.page}>
+    <div className={styles.pageClientContainer}>
+      <span className={styles.pageClient}>{client}</span>
+    </div>
     <TitleBlock className={styles.pageTitle} title={title} />
     <AuthorBlock
       className={styles.pageAuthor}

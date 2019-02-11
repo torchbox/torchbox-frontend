@@ -1,1 +1,28 @@
 @import '../../styles/app.module';
+
+.page {
+  padding-top: 230px;
+
+
+  &Streamfield {
+    padding-top: 0 !important;
+    margin-top: -40px;
+  }
+
+  &Client {
+    &Container {
+      @include container;
+    }
+
+    @include streamblockPadding;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 12px;
+    font-weight: bold;
+    color: #fd5765;
+    margin: 0 0 15px;
+    position: relative;
+  }
+
+}

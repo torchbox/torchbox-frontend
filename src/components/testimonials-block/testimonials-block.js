@@ -5,13 +5,8 @@ import styles from './testimonials-block.module.scss'
 import QuoteSlider from '../quote-slider/quote-slider'
 
 class TestimonialsBlock extends React.Component {
-  state = { currentIndex: 0 }
-
   render() {
-    const { currentIndex } = this.state
     const { testimonials, logos, className, sectionTitle } = this.props
-    const currentTestimonial = testimonials[currentIndex]
-
     return (
       <div className={[styles.testimonials, className].join(' ')}>
         <div className={styles.testimonialsContainer}>
@@ -31,10 +26,6 @@ class TestimonialsBlock extends React.Component {
         </div>
       </div>
     )
-  }
-
-  changeSlide = index => {
-    this.setState({ currentIndex: index })
   }
 }
 

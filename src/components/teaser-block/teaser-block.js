@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
+import TeaserLink from './teaser'
 import styles from './teaser-block.module.scss'
 import { renderTorchUp } from '../../utils/torchup'
 
@@ -12,12 +13,11 @@ const TeaserBlock = ({ title, teasers, className }) => {
         <h3 className={styles.teaserBlockTitle} {...renderTorchUp(title)} />
         <div className={styles.teaserBlockList}>
           {teasers.map(teaser => (
-            <Link to={teaser.link} className={styles.teaserBlockItem}>
-              <h1 className={styles.teaserBlockItemTitle}>{teaser.title}</h1>
-              <span className={styles.teaserBlockItemDesc}>
-              {teaser.description}
-            </span>
-            </Link>
+            <TeaserLink
+              href={teaser.href}
+              title={teaser.name}
+              description={teaser.description}
+            />
           ))}
         </div>
       </div>

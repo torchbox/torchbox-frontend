@@ -5,6 +5,8 @@ exports.createPages = ({ graphql, actions }) => {
   const blogPostTemplate = path.resolve(`src/templates/blog-post/index.js`)
   const caseStudyTemplate = path.resolve(`src/templates/case-study/index.js`)
   const personTemplate = path.resolve(`src/templates/person/index.js`)
+  const serviceTemplate = path.resolve(`src/templates/service/index.js`)
+  const standardTemplate = path.resolve(`src/templates/standard/index.js`)
 
   return graphql(`
     {
@@ -18,6 +20,12 @@ exports.createPages = ({ graphql, actions }) => {
         personPages {
           slug
         }
+        subServicePages {
+          slug
+        }
+        standardPages {
+          slug
+        }
       }
     }
   `).then(result => {
@@ -28,7 +36,7 @@ exports.createPages = ({ graphql, actions }) => {
     [
       // Service (Main) Pages
       {
-        component: path.resolve('src/templates/service-page/index.js'),
+        component: serviceTemplate,
         path: '/',
         context: {
           slug: 'digital-products',
@@ -44,7 +52,7 @@ exports.createPages = ({ graphql, actions }) => {
       },
 
       {
-        component: path.resolve('src/templates/service-page/index.js'),
+        component: serviceTemplate,
         path: '/wagtail/',
         context: {
           slug: 'wagtail',
@@ -60,7 +68,7 @@ exports.createPages = ({ graphql, actions }) => {
       },
 
       {
-        component: path.resolve('src/templates/service-page/index.js'),
+        component: serviceTemplate,
         path: '/digital-marketing/',
         context: {
           slug: 'digital-marketing',
@@ -75,7 +83,7 @@ exports.createPages = ({ graphql, actions }) => {
       },
 
       {
-        component: path.resolve('src/templates/culture-page/index.js'),
+        component: path.resolve('src/templates/culture/index.js'),
         path: '/culture-and-jobs/',
         context: {
           slug: 'culture-and-jobs'
@@ -105,6 +113,31 @@ exports.createPages = ({ graphql, actions }) => {
         path: `/team/${slug}`,
         component: personTemplate,
         context: { slug },
+      })),
+
+      ...result.data.wagtail.subServicePages.map(({slug}) => ({
+        path: `/service/${slug}`,
+        component: serviceTemplate,
+        context: {
+          slug,
+          isSubServicePage: true,
+          blocks: [
+            'hero-block',
+            'help-block',
+            'process-block',
+            'testimonials-block',
+            'case-studies-block',
+            'blogs-block'
+          ]
+        },
+      })),
+
+      ...result.data.wagtail.standardPages.map(({slug}) => ({
+        path: slug,
+        component: standardTemplate,
+        context: {
+          slug,
+        },
       }))
 
     ].map(page => {

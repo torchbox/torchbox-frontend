@@ -7,11 +7,11 @@
         width: 100vw;
         background: white;
         padding-top: 10px;
-        padding-bottom: 40px;
+        padding-bottom: 80px;
     }
 
     &Content {
-        padding-top: 70px;
+        padding-top: 90px;
         @include container;
         @include for-tablet-landscape-up {
             padding-top: 20px;
@@ -68,7 +68,7 @@
             }
 
             a {
-                color: $primary;
+                color: $primary !important;
                 font-family: $mainFont;
                 text-decoration: none;
                 line-height: 30px;

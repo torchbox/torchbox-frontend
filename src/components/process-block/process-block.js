@@ -5,6 +5,7 @@ import { Link } from 'gatsby'
 import styles from './process-block.module.scss'
 import { ReactComponent as ToolkitImage } from '../../images/toolkit.svg'
 import { renderTorchUp } from '../../utils/torchup'
+import { pageUrl } from '../../utils/urls'
 
 const ProcessBlock = ({ title = '', className, sectionTitle, processes }) => (
   <div className={[styles.processBlock, className].join(' ')}>
@@ -17,10 +18,12 @@ const ProcessBlock = ({ title = '', className, sectionTitle, processes }) => (
           <li className={styles.processItem}>
             <h3 className={styles.processItemTitle}>{process.title}</h3>
             <p className={styles.processItemDesc}>{process.description}</p>
+            <Link to={pageUrl(process.pageLink)} className={styles.processItemLink}>
+              <span>{process.pageLinkLabel}</span>
+            </Link>
           </li>
         )) }
       </ul>
-
     </div>
   </div>
 )

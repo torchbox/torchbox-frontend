@@ -1,5 +1,7 @@
 @import '../../styles/app.module';
 
+$header-icon-color: var(--header-icon-color, $primary);
+
 .menuButton {
   position: absolute;
   top: -12px;
@@ -20,7 +22,7 @@
       transition: all 0.2s ease-in;
       position: absolute;
       width: 20px;
-      background-color: $primary;
+      background-color: $header-icon-color;
       height: 3px;
       left: 37%;
       top: 40px;
@@ -28,7 +30,7 @@
     }
     &:nth-child(2) {
       transition: all 0.2s ease-in;
-      background-color: $primary;
+      background-color: $header-icon-color;
       position: absolute;
       width: 16px;
       height: 3px;
@@ -37,7 +39,7 @@
     }
     &:nth-child(3) {
       transition: all 0.2s ease-in;
-      background-color: $primary;
+      background-color: $header-icon-color;
       position: absolute;
       width: 12px;
       height: 3px;

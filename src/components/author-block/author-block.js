@@ -11,13 +11,13 @@ const AuthorBlock = ({ author, datePublished, tags, readTime, className }) => (
   <div className={[styles.authorBlock, className].join(' ')}>
     <div className={styles.authorBlockContainer}>
       <Avatar
-        src={author.avatar}
+        src={author.avatar || require('../../images/default-avatar.png')}
         containerClassName={styles.authorBlockImage}
       />
       <div className={styles.authorBlockDetails}>
-        <Link to={`/team/${author.slug}`} className={styles.authorBlockName}>{author.name}</Link>
+        <Link to={`/team/${author.slug}`} className={styles.authorBlockName}>{author.name || '' }</Link>
         <p className={styles.authorBlockMeta}>
-          <span className={styles.authorBlockMetaRole}>{author.role}</span>
+          <span className={styles.authorBlockMetaRole}>{author.role || 'Past Employee'}</span>
           {datePublished ? (
             <span className={styles.authorBlockMetaDate}>
               {dayjs(datePublished).format(`DD MMM 'YY`)}
@@ -50,7 +50,9 @@ AuthorBlock.propTypes = {
 }
 
 AuthorBlock.defaultProps = {
-  author: {},
+  author: {
+    avatar: require('../../images/default-avatar.png')
+  },
 }
 
 export default AuthorBlock

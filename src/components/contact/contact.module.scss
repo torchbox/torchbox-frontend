@@ -42,7 +42,7 @@
 
     &Email {
         height: 24px;
-        color: $blue;
+        color: $light-blue !important;
         font-size: 20px;
         line-height: 24px;
         text-decoration: none;
@@ -59,7 +59,7 @@
         line-height: 24px;
         text-decoration: none;
         font-size: 20px;
-        color: $accent;
+        color: $accent !important;
         margin: 0px 15px 0 0;
         border-bottom: none;
         @include for-phone-only {

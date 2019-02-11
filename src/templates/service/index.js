@@ -5,10 +5,16 @@ import ServicePage from './service-page'
 import Layout from '../../components/layout'
 import { blogListing, caseStudyListing } from '../../utils/selectors'
 import { caseStudiesUrl, blogsUrl, pageUrl } from '../../utils/urls'
+import { safeGet } from '../../utils/safeget'
 
 export default ({ data, pageContext }) => {
-  const page = data.wagtail.servicePages[0]
-  let { blocks } = pageContext
+  let { blocks, isSubServicePage } = pageContext
+  let page = {}
+  if (isSubServicePage) {
+    page = data.wagtail.subServicePages[0]
+  } else {
+    page = data.wagtail.servicePages[0]
+  }
 
   if (page) {
     let nestedNav = [];
@@ -38,7 +44,7 @@ export default ({ data, pageContext }) => {
           } : {}
 
         case 'help-block':
-          return (page.keyPoints) ? {
+          return (page.keyPoints.length) ? {
             type: 'help-block',
             data: {
               sectionTitle: page.keyPointsSectionTitle,
@@ -48,14 +54,14 @@ export default ({ data, pageContext }) => {
                 href: pageUrl(keyPoint.linkedPage),
               })),
               contact: {
-                email: page.contact.emailAddress,
-                phone: page.contact.phoneNumber,
+                email: safeGet(page, 'contact.emailAddress'),
+                phone: safeGet(page, 'contact.phoneNumber'),
               },
             },
           } : {}
 
         case 'testimonials-block':
-          return (page.clientLogos || page.usaClientLogos || page.testimonials) ? {
+          return (page.clientLogos.length || page.usaClientLogos.length || page.testimonials.length) ? {
             type: 'testimonials-block',
             data: {
               sectionTitle: page.testimonialsSectionTitle,
@@ -77,7 +83,7 @@ export default ({ data, pageContext }) => {
               sectionTitle: page.processSectionTitle,
               processes: page.processes
             }
-          } : {}
+          } : {  }
 
         case 'case-studies-block':
           return (page.caseStudies) ? {
@@ -105,7 +111,7 @@ export default ({ data, pageContext }) => {
     return (
       <Layout
         title={page.title}
-        darkTheme={page.isDarktheme}
+        theme={page.isDarktheme ? 'dark' : 'light'}
         headerNestedNav={nestedNav}
         headerShouldCollapse={true}
         nestedLinks={nestedNav}>
@@ -121,6 +127,95 @@ export const query = graphql`
   query($slug: String) {
     wagtail {
       servicePages(serviceSlug: $slug) {
+        title
+        isDarktheme
+        strapline
+        intro
+        
+        keyPointsSectionTitle
+        headingForKeyPoints
+        keyPoints {
+          text
+          linkedPage {
+            type
+            slug
+          }
+        }
+        
+        contact {
+          name
+          emailAddress
+          phoneNumber
+          image {
+            src
+          }
+        }
+        
+        testimonialsSectionTitle
+        clientLogos {
+          image {
+            src
+          }
+        }
+        usaClientLogos {
+          image {
+            src
+          }
+        }
+        testimonials {
+          name
+          quote
+          role
+        }
+        
+        
+        useProcessBlockImage
+        processSectionTitle
+        processes {
+          title
+          description
+          pageLinkLabel
+          pageLink {
+            type
+            slug
+          }
+        }
+        
+        caseStudiesSectionTitle
+        caseStudies(limit: 4) {
+          title
+          client
+          listingSummary
+          feedImage {
+            rendition(format: "full") {
+              url
+            }
+          }
+        }
+        
+        blogsSectionTitle
+        blogPosts(limit: 4) {
+          title
+          slug
+          listingSummary
+          authors {
+            name
+            personPage {
+              role
+              image {
+                ...iconImage
+              }
+            }
+          }
+        }
+        
+        service {
+          name
+          slug
+        }
+      }
+      
+      subServicePages(slug: $slug) {
         title
         isDarktheme
         strapline

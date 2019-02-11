@@ -6,7 +6,6 @@
 
     @include for-tablet-landscape-up {
         padding: 60px 0 0;
-        //margin-bottom: 2px;
     }
 
     &Container {
@@ -32,17 +31,17 @@
         text-decoration: none;
         background-color: white;
 
-        margin-bottom: 2px;
+        margin-bottom: 4px;
         padding: 50px 50px;
         border-radius: 3px;
         border-bottom: none;
 
         @include for-tablet-landscape-up {
-            margin-right: 2px;
+            margin-right: 4px;
         }
 
         &Title {
-            color: $blue;
+            color: $light-blue;
             font-weight: 800;
             font-size: 35px;
             line-height: 40px;
@@ -57,14 +56,14 @@
                 content: '';
                 width: 20px;
                 height: 30px;
-                margin-top: 5px;
+                margin-top: 3px;
                 margin-left: 10px;
                 background-color: $green;
                 -webkit-mask: url("../../images/icons/chevron.svg") no-repeat center;
                 -webkit-mask-size: contain;
 
                 @include for-tablet-landscape-up {
-                    margin-top: 10px;
+                    margin-top: 7px;
                 }
             }
         }

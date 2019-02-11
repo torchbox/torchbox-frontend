@@ -5,12 +5,12 @@ import { Link } from 'gatsby'
 import styles from './case-studies-block.module.scss'
 
 const CaseStudiesBlock = ({
-                            title,
-                            caseStudies,
-                            className,
-                            sectionTitle,
-                            listingUrl,
-                          }) => (
+  title,
+  caseStudies,
+  className,
+  sectionTitle,
+  listingUrl,
+}) => (
   <div className={[styles.block, className].join(' ')}>
     {sectionTitle ? (
       <span className={styles.pageSectionTitle}>{sectionTitle}</span>

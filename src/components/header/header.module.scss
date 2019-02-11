@@ -10,7 +10,7 @@ $header-logo-color: var(--header-logo-color, $primary);
   background-color: $header-background;
   position: absolute;
   top: 0;
-  z-index: 4;
+  z-index: 100;
 
   * {
     transition: all 0.2s   ease;
@@ -57,7 +57,7 @@ $header-logo-color: var(--header-logo-color, $primary);
       transition: none;
       display: inline-flex;
       align-items: center;
-      color: #2f128d;
+      color: $header-link-color;
       font-size: 15px;
       font-family: $mainFont;
       text-decoration: none;

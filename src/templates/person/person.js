@@ -5,6 +5,8 @@ import styles from './person.module.scss'
 import TitleBlock from '../../components/title-block'
 import StreamfieldBlock from '../../components/streamfield-block'
 import Contact from '../../components/contact-detailed'
+import { blogsUrl } from '../../utils/urls'
+import Blogs from '../../components/blogs-listing-block'
 
 const PersonPage = ({
   name,
@@ -12,6 +14,7 @@ const PersonPage = ({
   intro,
   avatar,
   biography,
+  blogs
 }) => (
   <div className={styles.page}>
     <div className={styles.pageContainer}>
@@ -27,13 +30,13 @@ const PersonPage = ({
         { type: 'paragraph', value: biography }
       ]}
     />
-    {/*<Blogs*/}
-      {/*className={styles.pageShowcase}*/}
-      {/*sectionTitle="More of our thinking"*/}
-      {/*blogs={blogs}*/}
-      {/*showFeatured={false}*/}
-      {/*listingUrl={blogsUrl()}*/}
-    {/*/>*/}
+    <Blogs
+      className={styles.pageShowcase}
+      sectionTitle="More of our thinking"
+      blogs={blogs}
+      showFeatured={false}
+      listingUrl={blogsUrl()}
+    />
     <Contact className={styles.pageContact} />
   </div>
 )

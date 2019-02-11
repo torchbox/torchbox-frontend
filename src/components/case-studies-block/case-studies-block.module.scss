@@ -67,7 +67,7 @@
             @include for-tablet-landscape-up {
                 min-height: 200px;
                 margin: 0;
-                padding: 60px 0 0;
+                padding: 60px 0 30px;
                 width: 50%;
 
                 &Container {
@@ -125,6 +125,7 @@
 
             img {
                 width: 100%;
+                height: 100%;
             }
 
         }

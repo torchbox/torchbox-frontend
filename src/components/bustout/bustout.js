@@ -2,8 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import styles from './bustout.module.scss'
+import { renderTorchUp } from '../../utils/torchup'
 
-const Bustout = ({ src, align = 'left', className, title, caption }) => (
+const Bustout = ({ src, align = 'left', className, caption }) => (
   <div className={styles.bustoutContainer}>
     <div
       className={[
@@ -15,15 +16,16 @@ const Bustout = ({ src, align = 'left', className, title, caption }) => (
         className,
       ].join(' ')}
     >
-      <div className={styles.bustoutImage}>
-        <img src={src}/>
-      </div>
-      {title || caption ? (
+      <div
+        className={styles.bustoutImage}
+        style={{
+          backgroundImage: `url(${src})`
+        }}
+      />
+      {caption ? (
         <div className={styles.bustoutCaption}>
-          <div className={styles.bustoutCaptionInner}>
-            <h2>{title}</h2>
-            <p>{caption}</p>
-          </div>
+          <div className={styles.bustoutCaptionInner}
+               {...renderTorchUp(caption)} />
         </div>
       ) : null}
     </div>
@@ -32,6 +34,7 @@ const Bustout = ({ src, align = 'left', className, title, caption }) => (
 
 Bustout.propTypes = {
   src: PropTypes.string,
+  caption: PropTypes.string,
   align: PropTypes.oneOf(['left', 'right', 'full']),
   className: PropTypes.string,
 }

@@ -2,6 +2,19 @@
 
 $header-link-color: var(--header-link-color, $primary);
 
+@mixin navlink-underscore($height) {
+  &::after {
+    transition: height 0.3s ease;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: #{$height}px;
+    bottom: 0px;
+    left: 0;
+    background: $accent;
+  }
+}
+
 .navLink {
   display: block;
   height: 40px;
@@ -25,26 +38,18 @@ $header-link-color: var(--header-link-color, $primary);
     padding: 0;
   }
 
-  &::after {
-    content: '';
-    position: absolute;
-    width: calc(100% - 0px);
-    height: 1px;
-    bottom: 0px;
-    left: 0;
-    //background: rgba(white, 0.2);
-  }
+  @include navlink-underscore(0);
 
   &:hover {
     @include for-tablet-landscape-up {
-      border-bottom: 5px solid $accent;
+      @include navlink-underscore(5);
     }
   }
 
   &.active {
     border-bottom: none;
     @include for-tablet-landscape-up {
-      border-bottom: 5px solid $accent;
+      @include navlink-underscore(5);
     }
   }
 
@@ -68,7 +73,7 @@ $header-link-color: var(--header-link-color, $primary);
 
     font-size: 14px;
     line-height: 25px;
-    color: white;
+    color: $link-badge-color;
     z-index: 5;
 
     @include for-tablet-landscape-up {

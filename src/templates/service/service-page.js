@@ -18,9 +18,11 @@ class ServicePage extends React.Component {
 
     this.sectionRefs = {}
     props.blocks.map(({ type, data }) => {
-      this.sectionRefs[type] = {
-        title: data.sectionTitle,
-        ref: React.createRef()
+      if (data) {
+        this.sectionRefs[type] = {
+          title: data.sectionTitle,
+          ref: React.createRef()
+        }
       }
     })
   }

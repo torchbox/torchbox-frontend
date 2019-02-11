@@ -102,14 +102,11 @@ $hero-link-color: var(--hero-link-color, $blue);
     &List {
       list-style: none;
       display: flex;
-      flex-direction: column;
-      margin-left: 20px;
-      margin-top: 80px;
-
+      margin-top: 20px;
+      margin-left: -10px;
       @include for-tablet-landscape-up {
-        flex-direction: row;
         padding-top: 0px;
-        margin: 0;
+          margin: 0 0 0 20px;
       }
     }
 
@@ -126,33 +123,21 @@ $hero-link-color: var(--hero-link-color, $blue);
       a {
         transition: all 0.2s ease;
         color: $hero-link-color !important;
-        font-size: 19px;
+        font-size: 13px;
         font-family: $mainFont;
         text-decoration: none;
         border-bottom: 2px solid $hero-background;
         margin-left: 10px;
+
         &:hover {
           border-bottom: 2px solid $accent;
         }
+
         @include for-tablet-landscape-up {
           padding: 0;
           margin-left: 0;
           margin-right: 20px;
-        }
-
-        &::before {
-          content: '';
-          position: absolute;
-          margin-top: 2px;
-          right: 100%;
-          width: 12px;
-          height: 18px;
-          -webkit-mask: url("../../images/icons/chevron.svg") no-repeat center;
-          -webkit-mask-size: contain;
-          background-color: $accent;
-          @include for-tablet-landscape-up {
-            display: none;
-          }
+          font-size: 19px;
         }
       }
     }

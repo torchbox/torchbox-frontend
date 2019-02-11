@@ -1,98 +1,104 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { StaticQuery, graphql } from 'gatsby'
 
 import Header from '../header'
 import Footer from '../footer'
 import TeaserBlock from '../teaser-block'
 import styles from './layout.module.scss'
-import { action } from '@storybook/addon-actions'
+import ThemeContext from '../../context/theme-context'
 
 class Layout extends React.Component {
-  state = { currentUrl: '#1' }
+
+  constructor(props) {
+    super(props)
+    this.state = { currentUrl: '#1' }
+    this.theme = {
+      'light': styles.lightTheme,
+      'dark': styles.darkTheme,
+      'dark--transparent': styles.darkThemeTransparent
+    }[props.theme || 'light']
+  }
 
   render() {
-    const { children, headerShouldCollapse, darkTheme, title, nestedLinks } = this.props
+    const { children, headerShouldCollapse, title, nestedLinks } = this.props
+
+    const links = [
+      {
+        href: '/',
+        title: 'Design + build products',
+        strap: 'For digital design and engineering services',
+      },
+      {
+        href: 'wagtail',
+        title: 'Wagtail CMS services',
+        strap: 'For web builds with the Wagtail open source CMS',
+      },
+      {
+        href: 'digital-marketing',
+        title: 'Digital marketing',
+        strap: 'For our data driven digital marketing services',
+      },
+      {
+        href: 'culture-and-jobs',
+        title: 'Culture + jobs',
+        strap: 'For our data driven digital marketing services',
+        badge: 5,
+      },
+    ].map(link => {
+      if (window) {
+        if (link == window.location.pathname.replace('/', '')) {
+          return {
+            ...link,
+            active: true
+          }
+        }
+      }
+      return link
+    })
+
     return (
-      <div className={darkTheme ? styles.darkTheme : ''}>
-        <Header
-          title={title}
-          logoClick={action('Go to Homepage')}
-          currentUrl={this.state.currentUrl}
-          shouldCollapse={headerShouldCollapse}
-          links={[
-            {
-              href: '/',
-              title: 'Design + build products',
-              strap: 'For digital design and engineering services',
-            },
-            {
-              href: '/wagtail',
-              title: 'Wagtail CMS services',
-              strap: 'For web builds with the Wagtail open source CMS',
-            },
-            {
-              href: '/digital-marketing',
-              title: 'Digital marketing',
-              strap: 'For our data driven digital marketing services',
-            },
-            {
-              href: '#4',
-              title: 'Culture + jobs',
-              strap: 'For our data driven digital marketing services',
-              badge: 5,
-            },
-          ]}
-          nestedLinks={nestedLinks}
-          navigateTo={url => {
-            this.setState({ currentUrl: url })
-          }}
-        />
-        <div className={styles.pageContainer}>
-          {children}
-          <TeaserBlock
-            title={`More from Torchbox...`}
-            teasers={[
-              {
-                image: require('../../images/tbx-flame.svg'),
-                title: ['Wagtail CMS', <br />, 'services'],
-                description: 'For web builds with the Wagtail open source CMS',
-                link: '#',
-              },
-              {
-                image: require('../../images/tbx-flame.svg'),
-                title: ['Data', <br />, 'marketing'],
-                description: 'For our data driven digital marketing services',
-                link: '#',
-              },
-            ]}
+      <ThemeContext.Provider value={this.theme}>
+        <div className={this.theme}>
+          <Header
+            title={title}
+            currentUrl={this.state.currentUrl}
+            shouldCollapse={headerShouldCollapse}
+            links={links}
+            nestedLinks={nestedLinks}
+            navigateTo={url => {
+              this.setState({ currentUrl: url })
+            }}
           />
-          <Footer
-            links={[
-              {
-                label: 'Blog',
-                href: '#',
-              },
-              {
-                label: 'Work',
-                href: '#',
-              },
-              {
-                label: 'Team',
-                href: '#',
-              },
-              {
-                label: 'Privacy',
-                href: '#',
-              },
-              {
-                label: 'Cookies',
-                href: '#',
-              },
-            ]}
-          />
+          <div className={styles.pageContainer}>
+            {children}
+            <TeaserBlock title={`More from Torchbox...`}/>
+            <Footer
+              links={[
+                {
+                  label: 'Blog',
+                  href: '#',
+                },
+                {
+                  label: 'Work',
+                  href: '#',
+                },
+                {
+                  label: 'Team',
+                  href: '#',
+                },
+                {
+                  label: 'Privacy',
+                  href: '#',
+                },
+                {
+                  label: 'Cookies',
+                  href: '#',
+                },
+              ]}
+            />
+          </div>
         </div>
-      </div>
+      </ThemeContext.Provider>
     )
   }
 }

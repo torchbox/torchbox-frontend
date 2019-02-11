@@ -6,13 +6,16 @@ import Layout from '../../components/layout'
 
 export default ({ data }) => {
   const page = data.wagtail.culturePages[0]
+  console.log(page)
   if(page) {
     return (
-      <Layout darkTheme={true}>
+      <Layout theme={'dark--transparent'}>
         <CulturePage
           strapline={page.strapline}
           heroImage={page.heroImage.src.url}
           intro={page.intro}
+          links={page.links}
+          body={page.body}
         />
       </Layout>
     )
@@ -26,6 +29,7 @@ export const query = graphql`
       culturePages(slug: $slug) {
         slug
         strapline
+        intro
         body
         heroImage {
           ...fullImage

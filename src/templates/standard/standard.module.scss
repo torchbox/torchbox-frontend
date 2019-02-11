@@ -1,0 +1,15 @@
+@import '../../styles/app.module';
+
+.page {
+
+  &TeamListing {
+    padding-top: 90px !important;
+    @include for-tablet-landscape-up {
+      padding-top: 130px !important;
+    }
+  }
+
+  &Contact {
+    margin-top: 60px;
+  }
+}

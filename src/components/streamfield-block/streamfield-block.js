@@ -31,7 +31,7 @@ class StreamfieldBlock extends React.Component {
                     alt={block.value.image.alt}
                     className={styles.streamfieldAlignedImageImg}
                     onError={() => {
-                      aligned_image.src = require('../../images/will.jpg')
+                      aligned_image.current.src = require('../../images/will.jpg')
                     }}
                   />
                   <div className={styles.streamfieldAlignedImageCaption}>
@@ -44,15 +44,16 @@ class StreamfieldBlock extends React.Component {
             case 'wide_image':
               const wide_image = React.createRef()
               return (
-                <img
-                  ref={wide_image}
-                  src={block.value.image.src}
-                  alt={block.value.image.alt}
-                  className={styles.streamfieldWideImage}
-                  onError={() => {
-                    wide_image.src = require('../../images/will.jpg')
-                  }}
-                />
+                <div className={styles.streamfieldWideImage}>
+                  <img
+                    ref={wide_image}
+                    src={block.value.image.src}
+                    alt={block.value.image.alt}
+                    onError={() => {
+                      wide_image.current.src = require('../../images/default-featured.png')
+                    }}
+                  />
+                </div>
               )
 
             case 'bustout':
@@ -61,7 +62,7 @@ class StreamfieldBlock extends React.Component {
                   src={block.value.image.src}
                   align={block.value.alignment}
                   title={'TODO: Ask about title'} // TODO
-                  caption={block.value.caption}
+                  caption={block.value.text}
                 />
               )
 

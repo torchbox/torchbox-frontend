@@ -35,20 +35,19 @@
     }
 
     &Image {
+        min-height: 300px;
         width: 100%;
         @include for-tablet-landscape-up {
             float: left;
             width: 50%;
         }
+      background-size: cover;
+      background-position: center;
 
-        img {
-            width: 100%;
-            vertical-align: top;
-        }
     }
 
     &Caption {
-        background: #2f128d;
+        background: $light-blue;
         width: 100%;
 
         @include for-tablet-landscape-up {

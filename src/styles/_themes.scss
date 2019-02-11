@@ -1,3 +1,5 @@
+.lightTheme {}
+
 .darkTheme {
 
   // Base colors:
@@ -13,5 +15,15 @@
   --header-background: #{$primary};
   --header-link-color: white;
   --header-logo-color: white;
+  --header-icon-color: white;
 
+  // Links
+  --color-link-hover: white;
+  --color-link-badge: #{$blue};
+
+}
+
+.darkThemeTransparent {
+  @extend .darkTheme;
+  --header-background: transparent;
 }

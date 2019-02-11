@@ -4,8 +4,8 @@ import { blogsUrl, caseStudiesUrl } from './urls'
 
 export const authorDetails = authors => ({
   name: safeGet(authors, '0.name', ''),
-  role: safeGet(authors, '0.role', ''),
-  avatar: safeGet(authors, '0.personPage.image.src.url', ''),
+  role: safeGet(authors, '0.personPage.role', 'Past Employee'),
+  avatar: safeGet(authors, '0.personPage.image.src.url', require('../images/default-avatar.png')) || require('../images/default-avatar.png'),
   slug: safeGet(authors, '0.personPage.slug', ''),
 })
 
@@ -16,15 +16,16 @@ export const postTags = (tags, hrefPrefix = '') => tags
   }))
 
 export const blogListing = blog => {
+  console.log(authorDetails(blog.authors))
   return {
     title: blog.title,
     tags: blog.tags,
     description: blog.listingSummary,
     href: blogsUrl(blog.slug),
     datePublished: blog.date,
-    authorRole: safeGet(blog, 'authors.0.personPage.role', ''),
-    authorName: safeGet(blog, 'authors.0.name', ''),
-    authorAvatar: safeGet(blog, 'authors.0.personPage.image.src.url', require('../images/default-avatar.png')),
+    authorRole: authorDetails(blog.authors).role,
+    authorName: authorDetails(blog.authors).name,
+    authorAvatar: authorDetails(blog.authors).avatar,
   }
 }
 

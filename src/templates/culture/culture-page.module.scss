@@ -1,0 +1,131 @@
+@import '../../styles/app.module';
+
+.page {
+    padding-top: 80vh;
+    @include for-tablet-landscape-up {
+        padding-top: 100vh;
+    }
+
+    &Hero {
+        height: 75vh;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        background-size: cover !important;
+        background-repeat: no-repeat !important;
+        background-position: bottom;
+
+        @include for-tablet-landscape-up {
+            height: 100vh;
+        }
+
+        &Content {
+            @include container;
+            padding-top: 45vh;
+        }
+
+        &Title {
+            color: white;
+            padding: 0 0 0 0;
+            font-size: 50px;
+            line-height: 55px;
+            margin: 0 0 20px 0;
+            font-weight: 800;
+
+            @include for-tablet-landscape-up {
+                font-size: 100px;
+                line-height: 100px;
+                margin: 0 8.33vw 20px 16.66vw;
+            }
+        }
+
+        &::after {
+            content: '';
+            background: linear-gradient(to bottom, rgba(37, 22, 87, 0.7) 1%, rgba(37, 22, 87, 0) 100%);
+            width: 100%;
+            height: 200px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
+    }
+
+    &Content {
+        position: relative;
+    }
+
+    &Image {
+        transition: all 0.3s ease-out;
+        width: 25vw;
+        transform: translateX(0);
+
+        @include for-tablet-landscape-up {
+            position: absolute;
+            width: 20vw;
+            left: 0;
+            top: 240px;
+            z-index: 10;
+        }
+    }
+
+
+    &Intro {
+        @include container;
+        font-weight: 300;
+        margin-top: 60px;
+        font-size: 35px;
+        line-height: 45px;
+
+        * {
+            color: $primary;
+        }
+
+        @include for-tablet-landscape-up {
+            padding: 80px 8.33vw 20px 16.66vw;
+            font-size: 36px;
+            line-height: 50px;
+        }
+    }
+
+    &Links {
+        @include container;
+        display: grid;
+
+        padding-top: 40px;
+        @include for-tablet-landscape-up {
+            padding: 40px 0 0 16.66vw;
+            grid-template-columns: auto auto;
+        }
+
+        &Teaser {
+            background-color: $light-grey;
+
+            h1 {
+                font-size: 36px;
+                line-height: 45px;
+                color: $light-blue !important;
+
+                &::after {
+                    margin-top: 7px;
+                    width: 16px;
+                }
+
+            }
+
+            span {
+                font-size: 18px;
+                margin: 0;
+                line-height: 22px;
+            }
+
+        }
+    }
+
+    &Streamfield {
+        padding-top: 0 !important;
+        @include for-tablet-landscape-up {
+            padding-top: 40px !important;
+        }
+    }
+}
