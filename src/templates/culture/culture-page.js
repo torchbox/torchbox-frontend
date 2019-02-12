@@ -49,7 +49,7 @@ const CulturePage = ({
         />
         <Teasers/>
       </div>
-      <Contact className={styles.pageContact}/>
+      <Contact className={styles.pageContact} {...contact} />
     </div>
   )
 }

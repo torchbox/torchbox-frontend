@@ -11,7 +11,7 @@
   @media (min-width: 900px) { @content; }
 }
 @mixin for-desktop-up {
-  @media (min-width: 1200px) { @content; }
+  @media (min-width: 1280px) { @content; }
 }
 @mixin for-big-desktop-up {
   @media (min-width: 1800px) { @content; }

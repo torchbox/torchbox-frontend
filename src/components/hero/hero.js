@@ -4,17 +4,15 @@ import { Link } from 'gatsby'
 
 import styles from './hero.module.scss'
 import { renderTorchUp } from '../../utils/torchup'
+import AnimatedCharacter from '../animated-character/animated-character'
 
-const Hero = ({ title, description, links, collapsed, greetingImage, darkTheme, alignImageRight }) => {
+const Hero = ({ title, description, links, collapsed, greetingImageType }) => {
   return (
     <div
       className={[
         collapsed
           ? styles.collapsedHeroContainer
-          : styles.heroContainer,
-        darkTheme
-          ? styles.darkTheme
-          : ''
+          : styles.heroContainer
       ].join(' ')}
     >
       <section className={styles.heroContent}>
@@ -34,9 +32,7 @@ const Hero = ({ title, description, links, collapsed, greetingImage, darkTheme, 
           </div>
         ) : null}
       </section>
-      <img src={greetingImage} className={
-        alignImageRight ? styles.heroImageRight : styles.heroImage
-      } />
+      <AnimatedCharacter character={greetingImageType} />
 </div>
 )
 }
@@ -51,7 +47,7 @@ Hero.propTypes = {
 Hero.defaultProps = {
   links: [],
   collapsed: false,
-  greetingImage: require('../../images/help-character.svg').default,
+  greetingImageType: 'woman-left',
 }
 
 export default Hero

@@ -9,8 +9,8 @@ storiesOf('Components/Shared Components', module).add(
     return (
       <Contact
         title="Get in touch about your project"
-        email="will@torchbox.com"
-        number="+44 (0) 7545 468483"
+        emailAddress="will@torchbox.com"
+        phoneNumber="+44 (0) 7545 468483"
       />
     )
   }

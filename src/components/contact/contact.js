@@ -6,18 +6,18 @@ import Avatar from '../avatar'
 
 import styles from './contact.module.scss'
 
-const Contact = ({ title, email, number, className, avatar }) => (
+const Contact = ({ title, emailAddress, phoneNumber, className, avatar }) => (
   <div className={[styles.contactBlock, className].join(' ')}>
     <div className={styles.contactBlockContent}>
       <Avatar containerClassName={styles.contactBlockImage} src={avatar} />
 
       <div className={styles.contactBlockDetails}>
         <h3 className={styles.contactBlockTitle}>{title}</h3>
-        <a href={`mailto://${email}`} className={styles.contactBlockEmail}>
-          {email}
+        <a href={`mailto://${emailAddress}`} className={styles.contactBlockEmail}>
+          {emailAddress}
         </a>
-        <a href={`tel://${number}`} className={styles.contactBlockNumber}>
-          {number}
+        <a href={`tel://${phoneNumber}`} className={styles.contactBlockNumber}>
+          {phoneNumber}
         </a>
       </div>
     </div>
@@ -26,17 +26,19 @@ const Contact = ({ title, email, number, className, avatar }) => (
 
 Contact.propTypes = {
   title: PropTypes.string,
-  email: PropTypes.string,
-  number: PropTypes.string,
+  emailAddress: PropTypes.string,
+  phoneNumber: PropTypes.string,
   className: PropTypes.string,
   avatar: PropTypes.string,
 }
 
 Contact.defaultProps = {
   title: 'Get in touch about your project',
-  email: '',
-  number: '',
   className: '',
+  emailAddress: "will@torchbox.com",
+  name: "Will Heinemen",
+  phoneNumber: "+41524204242",
+  role: "Head of new buisness",
   avatar: require('../../images/will.jpg'),
 }
 

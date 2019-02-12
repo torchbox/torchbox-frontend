@@ -2,62 +2,63 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
-import ContactBlock from '../contact'
-
 import styles from './help-block.module.scss'
 import Contact from '../contact/contact'
 import { renderTorchUp } from '../../utils/torchup'
 
-const HelpBlock = ({
-  title,
-  links,
-  sectionTitle,
-  contactDetails,
-}) => (
-  <div className={styles.blockContainer}>
-    <section className={styles.blockContent}>
-      <span className={styles.pageSectionTitle}>{sectionTitle}</span>
-      <h1 className={styles.blockTitle} {...renderTorchUp(title)} />
+class HelpBlock extends React.Component {
+  render() {
+    const {
+      title,
+      links,
+      sectionTitle,
+      contact,
+    } = this.props
 
-      {links != null ? (
-        <div className={styles.blockLinksContainer}>
-          <ul className={styles.blockLinksList}>
-            {links.map(link => (
-              <li className={styles.blockLinksItem}>
-                <div
-                  src={require('../../images/icons/tick.png')}
-                  className={styles.blockLinksItemIcon}
-                />
-                <Link onClick={link.onClick} to={link.href}>
-                  {link.title}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      ) : null}
-    </section>
+    return (
+      <div className={styles.blockContainer}>
+        <section className={styles.blockContent}>
+          <span className={styles.pageSectionTitle}>{sectionTitle}</span>
+          <h1 className={styles.blockTitle} {...renderTorchUp(title)} />
 
-    {contactDetails ? (
-      <Contact
-        className={styles.blockContact}
-        title={contactDetails.title}
-        email={contactDetails.email}
-        number={contactDetails.phone}
-        avatar={contactDetails.avatar}
-      />
-    ) : null}
+          {links != null ? (
+            <div className={styles.blockLinksContainer}>
+              <ul className={styles.blockLinksList}>
+                {links.map(link => (
+                  <li className={styles.blockLinksItem}>
+                    <div
+                      src={require('../../images/icons/tick.png')}
+                      className={styles.blockLinksItemIcon}
+                    />
+                    <Link onClick={link.onClick} to={link.href}>
+                      {link.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
+        </section>
 
-    <div className={styles.blockBorder} />
-  </div>
-)
+        {contact ? (
+          <Contact
+            className={styles.blockContact}
+            {...contact}
+          />
+        ) : null}
+
+        <div className={styles.blockBorder} />
+      </div>
+    )
+  }
+}
 
 HelpBlock.propTypes = {
   title: PropTypes.string,
   links: PropTypes.array,
   sectionTitle: PropTypes.string.isRequired,
   greetingImage: PropTypes.string,
-  contactDetails: PropTypes.object,
+  contact: PropTypes.object,
 }
 
 HelpBlock.defaultProps = {

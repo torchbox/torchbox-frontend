@@ -46,7 +46,8 @@ exports.createPages = ({ graphql, actions }) => {
             'testimonials-block',
             'process-block',
             'case-studies-block',
-            'blogs-block'
+            'blogs-block',
+            'contact-detailed'
           ]
         },
       },
@@ -62,7 +63,8 @@ exports.createPages = ({ graphql, actions }) => {
             'testimonials-block',
             'process-block',
             'case-studies-block',
-            'blogs-block'
+            'blogs-block',
+            'contact-detailed'
           ]
         },
       },
@@ -77,7 +79,8 @@ exports.createPages = ({ graphql, actions }) => {
             'help-block',
             'testimonials-block',
             'case-studies-block',
-            'blogs-block'
+            'blogs-block',
+            'contact-detailed'
           ]
         },
       },
@@ -127,7 +130,8 @@ exports.createPages = ({ graphql, actions }) => {
             'process-block',
             'testimonials-block',
             'case-studies-block',
-            'blogs-block'
+            'blogs-block',
+            'contact-detailed'
           ]
         },
       })),

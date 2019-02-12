@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import Avatar from '../avatar'
 import styles from './contact.module.scss'
 
-const Contact = ({ title, email, number, className, reasons }) => (
+const Contact = ({ title, emailAddress, phoneNumber, className, reasons }) => (
   <div className={[styles.contactBlock, className].join(' ')}>
     <div className={styles.contactBlockContainer}>
       {reasons.length > 0 ? (
@@ -38,18 +38,18 @@ const Contact = ({ title, email, number, className, reasons }) => (
         <div className={styles.contactBlockDetailsMeta}>
           <div>
           <a
-            href={`mailto://${email}`}
+            href={`mailto://${emailAddress}`}
             className={styles.contactBlockDetailsEmail}
           >
-            {email}
+            {emailAddress}
           </a>
           </div>
           <div>
           <a
-            href={`tel://${number}`}
+            href={`tel://${phoneNumber}`}
             className={styles.contactBlockDetailsNumber}
           >
-            {number}
+            {phoneNumber}
           </a>
           </div>
         </div>
@@ -60,16 +60,16 @@ const Contact = ({ title, email, number, className, reasons }) => (
 
 Contact.propTypes = {
   title: PropTypes.string,
-  email: PropTypes.string,
-  number: PropTypes.string,
+  emailAddress: PropTypes.string,
+  phoneNumber: PropTypes.string,
   className: PropTypes.string,
   reasons: PropTypes.array,
 }
 
 Contact.defaultProps = {
   title: 'Get in touch to talk about your project',
-  email: 'will@torchbox.com',
-  number: '+44 (0) 7545 468483',
+  emailAddress: 'will@torchbox.com',
+  phoneNumber: '+44 (0) 7545 468483',
   className: '',
   reasons: [
     {

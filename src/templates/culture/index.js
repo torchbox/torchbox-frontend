@@ -15,6 +15,7 @@ export default ({ data }) => {
           intro={page.intro}
           links={page.links}
           body={page.body}
+          contact={page.contact}
         />
       </Layout>
     )
@@ -40,6 +41,9 @@ export const query = graphql`
             type
             slug
           }
+        }
+        contact {
+          ...contactSnippet
         }
       }
     }

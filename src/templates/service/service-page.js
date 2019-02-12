@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 import qs from 'query-string'
 
@@ -13,24 +14,47 @@ import Blogs from '../../components/blogs-listing-block/blogs'
 import ProcessBlock from '../../components/process-block/process-block'
 
 class ServicePage extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.sectionRefs = {}
     props.blocks.map(({ type, data }) => {
       if (data) {
         this.sectionRefs[type] = {
           title: data.sectionTitle,
-          ref: React.createRef()
+          ref: React.createRef(),
         }
       }
     })
   }
 
+  navigateToSection = () => {
+    const { section } = qs.parse(window.location.hash)
+    if (section) {
+      const sectionRef = Object
+        .values(this.sectionRefs)
+        .find(({ title }) => title == section)
+        .ref
+      if (sectionRef) {
+        if (sectionRef.current) {
+          const { top } = ReactDOM
+            .findDOMNode(sectionRef.current)
+            .getBoundingClientRect()
+          window.scrollTo(0, top)
+        }
+      }
+    }
+  }
+
   componentDidMount() {
     if (typeof window !== `undefined`) {
-      const { section } = qs.parse(window.location.hash)
-      if (section) {
-      }
+      this.navigateToSection()
+      window.addEventListener("hashchange", this.navigateToSection, false);
+    }
+  }
+
+  componentWillUnmount() {
+    if (typeof window !== `undefined`) {
+      window.removeEventListener("hashchange", this.navigateToSection, false);
     }
   }
 
@@ -47,7 +71,7 @@ class ServicePage extends React.Component {
                 title={data.strapline}
                 description={data.intro}
                 links={data.links}
-                greetingImage={data.greetingImage}
+                greetingImageType={data.greetingImageType}
                 alignImageRight={data.alignImageRight}
                 darkTheme={darkTheme}
               />
@@ -57,7 +81,7 @@ class ServicePage extends React.Component {
                 ref={this.sectionRefs[type].ref}
                 title={data.heading}
                 links={data.links}
-                contactDetails={data.contact}
+                contact={data.contact}
                 sectionTitle={data.sectionTitle}
               />
 
@@ -102,9 +126,14 @@ class ServicePage extends React.Component {
                 sectionTitle={data.sectionTitle}
               />
 
+            case 'contact-detailed':
+              return <Contact
+                className={styles.pageContact}
+                {...data.contact}
+              />
+
           }
         })}
-        <Contact className={styles.pageContact}/>
       </div>
     )
   }

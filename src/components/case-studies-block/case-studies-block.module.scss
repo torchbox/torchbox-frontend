@@ -55,6 +55,14 @@
                     }
                 }
             }
+
+            &:nth-child(3) {
+                .caseStudyClusterIcon {
+                    right: -20.66vw;
+                    transform: rotate(0deg);
+                }
+            }
+
         }
 
         &Meta {
@@ -137,8 +145,12 @@
                 position: absolute;
                 width: 80px;
                 top: -70px;
-                right: -20.66vw;
                 z-index: 100;
+                right: -18.66vw;
+                transform: rotate(180deg);
+                * {
+                    fill: $accent;
+                }
             }
         }
 

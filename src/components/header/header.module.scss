@@ -3,6 +3,7 @@
 // Component theme overrides:
 $header-background: var(--header-background, white);
 $header-link-color: var(--header-link-color, $primary);
+$header-nested-link-color: var(--header-nested-link-color, $light-blue);
 $header-logo-color: var(--header-logo-color, $primary);
 
 .header {
@@ -57,7 +58,7 @@ $header-logo-color: var(--header-logo-color, $primary);
       transition: none;
       display: inline-flex;
       align-items: center;
-      color: $header-link-color;
+      color: $header-nested-link-color;
       font-size: 15px;
       font-family: $mainFont;
       text-decoration: none;

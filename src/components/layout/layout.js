@@ -1,11 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { StaticQuery, graphql } from "gatsby"
 
 import Header from '../header'
 import Footer from '../footer'
 import TeaserBlock from '../teaser-block'
 import styles from './layout.module.scss'
 import ThemeContext from '../../context/theme-context'
+import { safeGet } from '../../utils/safeget'
 
 class Layout extends React.Component {
 
@@ -22,9 +24,71 @@ class Layout extends React.Component {
   render() {
     const { children, headerShouldCollapse, title, nestedLinks } = this.props
 
-    const links = [
+    return (
+      <StaticQuery
+        query={graphql`
+          query LayoutQuery {
+            wagtail {
+              jobsIndexPage {
+                jobs {
+                  url
+                }
+              }
+            }
+          }
+        `}
+        render={data => (
+          <ThemeContext.Provider value={this.theme}>
+            <div className={this.theme}>
+              <Header
+                title={title}
+                currentUrl={this.state.currentUrl}
+                shouldCollapse={headerShouldCollapse}
+                links={this.renderLinks(data)}
+                nestedLinks={nestedLinks}
+                navigateTo={url => {
+                  this.setState({ currentUrl: url })
+                }}
+              />
+              <div className={styles.pageContainer}>
+                {children}
+                <TeaserBlock title={`More from Torchbox...`}/>
+                <Footer
+                  links={[
+                    {
+                      label: 'Blog',
+                      href: '#',
+                    },
+                    {
+                      label: 'Work',
+                      href: '#',
+                    },
+                    {
+                      label: 'Team',
+                      href: '#',
+                    },
+                    {
+                      label: 'Privacy',
+                      href: '#',
+                    },
+                    {
+                      label: 'Cookies',
+                      href: '#',
+                    },
+                  ]}
+                />
+              </div>
+            </div>
+          </ThemeContext.Provider>
+        )}
+      />
+    )
+  }
+
+  renderLinks = data => {
+    return [
       {
-        href: '/',
+        href: '',
         title: 'Design + build products',
         strap: 'For digital design and engineering services',
       },
@@ -42,11 +106,11 @@ class Layout extends React.Component {
         href: 'culture-and-jobs',
         title: 'Culture + jobs',
         strap: 'For our data driven digital marketing services',
-        badge: 5,
+        badge: safeGet(data, 'wagtail.jobsIndexPage.jobs.length', 0),
       },
     ].map(link => {
-      if (typeof window !== `undefined`) {
-        if (link == window.location.pathname.replace('/', '')) {
+      if (window != undefined) {
+        if (window.location.pathname.replace(/\//g, '') === link.href) {
           return {
             ...link,
             active: true
@@ -55,51 +119,6 @@ class Layout extends React.Component {
       }
       return link
     })
-
-    return (
-      <ThemeContext.Provider value={this.theme}>
-        <div className={this.theme}>
-          <Header
-            title={title}
-            currentUrl={this.state.currentUrl}
-            shouldCollapse={headerShouldCollapse}
-            links={links}
-            nestedLinks={nestedLinks}
-            navigateTo={url => {
-              this.setState({ currentUrl: url })
-            }}
-          />
-          <div className={styles.pageContainer}>
-            {children}
-            <TeaserBlock title={`More from Torchbox...`}/>
-            <Footer
-              links={[
-                {
-                  label: 'Blog',
-                  href: '#',
-                },
-                {
-                  label: 'Work',
-                  href: '#',
-                },
-                {
-                  label: 'Team',
-                  href: '#',
-                },
-                {
-                  label: 'Privacy',
-                  href: '#',
-                },
-                {
-                  label: 'Cookies',
-                  href: '#',
-                },
-              ]}
-            />
-          </div>
-        </div>
-      </ThemeContext.Provider>
-    )
   }
 }
 

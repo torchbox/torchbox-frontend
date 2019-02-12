@@ -33,5 +33,4 @@ export const caseStudyListing = caseStudy => ({
   href: caseStudiesUrl(caseStudy.slug),
   description: caseStudy.listingSummary,
   image: safeGet(caseStudy, 'feedImage.src.url', require('../images/default-featured.png')),
-  // image: 'http://localhost:8000/media/images/hq-5787.width-1280.jpg'
 })

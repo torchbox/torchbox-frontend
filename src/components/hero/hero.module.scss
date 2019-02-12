@@ -3,7 +3,7 @@
 // Component theme overrides:
 $hero-background: var(--hero-background, white);
 $hero-title-color: var(--hero-title-color, $primary);
-$hero-link-color: var(--hero-link-color, $blue);
+$hero-link-color: var(--hero-link-color, $link-color);
 
 .hero {
 
@@ -106,7 +106,7 @@ $hero-link-color: var(--hero-link-color, $blue);
       margin-left: -10px;
       @include for-tablet-landscape-up {
         padding-top: 0px;
-          margin: 0 0 0 20px;
+        margin: 0 !important;
       }
     }
 
@@ -137,7 +137,7 @@ $hero-link-color: var(--hero-link-color, $blue);
           padding: 0;
           margin-left: 0;
           margin-right: 20px;
-          font-size: 19px;
+          font-size: 18px;
         }
       }
     }

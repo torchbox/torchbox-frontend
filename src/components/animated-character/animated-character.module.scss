@@ -1,0 +1,80 @@
+@import '../../styles/app.module';
+
+.alignRight {
+    position: relative;
+    left: 100%;
+}
+
+.imageWoman {
+    // animation
+    transition: all 0.5s ease;
+    transform: translate3d(-100%, 0, 0);
+
+    position: relative;
+    width: 50vw;
+    max-width: 380px;
+    margin-top: 40px;
+    z-index: 2;
+    @include for-desktop-up {
+        width: 28vw;
+        left: -14.66vw;
+        margin-top: 0px;
+    }
+
+    &Right {
+        @extend .imageWoman;
+        margin-left: auto;
+        margin-top: 20px;
+        left: 0;
+
+        @include for-tablet-portrait-up {
+            margin-top: 60px;
+        }
+
+        @include for-tablet-landscape-up {
+            margin-top: 140px;
+        }
+    }
+
+    &Active {
+        @extend .imageWoman;
+        transform: translate3d(0%, 0, 0) !important;
+    }
+}
+
+.imageWagtail {
+    // animation
+    transition: all 0.8s ease;
+    transform: translate3d(100%, 0, 0);
+
+    position: relative;
+    width: 50vw;
+    z-index: 2;
+
+    margin-left: auto;
+    margin-top: 20px;
+    right: 14vw;
+    left: 0;
+
+    @include for-tablet-portrait-up {
+        margin-top: 60px;
+    }
+
+    @include for-tablet-landscape-up {
+        margin-top: 140px;
+    }
+
+    @include for-desktop-up {
+        width: 24vw;
+        left: 0;
+    }
+
+    &Container {
+        margin-left: auto;
+    }
+
+    &Active {
+        @extend .imageWagtail;
+        transform: translate3d(-100%, 0, 0) !important;
+    }
+}

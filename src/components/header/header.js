@@ -32,7 +32,6 @@ class Header extends React.Component {
     const {
       title,
       links,
-      currentUrl,
       navigateTo,
       logoClick,
       activeNestedLink,

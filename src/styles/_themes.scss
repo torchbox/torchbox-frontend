@@ -3,7 +3,7 @@
 .darkTheme {
 
   // Base colors:
-  --color-primary: #{$dark-blue};
+  --color-primary: #{#251657};
   --color-accent: #{$green};
 
   // Hero Component
@@ -16,6 +16,7 @@
   --header-link-color: white;
   --header-logo-color: white;
   --header-icon-color: white;
+  --header-nested-link-color: white;
 
   // Links
   --color-link-hover: white;

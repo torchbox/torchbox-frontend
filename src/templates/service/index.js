@@ -36,9 +36,7 @@ export default ({ data, pageContext }) => {
               strapline: page.strapline,
               intro: page.intro,
               links: nestedNav,
-              greetingImage: page.isDarktheme
-                ? require('../../images/wagtail-greeting.svg').default
-                : require('../../images/help-character.svg').default,
+              greetingImageType: page.greetingImageType,
               alignImageRight: page.isDarktheme
             },
           } : {}
@@ -53,10 +51,7 @@ export default ({ data, pageContext }) => {
                 title: keyPoint.text,
                 href: pageUrl(keyPoint.linkedPage),
               })),
-              contact: {
-                email: safeGet(page, 'contact.emailAddress'),
-                phone: safeGet(page, 'contact.phoneNumber'),
-              },
+              contact: page.contact,
             },
           } : {}
 
@@ -105,6 +100,15 @@ export default ({ data, pageContext }) => {
             },
           } : {}
 
+        case 'contact-detailed':
+          return (true) ? {
+            type: 'contact-detailed',
+            data: {
+              contact: page.contact
+            }
+          } : {}
+
+
       }
     })
 
@@ -131,6 +135,7 @@ export const query = graphql`
         isDarktheme
         strapline
         intro
+        greetingImageType
         
         keyPointsSectionTitle
         headingForKeyPoints
@@ -230,12 +235,7 @@ export const query = graphql`
         }
         
         contact {
-          name
-          emailAddress
-          phoneNumber
-          image {
-            ...iconImage
-          }
+          ...contactSnippet
         }
         
         testimonialsSectionTitle
