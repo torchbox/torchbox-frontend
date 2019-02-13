@@ -109,7 +109,7 @@ class Layout extends React.Component {
         badge: safeGet(data, 'wagtail.jobsIndexPage.jobs.length', 0),
       },
     ].map(link => {
-      if (window != undefined) {
+      if (typeof window !== `undefined`) {
         if (window.location.pathname.replace(/\//g, '') === link.href) {
           return {
             ...link,

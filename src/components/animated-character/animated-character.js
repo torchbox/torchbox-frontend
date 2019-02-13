@@ -38,7 +38,7 @@ class AnimatedCharacter extends React.Component {
   }
 
   componentWillMount() {
-    if (window) {
+    if (typeof window !== `undefined`) {
       window.removeEventListener('scroll', this.animate)
     }
   }
