@@ -8,6 +8,7 @@ import TeaserBlock from '../teaser-block'
 import styles from './layout.module.scss'
 import ThemeContext from '../../context/theme-context'
 import { safeGet } from '../../utils/safeget'
+import { blogsUrl, caseStudiesUrl, teamUrl } from '../../utils/urls'
 
 class Layout extends React.Component {
 
@@ -22,7 +23,7 @@ class Layout extends React.Component {
   }
 
   render() {
-    const { children, headerShouldCollapse, title, nestedLinks } = this.props
+    const { children, headerShouldCollapse, title, nestedLinks, ignoreServiceTeaser } = this.props
 
     return (
       <StaticQuery
@@ -52,28 +53,31 @@ class Layout extends React.Component {
               />
               <div className={styles.pageContainer}>
                 {children}
-                <TeaserBlock title={`More from Torchbox...`}/>
+                <TeaserBlock
+                  title={`More from Torchbox...`}
+                  ignoreSlug={ignoreServiceTeaser}
+                />
                 <Footer
                   links={[
                     {
                       label: 'Blog',
-                      href: '#',
+                      href: blogsUrl(),
                     },
                     {
                       label: 'Work',
-                      href: '#',
+                      href: caseStudiesUrl(),
                     },
                     {
                       label: 'Team',
-                      href: '#',
+                      href: teamUrl(),
                     },
                     {
                       label: 'Privacy',
-                      href: '#',
+                      href: '/privacy/',
                     },
                     {
                       label: 'Cookies',
-                      href: '#',
+                      href: '/cookies/',
                     },
                   ]}
                 />
@@ -93,7 +97,7 @@ class Layout extends React.Component {
         strap: 'For digital design and engineering services',
       },
       {
-        href: 'wagtail',
+        href: 'wagtail-cms',
         title: 'Wagtail CMS services',
         strap: 'For web builds with the Wagtail open source CMS',
       },

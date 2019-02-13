@@ -16,7 +16,8 @@ const BlogPostPage = ({
   readTime,
   tags,
   streamfield,
-  blogs
+  extraBlogPosts,
+  contact
 }) => (
   <div className={styles.page}>
     <TitleBlock className={styles.pageTitle} title={title} />
@@ -32,14 +33,16 @@ const BlogPostPage = ({
       streamfield={streamfield}
     />
     <AuthorBlock className  ={styles.pageAuthor} author={author} tags={tags} />
-    <Blogs
-      className={styles.pageShowcase}
-      sectionTitle="More of our thinking"
-      blogs={blogs}
-      showFeatured={false}
-      listingUrl={blogsUrl()}
-    />
-    <Contact className={styles.pageContact} />
+    { extraBlogPosts ? (
+      <Blogs
+        className={styles.pageShowcase}
+        sectionTitle="More of our thinking"
+        blogs={extraBlogPosts}
+        showFeatured={false}
+        listingUrl={blogsUrl()}
+      />
+    ) : null}
+    <Contact className={styles.pageContact} {...contact} />
   </div>
 )
 
@@ -51,6 +54,7 @@ BlogPostPage.propTypes = {
   tags: PropTypes.array,
   streamfield: PropTypes.array,
   blogs: PropTypes.array,
+  contact: PropTypes.object
 }
 
 BlogPostPage.defaultProps = {
@@ -59,6 +63,7 @@ BlogPostPage.defaultProps = {
   streamfield: [],
   caseStudies: [],
   teasers: [],
+  contact: {}
 }
 
 export default BlogPostPage

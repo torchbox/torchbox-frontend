@@ -5,8 +5,10 @@ import { Link } from 'gatsby'
 import styles from './hero.module.scss'
 import { renderTorchUp } from '../../utils/torchup'
 import AnimatedCharacter from '../animated-character/animated-character'
+import ParentPageLink from '../parent-page-link/parent-page-link'
+import { pageUrl } from '../../utils/urls'
 
-const Hero = ({ title, description, links, collapsed, greetingImageType }) => {
+const Hero = ({ title, description, links, collapsed, greetingImageType, parentLink }) => {
   return (
     <div
       className={[
@@ -16,6 +18,10 @@ const Hero = ({ title, description, links, collapsed, greetingImageType }) => {
       ].join(' ')}
     >
       <section className={styles.heroContent}>
+        { parentLink ? (
+          <ParentPageLink label={parentLink.name} href={pageUrl(parentLink.servicePage)} />
+        ) : null }
+
         <h1 className={styles.heroTitle} {...renderTorchUp(title)} />
         <p className={styles.heroDesc}  {...renderTorchUp(description)}  />
         {links != null ? (
@@ -23,9 +29,9 @@ const Hero = ({ title, description, links, collapsed, greetingImageType }) => {
             <ul className={styles.heroLinksList}>
               {links.map(link => (
                 <li className={styles.heroLinksItem}>
-                  <Link onClick={link.onClick} to={link.href}>
+                  <a onClick={link.onClick} href={link.href}>
                     {link.title}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>

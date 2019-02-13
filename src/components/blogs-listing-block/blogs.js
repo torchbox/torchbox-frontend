@@ -46,9 +46,11 @@ class BlogsBlock extends React.Component {
             ))}
           </div>
 
-          <div className={styles.seeMore}>
-            <Link to={listingUrl}>See more blogs</Link>
-          </div>
+          {listingUrl ? (
+            <div className={styles.seeMore}>
+              <Link to={listingUrl}>See more blogs</Link>
+            </div>
+          ) : null}
         </div>
       </div>
     )

@@ -41,7 +41,7 @@ class CaseStudiesBlock extends React.Component {
                 <div className={styles.caseStudyImage}>
                   <img
                     ref={ref => img = ref}
-                    src={caseStudy.image || require('../../images/default-featured.png')}
+                    src={caseStudy.feedImage || caseStudy.homepageImage || require('../../images/default-featured.png')}
                     onError={() => {
                       img.src = require('../../images/default-featured.png')
                     }}/>

@@ -18,6 +18,7 @@ const CaseStudyPage = ({
   streamfield,
   caseStudies,
   teasers,
+  contact
 }) => (
   <div className={styles.page}>
     <div className={styles.pageClientContainer}>
@@ -41,7 +42,7 @@ const CaseStudyPage = ({
       caseStudies={caseStudies}
       listingUrl={caseStudiesUrl()}
     />
-    <Contact className={styles.pageContact} />
+    <Contact className={styles.pageContact} {...contact} />
   </div>
 )
 

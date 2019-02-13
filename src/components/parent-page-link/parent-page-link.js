@@ -5,8 +5,8 @@ import PropTypes from 'prop-types'
 import styles from './parent-page-link.module.scss'
 
 const ParentPageLink = ({ label, href, className }) => (
-  <span className={[styles.parentLink].join(' ')}>
-    <Link to={'#'}>Digital marketing</Link>
+  <span className={[styles.parentLink, className].join(' ')}>
+    <Link to={href}>{label}</Link>
   </span>
 )
 
@@ -18,6 +18,7 @@ ParentPageLink.propTypes = {
 
 ParentPageLink.defaultProps = {
   className: '',
+  label: '',
   href: '#',
 }
 

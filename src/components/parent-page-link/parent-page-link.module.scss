@@ -1,12 +1,13 @@
 @import '../../styles/app.module';
 
 .parentLink {
+    display: block;
     text-transform: uppercase;
     letter-spacing: 0.15em;
     font-weight: bold;
     font-size: 12px;
     color: $accent;
-    margin: 0 0 15px;
+    margin: 0 0 50px;
     position: relative;
     z-index: 0;
 

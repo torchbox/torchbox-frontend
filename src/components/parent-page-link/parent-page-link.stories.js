@@ -17,7 +17,7 @@ storiesOf('Components/Shared Components', module).add(
           zIndex: 0,
         }}
       >
-        <ParentPageLink src={require('../../images/will.jpg')} />
+        <ParentPageLink />
       </div>
     )
   }

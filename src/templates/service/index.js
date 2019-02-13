@@ -33,11 +33,12 @@ export default ({ data, pageContext }) => {
           return (page.strapline || page.intro) ? {
             type: 'hero-block',
             data: {
+              excludeFromLinks: true,
               strapline: page.strapline,
               intro: page.intro,
               links: nestedNav,
               greetingImageType: page.greetingImageType,
-              alignImageRight: page.isDarktheme
+              parentLink: page.parentService || null
             },
           } : {}
 
@@ -70,12 +71,14 @@ export default ({ data, pageContext }) => {
           return (page.useProcessBlockImage) ? {
             type: 'process-image-block',
             data: {
-              sectionTitle: page.processSectionTitle
+              sectionTitle: page.processSectionTitle,
+              title: page.headingForProcesses || '',
             },
           } : (page.processes) ? {
             type: 'process-block',
             data: {
               sectionTitle: page.processSectionTitle,
+              title: page.headingForProcesses,
               processes: page.processes
             }
           } : {  }
@@ -108,19 +111,20 @@ export default ({ data, pageContext }) => {
             }
           } : {}
 
+        default:
+          return {}
 
       }
     })
 
     return (
-      <Layout
+      <ServicePage
         title={page.title}
         theme={page.isDarktheme ? 'dark' : 'light'}
-        headerNestedNav={nestedNav}
-        headerShouldCollapse={true}
-        nestedLinks={nestedNav}>
-        <ServicePage blocks={blocks} darkTheme={page.isDarktheme}/>
-      </Layout>
+        blocks={blocks}
+        serviceSlug={page.slug}
+        nestedNav={nestedNav}
+      />
     )
   } else {
     return null
@@ -132,6 +136,7 @@ export const query = graphql`
     wagtail {
       servicePages(serviceSlug: $slug) {
         title
+        slug
         isDarktheme
         strapline
         intro
@@ -173,7 +178,7 @@ export const query = graphql`
           role
         }
         
-        
+        headingForProcesses
         useProcessBlockImage
         processSectionTitle
         processes {
@@ -271,9 +276,13 @@ export const query = graphql`
         caseStudiesSectionTitle
         caseStudies(limit: 4) {
           title
+          slug
           client
           listingSummary
           feedImage {
+            ...fullImage
+          }
+          homepageImage {
             ...fullImage
           }
         }
@@ -294,9 +303,13 @@ export const query = graphql`
           }
         }
         
-        service {
+        parentService {
           name
           slug
+          servicePage {
+            type
+            slug
+          }
         }
       }
     }

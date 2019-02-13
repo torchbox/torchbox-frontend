@@ -32,14 +32,16 @@ export class CaseStudyListingPage extends React.Component {
     const { title, caseStudies } = this.props
     const { selectedTag, currentLimit, tags = [] } = this.state
 
-
-    const listing = caseStudies
-      .map(caseStudyListing)
-      .filter(caseStudy =>
-        selectedTag === 0
-          ? true
-          : postContainsTag(caseStudy.tags, tags[selectedTag].label)
-      )
+    let listing = []
+    if (caseStudies) {
+      listing = caseStudies
+        .map(caseStudyListing)
+        .filter(caseStudy =>
+          selectedTag === 0
+            ? true
+            : postContainsTag(caseStudy.tags, tags[selectedTag].label)
+        )
+    }
 
     return (
       <div className={styles.page}>

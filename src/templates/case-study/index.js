@@ -8,10 +8,13 @@ import { caseStudiesUrl } from '../../utils/urls'
 import { safeGet } from '../../utils/safeget'
 
 export default ({data}) => {
-  let page = data.wagtail.caseStudies[0]
-  let feedImageSrc = safeGet(page, 'feedImage.src.url', require('../../images/default-featured.png'))
+  const page = data.wagtail.caseStudies[0]
+
+  const homepageImageSrc = safeGet(page, 'homepageImage.src.url', null)
+  const feedImageSrc = safeGet(page, 'feedImage.src.url', require('../../images/default-featured.png'))
+
   const body = ([
-    { type: 'wide_image', value: { image: { src: feedImageSrc } } }
+    { type: 'wide_image', value: { image: { src: homepageImageSrc || feedImageSrc } } }
   ]).concat(page.body)
 
   return (
@@ -37,6 +40,9 @@ export const query = graphql`
         feedImage {
           ...fullImage
         }
+        homepageImage {
+          ...fullImage
+        }
         tags: relatedServices {
           name
           slug
@@ -52,6 +58,9 @@ export const query = graphql`
           }
         }
         body
+        contact {
+          ...contactSnippet
+        }
       }
     }
   }

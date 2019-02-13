@@ -10,15 +10,17 @@ export const postContainsTag = (tags, tagName) => {
 
 export const getUniqueTagsFromPosts = posts => {
   let tags = []
-  posts.map(blog =>
-    (blog.tags || []).map(tag => {
-      let tagExists = postContainsTag(tags, tag.name)
-      if (!tagExists) {
-        tags.push(tag)
-      }
-      return tagExists
-    })
-  )
+  if (posts) {
+    posts.map(blog =>
+      (blog.tags || []).map(tag => {
+        let tagExists = postContainsTag(tags, tag.name)
+        if (!tagExists) {
+          tags.push(tag)
+        }
+        return tagExists
+      })
+    )
+  }
   return tags
 }
 

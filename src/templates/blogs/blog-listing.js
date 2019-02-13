@@ -31,7 +31,7 @@ export class BlogListingPage extends React.Component {
   }
 
   render() {
-    const { title, streamfield } = this.props
+    const { title, streamfield, contact } = this.props
     const { selectedTag, currentLimit, tags = []} = this.state
 
     const listing = this.props.blogs

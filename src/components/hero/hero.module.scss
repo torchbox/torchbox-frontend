@@ -104,6 +104,7 @@ $hero-link-color: var(--hero-link-color, $link-color);
       display: flex;
       margin-top: 20px;
       margin-left: -10px;
+      flex-wrap: wrap;
       @include for-tablet-landscape-up {
         padding-top: 0px;
         margin: 0 !important;

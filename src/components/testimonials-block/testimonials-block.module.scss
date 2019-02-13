@@ -6,7 +6,7 @@
 
     &Container {
         @include container;
-        padding: 130px 0 0;
+        padding: 90px 0 0;
     }
 
     &Block {
@@ -50,6 +50,10 @@
             }
 
         }
+    }
+
+    .pageSectionTitle {
+        top: 0px;
     }
 
 }

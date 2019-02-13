@@ -8,6 +8,7 @@ import { blogsUrl } from '../../utils/urls'
 
 export default ({ data }) => {
   const page = data.wagtail.blogPosts[0]
+  const extraBlogPosts = data.wagtail.extraBlogPosts
   return (
     <Layout>
       <BlogPostPage
@@ -16,6 +17,7 @@ export default ({ data }) => {
         author={authorDetails(page.authors)}
         datePublished={page.date}
         tags={postTags(page.tags, blogsUrl('#filter='))}
+        extraPosts={extraBlogPosts}
       />
     </Layout>
   )
@@ -42,7 +44,33 @@ export const query = graphql`
           }
         }
         body
+        contact {
+          ...contactSnippet
+        }
       }
+      
+      extraBlogPosts: blogPosts(limit: 2) {
+        title
+        date
+        tags: relatedServices {
+          name
+          slug
+        }
+        authors {
+          name
+          personPage {
+            role
+            slug
+            image {
+              ...iconImage
+            }
+          }
+        }
+        body
+        contact {
+          ...contactSnippet
+        }
+      } 
     }
   }
 `

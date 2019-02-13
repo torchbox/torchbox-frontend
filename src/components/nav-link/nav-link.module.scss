@@ -9,7 +9,7 @@ $header-link-color: var(--header-link-color, $primary);
     position: absolute;
     width: 100%;
     height: #{$height}px;
-    bottom: 0px;
+    bottom: -5px;
     left: 0;
     background: $accent;
   }
@@ -42,14 +42,14 @@ $header-link-color: var(--header-link-color, $primary);
 
   &:hover {
     @include for-tablet-landscape-up {
-      @include navlink-underscore(5);
+      @include navlink-underscore(4);
     }
   }
 
   &.active {
     border-bottom: none;
     @include for-tablet-landscape-up {
-      @include navlink-underscore(5);
+      @include navlink-underscore(4);
     }
   }
 

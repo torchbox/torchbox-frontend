@@ -2,6 +2,10 @@
 
 .process {
 
+  &Title {
+    font-weight: 800;
+  }
+
   &Block {
     background-color: white;
     padding: 90px 0 120px;
@@ -15,6 +19,10 @@
     @include for-tablet-landscape-up {
       width: 19vw;
       top: 60px;
+    }
+
+    .toolkit_svg__st0 {
+      fill: red !important;
     }
 
   }

@@ -2,11 +2,19 @@ export const caseStudiesUrl = (slug = '') => `/work/${slug}`
 export const blogsUrl = (slug = '') => `/blogs/${slug}`
 export const teamUrl  = (slug = '') =>  `/team/${slug}`
 export const jobsUrl  = (slug = '') =>  `/jobs/${slug}`
-export const serviceUrl = (slug = '') => (slug == 'digital-products')
-  ? `/`
-  : (slug == 'wagtail' || slug == 'digital-products')
-    ? slug
-    : `/service/${slug}`
+export const serviceUrl = (slug = '', parentServiceSlug = null) => {
+  if (parentServiceSlug) {
+    return `${parentServiceSlug}/${slug}`
+  } else {
+    switch (slug) {
+      case 'digital-products':
+        return `/`
+      default:
+        return slug
+    }
+  }
+}
+
 
 export const pageUrl = page => {
   if (page) {

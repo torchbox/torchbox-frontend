@@ -85,12 +85,15 @@ class Header extends React.Component {
                     {nestedLinks.map(link => (
                       <li
                         className={
-                          activeNestedLink == link.href
+                          link.active
                             ? styles.nestedNavItemActive
                             : styles.nestedNavItem
                         }
                       >
-                        <Link onClick={link.onClick} to={link.href}>
+                        <Link
+                          className={styles.nestedNavLink}
+                          onClick={link.onClick}
+                          to={link.href}>
                           {link.title}
                         </Link>
                       </li>

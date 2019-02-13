@@ -9,7 +9,8 @@ import { blogsUrl } from '../../utils/urls'
 import Blogs from '../../components/blogs-listing-block'
 
 const PersonPage = ({
-  name,
+  firstName,
+  lastName,
   role,
   intro,
   avatar,
@@ -18,7 +19,7 @@ const PersonPage = ({
 }) => (
   <div className={styles.page}>
     <div className={styles.pageContainer}>
-      <TitleBlock className={styles.pageTitle} title={intro} />
+      <TitleBlock className={styles.pageTitle} title={`${firstName + ' ' + lastName || "" } [${intro || ""}]`} />
       <div className={styles.pageAvatar}>
         <img className={styles.pageAvatarIcon} src={require('../../images/icons/frag.png')} />
         <img className={styles.pageAvatarImage} src={avatar} />
@@ -32,10 +33,10 @@ const PersonPage = ({
     />
     <Blogs
       className={styles.pageShowcase}
-      sectionTitle="More of our thinking"
+      sectionTitle={`More of ${firstName}'s thinking`}
       blogs={blogs}
       showFeatured={false}
-      listingUrl={blogsUrl()}
+      listingUrl={null}
     />
     <Contact className={styles.pageContact} />
   </div>
