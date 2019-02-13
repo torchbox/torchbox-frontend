@@ -37,20 +37,20 @@ const Contact = ({ title, emailAddress, phoneNumber, className, reasons }) => (
         />
         <div className={styles.contactBlockDetailsMeta}>
           <div>
-          <a
-            href={`mailto://${emailAddress}`}
-            className={styles.contactBlockDetailsEmail}
-          >
-            {emailAddress}
-          </a>
+            <a
+              href={`mailto://${emailAddress}`}
+              className={styles.contactBlockDetailsEmail}
+            >
+              {emailAddress}
+            </a>
           </div>
           <div>
-          <a
-            href={`tel://${phoneNumber}`}
-            className={styles.contactBlockDetailsNumber}
-          >
-            {phoneNumber}
-          </a>
+            <a
+              href={`tel://${phoneNumber}`}
+              className={styles.contactBlockDetailsNumber}
+            >
+              {phoneNumber}
+            </a>
           </div>
         </div>
       </section>

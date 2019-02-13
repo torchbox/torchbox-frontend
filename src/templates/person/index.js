@@ -35,9 +35,9 @@ export const query = graphql`
         slug
         image {
           ...fullImage
-        } 
+        }
       }
-      
+
       blogPosts(authorSlug: $slug, limit: 2) {
         title
         slug

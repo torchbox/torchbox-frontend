@@ -12,7 +12,10 @@ export class StandardPage extends React.Component {
     return (
       <div className={styles.page}>
         <TitleBlock className={styles.pageTitle} title={title} />
-        <StreamfieldBlock className={styles.pageStreamfield} streamfield={body} />
+        <StreamfieldBlock
+          className={styles.pageStreamfield}
+          streamfield={body}
+        />
         <Contact className={styles.pageContact} />
       </div>
     )

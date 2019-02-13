@@ -22,17 +22,14 @@ const TeaserBlockContainer = ({ ignoreSlug }) => {
         }
       `}
       render={data => {
-        const teasers = data.wagtail
-          .services
+        const teasers = data.wagtail.services
           .filter(service => service.slug !== ignoreSlug)
           .slice(0, 2)
           .map(service => ({
             ...service,
-            href: pageUrl(service.servicePage)
+            href: pageUrl(service.servicePage),
           }))
-        return (
-          <TeaserBlock teasers={teasers} />
-        )
+        return <TeaserBlock teasers={teasers} />
       }}
     />
   )

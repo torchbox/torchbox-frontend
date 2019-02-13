@@ -15,9 +15,13 @@ const AuthorBlock = ({ author, datePublished, tags, readTime, className }) => (
         containerClassName={styles.authorBlockImage}
       />
       <div className={styles.authorBlockDetails}>
-        <Link to={`/team/${author.slug}`} className={styles.authorBlockName}>{author.name || '' }</Link>
+        <Link to={`/team/${author.slug}`} className={styles.authorBlockName}>
+          {author.name || ''}
+        </Link>
         <p className={styles.authorBlockMeta}>
-          <span className={styles.authorBlockMetaRole}>{author.role || 'Past Employee'}</span>
+          <span className={styles.authorBlockMetaRole}>
+            {author.role || 'Past Employee'}
+          </span>
           {datePublished ? (
             <span className={styles.authorBlockMetaDate}>
               {dayjs(datePublished).format(`DD MMM 'YY`)}
@@ -51,7 +55,7 @@ AuthorBlock.propTypes = {
 
 AuthorBlock.defaultProps = {
   author: {
-    avatar: require('../../images/default-avatar.png')
+    avatar: require('../../images/default-avatar.png'),
   },
 }
 

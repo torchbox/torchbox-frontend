@@ -1,7 +1,7 @@
 export const caseStudiesUrl = (slug = '') => `/work/${slug}`
 export const blogsUrl = (slug = '') => `/blogs/${slug}`
-export const teamUrl  = (slug = '') =>  `/team/${slug}`
-export const jobsUrl  = (slug = '') =>  `/jobs/${slug}`
+export const teamUrl = (slug = '') => `/team/${slug}`
+export const jobsUrl = (slug = '') => `/jobs/${slug}`
 export const serviceUrl = (slug = '', parentServiceSlug = null) => {
   if (parentServiceSlug) {
     return `${parentServiceSlug}/${slug}`
@@ -15,11 +15,10 @@ export const serviceUrl = (slug = '', parentServiceSlug = null) => {
   }
 }
 
-
 export const pageUrl = page => {
   if (page) {
     const { type, slug } = page
-    switch(type) {
+    switch (type) {
       case 'HomePage':
         return '/'
 

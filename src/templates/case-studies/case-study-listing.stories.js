@@ -26,8 +26,9 @@ storiesOf('Pages', module).add('Case-Study Listing', () => {
                 role: 'Project Manager',
                 feedImage: {
                   src: {
-                    url: 'http://playground.torchboxapps.com/tbx-rebrand/assets/images/cs4.jpg',
-                  }
+                    url:
+                      'http://playground.torchboxapps.com/tbx-rebrand/assets/images/cs4.jpg',
+                  },
                 },
               },
             },
@@ -50,8 +51,9 @@ storiesOf('Pages', module).add('Case-Study Listing', () => {
                 role: 'Creative Director',
                 feedImage: {
                   src: {
-                    url: 'http://playground.torchboxapps.com/tbx-rebrand/assets/images/cs4.jpg',
-                  }
+                    url:
+                      'http://playground.torchboxapps.com/tbx-rebrand/assets/images/cs4.jpg',
+                  },
                 },
               },
             },
@@ -76,8 +78,9 @@ storiesOf('Pages', module).add('Case-Study Listing', () => {
                 role: 'Creative Director',
                 feedImage: {
                   src: {
-                    url: 'http://playground.torchboxapps.com/tbx-rebrand/assets/images/cs4.jpg',
-                  }
+                    url:
+                      'http://playground.torchboxapps.com/tbx-rebrand/assets/images/cs4.jpg',
+                  },
                 },
               },
             },
@@ -105,8 +108,9 @@ storiesOf('Pages', module).add('Case-Study Listing', () => {
                 role: 'Head of Search & Analytics',
                 feedImage: {
                   src: {
-                    url: 'http://playground.torchboxapps.com/tbx-rebrand/assets/images/cs4.jpg',
-                  }
+                    url:
+                      'http://playground.torchboxapps.com/tbx-rebrand/assets/images/cs4.jpg',
+                  },
                 },
               },
             },
@@ -142,8 +146,9 @@ storiesOf('Pages', module).add('Case-Study Listing', () => {
                 role: 'Head of Search & Analytics',
                 feedImage: {
                   src: {
-                    url: 'http://playground.torchboxapps.com/tbx-rebrand/assets/images/cs4.jpg',
-                  }
+                    url:
+                      'http://playground.torchboxapps.com/tbx-rebrand/assets/images/cs4.jpg',
+                  },
                 },
               },
             },
@@ -170,8 +175,9 @@ storiesOf('Pages', module).add('Case-Study Listing', () => {
                 role: 'Search and Analytics Consultant',
                 feedImage: {
                   src: {
-                    url: 'http://playground.torchboxapps.com/tbx-rebrand/assets/images/cs4.jpg',
-                  }
+                    url:
+                      'http://playground.torchboxapps.com/tbx-rebrand/assets/images/cs4.jpg',
+                  },
                 },
               },
             },
@@ -195,8 +201,9 @@ storiesOf('Pages', module).add('Case-Study Listing', () => {
                 role: 'Head of New Business',
                 feedImage: {
                   src: {
-                    url: 'http://playground.torchboxapps.com/tbx-rebrand/assets/images/cs4.jpg',
-                  }
+                    url:
+                      'http://playground.torchboxapps.com/tbx-rebrand/assets/images/cs4.jpg',
+                  },
                 },
               },
             },
@@ -220,8 +227,9 @@ storiesOf('Pages', module).add('Case-Study Listing', () => {
                 role: 'Account Director',
                 feedImage: {
                   src: {
-                    url: 'http://playground.torchboxapps.com/tbx-rebrand/assets/images/cs4.jpg',
-                  }
+                    url:
+                      'http://playground.torchboxapps.com/tbx-rebrand/assets/images/cs4.jpg',
+                  },
                 },
               },
             },
@@ -249,8 +257,9 @@ storiesOf('Pages', module).add('Case-Study Listing', () => {
                 role: 'Head of New Business',
                 feedImage: {
                   src: {
-                    url: 'http://playground.torchboxapps.com/tbx-rebrand/assets/images/cs4.jpg',
-                  }
+                    url:
+                      'http://playground.torchboxapps.com/tbx-rebrand/assets/images/cs4.jpg',
+                  },
                 },
               },
             },

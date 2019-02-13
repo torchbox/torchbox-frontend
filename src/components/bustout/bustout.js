@@ -19,13 +19,15 @@ const Bustout = ({ src, align = 'left', className, caption }) => (
       <div
         className={styles.bustoutImage}
         style={{
-          backgroundImage: `url(${src})`
+          backgroundImage: `url(${src})`,
         }}
       />
       {caption ? (
         <div className={styles.bustoutCaption}>
-          <div className={styles.bustoutCaptionInner}
-               {...renderTorchUp(caption)} />
+          <div
+            className={styles.bustoutCaptionInner}
+            {...renderTorchUp(caption)}
+          />
         </div>
       ) : null}
     </div>

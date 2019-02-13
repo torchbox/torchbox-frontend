@@ -17,9 +17,9 @@ export class TeamListingPage extends React.Component {
         role: person.role,
         avatar: person.image.src.url,
         href: teamUrl(person.slug),
-        isSenior: person.isSenior
+        isSenior: person.isSenior,
       }))
-      .sort(person => person.isSenior ? -1 : 1)
+      .sort(person => (person.isSenior ? -1 : 1))
 
     return (
       <div className={styles.page}>

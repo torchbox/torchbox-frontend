@@ -6,7 +6,7 @@ import Layout from '../../components/layout'
 
 export default ({ data }) => {
   const page = data.wagtail.culturePages[0]
-  if(page) {
+  if (page) {
     return (
       <Layout theme={'dark--transparent'}>
         <CulturePage
@@ -47,5 +47,5 @@ export const query = graphql`
         }
       }
     }
-  } 
+  }
 `

@@ -7,12 +7,7 @@ import Avatar from '../avatar/avatar'
 
 class ServicesBlock extends React.Component {
   render() {
-    const {
-      services,
-      className,
-      sectionTitle,
-      greetingImage,
-    } = this.props
+    const { services, className, sectionTitle, greetingImage } = this.props
 
     return (
       <div className={[styles.block, className].join(' ')}>

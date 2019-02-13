@@ -17,103 +17,125 @@ export default ({ data, pageContext }) => {
   }
 
   if (page) {
-    let nestedNav = [];
-    ['keyPointsSectionTitle', 'testimonialsSectionTitle', 'caseStudiesSectionTitle', 'blogsSectionTitle']
-      .map(id => {
-        const sectionTitle = page[id]
-        if (sectionTitle) {
-          nestedNav.push({ title: sectionTitle, href: `#section=${sectionTitle}` })
-        }
-      })
+    let nestedNav = []
+    ;[
+      'keyPointsSectionTitle',
+      'testimonialsSectionTitle',
+      'caseStudiesSectionTitle',
+      'blogsSectionTitle',
+    ].map(id => {
+      const sectionTitle = page[id]
+      if (sectionTitle) {
+        nestedNav.push({
+          title: sectionTitle,
+          href: `#section=${sectionTitle}`,
+        })
+      }
+    })
 
     blocks = blocks.map(block => {
       switch (block) {
-
         case 'hero-block':
-          return (page.strapline || page.intro) ? {
-            type: 'hero-block',
-            data: {
-              excludeFromLinks: true,
-              strapline: page.strapline,
-              intro: page.intro,
-              links: nestedNav,
-              greetingImageType: page.greetingImageType,
-              parentLink: page.parentService || null
-            },
-          } : {}
+          return page.strapline || page.intro
+            ? {
+                type: 'hero-block',
+                data: {
+                  excludeFromLinks: true,
+                  strapline: page.strapline,
+                  intro: page.intro,
+                  links: nestedNav,
+                  greetingImageType: page.greetingImageType,
+                  parentLink: page.parentService || null,
+                },
+              }
+            : {}
 
         case 'help-block':
-          return (page.keyPoints.length) ? {
-            type: 'help-block',
-            data: {
-              sectionTitle: page.keyPointsSectionTitle,
-              heading: page.headingForKeyPoints,
-              links: page.keyPoints.map(keyPoint => ({
-                title: keyPoint.text,
-                href: pageUrl(keyPoint.linkedPage),
-              })),
-              contact: page.contact,
-            },
-          } : {}
+          return page.keyPoints.length
+            ? {
+                type: 'help-block',
+                data: {
+                  sectionTitle: page.keyPointsSectionTitle,
+                  heading: page.headingForKeyPoints,
+                  links: page.keyPoints.map(keyPoint => ({
+                    title: keyPoint.text,
+                    href: pageUrl(keyPoint.linkedPage),
+                  })),
+                  contact: page.contact,
+                },
+              }
+            : {}
 
         case 'testimonials-block':
-          return (page.clientLogos.length || page.usaClientLogos.length || page.testimonials.length) ? {
-            type: 'testimonials-block',
-            data: {
-              sectionTitle: page.testimonialsSectionTitle,
-              logos: page.clientLogos.concat(page.usaClientLogos),
-              testimonials: page.testimonials,
-            },
-          } : {}
-
+          return page.clientLogos.length ||
+            page.usaClientLogos.length ||
+            page.testimonials.length
+            ? {
+                type: 'testimonials-block',
+                data: {
+                  sectionTitle: page.testimonialsSectionTitle,
+                  logos: page.clientLogos.concat(page.usaClientLogos),
+                  testimonials: page.testimonials,
+                },
+              }
+            : {}
 
         case 'process-block':
-          return (page.useProcessBlockImage) ? {
-            type: 'process-image-block',
-            data: {
-              sectionTitle: page.processSectionTitle,
-              title: page.headingForProcesses || '',
-            },
-          } : (page.processes) ? {
-            type: 'process-block',
-            data: {
-              sectionTitle: page.processSectionTitle,
-              title: page.headingForProcesses,
-              processes: page.processes
-            }
-          } : {  }
+          return page.useProcessBlockImage
+            ? {
+                type: 'process-image-block',
+                data: {
+                  sectionTitle: page.processSectionTitle,
+                  title: page.headingForProcesses || '',
+                },
+              }
+            : page.processes
+            ? {
+                type: 'process-block',
+                data: {
+                  sectionTitle: page.processSectionTitle,
+                  title: page.headingForProcesses,
+                  processes: page.processes,
+                },
+              }
+            : {}
 
         case 'case-studies-block':
-          return (page.caseStudies) ? {
-            type: 'case-studies-block',
-            data: {
-              sectionTitle: page.caseStudiesSectionTitle,
-              caseStudies: page.caseStudies.map(caseStudyListing),
-              listingUrl: caseStudiesUrl(),
-            },
-          } : {}
+          return page.caseStudies
+            ? {
+                type: 'case-studies-block',
+                data: {
+                  sectionTitle: page.caseStudiesSectionTitle,
+                  caseStudies: page.caseStudies.map(caseStudyListing),
+                  listingUrl: caseStudiesUrl(),
+                },
+              }
+            : {}
 
         case 'blogs-block':
-          return (page.blogPosts) ? {
-            type: 'blogs-block',
-            data: {
-              sectionTitle: page.blogsSectionTitle,
-              blogs: page.blogPosts.map(blogListing),
-              listingUrl: blogsUrl(),
-            },
-          } : {}
+          return page.blogPosts
+            ? {
+                type: 'blogs-block',
+                data: {
+                  sectionTitle: page.blogsSectionTitle,
+                  blogs: page.blogPosts.map(blogListing),
+                  listingUrl: blogsUrl(),
+                },
+              }
+            : {}
 
         case 'contact-detailed':
-          return (true) ? {
-            type: 'contact-detailed',
-            data: {
-              contact: page.contact
-            }
-          } : {}
+          return true
+            ? {
+                type: 'contact-detailed',
+                data: {
+                  contact: page.contact,
+                },
+              }
+            : {}
 
         default:
           return {}
-
       }
     })
 
@@ -141,7 +163,7 @@ export const query = graphql`
         strapline
         intro
         greetingImageType
-        
+
         keyPointsSectionTitle
         headingForKeyPoints
         keyPoints {
@@ -151,7 +173,7 @@ export const query = graphql`
             slug
           }
         }
-        
+
         contact {
           name
           emailAddress
@@ -160,7 +182,7 @@ export const query = graphql`
             ...iconImage
           }
         }
-        
+
         testimonialsSectionTitle
         clientLogos {
           image {
@@ -177,7 +199,7 @@ export const query = graphql`
           quote
           role
         }
-        
+
         headingForProcesses
         useProcessBlockImage
         processSectionTitle
@@ -190,7 +212,7 @@ export const query = graphql`
             slug
           }
         }
-        
+
         caseStudiesSectionTitle
         caseStudies(limit: 4) {
           title
@@ -200,7 +222,7 @@ export const query = graphql`
             ...fullImage
           }
         }
-        
+
         blogsSectionTitle
         blogPosts(limit: 4) {
           title
@@ -216,19 +238,19 @@ export const query = graphql`
             }
           }
         }
-        
+
         service {
           name
           slug
         }
       }
-      
+
       subServicePages(slug: $slug) {
         title
         isDarktheme
         strapline
         intro
-        
+
         keyPointsSectionTitle
         headingForKeyPoints
         keyPoints {
@@ -238,11 +260,11 @@ export const query = graphql`
             slug
           }
         }
-        
+
         contact {
           ...contactSnippet
         }
-        
+
         testimonialsSectionTitle
         clientLogos {
           image {
@@ -259,8 +281,7 @@ export const query = graphql`
           quote
           role
         }
-        
-        
+
         useProcessBlockImage
         processSectionTitle
         processes {
@@ -272,7 +293,7 @@ export const query = graphql`
             slug
           }
         }
-        
+
         caseStudiesSectionTitle
         caseStudies(limit: 4) {
           title
@@ -286,7 +307,7 @@ export const query = graphql`
             ...fullImage
           }
         }
-        
+
         blogsSectionTitle
         blogPosts(limit: 4) {
           title
@@ -302,7 +323,7 @@ export const query = graphql`
             }
           }
         }
-        
+
         parentService {
           name
           slug

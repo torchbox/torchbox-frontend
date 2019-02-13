@@ -6,7 +6,6 @@ import styles from './streamfield-block.module.scss'
 import QuoteSlider from '../quote-slider/quote-slider'
 
 class StreamfieldBlock extends React.Component {
-
   render() {
     const { streamfield, className } = this.props
     return (
@@ -22,7 +21,7 @@ class StreamfieldBlock extends React.Component {
               )
 
             case 'aligned_image':
-            const aligned_image = React.createRef()
+              const aligned_image = React.createRef()
               return (
                 <div className={styles.streamfieldAlignedImage}>
                   <img
@@ -38,7 +37,6 @@ class StreamfieldBlock extends React.Component {
                     <p>{block.value.caption}</p>
                   </div>
                 </div>
-
               )
 
             case 'wide_image':
@@ -67,19 +65,29 @@ class StreamfieldBlock extends React.Component {
               )
 
             case 'h1':
-              return <h1 className={styles.streamfieldHeading}>{block.value}</h1>
+              return (
+                <h1 className={styles.streamfieldHeading}>{block.value}</h1>
+              )
 
             case 'h2':
-              return <h2 className={styles.streamfieldHeading}>{block.value}</h2>
+              return (
+                <h2 className={styles.streamfieldHeading}>{block.value}</h2>
+              )
 
             case 'h3':
-              return <h3 className={styles.streamfieldHeading}>{block.value}</h3>
+              return (
+                <h3 className={styles.streamfieldHeading}>{block.value}</h3>
+              )
 
             case 'h4':
-              return <h4 className={styles.streamfieldHeading}>{block.value}</h4>
+              return (
+                <h4 className={styles.streamfieldHeading}>{block.value}</h4>
+              )
 
             case 'h5':
-              return <h5 className={styles.streamfieldHeading}>{block.value}</h5>
+              return (
+                <h5 className={styles.streamfieldHeading}>{block.value}</h5>
+              )
 
             case 'embed':
               return (
@@ -112,15 +120,13 @@ class StreamfieldBlock extends React.Component {
               )
 
             case 'raw_html':
-                return (
-                    <div dangerouslySetInnerHTML={{ __html: block.value }} />
-                )
+              return <div dangerouslySetInnerHTML={{ __html: block.value }} />
 
             case 'markdown':
-                  return null
+              return null
 
             default:
-              console.log("Unknown Streamfield Block: ", block.type)
+              console.log('Unknown Streamfield Block: ', block.type)
               return null
           }
         })}

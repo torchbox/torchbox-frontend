@@ -7,12 +7,7 @@ import Avatar from '../avatar/avatar'
 
 class JobsBlock extends React.Component {
   render() {
-    const {
-      jobs,
-      className,
-      listingUrl,
-      greetingImage,
-    } = this.props
+    const { jobs, className, listingUrl, greetingImage } = this.props
 
     return (
       <div className={[styles.block, className].join(' ')}>
@@ -21,7 +16,11 @@ class JobsBlock extends React.Component {
         <div className={styles.blockContent}>
           <div className={styles.blockJobList}>
             {jobs.map(job => (
-              <a className={styles.blockJobLink} href={job.href} target="_blank ">
+              <a
+                className={styles.blockJobLink}
+                href={job.href}
+                target="_blank "
+              >
                 <h3 className={styles.blockJobLinkTitle}>{job.title}</h3>
                 <h4 className={styles.blockJobLinkLevel}>{job.level}</h4>
                 <h5 className={styles.blockJobLinkLocation}>{job.location}</h5>

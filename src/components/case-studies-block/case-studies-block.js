@@ -9,12 +9,7 @@ import { ReactComponent as FlippedFragCluster } from '../../images/frag-cluster2
 
 class CaseStudiesBlock extends React.Component {
   render() {
-    const {
-      caseStudies,
-      className,
-      sectionTitle,
-      listingUrl,
-    } = this.props
+    const { caseStudies, className, sectionTitle, listingUrl } = this.props
 
     return (
       <div className={[styles.block, className].join(' ')}>
@@ -28,28 +23,35 @@ class CaseStudiesBlock extends React.Component {
               <Link className={styles.caseStudy} to={caseStudy.href}>
                 <div className={styles.caseStudyMeta}>
                   <div className={styles.caseStudyMetaContainer}>
-                    <h4 className={styles.caseStudyMetaClient}>{caseStudy.client}</h4>
-                    <h3 className={styles.caseStudyMetaTitle}>{caseStudy.title}</h3>
+                    <h4 className={styles.caseStudyMetaClient}>
+                      {caseStudy.client}
+                    </h4>
+                    <h3 className={styles.caseStudyMetaTitle}>
+                      {caseStudy.title}
+                    </h3>
                     <p className={styles.caseStudyMetaDesc}>
                       {caseStudy.description}
                     </p>
                   </div>
-                  <FragCluster
-                    className={styles.caseStudyClusterIcon} />
+                  <FragCluster className={styles.caseStudyClusterIcon} />
                 </div>
 
                 <div className={styles.caseStudyImage}>
                   <img
-                    ref={ref => img = ref}
-                    src={caseStudy.feedImage || caseStudy.homepageImage || require('../../images/default-featured.png')}
+                    ref={ref => (img = ref)}
+                    src={
+                      caseStudy.feedImage ||
+                      caseStudy.homepageImage ||
+                      require('../../images/default-featured.png')
+                    }
                     onError={() => {
                       img.src = require('../../images/default-featured.png')
-                    }}/>
+                    }}
+                  />
                 </div>
               </Link>
             )
-          })
-          }
+          })}
         </div>
         {listingUrl ? (
           <div className={styles.seeMore}>

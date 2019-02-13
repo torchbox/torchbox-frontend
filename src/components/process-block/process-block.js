@@ -17,15 +17,18 @@ class ProcessBlock extends React.Component {
           <h1 className={styles.processTitle} {...renderTorchUp(title || '')} />
           <ToolkitImage className={styles.processImage} />
           <ul className={styles.processList}>
-            { processes.map(process => (
+            {processes.map(process => (
               <li className={styles.processItem}>
                 <h3 className={styles.processItemTitle}>{process.title}</h3>
                 <p className={styles.processItemDesc}>{process.description}</p>
-                <Link to={pageUrl(process.pageLink)} className={styles.processItemLink}>
+                <Link
+                  to={pageUrl(process.pageLink)}
+                  className={styles.processItemLink}
+                >
                   <span>{process.pageLinkLabel}</span>
                 </Link>
               </li>
-            )) }
+            ))}
           </ul>
         </div>
       </div>
@@ -43,7 +46,7 @@ ProcessBlock.propTypes = {
 ProcessBlock.defaultProps = {
   className: '',
   sectionTitle: 'Process',
-  processes: []
+  processes: [],
 }
 
 export default ProcessBlock

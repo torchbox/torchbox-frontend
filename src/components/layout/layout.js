@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { StaticQuery, graphql } from "gatsby"
+import { StaticQuery, graphql } from 'gatsby'
 
 import Header from '../header'
 import Footer from '../footer'
@@ -11,19 +11,24 @@ import { safeGet } from '../../utils/safeget'
 import { blogsUrl, caseStudiesUrl, teamUrl } from '../../utils/urls'
 
 class Layout extends React.Component {
-
   constructor(props) {
     super(props)
     this.state = { currentUrl: '#1' }
     this.theme = {
-      'light': styles.lightTheme,
-      'dark': styles.darkTheme,
-      'dark--transparent': styles.darkThemeTransparent
+      light: styles.lightTheme,
+      dark: styles.darkTheme,
+      'dark--transparent': styles.darkThemeTransparent,
     }[props.theme || 'light']
   }
 
   render() {
-    const { children, headerShouldCollapse, title, nestedLinks, ignoreServiceTeaser } = this.props
+    const {
+      children,
+      headerShouldCollapse,
+      title,
+      nestedLinks,
+      ignoreServiceTeaser,
+    } = this.props
 
     return (
       <StaticQuery
@@ -117,7 +122,7 @@ class Layout extends React.Component {
         if (window.location.pathname.replace(/\//g, '') === link.href) {
           return {
             ...link,
-            active: true
+            active: true,
           }
         }
       }
@@ -129,12 +134,12 @@ class Layout extends React.Component {
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
   nestedLinks: PropTypes.array,
-  headerShouldCollapse: PropTypes.bool
+  headerShouldCollapse: PropTypes.bool,
 }
 
 Layout.defaultProps = {
   headerShouldCollapse: false,
-  darkTheme: false
+  darkTheme: false,
 }
 
 export default Layout

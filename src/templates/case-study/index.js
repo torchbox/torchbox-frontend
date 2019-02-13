@@ -7,15 +7,22 @@ import { authorDetails, postTags } from '../../utils/selectors'
 import { caseStudiesUrl } from '../../utils/urls'
 import { safeGet } from '../../utils/safeget'
 
-export default ({data}) => {
+export default ({ data }) => {
   const page = data.wagtail.caseStudies[0]
 
   const homepageImageSrc = safeGet(page, 'homepageImage.src.url', null)
-  const feedImageSrc = safeGet(page, 'feedImage.src.url', require('../../images/default-featured.png'))
+  const feedImageSrc = safeGet(
+    page,
+    'feedImage.src.url',
+    require('../../images/default-featured.png')
+  )
 
-  const body = ([
-    { type: 'wide_image', value: { image: { src: homepageImageSrc || feedImageSrc } } }
-  ]).concat(page.body)
+  const body = [
+    {
+      type: 'wide_image',
+      value: { image: { src: homepageImageSrc || feedImageSrc } },
+    },
+  ].concat(page.body)
 
   return (
     <Layout>
@@ -29,7 +36,6 @@ export default ({data}) => {
     </Layout>
   )
 }
-
 
 export const query = graphql`
   query($slug: String) {

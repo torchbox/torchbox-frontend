@@ -4,7 +4,11 @@ import PropTypes from 'prop-types'
 import styles from './case-study-listing.module.scss'
 import TitleBlock from '../../components/title-block'
 import Contact from '../../components/contact-detailed'
-import { getCurrentFilterIndex, getUniqueTagsFromPosts, postContainsTag } from '../../utils/tags'
+import {
+  getCurrentFilterIndex,
+  getUniqueTagsFromPosts,
+  postContainsTag,
+} from '../../utils/tags'
 import FilterTags from '../../components/filter-pills/filter-tags'
 import CaseStudiesBlock from '../../components/case-studies-block/case-studies-block'
 import { caseStudiesUrl } from '../../utils/urls'
@@ -19,13 +23,13 @@ export class CaseStudyListingPage extends React.Component {
       ...getUniqueTagsFromPosts(props.caseStudies).map(tag => ({
         label: tag.name,
         href: caseStudiesUrl(`#filter=${tag.slug}`),
-        slug: tag.slug
+        slug: tag.slug,
       })),
     ]
-    return ({
+    return {
       tags,
-      selectedTag: getCurrentFilterIndex(tags)
-    })
+      selectedTag: getCurrentFilterIndex(tags),
+    }
   }
 
   render() {
@@ -68,7 +72,6 @@ export class CaseStudyListingPage extends React.Component {
 
   loadMoreBlogs = () =>
     this.setState({ currentLimit: this.state.currentLimit + 10 })
-
 }
 
 CaseStudyListingPage.propTypes = {

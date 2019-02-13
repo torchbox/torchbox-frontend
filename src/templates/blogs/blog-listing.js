@@ -6,7 +6,11 @@ import TitleBlock from '../../components/title-block'
 import StreamfieldBlock from '../../components/streamfield-block'
 import Contact from '../../components/contact-detailed'
 import safeGet from '../../utils/safeget'
-import { getUniqueTagsFromPosts, postContainsTag, getCurrentFilterIndex } from '../../utils/tags'
+import {
+  getUniqueTagsFromPosts,
+  postContainsTag,
+  getCurrentFilterIndex,
+} from '../../utils/tags'
 import FilterTags from '../../components/filter-pills/filter-tags'
 import BlogLink from '../../components/blog-link/blog-link'
 import { blogsUrl } from '../../utils/urls'
@@ -21,18 +25,18 @@ export class BlogListingPage extends React.Component {
       ...getUniqueTagsFromPosts(props.blogs).map(tag => ({
         label: tag.name,
         href: blogsUrl(`#filter=${tag.slug}`),
-        slug: tag.slug
+        slug: tag.slug,
       })),
     ]
-    return ({
+    return {
       tags,
-      selectedTag: getCurrentFilterIndex(tags)
-    })
+      selectedTag: getCurrentFilterIndex(tags),
+    }
   }
 
   render() {
     const { title, streamfield, contact } = this.props
-    const { selectedTag, currentLimit, tags = []} = this.state
+    const { selectedTag, currentLimit, tags = [] } = this.state
 
     const listing = this.props.blogs
       .map(blogListing)

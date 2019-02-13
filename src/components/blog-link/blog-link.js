@@ -17,13 +17,17 @@ const BlogLink = ({
   authorRole,
   datePublished,
 }) => (
-  <Link className={[featured ? styles.blogLinkFeatured : styles.blogLink, className].join(' ')} to={href}>
+  <Link
+    className={[
+      featured ? styles.blogLinkFeatured : styles.blogLink,
+      className,
+    ].join(' ')}
+    to={href}
+  >
     <h3 className={styles.blogLinkTitle}>{title}</h3>
-    { description && featured ? (
-      <p className={styles.blogLinkDesc}>
-        {description}
-      </p>
-    ) : null }
+    {description && featured ? (
+      <p className={styles.blogLinkDesc}>{description}</p>
+    ) : null}
     <div className={styles.blogLinkMeta}>
       <Avatar src={authorAvatar} containerClassName={styles.blogLinkImage} />
       <div className={styles.blogLinkAuthor}>

@@ -5,12 +5,17 @@ import { blogsUrl, caseStudiesUrl } from './urls'
 export const authorDetails = authors => ({
   name: safeGet(authors, '0.name', ''),
   role: safeGet(authors, '0.personPage.role', 'Past Employee'),
-  avatar: safeGet(authors, '0.personPage.image.src.url', require('../images/default-avatar.png')) || require('../images/default-avatar.png'),
+  avatar:
+    safeGet(
+      authors,
+      '0.personPage.image.src.url',
+      require('../images/default-avatar.png')
+    ) || require('../images/default-avatar.png'),
   slug: safeGet(authors, '0.personPage.slug', ''),
 })
 
-export const postTags = (tags, hrefPrefix = '') => tags
-  .map(tag => ({
+export const postTags = (tags, hrefPrefix = '') =>
+  tags.map(tag => ({
     label: tag.name,
     href: hrefPrefix + tag.slug,
   }))

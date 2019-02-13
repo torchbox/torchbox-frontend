@@ -15,21 +15,25 @@ const PersonPage = ({
   intro,
   avatar,
   biography,
-  blogs
+  blogs,
 }) => (
   <div className={styles.page}>
     <div className={styles.pageContainer}>
-      <TitleBlock className={styles.pageTitle} title={`${firstName + ' ' + lastName || "" } [${intro || ""}]`} />
+      <TitleBlock
+        className={styles.pageTitle}
+        title={`${firstName + ' ' + lastName || ''} [${intro || ''}]`}
+      />
       <div className={styles.pageAvatar}>
-        <img className={styles.pageAvatarIcon} src={require('../../images/icons/frag.png')} />
+        <img
+          className={styles.pageAvatarIcon}
+          src={require('../../images/icons/frag.png')}
+        />
         <img className={styles.pageAvatarImage} src={avatar} />
       </div>
     </div>
     <StreamfieldBlock
       className={styles.pageStreamfield}
-      streamfield={[
-        { type: 'paragraph', value: biography }
-      ]}
+      streamfield={[{ type: 'paragraph', value: biography }]}
     />
     <Blogs
       className={styles.pageShowcase}

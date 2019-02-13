@@ -13,7 +13,10 @@ const Contact = ({ title, emailAddress, phoneNumber, className, avatar }) => (
 
       <div className={styles.contactBlockDetails}>
         <h3 className={styles.contactBlockTitle}>{title}</h3>
-        <a href={`mailto://${emailAddress}`} className={styles.contactBlockEmail}>
+        <a
+          href={`mailto://${emailAddress}`}
+          className={styles.contactBlockEmail}
+        >
           {emailAddress}
         </a>
         <a href={`tel://${phoneNumber}`} className={styles.contactBlockNumber}>
@@ -35,10 +38,10 @@ Contact.propTypes = {
 Contact.defaultProps = {
   title: 'Get in touch about your project',
   className: '',
-  emailAddress: "will@torchbox.com",
-  name: "Will Heinemen",
-  phoneNumber: "+41524204242",
-  role: "Head of new buisness",
+  emailAddress: 'will@torchbox.com',
+  name: 'Will Heinemen',
+  phoneNumber: '+41524204242',
+  role: 'Head of new buisness',
   avatar: require('../../images/will.jpg'),
 }
 

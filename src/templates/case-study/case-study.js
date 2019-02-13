@@ -18,7 +18,7 @@ const CaseStudyPage = ({
   streamfield,
   caseStudies,
   teasers,
-  contact
+  contact,
 }) => (
   <div className={styles.page}>
     <div className={styles.pageClientContainer}>

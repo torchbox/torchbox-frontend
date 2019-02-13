@@ -48,7 +48,7 @@ export const query = graphql`
           ...contactSnippet
         }
       }
-      
+
       extraBlogPosts: blogPosts(limit: 2) {
         title
         date
@@ -70,7 +70,7 @@ export const query = graphql`
         contact {
           ...contactSnippet
         }
-      } 
+      }
     }
   }
 `

@@ -10,16 +10,8 @@ import TeaserLink from '../../components/teaser-block/teaser'
 import { pageUrl } from '../../utils/urls'
 import { ReactComponent as GreetingImage } from '../../images/man-fruit.svg'
 
-const CulturePage = ({
- strapline,
- heroImage,
- intro,
- links,
- body,
- contact,
-}) => {
-
-  const Teasers = () =>
+const CulturePage = ({ strapline, heroImage, intro, links, body, contact }) => {
+  const Teasers = () => (
     <div className={styles.pageLinks}>
       {links.map(link => (
         <TeaserLink
@@ -30,10 +22,14 @@ const CulturePage = ({
         />
       ))}
     </div>
+  )
 
   return (
     <div className={styles.page}>
-      <div className={styles.pageHero} style={{ backgroundImage: `url(${heroImage})` }}>
+      <div
+        className={styles.pageHero}
+        style={{ backgroundImage: `url(${heroImage})` }}
+      >
         <div className={styles.pageHeroContent}>
           <h1 className={styles.pageHeroTitle} {...renderTorchUp(strapline)} />
         </div>
@@ -41,13 +37,13 @@ const CulturePage = ({
 
       <div className={styles.pageContent}>
         <GreetingImage className={styles.pageImage} />
-        <h1 className={styles.pageIntro} {...renderTorchUp(intro)}/>
-        <Teasers/>
+        <h1 className={styles.pageIntro} {...renderTorchUp(intro)} />
+        <Teasers />
         <StreamfieldBlock
           className={styles.pageStreamfield}
           streamfield={body}
         />
-        <Teasers/>
+        <Teasers />
       </div>
       <Contact className={styles.pageContact} {...contact} />
     </div>

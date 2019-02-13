@@ -8,12 +8,7 @@ import { renderTorchUp } from '../../utils/torchup'
 
 class HelpBlock extends React.Component {
   render() {
-    const {
-      title,
-      links,
-      sectionTitle,
-      contact,
-    } = this.props
+    const { title, links, sectionTitle, contact } = this.props
 
     return (
       <div className={styles.blockContainer}>
@@ -41,10 +36,7 @@ class HelpBlock extends React.Component {
         </section>
 
         {contact ? (
-          <Contact
-            className={styles.blockContact}
-            {...contact}
-          />
+          <Contact className={styles.blockContact} {...contact} />
         ) : null}
 
         <div className={styles.blockBorder} />

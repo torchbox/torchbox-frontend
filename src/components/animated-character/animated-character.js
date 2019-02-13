@@ -9,7 +9,6 @@ import { ReactComponent as WagtailChar } from '../../images/wagtail.svg'
 import { ReactComponent as ManChar } from '../../images/data-greeting.svg'
 
 class AnimatedCharacter extends React.Component {
-
   constructor(props) {
     super(props)
     this.state = { active: false }
@@ -51,36 +50,42 @@ class AnimatedCharacter extends React.Component {
         className={[
           styles.container,
           containerClassName,
-          character == 'wagtail' ? styles.alignRight : null
-        ].join(' ')}>
-        { this.renderCharacter() }
+          character == 'wagtail' ? styles.alignRight : null,
+        ].join(' ')}
+      >
+        {this.renderCharacter()}
       </div>
     )
   }
 
-
   renderCharacter = () => {
     const { active } = this.state
-    switch(this.props.character) {
+    switch (this.props.character) {
       case 'woman-left':
-        return <WomanChar
-          className={active ? styles.imageWomanActive : styles.imageWoman}
-        />
+        return (
+          <WomanChar
+            className={active ? styles.imageWomanActive : styles.imageWoman}
+          />
+        )
 
       case 'wagtail':
-        return <WagtailChar
-          className={active ? styles.imageWagtailActive : styles.imageWagtail}/>
+        return (
+          <WagtailChar
+            className={active ? styles.imageWagtailActive : styles.imageWagtail}
+          />
+        )
 
       case 'man-left':
-        return <ManChar
-          className={active ? styles.imageWomanActive : styles.imageWoman}
-        />
+        return (
+          <ManChar
+            className={active ? styles.imageWomanActive : styles.imageWoman}
+          />
+        )
 
       default:
         return <div style={{ height: '20vh', width: 200, display: 'block' }} />
     }
   }
-
 }
 
 AnimatedCharacter.propTypes = {

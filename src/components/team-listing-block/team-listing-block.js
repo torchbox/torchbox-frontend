@@ -10,7 +10,11 @@ const TeamListingBlock = ({ team, className }) => {
       <div className={styles.blockContent}>
         <div className={styles.blockPersonList}>
           {team.map((person, index) => (
-            <Link key={`person-link-${index}`} className={styles.blockPersonLink} to={person.href}>
+            <Link
+              key={`person-link-${index}`}
+              className={styles.blockPersonLink}
+              to={person.href}
+            >
               <img
                 className={styles.blockPersonLinkAvatar}
                 src={person.avatar}

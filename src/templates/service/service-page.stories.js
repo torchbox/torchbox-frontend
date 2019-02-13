@@ -10,7 +10,8 @@ storiesOf('Pages', module).add('Service Page', () => {
         {
           type: 'hero-block',
           data: {
-            strapline: 'The digital product agency [for tomorrow\'s non-profits].',
+            strapline:
+              "The digital product agency [for tomorrow's non-profits].",
             intro: '<p></p>',
             links: [
               { title: 'Services', href: '#' },
@@ -19,46 +20,48 @@ storiesOf('Pages', module).add('Service Page', () => {
               { title: 'Work', href: '#' },
               { title: 'Thinking', href: '#' },
             ],
-          }
+          },
         },
 
         {
           type: 'help-block',
           data: {
             sectionTitle: 'services',
-            heading: '<p>We make products fast and transform the way your organisation works at the same time...</p>',
+            heading:
+              '<p>We make products fast and transform the way your organisation works at the same time...</p>',
             links: [
               {
-                "title": "Understand your users"
+                title: 'Understand your users',
               },
               {
-                "title": "Kick start a product idea with a design sprint"
+                title: 'Kick start a product idea with a design sprint',
               },
               {
-                "title": "Develop your product strategy and roadmap"
+                title: 'Develop your product strategy and roadmap',
               },
               {
-                "title": "Design and build lightweight apps and tools"
+                title: 'Design and build lightweight apps and tools',
               },
               {
-                "title": "Build a prototype (using the latest tech)"
+                title: 'Build a prototype (using the latest tech)',
               },
               {
-                "title": "Build a product and change your culture in one quarter"
+                title: 'Build a product and change your culture in one quarter',
               },
               {
-                "title": "Get things done faster and better by embracing the Agile way"
-              }
+                title:
+                  'Get things done faster and better by embracing the Agile way',
+              },
             ],
             contact: {
-              "name": "Will Heinemen",
-              "email": "will@torchbox.com",
-              "phone": "+41524204242",
-              "image": {
-                "src": "http://localhost:8000/media/original_images/kim-2.jpg"
-              }
-            }
-          }
+              name: 'Will Heinemen',
+              email: 'will@torchbox.com',
+              phone: '+41524204242',
+              image: {
+                src: 'http://localhost:8000/media/original_images/kim-2.jpg',
+              },
+            },
+          },
         },
 
         {
@@ -66,58 +69,65 @@ storiesOf('Pages', module).add('Service Page', () => {
           data: {
             logos: [
               {
-                "image": {
-                  "src": "http://localhost:8000/media/original_images/1162px-Firefox_Logo_2017.png"
-                }
+                image: {
+                  src:
+                    'http://localhost:8000/media/original_images/1162px-Firefox_Logo_2017.png',
+                },
               },
               {
-                "image": {
-                  "src": "http://localhost:8000/media/original_images/1162px-Firefox_Logo_2017.png"
-                }
+                image: {
+                  src:
+                    'http://localhost:8000/media/original_images/1162px-Firefox_Logo_2017.png',
+                },
               },
               {
-                "image": {
-                  "src": "http://localhost:8000/media/original_images/1162px-Firefox_Logo_2017.png"
-                }
+                image: {
+                  src:
+                    'http://localhost:8000/media/original_images/1162px-Firefox_Logo_2017.png',
+                },
               },
               {
-                "image": {
-                  "src": "http://localhost:8000/media/original_images/1162px-Firefox_Logo_2017.png"
-                }
+                image: {
+                  src:
+                    'http://localhost:8000/media/original_images/1162px-Firefox_Logo_2017.png',
+                },
               },
               {
-                "image": {
-                  "src": "http://localhost:8000/media/original_images/1162px-Firefox_Logo_2017.png"
-                }
+                image: {
+                  src:
+                    'http://localhost:8000/media/original_images/1162px-Firefox_Logo_2017.png',
+                },
               },
               {
-                "image": {
-                  "src": "http://localhost:8000/media/original_images/1162px-Firefox_Logo_2017.png"
-                }
-              }
+                image: {
+                  src:
+                    'http://localhost:8000/media/original_images/1162px-Firefox_Logo_2017.png',
+                },
+              },
             ],
 
             testimonials: [
               {
-                "person": "EVIN JOYCE",
-                "quote": "Torchbox were a fantastic partner building the Maano app. Their expertise and commitment to the project meant that we got from concept note and whiteboard discussions to launching the app on Google Playstore in less than four months",
-                "role": "Programme Officer, WFP"
+                person: 'EVIN JOYCE',
+                quote:
+                  'Torchbox were a fantastic partner building the Maano app. Their expertise and commitment to the project meant that we got from concept note and whiteboard discussions to launching the app on Google Playstore in less than four months',
+                role: 'Programme Officer, WFP',
               },
               {
-                "person": "Nathan",
-                "quote": "Torchbox were a fantastic partner building the Maano app. Their expertise and commitment to the project meant that we got from concept note and whiteboard discussions to launching the app on Google Playstore in less than four months.",
-                "role": "Dev @ TBX"
-              }
-            ]
-
-          }
+                person: 'Nathan',
+                quote:
+                  'Torchbox were a fantastic partner building the Maano app. Their expertise and commitment to the project meant that we got from concept note and whiteboard discussions to launching the app on Google Playstore in less than four months.',
+                role: 'Dev @ TBX',
+              },
+            ],
+          },
         },
 
         {
           type: 'process-block',
           data: {
-            title: '{Ten weeks to launch a [new] product}'
-          }
+            title: '{Ten weeks to launch a [new] product}',
+          },
         },
 
         {
@@ -126,35 +136,42 @@ storiesOf('Pages', module).add('Service Page', () => {
             listingUrl: '#',
             caseStudies: [
               {
-                "title": "A Progressive Web App for Mozilla.",
-                "description": "When Mozilla approached us to work with them on a Progressive Web App (PWA), we knew we had to say yes.",
-                "image": {
-                  "src": {
-                    "url": "http://localhost:8000/media/images/man-1718099_1920.width-1280.jpg"
-                  }
-                }
+                title: 'A Progressive Web App for Mozilla.',
+                description:
+                  'When Mozilla approached us to work with them on a Progressive Web App (PWA), we knew we had to say yes.',
+                image: {
+                  src: {
+                    url:
+                      'http://localhost:8000/media/images/man-1718099_1920.width-1280.jpg',
+                  },
+                },
               },
               {
-                "title": "Imagining and designing a future product for MQ in 5 days flat",
-                "listingSummary": "Read about our experience with the fantastic team from MQ: Transforming Mental Health, in an intense, week-long design sprint.",
-                "feedImage": {
-                  "rendition": {
-                    "url": "http://localhost:8000/media/images/hq-5787.width-1280.jpg"
-                  }
-                }
+                title:
+                  'Imagining and designing a future product for MQ in 5 days flat',
+                listingSummary:
+                  'Read about our experience with the fantastic team from MQ: Transforming Mental Health, in an intense, week-long design sprint.',
+                feedImage: {
+                  rendition: {
+                    url:
+                      'http://localhost:8000/media/images/hq-5787.width-1280.jpg',
+                  },
+                },
               },
               {
-                "title": "Health Research Authority",
-                "listingSummary": "HRA wanted a site where people could find what they needed.",
-                "feedImage": null
+                title: 'Health Research Authority',
+                listingSummary:
+                  'HRA wanted a site where people could find what they needed.',
+                feedImage: null,
               },
               {
-                "title": "Relaunching Nesta on a platform for the future",
-                "listingSummary": "Nesta choose Wagtail as the platform to build on",
-                "feedImage": null
-              }
-            ]
-          }
+                title: 'Relaunching Nesta on a platform for the future',
+                listingSummary:
+                  'Nesta choose Wagtail as the platform to build on',
+                feedImage: null,
+              },
+            ],
+          },
         },
 
         {
@@ -195,10 +212,9 @@ storiesOf('Pages', module).add('Service Page', () => {
                 authorRole: 'Client Services Director',
                 authorAvatar: require('../../images/will.jpg'),
               },
-            ]
-          }
+            ],
+          },
         },
-
       ]}
     />
   )

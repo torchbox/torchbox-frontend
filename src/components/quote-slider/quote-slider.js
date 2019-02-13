@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-
 import { ReactComponent as QuoteIcon } from '../../images/icons/quote.svg'
 import styles from './quote-slider.module.scss'
 
@@ -14,7 +13,7 @@ class QuoteSlider extends React.Component {
     const currentQuote = quotes[currentIndex] || {}
     return (
       <div className={[styles.quoteSliderBlock, className].join(' ')}>
-        <QuoteIcon className={styles.quoteIcon}/>
+        <QuoteIcon className={styles.quoteIcon} />
         <div className={styles.quoteSlider}>
           <div className={styles.quoteSlides}>
             {quotes.map((quote, index) => (

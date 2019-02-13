@@ -35,33 +35,27 @@ class Header extends React.Component {
       navigateTo,
       logoClick,
       activeNestedLink,
-      nestedLinks
+      nestedLinks,
     } = this.props
 
     return (
       <ThemeContext.Consumer>
-        { theme => (
+        {theme => (
           <div
             className={[
               this.state.collapsed ? styles.collapsedHeader : styles.header,
-              theme
+              theme,
             ].join(' ')}
           >
             <div className={styles.headerInner}>
               {this.state.collapsed ? (
                 <div className={styles.collapsedLogoContainer}>
-                  <Flame
-                    className={styles.logoFlame}
-                    onClick={logoClick}
-                  />
+                  <Flame className={styles.logoFlame} onClick={logoClick} />
                   <span className={styles.logoText}>{title}</span>
                 </div>
               ) : (
                 <div className={styles.logoContainer}>
-                  <Logo
-                    className={styles.logo}
-                    onClick={logoClick}
-                  />
+                  <Logo className={styles.logo} onClick={logoClick} />
                 </div>
               )}
 
@@ -93,7 +87,8 @@ class Header extends React.Component {
                         <Link
                           className={styles.nestedNavLink}
                           onClick={link.onClick}
-                          to={link.href}>
+                          to={link.href}
+                        >
                           {link.title}
                         </Link>
                       </li>
@@ -135,20 +130,19 @@ class Header extends React.Component {
           </div>
         )}
       </ThemeContext.Consumer>
-
     )
   }
 }
 
 Header.propTypes = {
   links: PropTypes.array,
-  shouldCollapse: PropTypes.bool
+  shouldCollapse: PropTypes.bool,
 }
 
 Header.defaultProps = {
   links: [],
   nestedLinks: [],
-  shouldCollapse: false
+  shouldCollapse: false,
 }
 
 export default Header

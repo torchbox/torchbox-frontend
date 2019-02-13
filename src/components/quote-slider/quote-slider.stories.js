@@ -31,7 +31,7 @@ storiesOf('Components/Shared Components', module).add('Quote Slider', () => {
             name: 'Duncan Jones',
             role: 'Head of Operations, Football Foundation',
             quote:
-              'We are eternally grateful to the brilliant minds of Torchbox. Without them, we wouldn\'t be where we are today. We chose them because they embody the ethos of the sector we work in and have an excellent track record of building easy-to-use and \'clean\', uncluttered systems.',
+              "We are eternally grateful to the brilliant minds of Torchbox. Without them, we wouldn't be where we are today. We chose them because they embody the ethos of the sector we work in and have an excellent track record of building easy-to-use and 'clean', uncluttered systems.",
           },
         ]}
       />

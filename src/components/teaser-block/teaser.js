@@ -4,12 +4,10 @@ import PropTypes from 'prop-types'
 
 import styles from './teaser-block.module.scss'
 
-const TeaserLink = ({title, description, href, className}) => (
+const TeaserLink = ({ title, description, href, className }) => (
   <Link to={href} className={[styles.teaserBlockItem, className].join(' ')}>
     <h1 className={styles.teaserBlockItemTitle}>{title}</h1>
-    <span className={styles.teaserBlockItemDesc}>
-      {description}
-    </span>
+    <span className={styles.teaserBlockItemDesc}>{description}</span>
   </Link>
 )
 

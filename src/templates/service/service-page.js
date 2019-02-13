@@ -18,7 +18,7 @@ import Layout from '../../components/layout'
 class ServicePage extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {activeSectionTitle: ''}
+    this.state = { activeSectionTitle: '' }
     this.sectionRefs = {}
     props.blocks.map(({ type, data }) => {
       if (data) {
@@ -32,23 +32,22 @@ class ServicePage extends React.Component {
     })
   }
 
-  navigateToSection = section  => {
+  navigateToSection = section => {
     if (section == null) {
       section = qs.parse(window.location.hash).section
     }
 
     if (section) {
-      const sectionRef = Object
-        .values(this.sectionRefs)
-        .find(({ title }) => title == section)
+      const sectionRef = Object.values(this.sectionRefs).find(
+        ({ title }) => title == section
+      )
 
       this.setState({ activeSectionTitle: section })
 
       if (sectionRef) {
         if (sectionRef.ref) {
           if (sectionRef.ref.current) {
-            const sectionEl = ReactDOM
-              .findDOMNode(sectionRef.ref.current)
+            const sectionEl = ReactDOM.findDOMNode(sectionRef.ref.current)
             scrollIntoView(sectionEl, {
               time: 400,
               align: {
@@ -64,8 +63,7 @@ class ServicePage extends React.Component {
   scroll = () => {
     Object.values(this.sectionRefs).map(sectionRef => {
       if (sectionRef.ref.current) {
-        const el = ReactDOM
-          .findDOMNode(sectionRef.ref.current)
+        const el = ReactDOM.findDOMNode(sectionRef.ref.current)
         const { y, height } = el.getBoundingClientRect()
 
         const lowerBound = y
@@ -96,13 +94,12 @@ class ServicePage extends React.Component {
   render() {
     const { blocks, title, theme, serviceSlug } = this.props
 
-    const nestedNav = Object.values(this.sectionRefs)
-      .map(section => ({
-        title: section.title,
-        href: '#',
-        active: section.title === this.state.activeSectionTitle,
-        onClick: () => this.navigateToSection(section.title),
-      }))
+    const nestedNav = Object.values(this.sectionRefs).map(section => ({
+      title: section.title,
+      href: '#',
+      active: section.title === this.state.activeSectionTitle,
+      onClick: () => this.navigateToSection(section.title),
+    }))
 
     return (
       <Layout
@@ -110,84 +107,95 @@ class ServicePage extends React.Component {
         theme={theme}
         headerShouldCollapse={true}
         nestedLinks={nestedNav}
-        ignoreServiceTeaser={serviceSlug}>
+        ignoreServiceTeaser={serviceSlug}
+      >
         <div className={[styles.page].join(' ')}>
           {blocks.map(({ type, data }) => {
             switch (type) {
-
               case 'hero-block':
-                return <Hero
-                  title={data.strapline}
-                  description={data.intro}
-                  links={nestedNav}
-                  greetingImageType={data.greetingImageType}
-                  parentLink={data.parentLink}
-                />
+                return (
+                  <Hero
+                    title={data.strapline}
+                    description={data.intro}
+                    links={nestedNav}
+                    greetingImageType={data.greetingImageType}
+                    parentLink={data.parentLink}
+                  />
+                )
 
               case 'help-block':
-                return <HelpBlock
-                  ref={this.sectionRefs[type].ref}
-                  title={data.heading}
-                  links={data.links}
-                  contact={data.contact}
-                  sectionTitle={data.sectionTitle}
-                />
+                return (
+                  <HelpBlock
+                    ref={this.sectionRefs[type].ref}
+                    title={data.heading}
+                    links={data.links}
+                    contact={data.contact}
+                    sectionTitle={data.sectionTitle}
+                  />
+                )
 
               case 'testimonials-block':
-                return <TestimonialsBlock
-                  ref={this.sectionRefs[type].ref}
-                  logos={data.logos.map(logo => ({
-                    label: '',
-                    image: logo.image.src,
-                  }))}
-                  testimonials={data.testimonials}
-                  sectionTitle={data.sectionTitle}
-                />
+                return (
+                  <TestimonialsBlock
+                    ref={this.sectionRefs[type].ref}
+                    logos={data.logos.map(logo => ({
+                      label: '',
+                      image: logo.image.src,
+                    }))}
+                    testimonials={data.testimonials}
+                    sectionTitle={data.sectionTitle}
+                  />
+                )
 
               case 'process-image-block':
-                return <ProcessImageBlock
-                  ref={this.sectionRefs[type].ref}
-                  title={data.title}
-                  sectionTitle={data.sectionTitle}
-                />
+                return (
+                  <ProcessImageBlock
+                    ref={this.sectionRefs[type].ref}
+                    title={data.title}
+                    sectionTitle={data.sectionTitle}
+                  />
+                )
 
               case 'process-block':
-                return <ProcessBlock
-                  ref={this.sectionRefs[type].ref}
-                  sectionTitle={data.sectionTitle}
-                  title={data.title}
-                  processes={data.processes}
-                />
+                return (
+                  <ProcessBlock
+                    ref={this.sectionRefs[type].ref}
+                    sectionTitle={data.sectionTitle}
+                    title={data.title}
+                    processes={data.processes}
+                  />
+                )
 
               case 'case-studies-block':
-                return <CaseStudiesBlock
-                  ref={this.sectionRefs[type].ref}
-                  caseStudies={data.caseStudies}
-                  listingUrl={data.listingUrl}
-                  sectionTitle={data.sectionTitle}
-                />
+                return (
+                  <CaseStudiesBlock
+                    ref={this.sectionRefs[type].ref}
+                    caseStudies={data.caseStudies}
+                    listingUrl={data.listingUrl}
+                    sectionTitle={data.sectionTitle}
+                  />
+                )
 
               case 'blogs-block':
-                return <Blogs
-                  ref={this.sectionRefs[type].ref}
-                  blogs={data.blogs}
-                  listingUrl={data.listingUrl}
-                  sectionTitle={data.sectionTitle}
-                />
+                return (
+                  <Blogs
+                    ref={this.sectionRefs[type].ref}
+                    blogs={data.blogs}
+                    listingUrl={data.listingUrl}
+                    sectionTitle={data.sectionTitle}
+                  />
+                )
 
               case 'contact-detailed':
-                return <Contact
-                  className={styles.pageContact}
-                  {...data.contact}
-                />
-
+                return (
+                  <Contact className={styles.pageContact} {...data.contact} />
+                )
             }
           })}
         </div>
       </Layout>
     )
   }
-
 }
 
 ServicePage.propTypes = {
