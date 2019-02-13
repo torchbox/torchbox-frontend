@@ -47,12 +47,12 @@ const PersonPage = ({
 )
 
 PersonPage.propTypes = {
-  title: PropTypes.string,
-  author: PropTypes.string,
-  datePublished: PropTypes.string,
-  readTime: PropTypes.number,
-  tags: PropTypes.array,
-  streamfield: PropTypes.array,
+  firstName: PropTypes.string,
+  lastName: PropTypes.string,
+  role: PropTypes.string,
+  intro: PropTypes.string,
+  avatar: PropTypes.string,
+  biography: PropTypes.string,
   blogs: PropTypes.array,
 }
 

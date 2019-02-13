@@ -35,8 +35,8 @@ const AuthorBlock = ({ author, datePublished, tags, readTime, className }) => (
         </p>
         {tags.length ? (
           <div className={styles.authorBlockTags}>
-            {tags.map(tag => (
-              <Tag label={tag.label} href={tag.href} />
+            {tags.map((tag, index) => (
+              <Tag key={`tag-${index}`} label={tag.label} href={tag.href} />
             ))}
           </div>
         ) : null}

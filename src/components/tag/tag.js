@@ -18,6 +18,7 @@ Tag.propTypes = {
   label: PropTypes.string,
   onClick: PropTypes.func,
   href: PropTypes.string,
+  className: PropTypes.string,
 }
 
 Tag.defaultProps = {

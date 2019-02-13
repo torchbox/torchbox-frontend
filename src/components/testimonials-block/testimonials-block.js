@@ -14,8 +14,11 @@ class TestimonialsBlock extends React.Component {
 
           <section className={styles.testimonialsIconsBlock}>
             <ul className={styles.testimonialsIconsList}>
-              {logos.map(logo => (
-                <li className={styles.testimonialsIconsItem}>
+              {logos.map((logo, index) => (
+                <li
+                  key={`logo-${index}`}
+                  className={styles.testimonialsIconsItem}
+                >
                   <img src={logo.image.url} aria-label={logo.label} />
                 </li>
               ))}

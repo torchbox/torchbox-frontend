@@ -10,7 +10,6 @@ const Contact = ({ title, emailAddress, phoneNumber, className, avatar }) => (
   <div className={[styles.contactBlock, className].join(' ')}>
     <div className={styles.contactBlockContent}>
       <Avatar containerClassName={styles.contactBlockImage} src={avatar} />
-
       <div className={styles.contactBlockDetails}>
         <h3 className={styles.contactBlockTitle}>{title}</h3>
         <a

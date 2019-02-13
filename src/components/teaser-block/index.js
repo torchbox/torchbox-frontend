@@ -2,6 +2,7 @@ import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import TeaserBlock from './teaser-block'
 import { pageUrl } from '../../utils/urls'
+import PropTypes from 'prop-types'
 
 const TeaserBlockContainer = ({ ignoreSlug }) => {
   return (
@@ -33,6 +34,10 @@ const TeaserBlockContainer = ({ ignoreSlug }) => {
       }}
     />
   )
+}
+
+TeaserBlockContainer.propTypes = {
+  ignoreSlug: PropTypes.string,
 }
 
 export default TeaserBlockContainer

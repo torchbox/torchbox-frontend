@@ -9,7 +9,6 @@ import { renderTorchUp } from '../../utils/torchup'
 class HelpBlock extends React.Component {
   render() {
     const { title, links, sectionTitle, contact } = this.props
-
     return (
       <div className={styles.blockContainer}>
         <section className={styles.blockContent}>
@@ -19,8 +18,11 @@ class HelpBlock extends React.Component {
           {links != null ? (
             <div className={styles.blockLinksContainer}>
               <ul className={styles.blockLinksList}>
-                {links.map(link => (
-                  <li className={styles.blockLinksItem}>
+                {links.map((link, index) => (
+                  <li
+                    key={`key-point-${index}`}
+                    className={styles.blockLinksItem}
+                  >
                     <div
                       src={require('../../images/icons/tick.png')}
                       className={styles.blockLinksItemIcon}
@@ -38,8 +40,6 @@ class HelpBlock extends React.Component {
         {contact ? (
           <Contact className={styles.blockContact} {...contact} />
         ) : null}
-
-        <div className={styles.blockBorder} />
       </div>
     )
   }

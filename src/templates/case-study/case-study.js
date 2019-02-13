@@ -50,10 +50,12 @@ CaseStudyPage.propTypes = {
   title: PropTypes.string,
   author: PropTypes.string,
   readTime: PropTypes.number,
+  client: PropTypes.string,
   tags: PropTypes.array,
   streamfield: PropTypes.array,
   caseStudies: PropTypes.array,
   teasers: PropTypes.array,
+  contact: PropTypes.object,
 }
 
 CaseStudyPage.defaultProps = {

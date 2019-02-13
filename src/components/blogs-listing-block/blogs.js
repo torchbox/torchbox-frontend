@@ -35,8 +35,9 @@ class BlogsBlock extends React.Component {
           ) : null}
 
           <div className={styles.blockBlogList}>
-            {blogs.slice(showFeatured ? 1 : 0).map(blog => (
+            {blogs.slice(showFeatured ? 1 : 0).map((blog, index) => (
               <BlogLink
+                key={`blog-link-${index}`}
                 href={blog.href}
                 title={blog.title}
                 authorAvatar={blog.authorAvatar}
@@ -61,6 +62,8 @@ BlogsBlock.propTypes = {
   blogs: PropTypes.array,
   className: PropTypes.string,
   listingUrl: PropTypes.string.isRequired,
+  sectionTitle: PropTypes.string,
+  showFeatured: PropTypes.bool,
 }
 
 BlogsBlock.defaultProps = {

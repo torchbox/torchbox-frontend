@@ -36,7 +36,7 @@ class AnimatedCharacter extends React.Component {
     }
   }
 
-  componentWillMount() {
+  componentWillUnmount() {
     if (typeof window !== `undefined`) {
       window.removeEventListener('scroll', this.animate)
     }
@@ -90,11 +90,12 @@ class AnimatedCharacter extends React.Component {
 
 AnimatedCharacter.propTypes = {
   character: PropTypes.string,
-  className: PropTypes.string,
+  containerClassName: PropTypes.string,
 }
 
 AnimatedCharacter.defaultProps = {
   className: '',
+  containerClassName: '',
 }
 
 export default AnimatedCharacter

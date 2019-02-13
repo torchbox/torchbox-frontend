@@ -39,6 +39,7 @@ export class JobsListingPage extends React.Component {
 JobsListingPage.propTypes = {
   title: PropTypes.string,
   jobs: PropTypes.array,
+  teasers: PropTypes.array,
 }
 
 JobsListingPage.defaultProps = {

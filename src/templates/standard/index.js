@@ -1,9 +1,11 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import PropTypes from 'prop-types'
+
 import Layout from '../../components/layout'
 import StandardPage from './standard'
 
-export default ({ data }) => {
+const StandardPageContainer = ({ data }) => {
   return (
     <Layout>
       <StandardPage
@@ -25,3 +27,9 @@ export const query = graphql`
     }
   }
 `
+
+StandardPageContainer.propTypes = {
+  data: PropTypes.object,
+}
+
+export default StandardPageContainer

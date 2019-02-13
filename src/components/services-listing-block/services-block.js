@@ -16,8 +16,12 @@ class ServicesBlock extends React.Component {
         <div className={styles.blockContent}>
           <span className={styles.pageSectionTitle}>{sectionTitle}</span>
           <div className={styles.blockServiceList}>
-            {services.slice(1).map(blog => (
-              <div className={styles.blockService} to={blog.href}>
+            {services.slice(1).map((blog, index) => (
+              <div
+                key={`service-${index}`}
+                className={styles.blockService}
+                to={blog.href}
+              >
                 <h3 className={styles.blockServiceTitle}>{blog.title}</h3>
                 <p className={styles.blockServiceDesc}>{blog.desc}</p>
               </div>
@@ -33,6 +37,8 @@ ServicesBlock.propTypes = {
   services: PropTypes.array,
   className: PropTypes.string,
   listingUrl: PropTypes.string.isRequired,
+  sectionTitle: PropTypes.string,
+  greetingImage: PropTypes.string,
 }
 
 ServicesBlock.defaultProps = {

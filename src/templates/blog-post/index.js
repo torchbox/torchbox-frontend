@@ -5,8 +5,9 @@ import BlogPostPage from './blog-post'
 import Layout from '../../components/layout'
 import { authorDetails, postTags } from '../../utils/selectors'
 import { blogsUrl } from '../../utils/urls'
+import PropTypes from 'prop-types'
 
-export default ({ data }) => {
+const BlogPostContainer = ({ data }) => {
   const page = data.wagtail.blogPosts[0]
   const extraBlogPosts = data.wagtail.extraBlogPosts
   return (
@@ -74,3 +75,9 @@ export const query = graphql`
     }
   }
 `
+
+BlogPostContainer.propTypes = {
+  data: PropTypes.object,
+}
+
+export default BlogPostContainer

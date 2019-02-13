@@ -9,7 +9,7 @@ import {
   getUniqueTagsFromPosts,
   postContainsTag,
 } from '../../utils/tags'
-import FilterTags from '../../components/filter-pills/filter-tags'
+import FilterTags from '../../components/filter-tags/filter-tags'
 import CaseStudiesBlock from '../../components/case-studies-block/case-studies-block'
 import { caseStudiesUrl } from '../../utils/urls'
 import { caseStudyListing } from '../../utils/selectors'
@@ -82,6 +82,7 @@ CaseStudyListingPage.propTypes = {
   tags: PropTypes.array,
   caseStudies: PropTypes.array,
   teasers: [],
+  client: PropTypes.string,
 }
 
 CaseStudyListingPage.defaultProps = {

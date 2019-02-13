@@ -12,8 +12,9 @@ const TeaserBlock = ({ title, teasers, className }) => {
       <div className={styles.teaserBlockContainer}>
         <h3 className={styles.teaserBlockTitle} {...renderTorchUp(title)} />
         <div className={styles.teaserBlockList}>
-          {teasers.map(teaser => (
+          {teasers.map((teaser, index) => (
             <TeaserLink
+              key={`teaser-${index}`}
               href={teaser.href}
               title={teaser.name}
               description={teaser.description}
@@ -29,6 +30,7 @@ TeaserBlock.propTypes = {
   title: PropTypes.string,
   src: PropTypes.string,
   className: PropTypes.string,
+  teasers: PropTypes.array,
 }
 
 TeaserBlock.defaultProps = {

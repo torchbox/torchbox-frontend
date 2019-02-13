@@ -20,7 +20,11 @@ class CaseStudiesBlock extends React.Component {
           {caseStudies.map((caseStudy, index) => {
             let img = React.createRef()
             return (
-              <Link className={styles.caseStudy} to={caseStudy.href}>
+              <Link
+                key={`case-study-link-${index}`}
+                className={styles.caseStudy}
+                to={caseStudy.href}
+              >
                 <div className={styles.caseStudyMeta}>
                   <div className={styles.caseStudyMetaContainer}>
                     <h4 className={styles.caseStudyMetaClient}>
@@ -67,6 +71,7 @@ CaseStudiesBlock.propTypes = {
   caseStudies: PropTypes.array.isRequired,
   className: PropTypes.string,
   listingUrl: PropTypes.string.isRequired,
+  sectionTitle: PropTypes.string,
 }
 
 CaseStudiesBlock.defaultProps = {

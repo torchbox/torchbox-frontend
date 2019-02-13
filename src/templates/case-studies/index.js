@@ -3,8 +3,9 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../../components/layout'
 import CaseStudyListingPage from './case-study-listing'
+import PropTypes from 'prop-types'
 
-export default ({ data }) => {
+const CaseStudyListingContainer = ({ data }) => {
   return (
     <Layout>
       <CaseStudyListingPage
@@ -47,3 +48,9 @@ export const query = graphql`
     }
   }
 `
+
+CaseStudyListingContainer.propTypes = {
+  data: PropTypes.object,
+}
+
+export default CaseStudyListingContainer

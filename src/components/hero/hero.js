@@ -35,8 +35,8 @@ const Hero = ({
         {links != null ? (
           <div className={styles.heroLinksContainer}>
             <ul className={styles.heroLinksList}>
-              {links.map(link => (
-                <li className={styles.heroLinksItem}>
+              {links.map((link, index) => (
+                <li key={`hero-link-${index}`} className={styles.heroLinksItem}>
                   <a onClick={link.onClick} href={link.href}>
                     {link.title}
                   </a>
@@ -56,6 +56,8 @@ Hero.propTypes = {
   description: PropTypes.string,
   links: PropTypes.array,
   collapsed: PropTypes.bool,
+  greetingImageType: PropTypes.string,
+  parentLink: PropTypes.object,
 }
 
 Hero.defaultProps = {

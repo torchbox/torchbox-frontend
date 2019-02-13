@@ -1,11 +1,12 @@
 import React from 'react'
-
+import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
+
 import PersonPage from './person'
 import Layout from '../../components/layout'
 import { blogListing } from '../../utils/selectors'
 
-export default ({ data }) => {
+const PersonPageContainer = ({ data }) => {
   const person = data.wagtail.personPages[0]
   const blogs = (data.wagtail.blogPosts || []).map(blogListing)
   return (
@@ -56,3 +57,9 @@ export const query = graphql`
     }
   }
 `
+
+PersonPageContainer.propTypes = {
+  data: PropTypes.object,
+}
+
+export default PersonPageContainer

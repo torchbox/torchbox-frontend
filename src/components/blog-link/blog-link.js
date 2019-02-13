@@ -46,8 +46,15 @@ const BlogLink = ({
 )
 
 BlogLink.propTypes = {
-  src: PropTypes.string,
+  href: PropTypes.string,
+  title: PropTypes.string,
+  featured: PropTypes.bool,
+  description: PropTypes.string,
   className: PropTypes.string,
+  authorAvatar: PropTypes.string,
+  authorName: PropTypes.string,
+  authorRole: PropTypes.string,
+  datePublished: PropTypes.string,
 }
 
 BlogLink.defaultProps = {

@@ -29,14 +29,7 @@ class Header extends React.Component {
   }
 
   render() {
-    const {
-      title,
-      links,
-      navigateTo,
-      logoClick,
-      activeNestedLink,
-      nestedLinks,
-    } = this.props
+    const { title, links, navigateTo, logoClick, nestedLinks } = this.props
 
     return (
       <ThemeContext.Consumer>
@@ -61,8 +54,8 @@ class Header extends React.Component {
 
               <div className={styles.primaryNavContainer}>
                 <ul className={styles.primaryNavList}>
-                  {links.map(link => (
-                    <li>
+                  {links.map((link, index) => (
+                    <li key={`primary-nav-link-${index}`}>
                       <NavLink
                         {...link}
                         collapsed={this.state.collapsed}
@@ -76,8 +69,9 @@ class Header extends React.Component {
               {nestedLinks != null ? (
                 <div className={styles.nestedNavContainer}>
                   <ul className={styles.nestedNavList}>
-                    {nestedLinks.map(link => (
+                    {nestedLinks.map((link, index) => (
                       <li
+                        key={`nested-nav-link-${index}`}
                         className={
                           link.active
                             ? styles.nestedNavItemActive
@@ -115,8 +109,11 @@ class Header extends React.Component {
                 }
               >
                 <ul className={styles.mobileNavList}>
-                  {links.map(link => (
-                    <li className={link.alignRight ? styles.alignRight : ''}>
+                  {links.map((link, index) => (
+                    <li
+                      key={`mobile-nav-link-${index}`}
+                      className={link.alignRight ? styles.alignRight : ''}
+                    >
                       <NavLink
                         {...link}
                         collapsed={this.state.collapsed}
@@ -135,7 +132,11 @@ class Header extends React.Component {
 }
 
 Header.propTypes = {
+  title: PropTypes.string,
+  navigateTo: PropTypes.func,
+  logoClick: PropTypes.func,
   links: PropTypes.array,
+  nestedLinks: PropTypes.array,
   shouldCollapse: PropTypes.bool,
 }
 

@@ -8,6 +8,7 @@ const FilterTags = ({ tags, onChange = () => null, activeTag, className }) => (
   <div className={[styles.filter, className].join(' ')}>
     {tags.map((tag, index) => (
       <Tag
+        key={`filter-tag-${index}`}
         className={
           activeTag === index ? styles.filterTagActive : styles.filterTag
         }
@@ -22,6 +23,8 @@ const FilterTags = ({ tags, onChange = () => null, activeTag, className }) => (
 FilterTags.propTypes = {
   tags: PropTypes.string,
   className: PropTypes.string,
+  onChange: PropTypes.func,
+  activeTag: PropTypes.number,
 }
 
 FilterTags.defaultProps = {

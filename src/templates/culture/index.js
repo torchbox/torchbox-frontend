@@ -3,8 +3,9 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import CulturePage from './culture-page'
 import Layout from '../../components/layout'
+import PropTypes from 'prop-types'
 
-export default ({ data }) => {
+const CulturePageContainer = ({ data }) => {
   const page = data.wagtail.culturePages[0]
   if (page) {
     return (
@@ -49,3 +50,9 @@ export const query = graphql`
     }
   }
 `
+
+CulturePageContainer.propTypes = {
+  data: PropTypes.object,
+}
+
+export default CulturePageContainer

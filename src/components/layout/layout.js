@@ -135,6 +135,9 @@ Layout.propTypes = {
   children: PropTypes.node.isRequired,
   nestedLinks: PropTypes.array,
   headerShouldCollapse: PropTypes.bool,
+  theme: PropTypes.string,
+  title: PropTypes.string,
+  ignoreServiceTeaser: PropTypes.string,
 }
 
 Layout.defaultProps = {

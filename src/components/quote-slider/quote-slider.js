@@ -10,7 +10,6 @@ class QuoteSlider extends React.Component {
   render() {
     const { currentIndex } = this.state
     const { quotes, className } = this.props
-    const currentQuote = quotes[currentIndex] || {}
     return (
       <div className={[styles.quoteSliderBlock, className].join(' ')}>
         <QuoteIcon className={styles.quoteIcon} />
@@ -18,6 +17,7 @@ class QuoteSlider extends React.Component {
           <div className={styles.quoteSlides}>
             {quotes.map((quote, index) => (
               <blockquote
+                key={`quote-slide-${index}`}
                 className={
                   currentIndex == index
                     ? styles.quoteSlideActive
@@ -39,6 +39,7 @@ class QuoteSlider extends React.Component {
             <ul className={styles.quoteSliderBullets}>
               {quotes.map((quote, index) => (
                 <li
+                  key={`quote-bullet-${index}`}
                   onClick={() => this.changeSlide(index)}
                   className={
                     index == currentIndex

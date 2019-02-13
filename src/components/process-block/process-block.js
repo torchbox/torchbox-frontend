@@ -17,8 +17,8 @@ class ProcessBlock extends React.Component {
           <h1 className={styles.processTitle} {...renderTorchUp(title || '')} />
           <ToolkitImage className={styles.processImage} />
           <ul className={styles.processList}>
-            {processes.map(process => (
-              <li className={styles.processItem}>
+            {processes.map((process, index) => (
+              <li key={`process-${index}`} className={styles.processItem}>
                 <h3 className={styles.processItemTitle}>{process.title}</h3>
                 <p className={styles.processItemDesc}>{process.description}</p>
                 <Link

@@ -12,10 +12,12 @@ const Avatar = ({ src, className, containerClassName }) => (
 Avatar.propTypes = {
   src: PropTypes.string,
   className: PropTypes.string,
+  containerClassName: PropTypes.string,
 }
 
 Avatar.defaultProps = {
   className: '',
+  containerClassName: '',
 }
 
 export default Avatar

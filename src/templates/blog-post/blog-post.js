@@ -53,7 +53,7 @@ BlogPostPage.propTypes = {
   readTime: PropTypes.number,
   tags: PropTypes.array,
   streamfield: PropTypes.array,
-  blogs: PropTypes.array,
+  extraBlogPosts: PropTypes.array,
   contact: PropTypes.object,
 }
 

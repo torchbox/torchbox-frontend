@@ -49,8 +49,12 @@ const Footer = ({ links, className }) => (
 
       <div>
         <span className={styles.footerCopyright}>© Torchbox 2018</span>
-        {links.map(link => (
-          <Link className={styles.footerLink} to={link.href}>
+        {links.map((link, index) => (
+          <Link
+            key={`footer-link-${index}`}
+            className={styles.footerLink}
+            to={link.href}
+          >
             {link.label}
           </Link>
         ))}

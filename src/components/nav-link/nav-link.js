@@ -4,21 +4,11 @@ import PropTypes from 'prop-types'
 
 import styles from './nav-link.module.scss'
 
-const NavLink = ({
-  title,
-  strap,
-  badge,
-  href,
-  alignRight = false,
-  onClick,
-  active,
-  collapsed,
-}) => (
+const NavLink = ({ title, strap, badge, href, onClick, active, collapsed }) => (
   <Link
     to={href}
     className={[
       collapsed ? styles.collapsedNavLink : styles.navLink,
-      alignRight ? styles.alignRight : '',
       active ? styles.active : null,
     ].join(' ')}
     onClick={onClick}
@@ -31,8 +21,13 @@ const NavLink = ({
 )
 
 NavLink.propTypes = {
-  onClick: PropTypes.func.isRequired,
-  isOpen: PropTypes.bool.isRequired,
+  title: PropTypes.string,
+  strap: PropTypes.string,
+  badge: PropTypes.number,
+  href: PropTypes.string,
+  onClick: PropTypes.func,
+  active: PropTypes.bool,
+  collapsed: PropTypes.bool,
 }
 
 NavLink.defaultProps = {

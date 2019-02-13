@@ -6,8 +6,9 @@ import Layout from '../../components/layout'
 import { authorDetails, postTags } from '../../utils/selectors'
 import { caseStudiesUrl } from '../../utils/urls'
 import { safeGet } from '../../utils/safeget'
+import PropTypes from 'prop-types'
 
-export default ({ data }) => {
+const CaseStudyContainer = ({ data }) => {
   const page = data.wagtail.caseStudies[0]
 
   const homepageImageSrc = safeGet(page, 'homepageImage.src.url', null)
@@ -71,3 +72,9 @@ export const query = graphql`
     }
   }
 `
+
+CaseStudyContainer.propTypes = {
+  data: PropTypes.object,
+}
+
+export default CaseStudyContainer

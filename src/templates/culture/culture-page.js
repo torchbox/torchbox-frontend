@@ -13,8 +13,9 @@ import { ReactComponent as GreetingImage } from '../../images/man-fruit.svg'
 const CulturePage = ({ strapline, heroImage, intro, links, body, contact }) => {
   const Teasers = () => (
     <div className={styles.pageLinks}>
-      {links.map(link => (
+      {links.map((link, index) => (
         <TeaserLink
+          key={`culture-link-${index}`}
           className={styles.pageLinksTeaser}
           title={link.title}
           description={link.description}

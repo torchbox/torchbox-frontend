@@ -200,6 +200,9 @@ class ServicePage extends React.Component {
 
 ServicePage.propTypes = {
   blocks: PropTypes.array,
+  title: PropTypes.string,
+  theme: PropTypes.string,
+  serviceSlug: PropTypes.string,
 }
 
 ServicePage.defaultProps = {}

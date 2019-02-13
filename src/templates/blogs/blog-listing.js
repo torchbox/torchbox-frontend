@@ -5,13 +5,12 @@ import styles from './blog-listing.module.scss'
 import TitleBlock from '../../components/title-block'
 import StreamfieldBlock from '../../components/streamfield-block'
 import Contact from '../../components/contact-detailed'
-import safeGet from '../../utils/safeget'
 import {
   getUniqueTagsFromPosts,
   postContainsTag,
   getCurrentFilterIndex,
 } from '../../utils/tags'
-import FilterTags from '../../components/filter-pills/filter-tags'
+import FilterTags from '../../components/filter-tags/filter-tags'
 import BlogLink from '../../components/blog-link/blog-link'
 import { blogsUrl } from '../../utils/urls'
 import { blogListing } from '../../utils/selectors'
@@ -35,7 +34,7 @@ export class BlogListingPage extends React.Component {
   }
 
   render() {
-    const { title, streamfield, contact } = this.props
+    const { title, streamfield } = this.props
     const { selectedTag, currentLimit, tags = [] } = this.state
 
     const listing = this.props.blogs
@@ -60,8 +59,9 @@ export class BlogListingPage extends React.Component {
         />
 
         <div className={styles.pageBlogListing}>
-          {listing.slice(0, currentLimit).map(blog => (
+          {listing.slice(0, currentLimit).map((blog, index) => (
             <BlogLink
+              key={`blog-link-${index}`}
               className={styles.pageBlogListingLink}
               href={blog.href}
               title={blog.title}

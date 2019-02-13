@@ -12,7 +12,10 @@ const Contact = ({ title, emailAddress, phoneNumber, className, reasons }) => (
           <h1>{title}</h1>
           <ul className={styles.contactBlockReasonsList}>
             {reasons.map((reason, index) => (
-              <li className={styles.contactBlockReasonsItem}>
+              <li
+                key={`contact-reason-${index}`}
+                className={styles.contactBlockReasonsItem}
+              >
                 <div className={styles.contactBlockReasonsItemNum}>
                   <span>{index + 1}</span>
                 </div>
