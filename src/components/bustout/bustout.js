@@ -2,7 +2,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 // Utilities
-import { renderTorchUp } from '../../utils/torchup'
+import { renderTorchUp } from '@utils/torchup'
 // Styles
 import styles from './bustout.module.scss'
 

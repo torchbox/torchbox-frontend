@@ -9,7 +9,7 @@ storiesOf('Pages', module).add('Case Study', () => {
     <CaseStudyPage
       title="Relaunching Nesta on a platform for the future"
       author={{
-        avatar: require('../../images/will.jpg'),
+        avatar: require('@images/will.jpg'),
         name: 'Olly Willans',
         role: 'Creative Director',
       }}
@@ -149,13 +149,13 @@ storiesOf('Pages', module).add('Case Study', () => {
       ]}
       teasers={[
         {
-          image: require('../../images/tbx-flame.svg'),
+          image: require('@images/tbx-flame.svg'),
           title: ['Wagtail CMS', <br />, 'services'],
           description: 'For web builds with the Wagtail open source CMS',
           link: '#',
         },
         {
-          image: require('../../images/tbx-flame.svg'),
+          image: require('@images/tbx-flame.svg'),
           title: ['Data', <br />, 'marketing'],
           description: 'For our data driven digital marketing services',
           link: '#',

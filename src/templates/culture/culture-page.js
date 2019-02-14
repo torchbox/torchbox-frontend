@@ -2,13 +2,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 // Components
-import StreamfieldBlock from '../../components/streamfield-block'
-import Contact from '../../components/contact-detailed'
-import TeaserLink from '../../components/teaser-block/teaser'
+import StreamfieldBlock from '@components/streamfield-block'
+import Contact from '@components/contact-detailed'
+import TeaserLink from '@components/teaser-block/teaser'
 // Utilities
-import { renderTorchUp } from '../../utils/torchup'
-import { pageUrl } from '../../utils/urls'
-import { ReactComponent as GreetingImage } from '../../images/man-fruit.svg'
+import { renderTorchUp } from '@utils/torchup'
+import { pageUrl } from '@utils/urls'
+import { ReactComponent as GreetingImage } from '@images/man-fruit.svg'
 // Styles
 import styles from './culture-page.module.scss'
 

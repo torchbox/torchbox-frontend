@@ -15,7 +15,7 @@ storiesOf('Components/Shared Components', module).add('BlogLink', () => {
         borderRadius: 40,
       }}
     >
-      <BlogLink src={require('../../images/will.jpg')} />
+      <BlogLink src={require('@images/will.jpg')} />
     </div>
   )
 })

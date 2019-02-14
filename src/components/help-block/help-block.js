@@ -5,7 +5,7 @@ import { Link } from 'gatsby'
 // Components
 import Contact from '../contact/contact'
 // Utilities
-import { renderTorchUp } from '../../utils/torchup'
+import { renderTorchUp } from '@utils/torchup'
 // Styles
 import styles from './help-block.module.scss'
 
@@ -27,7 +27,7 @@ class HelpBlock extends React.Component {
                     className={styles.blockLinksItem}
                   >
                     <div
-                      src={require('../../images/icons/tick.png')}
+                      src={require('@images/icons/tick.png')}
                       className={styles.blockLinksItemIcon}
                     />
                     <Link onClick={link.onClick} to={link.href}>

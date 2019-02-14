@@ -15,7 +15,7 @@ storiesOf('Components/Shared Components', module).add('Avatar', () => {
         borderRadius: 40,
       }}
     >
-      <Avatar src={require('../../images/will.jpg')} />
+      <Avatar src={require('@images/will.jpg')} />
     </div>
   )
 })

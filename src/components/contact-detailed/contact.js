@@ -2,7 +2,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 // Components
-import Avatar from '../avatar'
+import Avatar from '@components/avatar'
 // Styles
 import styles from './contact.module.scss'
 
@@ -38,7 +38,7 @@ const Contact = ({ title, emailAddress, phoneNumber, className, reasons }) => (
       <section className={styles.contactBlockDetails}>
         <Avatar
           containerClassName={styles.contactBlockDetailsImage}
-          src={require('../../images/will.jpg')}
+          src={require('@images/will.jpg')}
         />
         <div className={styles.contactBlockDetailsMeta}>
           <div>

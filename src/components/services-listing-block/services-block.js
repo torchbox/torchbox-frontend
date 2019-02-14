@@ -2,8 +2,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
-// Components
-import Avatar from '../avatar/avatar'
 // Styles
 import styles from './services-block.module.scss'
 
@@ -47,7 +45,7 @@ ServicesBlock.defaultProps = {
   className: '',
   services: [],
   sectionTitle: 'Wagtail design, build + support',
-  greetingImage: require('../../images/toolkit.svg'),
+  greetingImage: require('@images/toolkit.svg'),
 }
 
 export default ServicesBlock

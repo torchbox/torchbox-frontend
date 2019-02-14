@@ -4,8 +4,8 @@ import PropTypes from 'prop-types'
 import dayjs from 'dayjs'
 import { Link } from 'gatsby'
 // Components
-import Avatar from '../avatar/avatar'
-import Tag from '../tag/tag'
+import Avatar from '@components/avatar'
+import Tag from '@components/tag'
 // Styles
 import styles from './author-block.module.scss'
 
@@ -13,7 +13,7 @@ const AuthorBlock = ({ author, datePublished, tags, readTime, className }) => (
   <div className={[styles.authorBlock, className].join(' ')}>
     <div className={styles.authorBlockContainer}>
       <Avatar
-        src={author.avatar || require('../../images/default-avatar.png')}
+        src={author.avatar || require('@images/default-avatar.png')}
         containerClassName={styles.authorBlockImage}
       />
       <div className={styles.authorBlockDetails}>
@@ -57,7 +57,7 @@ AuthorBlock.propTypes = {
 
 AuthorBlock.defaultProps = {
   author: {
-    avatar: require('../../images/default-avatar.png'),
+    avatar: require('@images/default-avatar.png'),
   },
 }
 

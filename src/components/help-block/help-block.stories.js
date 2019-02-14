@@ -3,7 +3,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 // Components
 import HelpBlock from './help-block'
-import Contact from '../contact/contact'
+import Contact from '@components/contact/contact'
 
 storiesOf('Components/Landing Page', module).add('Help block', () => {
   return (

@@ -9,7 +9,7 @@ storiesOf('Pages', module).add('Blog Post', () => {
     <BlogPostPage
       title="The simple hack to make meetings better"
       author={{
-        avatar: require('../../images/will.jpg'),
+        avatar: require('@images/will.jpg'),
         name: 'Olly Willans',
         role: 'Creative Director',
       }}
@@ -104,24 +104,24 @@ storiesOf('Pages', module).add('Blog Post', () => {
           title: 'We’ve dropped Drupal.',
           authorName: 'Paul Vetch',
           authorRole: 'Client Services Director',
-          authorAvatar: require('../../images/will.jpg'),
+          authorAvatar: require('@images/will.jpg'),
         },
         {
           title: 'We’ve dropped Drupal.',
           authorName: 'Paul Vetch',
           authorRole: 'Client Services Director',
-          authorAvatar: require('../../images/will.jpg'),
+          authorAvatar: require('@images/will.jpg'),
         },
       ]}
       teasers={[
         {
-          image: require('../../images/tbx-flame.svg'),
+          image: require('@images/tbx-flame.svg'),
           title: ['Wagtail CMS', <br />, 'services'],
           description: 'For web builds with the Wagtail open source CMS',
           link: '#',
         },
         {
-          image: require('../../images/tbx-flame.svg'),
+          image: require('@images/tbx-flame.svg'),
           title: ['Data', <br />, 'marketing'],
           description: 'For our data driven digital marketing services',
           link: '#',

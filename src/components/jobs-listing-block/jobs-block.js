@@ -53,7 +53,7 @@ JobsBlock.defaultProps = {
   className: '',
   jobs: [],
   sectionTitle: 'Thinking',
-  greetingImage: require('../../images/help-character.svg'),
+  greetingImage: require('@images/help-character.svg'),
 }
 
 export default JobsBlock

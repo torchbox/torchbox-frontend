@@ -2,13 +2,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 // Components
-import TitleBlock from '../../components/title-block'
-import AuthorBlock from '../../components/author-block'
-import StreamfieldBlock from '../../components/streamfield-block'
-import Contact from '../../components/contact-detailed'
-import Blogs from '../../components/blogs-listing-block'
+import TitleBlock from '@components/title-block'
+import AuthorBlock from '@components/author-block'
+import StreamfieldBlock from '@components/streamfield-block'
+import Contact from '@components/contact-detailed'
+import Blogs from '@components/blogs-listing-block'
 // Utilities
-import { blogsUrl } from '../../utils/urls'
+import { blogsUrl } from '@utils/urls'
 // Styles
 import styles from './blog-post.module.scss'
 

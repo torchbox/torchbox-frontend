@@ -2,7 +2,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 // Utilities
-import { ReactComponent as QuoteIcon } from '../../images/icons/quote.svg'
+import { ReactComponent as QuoteIcon } from '@images/icons/quote.svg'
 // Styles
 import styles from './quote-slider.module.scss'
 

@@ -2,7 +2,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 // Components
-import Tag from '../tag'
+import Tag from '@components/tag'
 // Styles
 import styles from './filter-tags.module.scss'
 

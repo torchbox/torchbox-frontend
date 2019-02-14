@@ -2,7 +2,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 // Components
-import QuoteSlider from '../quote-slider/quote-slider'
+import QuoteSlider from '@components/quote-slider'
 // Styles
 import styles from './testimonials-block.module.scss'
 

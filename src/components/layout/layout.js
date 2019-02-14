@@ -3,13 +3,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 // Components
-import Header from '../header'
-import Footer from '../footer'
-import TeaserBlock from '../teaser-block'
+import Header from '@components/header'
+import Footer from '@components/footer'
+import TeaserBlock from '@components/teaser-block'
 // Utilities
-import ThemeContext from '../../context/theme-context'
-import { safeGet } from '../../utils/safeget'
-import { blogsUrl, caseStudiesUrl, teamUrl } from '../../utils/urls'
+import ThemeContext from '@context/theme-context'
+import { safeGet } from '@utils/safeget'
+import { blogsUrl, caseStudiesUrl, teamUrl } from '@utils/urls'
 // Styles
 import styles from './layout.module.scss'
 

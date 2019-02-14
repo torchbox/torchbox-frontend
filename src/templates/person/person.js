@@ -2,12 +2,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 // Components
-import TitleBlock from '../../components/title-block'
-import StreamfieldBlock from '../../components/streamfield-block'
-import Contact from '../../components/contact-detailed'
-import Blogs from '../../components/blogs-listing-block'
+import TitleBlock from '@components/title-block'
+import StreamfieldBlock from '@components/streamfield-block'
+import Contact from '@components/contact-detailed'
+import Blogs from '@components/blogs-listing-block'
 // Utilities
-import { blogsUrl } from '../../utils/urls'
+import { blogsUrl } from '@utils/urls'
 // Styles
 import styles from './person.module.scss'
 
@@ -29,7 +29,7 @@ const PersonPage = ({
       <div className={styles.pageAvatar}>
         <img
           className={styles.pageAvatarIcon}
-          src={require('../../images/icons/frag.png')}
+          src={require('@images/icons/frag.png')}
         />
         <img className={styles.pageAvatarImage} src={avatar} />
       </div>

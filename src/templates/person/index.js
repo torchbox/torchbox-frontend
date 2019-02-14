@@ -4,9 +4,9 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 // Components
 import PersonPage from './person'
-import Layout from '../../components/layout'
+import Layout from '@components/layout'
 // Utilities
-import { blogListing } from '../../utils/selectors'
+import { blogListing } from '@utils/selectors'
 
 const PersonPageContainer = ({ data }) => {
   const person = data.wagtail.personPages[0]

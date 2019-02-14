@@ -1,0 +1,8 @@
+{
+  "@root": "./",
+  "@components": "./src/components",
+  "@images": "./src/images",
+  "@utils": "./src/utils",
+  "@context": "./src/context",
+  "@templates": "./src/templates"
+}

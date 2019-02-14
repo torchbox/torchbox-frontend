@@ -631,13 +631,13 @@ storiesOf('Pages', module).add('Case-Study Listing', () => {
       ]}
       teasers={[
         {
-          feedImage: require('../../images/tbx-flame.svg'),
+          feedImage: require('@images/tbx-flame.svg'),
           title: ['Wagtail CMS', <br />, 'services'],
           description: 'For web builds with the Wagtail open source CMS',
           link: '#',
         },
         {
-          feedImage: require('../../images/tbx-flame.svg'),
+          feedImage: require('@images/tbx-flame.svg'),
           title: ['Data', <br />, 'marketing'],
           description: 'For our data driven digital marketing services',
           link: '#',

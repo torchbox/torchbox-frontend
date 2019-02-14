@@ -16,7 +16,7 @@ storiesOf('Components/Shared Components', module).add('Author Block', () => {
     >
       <AuthorBlock
         author={{
-          avatar: require('../../images/will.jpg'),
+          avatar: require('@images/will.jpg'),
           name: 'Olly Willans',
           role: 'Creative Director',
         }}

@@ -1,12 +1,14 @@
-{
+const paths = require('./path-mappings.json')
+
+module.exports = {
   "parser": "babel-eslint",
   "extends": [
     "plugin:react/recommended",
     "prettier",
-    "prettier/react",
+    "prettier/react"
   ],
   "plugins": [
-    "organize-imports",
+    "organize-imports"
   ],
   "rules": {
     "organize-imports/organize-imports": ["error", {
@@ -18,7 +20,7 @@
         "comment": "Components",
         "include": [
           "src/components/",
-          "src/templates/",
+          "src/templates/"
         ],
         "exclude": [
           "src/**/*.scss"
@@ -30,19 +32,21 @@
           "src/utils/",
           "src/context/",
           "src/fragments/",
-          "src/images/",
+          "src/images/"
         ]
       }, {
         "moduleType": "styleModules",
         "comment": "Styles",
         "include": [
-          "src/**/*.scss",
+          "src/**/*.scss"
         ]
-      }]
-//      "pathAliases": [{
-//        "prefix": "<shared>",
-//        "resolvesTo": "./src/shared"
-//      }]
+      }],
+      "pathAliases": Object.keys(paths).map(prefix => {
+        return {
+            "prefix": prefix,
+            "resolvesTo": paths[prefix]
+        }
+      })
     }]
   }
 }

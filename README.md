@@ -1,97 +1,71 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
-  </a>
-</p>
 <h1 align="center">
-  Gatsby's default starter
+  Torchbox.com Gatsby Frontend
 </h1>
 
-Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
-
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
+This is the frontend component of the new tbx.com site. It requires you to have the [backend graphql component](https://github.com/torchbox/wagtail-torchbox/tree/new) running locally or on the server.
 
 ## 🚀 Quick start
 
-1.  **Create a Gatsby site.**
+1.  **Download & Install.**
 
-    Use the Gatsby CLI to create a new site, specifying the default starter.
+   `git clone https://github.com/torchbox/torchbox-frontend`
+   `yarn`
 
-    ```sh
-    # create a new Gatsby site using the default starter
-    npx gatsby new my-default-starter https://github.com/gatsbyjs/gatsby-starter-default
-    ```
+2.  **Configure.**
 
-1.  **Start developing.**
+    If you don't want to run the backend component locally then you will have to change the `http://localhost:8000/graphql/` string in your `gatsby-config.json`to the graphql endpoint of your choosing.
 
-    Navigate into your new site’s directory and start it up.
+3.  **Start Developing!**
 
-    ```sh
-    cd my-default-starter/
-    gatsby develop
-    ```
+    You can run dev mode by executing the following command:
+    
+    `yarn start // Runs dev server on port 800*`
 
-1.  **Open the source code and start editing!**
+    You can also build and preview production code using:
+    
+    `yarn build // Builds prod code`
+    `yarn serve // Serves prod code on port 9000`
 
-    Your site is now running at `http://localhost:8000`!
+## 🧐 Useful things to know:
+  #### Prettier & Eslint are both used.
+  Please make your code pretty and eslint to make sure you aren't shipping baddly 
+  typed components. Eslint will also complain about the order of the imports. Please keep them tidy :) (If you want to know more about the import ordering then you can look in the eslint config file).
 
-    \_Note: You'll also see a second link: `http://localhost:8000/___graphql`. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql).\_
+  #### Gatsby builds will break if Wagtail returns an error.
+  If you have bad request or your code doesn't handle null values then the build will fail (remember building a gatsby site runs all 
+  your react code locally (or in CI) to produce loads of HTML files).
 
-    Open the `my-default-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
+  #### Gatsby can get confused some times.
+  The plugin used to pull data from Wagtail into Gatsby likes to cache the graphql 'schema types'. As such, when you add more query
+  fields to the api, gatsby doesn't know the new types exist and will compain about graphql query syntax. This will error like so:
+  
+  ```
+  error GraphQL Error Unknown field `isCalledDave` on type `[Wagtail_PersonPageObjectType]`
 
-## 🧐 What's inside?
+  file: /Users/nathanhorrigan/Code/tbx-frontend/src/templates/team/index.js
 
-A quick look at the top-level files and directories you'll see in a Gatsby project.
+   1 |
+   2 |   query {
+   3 |     wagtail {
+   4 |       personIndexPage {
+   5 |         strapline
+   6 |       }
+   7 |       personPages {
+   8 |         firstName
+   9 |         lastName
+> 10 |         isCalledDave
+     |         ^
+  11 |         slug
+  12 |         role
+  13 |         isSenior
+  14 |         image {
+  15 |           ...largeIconImage
+  16 |         }
+  17 |       }
+  18 |     }
+  19 |   }
+  20 |
+  ```
 
-    .
-    ├── node_modules
-    ├── src
-    ├── .gitignore
-    ├── .prettierrc
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── gatsby-ssr.js
-    ├── LICENSE
-    ├── package-lock.json
-    ├── package.json
-    └── README.md
-
-1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
-
-2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
-
-3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
-
-4.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
-
-5.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
-
-6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
-
-7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
-
-8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
-
-9.  **`LICENSE`**: Gatsby is licensed under the MIT license.
-
-10. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
-
-11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
-
-12. **`README.md`**: A text file containing useful reference information about your project.
-
-## 🎓 Learning Gatsby
-
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
-
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
-
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
-
-## 💫 Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
-
-<!-- AUTO-GENERATED-CONTENT:END -->
+  If you are sure that gatsby is confused and that the field `isCalledDave` does exist then you just need to refresh your cache 
+  with a simple `rm -r ./.cache/*` command.

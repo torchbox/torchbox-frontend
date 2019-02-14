@@ -4,11 +4,11 @@ import React from 'react'
 import { graphql } from 'gatsby'
 // Components
 import ServicePage from './service-page'
-import Layout from '../../components/layout'
+import Layout from '@components/layout'
 // Utilities
-import { blogListing, caseStudyListing } from '../../utils/selectors'
-import { caseStudiesUrl, blogsUrl, pageUrl } from '../../utils/urls'
-import { safeGet } from '../../utils/safeget'
+import { blogListing, caseStudyListing } from '@utils/selectors'
+import { caseStudiesUrl, blogsUrl, pageUrl } from '@utils/urls'
+import { safeGet } from '@utils/safeget'
 
 export default ({ data, pageContext }) => {
   let { blocks, isSubServicePage } = pageContext

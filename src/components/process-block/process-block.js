@@ -3,9 +3,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 // Utilities
-import { ReactComponent as ToolkitImage } from '../../images/toolkit.svg'
-import { renderTorchUp } from '../../utils/torchup'
-import { pageUrl } from '../../utils/urls'
+import { ReactComponent as ToolkitImage } from '@images/toolkit.svg'
+import { renderTorchUp } from '@utils/torchup'
+import { pageUrl } from '@utils/urls'
 // Styles
 import styles from './process-block.module.scss'
 

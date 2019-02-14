@@ -4,12 +4,12 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 // Components
-import Layout from '../../components/layout'
+import Layout from '@components/layout'
 import CaseStudy from './case-study'
 // Utilities
-import { caseStudiesUrl } from '../../utils/urls'
-import { safeGet } from '../../utils/safeget'
-import { authorDetails, postTags } from '../../utils/selectors'
+import { caseStudiesUrl } from '@utils/urls'
+import { safeGet } from '@utils/safeget'
+import { authorDetails, postTags } from '@utils/selectors'
 
 const CaseStudyContainer = ({ data }) => {
   const page = data.wagtail.caseStudies[0]
@@ -18,7 +18,7 @@ const CaseStudyContainer = ({ data }) => {
   const feedImageSrc = safeGet(
     page,
     'feedImage.src.url',
-    require('../../images/default-featured.png')
+    require('@images/default-featured.png')
   )
 
   const body = [

@@ -12,6 +12,8 @@
     "@storybook/addon-viewport": "^4.1.4",
     "@svgr/webpack": "^4.1.0",
     "animate-scss": "^3.2.1",
+    "babel-plugin-module-resolver": "^3.2.0",
+    "babel-preset-gatsby": "^0.1.7",
     "breakpoint-sass": "^2.7.1",
     "css-loader": "^2.1.0",
     "dayjs": "^1.8.0",

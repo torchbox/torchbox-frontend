@@ -3,11 +3,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 // Components
-import AnimatedCharacter from '../animated-character/animated-character'
-import ParentPageLink from '../parent-page-link/parent-page-link'
+import AnimatedCharacter from '@components/animated-character'
+import ParentPageLink from '@components/parent-page-link'
 // Utilities
-import { renderTorchUp } from '../../utils/torchup'
-import { pageUrl } from '../../utils/urls'
+import { renderTorchUp } from '@utils/torchup'
+import { pageUrl } from '@utils/urls'
 // Styles
 import styles from './hero.module.scss'
 

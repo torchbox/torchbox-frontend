@@ -2,9 +2,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 // Components
-import BustOut from '../bustout'
-
-import QuoteSlider from '../quote-slider/quote-slider'
+import BustOut from '@components/bustout'
+import QuoteSlider from '@components/quote-slider/quote-slider'
 // Styles
 import styles from './streamfield-block.module.scss'
 
@@ -33,7 +32,7 @@ class StreamfieldBlock extends React.Component {
                     alt={block.value.image.alt}
                     className={styles.streamfieldAlignedImageImg}
                     onError={() => {
-                      aligned_image.current.src = require('../../images/will.jpg')
+                      aligned_image.current.src = require('@images/will.jpg')
                     }}
                   />
                   <div className={styles.streamfieldAlignedImageCaption}>
@@ -51,7 +50,7 @@ class StreamfieldBlock extends React.Component {
                     src={block.value.image.src}
                     alt={block.value.image.alt}
                     onError={() => {
-                      wide_image.current.src = require('../../images/default-featured.png')
+                      wide_image.current.src = require('@images/default-featured.png')
                     }}
                   />
                 </div>

@@ -3,12 +3,12 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { Link } from 'gatsby'
 // Components
-import MenuButton from '../menu-button'
-import NavLink from '../nav-link'
+import MenuButton from '@components/menu-button'
+import NavLink from '@components/nav-link'
 // Utilities
-import { ReactComponent as Logo } from '../../images/logo.svg'
-import { ReactComponent as Flame } from '../../images/tbx-flame.svg'
-import ThemeContext from '../../context/theme-context'
+import { ReactComponent as Logo } from '@images/logo.svg'
+import { ReactComponent as Flame } from '@images/tbx-flame.svg'
+import ThemeContext from '@context/theme-context'
 // Styles
 import styles from './header.module.scss'
 

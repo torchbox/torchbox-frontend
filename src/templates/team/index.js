@@ -3,7 +3,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 // Components
-import Layout from '../../components/layout'
+import Layout from '@components/layout'
 import TeamListingPage from './team-listing'
 
 const TeamListingContainer = ({ data }) => {

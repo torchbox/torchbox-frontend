@@ -28,18 +28,18 @@ storiesOf('Components/Landing Page', module).add('Testimonials block', () => {
         },
       ]}
       logos={[
-        { image: require('../../images/firefox.png'), label: 'Mozilla' },
-        { image: require('../../images/firefox.png'), label: 'Mozilla' },
-        { image: require('../../images/firefox.png'), label: 'Mozilla' },
-        { image: require('../../images/firefox.png'), label: 'Mozilla' },
-        { image: require('../../images/firefox.png'), label: 'Mozilla' },
-        { image: require('../../images/firefox.png'), label: 'Mozilla' },
-        { image: require('../../images/firefox.png'), label: 'Mozilla' },
-        { image: require('../../images/firefox.png'), label: 'Mozilla' },
-        { image: require('../../images/firefox.png'), label: 'Mozilla' },
-        { image: require('../../images/firefox.png'), label: 'Mozilla' },
-        { image: require('../../images/firefox.png'), label: 'Mozilla' },
-        { image: require('../../images/firefox.png'), label: 'Mozilla' },
+        { image: require('@images/firefox.png'), label: 'Mozilla' },
+        { image: require('@images/firefox.png'), label: 'Mozilla' },
+        { image: require('@images/firefox.png'), label: 'Mozilla' },
+        { image: require('@images/firefox.png'), label: 'Mozilla' },
+        { image: require('@images/firefox.png'), label: 'Mozilla' },
+        { image: require('@images/firefox.png'), label: 'Mozilla' },
+        { image: require('@images/firefox.png'), label: 'Mozilla' },
+        { image: require('@images/firefox.png'), label: 'Mozilla' },
+        { image: require('@images/firefox.png'), label: 'Mozilla' },
+        { image: require('@images/firefox.png'), label: 'Mozilla' },
+        { image: require('@images/firefox.png'), label: 'Mozilla' },
+        { image: require('@images/firefox.png'), label: 'Mozilla' },
       ]}
     />
   )

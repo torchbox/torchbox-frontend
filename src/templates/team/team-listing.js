@@ -2,11 +2,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 // Components
-import TitleBlock from '../../components/title-block'
-import Contact from '../../components/contact-detailed'
-import TeamListingBlock from '../../components/team-listing-block/team-listing-block'
+import TitleBlock from '@components/title-block'
+import Contact from '@components/contact-detailed'
+import TeamListingBlock from '@components/team-listing-block'
 // Utilities
-import { teamUrl } from '../../utils/urls'
+import { teamUrl } from '@utils/urls'
 // Styles
 import styles from './team-listing.module.scss'
 

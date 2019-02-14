@@ -2,10 +2,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 // Utilities
-import { ReactComponent as WomanChar } from '../../images/help-character.svg'
-import { ReactComponent as WagtailChar } from '../../images/wagtail.svg'
-
-import { ReactComponent as ManChar } from '../../images/data-greeting.svg'
+import { ReactComponent as WomanChar } from '@images/help-character.svg'
+import { ReactComponent as WagtailChar } from '@images/wagtail.svg'
+import { ReactComponent as ManChar } from '@images/data-greeting.svg'
 // Styles
 import './animated-character.module.scss'
 import styles from './animated-character.module.scss'

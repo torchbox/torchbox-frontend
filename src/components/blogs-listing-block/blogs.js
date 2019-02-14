@@ -3,7 +3,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 // Components
-import BlogLink from '../blog-link'
+import BlogLink from '@components/blog-link'
 // Styles
 import styles from './blogs.module.scss'
 

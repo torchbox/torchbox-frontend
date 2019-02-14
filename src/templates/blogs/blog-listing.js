@@ -2,19 +2,19 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 // Components
-import TitleBlock from '../../components/title-block'
-import StreamfieldBlock from '../../components/streamfield-block'
-import Contact from '../../components/contact-detailed'
-import FilterTags from '../../components/filter-tags/filter-tags'
-import BlogLink from '../../components/blog-link/blog-link'
+import TitleBlock from '@components/title-block'
+import StreamfieldBlock from '@components/streamfield-block'
+import Contact from '@components/contact-detailed'
+import FilterTags from '@components/filter-tags/filter-tags'
+import BlogLink from '@components/blog-link/blog-link'
 // Utilities
 import {
   getUniqueTagsFromPosts,
   postContainsTag,
   getCurrentFilterIndex,
-} from '../../utils/tags'
-import { blogsUrl } from '../../utils/urls'
-import { blogListing } from '../../utils/selectors'
+} from '@utils/tags'
+import { blogsUrl } from '@utils/urls'
+import { blogListing } from '@utils/selectors'
 // Styles
 import styles from './blog-listing.module.scss'
 
@@ -37,10 +37,10 @@ export class BlogListingPage extends React.Component {
   }
 
   render() {
-    const { title, streamfield } = this.props
+    const { title, streamfield, blogs } = this.props
     const { selectedTag, currentLimit, tags = [] } = this.state
 
-    const listing = this.props.blogs
+    const listing = (blogs || [])
       .map(blogListing)
       .filter(blog =>
         selectedTag === 0

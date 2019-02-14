@@ -2,18 +2,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 // Components
-import TitleBlock from '../../components/title-block'
-import Contact from '../../components/contact-detailed'
-import FilterTags from '../../components/filter-tags/filter-tags'
-import CaseStudiesBlock from '../../components/case-studies-block/case-studies-block'
+import TitleBlock from '@components/title-block'
+import Contact from '@components/contact-detailed'
+import FilterTags from '@components/filter-tags/filter-tags'
+import CaseStudiesBlock from '@components/case-studies-block/case-studies-block'
 // Utilities
 import {
   getCurrentFilterIndex,
   getUniqueTagsFromPosts,
   postContainsTag,
-} from '../../utils/tags'
-import { caseStudiesUrl } from '../../utils/urls'
-import { caseStudyListing } from '../../utils/selectors'
+} from '@utils/tags'
+import { caseStudiesUrl } from '@utils/urls'
+import { caseStudyListing } from '@utils/selectors'
 // Styles
 import styles from './case-study-listing.module.scss'
 

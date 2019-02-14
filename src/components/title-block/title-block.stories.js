@@ -5,7 +5,7 @@ import { State, Store } from '@sambego/storybook-state'
 // Components
 import TitleBlock from './title-block'
 // Utilities
-import { parseToHtml } from '../../utils/torchup'
+import { parseToHtml } from '@utils/torchup'
 
 const store = new Store({
   title: 'Meet the team, your swell digital pals.',

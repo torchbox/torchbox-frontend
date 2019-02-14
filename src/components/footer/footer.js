@@ -63,7 +63,7 @@ const Footer = ({ links, className }) => (
     </div>
     <img
       className={styles.footerImage}
-      src={require('../../images/man-coffee.svg')}
+      src={require('@images/man-coffee.svg')}
       alt=""
     />
   </div>

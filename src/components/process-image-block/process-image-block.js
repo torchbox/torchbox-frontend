@@ -3,7 +3,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 // Utilities
-import { renderTorchUp } from '../../utils/torchup'
+import { renderTorchUp } from '@utils/torchup'
 // Styles
 import styles from './process-image-block.module.scss'
 
@@ -19,12 +19,12 @@ class ProcessImageBlock extends React.Component {
           <div className={styles.processImageContainer}>
             <img
               className={styles.processDesktopImage}
-              src={require('../../images/processes-desktop.png')}
+              src={require('@images/processes-desktop.png')}
               alt=""
             />
             <img
               className={styles.processMobileImage}
-              src={require('../../images/processes-mobile.png')}
+              src={require('@images/processes-mobile.png')}
               alt=""
             />
           </div>

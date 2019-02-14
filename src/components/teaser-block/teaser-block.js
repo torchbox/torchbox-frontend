@@ -5,7 +5,7 @@ import { Link } from 'gatsby'
 // Components
 import TeaserLink from './teaser'
 // Utilities
-import { renderTorchUp } from '../../utils/torchup'
+import { renderTorchUp } from '@utils/torchup'
 // Styles
 import styles from './teaser-block.module.scss'
 

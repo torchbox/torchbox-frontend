@@ -3,7 +3,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 // Components
-import Avatar from '../avatar'
+import Avatar from '@components/avatar'
 // Styles
 import styles from './contact.module.scss'
 
@@ -42,7 +42,7 @@ Contact.defaultProps = {
   name: 'Will Heinemen',
   phoneNumber: '+41524204242',
   role: 'Head of new buisness',
-  avatar: require('../../images/will.jpg'),
+  avatar: require('@images/will.jpg'),
 }
 
 export default Contact

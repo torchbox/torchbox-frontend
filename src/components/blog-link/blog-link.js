@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import dayjs from 'dayjs'
 // Components
-import Avatar from '../avatar/avatar'
+import Avatar from '@components/avatar'
 // Styles
 import styles from './blog-link.module.scss'
 
