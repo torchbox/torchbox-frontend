@@ -1,8 +1,11 @@
+// Vendor Modules
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
-import TeaserBlock from './teaser-block'
-import { pageUrl } from '../../utils/urls'
 import PropTypes from 'prop-types'
+// Components
+import TeaserBlock from './teaser-block'
+// Utilities
+import { pageUrl } from '../../utils/urls'
 
 const TeaserBlockContainer = ({ ignoreSlug }) => {
   return (

@@ -1,6 +1,7 @@
+// Vendor Modules
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-
+// Components
 import BlogPostPage from './blog-post'
 
 storiesOf('Pages', module).add('Blog Post', () => {

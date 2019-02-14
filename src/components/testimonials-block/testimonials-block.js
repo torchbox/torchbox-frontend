@@ -1,8 +1,10 @@
+// Vendor Modules
 import React from 'react'
 import PropTypes from 'prop-types'
-
-import styles from './testimonials-block.module.scss'
+// Components
 import QuoteSlider from '../quote-slider/quote-slider'
+// Styles
+import styles from './testimonials-block.module.scss'
 
 class TestimonialsBlock extends React.Component {
   render() {

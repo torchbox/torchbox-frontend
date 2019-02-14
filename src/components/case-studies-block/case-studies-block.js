@@ -1,11 +1,13 @@
+// Vendor Modules
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
-
-import styles from './case-studies-block.module.scss'
-
+// Utilities
 import { ReactComponent as FragCluster } from '../../images/frag-cluster1.svg'
+
 import { ReactComponent as FlippedFragCluster } from '../../images/frag-cluster2.svg'
+// Styles
+import styles from './case-studies-block.module.scss'
 
 class CaseStudiesBlock extends React.Component {
   render() {

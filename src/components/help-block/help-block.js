@@ -1,10 +1,13 @@
+// Vendor Modules
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
-
-import styles from './help-block.module.scss'
+// Components
 import Contact from '../contact/contact'
+// Utilities
 import { renderTorchUp } from '../../utils/torchup'
+// Styles
+import styles from './help-block.module.scss'
 
 class HelpBlock extends React.Component {
   render() {

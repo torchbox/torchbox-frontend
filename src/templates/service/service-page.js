@@ -1,10 +1,10 @@
+// Vendor Modules
 import React from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 import qs from 'query-string'
 import scrollIntoView from 'scroll-into-view'
-
-import styles from './service-page.module.scss'
+// Components
 import Contact from '../../components/contact-detailed'
 import Hero from '../../components/hero'
 import HelpBlock from '../../components/help-block'
@@ -14,6 +14,8 @@ import CaseStudiesBlock from '../../components/case-studies-block'
 import Blogs from '../../components/blogs-listing-block/blogs'
 import ProcessBlock from '../../components/process-block/process-block'
 import Layout from '../../components/layout'
+// Styles
+import styles from './service-page.module.scss'
 
 class ServicePage extends React.Component {
   constructor(props) {

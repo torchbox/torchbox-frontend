@@ -1,12 +1,15 @@
+// Vendor Modules
 import React from 'react'
 import PropTypes from 'prop-types'
-
-import styles from './person.module.scss'
+// Components
 import TitleBlock from '../../components/title-block'
 import StreamfieldBlock from '../../components/streamfield-block'
 import Contact from '../../components/contact-detailed'
-import { blogsUrl } from '../../utils/urls'
 import Blogs from '../../components/blogs-listing-block'
+// Utilities
+import { blogsUrl } from '../../utils/urls'
+// Styles
+import styles from './person.module.scss'
 
 const PersonPage = ({
   firstName,

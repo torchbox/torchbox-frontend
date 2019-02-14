@@ -1,11 +1,14 @@
+// Vendor Modules
 import React from 'react'
 
 import { graphql } from 'gatsby'
-import BlogPostPage from './blog-post'
-import Layout from '../../components/layout'
-import { authorDetails, postTags } from '../../utils/selectors'
-import { blogsUrl } from '../../utils/urls'
 import PropTypes from 'prop-types'
+// Components
+import Layout from '../../components/layout'
+import BlogPostPage from './blog-post'
+// Utilities
+import { blogsUrl } from '../../utils/urls'
+import { authorDetails, postTags } from '../../utils/selectors'
 
 const BlogPostContainer = ({ data }) => {
   const page = data.wagtail.blogPosts[0]

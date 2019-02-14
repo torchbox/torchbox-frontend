@@ -1,6 +1,7 @@
+// Vendor Modules
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-
+// Components
 import QuoteSlider from './quote-slider'
 
 storiesOf('Components/Shared Components', module).add('Quote Slider', () => {

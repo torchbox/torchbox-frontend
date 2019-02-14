@@ -1,8 +1,11 @@
+// Vendor Modules
 import React from 'react'
 
 import { graphql } from 'gatsby'
+// Components
 import ServicePage from './service-page'
 import Layout from '../../components/layout'
+// Utilities
 import { blogListing, caseStudyListing } from '../../utils/selectors'
 import { caseStudiesUrl, blogsUrl, pageUrl } from '../../utils/urls'
 import { safeGet } from '../../utils/safeget'

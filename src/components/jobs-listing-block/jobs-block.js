@@ -1,9 +1,11 @@
+// Vendor Modules
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
-
-import styles from './jobs-block.module.scss'
+// Components
 import Avatar from '../avatar/avatar'
+// Styles
+import styles from './jobs-block.module.scss'
 
 class JobsBlock extends React.Component {
   render() {

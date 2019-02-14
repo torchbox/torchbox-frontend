@@ -1,6 +1,7 @@
+// Vendor Modules
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-
+// Components
 import TeaserBlock from './teaser-block'
 
 storiesOf('Components/Shared Components', module).add('Teaser block', () => {

@@ -1,9 +1,12 @@
+// Vendor Modules
 import React from 'react'
 import PropTypes from 'prop-types'
+// Components
 import BustOut from '../bustout'
 
-import styles from './streamfield-block.module.scss'
 import QuoteSlider from '../quote-slider/quote-slider'
+// Styles
+import styles from './streamfield-block.module.scss'
 
 class StreamfieldBlock extends React.Component {
   render() {

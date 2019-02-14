@@ -1,6 +1,7 @@
+// Vendor Modules
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-
+// Components
 import Avatar from './avatar'
 
 storiesOf('Components/Shared Components', module).add('Avatar', () => {

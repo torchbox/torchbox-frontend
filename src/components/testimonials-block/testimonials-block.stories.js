@@ -1,6 +1,7 @@
+// Vendor Modules
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-
+// Components
 import TestimonialsBlock from './testimonials-block'
 
 storiesOf('Components/Landing Page', module).add('Testimonials block', () => {

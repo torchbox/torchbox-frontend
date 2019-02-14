@@ -1,10 +1,13 @@
+// Vendor Modules
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
-
+// Components
 import TeaserLink from './teaser'
-import styles from './teaser-block.module.scss'
+// Utilities
 import { renderTorchUp } from '../../utils/torchup'
+// Styles
+import styles from './teaser-block.module.scss'
 
 const TeaserBlock = ({ title, teasers, className }) => {
   return (

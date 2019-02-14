@@ -1,19 +1,22 @@
+// Vendor Modules
 import React from 'react'
 import PropTypes from 'prop-types'
-
-import styles from './blog-listing.module.scss'
+// Components
 import TitleBlock from '../../components/title-block'
 import StreamfieldBlock from '../../components/streamfield-block'
 import Contact from '../../components/contact-detailed'
+import FilterTags from '../../components/filter-tags/filter-tags'
+import BlogLink from '../../components/blog-link/blog-link'
+// Utilities
 import {
   getUniqueTagsFromPosts,
   postContainsTag,
   getCurrentFilterIndex,
 } from '../../utils/tags'
-import FilterTags from '../../components/filter-tags/filter-tags'
-import BlogLink from '../../components/blog-link/blog-link'
 import { blogsUrl } from '../../utils/urls'
 import { blogListing } from '../../utils/selectors'
+// Styles
+import styles from './blog-listing.module.scss'
 
 export class BlogListingPage extends React.Component {
   state = { selectedTag: 0, currentLimit: 10 }

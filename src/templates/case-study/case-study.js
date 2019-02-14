@@ -1,13 +1,16 @@
+// Vendor Modules
 import React from 'react'
 import PropTypes from 'prop-types'
-
-import styles from './case-study.module.scss'
+// Components
 import TitleBlock from '../../components/title-block'
 import AuthorBlock from '../../components/author-block'
 import StreamfieldBlock from '../../components/streamfield-block'
 import CaseStudiesBlock from '../../components/case-studies-block'
 import Contact from '../../components/contact-detailed'
+// Utilities
 import { caseStudiesUrl } from '../../utils/urls'
+// Styles
+import styles from './case-study.module.scss'
 
 const CaseStudyPage = ({
   title,

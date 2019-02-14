@@ -1,3 +1,4 @@
+// Vendor Modules
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { State, Store } from '@sambego/storybook-state'
@@ -5,8 +6,9 @@ import { State, Store } from '@sambego/storybook-state'
 const store = new Store({
   collapsed: false,
 })
-
+// Components
 import Hero from './hero'
+// Styles
 import styles from './hero.module.scss'
 
 const HeroComp = () => {

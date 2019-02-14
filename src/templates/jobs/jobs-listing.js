@@ -1,10 +1,12 @@
+// Vendor Modules
 import React from 'react'
 import PropTypes from 'prop-types'
-
-import styles from './jobs-listing.module.scss'
+// Components
 import TitleBlock from '../../components/title-block'
 import Contact from '../../components/contact-detailed'
 import JobsBlock from '../../components/jobs-listing-block/jobs-block'
+// Styles
+import styles from './jobs-listing.module.scss'
 
 export class JobsListingPage extends React.Component {
   render() {

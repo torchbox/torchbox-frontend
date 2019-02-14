@@ -1,7 +1,9 @@
+// Vendor Modules
 import React from 'react'
 import PropTypes from 'prop-types'
 
 import { Link } from 'gatsby'
+// Styles
 import styles from './tag.module.scss'
 
 const Tag = ({ label, className, onClick, href }) => (

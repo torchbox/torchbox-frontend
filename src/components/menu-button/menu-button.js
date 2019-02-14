@@ -1,6 +1,7 @@
+// Vendor Modules
 import React from 'react'
 import PropTypes from 'prop-types'
-
+// Styles
 import styles from './menu-button.module.scss'
 
 const MenuButton = ({ onClick, isOpen, className }) => (

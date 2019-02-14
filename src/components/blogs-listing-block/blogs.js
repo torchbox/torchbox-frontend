@@ -1,9 +1,11 @@
+// Vendor Modules
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
-
-import styles from './blogs.module.scss'
+// Components
 import BlogLink from '../blog-link'
+// Styles
+import styles from './blogs.module.scss'
 
 class BlogsBlock extends React.Component {
   render() {

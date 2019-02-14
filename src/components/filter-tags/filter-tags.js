@@ -1,7 +1,9 @@
+// Vendor Modules
 import React from 'react'
 import PropTypes from 'prop-types'
+// Components
 import Tag from '../tag'
-
+// Styles
 import styles from './filter-tags.module.scss'
 
 const FilterTags = ({ tags, onChange = () => null, activeTag, className }) => (

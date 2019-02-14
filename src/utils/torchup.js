@@ -1,3 +1,4 @@
+// Styles
 import styles from '../styles/app.module.scss'
 
 export const parseToHtml = text => {

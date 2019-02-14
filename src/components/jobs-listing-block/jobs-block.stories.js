@@ -1,6 +1,7 @@
+// Vendor Modules
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-
+// Components
 import JobsBlock from './jobs-block'
 
 storiesOf('Components/Listing Pages', module).add('Jobs listing block', () => {

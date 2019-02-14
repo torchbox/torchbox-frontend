@@ -1,11 +1,13 @@
+// Vendor Modules
 import React from 'react'
 import PropTypes from 'prop-types'
 import dayjs from 'dayjs'
 import { Link } from 'gatsby'
-
-import styles from './author-block.module.scss'
+// Components
 import Avatar from '../avatar/avatar'
 import Tag from '../tag/tag'
+// Styles
+import styles from './author-block.module.scss'
 
 const AuthorBlock = ({ author, datePublished, tags, readTime, className }) => (
   <div className={[styles.authorBlock, className].join(' ')}>

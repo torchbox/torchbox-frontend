@@ -1,4 +1,6 @@
+// Vendor Modules
 import qs from 'query-string'
+// Utilities
 import safeGet from '../utils/safeget'
 import { blogsUrl, caseStudiesUrl } from './urls'
 

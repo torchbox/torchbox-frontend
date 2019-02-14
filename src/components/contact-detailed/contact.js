@@ -1,7 +1,9 @@
+// Vendor Modules
 import React from 'react'
 import PropTypes from 'prop-types'
-
+// Components
 import Avatar from '../avatar'
+// Styles
 import styles from './contact.module.scss'
 
 const Contact = ({ title, emailAddress, phoneNumber, className, reasons }) => (

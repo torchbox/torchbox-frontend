@@ -1,8 +1,10 @@
+// Vendor Modules
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 
-import FilterTags from './filter-tags'
 import { State, Store } from '@sambego/storybook-state'
+// Components
+import FilterTags from './filter-tags'
 
 const store = new Store({
   activeOption: 0,

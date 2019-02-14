@@ -1,12 +1,15 @@
+// Vendor Modules
 import React from 'react'
 
 import { graphql } from 'gatsby'
-import CaseStudy from './case-study'
+import PropTypes from 'prop-types'
+// Components
 import Layout from '../../components/layout'
-import { authorDetails, postTags } from '../../utils/selectors'
+import CaseStudy from './case-study'
+// Utilities
 import { caseStudiesUrl } from '../../utils/urls'
 import { safeGet } from '../../utils/safeget'
-import PropTypes from 'prop-types'
+import { authorDetails, postTags } from '../../utils/selectors'
 
 const CaseStudyContainer = ({ data }) => {
   const page = data.wagtail.caseStudies[0]

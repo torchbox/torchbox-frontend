@@ -1,9 +1,11 @@
+// Vendor Modules
 import React from 'react'
 
 import { graphql } from 'gatsby'
-import CulturePage from './culture-page'
-import Layout from '../../components/layout'
 import PropTypes from 'prop-types'
+// Components
+import Layout from '../../components/layout'
+import CulturePage from './culture-page'
 
 const CulturePageContainer = ({ data }) => {
   const page = data.wagtail.culturePages[0]

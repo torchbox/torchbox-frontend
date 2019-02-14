@@ -1,8 +1,9 @@
+// Vendor Modules
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { State, Store } from '@sambego/storybook-state'
 import { action, configureActions } from '@storybook/addon-actions'
-
+// Components
 import Header from './index'
 
 const store = new Store({

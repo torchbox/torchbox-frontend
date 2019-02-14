@@ -1,7 +1,8 @@
+// Vendor Modules
 import React from 'react'
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
-
+// Styles
 import styles from './parent-page-link.module.scss'
 
 const ParentPageLink = ({ label, href, className }) => (

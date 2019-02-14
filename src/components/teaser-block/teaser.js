@@ -1,7 +1,8 @@
+// Vendor Modules
 import React from 'react'
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
-
+// Styles
 import styles from './teaser-block.module.scss'
 
 const TeaserLink = ({ title, description, href, className }) => (

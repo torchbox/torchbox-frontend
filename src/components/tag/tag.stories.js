@@ -1,7 +1,8 @@
+// Vendor Modules
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
-
+// Components
 import Tag from './tag'
 
 storiesOf('Components/Shared Components', module).add('Tag', () => {

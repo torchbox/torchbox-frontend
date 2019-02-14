@@ -1,10 +1,13 @@
+// Vendor Modules
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import styles from './blog-link.module.scss'
-import Avatar from '../avatar/avatar'
 import { Link } from 'gatsby'
 import dayjs from 'dayjs'
+// Components
+import Avatar from '../avatar/avatar'
+// Styles
+import styles from './blog-link.module.scss'
 
 const BlogLink = ({
   href,

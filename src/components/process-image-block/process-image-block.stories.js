@@ -1,6 +1,7 @@
+// Vendor Modules
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-
+// Components
 import ProcessImageBlock from './process-image-block'
 
 storiesOf('Components/Landing Page', module).add(

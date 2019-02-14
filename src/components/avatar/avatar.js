@@ -1,6 +1,7 @@
+// Vendor Modules
 import React from 'react'
 import PropTypes from 'prop-types'
-
+// Styles
 import styles from './avatar.module.scss'
 
 const Avatar = ({ src, className, containerClassName }) => (

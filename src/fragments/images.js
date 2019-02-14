@@ -1,3 +1,4 @@
+// Vendor Modules
 import { graphql } from 'gatsby'
 
 export const iconImage = graphql`

@@ -1,10 +1,12 @@
+// Vendor Modules
 import React from 'react'
 import PropTypes from 'prop-types'
-
-import styles from './standard.module.scss'
+// Components
 import TitleBlock from '../../components/title-block'
 import Contact from '../../components/contact-detailed'
 import StreamfieldBlock from '../../components/streamfield-block/streamfield-block'
+// Styles
+import styles from './standard.module.scss'
 
 export class StandardPage extends React.Component {
   render() {

@@ -1,6 +1,7 @@
+// Vendor Modules
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-
+// Components
 import ParentPageLink from './parent-page-link'
 
 storiesOf('Components/Shared Components', module).add(

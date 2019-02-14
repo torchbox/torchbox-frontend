@@ -1,11 +1,14 @@
+// Vendor Modules
 import React from 'react'
 import PropTypes from 'prop-types'
-
-import styles from './team-listing.module.scss'
+// Components
 import TitleBlock from '../../components/title-block'
 import Contact from '../../components/contact-detailed'
 import TeamListingBlock from '../../components/team-listing-block/team-listing-block'
+// Utilities
 import { teamUrl } from '../../utils/urls'
+// Styles
+import styles from './team-listing.module.scss'
 
 export class TeamListingPage extends React.Component {
   render() {

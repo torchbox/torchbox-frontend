@@ -1,3 +1,4 @@
+// Vendor Modules
 import qs from 'query-string'
 
 export const postContainsTag = (tags, tagName) => {

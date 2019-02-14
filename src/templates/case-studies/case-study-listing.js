@@ -1,18 +1,21 @@
+// Vendor Modules
 import React from 'react'
 import PropTypes from 'prop-types'
-
-import styles from './case-study-listing.module.scss'
+// Components
 import TitleBlock from '../../components/title-block'
 import Contact from '../../components/contact-detailed'
+import FilterTags from '../../components/filter-tags/filter-tags'
+import CaseStudiesBlock from '../../components/case-studies-block/case-studies-block'
+// Utilities
 import {
   getCurrentFilterIndex,
   getUniqueTagsFromPosts,
   postContainsTag,
 } from '../../utils/tags'
-import FilterTags from '../../components/filter-tags/filter-tags'
-import CaseStudiesBlock from '../../components/case-studies-block/case-studies-block'
 import { caseStudiesUrl } from '../../utils/urls'
 import { caseStudyListing } from '../../utils/selectors'
+// Styles
+import styles from './case-study-listing.module.scss'
 
 export class CaseStudyListingPage extends React.Component {
   state = { selectedTag: 0, currentLimit: 10 }

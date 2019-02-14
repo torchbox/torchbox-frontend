@@ -1,12 +1,15 @@
+// Vendor Modules
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
-
-import styles from './hero.module.scss'
-import { renderTorchUp } from '../../utils/torchup'
+// Components
 import AnimatedCharacter from '../animated-character/animated-character'
 import ParentPageLink from '../parent-page-link/parent-page-link'
+// Utilities
+import { renderTorchUp } from '../../utils/torchup'
 import { pageUrl } from '../../utils/urls'
+// Styles
+import styles from './hero.module.scss'
 
 const Hero = ({
   title,

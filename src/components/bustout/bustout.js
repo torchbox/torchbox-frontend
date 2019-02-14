@@ -1,8 +1,10 @@
+// Vendor Modules
 import React from 'react'
 import PropTypes from 'prop-types'
-
-import styles from './bustout.module.scss'
+// Utilities
 import { renderTorchUp } from '../../utils/torchup'
+// Styles
+import styles from './bustout.module.scss'
 
 const Bustout = ({ src, align = 'left', className, caption }) => (
   <div className={styles.bustoutContainer}>

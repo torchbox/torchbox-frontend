@@ -1,12 +1,14 @@
+// Vendor Modules
 import React from 'react'
 import PropTypes from 'prop-types'
-
-import styles from './animated-character.module.scss'
-import './animated-character.module.scss'
-
+// Utilities
 import { ReactComponent as WomanChar } from '../../images/help-character.svg'
 import { ReactComponent as WagtailChar } from '../../images/wagtail.svg'
+
 import { ReactComponent as ManChar } from '../../images/data-greeting.svg'
+// Styles
+import './animated-character.module.scss'
+import styles from './animated-character.module.scss'
 
 class AnimatedCharacter extends React.Component {
   constructor(props) {

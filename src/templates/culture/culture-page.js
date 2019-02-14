@@ -1,14 +1,16 @@
+// Vendor Modules
 import React from 'react'
 import PropTypes from 'prop-types'
-
-import styles from './culture-page.module.scss'
+// Components
 import StreamfieldBlock from '../../components/streamfield-block'
 import Contact from '../../components/contact-detailed'
-import { renderTorchUp } from '../../utils/torchup'
-
 import TeaserLink from '../../components/teaser-block/teaser'
+// Utilities
+import { renderTorchUp } from '../../utils/torchup'
 import { pageUrl } from '../../utils/urls'
 import { ReactComponent as GreetingImage } from '../../images/man-fruit.svg'
+// Styles
+import styles from './culture-page.module.scss'
 
 const CulturePage = ({ strapline, heroImage, intro, links, body, contact }) => {
   const Teasers = () => (

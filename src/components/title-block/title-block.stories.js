@@ -1,8 +1,10 @@
+// Vendor Modules
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { State, Store } from '@sambego/storybook-state'
-
+// Components
 import TitleBlock from './title-block'
+// Utilities
 import { parseToHtml } from '../../utils/torchup'
 
 const store = new Store({

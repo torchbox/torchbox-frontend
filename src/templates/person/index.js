@@ -1,9 +1,11 @@
+// Vendor Modules
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-
+// Components
 import PersonPage from './person'
 import Layout from '../../components/layout'
+// Utilities
 import { blogListing } from '../../utils/selectors'
 
 const PersonPageContainer = ({ data }) => {

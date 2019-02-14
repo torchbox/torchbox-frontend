@@ -1,9 +1,11 @@
+// Vendor Modules
 import React from 'react'
 
 import { graphql } from 'gatsby'
-import Layout from '../../components/layout'
-import CaseStudyListingPage from './case-study-listing'
 import PropTypes from 'prop-types'
+// Components
+import CaseStudyListingPage from './case-study-listing'
+import Layout from '../../components/layout'
 
 const CaseStudyListingContainer = ({ data }) => {
   return (

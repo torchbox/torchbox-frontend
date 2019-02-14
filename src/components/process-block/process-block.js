@@ -1,11 +1,13 @@
+// Vendor Modules
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
-
-import styles from './process-block.module.scss'
+// Utilities
 import { ReactComponent as ToolkitImage } from '../../images/toolkit.svg'
 import { renderTorchUp } from '../../utils/torchup'
 import { pageUrl } from '../../utils/urls'
+// Styles
+import styles from './process-block.module.scss'
 
 class ProcessBlock extends React.Component {
   render() {
