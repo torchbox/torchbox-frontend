@@ -28,6 +28,10 @@ h3 {
   margin: 60px 0 10px;
 }
 
+h4 {
+  @extend h3;
+}
+
 p {
   margin: 0 0 30px;
   color: #333;

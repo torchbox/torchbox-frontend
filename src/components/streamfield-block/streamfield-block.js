@@ -115,14 +115,16 @@ class StreamfieldBlock extends React.Component {
 
             case 'paragraph':
               return (
-                <p
+                <div
                   className={styles.streamfieldParagraph}
                   dangerouslySetInnerHTML={{ __html: block.value }}
                 />
               )
 
             case 'raw_html':
-              return <div dangerouslySetInnerHTML={{ __html: block.value }} />
+              return <div 
+              className={styles.streamfieldRaw}
+              dangerouslySetInnerHTML={{ __html: block.value }} />
 
             case 'markdown':
               return null

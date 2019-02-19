@@ -37,7 +37,7 @@ class BlogsBlock extends React.Component {
           ) : null}
 
           <div className={styles.blockBlogList}>
-            {blogs.slice(showFeatured ? 1 : 0).map((blog, index) => (
+            {(blogs || []).slice(showFeatured ? 1 : 0).map((blog, index) => (
               <BlogLink
                 key={`blog-link-${index}`}
                 href={blog.href}

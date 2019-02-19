@@ -66,13 +66,11 @@ class ServicePage extends React.Component {
     Object.values(this.sectionRefs).map(sectionRef => {
       if (sectionRef.ref.current) {
         const el = ReactDOM.findDOMNode(sectionRef.ref.current)
-        const { y, height } = el.getBoundingClientRect()
+        const { y } = el.getBoundingClientRect()
 
-        const lowerBound = y
-        const upperBound = y + height
-
-        if (window.scrollY >= lowerBound && window.scrollY < upperBound) {
-          this.setState({ activeSectionTitle: sectionRef.title })
+        // Set element as active in the navbar when it's 25% up screen
+        if ( y + 0.1*(window.innerHeight) < window.innerHeight) {
+            this.setState({ activeSectionTitle: sectionRef.title })
         }
       }
     })
@@ -98,9 +96,12 @@ class ServicePage extends React.Component {
 
     const nestedNav = Object.values(this.sectionRefs).map(section => ({
       title: section.title,
-      href: '#',
+      href: '',
       active: section.title === this.state.activeSectionTitle,
-      onClick: () => this.navigateToSection(section.title),
+      onClick: e => {
+        e.preventDefault()
+        this.navigateToSection(section.title)
+      },
     }))
 
     return (

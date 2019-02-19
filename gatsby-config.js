@@ -19,23 +19,20 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `torchbox`,
+        short_name: `Torchbox`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#2f128d`,
+        theme_color: `#fd5765`,
         display: `minimal-ui`,
-        icon: `src/images/tbx-flame.svg`, // This path is relative to the root of the site.
+        icon: `src/images/favicon.svg`, // This path is relative to the root of the site.
       },
     },
     {
       resolve: "gatsby-source-graphql",
       options: {
-        // This type will contain remote schema Query type
         typeName: "Wagtail",
-        // This is field under which it's accessible
         fieldName: 'wagtail',
-        // Url to query from
         url: process.env.GATSBY_WAGTAIL_ENDPOINT || 'http://localhost:8000/graphql/',
         // refetchInterval: 10,
       },

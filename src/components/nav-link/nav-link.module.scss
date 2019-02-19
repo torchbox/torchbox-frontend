@@ -4,7 +4,7 @@ $header-link-color: var(--header-link-color, $primary);
 
 @mixin navlink-underscore($height) {
   &::after {
-    transition: height 0.3s ease;
+    transition: all 0.3s ease;
     content: '';
     position: absolute;
     width: 100%;
@@ -35,7 +35,7 @@ $header-link-color: var(--header-link-color, $primary);
     color: $header-link-color;
     margin-right: 70px;
     margin-bottom: 0;
-    padding: 0;
+    padding: 0 0 0px;
   }
 
   @include navlink-underscore(0);

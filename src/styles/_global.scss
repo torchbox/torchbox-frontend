@@ -22,7 +22,11 @@ body {
     left: 0;
     color: $accent;
     font-weight: bold;
-    text-transform: capitalize;
+    text-transform: lowercase;
+
+    &::first-letter {
+        text-transform: uppercase;
+    }
 
     &::before {
         position: absolute;

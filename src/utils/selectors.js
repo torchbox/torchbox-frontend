@@ -42,3 +42,5 @@ export const caseStudyListing = caseStudy => ({
   feedImage: safeGet(caseStudy, 'feedImage.src.url', null),
   homepageImage: safeGet(caseStudy, 'homepageImage.src.url', null),
 })
+
+export const readTime = bodyWordCount => Math.ceil(bodyWordCount * (1 / 275))

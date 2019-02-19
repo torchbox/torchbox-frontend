@@ -29,6 +29,8 @@
         }
 
         &Bullets {
+            grid-column: span 2;
+            margin-top: 30px;
             transition: 0.2s all ease;
             display: flex;
             align-items: center;
@@ -81,6 +83,7 @@
             color: $primary;
             font-size: 26px;
             line-height: 46px;
+            padding-right: 8.33vw;
 
             @include for-phone-only {
                 font-size: 22px;
@@ -98,7 +101,6 @@
             font-size: 12px;
             margin: 0 0 15px;
             line-height: 1;
-
             display: flex;
             flex-direction: column;
 
@@ -112,6 +114,7 @@
                 text-transform: uppercase;
                 color: $accent;
                 margin-bottom: 5px;
+                letter-spacing: 0.15em;
 
                 &::after {
                     @include for-tablet-landscape-up {

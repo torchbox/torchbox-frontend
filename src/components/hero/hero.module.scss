@@ -9,7 +9,7 @@ $hero-link-color: var(--hero-link-color, $link-color);
 
   &Image {
     position: relative;
-    width: 50vw;
+    width: 60vw;
     max-width: 380px;
     margin-top: 40px;
     z-index: 2;
@@ -65,7 +65,10 @@ $hero-link-color: var(--hero-link-color, $link-color);
   }
 
   &Content {
-    margin: 50px 10.33vw 0;
+    margin: 75px 8.33vw 0;
+    @include for-desktop-up {
+      margin-left: 10.33vw;
+    }
     position: relative;
     padding-top: 60px;
     padding-bottom: 20px;
@@ -75,8 +78,8 @@ $hero-link-color: var(--hero-link-color, $link-color);
   &Title {
     color: $hero-title-color;
     font-weight: 800;
-    font-size: 60px;
-    line-height: 70px;
+    font-size: 50px;
+    line-height: 55px;
     margin-bottom: 20px;
     @include for-tablet-landscape-up {
       font-size: 70px;
@@ -115,10 +118,11 @@ $hero-link-color: var(--hero-link-color, $link-color);
       display: flex;
       align-items: center;
       position: relative;
-      padding-right: 40px;
+      padding-right: 20px;
       padding-bottom: 25px;
       @include for-tablet-landscape-up {
         padding-bottom: 0px;
+        padding-right: 50px;
       }
 
       a {
@@ -137,7 +141,6 @@ $hero-link-color: var(--hero-link-color, $link-color);
         @include for-tablet-landscape-up {
           padding: 0;
           margin-left: 0;
-          margin-right: 20px;
           font-size: 18px;
         }
       }

@@ -8,7 +8,7 @@ import Layout from '@components/layout'
 import BlogPostPage from './blog-post'
 // Utilities
 import { blogsUrl } from '@utils/urls'
-import { authorDetails, postTags } from '@utils/selectors'
+import { blogListing, authorDetails, postTags, readTime } from '@utils/selectors'
 
 const BlogPostContainer = ({ data }) => {
   const page = data.wagtail.blogPosts[0]
@@ -20,8 +20,9 @@ const BlogPostContainer = ({ data }) => {
         streamfield={page.body}
         author={authorDetails(page.authors)}
         datePublished={page.date}
+        readTime={readTime(page.bodyWordCount) || 0}
         tags={postTags(page.tags, blogsUrl('#filter='))}
-        extraPosts={extraBlogPosts}
+        extraBlogPosts={extraBlogPosts.map(blogListing)}
       />
     </Layout>
   )
@@ -48,6 +49,7 @@ export const query = graphql`
           }
         }
         body
+        bodyWordCount
         contact {
           ...contactSnippet
         }

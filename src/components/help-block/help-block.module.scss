@@ -86,6 +86,7 @@
                 }
 
                 &:hover {
+                    color: $light-blue !important;
                     border-bottom: 2px solid $accent;
                     font-weight: 800;
                 }

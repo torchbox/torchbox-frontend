@@ -18,6 +18,7 @@ const PersonPageContainer = ({ data }) => {
         lastName={person.lastName}
         role={person.role}
         intro={person.shortIntro}
+        altIntro={person.altShortIntro}
         avatar={person.image.src.url}
         biography={person.biography}
         blogs={blogs}
@@ -34,6 +35,7 @@ export const query = graphql`
         lastName
         role
         shortIntro
+        altShortIntro
         biography
         slug
         image {

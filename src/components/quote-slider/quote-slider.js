@@ -36,8 +36,8 @@ class QuoteSlider extends React.Component {
               </blockquote>
             ))}
           </div>
-
-          {quotes.length > 1 ? (
+        </div>
+        {quotes.length > 1 ? (
             <ul className={styles.quoteSliderBullets}>
               {quotes.map((quote, index) => (
                 <li
@@ -51,8 +51,7 @@ class QuoteSlider extends React.Component {
                 />
               ))}
             </ul>
-          ) : null}
-        </div>
+        ) : null}
       </div>
     )
   }

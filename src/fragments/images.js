@@ -30,3 +30,13 @@ export const fullImage = graphql`
     }
   }
 `
+
+export const maxImage = graphql`
+  fragment maxImage on Wagtail_ImageObjectType {
+    src: rendition(format: "max") {
+      url
+      width
+      height
+    }
+  }
+`

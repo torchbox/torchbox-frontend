@@ -9,7 +9,7 @@ import CaseStudy from './case-study'
 // Utilities
 import { caseStudiesUrl } from '@utils/urls'
 import { safeGet } from '@utils/safeget'
-import { authorDetails, postTags } from '@utils/selectors'
+import { authorDetails, postTags, readTime } from '@utils/selectors'
 
 const CaseStudyContainer = ({ data }) => {
   const page = data.wagtail.caseStudies[0]
@@ -36,6 +36,8 @@ const CaseStudyContainer = ({ data }) => {
         streamfield={body}
         author={authorDetails(page.authors)}
         tags={postTags(page.tags, caseStudiesUrl('#filter='))}
+        contact={page.contact}
+        readTime={readTime(page.bodyWordCount) || 0}
       />
     </Layout>
   )
@@ -68,6 +70,7 @@ export const query = graphql`
           }
         }
         body
+        bodyWordCount
         contact {
           ...contactSnippet
         }

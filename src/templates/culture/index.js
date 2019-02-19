@@ -35,7 +35,7 @@ export const query = graphql`
         intro
         body
         heroImage {
-          ...fullImage
+          ...maxImage
         }
         links {
           title

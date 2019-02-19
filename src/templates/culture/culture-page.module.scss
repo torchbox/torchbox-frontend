@@ -13,7 +13,7 @@
         width: 100%;
         background-size: cover !important;
         background-repeat: no-repeat !important;
-        background-position: bottom;
+        background-position: top;
 
         @include for-tablet-landscape-up {
             height: 100vh;
@@ -21,7 +21,9 @@
 
         &Content {
             @include container;
-            padding-top: 45vh;
+            height: 100%;
+            display: flex;
+            align-items: flex-end;
         }
 
         &Title {
@@ -31,6 +33,7 @@
             line-height: 55px;
             margin: 0 0 20px 0;
             font-weight: 800;
+            padding-bottom: 5vh;
 
             @include for-tablet-landscape-up {
                 font-size: 100px;

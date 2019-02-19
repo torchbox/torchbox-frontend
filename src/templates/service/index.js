@@ -1,6 +1,5 @@
 // Vendor Modules
 import React from 'react'
-
 import { graphql } from 'gatsby'
 // Components
 import ServicePage from './service-page'
@@ -219,6 +218,7 @@ export const query = graphql`
         caseStudiesSectionTitle
         caseStudies(limit: 4) {
           title
+          slug
           client
           listingSummary
           feedImage {

@@ -10,7 +10,7 @@ const Footer = ({ links, className }) => (
     <div className={styles.footerContent}>
       <ul className={styles.footerAddressList}>
         <li className={styles.footerAddress}>
-          <h4 className={styles.footerAddressTitle}>Glorious Oxfordshire</h4>
+          <h5 className={styles.footerAddressTitle}>Glorious Oxfordshire</h5>
           <p>
             3rd Floor
             <br />
@@ -25,7 +25,7 @@ const Footer = ({ links, className }) => (
         </li>
 
         <li className={styles.footerAddress}>
-          <h4 className={styles.footerAddressTitle}>Vibrant Bristol</h4>
+          <h5 className={styles.footerAddressTitle}>Vibrant Bristol</h5>
           <p>
             3rd Floor
             <br />
@@ -40,7 +40,7 @@ const Footer = ({ links, className }) => (
         </li>
 
         <li className={styles.footerAddress}>
-          <h4 className={styles.footerAddressTitle}>Working in the US</h4>
+          <h5 className={styles.footerAddressTitle}>Working in the US</h5>
           <p>
             We have a special formula for working successfully with
             organisations in the US
@@ -63,7 +63,7 @@ const Footer = ({ links, className }) => (
     </div>
     <img
       className={styles.footerImage}
-      src={require('@images/man-coffee.svg')}
+      src={require('@images/man-coffee.svg').default}
       alt=""
     />
   </div>

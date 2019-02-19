@@ -12,7 +12,7 @@
   }
 
   &Image {
-    width: 40vw;
+    width: 66vw;
     position: absolute;
     left: -8.33vw;
     top: 20px;
@@ -20,11 +20,6 @@
       width: 19vw;
       top: 60px;
     }
-
-    .toolkit_svg__st0 {
-      fill: red !important;
-    }
-
   }
 
   &Container {
@@ -38,7 +33,7 @@
     grid-row-gap: 60px;
 
     margin: 0;
-    padding-top: calc((40vw * 0.6) + 60px);
+    padding-top: calc((66vw * 0.6) + 60px);
 
     @include for-tablet-landscape-up {
       grid-template-columns: auto auto;

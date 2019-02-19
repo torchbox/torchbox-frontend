@@ -4,18 +4,32 @@
 
   &Container {
     @include container();
+    margin-top: 45px !important;
+  }
+
+  &ParentLink {
+    margin-left: 16.66vw !important;
   }
 
   &Title {
     width: 100%;
     margin: 0;
 
-    h1 {
+    h1 {  
       margin-bottom: 0 !important;
       p {
-        color: $primary !important
+        color: $primary !important;
       }
     }
+  }
+
+  &Role {
+    @include streamblockPadding;
+    display: block;
+    margin-top: 30px;
+    font-size: 25px;
+    font-weight: 800;
+    color: $grey;
   }
 
   &Avatar {

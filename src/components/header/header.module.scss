@@ -13,16 +13,12 @@ $header-logo-color: var(--header-logo-color, $primary);
   top: 0;
   z-index: 100;
 
-  * {
-    transition: all 0.2s   ease;
-  }
-
   &Inner {
     @include container;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 10px 0px;
+    padding: 20px 0px;
 
     @include for-desktop-up {
      flex-direction: row;
@@ -51,8 +47,16 @@ $header-logo-color: var(--header-logo-color, $primary);
   &Item {
     display: flex;
     align-items: center;
-    padding-right: 50px;
-    height: 100%;
+    position: relative;
+    top: 5px;
+    height: 24px;
+    padding-right: 20px;
+
+    @include for-desktop-up {
+      top: 0;
+      height: 100%;
+      padding-right: 50px;
+    }
 
     &Active {
       @extend .nestedNavItem;
@@ -61,7 +65,6 @@ $header-logo-color: var(--header-logo-color, $primary);
         border-bottom: 2px solid $accent;
       }
     }
-
   }
 
   &Link {
@@ -69,11 +72,15 @@ $header-logo-color: var(--header-logo-color, $primary);
     display: inline-flex;
     align-items: center;
     color: $header-nested-link-color;
-    font-size: 15px;
+    font-size: 13px; 
     font-family: $mainFont;
     text-decoration: none;
     border-bottom: none;
     height: calc(100% - 2px);
+
+    @include for-desktop-up {
+      font-size: 15px;
+    }
 
     &:hover {
       margin-top: 2px;
@@ -179,7 +186,6 @@ $header-logo-color: var(--header-logo-color, $primary);
 
   &ModalOpen {
     @extend .mobileNavModal;
-    //display: block;
     transform: translateX(0);
   }
 
@@ -192,11 +198,6 @@ $header-logo-color: var(--header-logo-color, $primary);
 
     li {
       margin-left: 0 !important;
-
-      a {
-
-
-      }
     }
   }
 
@@ -206,12 +207,19 @@ $header-logo-color: var(--header-logo-color, $primary);
   @extend .header;
   position: fixed;
   background-color: $header-background;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding-top: 10px;
+  padding-bottom: 27px;
+
+  @include for-desktop-up {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
 
   .headerInner {
     padding: 5px 0;
     height: 100%;
-    @include for-tablet-landscape-up {
+    @include for-desktop-up {
       height: 60px;
     }
   }
@@ -226,13 +234,14 @@ $header-logo-color: var(--header-logo-color, $primary);
 
   .collapsedLogoContainer {
     display: flex;
-    @include for-tablet-landscape-up {
+    @include for-desktop-up {
       margin-left: -4.17vw;
       margin-right: 4.17vw;
     }
 
-    img {
+    svg {
       width: 20px;
+      margin-top: -2px;
     }
 
     span {
@@ -242,7 +251,20 @@ $header-logo-color: var(--header-logo-color, $primary);
       color: $header-link-color;
       font-size: 18px;
       font-weight: bold;
-      padding-left: 15px;
+      padding-left: 10px;
+      margin-top: 2px;
+    }
+  }
+
+  .nestedNavContainer {
+    transition: none;
+    display: flex;
+    left: 0;
+    top: 35px;
+
+    @include for-desktop-up {
+      top: 0;
+      left: 16.66vw;
     }
   }
 
@@ -252,11 +274,6 @@ $header-logo-color: var(--header-logo-color, $primary);
       align-items: center;
       padding-top: 0px !important;
       padding-bottom: 0px;
-    }
-
-    .nestedNavContainer {
-      display: flex;
-      left: 16.66vw;
     }
 
     .primaryNavList {

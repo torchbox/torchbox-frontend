@@ -81,13 +81,13 @@ class Header extends React.Component {
                             : styles.nestedNavItem
                         }
                       >
-                        <Link
+                        <a
                           className={styles.nestedNavLink}
                           onClick={link.onClick}
-                          to={link.href}
+                          href={link.href}
                         >
                           {link.title}
-                        </Link>
+                        </a>
                       </li>
                     ))}
                   </ul>

@@ -1,6 +1,7 @@
 @import '../../styles/app.module';
 
 .page {
+  padding-top: 230px !important;
 
   &FilterTags {
     @include container;
@@ -15,7 +16,7 @@
     @include for-tablet-landscape-up {
       padding: 0 16.66vw;
     }
-    margin-top: 125px;
+    margin-top: 70px !important;
 
     &Link {
       display: block;

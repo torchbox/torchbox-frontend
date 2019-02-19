@@ -38,21 +38,20 @@ class CaseStudiesBlock extends React.Component {
                       {caseStudy.description}
                     </p>
                   </div>
-                  <FragCluster className={styles.caseStudyClusterIcon} />
                 </div>
 
                 <div className={styles.caseStudyImage}>
-                  <img
-                    ref={ref => (img = ref)}
-                    src={
-                      caseStudy.feedImage ||
-                      caseStudy.homepageImage ||
-                      require('@images/default-featured.png')
-                    }
-                    onError={() => {
-                      img.src = require('@images/default-featured.png')
-                    }}
-                  />
+                  <FragCluster className={styles.caseStudyClusterIcon} />
+                  <div
+                    className={styles.caseStudyImageInner}
+                    style={{
+                      backgroundImage: `
+                        url(${caseStudy.feedImage}), 
+                        url(${caseStudy.homepageImage}),
+                        url(${require('../../images/default-featured.png')})
+                      `
+                    }}>
+                  </div>
                 </div>
               </Link>
             )

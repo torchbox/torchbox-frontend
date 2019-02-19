@@ -6,8 +6,12 @@ import { renderTorchUp } from '@utils/torchup'
 // Styles
 import styles from './title-block.module.scss'
 
-const TitleBlock = ({ title, className }) => (
-  <div className={[styles.block, className].join(' ')}>
+const TitleBlock = ({ title, className, onMouseEnter, onMouseLeave }) => (
+  <div
+    onMouseEnter={onMouseEnter}
+    onMouseLeave={onMouseLeave}
+    className={[styles.block, className].join(' ')}
+  >
     <h1 className={styles.blockTitle} {...renderTorchUp(title)} />
   </div>
 )
@@ -15,6 +19,8 @@ const TitleBlock = ({ title, className }) => (
 TitleBlock.propTypes = {
   title: PropTypes.string,
   className: PropTypes.string,
+  onMouseEnter: PropTypes.func,
+  onMouseLeave: PropTypes.func,
 }
 
 TitleBlock.defaultProps = {

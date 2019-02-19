@@ -67,6 +67,7 @@ BlogPostPage.defaultProps = {
   caseStudies: [],
   teasers: [],
   contact: {},
+  extraBlogPosts: []
 }
 
 export default BlogPostPage
