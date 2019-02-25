@@ -21,6 +21,7 @@ const CaseStudyContainer = ({ data }) => {
   let extraCaseStudies = data.wagtail.extraCaseStudies
 
   if (extraCaseStudies) {
+    // Limit done client side == bad (Karl to fix his limiting on BE)
     extraCaseStudies = extraCaseStudies.map(caseStudyListing).slice(0, 4)
   }
 
@@ -87,7 +88,7 @@ export const query = graphql`
         }
       }
 
-      extraCaseStudies: caseStudies(limit: 4) {
+      extraCaseStudies: caseStudies {
         slug
         title
         client
