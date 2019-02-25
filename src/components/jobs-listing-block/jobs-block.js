@@ -25,8 +25,10 @@ class JobsBlock extends React.Component {
                 target="_blank "
               >
                 <h3 className={styles.blockJobLinkTitle}>{job.title}</h3>
-                <h4 className={styles.blockJobLinkLevel}>{job.level}</h4>
-                <h5 className={styles.blockJobLinkLocation}>{job.location}</h5>
+                <span className={styles.blockJobLinkLevel}>{job.level}</span>
+                <span className={styles.blockJobLinkLocation}>
+                  {job.location}
+                </span>
               </a>
             ))}
           </div>

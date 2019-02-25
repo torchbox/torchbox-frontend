@@ -49,9 +49,9 @@ class CaseStudiesBlock extends React.Component {
                         url(${caseStudy.feedImage}), 
                         url(${caseStudy.homepageImage}),
                         url(${require('../../images/default-featured.png')})
-                      `
-                    }}>
-                  </div>
+                      `,
+                    }}
+                  />
                 </div>
               </Link>
             )

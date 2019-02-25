@@ -51,6 +51,11 @@
             grid-column-gap: 8.33vw;
         }
         padding-bottom: 50px;
+
+        @include target-ie {
+            display: flex;
+            flex-direction: column;
+        }
     }
 }
 

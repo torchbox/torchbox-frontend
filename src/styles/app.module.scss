@@ -8,8 +8,5 @@
 @import 'typography';
 @import 'themes';
 @import 'global';
+@import 'mixins';
 @import 'base-page';
-
-.logo_svg__flame {
-  fill: red !important;
-}

@@ -125,11 +125,8 @@ $header-logo-color: var(--header-logo-color, $primary);
     padding-top: 15px;
     display: none;
 
-    @include for-tablet-landscape-up {
-      display: block;
-    }
-
     @include for-desktop-up {
+      display: block;
       padding-top: 10px;
     }
   }
@@ -153,7 +150,7 @@ $header-logo-color: var(--header-logo-color, $primary);
 
   &Container {
     display: block;
-    @include for-tablet-landscape-up {
+    @include for-desktop-up {
       display: none;
     }
   }
@@ -193,11 +190,15 @@ $header-logo-color: var(--header-logo-color, $primary);
     @extend .primaryNavList;
     display: flex;
     flex-direction: column;
-    padding: 40px 20px;
-    margin: 40px 0 0;
+    padding: 100px 8.33vw 0 8.33vw;
 
     li {
       margin-left: 0 !important;
+      &:last-child {
+        a {
+          border-bottom: none !important;
+        }
+      }
     }
   }
 

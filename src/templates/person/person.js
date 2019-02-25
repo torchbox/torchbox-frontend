@@ -12,29 +12,20 @@ import { blogsUrl, teamUrl } from '@utils/urls'
 // Styles
 import styles from './person.module.scss'
 
-
 class PersonPage extends React.Component {
-
   constructor(props) {
     super(props)
     this.state = {
-      title: `${props.firstName + ' ' + props.lastName || ''} [${props.intro || ''}]`,
-      altTitle: `${props.firstName + ' ' + props.lastName || ''} [${props.altIntro}]`,
+      title: `${props.firstName + ' ' + props.lastName || ''} [${props.intro ||
+        ''}]`,
+      altTitle: `${props.firstName + ' ' + props.lastName ||
+        ''} [${props.altIntro || ''}]`,
     }
   }
 
   render() {
-    const {
-      title,
-      altTitle
-    } = this.state
-    const {
-      firstName,
-      role,
-      avatar,
-      biography,
-      blogs,
-    } = this.props
+    const { title, altTitle } = this.state
+    const { firstName, role, avatar, biography, blogs } = this.props
 
     return (
       <div className={styles.page}>
@@ -45,14 +36,18 @@ class PersonPage extends React.Component {
             href={teamUrl()}
           />
           <TitleBlock
-            onMouseEnter={() => this.setState({
-              title: altTitle,
-              altTitle: title
-            })}
-            onMouseLeave={() => this.setState({
-              title: altTitle,
-              altTitle: title
-            })}
+            onMouseEnter={() =>
+              this.setState({
+                title: altTitle,
+                altTitle: title,
+              })
+            }
+            onMouseLeave={() =>
+              this.setState({
+                title: altTitle,
+                altTitle: title,
+              })
+            }
             className={styles.pageTitle}
             title={this.state.title}
           />
@@ -62,7 +57,7 @@ class PersonPage extends React.Component {
               className={styles.pageAvatarIcon}
               src={require('@images/icons/frag.png')}
             />
-            <img className={styles.pageAvatarImage} src={avatar}/>
+            <img className={styles.pageAvatarImage} src={avatar} />
           </div>
         </div>
         <StreamfieldBlock
@@ -76,11 +71,10 @@ class PersonPage extends React.Component {
           showFeatured={false}
           listingUrl={null}
         />
-        <Contact className={styles.pageContact}/>
+        <Contact className={styles.pageContact} />
       </div>
     )
   }
-
 }
 
 PersonPage.propTypes = {

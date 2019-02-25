@@ -11,6 +11,7 @@ import ThemeContext from '@context/theme-context'
 import { safeGet } from '@utils/safeget'
 import { blogsUrl, caseStudiesUrl, teamUrl } from '@utils/urls'
 // Styles
+import '@styles/_fonts.scss'
 import styles from './layout.module.scss'
 
 class Layout extends React.Component {

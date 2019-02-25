@@ -50,8 +50,7 @@
     width: 75vw;
     margin-left: 1vw;
 
-    padding-top: 20px;
-    padding-bottom: 10px;
+    padding: 25px 0;
     @include for-desktop-up {
       padding-top: 60px;
       padding-bottom: 40px;
@@ -148,13 +147,13 @@
       display: block;
       position: absolute;
       left: 6vw;
-      top: 2px;
+      top: -3px;
       width: 12px;
       height: 30px;
       margin-right: 20px;
       background-color: $accent;
-      -webkit-mask: url("../../images/icons/chevron.svg") no-repeat center;
-      -webkit-mask-size: contain;
+      mask: url("../../images/icons/chevron.svg") no-repeat center;
+      mask-size: contain;
     }
   }
 

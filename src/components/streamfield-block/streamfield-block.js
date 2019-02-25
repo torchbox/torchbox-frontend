@@ -122,15 +122,18 @@ class StreamfieldBlock extends React.Component {
               )
 
             case 'raw_html':
-              return <div 
-              className={styles.streamfieldRaw}
-              dangerouslySetInnerHTML={{ __html: block.value }} />
+              return (
+                <div
+                  className={styles.streamfieldRaw}
+                  dangerouslySetInnerHTML={{ __html: block.value }}
+                />
+              )
 
             case 'markdown':
               return null
 
             default:
-              console.log('Unknown Streamfield Block: ', block.type)
+              // console.log('Unknown Streamfield Block: ', block.type)
               return null
           }
         })}

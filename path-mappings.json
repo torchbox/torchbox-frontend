@@ -4,5 +4,6 @@
   "@images": "./src/images",
   "@utils": "./src/utils",
   "@context": "./src/context",
-  "@templates": "./src/templates"
+  "@templates": "./src/templates",
+  "@styles": "./src/styles"
 }

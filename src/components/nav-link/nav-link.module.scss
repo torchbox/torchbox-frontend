@@ -17,38 +17,39 @@ $header-link-color: var(--header-link-color, $primary);
 
 .navLink {
   display: block;
-  height: 40px;
   position: relative;
 
   line-height: 20px;
   font-family: $mainFont;
   text-decoration: none;
   border-bottom: none;
-  transition: all 0.2s ease;
 
   color: white;
-  margin-bottom: 20px !important;
   margin-right: 0;
   padding: 30px 0;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1) !important;
+  @include navlink-underscore(0);
 
-  @include for-tablet-landscape-up {
+  @include for-desktop-up {
+    height: 40px;
     color: $header-link-color;
+    border-bottom: none !important;
     margin-right: 70px;
     margin-bottom: 0;
     padding: 0 0 0px;
+    transition: all 0.2s ease;
   }
 
-  @include navlink-underscore(0);
-
   &:hover {
-    @include for-tablet-landscape-up {
+    color: $accent;
+    @include for-desktop-up {
       @include navlink-underscore(4);
     }
   }
 
   &.active {
     border-bottom: none;
-    @include for-tablet-landscape-up {
+    @include for-desktop-up {
       @include navlink-underscore(4);
     }
   }
@@ -61,7 +62,7 @@ $header-link-color: var(--header-link-color, $primary);
     line-height: 24px;
     font-family: $mainFont;
     margin: 5px 0 5px;
-    @include for-tablet-landscape-up {
+    @include for-desktop-up {
       font-size: 18px;
     }
   }
@@ -76,7 +77,7 @@ $header-link-color: var(--header-link-color, $primary);
     color: $link-badge-color;
     z-index: 5;
 
-    @include for-tablet-landscape-up {
+    @include for-desktop-up {
       position: absolute;
       top: -10px;
       right: -25px;

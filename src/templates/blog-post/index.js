@@ -8,7 +8,12 @@ import Layout from '@components/layout'
 import BlogPostPage from './blog-post'
 // Utilities
 import { blogsUrl } from '@utils/urls'
-import { blogListing, authorDetails, postTags, readTime } from '@utils/selectors'
+import {
+  blogListing,
+  authorDetails,
+  postTags,
+  readTime,
+} from '@utils/selectors'
 
 const BlogPostContainer = ({ data }) => {
   const page = data.wagtail.blogPosts[0]

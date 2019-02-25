@@ -9,10 +9,20 @@ import CaseStudy from './case-study'
 // Utilities
 import { caseStudiesUrl } from '@utils/urls'
 import { safeGet } from '@utils/safeget'
-import { authorDetails, postTags, readTime } from '@utils/selectors'
+import {
+  authorDetails,
+  postTags,
+  readTime,
+  caseStudyListing,
+} from '@utils/selectors'
 
 const CaseStudyContainer = ({ data }) => {
   const page = data.wagtail.caseStudies[0]
+  let extraCaseStudies = data.wagtail.extraCaseStudies
+
+  if (extraCaseStudies) {
+    extraCaseStudies = extraCaseStudies.map(caseStudyListing).slice(0, 4)
+  }
 
   const homepageImageSrc = safeGet(page, 'homepageImage.src.url', null)
   const feedImageSrc = safeGet(
@@ -38,6 +48,7 @@ const CaseStudyContainer = ({ data }) => {
         tags={postTags(page.tags, caseStudiesUrl('#filter='))}
         contact={page.contact}
         readTime={readTime(page.bodyWordCount) || 0}
+        caseStudies={extraCaseStudies}
       />
     </Layout>
   )
@@ -73,6 +84,33 @@ export const query = graphql`
         bodyWordCount
         contact {
           ...contactSnippet
+        }
+      }
+
+      extraCaseStudies: caseStudies(limit: 4) {
+        slug
+        title
+        client
+        listingSummary
+        tags: relatedServices {
+          name
+          slug
+        }
+        authors {
+          name
+          role
+          personPage {
+            slug
+            image {
+              ...iconImage
+            }
+          }
+        }
+        feedImage {
+          ...fullImage
+        }
+        homepageImage {
+          ...fullImage
         }
       }
     }

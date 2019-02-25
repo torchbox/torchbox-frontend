@@ -1,4 +1,5 @@
 const pathMappings = require('./path-mappings.json')
+var browserslist = require('browserslist')
 
 module.exports = function (api) {
   api.cache(true)
@@ -9,7 +10,7 @@ module.exports = function (api) {
         "babel-preset-gatsby",
         {
           "targets": {
-            "browsers": [">0.25%", "not dead"]
+            "browsers": browserslist()
           }
         }
       ]

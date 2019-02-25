@@ -5,13 +5,15 @@
     &SliderBlock {
         display: grid;
         grid-template-columns: auto 1fr;
-        grid-column-gap: 50px;
+        grid-template-rows: auto auto;
     }
 
     &Icon {
         fill: $accent;
-        width: 20vw;
+        width: calc(20vw - 50px);
         max-width: 100px;
+        grid-column: 1;
+        grid-row: 1;
         @include for-tablet-landscape-up {
             max-width: none;
             width: 8.33vw;
@@ -23,6 +25,8 @@
         position: relative;
         grid-column-start: span 2;
         margin-top: 20px;
+        grid-column: 2;
+        grid-row: 1;
         @include for-tablet-landscape-up {
             margin-top: 0px;
             grid-column-start: 2;
@@ -30,6 +34,7 @@
 
         &Bullets {
             grid-column: span 2;
+            grid-row: 2;
             margin-top: 30px;
             transition: 0.2s all ease;
             display: flex;
@@ -70,6 +75,11 @@
         grid-column: 1;
         grid-row: 1;
         opacity: 0;
+        padding-left: 35px;
+
+        @include for-tablet-landscape-up {
+            padding-left: 50px;
+        }
 
         &Active {
             @extend .quoteSlide;
@@ -81,13 +91,13 @@
             margin: 0 0 20px;
             padding: 0 0 0;
             color: $primary;
-            font-size: 26px;
-            line-height: 46px;
-            padding-right: 8.33vw;
 
-            @include for-phone-only {
-                font-size: 22px;
-                line-height: 38px;
+            font-size: 22px;
+            line-height: 38px;
+            @include for-desktop-up {
+                font-size: 26px;
+                line-height: 46px;    
+                padding-right: 8.33vw;
             }
 
             &::after {
@@ -108,24 +118,25 @@
                 flex-direction: row;
             }
 
-            &Author {
+            &Name {
                 font-weight: bold;
                 padding-right: 8px;
                 text-transform: uppercase;
                 color: $accent;
                 margin-bottom: 5px;
                 letter-spacing: 0.15em;
+            }
 
-                &::after {
+            &Role {
+                &::before {
                     @include for-tablet-landscape-up {
                         width: 10px;
                         content: '|';
                         color: rgba(black, 0.2);
                         font-weight: 100;
-                        padding-left: 10px;
+                        padding-right: 10px;
                     }
                 }
-
             }
         }
     }

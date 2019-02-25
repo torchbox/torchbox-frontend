@@ -28,29 +28,31 @@ class QuoteSlider extends React.Component {
               >
                 <p className={styles.quoteSlideQuote}>{quote.quote}</p>
                 <cite className={styles.quoteSlideCite}>
-                  <span className={styles.quoteSlideCiteAuthor}>
+                  <span className={styles.quoteSlideCiteName}>
                     {quote.name}
                   </span>
-                  {quote.role}
+                  <span className={styles.quoteSlideCiteRole}>
+                    {quote.role}
+                  </span>
                 </cite>
               </blockquote>
             ))}
           </div>
         </div>
         {quotes.length > 1 ? (
-            <ul className={styles.quoteSliderBullets}>
-              {quotes.map((quote, index) => (
-                <li
-                  key={`quote-bullet-${index}`}
-                  onClick={() => this.changeSlide(index)}
-                  className={
-                    index == currentIndex
-                      ? styles.quoteSliderBulletActive
-                      : styles.quoteSliderBullet
-                  }
-                />
-              ))}
-            </ul>
+          <ul className={styles.quoteSliderBullets}>
+            {quotes.map((quote, index) => (
+              <li
+                key={`quote-bullet-${index}`}
+                onClick={() => this.changeSlide(index)}
+                className={
+                  index == currentIndex
+                    ? styles.quoteSliderBulletActive
+                    : styles.quoteSliderBullet
+                }
+              />
+            ))}
+          </ul>
         ) : null}
       </div>
     )

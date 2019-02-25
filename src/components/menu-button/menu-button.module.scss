@@ -13,7 +13,7 @@ $header-icon-color: var(--header-icon-color, $primary);
   text-align: center;
   z-index: 999;
   cursor: pointer;
-  @include for-tablet-landscape-up {
+  @include for-desktop-up {
     display: none;
   }
 

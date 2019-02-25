@@ -1,3 +1,12 @@
+// IE11 Fallback theme
+:root {
+  --color-primary: #{$dark-blue};
+  --color-accent: #{$coral};
+  --color-link: #{$light-blue};
+  --color-link-hover: #{$light-blue};
+  --color-link-badge:white;
+}
+
 .lightTheme {}
 
 .darkTheme {

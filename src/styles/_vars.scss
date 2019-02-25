@@ -8,11 +8,12 @@ $grey: #444;
 $green: #3BECCD;
 $dark-grey: #444;
 
-$primary: var(--color-primary, #{$dark-blue});
-$accent: var(--color-accent, #{$coral});
-$link-color: var(--color-link, #{$light-blue});
-$link-hover-color: var(--color-link-hover, #{$light-blue});
-$link-badge-color: var(--color-link-badge, white);
+// Theme Vars (For good browsers that support CSS Vars)
+$primary: var(--color-primary);
+$accent: var(--color-accent);
+$link-color: var(--color-link);
+$link-hover-color: var(--color-link-hover);
+$link-badge-color: var(--color-link-badge);
 
 // Fonts
 $mainFont: 'Apercu Pro';

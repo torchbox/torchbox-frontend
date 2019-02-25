@@ -69,8 +69,8 @@ class ServicePage extends React.Component {
         const { y } = el.getBoundingClientRect()
 
         // Set element as active in the navbar when it's 25% up screen
-        if ( y + 0.1*(window.innerHeight) < window.innerHeight) {
-            this.setState({ activeSectionTitle: sectionRef.title })
+        if (y + 0.1 * window.innerHeight < window.innerHeight) {
+          this.setState({ activeSectionTitle: sectionRef.title })
         }
       }
     })

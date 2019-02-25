@@ -4,6 +4,11 @@
   "description": "The client facing gatsby frontend for tbx.com (Connects to Wagtail CMS instance via GraphQL)",
   "version": "0.1.0",
   "author": "Nathan Horrigan <Nathan.Horrigan@torchbox.com>",
+  "browsers": [
+    ">0.25%",
+    "ie > 10",
+    "not dead"
+  ],
   "dependencies": {
     "@babel/plugin-syntax-export-default-from": "^7.2.0",
     "@sambego/storybook-state": "^1.3.2",
@@ -12,10 +17,12 @@
     "@storybook/addon-viewport": "^4.1.4",
     "@svgr/webpack": "^4.1.0",
     "animate-scss": "^3.2.1",
+    "autoprefixer": "^9.4.8",
     "babel-plugin-module-resolver": "^3.2.0",
     "babel-preset-gatsby": "^0.1.7",
     "breakpoint-sass": "^2.7.1",
     "css-loader": "^2.1.0",
+    "css-vars-ponyfill": "^1.16.4",
     "dayjs": "^1.8.0",
     "gatsby": "^2.0.98",
     "gatsby-image": "^2.0.20",
@@ -24,11 +31,9 @@
     "gatsby-plugin-react-helmet": "^3.0.2",
     "gatsby-plugin-react-svg": "^2.0.0-beta1",
     "gatsby-plugin-sass": "^2.0.7",
-    "gatsby-plugin-sharp": "^2.0.14",
     "gatsby-plugin-svgr": "^2.0.1",
     "gatsby-source-filesystem": "^2.0.8",
     "gatsby-source-graphql": "^2.0.8",
-    "gatsby-transformer-sharp": "^2.1.12",
     "node-sass": "^4.11.0",
     "prop-types": "^15.6.2",
     "query-string": "^6.2.0",
@@ -41,6 +46,7 @@
     "resolve-url-loader": "^3.0.0",
     "sass-loader": "^7.1.0",
     "scroll-into-view": "^1.9.3",
+    "smartquotes": "^2.3.1",
     "style-loader": "^0.23.1"
   },
   "keywords": [

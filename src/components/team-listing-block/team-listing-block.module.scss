@@ -10,17 +10,8 @@
     }
 
     &PersonList {
-        display: grid;
-        grid-template-columns: repeat(1 , 1fr);
-        @include for-tablet-portrait-up {
-            grid-template-columns: repeat(2, 1fr);
-        }
-        @include for-tablet-landscape-up {
-            grid-template-columns: repeat(3, 1fr);
-        }
-        @include for-desktop-up {
-            grid-template-columns: repeat(4, 1fr);
-        }
+        display: flex;
+        flex-wrap: wrap;
     }
 
     &PersonLink {
@@ -28,6 +19,17 @@
         padding-bottom: 50px;
         text-decoration: none;
         border-bottom: none;
+
+        width: 100%;
+        @include for-tablet-portrait-up {
+            width: 50%;
+        }
+        @include for-tablet-landscape-up {
+            width: 33.333%;
+        }
+        @include for-desktop-up {
+            width: 25%;
+        }
 
         &Avatar {
             width: 100%;

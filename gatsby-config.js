@@ -1,3 +1,6 @@
+var autoprefixer = require('autoprefixer')
+var browserslist = require('browserslist')
+
 module.exports = {
   siteMetadata: {
     title: `Torchbox`,
@@ -5,7 +8,18 @@ module.exports = {
     author: `@Torchbox`,
   },
   plugins: [
-    `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        includePaths: ['./src/fonts/'],
+        postCssPlugins: [
+          autoprefixer({
+            grid: 'autoplace',
+            browsers: browserslist()
+          }),
+        ]
+      }
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -14,8 +28,6 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -48,8 +60,6 @@ module.exports = {
         },
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
   ],
 }

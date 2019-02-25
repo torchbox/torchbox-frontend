@@ -36,6 +36,11 @@
             padding-bottom: 5vh;
 
             @include for-tablet-landscape-up {
+                font-size: 90px;
+                line-height: 90px;
+            }
+
+            @include for-desktop-up {
                 font-size: 100px;
                 line-height: 100px;
                 margin: 0 8.33vw 20px 16.66vw;
@@ -90,18 +95,21 @@
             line-height: 50px;
         }
     }
-
+    
     &Links {
         @include container;
-        display: grid;
+        display: flex;
+        flex-direction: column;
 
         padding-top: 40px;
         @include for-tablet-landscape-up {
             padding: 40px 0 0 16.66vw;
-            grid-template-columns: auto auto;
+            flex-direction: row;
         }
 
         &Teaser {
+            display: block;
+            width: 100%;
             background-color: $light-grey;
 
             h1 {
