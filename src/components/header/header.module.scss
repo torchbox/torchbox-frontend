@@ -76,7 +76,7 @@ $header-logo-color: var(--header-logo-color, $primary);
     font-family: $mainFont;
     text-decoration: none;
     border-bottom: none;
-    height: calc(100% - 2px);
+    height: 100%;;
 
     @include for-desktop-up {
       font-size: 15px;

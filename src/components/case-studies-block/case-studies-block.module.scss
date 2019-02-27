@@ -27,6 +27,10 @@
             }
         }
 
+        * {
+            box-sizing: content-box;
+        }
+
         @include for-tablet-landscape-up {
             flex-direction: row;
             background-size: cover;
@@ -177,10 +181,12 @@
                 display: block;
                 position: absolute;
                 width: 80px;
+                height: 133px;
                 z-index: 100;
                 transform: rotate(0deg);
                 top: -70px;
                 left: 220px;
+
                 * {
                     fill: $accent;
                 }

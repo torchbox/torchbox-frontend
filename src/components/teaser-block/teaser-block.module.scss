@@ -52,19 +52,14 @@
             }
             margin: 0;
 
-            &::after {
-                position: absolute;
-                content: '';
+            &Icon {
                 width: 20px;
                 height: 30px;
                 margin-top: 3px;
                 margin-left: 10px;
-                background-color: $green;
-                -webkit-mask: url("../../images/icons/chevron.svg") no-repeat center;
-                -webkit-mask-size: contain;
-
+                fill: $green;
                 @include for-tablet-landscape-up {
-                    margin-top: 7px;
+                    margin-top: 8px;
                 }
             }
         }

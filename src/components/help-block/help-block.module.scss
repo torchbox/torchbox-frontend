@@ -57,10 +57,8 @@
                 transform: rotate(30deg);
                 width: 18px;
                 height: 18px;
-                background-color: $accent;
-                -webkit-mask: url("../../images/icons/tick.svg") no-repeat center;
-                -webkit-mask-size: contain;
                 margin-top: 20px;
+                fill: $accent;
                 @include for-tablet-landscape-up {
                     width: 22px;
                     height: 22px;

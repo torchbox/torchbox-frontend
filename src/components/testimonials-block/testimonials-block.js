@@ -21,7 +21,9 @@ class TestimonialsBlock extends React.Component {
                   key={`logo-${index}`}
                   className={styles.testimonialsIconsItem}
                 >
-                  <img src={logo.image.url} aria-label={logo.label} />
+                  <div>
+                    <img src={logo.image.url} aria-label={logo.label} />
+                  </div>
                 </li>
               ))}
             </ul>

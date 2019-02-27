@@ -91,7 +91,7 @@ export default ({ data, pageContext }) => {
                   title: page.headingForProcesses || '',
                 },
               }
-            : page.processes
+            : page.processes.length
             ? {
                 type: 'process-block',
                 data: {

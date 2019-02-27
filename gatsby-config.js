@@ -8,6 +8,9 @@ module.exports = {
     author: `@Torchbox`,
   },
   plugins: [
+    `gatsby-plugin-remove-trailing-slashes`,
+    `gatsby-plugin-react-helmet`,
+    // 'gatsby-plugin-offline',
     {
       resolve: `gatsby-plugin-sass`,
       options: {
@@ -20,7 +23,6 @@ module.exports = {
         ]
       }
     },
-    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -60,6 +62,11 @@ module.exports = {
         },
       },
     },
-    // 'gatsby-plugin-offline',
+    {
+      resolve: `gatsby-plugin-compile-es6-packages`,
+      options: {
+        modules: [`query-string`, `strict-uri-encode`]
+      }
+    },
   ],
 }

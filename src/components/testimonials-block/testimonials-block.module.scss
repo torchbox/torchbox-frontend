@@ -18,37 +18,39 @@
     &Icons {
 
         &List {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
             padding-bottom: 100px;
-
-            display: grid;
-            grid-template-columns: repeat(3, auto);
-            @include for-tablet-landscape-up {
-                grid-template-columns: repeat(4, auto);
-            }
-            @include for-desktop-up {
-                grid-template-columns: repeat(6, auto);
-            }
         }
 
         &Item {
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 20px;
-
+            
+            width: calc(100% / 3);
             @include for-tablet-landscape-up {
-                padding: 40px;
+                width: calc(100% / 4);
+            }
+            @include for-desktop-up {
+                width: calc(100% / 6);
             }
 
-            @include for-desktop-up {
-                padding: 50px;
+            div {
+                padding: 20px;
+                @include for-tablet-landscape-up {
+                    padding: 40px;
+                }
+                @include for-desktop-up {
+                    padding: 50px;
+                }
             }
 
             img {
                 width: 100%;
                 height: 100%;
             }
-
         }
     }
 
@@ -57,4 +59,3 @@
     }
 
 }
-

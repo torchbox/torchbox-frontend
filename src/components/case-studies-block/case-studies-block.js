@@ -18,7 +18,7 @@ class CaseStudiesBlock extends React.Component {
           <span className={styles.pageSectionTitle}>{sectionTitle}</span>
         ) : null}
         <div className={styles.blockList}>
-          {caseStudies.map((caseStudy, index) => {
+          {(caseStudies || []).map((caseStudy, index) => {
             let img = React.createRef()
             return (
               <Link

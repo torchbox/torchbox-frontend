@@ -63,6 +63,10 @@
         height: 23px;
         font-weight: bold;
         border-bottom: 2px solid $green;
+        color: $dark-blue;
+        &:hover {
+            color: $dark-blue;
+        }
     }
 
     &Image {

@@ -114,9 +114,11 @@
             flex-direction: row;
             justify-content: center;
             flex-wrap: wrap;
+
             @include for-tablet-portrait-up {
                 flex-direction: row;
                 justify-content: flex-start;
+                padding-left: 20px;
             }
 
             div {
@@ -145,8 +147,6 @@
         }
 
         &Image {
-            margin-right: 20px !important;
-            padding-bottom: 20px;
             @include for-phone-only {
                 margin-top: 20px;
             }
