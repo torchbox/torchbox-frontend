@@ -8,6 +8,7 @@ import styles from './testimonials-block.module.scss'
 
 class TestimonialsBlock extends React.Component {
   render() {
+    console.log(this.props.logos);
     const { testimonials, logos, className, sectionTitle } = this.props
     return (
       <div className={[styles.testimonials, className].join(' ')}>
@@ -21,7 +22,7 @@ class TestimonialsBlock extends React.Component {
                   key={`logo-${index}`}
                   className={styles.testimonialsIconsItem}
                 >
-                  <img src={logo.image.url} aria-label={logo.label} />
+                  <img src={logo.image.url} aria-label={logo.label} alt={logo.label} />
                 </li>
               ))}
             </ul>
