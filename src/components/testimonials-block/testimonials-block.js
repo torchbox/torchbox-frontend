@@ -8,7 +8,6 @@ import styles from './testimonials-block.module.scss'
 
 class TestimonialsBlock extends React.Component {
   render() {
-    console.log(this.props.logos);
     const { testimonials, logos, className, sectionTitle } = this.props
     return (
       <div className={[styles.testimonials, className].join(' ')}>

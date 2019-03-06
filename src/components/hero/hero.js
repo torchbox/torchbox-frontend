@@ -39,11 +39,15 @@ const Hero = ({
           <div className={styles.heroLinksContainer}>
             <ul className={styles.heroLinksList}>
               {links.map((link, index) => (
-                <li key={`hero-link-${index}`} className={styles.heroLinksItem}>
-                  <a onClick={link.onClick} href={link.href}>
-                    {link.title}
-                  </a>
-                </li>
+                <>
+                { link.title ? (
+                  <li key={`hero-link-${index}`} className={styles.heroLinksItem}>
+                    <a onClick={link.onClick} href={link.href}>
+                      {link.title}
+                    </a>
+                  </li>
+                ) : null }
+                </>
               ))}
             </ul>
           </div>
