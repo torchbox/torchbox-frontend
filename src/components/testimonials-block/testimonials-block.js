@@ -20,7 +20,9 @@ class TestimonialsBlock extends React.Component {
                 <li
                   key={`logo-${index}`}
                   className={styles.testimonialsIconsItem}
-                >
+                > 
+                  // to do: this should work with logo.image.alt instead of logo.labl but for some reason
+                  // it is not being passed down through the props.
                   <img src={logo.image.url} aria-label={logo.label} alt={logo.label} />
                 </li>
               ))}
