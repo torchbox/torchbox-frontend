@@ -56,8 +56,8 @@ class Header extends React.Component {
                 </div>
               )}
 
-              <div className={styles.primaryNavContainer}>
-                <ul className={styles.primaryNavList} role="navigation" aria-label="Main navigation">
+              <nav className={styles.primaryNavContainer} aria-label="Main navigation">
+                <ul className={styles.primaryNavList}>
                   {links.map((link, index) => (
                     <li key={`primary-nav-link-${index}`}>
                       <NavLink
@@ -68,11 +68,11 @@ class Header extends React.Component {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </nav>
 
               {nestedLinks != null ? (
-                <div className={styles.nestedNavContainer}>
-                  <ul className={styles.nestedNavList} role="navigation" aria-label="In page navigation">
+                <nav className={styles.nestedNavContainer} aria-label="In page navigation">
+                  <ul className={styles.nestedNavList}>
                     {nestedLinks.map((link, index) => (
                       <>
                         {link.title ? (
@@ -96,7 +96,7 @@ class Header extends React.Component {
                       </>
                     ))}
                   </ul>
-                </div>
+                </nav>
               ) : null}
 
               <MenuButton
@@ -109,14 +109,15 @@ class Header extends React.Component {
             </div>
 
             <div className={styles.mobileNavContainer}>
-              <div
+              <nav
                 className={
                   this.state.mobileNavOpen
                     ? styles.mobileNavModalOpen
                     : styles.mobileNavModal
                 }
+                aria-label="Mobile navigation"
               >
-                <ul className={styles.mobileNavList} role="navigation" aria-label="Mobile navigation">
+                <ul className={styles.mobileNavList}>
                   {links.map((link, index) => (
                     <li
                       key={`mobile-nav-link-${index}`}
@@ -130,7 +131,7 @@ class Header extends React.Component {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </nav>
             </div>
           </div>
         )}
