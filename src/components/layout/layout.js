@@ -60,37 +60,37 @@ class Layout extends React.Component {
                   this.setState({ currentUrl: url })
                 }}
               />
-              <div className={styles.pageContainer}>
-                {children}
-                <TeaserBlock
-                  title={`More from Torchbox...`}
-                  ignoreSlug={ignoreServiceTeaser}
-                />
-                <Footer
-                  links={[
-                    {
-                      label: 'Blog',
-                      href: blogsUrl(),
-                    },
-                    {
-                      label: 'Work',
-                      href: caseStudiesUrl(),
-                    },
-                    {
-                      label: 'Team',
-                      href: teamUrl(),
-                    },
-                    {
-                      label: 'Privacy',
-                      href: '/privacy/',
-                    },
-                    {
-                      label: 'Cookies',
-                      href: '/cookies/',
-                    },
-                  ]}
-                />
-              </div>
+              <main className={styles.pageContainer}>
+              {children}
+              <TeaserBlock
+                title={`More from Torchbox...`}
+                ignoreSlug={ignoreServiceTeaser}
+              />
+              </main>
+              <Footer
+                links={[
+                  {
+                    label: 'Blog',
+                    href: blogsUrl(),
+                  },
+                  {
+                    label: 'Work',
+                    href: caseStudiesUrl(),
+                  },
+                  {
+                    label: 'Team',
+                    href: teamUrl(),
+                  },
+                  {
+                    label: 'Privacy',
+                    href: '/privacy/',
+                  },
+                  {
+                    label: 'Cookies',
+                    href: '/cookies/',
+                  },
+                ]}
+              />
             </div>
           </ThemeContext.Provider>
         )}

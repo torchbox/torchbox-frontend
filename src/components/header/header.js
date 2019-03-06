@@ -42,6 +42,7 @@ class Header extends React.Component {
               this.state.collapsed ? styles.collapsedHeader : styles.header,
               theme,
             ].join(' ')}
+             role="banner"
           >
             <div className={styles.headerInner}>
               {this.state.collapsed ? (
@@ -56,7 +57,7 @@ class Header extends React.Component {
               )}
 
               <div className={styles.primaryNavContainer}>
-                <ul className={styles.primaryNavList}>
+                <ul className={styles.primaryNavList} role="navigation" aria-label="Main navigation">
                   {links.map((link, index) => (
                     <li key={`primary-nav-link-${index}`}>
                       <NavLink
@@ -71,7 +72,7 @@ class Header extends React.Component {
 
               {nestedLinks != null ? (
                 <div className={styles.nestedNavContainer}>
-                  <ul className={styles.nestedNavList}>
+                  <ul className={styles.nestedNavList} role="navigation" aria-label="In page navigation">
                     {nestedLinks.map((link, index) => (
                       <li
                         key={`nested-nav-link-${index}`}
@@ -111,7 +112,7 @@ class Header extends React.Component {
                     : styles.mobileNavModal
                 }
               >
-                <ul className={styles.mobileNavList}>
+                <ul className={styles.mobileNavList} role="navigation" aria-label="Mobile navigation">
                   {links.map((link, index) => (
                     <li
                       key={`mobile-nav-link-${index}`}
