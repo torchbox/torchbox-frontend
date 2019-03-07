@@ -74,26 +74,22 @@ class Header extends React.Component {
                 <nav className={styles.nestedNavContainer} aria-label="In page navigation">
                   <ul className={styles.nestedNavList}>
                     {nestedLinks.map((link, index) => (
-                      <>
-                        {link.title ? (
-                          <li
-                            key={`nested-nav-link-${index}`}
-                            className={
-                              link.active
-                                ? styles.nestedNavItemActive
-                                : styles.nestedNavItem
-                            }
-                          >
-                            <a
-                            className={styles.nestedNavLink}
-                            onClick={link.onClick}
-                            href={link.href}
-                          >
-                              {link.title}
-                            </a>
-                          </li>
-                        ) : null }
-                      </>
+                      <li
+                        key={`nested-nav-link-${index}`}
+                        className={
+                          link.active
+                            ? styles.nestedNavItemActive
+                            : styles.nestedNavItem
+                        }
+                      >
+                        <a
+                        className={styles.nestedNavLink}
+                        onClick={link.onClick}
+                        href={link.href}
+                      >
+                          {link.title}
+                        </a>
+                      </li>
                     ))}
                   </ul>
                 </nav>
