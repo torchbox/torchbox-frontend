@@ -1,19 +1,21 @@
 // Colours
 $coral: #fd5765;
+$coral-dark: darken($coral, 20%);
 $light-blue: #2f128d;
 $blue: #251657;
 $dark-blue: #251657;
 $light-grey: #f4f3f6;
 $grey: #444;
 $green: #3BECCD;
+$green-dark: darken($green, 30%);
 $dark-grey: #444;
 
 // Theme Vars (For good browsers that support CSS Vars)
 $primary: var(--color-primary);
 $accent: var(--color-accent);
+$accent-small-text: var(--color-accent-small);
 $link-color: var(--color-link);
 $link-hover-color: var(--color-link-hover);
-$link-badge-color: var(--color-link-badge);
 
 // Fonts
 $mainFont: 'Apercu Pro';

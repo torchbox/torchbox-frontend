@@ -1,5 +1,8 @@
 @import '../../styles/app.module';
 
+// Theme overrides:
+$contact-number-color: var(--contact-number-color, $accent);
+
 .contactBlock {
     background-color: white;
     padding-top: 20px;
@@ -67,7 +70,8 @@
         line-height: 24px;
         text-decoration: none;
         font-size: 20px;
-        color: $accent !important;
+        font-weight: bold;
+        color: $contact-number-color !important;
         margin: 0px 15px 0 0;
         border-bottom: none;
         @include for-phone-only {
