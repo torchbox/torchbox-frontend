@@ -123,6 +123,7 @@ class ServicePage extends React.Component {
                     links={nestedNav}
                     greetingImageType={data.greetingImageType}
                     parentLink={data.parentLink}
+                    key={type}
                   />
                 )
 
@@ -134,6 +135,7 @@ class ServicePage extends React.Component {
                     links={data.links}
                     contact={data.contact}
                     sectionTitle={data.sectionTitle}
+                    key={type}
                   />
                 )
 
@@ -147,6 +149,7 @@ class ServicePage extends React.Component {
                     }))}
                     testimonials={data.testimonials}
                     sectionTitle={data.sectionTitle}
+                    key={type}
                   />
                 )
 
@@ -156,6 +159,7 @@ class ServicePage extends React.Component {
                     ref={this.sectionRefs[type].ref}
                     title={data.title}
                     sectionTitle={data.sectionTitle}
+                    key={type}
                   />
                 )
 
@@ -166,6 +170,7 @@ class ServicePage extends React.Component {
                     sectionTitle={data.sectionTitle}
                     title={data.title}
                     processes={data.processes}
+                    key={type}
                   />
                 )
 
@@ -176,6 +181,7 @@ class ServicePage extends React.Component {
                     caseStudies={data.caseStudies}
                     listingUrl={data.listingUrl}
                     sectionTitle={data.sectionTitle}
+                    key={type}
                   />
                 )
 
@@ -186,12 +192,13 @@ class ServicePage extends React.Component {
                     blogs={data.blogs}
                     listingUrl={data.listingUrl}
                     sectionTitle={data.sectionTitle}
+                    key={type}
                   />
                 )
 
               case 'contact-detailed':
                 return (
-                  <Contact className={styles.pageContact} {...data.contact} />
+                  <Contact className={styles.pageContact} {...data.contact} key={type} />
                 )
             }
           })}
