@@ -55,8 +55,8 @@
 
             &Icon {
                 transform: rotate(30deg);
-                width: 18px;
-                height: 18px;
+                width: 22px;
+                height: 22px;
                 margin-top: 20px;
                 fill: $accent;
                 @include for-tablet-landscape-up {
@@ -69,6 +69,7 @@
                 color: $primary !important;
                 font-family: $mainFont;
                 text-decoration: none;
+                font-size: 20px; 
                 line-height: 30px;
                 font-weight: 400;
 
@@ -84,9 +85,11 @@
                 }
 
                 &:hover {
-                    color: $light-blue !important;
-                    border-bottom: 2px solid $accent;
-                    font-weight: 800;
+                    @include for-tablet-landscape-up {
+                        color: $light-blue !important;
+                        border-bottom: 2px solid $accent;
+                        font-weight: 800;
+                    }
                 }
             }
         }

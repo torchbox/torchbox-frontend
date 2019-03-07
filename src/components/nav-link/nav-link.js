@@ -5,7 +5,16 @@ import PropTypes from 'prop-types'
 // Styles
 import styles from './nav-link.module.scss'
 
-const NavLink = ({ title, strap, badge, href, onClick, active, collapsed }) => (
+const NavLink = ({
+  title,
+  strap,
+  badge,
+  href,
+  onClick,
+  active,
+  collapsed,
+  dropdownLinks,
+}) => (
   <Link
     to={href}
     className={[
@@ -18,6 +27,15 @@ const NavLink = ({ title, strap, badge, href, onClick, active, collapsed }) => (
       {title}
       {badge != null ? <div className={styles.badge}>{badge}</div> : null}
     </div>
+    <div className={styles.dropdown}>
+      <ul>
+        {dropdownLinks.map(link => (
+          <li>
+            <Link to={link.href}>{link.title}</Link>
+          </li>
+        ))}
+      </ul>
+    </div>
   </Link>
 )
 
@@ -29,11 +47,13 @@ NavLink.propTypes = {
   onClick: PropTypes.func,
   active: PropTypes.bool,
   collapsed: PropTypes.bool,
+  dropdownLinks: PropTypes.array,
 }
 
 NavLink.defaultProps = {
   onClick: null,
   isOpen: false,
+  dropdownLinks: [],
 }
 
 export default NavLink

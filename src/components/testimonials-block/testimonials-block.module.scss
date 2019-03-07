@@ -40,10 +40,7 @@
             div {
                 padding: 20px;
                 @include for-tablet-landscape-up {
-                    padding: 40px;
-                }
-                @include for-desktop-up {
-                    padding: 50px;
+                    padding: 30px;
                 }
             }
 

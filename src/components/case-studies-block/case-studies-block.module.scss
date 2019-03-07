@@ -106,12 +106,14 @@
             }
 
             &Client {
+                display: block;
+                color: $accent;
+                font-size: 12px;
+                line-height: 34px;
+                margin-bottom: 20px;
                 text-transform: uppercase;
                 font-weight: bold;
                 letter-spacing: 0.15em;
-                font-size: 12px;
-                color: $accent;
-                margin-bottom: 20px;
             }
 
             &Title {
@@ -127,7 +129,7 @@
             }
 
             &Desc {
-                color: $dark-grey;
+                color: $grey;
                 line-height: 1.5;
             }
         }
@@ -198,8 +200,5 @@
 }
 
 .pageSectionTitle {
-    left: 15px;
-    @include for-tablet-landscape-up {
-        left: 8.33vw;
-    }
+    left: 8.33vw;
 }

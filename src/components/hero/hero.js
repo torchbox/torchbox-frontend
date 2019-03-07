@@ -11,47 +11,54 @@ import { pageUrl } from '@utils/urls'
 // Styles
 import styles from './hero.module.scss'
 
-const Hero = ({
-  title,
-  description,
-  links,
-  collapsed,
-  greetingImageType,
-  parentLink,
-}) => {
-  return (
-    <div
-      className={[
-        collapsed ? styles.collapsedHeroContainer : styles.heroContainer,
-      ].join(' ')}
-    >
-      <section className={styles.heroContent}>
-        {parentLink ? (
-          <ParentPageLink
-            label={parentLink.name}
-            href={pageUrl(parentLink.servicePage)}
-          />
-        ) : null}
+class Hero extends React.Component {
+  render() {
+    const {
+      title,
+      description,
+      links,
+      collapsed,
+      greetingImageType,
+      parentLink,
+    } = this.props
 
-        <h1 className={styles.heroTitle} {...renderTorchUp(title)} />
-        <p className={styles.heroDesc} {...renderTorchUp(description)} />
-        {links != null ? (
-          <div className={styles.heroLinksContainer}>
-            <ul className={styles.heroLinksList}>
-              {links.map((link, index) => (
-                <li key={`hero-link-${index}`} className={styles.heroLinksItem}>
-                  <a onClick={link.onClick} href={link.href}>
-                    {link.title}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ) : null}
-      </section>
-      <AnimatedCharacter character={greetingImageType} />
-    </div>
-  )
+    return (
+      <div
+        className={[
+          collapsed ? styles.collapsedHeroContainer : styles.heroContainer,
+        ].join(' ')}
+      >
+        <section className={styles.heroContent}>
+          {parentLink ? (
+            <ParentPageLink
+              label={parentLink.name}
+              href={pageUrl(parentLink.servicePage)}
+            />
+          ) : null}
+
+          <h1 className={styles.heroTitle} {...renderTorchUp(title)} />
+          <p className={styles.heroDesc} {...renderTorchUp(description)} />
+          {links != null ? (
+            <div className={styles.heroLinksContainer}>
+              <ul className={styles.heroLinksList}>
+                {links.map((link, index) => (
+                  <li
+                    key={`hero-link-${index}`}
+                    className={styles.heroLinksItem}
+                  >
+                    <a onClick={link.onClick} href={link.href}>
+                      {link.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
+        </section>
+        <AnimatedCharacter character={greetingImageType} />
+      </div>
+    )
+  }
 }
 
 Hero.propTypes = {

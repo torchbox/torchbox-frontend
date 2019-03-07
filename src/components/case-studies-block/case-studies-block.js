@@ -28,9 +28,9 @@ class CaseStudiesBlock extends React.Component {
               >
                 <div className={styles.caseStudyMeta}>
                   <div className={styles.caseStudyMetaContainer}>
-                    <h4 className={styles.caseStudyMetaClient}>
+                    <span className={styles.caseStudyMetaClient}>
                       {caseStudy.client}
-                    </h4>
+                    </span>
                     <h3 className={styles.caseStudyMetaTitle}>
                       {caseStudy.title}
                     </h3>

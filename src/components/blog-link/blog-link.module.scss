@@ -68,17 +68,25 @@
         border-top: none;
         padding-top: 0;
         padding-bottom: 50px !important;
+        
+        @include for-desktop-up {
+            width: 58.33vw;
+        }
 
         .blogLinkTitle {
-            font-size: 65px !important;
+            font-size: 45px;
+            line-height: 50px;
             font-weight: 800;
-            line-height: 80px;
+
+            @include for-desktop-up {
+                font-size: 65px !important;
+                line-height: 80px;
+            }
         }
 
         .blogLinkDesc {
             margin: 0 0 30px;
             color: $grey;
-            max-width: 80%;
             @include for-tablet-portrait-up {
                 line-height: 34px;
                 font-size: 20px ;

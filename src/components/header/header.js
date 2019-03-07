@@ -31,7 +31,14 @@ class Header extends React.Component {
   }
 
   render() {
-    const { title, links, navigateTo, logoClick, nestedLinks } = this.props
+    const {
+      title,
+      links,
+      navigateTo,
+      logoClick,
+      nestedLinks,
+      onLogoClick,
+    } = this.props
 
     return (
       <div
@@ -41,7 +48,10 @@ class Header extends React.Component {
       >
         <div className={styles.headerInner}>
           {this.state.collapsed ? (
-            <div className={styles.collapsedLogoContainer}>
+            <div
+              className={styles.collapsedLogoContainer}
+              onClick={onLogoClick}
+            >
               <Flame className={styles.logoFlame} onClick={logoClick} />
               <span className={styles.logoText}>{title}</span>
             </div>
@@ -135,6 +145,7 @@ Header.propTypes = {
   links: PropTypes.array,
   nestedLinks: PropTypes.array,
   shouldCollapse: PropTypes.bool,
+  onLogoClick: PropTypes.func,
 }
 
 Header.defaultProps = {

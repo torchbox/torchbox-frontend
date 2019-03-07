@@ -10,7 +10,7 @@ import TeaserBlock from '@components/teaser-block'
 import ThemeProvider from '@components/theme-provider'
 // Utilities
 import { safeGet } from '@utils/safeget'
-import { blogsUrl, caseStudiesUrl, teamUrl } from '@utils/urls'
+import { blogsUrl, caseStudiesUrl, teamUrl, jobsUrl } from '@utils/urls'
 // Styles
 import '@styles/_fonts.scss'
 import styles from './layout.module.scss'
@@ -38,6 +38,7 @@ class Layout extends React.Component {
       nestedLinks,
       ignoreServiceTeaser,
       theme,
+      onLogoClick,
     } = this.props
 
     return (
@@ -64,6 +65,7 @@ class Layout extends React.Component {
               navigateTo={url => {
                 this.setState({ currentUrl: url })
               }}
+              onLogoClick={onLogoClick}
             />
             <div className={styles.pageContainer}>
               {children}
@@ -124,6 +126,10 @@ class Layout extends React.Component {
         title: 'Culture + jobs',
         strap: 'For our data driven digital marketing services',
         badge: safeGet(data, 'wagtail.jobsIndexPage.jobs.length', 0),
+        dropdownLinks: [
+          { title: 'Team', href: teamUrl() },
+          { title: 'Jobs', href: jobsUrl() },
+        ],
       },
     ].map(link => {
       if (typeof window !== `undefined`) {

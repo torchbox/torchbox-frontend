@@ -11,7 +11,7 @@
 
     &Address {
         position: relative;
-        padding: 0px 80px 20px 0px;
+        padding: 0px 100px 20px 0px;
 
         &List {
             display: flex;
@@ -47,7 +47,7 @@
 
     &Copyright {
         font-size: 0.7em;
-        color: $dark-grey;
+        color: $grey;
         margin-right: 10px;
     }
 
@@ -63,9 +63,9 @@
         height: 23px;
         font-weight: bold;
         border-bottom: 2px solid $green;
-        color: $dark-blue;
+        color: $blue;
         &:hover {
-            color: $dark-blue;
+            color: $blue;
         }
     }
 

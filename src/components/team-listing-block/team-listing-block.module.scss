@@ -20,10 +20,7 @@
         text-decoration: none;
         border-bottom: none;
 
-        width: 100%;
-        @include for-tablet-portrait-up {
-            width: 50%;
-        }
+        width: 50%;
         @include for-tablet-landscape-up {
             width: 33.333%;
         }
