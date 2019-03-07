@@ -94,7 +94,10 @@ class ServicePage extends React.Component {
   render() {
     const { blocks, title, theme, serviceSlug } = this.props
 
-    const nestedNav = Object.values(this.sectionRefs).map(section => ({
+    const nestedNav = Object
+        .values(this.sectionRefs)
+        .filter(section => !!section.title)
+        .map(section => ({
       title: section.title,
       href: '',
       active: section.title === this.state.activeSectionTitle,
