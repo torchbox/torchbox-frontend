@@ -15,7 +15,7 @@
         max-width: 100px;
         grid-column: 1;
         grid-row: 1;
-        @include for-tablet-landscape-up {
+        @include for-desktop-up {
             max-width: none;
             width: 8.33vw;
             margin-top: -50px;

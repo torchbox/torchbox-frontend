@@ -17,13 +17,15 @@
     position: relative;
     width: 66vw;
     max-width: 380px;
-    top: 40px;
+    top: 60px;
+    margin-bottom: 60px;
     z-index: 2;
     @include for-desktop-up {
         width: 28vw;
         height: 18.8vw;
         left: -14.66vw;
-        top: 0px;
+        top: -30px;
+        margin-bottom: 0px;
     }
 
     &Right {
@@ -63,7 +65,7 @@
     left: 0;
 
     @include for-tablet-portrait-up {
-        margin-top: 60px;
+        margin-top: 90px;
     }
 
     @include for-tablet-landscape-up {

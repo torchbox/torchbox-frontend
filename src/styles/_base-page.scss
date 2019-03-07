@@ -13,7 +13,7 @@
   }
 
   &Author {
-    @include for-tablet-landscape-up {
+    @include for-desktop-up {
       margin: 0 0 0 16.66vw;
     }
     padding-bottom: 40px;
