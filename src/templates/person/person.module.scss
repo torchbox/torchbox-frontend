@@ -16,6 +16,8 @@
     margin: 0;
 
     h1 {  
+      font-size: 45px;
+      line-height: 50px;
       margin-bottom: 0 !important;
       p {
         color: $primary !important;
@@ -26,10 +28,14 @@
   &Role {
     @include streamblockPadding;
     display: block;
+    font-size: 16px;
     margin-top: 30px;
-    font-size: 25px;
-    font-weight: 800;
-    color: $grey;
+    letter-spacing: 0.15em;
+    // margin-bottom: 40px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $red;
   }
 
   &Avatar {

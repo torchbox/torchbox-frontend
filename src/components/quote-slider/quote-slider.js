@@ -9,6 +9,27 @@ import styles from './quote-slider.module.scss'
 class QuoteSlider extends React.Component {
   state = { currentIndex: 0 }
 
+  componentDidMount() {
+    this.setTimer()
+  }
+
+  componentDidUnmount() {
+    clearInterval(this.timer)
+  }
+
+  setTimer = () => {
+    clearInterval(this.timer)
+    this.timer = setInterval(() => {
+      const { currentIndex } = this.state
+      const { quotes } = this.props
+
+      const nextSlideIndex =
+        currentIndex == quotes.length - 1 ? 0 : currentIndex + 1
+
+      this.changeSlide(nextSlideIndex)
+    }, 4000)
+  }
+
   render() {
     const { currentIndex } = this.state
     const { quotes, className } = this.props
@@ -60,6 +81,7 @@ class QuoteSlider extends React.Component {
 
   changeSlide = index => {
     this.setState({ currentIndex: index })
+    this.setTimer()
   }
 }
 

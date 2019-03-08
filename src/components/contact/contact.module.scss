@@ -19,7 +19,6 @@
     &Image {
         margin-bottom: 20px;
         @include for-tablet-portrait-up {
-            margin-right: 20px !important;
             margin-bottom: 0;
         }
     }
@@ -29,9 +28,12 @@
         flex-direction: row;
         flex-wrap: wrap;
         align-items: center;
-        
         @include for-phone-only {
             justify-content: center;
+        }
+
+        @include for-tablet-portrait-up {
+            padding-left: 20px;
         }
     }
 

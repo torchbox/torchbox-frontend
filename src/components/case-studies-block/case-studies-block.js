@@ -18,7 +18,7 @@ class CaseStudiesBlock extends React.Component {
           <span className={styles.pageSectionTitle}>{sectionTitle}</span>
         ) : null}
         <div className={styles.blockList}>
-          {caseStudies.map((caseStudy, index) => {
+          {(caseStudies || []).map((caseStudy, index) => {
             let img = React.createRef()
             return (
               <Link
@@ -28,9 +28,9 @@ class CaseStudiesBlock extends React.Component {
               >
                 <div className={styles.caseStudyMeta}>
                   <div className={styles.caseStudyMetaContainer}>
-                    <h4 className={styles.caseStudyMetaClient}>
+                    <span className={styles.caseStudyMetaClient}>
                       {caseStudy.client}
-                    </h4>
+                    </span>
                     <h3 className={styles.caseStudyMetaTitle}>
                       {caseStudy.title}
                     </h3>

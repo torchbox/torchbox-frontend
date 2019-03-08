@@ -8,7 +8,6 @@ import NavLink from '@components/nav-link'
 // Utilities
 import { ReactComponent as Logo } from '@images/logo.svg'
 import { ReactComponent as Flame } from '@images/tbx-flame.svg'
-import ThemeContext from '@context/theme-context'
 // Styles
 import styles from './header.module.scss'
 
@@ -32,104 +31,109 @@ class Header extends React.Component {
   }
 
   render() {
-    const { title, links, navigateTo, logoClick, nestedLinks } = this.props
+    const {
+      title,
+      links,
+      navigateTo,
+      logoClick,
+      nestedLinks,
+      onLogoClick,
+    } = this.props
 
     return (
-      <ThemeContext.Consumer>
-        {theme => (
-          <div
-            className={[
-              this.state.collapsed ? styles.collapsedHeader : styles.header,
-              theme,
-            ].join(' ')}
-          >
-            <div className={styles.headerInner}>
-              {this.state.collapsed ? (
-                <div className={styles.collapsedLogoContainer}>
-                  <Flame className={styles.logoFlame} onClick={logoClick} />
-                  <span className={styles.logoText}>{title}</span>
-                </div>
-              ) : (
-                <div className={styles.logoContainer}>
-                  <Logo className={styles.logo} onClick={logoClick} />
-                </div>
-              )}
-
-              <div className={styles.primaryNavContainer}>
-                <ul className={styles.primaryNavList}>
-                  {links.map((link, index) => (
-                    <li key={`primary-nav-link-${index}`}>
-                      <NavLink
-                        {...link}
-                        collapsed={this.state.collapsed}
-                        onClick={() => navigateTo(link.href)}
-                      />
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {nestedLinks != null ? (
-                <div className={styles.nestedNavContainer}>
-                  <ul className={styles.nestedNavList}>
-                    {nestedLinks.map((link, index) => (
-                      <li
-                        key={`nested-nav-link-${index}`}
-                        className={
-                          link.active
-                            ? styles.nestedNavItemActive
-                            : styles.nestedNavItem
-                        }
-                      >
-                        <a
-                          className={styles.nestedNavLink}
-                          onClick={link.onClick}
-                          href={link.href}
-                        >
-                          {link.title}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ) : null}
-
-              <MenuButton
-                className={styles.headerMenuButton}
-                isOpen={this.state.mobileNavOpen}
-                onClick={() =>
-                  this.setState({ mobileNavOpen: !this.state.mobileNavOpen })
-                }
-              />
+      <div
+        className={[
+          this.state.collapsed ? styles.collapsedHeader : styles.header,
+        ].join(' ')}
+      >
+        <div className={styles.headerInner}>
+          {this.state.collapsed ? (
+            <div
+              className={styles.collapsedLogoContainer}
+              onClick={onLogoClick}
+            >
+              <Flame className={styles.logoFlame} onClick={logoClick} />
+              <span className={styles.logoText}>{title}</span>
             </div>
-
-            <div className={styles.mobileNavContainer}>
-              <div
-                className={
-                  this.state.mobileNavOpen
-                    ? styles.mobileNavModalOpen
-                    : styles.mobileNavModal
-                }
-              >
-                <ul className={styles.mobileNavList}>
-                  {links.map((link, index) => (
-                    <li
-                      key={`mobile-nav-link-${index}`}
-                      className={link.alignRight ? styles.alignRight : ''}
-                    >
-                      <NavLink
-                        {...link}
-                        collapsed={this.state.collapsed}
-                        onClick={() => navigateTo(link.href)}
-                      />
-                    </li>
-                  ))}
-                </ul>
-              </div>
+          ) : (
+            <div className={styles.logoContainer}>
+              <Logo className={styles.logo} onClick={logoClick} />
             </div>
+          )}
+
+          <div className={styles.primaryNavContainer}>
+            <ul className={styles.primaryNavList}>
+              {links.map((link, index) => (
+                <li key={`primary-nav-link-${index}`}>
+                  <NavLink
+                    {...link}
+                    collapsed={this.state.collapsed}
+                    onClick={() => navigateTo(link.href)}
+                  />
+                </li>
+              ))}
+            </ul>
           </div>
-        )}
-      </ThemeContext.Consumer>
+
+          {nestedLinks != null ? (
+            <div className={styles.nestedNavContainer}>
+              <ul className={styles.nestedNavList}>
+                {nestedLinks.map((link, index) => (
+                  <li
+                    key={`nested-nav-link-${index}`}
+                    className={
+                      link.active
+                        ? styles.nestedNavItemActive
+                        : styles.nestedNavItem
+                    }
+                  >
+                    <a
+                      className={styles.nestedNavLink}
+                      onClick={link.onClick}
+                      href={link.href}
+                    >
+                      {link.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
+
+          <MenuButton
+            className={styles.headerMenuButton}
+            isOpen={this.state.mobileNavOpen}
+            onClick={() =>
+              this.setState({ mobileNavOpen: !this.state.mobileNavOpen })
+            }
+          />
+        </div>
+
+        <div className={styles.mobileNavContainer}>
+          <div
+            className={
+              this.state.mobileNavOpen
+                ? styles.mobileNavModalOpen
+                : styles.mobileNavModal
+            }
+          >
+            <ul className={styles.mobileNavList}>
+              {links.map((link, index) => (
+                <li
+                  key={`mobile-nav-link-${index}`}
+                  className={link.alignRight ? styles.alignRight : ''}
+                >
+                  <NavLink
+                    {...link}
+                    collapsed={this.state.collapsed}
+                    onClick={() => navigateTo(link.href)}
+                  />
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
     )
   }
 }
@@ -141,6 +145,7 @@ Header.propTypes = {
   links: PropTypes.array,
   nestedLinks: PropTypes.array,
   shouldCollapse: PropTypes.bool,
+  onLogoClick: PropTypes.func,
 }
 
 Header.defaultProps = {

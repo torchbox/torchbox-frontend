@@ -1,12 +1,21 @@
 // Colours
-$coral: #fd5765;
-$light-blue: #2f128d;
-$blue: #251657;
-$dark-blue: #251657;
-$light-grey: #f4f3f6;
-$grey: #444;
-$green: #3BECCD;
-$dark-grey: #444;
+:root {
+    --color-coral: #fd5765;
+    --color-green: #3BECCD;
+    --color-light-blue:  #2f128d;
+    --color-blue: #251657;
+    --color-dark-blue: #251657;
+    --color-light-grey: #f4f3f6;
+    --color-grey: #444;
+    --color-red: #eb0316;
+}
+$coral: var(--color-coral);
+$light-blue: var(--color-light-blue);
+$blue: var(--color-blue);
+$light-grey: var(--color-light-grey);
+$grey: var(--color-grey);
+$green: var(--color-green);
+$red: var(--color-red);
 
 // Theme Vars (For good browsers that support CSS Vars)
 $primary: var(--color-primary);

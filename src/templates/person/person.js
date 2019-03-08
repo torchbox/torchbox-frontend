@@ -30,11 +30,6 @@ class PersonPage extends React.Component {
     return (
       <div className={styles.page}>
         <div className={styles.pageContainer}>
-          <ParentPageLink
-            className={styles.pageParentLink}
-            label={`Meet the team`}
-            href={teamUrl()}
-          />
           <TitleBlock
             onMouseEnter={() =>
               this.setState({

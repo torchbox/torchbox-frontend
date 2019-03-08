@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 // Components
 import Contact from '../contact/contact'
+import { ReactComponent as TickIcon } from '@images/icons/tick.svg'
 // Utilities
 import { renderTorchUp } from '@utils/torchup'
 // Styles
@@ -26,10 +27,7 @@ class HelpBlock extends React.Component {
                     key={`key-point-${index}`}
                     className={styles.blockLinksItem}
                   >
-                    <div
-                      src={require('@images/icons/tick.png')}
-                      className={styles.blockLinksItemIcon}
-                    />
+                    <TickIcon className={styles.blockLinksItemIcon} />
                     <Link onClick={link.onClick} to={link.href}>
                       {link.title}
                     </Link>

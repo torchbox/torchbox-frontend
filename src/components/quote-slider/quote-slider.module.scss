@@ -6,17 +6,19 @@
         display: grid;
         grid-template-columns: auto 1fr;
         grid-template-rows: auto auto;
+        grid-column-gap: 50px;
     }
 
     &Icon {
         fill: $accent;
-        width: calc(20vw - 50px);
+        width: 20vw;
         max-width: 100px;
         grid-column: 1;
         grid-row: 1;
         @include for-tablet-landscape-up {
             max-width: none;
             width: 8.33vw;
+            margin-top: -50px;
             margin-left: 4.33vw;
         }
     }
@@ -25,21 +27,26 @@
         position: relative;
         grid-column-start: span 2;
         margin-top: 20px;
-        grid-column: 2;
-        grid-row: 1;
+        grid-column: 1;
+        grid-row: 2;
         @include for-tablet-landscape-up {
             margin-top: 0px;
             grid-column-start: 2;
+            grid-row: 1;
         }
 
         &Bullets {
             grid-column: span 2;
-            grid-row: 2;
+            grid-row: 3;
             margin-top: 30px;
             transition: 0.2s all ease;
             display: flex;
             align-items: center;
             justify-content: center;
+
+            @include for-tablet-landscape-up {
+                grid-row: 2;
+            }
         }
 
         &Bullet {
@@ -75,11 +82,6 @@
         grid-column: 1;
         grid-row: 1;
         opacity: 0;
-        padding-left: 35px;
-
-        @include for-tablet-landscape-up {
-            padding-left: 50px;
-        }
 
         &Active {
             @extend .quoteSlide;
@@ -107,7 +109,7 @@
         }
 
         &Cite {
-            color: $dark-grey;
+            color: $grey;
             font-size: 12px;
             margin: 0 0 15px;
             line-height: 1;

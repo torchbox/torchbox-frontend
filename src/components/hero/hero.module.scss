@@ -8,31 +8,7 @@ $hero-link-color: var(--hero-link-color, $link-color);
 .hero {
 
   &Image {
-    position: relative;
-    width: 60vw;
-    max-width: 380px;
-    margin-top: 40px;
-    z-index: 2;
-    @include for-desktop-up {
-      width: 28vw;
-      left: -14.66vw;
-      margin-top: 0px;
-    }
-
-    &Right {
-      @extend .heroImage;
-      margin-left: auto;
-      margin-top: 20px;
-      left: 0;
-
-      @include for-tablet-portrait-up {
-        margin-top: 60px;
-      }
-
-      @include for-tablet-landscape-up {
-        margin-top: 140px;
-      }
-    }
+    margin-top: -25px;
   }
 
   &Container {
@@ -42,13 +18,15 @@ $hero-link-color: var(--hero-link-color, $link-color);
     width: 100vw;
     background: $hero-background;
     padding-top: 70px;
+    
     @include for-tablet-landscape-up {
       padding-top: 120px;
+      // padding-bottom: 60px;
     }
 
     @include for-desktop-up {
-      width: 85.34vw;
       padding-left: 14.66vw;
+      // padding-bottom: 140px;
     }
 
     &::after {
@@ -65,7 +43,7 @@ $hero-link-color: var(--hero-link-color, $link-color);
   }
 
   &Content {
-    margin: 75px 8.33vw 0;
+    margin: 50px 8.33vw 0;
     @include for-desktop-up {
       margin-left: 10.33vw;
     }

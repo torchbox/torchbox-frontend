@@ -8,6 +8,9 @@ module.exports = {
     author: `@Torchbox`,
   },
   plugins: [
+    `gatsby-plugin-remove-trailing-slashes`,
+    `gatsby-plugin-react-helmet`,
+    // 'gatsby-plugin-offline',
     {
       resolve: `gatsby-plugin-sass`,
       options: {
@@ -20,7 +23,6 @@ module.exports = {
         ]
       }
     },
-    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -37,7 +39,7 @@ module.exports = {
         background_color: `#2f128d`,
         theme_color: `#fd5765`,
         display: `minimal-ui`,
-        icon: `src/images/favicon.svg`, // This path is relative to the root of the site.
+        icon: `src/images/favicon.png`, // This path is relative to the root of the site.
       },
     },
     {
@@ -60,6 +62,11 @@ module.exports = {
         },
       },
     },
-    // 'gatsby-plugin-offline',
+    {
+      resolve: `gatsby-plugin-compile-es6-packages`,
+      options: {
+        modules: [`query-string`, `strict-uri-encode`]
+      }
+    },
   ],
 }

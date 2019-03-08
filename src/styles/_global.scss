@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: $mainFont;
     font-size: 18px;
@@ -22,11 +26,7 @@ body {
     left: 0;
     color: $accent;
     font-weight: bold;
-    text-transform: lowercase;
-
-    &::first-letter {
-        text-transform: uppercase;
-    }
+    text-transform: capitalize;
 
     &::before {
         position: absolute;

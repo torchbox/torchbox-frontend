@@ -2,14 +2,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
+import cssVars from 'css-vars-ponyfill'
 // Components
 import Header from '@components/header'
 import Footer from '@components/footer'
 import TeaserBlock from '@components/teaser-block'
+import ThemeProvider from '@components/theme-provider'
 // Utilities
-import ThemeContext from '@context/theme-context'
 import { safeGet } from '@utils/safeget'
-import { blogsUrl, caseStudiesUrl, teamUrl } from '@utils/urls'
+import { blogsUrl, caseStudiesUrl, teamUrl, jobsUrl } from '@utils/urls'
 // Styles
 import '@styles/_fonts.scss'
 import styles from './layout.module.scss'
@@ -18,11 +19,15 @@ class Layout extends React.Component {
   constructor(props) {
     super(props)
     this.state = { currentUrl: '#1' }
-    this.theme = {
-      light: styles.lightTheme,
-      dark: styles.darkTheme,
-      'dark--transparent': styles.darkThemeTransparent,
-    }[props.theme || 'light']
+  }
+
+  componentDidMount() {
+    // Fix IE11 so that themeing works
+    if (typeof window !== `undefined`) {
+      cssVars({
+        watch: true,
+      })
+    }
   }
 
   render() {
@@ -32,6 +37,8 @@ class Layout extends React.Component {
       title,
       nestedLinks,
       ignoreServiceTeaser,
+      theme,
+      onLogoClick,
     } = this.props
 
     return (
@@ -48,51 +55,50 @@ class Layout extends React.Component {
           }
         `}
         render={data => (
-          <ThemeContext.Provider value={this.theme}>
-            <div className={this.theme}>
-              <Header
-                title={title}
-                currentUrl={this.state.currentUrl}
-                shouldCollapse={headerShouldCollapse}
-                links={this.renderLinks(data)}
-                nestedLinks={nestedLinks}
-                navigateTo={url => {
-                  this.setState({ currentUrl: url })
-                }}
+          <ThemeProvider theme={theme}>
+            <Header
+              title={title}
+              currentUrl={this.state.currentUrl}
+              shouldCollapse={headerShouldCollapse}
+              links={this.renderLinks(data)}
+              nestedLinks={nestedLinks}
+              navigateTo={url => {
+                this.setState({ currentUrl: url })
+              }}
+              onLogoClick={onLogoClick}
+            />
+            <div className={styles.pageContainer}>
+              {children}
+              <TeaserBlock
+                title={`More from Torchbox...`}
+                ignoreSlug={ignoreServiceTeaser}
               />
-              <div className={styles.pageContainer}>
-                {children}
-                <TeaserBlock
-                  title={`More from Torchbox...`}
-                  ignoreSlug={ignoreServiceTeaser}
-                />
-                <Footer
-                  links={[
-                    {
-                      label: 'Blog',
-                      href: blogsUrl(),
-                    },
-                    {
-                      label: 'Work',
-                      href: caseStudiesUrl(),
-                    },
-                    {
-                      label: 'Team',
-                      href: teamUrl(),
-                    },
-                    {
-                      label: 'Privacy',
-                      href: '/privacy/',
-                    },
-                    {
-                      label: 'Cookies',
-                      href: '/cookies/',
-                    },
-                  ]}
-                />
-              </div>
+              <Footer
+                links={[
+                  {
+                    label: 'Blog',
+                    href: blogsUrl(),
+                  },
+                  {
+                    label: 'Work',
+                    href: caseStudiesUrl(),
+                  },
+                  {
+                    label: 'Team',
+                    href: teamUrl(),
+                  },
+                  {
+                    label: 'Privacy',
+                    href: '/privacy',
+                  },
+                  {
+                    label: 'Cookies',
+                    href: '/cookies',
+                  },
+                ]}
+              />
             </div>
-          </ThemeContext.Provider>
+          </ThemeProvider>
         )}
       />
     )
@@ -120,6 +126,10 @@ class Layout extends React.Component {
         title: 'Culture + jobs',
         strap: 'For our data driven digital marketing services',
         badge: safeGet(data, 'wagtail.jobsIndexPage.jobs.length', 0),
+        dropdownLinks: [
+          { title: 'Team', href: teamUrl() },
+          { title: 'Jobs', href: jobsUrl() },
+        ],
       },
     ].map(link => {
       if (typeof window !== `undefined`) {
