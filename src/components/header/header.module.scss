@@ -76,7 +76,7 @@ $header-logo-color: var(--header-logo-color, $primary);
     font-family: $mainFont;
     text-decoration: none;
     border-bottom: none;
-    height: calc(100% - 2px);
+    height: 100%;
 
     @include for-desktop-up {
       font-size: 15px;
@@ -190,7 +190,7 @@ $header-logo-color: var(--header-logo-color, $primary);
     @extend .primaryNavList;
     display: flex;
     flex-direction: column;
-    padding: 100px 8.33vw 0 8.33vw;
+    padding: 60px 8.33vw 0 8.33vw;
 
     li {
       margin-left: 0 !important;
@@ -235,7 +235,9 @@ $header-logo-color: var(--header-logo-color, $primary);
 
   .collapsedLogoContainer {
     display: flex;
+    cursor: pointer;
     @include for-desktop-up {
+      padding: 10px 0;
       margin-left: -4.17vw;
       margin-right: 4.17vw;
     }

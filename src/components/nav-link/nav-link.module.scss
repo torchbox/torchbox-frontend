@@ -18,15 +18,13 @@ $header-link-color: var(--header-link-color, $primary);
 .navLink {
   display: block;
   position: relative;
-
   line-height: 20px;
   font-family: $mainFont;
   text-decoration: none;
   border-bottom: none;
-
   color: white;
   margin-right: 0;
-  padding: 30px 0;
+  padding: 25px 0;
   border-bottom: 2px solid rgba(255, 255, 255, 0.1) !important;
   @include navlink-underscore(0);
 
@@ -41,9 +39,15 @@ $header-link-color: var(--header-link-color, $primary);
   }
 
   &:hover {
-    color: $accent;
+    color: white;
     @include for-desktop-up {
+      color: $accent;
       @include navlink-underscore(4);
+    }
+
+    .dropdown {
+      transform: translateY(0);
+      opacity: 1;
     }
   }
 
@@ -58,10 +62,9 @@ $header-link-color: var(--header-link-color, $primary);
     display: flex;
     position: relative;
     transition: all 0.2s ease;
-    font-size: 24px;
-    line-height: 24px;
+    font-size: 22px;
+    line-height: 35px;
     font-family: $mainFont;
-    margin: 5px 0 5px;
     @include for-desktop-up {
       font-size: 18px;
     }
@@ -71,7 +74,6 @@ $header-link-color: var(--header-link-color, $primary);
     position: relative;
     top: -15px;
     right: -15px;
-
     font-size: 14px;
     font-weight: 700;
     line-height: 25px;
@@ -94,6 +96,47 @@ $header-link-color: var(--header-link-color, $primary);
       transform: rotate(30deg);
       left: -5px;
       top: 0;
+    }
+  }
+
+  .dropdown {
+    position: absolute;
+    width: 100%;
+
+    padding-top: 25px;
+    @include for-desktop-up {
+      transition: all 0.2s ease;
+      transform: translateY(50%);
+      opacity: 0;
+      
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      list-style: none;
+
+      li a {
+        display: inline-block;
+        width: 100%;
+        height: auto;
+        font-size: 16px;
+        color: white;
+        padding: 10px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+        line-height: 35px;
+
+        @include for-desktop-up {
+          color: $light-blue;
+          padding: 7px 0;
+          border: none;
+          line-height: initial;
+        }
+
+        &:hover {
+          color: $accent;
+        }
+      }
     }
   }
 }

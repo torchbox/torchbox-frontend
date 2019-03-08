@@ -1,15 +1,27 @@
 // Colours
-$coral: #fd5765;
-$coral-dark: darken($coral, 20%);
-$light-blue: #2f128d;
-$blue: #251657;
-$dark-blue: #251657;
-$light-grey: #f4f3f6;
-$light-grey-accessible: #757575;
-$grey: #444;
-$green: #3BECCD;
-$green-dark: darken($green, 30%);
-$dark-grey: #444;
+:root {
+    --color-coral: #fd5765;
+    --color-coral-dark: #eb0316;
+    --color-green: #3beccd;
+    --color-green-dark: #0d816d;
+    --color-light-blue:  #2f128d;
+    --color-blue: #251657;
+    --color-dark-blue: #251657;
+    --color-light-grey: #f4f3f6;
+    --color-light-grey-accessible: #757575;
+    --color-grey: #444;
+    --color-red: #eb0316;
+}
+$coral: var(--color-coral);
+$coral-dark: var(--color-coral-dark);
+$light-blue: var(--color-light-blue);
+$blue: var(--color-blue);
+$light-grey: var(--color-light-grey);
+$light-grey-accessible: var(--color-light-grey-accessible);
+$grey: var(--color-grey);
+$green: var(--color-green);
+$green-dark: var(--color-green-dark);
+$red: var(--color-red);
 
 // Theme Vars (For good browsers that support CSS Vars)
 $primary: var(--color-primary);

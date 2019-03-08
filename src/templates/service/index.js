@@ -43,6 +43,7 @@ export default ({ data, pageContext }) => {
                 type: 'hero-block',
                 data: {
                   excludeFromLinks: true,
+                  sectionTitle: 'hero',
                   strapline: page.strapline,
                   intro: page.intro,
                   links: nestedNav,
@@ -91,7 +92,7 @@ export default ({ data, pageContext }) => {
                   title: page.headingForProcesses || '',
                 },
               }
-            : page.processes
+            : page.processes.length
             ? {
                 type: 'process-block',
                 data: {
@@ -188,12 +189,12 @@ export const query = graphql`
         testimonialsSectionTitle
         clientLogos {
           image {
-            ...largeIconImage
+            ...quarterImage
           }
         }
         usaClientLogos {
           image {
-            ...largeIconImage
+            ...quarterImage
           }
         }
         testimonials {

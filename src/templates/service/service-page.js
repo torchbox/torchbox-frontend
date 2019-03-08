@@ -24,11 +24,10 @@ class ServicePage extends React.Component {
     this.sectionRefs = {}
     props.blocks.map(({ type, data }) => {
       if (data) {
-        if (!data.excludeFromLinks) {
-          this.sectionRefs[type] = {
-            title: data.sectionTitle,
-            ref: React.createRef(),
-          }
+        this.sectionRefs[type] = {
+          title: data.sectionTitle,
+          ref: React.createRef(),
+          excludeFromLinks: !!data.excludeFromLinks,
         }
       }
     })
@@ -94,18 +93,17 @@ class ServicePage extends React.Component {
   render() {
     const { blocks, title, theme, serviceSlug } = this.props
 
-    const nestedNav = Object
-        .values(this.sectionRefs)
-        .filter(section => !!section.title)
-        .map(section => ({
-      title: section.title,
-      href: '',
-      active: section.title === this.state.activeSectionTitle,
-      onClick: e => {
-        e.preventDefault()
-        this.navigateToSection(section.title)
-      },
-    }))
+    const nestedNav = Object.values(this.sectionRefs)
+      .filter(section => !section.excludeFromLinks)
+      .map(section => ({
+        title: section.title,
+        href: '',
+        active: section.title === this.state.activeSectionTitle,
+        onClick: e => {
+          e.preventDefault()
+          this.navigateToSection(section.title)
+        },
+      }))
 
     return (
       <Layout
@@ -114,6 +112,7 @@ class ServicePage extends React.Component {
         headerShouldCollapse={true}
         nestedLinks={nestedNav}
         ignoreServiceTeaser={serviceSlug}
+        onLogoClick={() => this.navigateToSection('hero')}
       >
         <div className={[styles.page].join(' ')}>
           {blocks.map(({ type, data }) => {
@@ -121,6 +120,7 @@ class ServicePage extends React.Component {
               case 'hero-block':
                 return (
                   <Hero
+                    ref={this.sectionRefs[type].ref}
                     title={data.strapline}
                     description={data.intro}
                     links={nestedNav}

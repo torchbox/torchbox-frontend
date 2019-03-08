@@ -1,6 +1,16 @@
 // Vendor Modules
 import { graphql } from 'gatsby'
 
+export const quarterImage = graphql`
+  fragment quarterImage on Wagtail_ImageObjectType {
+    src: rendition(format: "quarter") {
+      url
+      width
+      height
+    }
+  }
+`
+
 export const iconImage = graphql`
   fragment iconImage on Wagtail_ImageObjectType {
     src: rendition(format: "icon") {

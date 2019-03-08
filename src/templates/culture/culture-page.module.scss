@@ -1,23 +1,16 @@
 @import '../../styles/app.module';
 
 .page {
-    padding-top: 80vh;
-    @include for-tablet-landscape-up {
-        padding-top: 100vh;
-    }
+    padding-top: 100vh;
 
     &Hero {
-        height: 75vh;
+        height: 100vh;
         position: absolute;
         top: 0;
         width: 100%;
         background-size: cover !important;
         background-repeat: no-repeat !important;
         background-position: top;
-
-        @include for-tablet-landscape-up {
-            height: 100vh;
-        }
 
         &Content {
             @include container;
@@ -65,10 +58,11 @@
 
     &Image {
         transition: all 0.3s ease-out;
-        width: 25vw;
         transform: translateX(0);
+        display: none;
 
         @include for-tablet-landscape-up {
+            display: block;
             position: absolute;
             width: 20vw;
             left: 0;

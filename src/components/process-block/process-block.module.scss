@@ -9,17 +9,25 @@
   &Block {
     background-color: white;
     padding: 90px 0 120px;
+    padding-bottom: 0;
   }
 
   &Image {
     width: 66vw;
+    height: calc(66vw * 0.6);
     position: absolute;
     left: -8.33vw;
     top: 20px;
     @include for-tablet-landscape-up {
       width: 19vw;
+      height: calc(19vw * 0.6);
       top: 60px;
     }
+
+    .toolkit_svg_accented {
+      fill: red;
+    }
+
   }
 
   &Container {
@@ -27,22 +35,26 @@
   }
 
   &List {
-    display: grid;
-    grid-column-gap: 110px;
-    grid-template-columns: auto;
-    grid-row-gap: 60px;
-
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
     margin: 0;
     padding-top: calc((66vw * 0.6) + 60px);
 
     @include for-tablet-landscape-up {
-      grid-template-columns: auto auto;
       margin: 60px 0 80px 16.66vw;
       padding-top: 50px;
     }
   }
 
   &Item {
+    width: 100%;
+    padding-bottom: 60px; 
+    @include for-tablet-landscape-up {
+      width: 50%;
+      padding-right: 60px;
+      padding-bottom: 90px;
+    }
 
     &Title {
       font-size: 34px;

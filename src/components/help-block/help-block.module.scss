@@ -55,12 +55,10 @@
 
             &Icon {
                 transform: rotate(30deg);
-                width: 18px;
-                height: 18px;
-                background-color: $accent;
-                -webkit-mask: url("../../images/icons/tick.svg") no-repeat center;
-                -webkit-mask-size: contain;
+                width: 22px;
+                height: 22px;
                 margin-top: 20px;
+                fill: $accent;
                 @include for-tablet-landscape-up {
                     width: 22px;
                     height: 22px;
@@ -71,6 +69,7 @@
                 color: $primary !important;
                 font-family: $mainFont;
                 text-decoration: none;
+                font-size: 20px; 
                 line-height: 30px;
                 font-weight: 400;
 
@@ -86,9 +85,11 @@
                 }
 
                 &:hover {
-                    color: $light-blue !important;
-                    border-bottom: 2px solid $accent;
-                    font-weight: 800;
+                    @include for-tablet-landscape-up {
+                        color: $light-blue !important;
+                        border-bottom: 2px solid $accent;
+                        font-weight: 800;
+                    }
                 }
             }
         }

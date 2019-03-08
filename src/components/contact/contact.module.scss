@@ -1,7 +1,7 @@
 @import '../../styles/app.module';
 
 // Theme overrides:
-$contact-number-color: var(--contact-number-color, $accent);
+$contact-number-color: var(--contact-number-color);
 
 .contactBlock {
     background-color: white;
@@ -22,7 +22,6 @@ $contact-number-color: var(--contact-number-color, $accent);
     &Image {
         margin-bottom: 20px;
         @include for-tablet-portrait-up {
-            margin-right: 20px !important;
             margin-bottom: 0;
         }
     }
@@ -32,9 +31,12 @@ $contact-number-color: var(--contact-number-color, $accent);
         flex-direction: row;
         flex-wrap: wrap;
         align-items: center;
-        
         @include for-phone-only {
             justify-content: center;
+        }
+
+        @include for-tablet-portrait-up {
+            padding-left: 20px;
         }
     }
 

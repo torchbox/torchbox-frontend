@@ -7,6 +7,7 @@
     flex-wrap: wrap;
 
     &Tag {
+        box-sizing: content-box;
         font-size: 14px !important;
         padding: 2px 8px !important;
         margin-right: 10px !important;

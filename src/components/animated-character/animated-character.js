@@ -51,7 +51,7 @@ class AnimatedCharacter extends React.Component {
         className={[
           styles.container,
           containerClassName,
-          character == 'wagtail' ? styles.alignRight : null,
+          character == 'wagtail' ? styles.alignRight : styles.alignLeft,
         ].join(' ')}
       >
         {this.renderCharacter()}

@@ -27,6 +27,10 @@
             }
         }
 
+        * {
+            box-sizing: content-box;
+        }
+
         @include for-tablet-landscape-up {
             flex-direction: row;
             background-size: cover;
@@ -102,12 +106,14 @@
             }
 
             &Client {
+                display: block;
+                color: $accent-small-text;
+                font-size: 12px;
+                line-height: 34px;
+                margin-bottom: 20px;
                 text-transform: uppercase;
                 font-weight: bold;
                 letter-spacing: 0.15em;
-                font-size: 12px;
-                color: $accent-small-text;
-                margin-bottom: 20px;
             }
 
             &Title {
@@ -123,7 +129,7 @@
             }
 
             &Desc {
-                color: $dark-grey;
+                color: $grey;
                 line-height: 1.5;
             }
         }
@@ -177,10 +183,12 @@
                 display: block;
                 position: absolute;
                 width: 80px;
+                height: 133px;
                 z-index: 100;
                 transform: rotate(0deg);
                 top: -70px;
                 left: 220px;
+
                 * {
                     fill: $accent;
                 }
@@ -192,8 +200,5 @@
 }
 
 .pageSectionTitle {
-    left: 15px;
-    @include for-tablet-landscape-up {
-        left: 8.33vw;
-    }
+    left: 8.33vw;
 }

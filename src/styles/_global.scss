@@ -1,6 +1,10 @@
 // Theme overrides:
 $page-section-title-color: var(--page-section-title-color, $accent);
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: $mainFont;
     font-size: 18px;
@@ -25,11 +29,7 @@ body {
     left: 0;
     color: $page-section-title-color;
     font-weight: bold;
-    text-transform: lowercase;
-
-    &::first-letter {
-        text-transform: uppercase;
-    }
+    text-transform: capitalize;
 
     &::before {
         position: absolute;
