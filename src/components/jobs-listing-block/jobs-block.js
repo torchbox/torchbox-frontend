@@ -13,7 +13,7 @@ class JobsBlock extends React.Component {
 
     return (
       <div className={[styles.block, className].join(' ')}>
-        <img className={styles.blockImage} src={greetingImage} />
+        <img className={styles.blockImage} src={greetingImage} alt="" />
 
         <div className={styles.blockContent}>
           <div className={styles.blockJobList}>

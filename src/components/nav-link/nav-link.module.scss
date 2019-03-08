@@ -75,8 +75,9 @@ $header-link-color: var(--header-link-color, $primary);
     top: -15px;
     right: -15px;
     font-size: 14px;
+    font-weight: 700;
     line-height: 25px;
-    color: $link-badge-color;
+    color: $light-blue;
     z-index: 5;
 
     @include for-desktop-up {

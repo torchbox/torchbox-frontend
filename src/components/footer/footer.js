@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 import styles from './footer.module.scss'
 
 const Footer = ({ links, className }) => (
-  <div className={[styles.footer, className].join(' ')}>
+  <div className={[styles.footer, className].join(' ')} role="contentinfo">
     <div className={styles.footerContent}>
       <ul className={styles.footerAddressList}>
         <li className={styles.footerAddress}>

@@ -67,12 +67,13 @@ class Layout extends React.Component {
               }}
               onLogoClick={onLogoClick}
             />
-            <div className={styles.pageContainer}>
-              {children}
-              <TeaserBlock
-                title={`More from Torchbox...`}
-                ignoreSlug={ignoreServiceTeaser}
-              />
+              <main className={styles.pageContainer}>
+                {children}
+                <TeaserBlock
+                  title={`More from Torchbox...`}
+                  ignoreSlug={ignoreServiceTeaser}
+                />
+              </main>
               <Footer
                 links={[
                   {
@@ -89,15 +90,14 @@ class Layout extends React.Component {
                   },
                   {
                     label: 'Privacy',
-                    href: '/privacy',
+                    href: '/privacy/',
                   },
                   {
                     label: 'Cookies',
-                    href: '/cookies',
+                    href: '/cookies/',
                   },
                 ]}
               />
-            </div>
           </ThemeProvider>
         )}
       />

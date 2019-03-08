@@ -45,6 +45,7 @@ class Header extends React.Component {
         className={[
           this.state.collapsed ? styles.collapsedHeader : styles.header,
         ].join(' ')}
+        role="banner"
       >
         <div className={styles.headerInner}>
           {this.state.collapsed ? (
@@ -61,7 +62,7 @@ class Header extends React.Component {
             </div>
           )}
 
-          <div className={styles.primaryNavContainer}>
+          <nav className={styles.primaryNavContainer} aria-label="Main navigation">
             <ul className={styles.primaryNavList}>
               {links.map((link, index) => (
                 <li key={`primary-nav-link-${index}`}>
@@ -73,10 +74,10 @@ class Header extends React.Component {
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
 
           {nestedLinks != null ? (
-            <div className={styles.nestedNavContainer}>
+            <nav className={styles.nestedNavContainer} aria-label="In page navigation">
               <ul className={styles.nestedNavList}>
                 {nestedLinks.map((link, index) => (
                   <li
@@ -97,7 +98,7 @@ class Header extends React.Component {
                   </li>
                 ))}
               </ul>
-            </div>
+            </nav>
           ) : null}
 
           <MenuButton
@@ -110,12 +111,13 @@ class Header extends React.Component {
         </div>
 
         <div className={styles.mobileNavContainer}>
-          <div
+          <nav
             className={
               this.state.mobileNavOpen
                 ? styles.mobileNavModalOpen
                 : styles.mobileNavModal
             }
+            aria-label="Mobile navigation"
           >
             <ul className={styles.mobileNavList}>
               {links.map((link, index) => (
@@ -131,7 +133,7 @@ class Header extends React.Component {
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
         </div>
       </div>
     )
