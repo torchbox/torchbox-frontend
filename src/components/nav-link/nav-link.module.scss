@@ -18,12 +18,10 @@ $header-link-color: var(--header-link-color, $primary);
 .navLink {
   display: block;
   position: relative;
-
   line-height: 20px;
   font-family: $mainFont;
   text-decoration: none;
   border-bottom: none;
-
   color: white;
   margin-right: 0;
   padding: 25px 0;
@@ -76,7 +74,6 @@ $header-link-color: var(--header-link-color, $primary);
     position: relative;
     top: -15px;
     right: -15px;
-
     font-size: 14px;
     line-height: 25px;
     color: $link-badge-color;
