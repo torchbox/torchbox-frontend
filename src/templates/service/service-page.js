@@ -80,7 +80,7 @@ class ServicePage extends React.Component {
     // to the top of the viewport.
     // This information is then passed to both hero.js and header.js as it affects the styling of both
     if (this.pageNavRef.current) {
-      if (this.pageNavRef.current.getBoundingClientRect().top <= 50) {
+      if (this.pageNavRef.current.getBoundingClientRect().top <= 25) {
         this.setState({ collapsed: true })
       } else {
         this.setState({ collapsed: false })
