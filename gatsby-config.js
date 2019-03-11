@@ -47,7 +47,7 @@ module.exports = {
       options: {
         typeName: "Wagtail",
         fieldName: 'wagtail',
-        url: process.env.GATSBY_WAGTAIL_ENDPOINT || 'https://torchbox-graphql-production.herokuapp.com/graphql/',
+        url: process.env.GATSBY_WAGTAIL_ENDPOINT || 'http://localhost:8000/graphql/',
         // refetchInterval: 10,
       },
     },
