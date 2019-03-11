@@ -20,7 +20,7 @@ import styles from './service-page.module.scss'
 class ServicePage extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { activeSectionTitle: '' }
+    this.state = { activeSectionTitle: '', collapsed: false}
     this.sectionRefs = {}
     props.blocks.map(({ type, data }) => {
       if (data) {
@@ -31,6 +31,7 @@ class ServicePage extends React.Component {
         }
       }
     })
+    this.pageNavRef = React.createRef();
   }
 
   navigateToSection = section => {
@@ -73,6 +74,18 @@ class ServicePage extends React.Component {
         }
       }
     })
+
+    // checks if the header is in a collpsed state or not.
+    // works out position of the in page navigation links (part of the hero) in relation
+    // to the top of the viewport.
+    // This information is then passed to both hero.js and header.js as it affects the styling of both
+    if (this.pageNavRef.current) {
+      if (this.pageNavRef.current.getBoundingClientRect().top <= 50) {
+        this.setState({ collapsed: true })
+      } else {
+        this.setState({ collapsed: false })
+      }
+    }
   }
 
   componentDidMount() {
@@ -110,6 +123,7 @@ class ServicePage extends React.Component {
         title={title}
         theme={theme}
         headerShouldCollapse={true}
+        collapsed = {this.state.collapsed}
         nestedLinks={nestedNav}
         ignoreServiceTeaser={serviceSlug}
         onLogoClick={() => this.navigateToSection('hero')}
@@ -126,6 +140,8 @@ class ServicePage extends React.Component {
                     links={nestedNav}
                     greetingImageType={data.greetingImageType}
                     parentLink={data.parentLink}
+                    collapsed={this.state.collapsed}
+                    pageNavRef={this.pageNavRef}
                     key={type}
                   />
                 )

@@ -12,6 +12,7 @@ import { pageUrl } from '@utils/urls'
 import styles from './hero.module.scss'
 
 class Hero extends React.Component {
+
   render() {
     const {
       title,
@@ -20,6 +21,7 @@ class Hero extends React.Component {
       collapsed,
       greetingImageType,
       parentLink,
+      pageNavRef,
     } = this.props
 
     return (
@@ -39,19 +41,21 @@ class Hero extends React.Component {
           <h1 className={styles.heroTitle} {...renderTorchUp(title)} />
           <p className={styles.heroDesc} {...renderTorchUp(description)} />
           {links != null ? (
-            <div className={styles.heroLinksContainer}>
-              <ul className={styles.heroLinksList}>
-                {links.map((link, index) => (
-                  <li
-                    key={`hero-link-${index}`}
-                    className={styles.heroLinksItem}
-                  >
-                    <a onClick={link.onClick} href={link.href}>
-                      {link.title}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+            <div ref={pageNavRef}>
+              <nav className={styles.heroLinksContainer} aria-label="In page navigation">
+                <ul className={styles.heroLinksList}>
+                  {links.map((link, index) => (
+                    <li
+                      key={`hero-link-${index}`}
+                      className={styles.heroLinksItem}
+                    >
+                      <a onClick={link.onClick} href={link.href}>
+                        {link.title}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
             </div>
           ) : null}
         </section>

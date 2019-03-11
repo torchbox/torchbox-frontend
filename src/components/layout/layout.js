@@ -34,6 +34,7 @@ class Layout extends React.Component {
     const {
       children,
       headerShouldCollapse,
+      collapsed,
       title,
       nestedLinks,
       ignoreServiceTeaser,
@@ -60,6 +61,7 @@ class Layout extends React.Component {
               title={title}
               currentUrl={this.state.currentUrl}
               shouldCollapse={headerShouldCollapse}
+              collapsed={collapsed}
               links={this.renderLinks(data)}
               nestedLinks={nestedLinks}
               navigateTo={url => {

@@ -12,28 +12,13 @@ import { ReactComponent as Flame } from '@images/tbx-flame.svg'
 import styles from './header.module.scss'
 
 class Header extends React.Component {
-  state = { mobileNavOpen: false, collapsed: false }
-
-  componentDidMount() {
-    if (this.props.shouldCollapse && typeof window !== `undefined`) {
-      window.addEventListener('scroll', () => {
-        if (window.scrollY > 0) {
-          if (!this.state.collapsed) {
-            this.setState({ collapsed: true })
-          }
-        } else {
-          if (this.state.collapsed) {
-            this.setState({ collapsed: false })
-          }
-        }
-      })
-    }
-  }
+  state = { mobileNavOpen: false}
 
   render() {
     const {
       title,
       links,
+      collapsed,
       navigateTo,
       logoClick,
       nestedLinks,
@@ -43,12 +28,12 @@ class Header extends React.Component {
     return (
       <div
         className={[
-          this.state.collapsed ? styles.collapsedHeader : styles.header,
+          collapsed ? styles.collapsedHeader : styles.header,
         ].join(' ')}
         role="banner"
       >
         <div className={styles.headerInner}>
-          {this.state.collapsed ? (
+          {collapsed ? (
             <div
               className={styles.collapsedLogoContainer}
               onClick={onLogoClick}
@@ -68,7 +53,7 @@ class Header extends React.Component {
                 <li key={`primary-nav-link-${index}`}>
                   <NavLink
                     {...link}
-                    collapsed={this.state.collapsed}
+                    collapsed={collapsed}
                     onClick={() => navigateTo(link.href)}
                   />
                 </li>
@@ -127,7 +112,7 @@ class Header extends React.Component {
                 >
                   <NavLink
                     {...link}
-                    collapsed={this.state.collapsed}
+                    collapsed={collapsed}
                     onClick={() => navigateTo(link.href)}
                   />
                 </li>
@@ -147,6 +132,7 @@ Header.propTypes = {
   links: PropTypes.array,
   nestedLinks: PropTypes.array,
   shouldCollapse: PropTypes.bool,
+  collapsed: PropTypes.bool,
   onLogoClick: PropTypes.func,
 }
 
