@@ -110,7 +110,6 @@ $hero-link-color: var(--hero-link-color, $link-color);
         font-family: $mainFont;
         text-decoration: none;
         border-bottom: 2px solid $hero-background;
-        margin-left: 10px;
 
         &:hover {
           border-bottom: 2px solid $accent;
@@ -118,7 +117,6 @@ $hero-link-color: var(--hero-link-color, $link-color);
 
         @include for-tablet-landscape-up {
           padding: 0;
-          margin-left: 0;
           font-size: 18px;
         }
       }
