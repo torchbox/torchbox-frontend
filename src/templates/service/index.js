@@ -77,7 +77,8 @@ export default ({ data, pageContext }) => {
                 type: 'testimonials-block',
                 data: {
                   sectionTitle: page.testimonialsSectionTitle,
-                  logos: page.clientLogos.concat(page.usaClientLogos),
+                  logos: page.clientLogos,
+                  usLogos: page.usaClientLogos,
                   testimonials: page.testimonials,
                 },
               }

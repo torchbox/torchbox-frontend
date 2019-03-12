@@ -20,7 +20,7 @@ import styles from './service-page.module.scss'
 class ServicePage extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { activeSectionTitle: '', collapsed: false}
+    this.state = { activeSectionTitle: '', collapsed: false, geoRegion: null}
     this.sectionRefs = {}
     props.blocks.map(({ type, data }) => {
       if (data) {
@@ -93,6 +93,7 @@ class ServicePage extends React.Component {
       this.navigateToSection()
       window.addEventListener('hashchange', this.navigateToSection)
       window.addEventListener('scroll', this.scroll, false)
+      this.updateGeoRegion()
     }
   }
 
@@ -101,6 +102,17 @@ class ServicePage extends React.Component {
       window.removeEventListener('scroll', this.scroll, false)
       window.removeEventListener('hashchange', this.navigateToSection)
     }
+  }
+
+  updateGeoRegion = async () => {
+    console.log(process.env)
+    fetch(`https://api.ipdata.co/?api-key=${process.env.GATSBY_LOCATION_API_KEY}`)
+      .then(ipData => ipData.json())
+      .then(ipData => {
+        this.setState({
+          geoRegion: ipData.continent_code
+        })
+      })
   }
 
   render() {
@@ -159,10 +171,14 @@ class ServicePage extends React.Component {
                 )
 
               case 'testimonials-block':
+                const logos = (this.state.geoRegion == 'NA')
+                  ? data.usLogos.slice(0, 12)
+                  : data.logos.slice(0, 12)
+
                 return (
                   <TestimonialsBlock
                     ref={this.sectionRefs[type].ref}
-                    logos={data.logos.map(logo => ({
+                    logos={logos.map(logo => ({
                       label: '',
                       image: logo.image.src,
                     }))}
