@@ -2,6 +2,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import { Link } from 'gatsby'
+import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 // Components
 import MenuButton from '@components/menu-button'
 import NavLink from '@components/nav-link'
@@ -12,7 +13,31 @@ import { ReactComponent as Flame } from '@images/tbx-flame.svg'
 import styles from './header.module.scss'
 
 class Header extends React.Component {
-  state = { mobileNavOpen: false}
+
+  constructor(props) {
+    super(props)
+    this.state = { mobileNavOpen: false}
+    this.mobileMenuRef = React.createRef()
+    this.mobileMenuElement = null
+  }
+
+  componentDidMount() {
+    this.mobileMenuElement = this.mobileMenuRef.current
+  }
+
+  componentWillUnmount() {
+    clearAllBodyScrollLocks()
+  }
+
+  mobileMenuHandleClick() {
+    console.log(this.state.mobileNavOpen)
+    this.setState(
+      { mobileNavOpen: !this.state.mobileNavOpen },
+      () => {
+        this.state.mobileNavOpen ? disableBodyScroll(this.mobileMenuElement) : enableBodyScroll(this.mobileMenuElement)
+      }
+    )
+  }
 
   render() {
     const {
@@ -89,9 +114,7 @@ class Header extends React.Component {
           <MenuButton
             className={styles.headerMenuButton}
             isOpen={this.state.mobileNavOpen}
-            onClick={() =>
-              this.setState({ mobileNavOpen: !this.state.mobileNavOpen })
-            }
+            onClick={() => this.mobileMenuHandleClick()}
           />
         </div>
 
@@ -103,6 +126,7 @@ class Header extends React.Component {
                 : styles.mobileNavModal
             }
             aria-label="Mobile navigation"
+            ref={this.mobileMenuRef}
           >
             <ul className={styles.mobileNavList}>
               {links.map((link, index) => (
