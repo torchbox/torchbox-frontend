@@ -20,7 +20,7 @@ import styles from './service-page.module.scss'
 class ServicePage extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { activeSectionTitle: '', collapsed: false, geoRegion: null}
+    this.state = { activeSectionTitle: '', collapsed: false, geoRegion: null }
     this.sectionRefs = {}
     props.blocks.map(({ type, data }) => {
       if (data) {
@@ -31,7 +31,7 @@ class ServicePage extends React.Component {
         }
       }
     })
-    this.pageNavRef = React.createRef();
+    this.pageNavRef = React.createRef()
   }
 
   navigateToSection = section => {
@@ -106,11 +106,13 @@ class ServicePage extends React.Component {
 
   updateGeoRegion = async () => {
     console.log(process.env)
-    fetch(`https://api.ipdata.co/?api-key=${process.env.GATSBY_LOCATION_API_KEY}`)
+    fetch(
+      `https://api.ipdata.co/?api-key=${process.env.GATSBY_LOCATION_API_KEY}`
+    )
       .then(ipData => ipData.json())
       .then(ipData => {
         this.setState({
-          geoRegion: ipData.continent_code
+          geoRegion: ipData.continent_code,
         })
       })
   }
@@ -135,7 +137,7 @@ class ServicePage extends React.Component {
         title={title}
         theme={theme}
         headerShouldCollapse={true}
-        collapsed = {this.state.collapsed}
+        collapsed={this.state.collapsed}
         nestedLinks={nestedNav}
         ignoreServiceTeaser={serviceSlug}
         onLogoClick={() => this.navigateToSection('hero')}
@@ -171,9 +173,10 @@ class ServicePage extends React.Component {
                 )
 
               case 'testimonials-block':
-                const logos = (this.state.geoRegion == 'NA')
-                  ? data.usLogos.slice(0, 12)
-                  : data.logos.slice(0, 12)
+                const logos =
+                  this.state.geoRegion == 'NA'
+                    ? data.usLogos.slice(0, 12)
+                    : data.logos.slice(0, 12)
 
                 return (
                   <TestimonialsBlock
@@ -233,7 +236,11 @@ class ServicePage extends React.Component {
 
               case 'contact-detailed':
                 return (
-                  <Contact className={styles.pageContact} {...data.contact} key={type} />
+                  <Contact
+                    className={styles.pageContact}
+                    {...data.contact}
+                    key={type}
+                  />
                 )
             }
           })}
