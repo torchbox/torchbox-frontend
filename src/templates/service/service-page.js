@@ -32,6 +32,7 @@ class ServicePage extends React.Component {
       }
     })
     this.pageNavRef = React.createRef()
+    this.updateGeoRegion()
   }
 
   navigateToSection = section => {
@@ -93,7 +94,6 @@ class ServicePage extends React.Component {
       this.navigateToSection()
       window.addEventListener('hashchange', this.navigateToSection)
       window.addEventListener('scroll', this.scroll, false)
-      this.updateGeoRegion()
     }
   }
 
@@ -105,7 +105,6 @@ class ServicePage extends React.Component {
   }
 
   updateGeoRegion = async () => {
-    console.log(process.env)
     fetch(
       `https://api.ipdata.co/?api-key=${process.env.GATSBY_LOCATION_API_KEY}`
     )
