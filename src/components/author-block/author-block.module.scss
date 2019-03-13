@@ -9,9 +9,14 @@
     }
 
     &Image {
-        width: 80px !important;
-        height: 80px !important;
+        width: 55px;
+        height: 55px;
         margin-right: 20px;
+
+        @include for-desktop-up {
+            width: 80px;
+            height: 80px;
+        }
     }
 
     &Details {
