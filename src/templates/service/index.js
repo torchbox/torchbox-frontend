@@ -174,16 +174,12 @@ export const query = graphql`
           linkedPage {
             type
             slug
+            serviceSlug
           }
         }
 
         contact {
-          name
-          emailAddress
-          phoneNumber
-          image {
-            ...iconImage
-          }
+          ...contactSnippet
         }
 
         testimonialsSectionTitle
