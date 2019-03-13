@@ -41,6 +41,9 @@ export const query = graphql`
         image {
           ...fullImage
         }
+        contact {
+          ...contactSnippet
+        }
       }
 
       blogPosts(authorSlug: $slug, limit: 2) {

@@ -25,6 +25,9 @@ export const query = graphql`
         slug
         title
         date
+        contact {
+          ...contactSnippet
+        }
         tags: relatedServices {
           name
           slug

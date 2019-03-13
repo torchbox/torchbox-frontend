@@ -178,12 +178,7 @@ export const query = graphql`
         }
 
         contact {
-          name
-          emailAddress
-          phoneNumber
-          image {
-            ...iconImage
-          }
+          ...contactSnippet
         }
 
         testimonialsSectionTitle

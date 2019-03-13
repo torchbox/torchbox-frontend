@@ -36,7 +36,7 @@ export class CaseStudyListingPage extends React.Component {
   }
 
   render() {
-    const { title, caseStudies } = this.props
+    const { title, caseStudies, contact } = this.props
     const { selectedTag, currentLimit, tags = [] } = this.state
 
     let listing = []
@@ -68,7 +68,7 @@ export class CaseStudyListingPage extends React.Component {
             <a onClick={this.loadMoreBlogs}>See more blogs</a>
           </div>
         ) : null}
-        <Contact className={styles.pageContact} />
+        <Contact className={styles.pageContact} {...contact} />
       </div>
     )
   }
@@ -86,6 +86,7 @@ CaseStudyListingPage.propTypes = {
   caseStudies: PropTypes.array,
   teasers: [],
   client: PropTypes.string,
+  contact: PropTypes.object,
 }
 
 CaseStudyListingPage.defaultProps = {

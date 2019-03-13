@@ -31,7 +31,11 @@ const BlogLink = ({
       <p className={styles.blogLinkDesc}>{description}</p>
     ) : null}
     <div className={styles.blogLinkMeta}>
-      <Avatar src={authorAvatar} containerClassName={styles.blogLinkImage} alt={authorName} />
+      <Avatar
+        src={authorAvatar}
+        containerClassName={styles.blogLinkImage}
+        alt={authorName}
+      />
       <div className={styles.blogLinkAuthor}>
         <span className={styles.blogLinkAuthorName}>{authorName}</span>
         <span className={styles.blogLinkAuthorRole}>
