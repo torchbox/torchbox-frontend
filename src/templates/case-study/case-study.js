@@ -27,7 +27,7 @@ const CaseStudyPage = ({
     <div className={styles.pageClientContainer}>
       <span className={styles.pageClient}>{client}</span>
     </div>
-    <TitleBlock className={styles.pageTitle} title={title} />
+    <TitleBlock className={styles.pageTitle} title={title} innerPage={true} />
     <AuthorBlock
       className={styles.pageAuthor}
       author={author}

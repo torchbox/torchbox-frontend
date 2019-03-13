@@ -45,6 +45,7 @@ class PersonPage extends React.Component {
             }
             className={styles.pageTitle}
             title={this.state.title}
+            innerPage={true}
           />
           <span className={styles.pageRole}>{role}</span>
           <div className={styles.pageAvatar}>
