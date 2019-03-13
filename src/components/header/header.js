@@ -16,7 +16,7 @@ class Header extends React.Component {
 
   constructor(props) {
     super(props)
-    this.state = { mobileNavOpen: false}
+    this.state = { mobileNavOpen: false }
     this.mobileMenuRef = React.createRef()
     this.mobileMenuElement = null
   }
@@ -30,7 +30,6 @@ class Header extends React.Component {
   }
 
   mobileMenuHandleClick() {
-    console.log(this.state.mobileNavOpen)
     this.setState(
       { mobileNavOpen: !this.state.mobileNavOpen },
       () => {
