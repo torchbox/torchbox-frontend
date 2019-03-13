@@ -106,14 +106,22 @@
             width: 100%;
             background-color: $light-grey;
 
+            &:hover {
+                background-color: $green;
+            }
+
             h1 {
                 font-size: 36px;
                 line-height: 45px;
-                color: $light-blue !important;
+                color: $light-blue;
 
                 &::after {
                     margin-top: 7px;
                     width: 16px;
+                }
+
+                .pageLinksTeaser:hover & {
+                    color: $blue;
                 }
 
             }
@@ -128,9 +136,10 @@
     }
 
     &Streamfield {
-        padding-top: 0 !important;
+        padding-top: 0;
+
         @include for-tablet-landscape-up {
-            padding-top: 40px !important;
+            padding-top: 40px;
         }
     }
 }
