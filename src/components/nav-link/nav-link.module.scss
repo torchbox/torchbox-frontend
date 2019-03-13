@@ -1,6 +1,7 @@
 @import '../../styles/app.module';
 
 $header-link-color: var(--header-link-color, $primary);
+$header-nested-link-color: var(--header-nested-link-color, white);
 
 @mixin navlink-underscore($height) {
   &::after {
@@ -104,6 +105,7 @@ $header-link-color: var(--header-link-color, $primary);
     transition: all 0.2s ease;
     transform: translateY(50%);
     opacity: 0;
+    pointer-events: none;
   }
 
   ul {
@@ -122,7 +124,7 @@ $header-link-color: var(--header-link-color, $primary);
       line-height: 35px;
 
       @include for-desktop-up {
-        color: $light-blue;
+        color: $header-nested-link-color;
         padding: 7px 0;
         border: none;
         line-height: initial;
@@ -137,6 +139,7 @@ $header-link-color: var(--header-link-color, $primary);
   .parent:hover & {
     transform: translateY(0);
     opacity: 1;
+    pointer-events: auto;
   }
 }
 
