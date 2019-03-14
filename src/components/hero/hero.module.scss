@@ -21,12 +21,10 @@ $hero-link-color: var(--hero-link-color, $link-color);
     
     @include for-tablet-landscape-up {
       padding-top: 120px;
-      // padding-bottom: 60px;
     }
 
     @include for-desktop-up {
       padding-left: 14.66vw;
-      // padding-bottom: 140px;
     }
 
     &::after {
@@ -88,7 +86,7 @@ $hero-link-color: var(--hero-link-color, $link-color);
       flex-wrap: wrap;
       @include for-tablet-landscape-up {
         padding-top: 0px;
-        margin: 0 !important;
+        margin: 0;
       }
     }
 
@@ -110,7 +108,6 @@ $hero-link-color: var(--hero-link-color, $link-color);
         font-family: $mainFont;
         text-decoration: none;
         border-bottom: 2px solid $hero-background;
-        margin-left: 10px;
 
         &:hover {
           border-bottom: 2px solid $accent;
@@ -118,14 +115,11 @@ $hero-link-color: var(--hero-link-color, $link-color);
 
         @include for-tablet-landscape-up {
           padding: 0;
-          margin-left: 0;
           font-size: 18px;
         }
       }
     }
-
   }
-
 }
 
 .collapsedHeroContainer {
@@ -136,10 +130,6 @@ $hero-link-color: var(--hero-link-color, $link-color);
       pointer-events: none;
     }
   }
-}
-
-.accent {
-  color: $accent !important;
 }
 
 .darkTheme {

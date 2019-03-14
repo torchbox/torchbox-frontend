@@ -21,6 +21,7 @@
     "babel-plugin-module-resolver": "^3.2.0",
     "babel-polyfill": "^6.26.0",
     "babel-preset-gatsby": "^0.1.7",
+    "body-scroll-lock": "^2.6.1",
     "breakpoint-sass": "^2.7.1",
     "css-loader": "^2.1.0",
     "css-vars-ponyfill": "^1.16.4",

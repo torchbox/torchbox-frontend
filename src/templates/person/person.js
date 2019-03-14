@@ -15,16 +15,14 @@ import styles from './person.module.scss'
 class PersonPage extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      title: `${props.firstName + ' ' + props.lastName || ''} [${props.intro ||
-        ''}]`,
-      altTitle: `${props.firstName + ' ' + props.lastName ||
-        ''} [${props.altIntro || ''}]`,
-    }
+    this.title = `${props.firstName + ' ' + props.lastName || ''} [${props.intro ||
+        ''}]`
+    this.altTitle = `${props.firstName + ' ' + props.lastName ||
+        ''} [${props.altIntro || ''}]`
+    this.state = { title: this.title }
   }
 
   render() {
-    const { title, altTitle } = this.state
     const { firstName, role, avatar, biography, blogs, contact } = this.props
 
     return (
@@ -33,18 +31,17 @@ class PersonPage extends React.Component {
           <TitleBlock
             onMouseEnter={() =>
               this.setState({
-                title: altTitle,
-                altTitle: title,
+                title: this.altTitle
               })
             }
             onMouseLeave={() =>
               this.setState({
-                title: altTitle,
-                altTitle: title,
+                title: this.title
               })
             }
             className={styles.pageTitle}
             title={this.state.title}
+            innerPage={true}
           />
           <span className={styles.pageRole}>{role}</span>
           <div className={styles.pageAvatar}>

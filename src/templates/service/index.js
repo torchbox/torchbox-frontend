@@ -174,6 +174,7 @@ export const query = graphql`
           linkedPage {
             type
             slug
+            serviceSlug
           }
         }
 

@@ -17,7 +17,7 @@ export const serviceUrl = (slug = '', parentServiceSlug = null) => {
 
 export const pageUrl = page => {
   if (page) {
-    const { type, slug } = page
+    const { type, slug, serviceSlug } = page
     switch (type) {
       case 'HomePage':
         return '/'
@@ -48,6 +48,9 @@ export const pageUrl = page => {
 
       case 'ServicePage':
         return serviceUrl(slug)
+
+      case 'SubServicePage':
+        return serviceUrl(slug, serviceSlug)
 
       default:
         return '/'

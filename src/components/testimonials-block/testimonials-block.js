@@ -11,9 +11,8 @@ class TestimonialsBlock extends React.Component {
     const { testimonials, logos, className, sectionTitle } = this.props
     return (
       <div className={[styles.testimonials, className].join(' ')}>
+        <span className={styles.pageSectionTitle}>{sectionTitle}</span>
         <div className={styles.testimonialsContainer}>
-          <span className={styles.pageSectionTitle}>{sectionTitle}</span>
-
           <section className={styles.testimonialsIconsBlock}>
             <ul className={styles.testimonialsIconsList}>
               {logos.map((logo, index) => (

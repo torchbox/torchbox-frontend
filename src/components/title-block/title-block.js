@@ -6,13 +6,13 @@ import { renderTorchUp } from '@utils/torchup'
 // Styles
 import styles from './title-block.module.scss'
 
-const TitleBlock = ({ title, className, onMouseEnter, onMouseLeave }) => (
+const TitleBlock = ({ title, className, onMouseEnter, onMouseLeave, innerPage }) => (
   <div
     onMouseEnter={onMouseEnter}
     onMouseLeave={onMouseLeave}
     className={[styles.block, className].join(' ')}
   >
-    <h1 className={styles.blockTitle} {...renderTorchUp(title)} />
+    <h1 className={innerPage ? [styles.blockTitle, styles.blockTitleInner].join(' ') : styles.blockTitle} {...renderTorchUp(title)} />
   </div>
 )
 

@@ -2,7 +2,8 @@
 
 .block {
     background-color: white;
-    padding: 95px 0 20px;
+    padding: 100px 0 20px;
+    position: relative;
 
     &Content {
         @include container;
@@ -57,8 +58,4 @@
             flex-direction: column;
         }
     }
-}
-
-.pageSectionTitle {
-    top: -50px;
 }

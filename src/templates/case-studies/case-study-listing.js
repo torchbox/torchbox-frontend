@@ -65,7 +65,7 @@ export class CaseStudyListingPage extends React.Component {
         />
         {listing.length > currentLimit ? (
           <div className={styles.seeMore}>
-            <a onClick={this.loadMoreBlogs}>See more blogs</a>
+            <a onClick={this.loadMoreCaseStudies}>See more case studies</a>
           </div>
         ) : null}
         <Contact className={styles.pageContact} {...contact} />
@@ -73,7 +73,7 @@ export class CaseStudyListingPage extends React.Component {
     )
   }
 
-  loadMoreBlogs = () =>
+  loadMoreCaseStudies = () =>
     this.setState({ currentLimit: this.state.currentLimit + 10 })
 }
 
