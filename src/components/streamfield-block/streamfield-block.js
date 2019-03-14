@@ -26,7 +26,10 @@ class StreamfieldBlock extends React.Component {
             case 'aligned_image':
               const aligned_image = React.createRef()
               return (
-                <div className={styles.streamfieldAlignedImage}>
+                <div
+                  className={styles.streamfieldAlignedImage}
+                  key="{block.type}"
+                >
                   <img
                     ref={aligned_image}
                     src={block.value.image.src}
@@ -45,7 +48,10 @@ class StreamfieldBlock extends React.Component {
             case 'wide_image':
               const wide_image = React.createRef()
               return (
-                <div className={styles.streamfieldWideImage}>
+                <div
+                  className={styles.streamfieldWideImage}
+                  key="{block.type}"
+                >
                   <img
                     ref={wide_image}
                     src={block.value.image.src}
@@ -65,32 +71,48 @@ class StreamfieldBlock extends React.Component {
                   align={block.value.alignment}
                   title={'TODO: Ask about title'} // TODO
                   caption={block.value.text}
+                  key="{block.type}"
                 />
               )
 
             case 'h1':
               return (
-                <h1 className={styles.streamfieldHeading}>{block.value}</h1>
+                <h1
+                  className={styles.streamfieldHeading}>{block.value}
+                  key="{block.type}"
+                </h1>
               )
 
             case 'h2':
               return (
-                <h2 className={styles.streamfieldHeading}>{block.value}</h2>
+                <h2
+                  className={styles.streamfieldHeading}>{block.value}
+                  key="{block.type}"
+                </h2>
               )
 
             case 'h3':
               return (
-                <h3 className={styles.streamfieldHeading}>{block.value}</h3>
+                <h3
+                  className={styles.streamfieldHeading}>{block.value}
+                  key="{block.type}"
+                </h3>
               )
 
             case 'h4':
               return (
-                <h4 className={styles.streamfieldHeading}>{block.value}</h4>
+                <h4
+                  className={styles.streamfieldHeading}>{block.value}
+                  key="{block.type}"
+                </h4>
               )
 
             case 'h5':
               return (
-                <h5 className={styles.streamfieldHeading}>{block.value}</h5>
+                <h5
+                  className={styles.streamfieldHeading}>{block.value}
+                  key="{block.type}"
+                </h5>
               )
 
             case 'embed':
@@ -98,6 +120,7 @@ class StreamfieldBlock extends React.Component {
                 <iframe
                   className={styles.streamfieldEmbed}
                   src={block.value.url}
+                  key="{block.type}"
                 />
               )
 
@@ -112,6 +135,7 @@ class StreamfieldBlock extends React.Component {
                       quote: block.value.quote,
                     },
                   ]}
+                  key="{block.type}"
                 />
               )
 
@@ -120,6 +144,7 @@ class StreamfieldBlock extends React.Component {
                 <div
                   className={styles.streamfieldParagraph}
                   dangerouslySetInnerHTML={{ __html: block.value }}
+                  key="{block.type}"
                 />
               )
 
@@ -128,6 +153,7 @@ class StreamfieldBlock extends React.Component {
                 <div
                   className={styles.streamfieldRaw}
                   dangerouslySetInnerHTML={{ __html: block.value }}
+                  key="{block.type}"
                 />
               )
 
