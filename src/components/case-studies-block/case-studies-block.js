@@ -19,7 +19,8 @@ class CaseStudiesBlock extends React.Component {
         ) : null}
         <div className={styles.blockList}>
           {(caseStudies || []).map((caseStudy, index) => {
-            let img = React.createRef()
+            let imgurl = caseStudy.feedImage || caseStudy.homepageImage || require('../../images/default-featured.png')
+
             return (
               <Link
                 key={`case-study-link-${index}`}
@@ -45,11 +46,7 @@ class CaseStudiesBlock extends React.Component {
                   <div
                     className={styles.caseStudyImageInner}
                     style={{
-                      backgroundImage: `
-                        url(${caseStudy.feedImage}), 
-                        url(${caseStudy.homepageImage}),
-                        url(${require('../../images/default-featured.png')})
-                      `,
+                      backgroundImage: `url(${imgurl})`,
                     }}
                   />
                 </div>
