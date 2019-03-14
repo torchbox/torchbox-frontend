@@ -10,7 +10,7 @@ import styles from './standard.module.scss'
 
 export class StandardPage extends React.Component {
   render() {
-    const { title, body } = this.props
+    const { title, body, contact } = this.props
     return (
       <div className={styles.page}>
         <TitleBlock className={styles.pageTitle} title={title} />
@@ -18,7 +18,7 @@ export class StandardPage extends React.Component {
           className={styles.pageStreamfield}
           streamfield={body}
         />
-        <Contact className={styles.pageContact} />
+        <Contact className={styles.pageContact} {...contact} />
       </div>
     )
   }
@@ -27,6 +27,7 @@ export class StandardPage extends React.Component {
 StandardPage.propTypes = {
   title: PropTypes.string,
   body: PropTypes.array,
+  contact: PropTypes.object,
 }
 
 StandardPage.defaultProps = {

@@ -20,7 +20,7 @@ import styles from './service-page.module.scss'
 class ServicePage extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { activeSectionTitle: '', collapsed: false}
+    this.state = { activeSectionTitle: '', collapsed: false }
     this.sectionRefs = {}
     props.blocks.map(({ type, data }) => {
       if (data) {
@@ -31,7 +31,7 @@ class ServicePage extends React.Component {
         }
       }
     })
-    this.pageNavRef = React.createRef();
+    this.pageNavRef = React.createRef()
   }
 
   navigateToSection = section => {
@@ -123,7 +123,7 @@ class ServicePage extends React.Component {
         title={title}
         theme={theme}
         headerShouldCollapse={true}
-        collapsed = {this.state.collapsed}
+        collapsed={this.state.collapsed}
         nestedLinks={nestedNav}
         ignoreServiceTeaser={serviceSlug}
         onLogoClick={() => this.navigateToSection('hero')}
@@ -217,7 +217,11 @@ class ServicePage extends React.Component {
 
               case 'contact-detailed':
                 return (
-                  <Contact className={styles.pageContact} {...data.contact} key={type} />
+                  <Contact
+                    className={styles.pageContact}
+                    {...data.contact}
+                    key={type}
+                  />
                 )
             }
           })}

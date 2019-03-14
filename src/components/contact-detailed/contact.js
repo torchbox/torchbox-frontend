@@ -5,8 +5,17 @@ import PropTypes from 'prop-types'
 import Avatar from '@components/avatar'
 // Styles
 import styles from './contact.module.scss'
+// Utils
+import safeGet from '@utils/safeget'
 
-const Contact = ({ title, emailAddress, phoneNumber, className, reasons }) => (
+const Contact = ({
+  title,
+  emailAddress,
+  phoneNumber,
+  image,
+  className,
+  reasons,
+}) => (
   <div className={[styles.contactBlock, className].join(' ')}>
     <div className={styles.contactBlockContainer}>
       {reasons.length > 0 ? (
@@ -38,12 +47,12 @@ const Contact = ({ title, emailAddress, phoneNumber, className, reasons }) => (
       <section className={styles.contactBlockDetails}>
         <Avatar
           containerClassName={styles.contactBlockDetailsImage}
-          src={require('@images/will.jpg')}
+          src={safeGet(image, 'src.url', require('@images/default-avatar.png'))}
         />
         <div className={styles.contactBlockDetailsMeta}>
           <div>
             <a
-              href={`mailto://${emailAddress}`}
+              href={`mailto:${emailAddress}`}
               className={styles.contactBlockDetailsEmail}
             >
               {emailAddress}
@@ -69,6 +78,7 @@ Contact.propTypes = {
   phoneNumber: PropTypes.string,
   className: PropTypes.string,
   reasons: PropTypes.array,
+  image: PropTypes.string,
 }
 
 Contact.defaultProps = {

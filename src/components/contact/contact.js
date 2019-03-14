@@ -6,20 +6,22 @@ import { Link } from 'gatsby'
 import Avatar from '@components/avatar'
 // Styles
 import styles from './contact.module.scss'
+// Utils
+import safeGet from '@utils/safeget'
 
-const Contact = ({ title, emailAddress, phoneNumber, className, avatar }) => (
+const Contact = ({ title, emailAddress, phoneNumber, className, image }) => (
   <div className={[styles.contactBlock, className].join(' ')}>
     <div className={styles.contactBlockContent}>
-      <Avatar containerClassName={styles.contactBlockImage} src={avatar} />
+      <Avatar
+        containerClassName={styles.contactBlockImage}
+        src={safeGet(image, 'src.url', require('@images/default-avatar.png'))}
+      />
       <div className={styles.contactBlockDetails}>
         <h3 className={styles.contactBlockTitle}>{title}</h3>
-        <a
-          href={`mailto://${emailAddress}`}
-          className={styles.contactBlockEmail}
-        >
+        <a href={`mailto:${emailAddress}`} className={styles.contactBlockEmail}>
           {emailAddress}
         </a>
-        <a href={`tel://${phoneNumber}`} className={styles.contactBlockNumber}>
+        <a href={`tel:${phoneNumber}`} className={styles.contactBlockNumber}>
           {phoneNumber}
         </a>
       </div>
@@ -32,7 +34,7 @@ Contact.propTypes = {
   emailAddress: PropTypes.string,
   phoneNumber: PropTypes.string,
   className: PropTypes.string,
-  avatar: PropTypes.string,
+  image: PropTypes.string,
 }
 
 Contact.defaultProps = {

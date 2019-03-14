@@ -27,6 +27,9 @@ export const query = graphql`
           level
           location
         }
+        contact {
+          ...contactSnippet
+        }
       }
     }
   }
