@@ -36,13 +36,13 @@
 
                 @include for-tablet-landscape-up {
                     .caseStudyMetaContainer  {
-                        padding: 40px 30px 0 0vw !important;
+                        padding: 40px 30px 0 0vw;
                     }
                 }
 
                 @include for-desktop-up {
                     .caseStudyMetaContainer  {
-                        padding: 4.33vw 30px 0 0vw !important;
+                        padding: 4.33vw 8.33vw 0 0vw;
                     }
                 }
 
