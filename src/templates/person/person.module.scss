@@ -4,11 +4,12 @@
 
   &Container {
     @include container();
-    margin-top: 45px !important;
-  }
 
-  &ParentLink {
-    margin-left: 16.66vw !important;
+    margin-top: 45px;
+
+    @include for-tablet-landscape-up {
+      margin-top: 45px;
+    }
   }
 
   &Title {
@@ -18,9 +19,11 @@
     h1 {  
       font-size: 45px;
       line-height: 50px;
-      margin-bottom: 0 !important;
-      p {
-        color: $primary !important;
+      margin-bottom: 0;
+
+      @include for-tablet-landscape-up {
+        font-size: 70px;
+        line-height: 80px;
       }
     }
   }
@@ -33,7 +36,7 @@
     letter-spacing: 0.15em;
     font-weight: bold;
     text-transform: uppercase;
-    color: $red;
+    color: $coral-dark;
   }
 
   &Avatar {
