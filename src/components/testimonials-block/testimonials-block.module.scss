@@ -22,15 +22,15 @@
             display: flex;
             flex-wrap: wrap;
             flex-direction: row;
-            padding-bottom: 100px;
+            padding-bottom: 200px;
         }
 
         &Item {
             display: flex;
             align-items: center;
             justify-content: center;
-            
             width: calc(100% / 3);
+
             @include for-tablet-landscape-up {
                 width: calc(100% / 4);
             }
