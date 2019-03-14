@@ -3,6 +3,7 @@
 .testimonials {
     background-color: white;
     padding-bottom: 100px;
+    position: relative;
 
     &Container {
         @include container;
@@ -50,9 +51,4 @@
             }
         }
     }
-
-    .pageSectionTitle {
-        top: 0px;
-    }
-
 }

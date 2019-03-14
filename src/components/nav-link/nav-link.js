@@ -15,18 +15,20 @@ const NavLink = ({
   collapsed,
   dropdownLinks,
 }) => (
-  <Link
-    to={href}
-    className={[
-      collapsed ? styles.collapsedNavLink : styles.navLink,
-      active ? styles.active : null,
-    ].join(' ')}
-    onClick={onClick}
-  >
-    <div className={styles.title}>
-      {title}
-      {badge != null ? <div className={styles.badge}>{badge}</div> : null}
-    </div>
+  <li className={styles.parent}>
+    <Link
+      to={href}
+      className={[
+        collapsed ? styles.collapsedNavLink : styles.navLink,
+        active ? styles.active : null,
+      ].join(' ')}
+      onClick={onClick}
+    >
+      <div className={styles.title}>
+        {title}
+        {badge != null ? <div className={styles.badge}>{badge}</div> : null}
+      </div>
+    </Link>
     <div className={styles.dropdown}>
       <ul>
         {dropdownLinks.map(link => (
@@ -36,7 +38,7 @@ const NavLink = ({
         ))}
       </ul>
     </div>
-  </Link>
+  </li>
 )
 
 NavLink.propTypes = {

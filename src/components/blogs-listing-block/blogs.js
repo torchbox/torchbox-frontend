@@ -20,8 +20,8 @@ class BlogsBlock extends React.Component {
 
     return (
       <div className={[styles.block, className].join(' ')}>
+        <span className={styles.pageSectionTitle}>{sectionTitle}</span>
         <div className={styles.blockContent}>
-          <span className={styles.pageSectionTitle}>{sectionTitle}</span>
           {showFeatured ? (
             <section className={styles.blockIntro}>
               <BlogLink

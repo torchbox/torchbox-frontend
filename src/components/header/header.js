@@ -74,13 +74,11 @@ class Header extends React.Component {
           <nav className={styles.primaryNavContainer} aria-label="Main navigation">
             <ul className={styles.primaryNavList}>
               {links.map((link, index) => (
-                <li key={`primary-nav-link-${index}`}>
-                  <NavLink
-                    {...link}
-                    collapsed={collapsed}
-                    onClick={() => navigateTo(link.href)}
-                  />
-                </li>
+                <NavLink
+                  {...link}
+                  collapsed={collapsed}
+                  onClick={() => navigateTo(link.href)}
+                />
               ))}
             </ul>
           </nav>
