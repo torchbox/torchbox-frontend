@@ -75,6 +75,7 @@ class Header extends React.Component {
             <ul className={styles.primaryNavList}>
               {links.map((link, index) => (
                 <NavLink
+                  key={`main-nav-link-${index}`}
                   {...link}
                   collapsed={collapsed}
                   onClick={() => navigateTo(link.href)}
