@@ -13,7 +13,7 @@ class QuoteSlider extends React.Component {
     this.setTimer()
   }
 
-  componentDidUnmount() {
+  componentWillUnmount() {
     clearInterval(this.timer)
   }
 
