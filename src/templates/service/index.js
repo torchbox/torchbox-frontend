@@ -251,6 +251,7 @@ export const query = graphql`
         isDarktheme
         strapline
         intro
+        greetingImageType
 
         keyPointsSectionTitle
         headingForKeyPoints
