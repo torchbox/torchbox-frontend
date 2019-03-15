@@ -108,6 +108,10 @@
 
             &:hover {
                 background-color: $green;
+
+                svg {
+                    fill: $blue;
+                }
             }
 
             h1 {
@@ -119,11 +123,6 @@
                     margin-top: 7px;
                     width: 16px;
                 }
-
-                .pageLinksTeaser:hover & {
-                    color: $blue;
-                }
-
             }
 
             span {
