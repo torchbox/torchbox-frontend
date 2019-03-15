@@ -10,7 +10,7 @@ import styles from './jobs-listing.module.scss'
 
 export class JobsListingPage extends React.Component {
   render() {
-    const { title, jobs, teasers } = this.props
+    const { title, jobs, teasers, contact } = this.props
 
     const listing = jobs.map(job => {
       return {
@@ -32,7 +32,10 @@ export class JobsListingPage extends React.Component {
           listingUrl={null}
           jobs={listing}
         />
-        <Contact className={[styles.pageContact, styles.darkTheme].join(' ')} />
+        <Contact
+          className={[styles.pageContact, styles.darkTheme].join(' ')}
+          {...contact}
+        />
       </div>
     )
   }
@@ -42,6 +45,7 @@ JobsListingPage.propTypes = {
   title: PropTypes.string,
   jobs: PropTypes.array,
   teasers: PropTypes.array,
+  contact: PropTypes.object,
 }
 
 JobsListingPage.defaultProps = {

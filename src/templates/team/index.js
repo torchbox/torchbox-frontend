@@ -22,6 +22,9 @@ export const query = graphql`
     wagtail {
       personIndexPage {
         strapline
+        contact {
+          ...contactSnippet
+        }
       }
       personPages {
         firstName

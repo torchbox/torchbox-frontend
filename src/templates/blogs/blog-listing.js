@@ -37,7 +37,7 @@ export class BlogListingPage extends React.Component {
   }
 
   render() {
-    const { title, streamfield, blogs } = this.props
+    const { title, streamfield, blogs, contact } = this.props
     const { selectedTag, currentLimit, tags = [] } = this.state
 
     const listing = (blogs || [])
@@ -80,7 +80,7 @@ export class BlogListingPage extends React.Component {
             </div>
           ) : null}
         </div>
-        <Contact className={styles.pageContact} />
+        <Contact className={styles.pageContact} {...contact} />
       </div>
     )
   }
@@ -98,6 +98,7 @@ BlogListingPage.propTypes = {
   streamfield: PropTypes.array,
   blogs: PropTypes.array,
   teasers: PropTypes.array,
+  contact: PropTypes.object,
 }
 
 BlogListingPage.defaultProps = {

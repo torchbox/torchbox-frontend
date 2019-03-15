@@ -10,9 +10,19 @@
         margin: 0 0 20px 0;
 
         @include for-tablet-landscape-up {
-            font-size: 70px !important;
-            line-height: 80px !important;
+            font-size: 70px;
+            line-height: 80px;
             margin: 0 8.33vw 20px 16.66vw;
+        }
+    }
+
+    &TitleInner {
+        font-size: 45px;
+        line-height: 50px;
+
+        @include for-tablet-landscape-up {
+            font-size: 70px;
+            line-height: 80px;
         }
     }
 }

@@ -14,8 +14,8 @@ class ProcessBlock extends React.Component {
     const { title = '', className, sectionTitle, processes } = this.props
     return (
       <div className={[styles.processBlock, className].join(' ')}>
+        <span className={styles.pageSectionTitle}>{sectionTitle}</span>
         <div className={styles.processContainer}>
-          <span className={styles.pageSectionTitle}>{sectionTitle}</span>
           <h1 className={styles.processTitle} {...renderTorchUp(title || '')} />
           <ToolkitImage className={styles.processImage} />
           <ul className={styles.processList}>

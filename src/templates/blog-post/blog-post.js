@@ -23,7 +23,7 @@ const BlogPostPage = ({
   contact,
 }) => (
   <div className={styles.page}>
-    <TitleBlock className={styles.pageTitle} title={title} />
+    <TitleBlock className={styles.pageTitle} title={title} innerPage={true} />
     <AuthorBlock
       className={styles.pageAuthor}
       author={author}

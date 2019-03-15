@@ -209,6 +209,7 @@ export const query = graphql`
           pageLink {
             type
             slug
+            serviceSlug
           }
         }
 
