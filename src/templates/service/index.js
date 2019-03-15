@@ -222,6 +222,9 @@ export const query = graphql`
           feedImage {
             ...fullImage
           }
+          homepageImage {
+            ...fullImage
+          }
         }
 
         blogsSectionTitle
