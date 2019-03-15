@@ -12,14 +12,10 @@ const Footer = ({ links, className }) => (
         <li className={styles.footerAddress}>
           <h5 className={styles.footerAddressTitle}>Glorious Oxfordshire</h5>
           <p>
-            3rd Floor
-            <br />
-            15 Colston Street
-            <br />
-            Bristol
-            <br />
-            <a href="#">BS1 5AP</a>
-            <br />
+            Unit 9<br />
+            Southill Business Park<br />
+            Charlbury<br />
+            OX7 3EW<br />
             UK
           </p>
         </li>
@@ -33,7 +29,7 @@ const Footer = ({ links, className }) => (
             <br />
             Bristol
             <br />
-            <a href="#">BS1 5AP</a>
+            BS1 5AP
             <br />
             UK
           </p>
