@@ -47,7 +47,7 @@ class JobsBlock extends React.Component {
 JobsBlock.propTypes = {
   jobs: PropTypes.array,
   className: PropTypes.string,
-  listingUrl: PropTypes.string.isRequired,
+  listingUrl: PropTypes.string,
   greetingImage: PropTypes.string,
 }
 
