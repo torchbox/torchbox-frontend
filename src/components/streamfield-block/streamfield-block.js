@@ -20,6 +20,7 @@ class StreamfieldBlock extends React.Component {
                 <div
                   className={styles.streamfieldIntro}
                   dangerouslySetInnerHTML={{ __html: block.value }}
+                  key={`${block.type}-${index}`}
                 />
               )
 
