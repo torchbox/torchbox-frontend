@@ -39,7 +39,7 @@ class Hero extends React.Component {
           ) : null}
 
           <h1 className={styles.heroTitle} {...renderTorchUp(title)} />
-          <p className={styles.heroDesc} {...renderTorchUp(description)} />
+          <div className={styles.heroDesc} {...renderTorchUp(description)} />
           {links != null ? (
             <div ref={pageNavRef}>
               <nav className={styles.heroLinksContainer} aria-label="In page navigation">

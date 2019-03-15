@@ -64,11 +64,18 @@ $hero-link-color: var(--hero-link-color, $link-color);
   }
 
   &Desc {
-    color: $hero-title-color;
-    margin-bottom: 40px;
-    line-height: 30px;
+    font-size: 22px;
+    line-height: 36px;
+    margin: 0 0 40px;
+    color: $primary;
+
     @include for-tablet-landscape-up {
+      font-size: 24px;
       line-height: 42px;
+    }
+
+    p {
+      color: $primary;
     }
   }
 
