@@ -84,7 +84,7 @@ CaseStudyListingPage.propTypes = {
   readTime: PropTypes.number,
   tags: PropTypes.array,
   caseStudies: PropTypes.array,
-  teasers: [],
+  teasers: PropTypes.array,
   client: PropTypes.string,
   contact: PropTypes.object,
 }

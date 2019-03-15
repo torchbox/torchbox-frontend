@@ -70,7 +70,7 @@ class CaseStudiesBlock extends React.Component {
 CaseStudiesBlock.propTypes = {
   caseStudies: PropTypes.array.isRequired,
   className: PropTypes.string,
-  listingUrl: PropTypes.string.isRequired,
+  listingUrl: PropTypes.string,
   sectionTitle: PropTypes.string,
 }
 

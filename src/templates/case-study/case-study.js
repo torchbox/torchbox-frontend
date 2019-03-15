@@ -51,7 +51,7 @@ const CaseStudyPage = ({
 
 CaseStudyPage.propTypes = {
   title: PropTypes.string,
-  author: PropTypes.string,
+  author: PropTypes.object,
   readTime: PropTypes.number,
   client: PropTypes.string,
   tags: PropTypes.array,
