@@ -127,9 +127,9 @@ class StreamfieldBlock extends React.Component {
 
             case 'embed':
               return (
-                <iframe
+                <div
                   className={styles.streamfieldEmbed}
-                  src={block.value.url}
+                  dangerouslySetInnerHTML={{ __html: block.value.html }}
                   key={block.type}
                 />
               )
