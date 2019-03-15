@@ -15,7 +15,6 @@ class ProcessBlock extends React.Component {
     return (
       <div className={[styles.processBlock, className].join(' ')}>
         <div className={styles.processContainer}>
-          test what process block returns
           <span className={styles.pageSectionTitle}>{sectionTitle}</span>
           <h1 className={styles.processTitle} {...renderTorchUp(title || '')} />
           <ToolkitImage className={styles.processImage} />
