@@ -27,7 +27,7 @@ class QuoteSlider extends React.Component {
         currentIndex == quotes.length - 1 ? 0 : currentIndex + 1
 
       this.changeSlide(nextSlideIndex)
-    }, 4000)
+    }, 8000)
   }
 
   render() {

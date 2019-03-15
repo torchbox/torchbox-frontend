@@ -6,7 +6,6 @@ import TitleBlock from '@components/title-block'
 import StreamfieldBlock from '@components/streamfield-block'
 import Contact from '@components/contact-detailed'
 import Blogs from '@components/blogs-listing-block'
-import ParentPageLink from '@components/parent-page-link'
 // Utilities
 import { blogsUrl, teamUrl } from '@utils/urls'
 // Styles
