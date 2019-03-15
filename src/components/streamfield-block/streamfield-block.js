@@ -13,7 +13,7 @@ class StreamfieldBlock extends React.Component {
     const { streamfield, className } = this.props
     return (
       <div className={[styles.streamfield, className].join(' ')}>
-        {streamfield.map(block => {
+        {streamfield.map((block, index) => {
           switch (block.type) {
             case 'intro':
               return (
@@ -28,7 +28,7 @@ class StreamfieldBlock extends React.Component {
               return (
                 <div
                   className={styles.streamfieldAlignedImage}
-                  key={block.type}
+                  key={`${block.type}-${index}`}
                 >
                   <img
                     ref={aligned_image}
@@ -50,7 +50,7 @@ class StreamfieldBlock extends React.Component {
               return (
                 <div
                   className={styles.streamfieldWideImage}
-                  key={block.type}
+                  key={`${block.type}-${index}`}
                 >
                   <img
                     ref={wide_image}
@@ -71,7 +71,7 @@ class StreamfieldBlock extends React.Component {
                   align={block.value.alignment}
                   title={'TODO: Ask about title'} // TODO
                   caption={block.value.text}
-                  key={block.type}
+                  key={`${block.type}-${index}`}
                 />
               )
 
@@ -79,7 +79,7 @@ class StreamfieldBlock extends React.Component {
               return (
                 <h1
                   className={styles.streamfieldHeading}
-                  key={block.type}
+                  key={`${block.type}-${index}`}
                 >
                   {block.value}
                 </h1>
@@ -89,7 +89,7 @@ class StreamfieldBlock extends React.Component {
               return (
                 <h2
                   className={styles.streamfieldHeading}
-                  key={block.type}
+                  key={`${block.type}-${index}`}
                 >
                   {block.value}
                 </h2>
@@ -99,7 +99,7 @@ class StreamfieldBlock extends React.Component {
               return (
                 <h3
                   className={styles.streamfieldHeading}
-                  key={block.type}
+                  key={`${block.type}-${index}`}
                 >
                   {block.value}
                 </h3>
@@ -109,7 +109,7 @@ class StreamfieldBlock extends React.Component {
               return (
                 <h4
                   className={styles.streamfieldHeading}
-                  key="{block.type}"
+                  key={`${block.type}-${index}`}
                 >
                   {block.value}
                 </h4>
@@ -119,7 +119,7 @@ class StreamfieldBlock extends React.Component {
               return (
                 <h5
                   className={styles.streamfieldHeading}
-                  key="{block.type}"
+                  key={`${block.type}-${index}`}
                 >
                   {block.value}
                 </h5>
@@ -130,7 +130,7 @@ class StreamfieldBlock extends React.Component {
                 <div
                   className={styles.streamfieldEmbed}
                   dangerouslySetInnerHTML={{ __html: block.value.html }}
-                  key={block.type}
+                  key={`${block.type}-${index}`}
                 />
               )
 
@@ -145,7 +145,7 @@ class StreamfieldBlock extends React.Component {
                       quote: block.value.quote,
                     },
                   ]}
-                  key={block.type}
+                  key={`${block.type}-${index}`}
                 />
               )
 
@@ -154,7 +154,7 @@ class StreamfieldBlock extends React.Component {
                 <div
                   className={styles.streamfieldParagraph}
                   dangerouslySetInnerHTML={{ __html: block.value }}
-                  key={block.type}
+                  key={`${block.type}-${index}`}
                 />
               )
 
@@ -163,7 +163,7 @@ class StreamfieldBlock extends React.Component {
                 <div
                   className={styles.streamfieldRaw}
                   dangerouslySetInnerHTML={{ __html: block.value }}
-                  key={block.type}
+                  key={`${block.type}-${index}`}
                 />
               )
 
