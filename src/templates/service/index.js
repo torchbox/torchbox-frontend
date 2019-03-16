@@ -141,10 +141,10 @@ export default ({ data, pageContext }) => {
           return {}
       }
     })
-
     return (
       <ServicePage
         title={page.title}
+        seoTitle={page.pageTitle}
         theme={page.isDarktheme ? 'dark' : 'light'}
         blocks={blocks}
         serviceSlug={page.slug}
@@ -161,6 +161,7 @@ export const query = graphql`
     wagtail {
       servicePages(serviceSlug: $slug) {
         title
+        pageTitle
         slug
         isDarktheme
         strapline
@@ -251,6 +252,7 @@ export const query = graphql`
 
       subServicePages(slug: $slug) {
         title
+        pageTitle
         isDarktheme
         strapline
         intro

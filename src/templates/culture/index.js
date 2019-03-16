@@ -11,7 +11,7 @@ const CulturePageContainer = ({ data }) => {
   const page = data.wagtail.culturePages[0]
   if (page) {
     return (
-      <Layout theme={'dark--transparent'}>
+      <Layout theme={'dark--transparent'} seoTitle={page.pageTitle}>
         <CulturePage
           strapline={page.strapline}
           heroImage={page.heroImage.src.url}
@@ -30,6 +30,7 @@ export const query = graphql`
   query($slug: String) {
     wagtail {
       culturePages(slug: $slug) {
+        pageTitle
         slug
         strapline
         intro

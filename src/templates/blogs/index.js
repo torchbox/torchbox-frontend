@@ -9,7 +9,7 @@ import Layout from '@components/layout'
 
 const BlogsListingContainer = ({ data }) => {
   return (
-    <Layout>
+    <Layout seoTitle="Blogs: our thinking about all things digital">
       <BlogListingPage
         title="Our thinking [about all things digital]."
         blogs={data.wagtail.blogPosts}

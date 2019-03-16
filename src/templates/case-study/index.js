@@ -40,7 +40,7 @@ const CaseStudyContainer = ({ data }) => {
   ].concat(page.body)
 
   return (
-    <Layout>
+    <Layout seoTitle={page.pageTitle}>
       <CaseStudy
         client={page.client}
         title={page.title}
@@ -60,6 +60,7 @@ export const query = graphql`
     wagtail {
       caseStudies(slug: $slug) {
         title
+        pageTitle
         client
         feedImage {
           ...fullImage

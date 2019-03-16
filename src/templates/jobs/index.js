@@ -8,9 +8,9 @@ import JobsListingPage from './jobs-listing'
 
 const JobsListingContainer = ({ data }) => {
   return (
-    <Layout>
+    <Layout seoTitle={data.wagtail.jobsIndexPage.pageTitle}>
       <JobsListingPage
-        title="Our work [on amazing digital things]."
+        title={data.wagtail.jobsIndexPage.title}
         jobs={data.wagtail.jobsIndexPage.jobs}
       />
     </Layout>
@@ -21,6 +21,9 @@ export const query = graphql`
   query {
     wagtail {
       jobsIndexPage {
+        title
+        pageTitle
+
         jobs {
           url
           title
