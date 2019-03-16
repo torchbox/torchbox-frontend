@@ -7,11 +7,14 @@ import Layout from '@components/layout'
 import JobsListingPage from './jobs-listing'
 
 const JobsListingContainer = ({ data }) => {
+  const page = data.wagtail.jobsIndexPage
   return (
     <Layout>
       <JobsListingPage
         title="Our work [on amazing digital things]."
-        jobs={data.wagtail.jobsIndexPage.jobs}
+        jobs={page.jobs}
+        contact={page.contact}
+        contactReasons={page.contactReasons}
       />
     </Layout>
   )
@@ -29,6 +32,9 @@ export const query = graphql`
         }
         contact {
           ...contactSnippet
+        }
+        contactReasons {
+          ...contactReasonsSnippet
         }
       }
     }

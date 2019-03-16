@@ -48,6 +48,7 @@ const CaseStudyContainer = ({ data }) => {
         author={authorDetails(page.authors)}
         tags={postTags(page.tags, caseStudiesUrl('#filter='))}
         contact={page.contact}
+        contactReasons={page.contactReasons}
         readTime={readTime(page.bodyWordCount) || 0}
         caseStudies={extraCaseStudies}
       />
@@ -86,6 +87,9 @@ export const query = graphql`
         contact {
           ...contactSnippet
         }
+        contactReasons {
+          ...contactReasonsSnippet
+        }
       }
 
       extraCaseStudies: caseStudies {
@@ -93,10 +97,6 @@ export const query = graphql`
         title
         client
         listingSummary
-        tags: relatedServices {
-          name
-          slug
-        }
         authors {
           name
           role

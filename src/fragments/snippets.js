@@ -12,3 +12,13 @@ export const contactSnippet = graphql`
     }
   }
 `
+
+export const contactReasonsSnippet = graphql`
+  fragment contactReasonsSnippet on Wagtail_ContactReasonsObjectType {
+    heading
+    reasons {
+      title
+      description
+    }
+  }
+`

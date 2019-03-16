@@ -22,7 +22,7 @@ class PersonPage extends React.Component {
   }
 
   render() {
-    const { firstName, role, avatar, biography, blogs, contact } = this.props
+    const { firstName, role, avatar, biography, blogs, contact, contactReasons } = this.props
 
     return (
       <div className={styles.page}>
@@ -62,7 +62,7 @@ class PersonPage extends React.Component {
           showFeatured={false}
           listingUrl={null}
         />
-        <Contact className={styles.pageContact} {...contact} />
+        <Contact className={styles.pageContact} {...contact} {...contactReasons} />
       </div>
     )
   }
@@ -78,6 +78,7 @@ PersonPage.propTypes = {
   biography: PropTypes.string,
   blogs: PropTypes.array,
   contact: PropTypes.object,
+  contactReasons: PropTypes.object,
 }
 
 PersonPage.defaultProps = {

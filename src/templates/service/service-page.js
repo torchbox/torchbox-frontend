@@ -218,9 +218,10 @@ class ServicePage extends React.Component {
               case 'contact-detailed':
                 return (
                   <Contact
+                    key={type}
                     className={styles.pageContact}
                     {...data.contact}
-                    key={type}
+                    {...data.contactReasons}
                   />
                 )
             }

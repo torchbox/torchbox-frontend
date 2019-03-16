@@ -13,6 +13,8 @@ const BlogsListingContainer = ({ data }) => {
       <BlogListingPage
         title="Our thinking [about all things digital]."
         blogs={data.wagtail.blogPosts}
+        contact={data.wagtail.contact}
+        contactReasons={data.wagtail.contactReasons}
       />
     </Layout>
   )
@@ -42,6 +44,12 @@ export const query = graphql`
             }
           }
         }
+      }
+      contact {
+        ...contactSnippet
+      }
+      contactReasons {
+        ...contactReasonsSnippet
       }
     }
   }

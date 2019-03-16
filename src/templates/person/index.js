@@ -22,6 +22,8 @@ const PersonPageContainer = ({ data }) => {
         avatar={person.image.src.url}
         biography={person.biography}
         blogs={blogs}
+        contact={person.contact}
+        contactReasons={person.contactReasons}
       />
     </Layout>
   )
@@ -43,6 +45,9 @@ export const query = graphql`
         }
         contact {
           ...contactSnippet
+        }
+        contactReasons {
+          ...contactReasonsSnippet
         }
       }
 

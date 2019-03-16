@@ -133,6 +133,7 @@ export default ({ data, pageContext }) => {
                 type: 'contact-detailed',
                 data: {
                   contact: page.contact,
+                  contactReasons: page.contactReasons
                 },
               }
             : {}
@@ -180,6 +181,9 @@ export const query = graphql`
 
         contact {
           ...contactSnippet
+        }
+        contactReasons {
+          ...contactReasonsSnippet
         }
 
         testimonialsSectionTitle
@@ -267,6 +271,9 @@ export const query = graphql`
 
         contact {
           ...contactSnippet
+        }
+        contactReasons {
+          ...contactReasonsSnippet
         }
 
         testimonialsSectionTitle

@@ -19,6 +19,7 @@ const CulturePageContainer = ({ data }) => {
           links={page.links}
           body={page.body}
           contact={page.contact}
+          contactReasons={page.contactReasons}
         />
       </Layout>
     )
@@ -47,6 +48,9 @@ export const query = graphql`
         }
         contact {
           ...contactSnippet
+        }
+        contactReasons {
+          ...contactReasonsSnippet
         }
       }
     }

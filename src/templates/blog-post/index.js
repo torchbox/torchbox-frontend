@@ -28,6 +28,8 @@ const BlogPostContainer = ({ data }) => {
         readTime={readTime(page.bodyWordCount) || 0}
         tags={postTags(page.tags, blogsUrl('#filter='))}
         extraBlogPosts={extraBlogPosts.map(blogListing)}
+        contact={page.contact}
+        contactReasons={page.contactReasons}
       />
     </Layout>
   )
@@ -58,15 +60,13 @@ export const query = graphql`
         contact {
           ...contactSnippet
         }
+        contactReasons {
+          ...contactReasonsSnippet
+        }
       }
 
       extraBlogPosts: blogPosts(limit: 2) {
         title
-        date
-        tags: relatedServices {
-          name
-          slug
-        }
         authors {
           name
           personPage {
@@ -76,10 +76,6 @@ export const query = graphql`
               ...iconImage
             }
           }
-        }
-        body
-        contact {
-          ...contactSnippet
         }
       }
     }

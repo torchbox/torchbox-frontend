@@ -22,6 +22,7 @@ const CaseStudyPage = ({
   caseStudies,
   teasers,
   contact,
+  contactReasons
 }) => (
   <div className={styles.page}>
     <div className={styles.pageClientContainer}>
@@ -45,7 +46,7 @@ const CaseStudyPage = ({
       caseStudies={caseStudies}
       listingUrl={caseStudiesUrl()}
     />
-    <Contact className={styles.pageContact} {...contact} />
+    <Contact className={styles.pageContact} {...contact} {...contactReasons} />
   </div>
 )
 
@@ -59,6 +60,7 @@ CaseStudyPage.propTypes = {
   caseStudies: PropTypes.array,
   teasers: PropTypes.array,
   contact: PropTypes.object,
+  contactReasons: PropTypes.object,
 }
 
 CaseStudyPage.defaultProps = {
