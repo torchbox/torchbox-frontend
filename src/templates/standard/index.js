@@ -8,7 +8,7 @@ import StandardPage from './standard'
 
 const StandardPageContainer = ({ data }) => {
   return (
-    <Layout>
+    <Layout seoTitle={data.wagtail.standardPages[0].pageTitle}>
       <StandardPage
         title={data.wagtail.standardPages[0].title}
         body={data.wagtail.standardPages[0].body}
@@ -23,6 +23,7 @@ export const query = graphql`
       standardPages(slug: $slug) {
         slug
         title
+        pageTitle
         body
         contact {
           ...contactSnippet

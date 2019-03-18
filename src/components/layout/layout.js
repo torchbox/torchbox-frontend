@@ -8,6 +8,7 @@ import Header from '@components/header'
 import Footer from '@components/footer'
 import TeaserBlock from '@components/teaser-block'
 import ThemeProvider from '@components/theme-provider'
+import SEO from '@components/seo'
 // Utilities
 import { safeGet } from '@utils/safeget'
 import { blogsUrl, caseStudiesUrl, teamUrl, jobsUrl } from '@utils/urls'
@@ -40,6 +41,9 @@ class Layout extends React.Component {
       ignoreServiceTeaser,
       theme,
       onLogoClick,
+      seoTitle,
+      seoDesc,
+      seoLang
     } = this.props
 
     return (
@@ -56,51 +60,58 @@ class Layout extends React.Component {
           }
         `}
         render={data => (
-          <ThemeProvider theme={theme}>
-            <Header
-              title={title}
-              currentUrl={this.state.currentUrl}
-              shouldCollapse={headerShouldCollapse}
-              collapsed={collapsed}
-              links={this.renderLinks(data)}
-              nestedLinks={nestedLinks}
-              navigateTo={url => {
-                this.setState({ currentUrl: url })
-              }}
-              onLogoClick={onLogoClick}
+          <>
+            <SEO
+              title={seoTitle}
+              description={seoDesc}
+              lang={seoLang }
             />
-              <main className={styles.pageContainer}>
-                {children}
-                <TeaserBlock
-                  title={`More from Torchbox...`}
-                  ignoreSlug={ignoreServiceTeaser}
-                />
-              </main>
-              <Footer
-                links={[
-                  {
-                    label: 'Blog',
-                    href: blogsUrl(),
-                  },
-                  {
-                    label: 'Work',
-                    href: caseStudiesUrl(),
-                  },
-                  {
-                    label: 'Team',
-                    href: teamUrl(),
-                  },
-                  {
-                    label: 'Privacy',
-                    href: '/privacy/',
-                  },
-                  {
-                    label: 'Cookies',
-                    href: '/cookies/',
-                  },
-                ]}
+            <ThemeProvider theme={theme}>
+              <Header
+                title={title}
+                currentUrl={this.state.currentUrl}
+                shouldCollapse={headerShouldCollapse}
+                collapsed={collapsed}
+                links={this.renderLinks(data)}
+                nestedLinks={nestedLinks}
+                navigateTo={url => {
+                  this.setState({ currentUrl: url })
+                }}
+                onLogoClick={onLogoClick}
               />
-          </ThemeProvider>
+                <main className={styles.pageContainer}>
+                  {children}
+                  <TeaserBlock
+                    title={`More from Torchbox...`}
+                    ignoreSlug={ignoreServiceTeaser}
+                  />
+                </main>
+                <Footer
+                  links={[
+                    {
+                      label: 'Blog',
+                      href: blogsUrl(),
+                    },
+                    {
+                      label: 'Work',
+                      href: caseStudiesUrl(),
+                    },
+                    {
+                      label: 'Team',
+                      href: teamUrl(),
+                    },
+                    {
+                      label: 'Privacy',
+                      href: '/privacy/',
+                    },
+                    {
+                      label: 'Cookies',
+                      href: '/cookies/',
+                    },
+                  ]}
+                />
+            </ThemeProvider>
+          </>
         )}
       />
     )

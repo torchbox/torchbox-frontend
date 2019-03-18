@@ -104,7 +104,7 @@ class ServicePage extends React.Component {
   }
 
   render() {
-    const { blocks, title, theme, serviceSlug } = this.props
+    const { blocks, title, theme, serviceSlug, seoTitle } = this.props
 
     const nestedNav = Object.values(this.sectionRefs)
       .filter(section => !section.excludeFromLinks)
@@ -121,6 +121,7 @@ class ServicePage extends React.Component {
     return (
       <Layout
         title={title}
+        seoTitle={seoTitle}
         theme={theme}
         headerShouldCollapse={true}
         collapsed={this.state.collapsed}

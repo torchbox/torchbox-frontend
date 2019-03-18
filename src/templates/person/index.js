@@ -12,7 +12,7 @@ const PersonPageContainer = ({ data }) => {
   const person = data.wagtail.personPages[0]
   const blogs = (data.wagtail.blogPosts || []).map(blogListing)
   return (
-    <Layout>
+    <Layout seoTitle={person.pageTitle}>
       <PersonPage
         firstName={person.firstName}
         lastName={person.lastName}
@@ -31,6 +31,7 @@ export const query = graphql`
   query($slug: String) {
     wagtail {
       personPages(slug: $slug) {
+        pageTitle
         firstName
         lastName
         role
