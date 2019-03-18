@@ -125,7 +125,7 @@ $header-logo-color: var(--header-logo-color, $primary);
     padding-top: 15px;
     display: none;
 
-    @include for-desktop-up {
+    @include for-desktop-medium-up {
       display: block;
       padding-top: 10px;
     }

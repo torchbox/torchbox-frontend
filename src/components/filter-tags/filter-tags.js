@@ -23,7 +23,7 @@ const FilterTags = ({ tags, onChange = () => null, activeTag, className }) => (
 )
 
 FilterTags.propTypes = {
-  tags: PropTypes.string,
+  tags: PropTypes.array,
   className: PropTypes.string,
   onChange: PropTypes.func,
   activeTag: PropTypes.number,

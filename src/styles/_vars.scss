@@ -10,7 +10,6 @@
     --color-light-grey: #f4f3f6;
     --color-light-grey-accessible: #757575;
     --color-grey: #444;
-    --color-red: #eb0316;
 }
 $coral: var(--color-coral);
 $coral-dark: var(--color-coral-dark);
@@ -21,7 +20,6 @@ $light-grey-accessible: var(--color-light-grey-accessible);
 $grey: var(--color-grey);
 $green: var(--color-green);
 $green-dark: var(--color-green-dark);
-$red: var(--color-red);
 
 // Theme Vars (For good browsers that support CSS Vars)
 $primary: var(--color-primary);
@@ -38,4 +36,6 @@ $small: '(max-width: 599px)';
 $tablet: '(min-width: 600px)';
 $tablet-landscape: '(min-width: 900px)';
 $desktop: '(min-width: 1200px)';
+$desktop-medium: '(min-width: 1310px)'; // specifically for navigation
 $desktop-big: '(min-width: 1800px)';
+

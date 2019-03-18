@@ -13,7 +13,7 @@ class QuoteSlider extends React.Component {
     this.setTimer()
   }
 
-  componentDidUnmount() {
+  componentWillUnmount() {
     clearInterval(this.timer)
   }
 
@@ -27,7 +27,7 @@ class QuoteSlider extends React.Component {
         currentIndex == quotes.length - 1 ? 0 : currentIndex + 1
 
       this.changeSlide(nextSlideIndex)
-    }, 4000)
+    }, 8000)
   }
 
   render() {
@@ -45,6 +45,12 @@ class QuoteSlider extends React.Component {
                   currentIndex == index
                     ? styles.quoteSlideActive
                     : styles.quoteSlide
+                }
+                onMouseEnter={() =>
+                  clearInterval(this.timer)
+                }
+                onMouseLeave={() =>
+                  this.setTimer()
                 }
               >
                 <p className={styles.quoteSlideQuote}>{quote.quote}</p>

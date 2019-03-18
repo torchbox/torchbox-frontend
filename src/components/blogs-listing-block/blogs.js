@@ -63,7 +63,7 @@ class BlogsBlock extends React.Component {
 BlogsBlock.propTypes = {
   blogs: PropTypes.array,
   className: PropTypes.string,
-  listingUrl: PropTypes.string.isRequired,
+  listingUrl: PropTypes.string,
   sectionTitle: PropTypes.string,
   showFeatured: PropTypes.bool,
 }

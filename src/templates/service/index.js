@@ -222,6 +222,9 @@ export const query = graphql`
           feedImage {
             ...fullImage
           }
+          homepageImage {
+            ...fullImage
+          }
         }
 
         blogsSectionTitle
@@ -270,12 +273,12 @@ export const query = graphql`
         testimonialsSectionTitle
         clientLogos {
           image {
-            ...largeIconImage
+            ...quarterImage
           }
         }
         usaClientLogos {
           image {
-            ...largeIconImage
+            ...quarterImage
           }
         }
         testimonials {
