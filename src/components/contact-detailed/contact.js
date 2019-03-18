@@ -78,7 +78,7 @@ Contact.propTypes = {
   phoneNumber: PropTypes.string,
   className: PropTypes.string,
   reasons: PropTypes.array,
-  image: PropTypes.string,
+  image: PropTypes.object,
 }
 
 Contact.defaultProps = {

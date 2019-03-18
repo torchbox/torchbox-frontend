@@ -34,7 +34,7 @@ Contact.propTypes = {
   emailAddress: PropTypes.string,
   phoneNumber: PropTypes.string,
   className: PropTypes.string,
-  image: PropTypes.string,
+  image: PropTypes.object,
 }
 
 Contact.defaultProps = {

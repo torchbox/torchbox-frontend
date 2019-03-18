@@ -23,7 +23,7 @@ const ThemeProvider = ({ children, theme = 'light' }) => {
 }
 
 ThemeProvider.propTypes = {
-  children: propTypes.element,
+  children: propTypes.node,
   theme: propTypes.string,
 }
 

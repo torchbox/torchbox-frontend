@@ -31,8 +31,8 @@ const NavLink = ({
     </Link>
     <div className={styles.dropdown}>
       <ul>
-        {dropdownLinks.map(link => (
-          <li>
+        {dropdownLinks.map((link, index) => (
+          <li key={`dropdown-nav-link-${index}`}>
             <Link to={link.href}>{link.title}</Link>
           </li>
         ))}

@@ -75,6 +75,7 @@ class Header extends React.Component {
             <ul className={styles.primaryNavList}>
               {links.map((link, index) => (
                 <NavLink
+                  key={`main-nav-link-${index}`}
                   {...link}
                   collapsed={collapsed}
                   onClick={() => navigateTo(link.href)}
@@ -127,16 +128,12 @@ class Header extends React.Component {
           >
             <ul className={styles.mobileNavList}>
               {links.map((link, index) => (
-                <li
+                <NavLink
                   key={`mobile-nav-link-${index}`}
-                  className={link.alignRight ? styles.alignRight : ''}
-                >
-                  <NavLink
-                    {...link}
-                    collapsed={collapsed}
-                    onClick={() => navigateTo(link.href)}
-                  />
-                </li>
+                  {...link}
+                  collapsed={collapsed}
+                  onClick={() => navigateTo(link.href)}
+                />
               ))}
             </ul>
           </nav>
