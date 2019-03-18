@@ -46,6 +46,12 @@ class QuoteSlider extends React.Component {
                     ? styles.quoteSlideActive
                     : styles.quoteSlide
                 }
+                onMouseEnter={() =>
+                  clearInterval(this.timer)
+                }
+                onMouseLeave={() =>
+                  this.setTimer()
+                }
               >
                 <p className={styles.quoteSlideQuote}>{quote.quote}</p>
                 <cite className={styles.quoteSlideCite}>
