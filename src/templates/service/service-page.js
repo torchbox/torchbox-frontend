@@ -108,6 +108,7 @@ class ServicePage extends React.Component {
 
     const nestedNav = Object.values(this.sectionRefs)
       .filter(section => !section.excludeFromLinks)
+      .filter(section => !!section.title)
       .map(section => ({
         title: section.title,
         href: '',
