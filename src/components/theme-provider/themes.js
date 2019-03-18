@@ -34,7 +34,7 @@ export const darkTheme = {
   // Base colors:
   'color-primary': 'var(--color-blue)',
   'color-accent': 'var(--color-green)',
-  'color-accent-small': 'var(--color-green-dark)',
+  'color-accent-small': 'var(--color-dark-blue)',
 
   // Hero Component
   'hero-background': 'var(--color-primary)',
@@ -54,7 +54,7 @@ export const darkTheme = {
   'color-link-badge': 'var(--color-primary)',
 
   // Page section title
-  'page-section-title-color': 'var(--color-green-dark)',
+  'page-section-title-color': 'var(--color-dark-blue)',
 
   // Phone number
   'contact-number-color': 'var(--color-light-blue)',
