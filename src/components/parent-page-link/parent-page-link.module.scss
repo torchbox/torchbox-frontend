@@ -1,5 +1,9 @@
 @import '../../styles/app.module';
 
+// Component theme overrides:
+$hero-background: var(--hero-background, white);
+$hero-title-color: var(--hero-title-color, $primary);
+
 .parentLink {
     display: block;
     text-transform: uppercase;
@@ -13,16 +17,20 @@
 
     a {
         border: none;
-        color: #231749;
+        color: $hero-title-color;
         z-index: 2;
-        background-color: white;
+        background-color: $hero-background;
         padding: 11px 0;
+
+        &:hover {
+            color: $link-hover-color;
+        }
 
         &::before {
             width: 4px;
             height: 80px;
             content: '';
-            background: #fd5765;
+            background: $accent;
             position: absolute;
             z-index: -1;
             transform: rotate(30deg);
