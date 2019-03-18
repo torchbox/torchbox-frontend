@@ -250,12 +250,15 @@ $header-logo-color: var(--header-logo-color, $primary);
     span {
       display: flex;
       align-items: center;
-      width: 230px;
       color: $header-link-color;
       font-size: 18px;
       font-weight: bold;
       padding-left: 10px;
       margin-top: 2px;
+
+      @include for-desktop-up {
+        width: 230px;
+      }
     }
   }
 
