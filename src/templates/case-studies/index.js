@@ -9,7 +9,7 @@ import Layout from '@components/layout'
 
 const CaseStudyListingContainer = ({ data }) => {
   return (
-    <Layout seoTitle = "Case Studies: our work on amazing digital things">
+    <Layout seoTitle="Case Studies: our work on amazing digital things">
       <CaseStudyListingPage
         title="Our work [on amazing digital things]."
         caseStudies={data.wagtail.caseStudies}

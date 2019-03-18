@@ -41,6 +41,9 @@ class Layout extends React.Component {
       ignoreServiceTeaser,
       theme,
       onLogoClick,
+      seoTitle,
+      seoDesc,
+      seoLang
     } = this.props
 
     return (
@@ -59,9 +62,9 @@ class Layout extends React.Component {
         render={data => (
           <>
             <SEO
-              title={this.props.seoTitle}
-              description={this.props.seoDesc}
-              lang={this.props.seoLang }
+              title={seoTitle}
+              description={seoDesc}
+              lang={seoLang }
             />
             <ThemeProvider theme={theme}>
               <Header
