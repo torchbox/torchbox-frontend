@@ -167,6 +167,7 @@ class ServicePage extends React.Component {
                     logos={data.logos.map(logo => ({
                       label: '',
                       image: logo.image.src,
+                      alt: logo.image.alt
                     }))}
                     testimonials={data.testimonials}
                     sectionTitle={data.sectionTitle}

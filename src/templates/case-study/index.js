@@ -35,7 +35,12 @@ const CaseStudyContainer = ({ data }) => {
   const body = [
     {
       type: 'wide_image',
-      value: { image: { src: homepageImageSrc || feedImageSrc } },
+      value: {
+        image: {
+          src: homepageImageSrc || feedImageSrc,
+          alt: page.homepageImage.alt || page.feedImage.src
+        }
+      },
     },
   ].concat(page.body)
 

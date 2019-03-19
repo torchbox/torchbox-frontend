@@ -22,7 +22,7 @@ class PersonPage extends React.Component {
   }
 
   render() {
-    const { firstName, role, avatar, biography, blogs, contact } = this.props
+    const { firstName, role, avatar, alt, biography, blogs, contact } = this.props
 
     return (
       <div className={styles.page}>
@@ -47,8 +47,9 @@ class PersonPage extends React.Component {
             <img
               className={styles.pageAvatarIcon}
               src={require('@images/icons/frag.png')}
+              alt=""
             />
-            <img className={styles.pageAvatarImage} src={avatar} />
+            <img className={styles.pageAvatarImage} src={avatar} alt={alt} />
           </div>
         </div>
         <StreamfieldBlock

@@ -21,8 +21,7 @@ class TestimonialsBlock extends React.Component {
                   className={styles.testimonialsIconsItem}
                   >
                   <div>
-                    {/*to do: this should work with logo.image.alt instead of logo.labl but for some reason it is not being passed down through the props.*/}
-                    <img src={logo.image.url} aria-label={logo.label} alt={logo.label} />
+                    <img src={logo.image.url} alt={logo.alt} />
                   </div>
                 </li>
               ))}
