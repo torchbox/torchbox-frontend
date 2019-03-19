@@ -42,7 +42,7 @@ $header-nested-link-color: var(--header-nested-link-color, white);
   .parent:hover & {
     color: white;
     @include for-desktop-up {
-      color: $accent;
+      color: $header-link-color;
       @include navlink-underscore(4);
     }
   }
