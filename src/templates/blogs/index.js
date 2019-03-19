@@ -11,7 +11,7 @@ const BlogsListingContainer = ({ data }) => {
   return (
     <Layout seoTitle={data.wagtail.blogIndexPage.pageTitle}>
       <BlogListingPage
-        title="Our thinking [about all things digital]."
+        title={data.wagtail.blogIndexPage.title}
         blogs={data.wagtail.blogPosts}
       />
     </Layout>
@@ -23,6 +23,7 @@ export const query = graphql`
     wagtail {
       blogIndexPage {
         pageTitle
+        title
       }
       blogPosts {
         slug

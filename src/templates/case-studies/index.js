@@ -11,7 +11,7 @@ const CaseStudyListingContainer = ({ data }) => {
   return (
     <Layout seoTitle={data.wagtail.caseStudiesIndexPage.pageTitle}>
       <CaseStudyListingPage
-        title="Our work [on amazing digital things]."
+        title={data.wagtail.caseStudiesIndexPage.title}
         caseStudies={data.wagtail.caseStudies}
       />
     </Layout>
