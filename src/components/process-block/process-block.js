@@ -16,7 +16,7 @@ class ProcessBlock extends React.Component {
       <div className={[styles.processBlock, className].join(' ')}>
         <span className={styles.pageSectionTitle}>{sectionTitle}</span>
         <div className={styles.processContainer}>
-          <h1 className={styles.processTitle} {...renderTorchUp(title || '')} />
+          {title && <h1 className={styles.processTitle} {...renderTorchUp(title)} />}
           <ToolkitImage className={styles.processImage} />
           <ul className={styles.processList}>
             {processes.map((process, index) => (
