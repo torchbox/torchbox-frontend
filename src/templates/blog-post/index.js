@@ -15,7 +15,7 @@ import {
   readTime,
 } from '@utils/selectors'
 
-const BlogPostContainer = ({ data }) => {
+const BlogPostContainer = ({ pageContext, data }) => {
   const page = data.wagtail.blogPosts[0]
   const extraBlogPosts = data.wagtail.extraBlogPosts
   return (
@@ -27,7 +27,7 @@ const BlogPostContainer = ({ data }) => {
         datePublished={page.date}
         readTime={readTime(page.bodyWordCount) || 0}
         tags={postTags(page.tags, blogsUrl('#filter='))}
-        extraBlogPosts={extraBlogPosts.map(blogListing)}
+        extraBlogPosts={extraBlogPosts.filter(b => b.slug !== pageContext.slug).slice(0, 2).map(blogListing)}
       />
     </Layout>
   )
@@ -37,6 +37,7 @@ export const query = graphql`
   query($slug: String) {
     wagtail {
       blogPosts(slug: $slug) {
+        slug
         title
         pageTitle
         date
@@ -61,7 +62,8 @@ export const query = graphql`
         }
       }
 
-      extraBlogPosts: blogPosts(limit: 2) {
+      extraBlogPosts: blogPosts(limit: 3) {
+        slug
         title
         date
         tags: relatedServices {
