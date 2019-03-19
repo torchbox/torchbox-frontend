@@ -26,7 +26,7 @@ const BlogLink = ({
     ].join(' ')}
     to={href}
   >
-    <h3 className={styles.blogLinkTitle}>{title}</h3>
+    <h2 className={styles.blogLinkTitle}>{title}</h2>
     {description && featured ? (
       <p className={styles.blogLinkDesc}>{description}</p>
     ) : null}

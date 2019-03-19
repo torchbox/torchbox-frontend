@@ -17,7 +17,7 @@ const Contact = ({ title, emailAddress, phoneNumber, className, image }) => (
         src={safeGet(image, 'src.url', require('@images/default-avatar.png'))}
       />
       <div className={styles.contactBlockDetails}>
-        <h3 className={styles.contactBlockTitle}>{title}</h3>
+        <h2 className={styles.contactBlockTitle}>{title}</h2>
         <a href={`mailto:${emailAddress}`} className={styles.contactBlockEmail}>
           {emailAddress}
         </a>

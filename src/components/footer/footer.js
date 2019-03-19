@@ -10,7 +10,7 @@ const Footer = ({ links, className }) => (
     <div className={styles.footerContent}>
       <ul className={styles.footerAddressList}>
         <li className={styles.footerAddress}>
-          <h5 className={styles.footerAddressTitle}>Glorious Oxfordshire</h5>
+          <h2 className={styles.footerAddressTitle}>Glorious Oxfordshire</h2>
           <p>
             Unit 9<br />
             Southill Business Park<br />
@@ -21,7 +21,7 @@ const Footer = ({ links, className }) => (
         </li>
 
         <li className={styles.footerAddress}>
-          <h5 className={styles.footerAddressTitle}>Vibrant Bristol</h5>
+          <h2 className={styles.footerAddressTitle}>Vibrant Bristol</h2>
           <p>
             3rd Floor
             <br />
@@ -36,7 +36,7 @@ const Footer = ({ links, className }) => (
         </li>
 
         <li className={styles.footerAddress}>
-          <h5 className={styles.footerAddressTitle}>Working in the US</h5>
+          <h2 className={styles.footerAddressTitle}>Working in the US</h2>
           <p>
             We have a special formula for working successfully with
             organisations in the US
