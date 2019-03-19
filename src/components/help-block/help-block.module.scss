@@ -68,30 +68,44 @@
             }
 
             a {
-                color: $primary !important;
+                color: $primary;
                 font-family: $mainFont;
                 text-decoration: none;
                 font-size: 20px; 
                 line-height: 30px;
                 font-weight: 400;
-
                 margin: 0 0 5px 30px;
                 padding: 15px 0 0;
                 border-bottom: 2px solid white;
 
                 @include for-tablet-landscape-up {
                     padding: 15px 0 0;
-                    margin: 0 0 5px 60px !important;
+                    margin: 0 0 5px 60px;
                     line-height: 40px;
                     font-size: 24px;
                 }
 
                 &:hover {
                     @include for-tablet-landscape-up {
-                        color: $light-blue !important;
+                        color: $light-blue;
                         border-bottom: 2px solid $accent;
                         font-weight: 800;
                     }
+                }
+            }
+
+            span {
+                font-family: $mainFont;
+                line-height: 30px;
+                font-weight: 400;
+                margin: 0 0 5px 30px;
+                padding: 15px 0 0;
+
+                @include for-tablet-landscape-up {
+                    padding: 15px 0 0;
+                    margin: 0 0 5px 60px;
+                    line-height: 40px;
+                    font-size: 24px;
                 }
             }
         }
@@ -100,7 +114,7 @@
     &Contact {
         @include for-tablet-landscape-up {
             margin-top: 15px;
-            padding-left: 13vw !important;
+            padding-left: 13vw;
         }
     }
 
@@ -115,7 +129,7 @@
 }
 
 .accent {
-    color: $accent !important;
+    color: $accent;
 }
 
 .pageSectionTitle {
