@@ -17,7 +17,7 @@ class HelpBlock extends React.Component {
       <div className={styles.blockContainer}>
         <section className={styles.blockContent}>
           <span className={styles.pageSectionTitle}>{sectionTitle}</span>
-          <h1 className={styles.blockTitle} {...renderTorchUp(title)} />
+          {title && <h1 className={styles.blockTitle} {...renderTorchUp(title)} />}
 
           {links != null ? (
             <div className={styles.blockLinksContainer}>
