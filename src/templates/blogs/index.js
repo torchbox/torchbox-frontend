@@ -9,7 +9,7 @@ import Layout from '@components/layout'
 
 const BlogsListingContainer = ({ data }) => {
   return (
-    <Layout seoTitle="Blogs: our thinking about all things digital">
+    <Layout seoTitle={data.wagtail.blogIndexPage.pageTitle}>
       <BlogListingPage
         title="Our thinking [about all things digital]."
         blogs={data.wagtail.blogPosts}
@@ -21,6 +21,9 @@ const BlogsListingContainer = ({ data }) => {
 export const query = graphql`
   query {
     wagtail {
+      blogIndexPage {
+        pageTitle
+      }
       blogPosts {
         slug
         title
