@@ -28,9 +28,14 @@ class HelpBlock extends React.Component {
                     className={styles.blockLinksItem}
                   >
                     <TickIcon className={styles.blockLinksItemIcon} />
-                    <Link onClick={link.onClick} to={link.href}>
-                      {link.title}
-                    </Link>
+                    { link.href ? (
+                        <Link onClick={link.onClick} to={link.href}>
+                          {link.title}
+                        </Link>
+                      ) : (
+                        <span>{link.title}</span>
+                      )
+                    }
                   </li>
                 ))}
               </ul>

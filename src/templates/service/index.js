@@ -62,7 +62,7 @@ export default ({ data, pageContext }) => {
                   heading: page.headingForKeyPoints,
                   links: page.keyPoints.map(keyPoint => ({
                     title: keyPoint.text,
-                    href: pageUrl(keyPoint.linkedPage),
+                    href: keyPoint.linkedPage ? pageUrl(keyPoint.linkedPage) : null,
                   })),
                   contact: page.contact,
                 },
