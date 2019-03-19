@@ -7,7 +7,7 @@ import PropTypes from 'prop-types'
 import Layout from '@components/layout'
 import CulturePage from './culture-page'
 
-const CulturePageContainer = ({ data }) => {
+const CulturePageContainer = ({ data, location }) => {
   const page = data.wagtail.culturePages[0]
   if (page) {
     return (
@@ -15,6 +15,7 @@ const CulturePageContainer = ({ data }) => {
         theme={'dark--transparent'}
         seoTitle={page.pageTitle}
         seoDesc={page.searchDescription}
+        location={location}
       >
         <CulturePage
           strapline={page.strapline}
@@ -61,6 +62,7 @@ export const query = graphql`
 
 CulturePageContainer.propTypes = {
   data: PropTypes.object,
+  location: PropTypes.object,
 }
 
 export default CulturePageContainer
