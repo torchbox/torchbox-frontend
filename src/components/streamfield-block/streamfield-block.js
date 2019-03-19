@@ -34,7 +34,7 @@ class StreamfieldBlock extends React.Component {
                   <img
                     ref={aligned_image}
                     src={block.value.image.src}
-                    alt={block.value.image.alt}
+                    alt={block.value.image.alt || ""}
                     className={styles.streamfieldAlignedImageImg}
                     onError={() => {
                       aligned_image.current.src = require('@images/default-featured.png')
@@ -48,6 +48,7 @@ class StreamfieldBlock extends React.Component {
 
             case 'wide_image':
               const wide_image = React.createRef()
+              console.log(block.value.image)
               return (
                 <div
                   className={styles.streamfieldWideImage}
@@ -56,7 +57,7 @@ class StreamfieldBlock extends React.Component {
                   <img
                     ref={wide_image}
                     src={block.value.image.src}
-                    alt={block.value.image.alt}
+                    alt={block.value.image.alt || block.value.image.title}
                     onError={() => {
                       wide_image.current.src = require('@images/default-featured.png')
                     }}
