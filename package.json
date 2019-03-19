@@ -58,7 +58,7 @@
   "license": "MIT",
   "scripts": {
     "build": "env",
-    "develop": "gatsby develop --host 0.0.0.0 --port $PORT",
+    "develop": "gatsby develop",
     "start": "npm run develop",
     "format": "prettier --write \"src/**/*.js\"",
     "lint": "eslint src",
