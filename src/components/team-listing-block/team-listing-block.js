@@ -21,7 +21,7 @@ const TeamListingBlock = ({ team, className }) => {
                 src={person.avatar}
               />
               <span className={styles.blockPersonLinkName}>{person.name}</span>
-              <h5 className={styles.blockPersonLinkRole}>{person.role}</h5>
+              <h2 className={styles.blockPersonLinkRole}>{person.role}</h2>
             </Link>
           ))}
         </div>
