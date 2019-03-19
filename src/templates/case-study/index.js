@@ -16,9 +16,11 @@ import {
   caseStudyListing,
 } from '@utils/selectors'
 
-const CaseStudyContainer = ({ data }) => {
+const CaseStudyContainer = ({ pageContext, data }) => {
   const page = data.wagtail.caseStudies[0]
-  let extraCaseStudies = data.wagtail.extraCaseStudies
+  let extraCaseStudies = data.wagtail.extraCaseStudies.filter(
+    c => c.slug !== pageContext.slug
+  );
 
   if (extraCaseStudies) {
     // Limit done client side == bad (Karl to fix his limiting on BE)

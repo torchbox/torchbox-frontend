@@ -37,7 +37,6 @@ export const query = graphql`
   query($slug: String) {
     wagtail {
       blogPosts(slug: $slug) {
-        slug
         title
         pageTitle
         date
