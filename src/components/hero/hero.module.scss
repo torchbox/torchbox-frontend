@@ -72,6 +72,7 @@ $hero-link-color: var(--hero-link-color, $link-color);
     @include for-tablet-landscape-up {
       line-height: 42px;
       font-size: 24px;
+      margin-right: 8.33vw;
     }
 
     p {
