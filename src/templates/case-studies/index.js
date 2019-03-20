@@ -9,9 +9,9 @@ import Layout from '@components/layout'
 
 const CaseStudyListingContainer = ({ data }) => {
   return (
-    <Layout seoTitle="Case Studies: our work on amazing digital things">
+    <Layout seoTitle={data.wagtail.caseStudiesIndexPage.pageTitle}>
       <CaseStudyListingPage
-        title="Our work [on amazing digital things]."
+        title={data.wagtail.caseStudiesIndexPage.title}
         caseStudies={data.wagtail.caseStudies}
       />
     </Layout>
@@ -21,6 +21,10 @@ const CaseStudyListingContainer = ({ data }) => {
 export const query = graphql`
   query CaseStudiesQuery {
     wagtail {
+      caseStudiesIndexPage {
+        title
+        pageTitle
+      }
       caseStudies {
         slug
         title
