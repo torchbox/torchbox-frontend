@@ -39,7 +39,7 @@ const CulturePage = ({ strapline, straplineVisible, heroImage, intro, links, bod
         style={{ backgroundImage: `url(${heroImage})` }}
       >
         <div className={styles.pageHeroContent}>
-            <h1 className={heroTitleStyles.join(' ')} {...renderTorchUp(strapline)} />
+          <h1 className={heroTitleStyles.join(' ')} {...renderTorchUp(strapline)} />
         </div>
       </div>
 
