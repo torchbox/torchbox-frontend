@@ -21,7 +21,7 @@ class ProcessBlock extends React.Component {
           <ul className={styles.processList}>
             {processes.map((process, index) => (
               <li key={`process-${index}`} className={styles.processItem}>
-                <h3 className={styles.processItemTitle}>{process.title}</h3>
+                <h2 className={styles.processItemTitle}>{process.title}</h2>
                 <p className={styles.processItemDesc}>{process.description}</p>
                 {process.pageLinkLabel && process.pageLink && 
                   <Link
