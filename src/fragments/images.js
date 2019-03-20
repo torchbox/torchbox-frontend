@@ -55,3 +55,25 @@ export const maxImage = graphql`
     alt
   }
 `
+
+export const facebookImage = graphql`
+  fragment facebookImage on Wagtail_ImageObjectType {
+    src: rendition(format: "facebook") {
+      url
+      width
+      height
+    }
+    alt
+  }
+`
+
+export const twitterImage = graphql`
+  fragment twitterImage on Wagtail_ImageObjectType {
+    src: rendition(format: "twitter") {
+      url
+      width
+      height
+    }
+    alt
+  }
+`

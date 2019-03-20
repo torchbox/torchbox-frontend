@@ -50,6 +50,8 @@ const CaseStudyContainer = ({ pageContext, data }) => {
     <Layout
       seoTitle={page.pageTitle}
       seoDesc={page.searchDescription}
+      facebookImage={page.facebookImage}
+      twitterImage={page.twitterImage}
     >
       <CaseStudy
         client={page.client}
@@ -72,6 +74,12 @@ export const query = graphql`
         title
         pageTitle
         searchDescription
+        facebookImage: searchImage {
+          ...facebookImage
+        }
+        twitterImage: searchImage {
+          ...twitterImage
+        }
         client
         feedImage {
           ...fullImage
