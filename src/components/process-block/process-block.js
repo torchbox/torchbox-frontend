@@ -23,12 +23,14 @@ class ProcessBlock extends React.Component {
               <li key={`process-${index}`} className={styles.processItem}>
                 <h3 className={styles.processItemTitle}>{process.title}</h3>
                 <p className={styles.processItemDesc}>{process.description}</p>
-                <Link
-                  to={pageUrl(process.pageLink)}
-                  className={styles.processItemLink}
-                >
-                  <span>{process.pageLinkLabel}</span>
-                </Link>
+                {process.pageLinkLabel && process.pageLink && 
+                  <Link
+                    to={pageUrl(process.pageLink)}
+                    className={styles.processItemLink}
+                  >
+                    <span>{process.pageLinkLabel}</span>
+                  </Link>
+                }
               </li>
             ))}
           </ul>

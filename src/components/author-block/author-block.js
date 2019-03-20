@@ -15,6 +15,7 @@ const AuthorBlock = ({ author, datePublished, tags, readTime, className }) => (
       <Avatar
         src={author.avatar || require('@images/default-avatar.png')}
         containerClassName={styles.authorBlockImage}
+        alt={author.name}
       />
       <div className={styles.authorBlockDetails}>
         <Link to={`/team/${author.slug}`} className={styles.authorBlockName}>

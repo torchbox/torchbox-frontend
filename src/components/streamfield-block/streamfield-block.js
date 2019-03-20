@@ -34,7 +34,7 @@ class StreamfieldBlock extends React.Component {
                   <img
                     ref={aligned_image}
                     src={block.value.image.src}
-                    alt={block.value.image.alt}
+                    alt={block.value.image.alt || ""}
                     className={styles.streamfieldAlignedImageImg}
                     onError={() => {
                       aligned_image.current.src = require('@images/default-featured.png')

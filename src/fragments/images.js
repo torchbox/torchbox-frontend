@@ -8,6 +8,7 @@ export const quarterImage = graphql`
       width
       height
     }
+    alt
   }
 `
 
@@ -18,6 +19,7 @@ export const iconImage = graphql`
       width
       height
     }
+    alt
   }
 `
 
@@ -28,6 +30,7 @@ export const largeIconImage = graphql`
       width
       height
     }
+    alt
   }
 `
 
@@ -38,6 +41,7 @@ export const fullImage = graphql`
       width
       height
     }
+    alt
   }
 `
 
@@ -48,5 +52,6 @@ export const maxImage = graphql`
       width
       height
     }
+    alt
   }
 `
