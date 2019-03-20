@@ -40,7 +40,7 @@
             }
 
             &Hidden {
-                display: none;
+                @include visibility-hidden();
             }
         }
 

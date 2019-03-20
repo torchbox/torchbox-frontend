@@ -79,3 +79,13 @@ body {
 .toolkit_svg__accented {
     fill: $accent !important;
 }
+
+@mixin visibility-hidden {
+    position: absolute !important;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+}
