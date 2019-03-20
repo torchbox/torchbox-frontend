@@ -145,12 +145,10 @@ class Layout extends React.Component {
         ],
       },
     ].map(link => {
-      if (typeof window !== `undefined`) {
-        if (window.location.pathname.replace(/\//g, '') === link.href) {
-          return {
-            ...link,
-            active: true,
-          }
+    if (this.props.location && this.props.location.pathname.replace(/\//g, '') === link.href) {
+        return {
+          ...link,
+          active: true,
         }
       }
       return link
@@ -165,6 +163,7 @@ Layout.propTypes = {
   theme: PropTypes.string,
   title: PropTypes.string,
   ignoreServiceTeaser: PropTypes.string,
+  location: PropTypes.object,
 }
 
 Layout.defaultProps = {

@@ -9,7 +9,7 @@ import { blogListing, caseStudyListing } from '@utils/selectors'
 import { caseStudiesUrl, blogsUrl, pageUrl } from '@utils/urls'
 import { safeGet } from '@utils/safeget'
 
-export default ({ data, pageContext }) => {
+export default ({ data, location, pageContext }) => {
   let { blocks, isSubServicePage } = pageContext
   let page = {}
   if (isSubServicePage) {
@@ -143,6 +143,7 @@ export default ({ data, pageContext }) => {
     })
     return (
       <ServicePage
+        location={location}
         title={page.title}
         seoTitle={page.pageTitle}
         seoDesc={page.searchDescription}

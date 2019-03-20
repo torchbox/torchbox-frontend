@@ -104,7 +104,7 @@ class ServicePage extends React.Component {
   }
 
   render() {
-    const { blocks, title, theme, serviceSlug, seoTitle, seoDesc } = this.props
+    const { blocks, location, title, theme, serviceSlug, seoTitle, seoDesc } = this.props
 
     const nestedNav = Object.values(this.sectionRefs)
       .filter(section => !section.excludeFromLinks)
@@ -130,6 +130,7 @@ class ServicePage extends React.Component {
         nestedLinks={nestedNav}
         ignoreServiceTeaser={serviceSlug}
         onLogoClick={() => this.navigateToSection('hero')}
+        location={location}
       >
         <div className={[styles.page].join(' ')}>
           {blocks.map(({ type, data }) => {
@@ -240,6 +241,7 @@ ServicePage.propTypes = {
   title: PropTypes.string,
   theme: PropTypes.string,
   serviceSlug: PropTypes.string,
+  location: PropTypes.object,
 }
 
 ServicePage.defaultProps = {}
