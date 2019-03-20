@@ -36,6 +36,20 @@ export const query = graphql`
   }
 `
 
+export const previewQuery = `
+  query($previewToken: String) {
+    standardPages(previewToken: $previewToken) {
+      slug
+      title
+      pageTitle
+      body
+      contact {
+        ...contactSnippet
+      }
+    }
+  }
+`
+
 StandardPageContainer.propTypes = {
   data: PropTypes.object,
 }

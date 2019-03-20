@@ -70,6 +70,43 @@ export const query = graphql`
   }
 `
 
+export const previewQuery = `
+  query($previewToken: String, $slug: String) {
+    personPages(previewToken: $previewToken) {
+      pageTitle
+      firstName
+      lastName
+      role
+      shortIntro
+      altShortIntro
+      biography
+      slug
+      image {
+        ...fullImage
+      }
+      contact {
+        ...contactSnippet
+      }
+    }
+
+    blogPosts(authorSlug: $slug, limit: 2) {
+      title
+      slug
+      date
+      authors {
+        name
+        personPage {
+          role
+          slug
+          image {
+            ...iconImage
+          }
+        }
+      }
+    }
+  }
+`
+
 PersonPageContainer.propTypes = {
   data: PropTypes.object,
 }

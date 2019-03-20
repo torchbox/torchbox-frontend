@@ -62,6 +62,32 @@ export const query = graphql`
   }
 `
 
+export const previewQuery = `
+  query($previewToken: String) {
+    culturePages(previewToken: $previewToken) {
+      pageTitle
+      slug
+      strapline
+      intro
+      body
+      heroImage {
+        ...maxImage
+      }
+      links {
+        title
+        description
+        link {
+          type
+          slug
+        }
+      }
+      contact {
+        ...contactSnippet
+      }
+    }
+  }
+`
+
 CulturePageContainer.propTypes = {
   data: PropTypes.object,
   location: PropTypes.object,

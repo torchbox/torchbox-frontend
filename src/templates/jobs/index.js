@@ -12,7 +12,7 @@ const JobsListingContainer = ({ data }) => {
       seoTitle={data.wagtail.jobsIndexPage.pageTitle}
       seoDesc={data.wagtail.jobsIndexPage.searchDescription}>
       <JobsListingPage
-        title={data.wagtail.jobsIndexPage.title}
+        title={data.wagtail.jobsIndexPage.strapline}
         jobs={data.wagtail.jobsIndexPage.jobs}
       />
     </Layout>
@@ -36,6 +36,26 @@ export const query = graphql`
         contact {
           ...contactSnippet
         }
+      }
+    }
+  }
+`
+
+export const previewQuery = `
+  query($previewToken: String) {
+    jobsIndexPage(previewToken: $previewToken) {
+      title
+      strapline
+      pageTitle
+
+      jobs {
+        url
+        title
+        level
+        location
+      }
+      contact {
+        ...contactSnippet
       }
     }
   }

@@ -65,6 +65,10 @@ const CaseStudyContainer = ({ pageContext, data }) => {
   )
 }
 
+CaseStudyContainer.propTypes = {
+  data: PropTypes.object,
+}
+
 export const query = graphql`
   query($slug: String) {
     wagtail {
@@ -130,8 +134,67 @@ export const query = graphql`
   }
 `
 
-CaseStudyContainer.propTypes = {
-  data: PropTypes.object,
-}
+export const previewQuery = `
+  query($previewToken: String) {
+    caseStudies(previewToken: $previewToken) {
+      title
+      pageTitle
+      searchDescription
+      client
+      feedImage {
+        ...fullImage
+      }
+      homepageImage {
+        ...fullImage
+      }
+      tags: relatedServices {
+        name
+        slug
+      }
+      authors {
+        name
+        personPage {
+          role
+          slug
+          image {
+            ...iconImage
+          }
+        }
+      }
+      body
+      bodyWordCount
+      contact {
+        ...contactSnippet
+      }
+    }
+
+    extraCaseStudies: caseStudies {
+      slug
+      title
+      client
+      listingSummary
+      tags: relatedServices {
+        name
+        slug
+      }
+      authors {
+        name
+        role
+        personPage {
+          slug
+          image {
+            ...iconImage
+          }
+        }
+      }
+      feedImage {
+        ...fullImage
+      }
+      homepageImage {
+        ...fullImage
+      }
+    }
+  }
+`
 
 export default CaseStudyContainer

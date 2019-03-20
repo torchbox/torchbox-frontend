@@ -6,6 +6,7 @@ exports.createPages = ({ graphql, actions }) => {
   const caseStudyTemplate = path.resolve(`src/templates/case-study/index.js`)
   const personTemplate = path.resolve(`src/templates/person/index.js`)
   const serviceTemplate = path.resolve(`src/templates/service/index.js`)
+  const subServiceTemplate = path.resolve(`src/templates/sub-service/index.js`)
   const standardTemplate = path.resolve(`src/templates/standard/index.js`)
 
   return graphql(`
@@ -105,7 +106,7 @@ exports.createPages = ({ graphql, actions }) => {
           if (parentService.slug) {
             return {
               path: `/${parentService.slug}/${slug}`,
-              component: serviceTemplate,
+              component: subServiceTemplate,
               context: {
                 slug,
                 isSubServicePage: true,

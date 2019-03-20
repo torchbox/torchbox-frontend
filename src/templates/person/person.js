@@ -14,10 +14,10 @@ import styles from './person.module.scss'
 class PersonPage extends React.Component {
   constructor(props) {
     super(props)
-    this.title = `${props.firstName + ' ' + props.lastName || ''} [${props.intro ||
-        ''}]`
+    this.title = `${props.firstName + ' ' + props.lastName ||
+      ''} [${props.intro || ''}]`
     this.altTitle = `${props.firstName + ' ' + props.lastName ||
-        ''} [${props.altIntro || ''}]`
+      ''} [${props.altIntro || ''}]`
     this.state = { title: this.title }
   }
 
@@ -30,12 +30,12 @@ class PersonPage extends React.Component {
           <TitleBlock
             onMouseEnter={() =>
               this.setState({
-                title: this.altTitle
+                title: this.altTitle,
               })
             }
             onMouseLeave={() =>
               this.setState({
-                title: this.title
+                title: this.title,
               })
             }
             className={styles.pageTitle}
