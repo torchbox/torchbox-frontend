@@ -19,6 +19,7 @@ const CulturePageContainer = ({ data, location }) => {
       >
         <CulturePage
           strapline={page.strapline}
+          straplineVisible={page.straplineVisible}
           heroImage={page.heroImage.src.url}
           intro={page.intro}
           links={page.links}
@@ -39,6 +40,7 @@ export const query = graphql`
         searchDescription
         slug
         strapline
+        straplineVisible
         intro
         body
         heroImage {

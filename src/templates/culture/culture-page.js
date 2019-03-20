@@ -12,7 +12,7 @@ import { ReactComponent as GreetingImage } from '@images/man-fruit.svg'
 // Styles
 import styles from './culture-page.module.scss'
 
-const CulturePage = ({ strapline, heroImage, intro, links, body, contact }) => {
+const CulturePage = ({ strapline, straplineVisible, heroImage, intro, links, body, contact }) => {
   const Teasers = () => (
     <div className={styles.pageLinks}>
       {links.map((link, index) => (
@@ -27,6 +27,11 @@ const CulturePage = ({ strapline, heroImage, intro, links, body, contact }) => {
     </div>
   )
 
+  const heroTitleStyles = [styles.pageHeroTitle];
+  if (!straplineVisible) {
+    heroTitleStyles.push(styles.pageHeroTitleHidden);
+  }
+
   return (
     <div className={styles.page}>
       <div
@@ -34,7 +39,7 @@ const CulturePage = ({ strapline, heroImage, intro, links, body, contact }) => {
         style={{ backgroundImage: `url(${heroImage})` }}
       >
         <div className={styles.pageHeroContent}>
-          <h1 className={styles.pageHeroTitle} {...renderTorchUp(strapline)} />
+          <h1 className={heroTitleStyles.join(' ')} {...renderTorchUp(strapline)} />
         </div>
       </div>
 
@@ -55,11 +60,11 @@ const CulturePage = ({ strapline, heroImage, intro, links, body, contact }) => {
 
 CulturePage.propTypes = {
   strapline: PropTypes.string,
+  straplineVisible: PropTypes.bool.isRequired,
   heroImage: PropTypes.string,
   intro: PropTypes.string,
   links: PropTypes.array,
   body: PropTypes.array,
-  contact: PropTypes.object,
 }
 
 CulturePage.defaultProps = {
