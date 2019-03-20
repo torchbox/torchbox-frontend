@@ -19,7 +19,10 @@ const BlogPostContainer = ({ data }) => {
   const page = data.wagtail.blogPosts[0]
   const extraBlogPosts = data.wagtail.extraBlogPosts
   return (
-    <Layout seoTitle={page.pageTitle}>
+    <Layout
+      seoTitle={page.pageTitle}
+      seoDesc={page.searchDescription}
+    >
       <BlogPostPage
         title={page.title}
         streamfield={page.body}
@@ -39,6 +42,7 @@ export const query = graphql`
       blogPosts(slug: $slug) {
         title
         pageTitle
+        searchDescription
         date
         tags: relatedServices {
           name
