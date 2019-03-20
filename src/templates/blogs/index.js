@@ -9,7 +9,10 @@ import Layout from '@components/layout'
 
 const BlogsListingContainer = ({ data }) => {
   return (
-    <Layout seoTitle={data.wagtail.blogIndexPage.pageTitle}>
+    <Layout
+      seoTitle={data.wagtail.blogIndexPage.pageTitle}
+      seoDesc={data.wagtail.blogIndexPage.searchDescription}
+    >
       <BlogListingPage
         title={data.wagtail.blogIndexPage.title}
         blogs={data.wagtail.blogPosts}
@@ -23,6 +26,7 @@ export const query = graphql`
     wagtail {
       blogIndexPage {
         pageTitle
+        searchDescription
         title
       }
       blogPosts {

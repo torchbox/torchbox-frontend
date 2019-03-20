@@ -45,7 +45,10 @@ const CaseStudyContainer = ({ data }) => {
   ].concat(page.body)
 
   return (
-    <Layout seoTitle={page.pageTitle}>
+    <Layout
+      seoTitle={page.pageTitle}
+      seoDesc={page.searchDescription}
+    >
       <CaseStudy
         client={page.client}
         title={page.title}
@@ -66,6 +69,7 @@ export const query = graphql`
       caseStudies(slug: $slug) {
         title
         pageTitle
+        searchDescription
         client
         feedImage {
           ...fullImage

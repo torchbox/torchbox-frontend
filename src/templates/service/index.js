@@ -145,6 +145,7 @@ export default ({ data, pageContext }) => {
       <ServicePage
         title={page.title}
         seoTitle={page.pageTitle}
+        seoDesc={page.searchDescription}
         theme={page.isDarktheme ? 'dark' : 'light'}
         blocks={blocks}
         serviceSlug={page.slug}
@@ -162,6 +163,7 @@ export const query = graphql`
       servicePages(serviceSlug: $slug) {
         title
         pageTitle
+        searchDescription
         slug
         isDarktheme
         strapline
@@ -253,6 +255,7 @@ export const query = graphql`
       subServicePages(slug: $slug) {
         title
         pageTitle
+        searchDescription
         isDarktheme
         strapline
         intro
