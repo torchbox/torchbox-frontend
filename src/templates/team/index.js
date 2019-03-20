@@ -8,7 +8,10 @@ import TeamListingPage from './team-listing'
 
 const TeamListingContainer = ({ data }) => {
   return (
-    <Layout seoTitle={data.wagtail.personIndexPage.pageTitle}>
+    <Layout
+      seoTitle={data.wagtail.personIndexPage.pageTitle}
+      seoDesc={data.wagtail.personIndexPage.searchDescription}
+    >
       <TeamListingPage
         title={data.wagtail.personIndexPage.strapline}
         team={data.wagtail.personPages}
@@ -22,6 +25,7 @@ export const query = graphql`
     wagtail {
       personIndexPage {
         pageTitle
+        searchDescription
         strapline
         contact {
           ...contactSnippet
