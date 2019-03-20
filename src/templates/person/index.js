@@ -22,6 +22,7 @@ const PersonPageContainer = ({ data }) => {
         intro={person.shortIntro}
         altIntro={person.altShortIntro}
         avatar={person.image.src.url}
+        alt={person.image.alt}
         biography={person.biography}
         blogs={blogs}
       />

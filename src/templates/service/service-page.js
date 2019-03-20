@@ -108,6 +108,7 @@ class ServicePage extends React.Component {
 
     const nestedNav = Object.values(this.sectionRefs)
       .filter(section => !section.excludeFromLinks)
+      .filter(section => !!section.title)
       .map(section => ({
         title: section.title,
         href: '',
@@ -167,6 +168,7 @@ class ServicePage extends React.Component {
                     logos={data.logos.map(logo => ({
                       label: '',
                       image: logo.image.src,
+                      alt: logo.image.alt
                     }))}
                     testimonials={data.testimonials}
                     sectionTitle={data.sectionTitle}
