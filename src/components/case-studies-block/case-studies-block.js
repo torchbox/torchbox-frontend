@@ -32,9 +32,9 @@ class CaseStudiesBlock extends React.Component {
                     <span className={styles.caseStudyMetaClient}>
                       {caseStudy.client}
                     </span>
-                    <h3 className={styles.caseStudyMetaTitle}>
+                    <h2 className={styles.caseStudyMetaTitle}>
                       {caseStudy.title}
-                    </h3>
+                    </h2>
                     <p className={styles.caseStudyMetaDesc}>
                       {caseStudy.description}
                     </p>
