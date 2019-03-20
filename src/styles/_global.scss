@@ -31,7 +31,12 @@ body {
     font-weight: bold;
     text-transform: capitalize;
 
+
     @include for-tablet-landscape-up {
+        max-width: 140px;
+    }
+
+    @media (min-width: 1050px) {
         max-width: 150px;
     }
 
