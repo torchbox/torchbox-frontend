@@ -27,8 +27,9 @@ class TestimonialsBlock extends React.Component {
               ))}
             </ul>
           </section>
-
-          <QuoteSlider quotes={testimonials} />
+          {testimonials.length ? (
+            <QuoteSlider quotes={testimonials} />
+          ): null }
         </div>
       </div>
     )
