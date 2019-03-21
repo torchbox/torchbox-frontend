@@ -14,7 +14,7 @@ const WagtailPreviewProvider = previewMappings => {
     }
 
     fetchToken = async () => {
-      if (typeof window !== `undefined`) {
+      if (typeof window !== 'undefined') {
         const { pageContext } = this.props
         const { token, content_type } = qs.parse(window.location.search)
 
@@ -33,7 +33,7 @@ const WagtailPreviewProvider = previewMappings => {
               propOverides: { ...this.state.propOverides, data: { wagtail } },
             })
           } catch (e) {
-            console.log(e)
+            console.error(e)
           }
         }
       }
@@ -44,7 +44,8 @@ const WagtailPreviewProvider = previewMappings => {
       if (propOverides !== null && Template !== null) {
         return <Template {...this.props} {...propOverides} />
       }
-      return null
+
+      return <p>Loading preview...</p>
     }
   }
 }
