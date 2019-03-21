@@ -23,7 +23,7 @@ export default ({ data, location, pageContext }) => {
   let page
   if (data.wagtail.subServicePages) {
     page = data.wagtail.subServicePages[0]
-  } else (data.wagtail.servicePages) {
+  } else {
     page = data.wagtail.servicePages[0]
   }
 
