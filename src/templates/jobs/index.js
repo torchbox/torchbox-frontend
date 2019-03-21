@@ -12,7 +12,7 @@ const JobsListingContainer = ({ data }) => {
       seoTitle={data.wagtail.jobsIndexPage.pageTitle}
       seoDesc={data.wagtail.jobsIndexPage.searchDescription}>
       <JobsListingPage
-        title={data.wagtail.jobsIndexPage.strapline}
+        title={data.wagtail.jobsIndexPage.title}
         jobs={data.wagtail.jobsIndexPage.jobs}
       />
     </Layout>
