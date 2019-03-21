@@ -36,4 +36,5 @@ $tablet-landscape: '(min-width: 900px)';
 $desktop: '(min-width: 1200px)';
 $desktop-medium: '(min-width: 1310px)'; // specifically for navigation
 $desktop-big: '(min-width: 1800px)';
+$short-screen: '(max-height: 725px)'; // for when hero elements are 100vh
 
