@@ -184,7 +184,7 @@
                 left: 220px;
 
                 * {
-                    fill: $accent;
+                    fill: var(--icon-color, $accent);
                 }
             }
         }

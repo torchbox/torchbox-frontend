@@ -3,7 +3,9 @@
 // Component theme overrides:
 $header-background: var(--header-background, white);
 $header-link-color: var(--header-link-color, $primary);
+$header-link-underscrore-color: var(--header-link-underscrore-color, $primary);
 $header-nested-link-color: var(--header-nested-link-color, $light-blue);
+$header-nested-link-hover-color: var(--header-nested-link-hover-color, $accent);
 $header-logo-color: var(--header-logo-color, $primary);
 
 .header {
@@ -62,7 +64,7 @@ $header-logo-color: var(--header-logo-color, $primary);
       @extend .nestedNavItem;
       a {
         margin-top: 2px;
-        border-bottom: 2px solid $accent;
+        border-bottom: 2px solid $header-link-underscrore-color;
       }
     }
   }
@@ -84,7 +86,8 @@ $header-logo-color: var(--header-logo-color, $primary);
 
     &:hover {
       margin-top: 2px;
-      border-bottom: 2px solid $accent;
+      color: $header-nested-link-hover-color;
+      border-bottom: 2px solid $header-link-underscrore-color;
     }
   }
 

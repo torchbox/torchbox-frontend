@@ -68,13 +68,13 @@ body {
         text-decoration: none;
         font-weight: bold;
         padding: 15px;
-        border-bottom: 2px solid $accent;
+        border-bottom: 2px solid var(--read-more-background-color, $accent);
         cursor: pointer !important;
 
         &:hover {
-            background: $accent;
+            background: var(--read-more-background-color, $accent);
             border-radius: 4px;
-            border-color: $accent;
+            border-color: var(--read-more-background-color, $accent);
             color: white;
             padding: 15px 30px;
         }

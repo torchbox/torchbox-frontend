@@ -14,8 +14,8 @@ const ThemeProvider = ({ children, theme = 'light' }) => {
     <>
       <style>
         {`:root {
-                    ${themeStyles}
-                }`}
+          ${themeStyles}
+        }`}
       </style>
       {children}
     </>

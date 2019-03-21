@@ -10,7 +10,7 @@
     }
 
     &Icon {
-        fill: $accent;
+        fill: var(--icon-color, $accent);
         width: 20vw;
         max-width: 100px;
         grid-column: 1;
@@ -63,7 +63,7 @@
                 @extend .quoteSliderBullet;
                 width: 14px;
                 height: 20px;
-                background: $accent;
+                background: var(--icon-color, $accent);
             }
         }
     }
