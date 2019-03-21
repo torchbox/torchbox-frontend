@@ -55,6 +55,33 @@ export const query = graphql`
   }
 `
 
+export const previewQuery = `
+  query($previewToken: String) {
+    blogPosts(previewToken: previewToken) {
+      slug
+      title
+      date
+      contact {
+        ...contactSnippet
+      }
+      tags: relatedServices {
+        name
+        slug
+      }
+      authors {
+        name
+        personPage {
+          slug
+          role
+          image {
+            ...iconImage
+          }
+        }
+      }
+    }
+  }
+`
+
 BlogsListingContainer.propTypes = {
   data: PropTypes.object,
 }

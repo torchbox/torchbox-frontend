@@ -45,6 +45,28 @@ export const query = graphql`
   }
 `
 
+export const previewQuery = `
+  query($previewToken: String) {
+    personIndexPage(previewToken: $previewToken) {
+      pageTitle
+      strapline
+      contact {
+        ...contactSnippet
+      }
+    }
+    personPages {
+      firstName
+      lastName
+      slug
+      role
+      isSenior
+      image {
+        ...largeIconImage
+      }
+    }
+  }
+`
+
 TeamListingContainer.propTypes = {
   data: PropTypes.object,
 }

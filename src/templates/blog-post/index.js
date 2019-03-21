@@ -91,6 +91,50 @@ export const query = graphql`
     }
   }
 `
+export const previewQuery = `
+  query($slug: String, $previewToken: String) {
+    blogPosts(slug: $slug, previewToken: $previewToken) {
+      title
+      date
+      tags: relatedServices {
+        name
+        slug
+      }
+      authors {
+        name
+        personPage {
+          role
+          slug
+          image {
+            src
+          }
+        }
+      }
+      body
+      bodyWordCount
+    }
+
+    extraBlogPosts: blogPosts(limit: 2) {
+      title
+      date
+      tags: relatedServices {
+        name
+        slug
+      }
+      authors {
+        name
+        personPage {
+          role
+          slug
+          image {
+            src
+          }
+        }
+      }
+      body
+    }
+  }
+`
 
 BlogPostContainer.propTypes = {
   data: PropTypes.object,

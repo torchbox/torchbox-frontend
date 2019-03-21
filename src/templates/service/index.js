@@ -10,9 +10,18 @@ import { caseStudiesUrl, blogsUrl, pageUrl } from '@utils/urls'
 import { safeGet } from '@utils/safeget'
 
 export default ({ data, location, pageContext }) => {
-  let { blocks, isSubServicePage } = pageContext
+  let blocks = pageContext.blocks || [
+    'hero-block',
+    'help-block',
+    'testimonials-block',
+    'process-block',
+    'case-studies-block',
+    'blogs-block',
+    'contact-detailed',
+  ]
+
   let page = {}
-  if (isSubServicePage) {
+  if (data.subServicePages !== null) {
     page = data.wagtail.subServicePages[0]
   } else {
     page = data.wagtail.servicePages[0]
@@ -62,7 +71,9 @@ export default ({ data, location, pageContext }) => {
                   heading: page.headingForKeyPoints,
                   links: page.keyPoints.map(keyPoint => ({
                     title: keyPoint.text,
-                    href: keyPoint.linkedPage ? pageUrl(keyPoint.linkedPage) : null,
+                    href: keyPoint.linkedPage
+                      ? pageUrl(keyPoint.linkedPage)
+                      : null,
                   })),
                   contact: page.contact,
                 },
@@ -252,97 +263,101 @@ export const query = graphql`
           slug
         }
       }
+    }
+  }
+`
 
-      subServicePages(slug: $slug) {
+export const previewQuery = `
+  query($previewToken: String) {
+    servicePages(previewToken: $previewToken) {
+      title
+      pageTitle
+      searchDescription
+      slug
+      isDarktheme
+      strapline
+      intro
+      greetingImageType
+
+      keyPointsSectionTitle
+      headingForKeyPoints
+      keyPoints {
+        text
+        linkedPage {
+          type
+          slug
+          serviceSlug
+        }
+      }
+
+      contact {
+        ...contactSnippet
+      }
+
+      testimonialsSectionTitle
+      clientLogos {
+        image {
+          ...quarterImage
+        }
+      }
+      usaClientLogos {
+        image {
+          ...quarterImage
+        }
+      }
+      testimonials {
+        name
+        quote
+        role
+      }
+
+      headingForProcesses
+      useProcessBlockImage
+      processSectionTitle
+      processes {
         title
-        pageTitle
-        searchDescription
-        isDarktheme
-        strapline
-        intro
-        greetingImageType
+        description
+        pageLinkLabel
+        pageLink {
+          type
+          slug
+          serviceSlug
+        }
+      }
 
-        keyPointsSectionTitle
-        headingForKeyPoints
-        keyPoints {
-          text
-          linkedPage {
-            type
-            slug
-          }
+      caseStudiesSectionTitle
+      caseStudies(limit: 4) {
+        title
+        slug
+        client
+        listingSummary
+        feedImage {
+          ...fullImage
         }
+        homepageImage {
+          ...fullImage
+        }
+      }
 
-        contact {
-          ...contactSnippet
-        }
-
-        testimonialsSectionTitle
-        clientLogos {
-          image {
-            ...quarterImage
-          }
-        }
-        usaClientLogos {
-          image {
-            ...quarterImage
-          }
-        }
-        testimonials {
+      blogsSectionTitle
+      blogPosts(limit: 4) {
+        title
+        slug
+        listingSummary
+        authors {
           name
-          quote
-          role
-        }
-
-        useProcessBlockImage
-        processSectionTitle
-        processes {
-          title
-          description
-          pageLinkLabel
-          pageLink {
-            type
-            slug
-          }
-        }
-
-        caseStudiesSectionTitle
-        caseStudies(limit: 4) {
-          title
-          slug
-          client
-          listingSummary
-          feedImage {
-            ...fullImage
-          }
-          homepageImage {
-            ...fullImage
-          }
-        }
-
-        blogsSectionTitle
-        blogPosts(limit: 4) {
-          title
-          slug
-          listingSummary
-          authors {
-            name
-            personPage {
-              role
-              image {
-                ...iconImage
-              }
+          personPage {
+            role
+            image {
+              ...iconImage
             }
           }
         }
+      }
 
-        parentService {
-          name
-          slug
-          servicePage {
-            type
-            slug
-          }
-        }
+      service {
+        name
+        slug
       }
     }
   }
