@@ -120,7 +120,7 @@ class Layout extends React.Component {
   renderLinks = data => {
     return [
       {
-        href: '',
+        href: 'digital-products',
         title: 'Design + build products',
         strap: 'For digital design and engineering services',
       },

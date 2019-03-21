@@ -82,7 +82,7 @@ exports.createPages = ({ graphql, actions }) => {
           if (service.slug) {
             return {
               component: serviceTemplate,
-              path: service.slug === 'digital-products' ? '/' : slug,
+              path: service.slug,
               context: {
                 slug: service.slug,
                 blocks: [

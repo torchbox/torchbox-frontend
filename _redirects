@@ -1,0 +1,2 @@
+# A function that redirects users to different landing pages based on their geolocation
+/	/.netlify/functions/homepage_redirect	200

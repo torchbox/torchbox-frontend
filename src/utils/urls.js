@@ -6,12 +6,7 @@ export const serviceUrl = (slug = '', parentServiceSlug = null) => {
   if (parentServiceSlug) {
     return `${parentServiceSlug}/${slug}`
   } else {
-    switch (slug) {
-      case 'digital-products':
-        return `/`
-      default:
-        return slug
-    }
+    return slug
   }
 }
 
