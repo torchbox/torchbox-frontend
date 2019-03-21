@@ -46,6 +46,7 @@ $testimonial-name: var(--testimonial-name);
             display: flex;
             align-items: center;
             justify-content: center;
+            min-height: 20px;
 
             @include for-tablet-landscape-up {
                 grid-row: 2;
