@@ -128,6 +128,10 @@ $header-logo-color: var(--header-logo-color, $primary);
 
     @include for-desktop-small-up {
       display: block;
+      padding-top: 20px;
+    }
+
+    @include for-desktop-up {
       padding-top: 10px;
     }
   }
