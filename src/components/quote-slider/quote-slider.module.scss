@@ -1,5 +1,8 @@
 @import '../../styles/app.module';
 
+// Theme overrides:
+$testimonial-name: var(--testimonial-name);
+
 .quote {
 
     &SliderBlock {
@@ -124,7 +127,7 @@
                 font-weight: bold;
                 padding-right: 8px;
                 text-transform: uppercase;
-                color: $accent-small-text;
+                color: $testimonial-name;
                 margin-bottom: 5px;
                 letter-spacing: 0.15em;
             }

@@ -1,5 +1,8 @@
 @import '../../styles/app.module';
 
+// Theme overrides:
+$blog-author: var(--testimonial-name);
+
 .blogLink {
     display: block;
     padding: 0 0 50px 0;
@@ -45,7 +48,7 @@
         &Role {
             margin: 0 0 2px;
             line-height: 1.4;
-            color: $accent-small-text;
+            color: $blog-author;
             text-transform: uppercase;
             letter-spacing: 0.15em;
             font-weight: bold;
