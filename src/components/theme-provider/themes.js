@@ -27,7 +27,10 @@ export const lightTheme = {
   'page-section-title-color': 'var(--color-coral)',
 
   // Phone number
-  'contact-number-color': 'var(--color-coral)',
+  'contact-phone-number-color': 'var(--color-coral)',
+
+  // Get in touch numbers
+  'get-in-touch-number-color': 'white',
 }
 
 export const darkTheme = {
@@ -57,7 +60,10 @@ export const darkTheme = {
   'page-section-title-color': 'var(--color-dark-blue)',
 
   // Phone number
-  'contact-number-color': 'var(--color-light-blue)',
+  'contact-phone-number-color': 'var(--color-light-blue)',
+
+  // Get in touch numbers
+  'get-in-touch-number-color': 'var(--color-blue)',
 }
 
 export const darkThemeTransparent = {
