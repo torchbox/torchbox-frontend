@@ -20,10 +20,10 @@ export default ({ data, location, pageContext }) => {
     'contact-detailed',
   ]
 
-  let page = {}
-  if (data.subServicePages !== null) {
+  let page
+  if (data.wagtail.subServicePages) {
     page = data.wagtail.subServicePages[0]
-  } else {
+  } else (data.wagtail.servicePages) {
     page = data.wagtail.servicePages[0]
   }
 
