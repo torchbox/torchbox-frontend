@@ -55,7 +55,6 @@ export const gatsbyFragments = graphql`
     image {
       ...iconImage
     }
-    alt
   }
 `
 
@@ -113,6 +112,5 @@ export const previewFragments = `
     image {
       ...iconImage
     }
-    alt
   }
 `
