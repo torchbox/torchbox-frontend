@@ -45,7 +45,7 @@ const WagtailPreviewProvider = previewMappings => {
         return <Template {...this.props} {...propOverides} />
       }
 
-      return <p>Loading preview...</p>
+      return <p>Rendering preview...</p>
     }
   }
 }
