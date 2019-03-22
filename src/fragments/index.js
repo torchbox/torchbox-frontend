@@ -47,6 +47,24 @@ export const gatsbyFragments = graphql`
     alt
   }
 
+  fragment facebookImage on Wagtail_ImageObjectType {
+    src: rendition(format: "facebook") {
+      url
+      width
+      height
+    }
+    alt
+  }
+
+  fragment twitterImage on Wagtail_ImageObjectType {
+    src: rendition(format: "twitter") {
+      url
+      width
+      height
+    }
+    alt
+  }
+
   fragment contactSnippet on Wagtail_ContactObjectType {
     name
     role
@@ -54,6 +72,14 @@ export const gatsbyFragments = graphql`
     phoneNumber
     image {
       ...iconImage
+    }
+  }
+
+  fragment contactReasonsSnippet on Wagtail_ContactReasonsObjectType {
+    heading
+    reasons {
+      title
+      description
     }
   }
 `
@@ -111,6 +137,14 @@ export const previewFragments = `
     phoneNumber
     image {
       ...iconImage
+    }
+  }
+
+  fragment contactReasonsSnippet on ContactReasonsObjectType {
+    heading
+    reasons {
+      title
+      description
     }
   }
 `

@@ -29,8 +29,6 @@ body {
     left: 8.33vw;
     color: $page-section-title-color;
     font-weight: bold;
-    text-transform: capitalize;
-
 
     @include for-tablet-landscape-up {
         max-width: 140px;

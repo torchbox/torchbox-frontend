@@ -40,6 +40,8 @@ class Layout extends React.Component {
       nestedLinks,
       ignoreServiceTeaser,
       theme,
+      twitterImage,
+      facebookImage,
       seoTitle,
       seoDesc,
       seoLang
@@ -64,7 +66,10 @@ class Layout extends React.Component {
               title={seoTitle}
               description={seoDesc}
               lang={seoLang }
-            />
+              facebookImage={safeGet(facebookImage, 'src.url', null)}
+              twitterImage={safeGet(twitterImage, 'src.url', null)}
+              location={this.props.location}
+            />t
             <ThemeProvider theme={theme}>
               <Header
                 title={title}
@@ -167,6 +172,10 @@ Layout.propTypes = {
 Layout.defaultProps = {
   headerShouldCollapse: false,
   darkTheme: false,
+}
+
+if (typeof window !== 'undefined') {
+    Layout.defaultProps['location'] = window.location;
 }
 
 export default Layout

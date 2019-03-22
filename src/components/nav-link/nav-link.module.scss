@@ -5,7 +5,7 @@ $header-nested-link-color: var(--header-nested-link-color, white);
 
 @mixin navlink-underscore($height) {
   &::after {
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
     content: '';
     position: absolute;
     width: 100%;

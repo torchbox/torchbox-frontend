@@ -14,7 +14,10 @@ const PersonPageContainer = ({ data }) => {
   return (
     <Layout
       seoTitle={person.pageTitle}
-      seoDesc={person.searchDescription}>
+      seoDesc={person.searchDescription}
+      twitterImage={person.twitterImage}
+      facebookImage={person.facebookImage}
+    >
       <PersonPage
         firstName={person.firstName}
         lastName={person.lastName}
@@ -25,6 +28,8 @@ const PersonPageContainer = ({ data }) => {
         alt={person.image.alt}
         biography={person.biography}
         blogs={blogs}
+        contact={person.contact}
+        contactReasons={person.contactReasons}
       />
     </Layout>
   )
@@ -36,6 +41,12 @@ export const query = graphql`
       personPages(slug: $slug) {
         pageTitle
         searchDescription
+        facebookImage: searchImage {
+          ...facebookImage
+        }
+        twitterImage: searchImage {
+          ...twitterImage
+        }
         firstName
         lastName
         role
@@ -48,6 +59,9 @@ export const query = graphql`
         }
         contact {
           ...contactSnippet
+        }
+        contactReasons {
+          ...contactReasonsSnippet
         }
       }
 
