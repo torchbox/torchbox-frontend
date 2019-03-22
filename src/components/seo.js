@@ -4,10 +4,8 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, withPrefix, graphql } from 'gatsby'
 
-function SEO({ description, facebookImage, twitterImage, lang, location, meta, keywords, title }) {
-  const url = new URL(location.href);
-  url.pathname = withPrefix('images/default-search-image.jpg');
-  const defaultSearchImage = url.href;
+function SEO({ description, facebookImage, twitterImage, lang, meta, keywords, title }) {
+  const defaultSearchImage = require('@images/default-search-image.jpg').default;
   return (
     <StaticQuery
       query={detailsQuery}
