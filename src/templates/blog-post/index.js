@@ -22,6 +22,8 @@ const BlogPostContainer = ({ pageContext, data }) => {
     <Layout
       seoTitle={page.pageTitle}
       seoDesc={page.searchDescription}
+      facebookImage={page.facebookImage}
+      twitterImage={page.twitterImage}
     >
       <BlogPostPage
         title={page.title}
@@ -45,6 +47,12 @@ export const query = graphql`
         title
         pageTitle
         searchDescription
+        facebookImage: searchImage {
+          ...facebookImage
+        }
+        twitterImage: searchImage {
+          ...twitterImage
+        }
         date
         tags: relatedServices {
           name
