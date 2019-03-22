@@ -83,7 +83,8 @@
       text-decoration: none;
       color: $light-blue;
 
-      &:hover {
+      &:hover,
+      &:focus {
         color: $light-blue;
         border-bottom-color: $light-blue;
       }
