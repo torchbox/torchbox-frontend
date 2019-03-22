@@ -10,7 +10,7 @@ export const query = graphql`
       subServicePages(slug: $slug) {
         title
         pageTitle
-        isDarktheme
+        theme
         strapline
         intro
         greetingImageType
@@ -106,7 +106,7 @@ export const previewQuery = `
         subServicePages(previewToken: $previewToken) {
             title
             pageTitle
-            isDarktheme
+            theme
             strapline
             intro
             greetingImageType

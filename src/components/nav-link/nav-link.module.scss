@@ -2,6 +2,7 @@
 
 $header-link-color: var(--header-link-color, $primary);
 $header-nested-link-color: var(--header-nested-link-color, white);
+$header-link-underscrore-color: var(--header-link-underscrore-color, $accent);
 
 @mixin navlink-underscore($height) {
   &::after {
@@ -12,7 +13,7 @@ $header-nested-link-color: var(--header-nested-link-color, white);
     height: #{$height}px;
     bottom: -5px;
     left: 0;
-    background: $accent;
+    background: $header-link-underscrore-color;
   }
 }
 
@@ -86,7 +87,7 @@ $header-nested-link-color: var(--header-nested-link-color, white);
     font-size: 14px;
     font-weight: 700;
     line-height: 25px;
-    color: $light-blue;
+    color: var(--badge-text-color, $light-blue);
     z-index: 5;
 
     @include for-desktop-small-up {
@@ -105,6 +106,10 @@ $header-nested-link-color: var(--header-nested-link-color, white);
       transform: rotate(30deg);
       left: -5px;
       top: 0;
+
+      @include for-desktop-small-up {
+        background: var(--badge-background-color, $accent);
+      }
     }
   }
 }
@@ -138,14 +143,15 @@ $header-nested-link-color: var(--header-nested-link-color, white);
       line-height: 35px;
 
       @include for-desktop-small-up {
-        color: $header-nested-link-color;
+        color: var(--header-sub-link-color, white);
         padding: 7px 0;
         border: none;
         line-height: initial;
       }
 
       &:hover {
-        color: $accent;
+        color: var(--header-sub-link-hover-color, $accent);
+        
       }
     }
   }

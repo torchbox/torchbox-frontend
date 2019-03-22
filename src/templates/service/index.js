@@ -81,14 +81,13 @@ export default ({ data, location, pageContext }) => {
             : {}
 
         case 'testimonials-block':
-          return page.clientLogos.length ||
-            page.usaClientLogos.length ||
-            page.testimonials.length
+          let logos = pageContext.countryCode === 'US' ? page.usaClientLogos : page.clientLogos;
+          return logos.length || page.testimonials.length
             ? {
                 type: 'testimonials-block',
                 data: {
                   sectionTitle: page.testimonialsSectionTitle,
-                  logos: page.clientLogos.concat(page.usaClientLogos),
+                  logos: logos,
                   testimonials: page.testimonials,
                 },
               }
@@ -159,7 +158,7 @@ export default ({ data, location, pageContext }) => {
         title={page.title}
         seoTitle={page.pageTitle}
         seoDesc={page.searchDescription}
-        theme={page.isDarktheme ? 'dark' : 'light'}
+        theme={page.theme}
         blocks={blocks}
         serviceSlug={page.slug}
         nestedNav={nestedNav}
@@ -178,7 +177,7 @@ export const query = graphql`
         pageTitle
         searchDescription
         slug
-        isDarktheme
+        theme
         strapline
         intro
         greetingImageType
@@ -278,7 +277,7 @@ export const previewQuery = `
       pageTitle
       searchDescription
       slug
-      isDarktheme
+      theme
       strapline
       intro
       greetingImageType
