@@ -1,4 +1,4 @@
 /*	/us/:splat          	200!	Country=us
 /* 	/row/:splat         	200!
-/	/wagtail-cms		302	Country=us
-/	/digital-products	302
+/us/	/us/wagtail-cms		302
+/row/	/row/digital-products	302
