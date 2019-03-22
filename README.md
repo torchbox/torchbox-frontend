@@ -74,12 +74,17 @@ This is the frontend component of the new torchbox.com site. It requires you to 
   If you are sure that gatsby is confused and that the field `isCalledDave` does exist then you just need to refresh your cache 
   with a simple `rm -r ./.cache/*` command.
 
+  ## Pattern library
+
+  The site uses Storybook which can be started locally by running `yarn storybook`. Note: this is currently failing.
 
   ## Site management
 
   The site is hosted on Netlify, and you can get access to the build using the torchbox@gmail.com email - password in pwamn.
 
-  The gatsby site is rebuilt every time a change is published on the headless CMS. If a build fails for any reason, then Netlify will continue to serve up the older version.
+  The gatsby site is rebuilt every time a change is published on the headless CMS, and every time that changes are pushed to the `develop` branch.
+
+  If a build fails for any reason, then Netlify will continue to serve up the older version.
 
 
   ## Deployment
