@@ -19,6 +19,7 @@ export class TeamListingPage extends React.Component {
         name: person.firstName + ' ' + person.lastName,
         role: person.role,
         avatar: person.image.src.url,
+        alt: person.image.alt,
         href: teamUrl(person.slug),
         isSenior: person.isSenior,
       }))

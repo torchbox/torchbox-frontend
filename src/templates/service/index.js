@@ -9,10 +9,19 @@ import { blogListing, caseStudyListing } from '@utils/selectors'
 import { caseStudiesUrl, blogsUrl, pageUrl } from '@utils/urls'
 import { safeGet } from '@utils/safeget'
 
-export default ({ data, pageContext }) => {
-  let { blocks, isSubServicePage } = pageContext
-  let page = {}
-  if (isSubServicePage) {
+export default ({ data, location, pageContext }) => {
+  let blocks = pageContext.blocks || [
+    'hero-block',
+    'help-block',
+    'testimonials-block',
+    'process-block',
+    'case-studies-block',
+    'blogs-block',
+    'contact-detailed',
+  ]
+
+  let page
+  if (data.wagtail.subServicePages) {
     page = data.wagtail.subServicePages[0]
   } else {
     page = data.wagtail.servicePages[0]
@@ -62,7 +71,9 @@ export default ({ data, pageContext }) => {
                   heading: page.headingForKeyPoints,
                   links: page.keyPoints.map(keyPoint => ({
                     title: keyPoint.text,
-                    href: pageUrl(keyPoint.linkedPage),
+                    href: keyPoint.linkedPage
+                      ? pageUrl(keyPoint.linkedPage)
+                      : null,
                   })),
                   contact: page.contact,
                 },
@@ -142,10 +153,12 @@ export default ({ data, pageContext }) => {
           return {}
       }
     })
-
     return (
       <ServicePage
+        location={location}
         title={page.title}
+        seoTitle={page.pageTitle}
+        seoDesc={page.searchDescription}
         theme={page.isDarktheme ? 'dark' : 'light'}
         blocks={blocks}
         serviceSlug={page.slug}
@@ -162,6 +175,8 @@ export const query = graphql`
     wagtail {
       servicePages(serviceSlug: $slug) {
         title
+        pageTitle
+        searchDescription
         slug
         isDarktheme
         strapline
@@ -252,97 +267,104 @@ export const query = graphql`
           slug
         }
       }
+    }
+  }
+`
 
-      subServicePages(slug: $slug) {
+export const previewQuery = `
+  query($previewToken: String) {
+    servicePages(previewToken: $previewToken) {
+      title
+      pageTitle
+      searchDescription
+      slug
+      isDarktheme
+      strapline
+      intro
+      greetingImageType
+
+      keyPointsSectionTitle
+      headingForKeyPoints
+      keyPoints {
+        text
+        linkedPage {
+          type
+          slug
+          serviceSlug
+        }
+      }
+
+      contact {
+        ...contactSnippet
+      }
+      contactReasons {
+        ...contactReasonsSnippet
+      }
+
+      testimonialsSectionTitle
+      clientLogos {
+        image {
+          ...quarterImage
+        }
+      }
+      usaClientLogos {
+        image {
+          ...quarterImage
+        }
+      }
+      testimonials {
+        name
+        quote
+        role
+      }
+
+      headingForProcesses
+      useProcessBlockImage
+      processSectionTitle
+      processes {
         title
-        isDarktheme
-        strapline
-        intro
+        description
+        pageLinkLabel
+        pageLink {
+          type
+          slug
+          serviceSlug
+        }
+      }
 
-        keyPointsSectionTitle
-        headingForKeyPoints
-        keyPoints {
-          text
-          linkedPage {
-            type
-            slug
-          }
+      caseStudiesSectionTitle
+      caseStudies(limit: 4) {
+        title
+        slug
+        client
+        listingSummary
+        feedImage {
+          ...fullImage
         }
+        homepageImage {
+          ...fullImage
+        }
+      }
 
-        contact {
-          ...contactSnippet
-        }
-        contactReasons {
-          ...contactReasonsSnippet
-        }
-
-        testimonialsSectionTitle
-        clientLogos {
-          image {
-            ...quarterImage
-          }
-        }
-        usaClientLogos {
-          image {
-            ...quarterImage
-          }
-        }
-        testimonials {
+      blogsSectionTitle
+      blogPosts(limit: 4) {
+        title
+        slug
+        listingSummary
+        authors {
           name
-          quote
-          role
-        }
-
-        useProcessBlockImage
-        processSectionTitle
-        processes {
-          title
-          description
-          pageLinkLabel
-          pageLink {
-            type
-            slug
-          }
-        }
-
-        caseStudiesSectionTitle
-        caseStudies(limit: 4) {
-          title
-          slug
-          client
-          listingSummary
-          feedImage {
-            ...fullImage
-          }
-          homepageImage {
-            ...fullImage
-          }
-        }
-
-        blogsSectionTitle
-        blogPosts(limit: 4) {
-          title
-          slug
-          listingSummary
-          authors {
-            name
-            personPage {
-              role
-              image {
-                ...iconImage
-              }
+          personPage {
+            role
+            image {
+              ...iconImage
             }
           }
         }
+      }
 
-        parentService {
-          name
-          slug
-          servicePage {
-            type
-            slug
-          }
-        }
+      service {
+        name
+        slug
       }
     }
   }

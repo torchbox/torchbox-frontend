@@ -38,6 +38,7 @@
     "gatsby-plugin-svgr": "^2.0.1",
     "gatsby-source-filesystem": "^2.0.8",
     "gatsby-source-graphql": "^2.0.8",
+    "graphql-request": "^1.8.2",
     "node-sass": "^4.11.0",
     "prop-types": "^15.6.2",
     "query-string": "^6.2.0",

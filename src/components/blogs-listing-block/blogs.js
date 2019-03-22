@@ -20,7 +20,9 @@ class BlogsBlock extends React.Component {
 
     return (
       <div className={[styles.block, className].join(' ')}>
-        <span className={styles.pageSectionTitle}>{sectionTitle}</span>
+        {blogs.length ? (
+          <span className={styles.pageSectionTitle}>{sectionTitle}</span>
+        ) : null}
         <div className={styles.blockContent}>
           {showFeatured ? (
             <section className={styles.blockIntro}>
@@ -63,7 +65,7 @@ class BlogsBlock extends React.Component {
 BlogsBlock.propTypes = {
   blogs: PropTypes.array,
   className: PropTypes.string,
-  listingUrl: PropTypes.string.isRequired,
+  listingUrl: PropTypes.string,
   sectionTitle: PropTypes.string,
   showFeatured: PropTypes.bool,
 }

@@ -8,7 +8,10 @@ import TeamListingPage from './team-listing'
 
 const TeamListingContainer = ({ data }) => {
   return (
-    <Layout>
+    <Layout
+      seoTitle={data.wagtail.personIndexPage.pageTitle}
+      seoDesc={data.wagtail.personIndexPage.searchDescription}
+    >
       <TeamListingPage
         title={data.wagtail.personIndexPage.strapline}
         team={data.wagtail.personPages}
@@ -23,6 +26,8 @@ export const query = graphql`
   query {
     wagtail {
       personIndexPage {
+        pageTitle
+        searchDescription
         strapline
       }
       personPages {
@@ -40,6 +45,28 @@ export const query = graphql`
       }
       contactReasons {
         ...contactReasonsSnippet
+      }
+    }
+  }
+`
+
+export const previewQuery = `
+  query($previewToken: String) {
+    personIndexPage(previewToken: $previewToken) {
+      pageTitle
+      strapline
+      contact {
+        ...contactSnippet
+      }
+    }
+    personPages {
+      firstName
+      lastName
+      slug
+      role
+      isSenior
+      image {
+        ...largeIconImage
       }
     }
   }

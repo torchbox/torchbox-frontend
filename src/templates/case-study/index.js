@@ -16,9 +16,11 @@ import {
   caseStudyListing,
 } from '@utils/selectors'
 
-const CaseStudyContainer = ({ data }) => {
+const CaseStudyContainer = ({ pageContext, data }) => {
   const page = data.wagtail.caseStudies[0]
-  let extraCaseStudies = data.wagtail.extraCaseStudies
+  let extraCaseStudies = data.wagtail.extraCaseStudies.filter(
+    c => c.slug !== pageContext.slug
+  );
 
   if (extraCaseStudies) {
     // Limit done client side == bad (Karl to fix his limiting on BE)
@@ -35,12 +37,20 @@ const CaseStudyContainer = ({ data }) => {
   const body = [
     {
       type: 'wide_image',
-      value: { image: { src: homepageImageSrc || feedImageSrc } },
+      value: {
+        image: {
+          src: homepageImageSrc || feedImageSrc,
+          alt: page.homepageImage.alt || page.feedImage.src
+        }
+      },
     },
   ].concat(page.body)
 
   return (
-    <Layout>
+    <Layout
+      seoTitle={page.pageTitle}
+      seoDesc={page.searchDescription}
+    >
       <CaseStudy
         client={page.client}
         title={page.title}
@@ -56,11 +66,17 @@ const CaseStudyContainer = ({ data }) => {
   )
 }
 
+CaseStudyContainer.propTypes = {
+  data: PropTypes.object,
+}
+
 export const query = graphql`
   query($slug: String) {
     wagtail {
       caseStudies(slug: $slug) {
         title
+        pageTitle
+        searchDescription
         client
         feedImage {
           ...fullImage
@@ -118,8 +134,67 @@ export const query = graphql`
   }
 `
 
-CaseStudyContainer.propTypes = {
-  data: PropTypes.object,
-}
+export const previewQuery = `
+  query($previewToken: String) {
+    caseStudies(previewToken: $previewToken) {
+      title
+      pageTitle
+      searchDescription
+      client
+      feedImage {
+        ...fullImage
+      }
+      homepageImage {
+        ...fullImage
+      }
+      tags: relatedServices {
+        name
+        slug
+      }
+      authors {
+        name
+        personPage {
+          role
+          slug
+          image {
+            ...iconImage
+          }
+        }
+      }
+      body
+      bodyWordCount
+      contact {
+        ...contactSnippet
+      }
+    }
+
+    extraCaseStudies: caseStudies {
+      slug
+      title
+      client
+      listingSummary
+      tags: relatedServices {
+        name
+        slug
+      }
+      authors {
+        name
+        role
+        personPage {
+          slug
+          image {
+            ...iconImage
+          }
+        }
+      }
+      feedImage {
+        ...fullImage
+      }
+      homepageImage {
+        ...fullImage
+      }
+    }
+  }
+`
 
 export default CaseStudyContainer

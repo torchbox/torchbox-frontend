@@ -3,6 +3,10 @@
 .page {
     padding-top: 100vh;
 
+    @media (max-height: 725px) {
+        padding-top: 725px
+    }
+
     &Hero {
         height: 100vh;
         position: absolute;
@@ -11,6 +15,10 @@
         background-size: cover !important;
         background-repeat: no-repeat !important;
         background-position: top;
+
+        @media (max-height: 725px) {
+            height: 725px
+        }
 
         &Content {
             @include container;
@@ -37,6 +45,10 @@
                 font-size: 100px;
                 line-height: 100px;
                 margin: 0 8.33vw 20px 16.66vw;
+            }
+
+            &Hidden {
+                @include visibility-hidden();
             }
         }
 
@@ -89,7 +101,7 @@
             line-height: 50px;
         }
     }
-    
+
     &Links {
         @include container;
         display: flex;

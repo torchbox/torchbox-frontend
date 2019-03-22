@@ -15,11 +15,14 @@ import {
   readTime,
 } from '@utils/selectors'
 
-const BlogPostContainer = ({ data }) => {
+const BlogPostContainer = ({ pageContext, data }) => {
   const page = data.wagtail.blogPosts[0]
   const extraBlogPosts = data.wagtail.extraBlogPosts
   return (
-    <Layout>
+    <Layout
+      seoTitle={page.pageTitle}
+      seoDesc={page.searchDescription}
+    >
       <BlogPostPage
         title={page.title}
         streamfield={page.body}
@@ -27,7 +30,7 @@ const BlogPostContainer = ({ data }) => {
         datePublished={page.date}
         readTime={readTime(page.bodyWordCount) || 0}
         tags={postTags(page.tags, blogsUrl('#filter='))}
-        extraBlogPosts={extraBlogPosts.map(blogListing)}
+        extraBlogPosts={extraBlogPosts.filter(b => b.slug !== pageContext.slug).slice(0, 2).map(blogListing)}
         contact={page.contact}
         contactReasons={page.contactReasons}
       />
@@ -40,6 +43,8 @@ export const query = graphql`
     wagtail {
       blogPosts(slug: $slug) {
         title
+        pageTitle
+        searchDescription
         date
         tags: relatedServices {
           name
@@ -65,7 +70,8 @@ export const query = graphql`
         }
       }
 
-      extraBlogPosts: blogPosts(limit: 2) {
+      extraBlogPosts: blogPosts(limit: 3) {
+        slug
         title
         authors {
           name
@@ -78,6 +84,50 @@ export const query = graphql`
           }
         }
       }
+    }
+  }
+`
+export const previewQuery = `
+  query($slug: String, $previewToken: String) {
+    blogPosts(slug: $slug, previewToken: $previewToken) {
+      title
+      date
+      tags: relatedServices {
+        name
+        slug
+      }
+      authors {
+        name
+        personPage {
+          role
+          slug
+          image {
+            src
+          }
+        }
+      }
+      body
+      bodyWordCount
+    }
+
+    extraBlogPosts: blogPosts(limit: 2) {
+      title
+      date
+      tags: relatedServices {
+        name
+        slug
+      }
+      authors {
+        name
+        personPage {
+          role
+          slug
+          image {
+            src
+          }
+        }
+      }
+      body
     }
   }
 `

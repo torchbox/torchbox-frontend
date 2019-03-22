@@ -7,13 +7,19 @@ import PropTypes from 'prop-types'
 import Layout from '@components/layout'
 import CulturePage from './culture-page'
 
-const CulturePageContainer = ({ data }) => {
+const CulturePageContainer = ({ data, location }) => {
   const page = data.wagtail.culturePages[0]
   if (page) {
     return (
-      <Layout theme={'dark--transparent'}>
+      <Layout
+        theme={'dark--transparent'}
+        seoTitle={page.pageTitle}
+        seoDesc={page.searchDescription}
+        location={location}
+      >
         <CulturePage
           strapline={page.strapline}
+          straplineVisible={page.straplineVisible}
           heroImage={page.heroImage.src.url}
           intro={page.intro}
           links={page.links}
@@ -31,8 +37,11 @@ export const query = graphql`
   query($slug: String) {
     wagtail {
       culturePages(slug: $slug) {
+        pageTitle
+        searchDescription
         slug
         strapline
+        straplineVisible
         intro
         body
         heroImage {
@@ -57,8 +66,35 @@ export const query = graphql`
   }
 `
 
+export const previewQuery = `
+  query($previewToken: String) {
+    culturePages(previewToken: $previewToken) {
+      pageTitle
+      slug
+      strapline
+      intro
+      body
+      heroImage {
+        ...maxImage
+      }
+      links {
+        title
+        description
+        link {
+          type
+          slug
+        }
+      }
+      contact {
+        ...contactSnippet
+      }
+    }
+  }
+`
+
 CulturePageContainer.propTypes = {
   data: PropTypes.object,
+  location: PropTypes.object,
 }
 
 export default CulturePageContainer

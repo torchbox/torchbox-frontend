@@ -4,7 +4,7 @@ var browserslist = require('browserslist')
 module.exports = {
   siteMetadata: {
     title: `Torchbox`,
-    description: ``,
+    description: `The digital product agency for tomorrow's non-profits`,
     author: `@Torchbox`,
   },
   plugins: [

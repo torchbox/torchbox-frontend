@@ -9,9 +9,12 @@ import Layout from '@components/layout'
 
 const BlogsListingContainer = ({ data }) => {
   return (
-    <Layout>
+    <Layout
+      seoTitle={data.wagtail.blogIndexPage.pageTitle}
+      seoDesc={data.wagtail.blogIndexPage.searchDescription}
+    >
       <BlogListingPage
-        title="Our thinking [about all things digital]."
+        title={data.wagtail.blogIndexPage.title}
         blogs={data.wagtail.blogPosts}
         contact={data.wagtail.contact}
         contactReasons={data.wagtail.contactReasons}
@@ -23,6 +26,11 @@ const BlogsListingContainer = ({ data }) => {
 export const query = graphql`
   query {
     wagtail {
+      blogIndexPage {
+        pageTitle
+        searchDescription
+        title
+      }
       blogPosts {
         slug
         title
@@ -50,6 +58,33 @@ export const query = graphql`
       }
       contactReasons {
         ...contactReasonsSnippet
+      }
+    }
+  }
+`
+
+export const previewQuery = `
+  query($previewToken: String) {
+    blogPosts(previewToken: previewToken) {
+      slug
+      title
+      date
+      contact {
+        ...contactSnippet
+      }
+      tags: relatedServices {
+        name
+        slug
+      }
+      authors {
+        name
+        personPage {
+          slug
+          role
+          image {
+            ...iconImage
+          }
+        }
       }
     }
   }

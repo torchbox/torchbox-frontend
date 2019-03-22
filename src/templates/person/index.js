@@ -12,7 +12,9 @@ const PersonPageContainer = ({ data }) => {
   const person = data.wagtail.personPages[0]
   const blogs = (data.wagtail.blogPosts || []).map(blogListing)
   return (
-    <Layout>
+    <Layout
+      seoTitle={person.pageTitle}
+      seoDesc={person.searchDescription}>
       <PersonPage
         firstName={person.firstName}
         lastName={person.lastName}
@@ -20,6 +22,7 @@ const PersonPageContainer = ({ data }) => {
         intro={person.shortIntro}
         altIntro={person.altShortIntro}
         avatar={person.image.src.url}
+        alt={person.image.alt}
         biography={person.biography}
         blogs={blogs}
         contact={person.contact}
@@ -33,6 +36,8 @@ export const query = graphql`
   query($slug: String) {
     wagtail {
       personPages(slug: $slug) {
+        pageTitle
+        searchDescription
         firstName
         lastName
         role
@@ -63,6 +68,43 @@ export const query = graphql`
             image {
               ...iconImage
             }
+          }
+        }
+      }
+    }
+  }
+`
+
+export const previewQuery = `
+  query($previewToken: String, $slug: String) {
+    personPages(previewToken: $previewToken) {
+      pageTitle
+      firstName
+      lastName
+      role
+      shortIntro
+      altShortIntro
+      biography
+      slug
+      image {
+        ...fullImage
+      }
+      contact {
+        ...contactSnippet
+      }
+    }
+
+    blogPosts(authorSlug: $slug, limit: 2) {
+      title
+      slug
+      date
+      authors {
+        name
+        personPage {
+          role
+          slug
+          image {
+            ...iconImage
           }
         }
       }

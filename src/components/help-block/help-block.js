@@ -17,7 +17,7 @@ class HelpBlock extends React.Component {
       <div className={styles.blockContainer}>
         <section className={styles.blockContent}>
           <span className={styles.pageSectionTitle}>{sectionTitle}</span>
-          <h1 className={styles.blockTitle} {...renderTorchUp(title)} />
+          {title && <h1 className={styles.blockTitle} {...renderTorchUp(title)} />}
 
           {links != null ? (
             <div className={styles.blockLinksContainer}>
@@ -28,9 +28,14 @@ class HelpBlock extends React.Component {
                     className={styles.blockLinksItem}
                   >
                     <TickIcon className={styles.blockLinksItemIcon} />
-                    <Link onClick={link.onClick} to={link.href}>
-                      {link.title}
-                    </Link>
+                    { link.href ? (
+                        <Link onClick={link.onClick} to={link.href}>
+                          {link.title}
+                        </Link>
+                      ) : (
+                        <span>{link.title}</span>
+                      )
+                    }
                   </li>
                 ))}
               </ul>

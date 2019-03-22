@@ -32,9 +32,9 @@ class CaseStudiesBlock extends React.Component {
                     <span className={styles.caseStudyMetaClient}>
                       {caseStudy.client}
                     </span>
-                    <h3 className={styles.caseStudyMetaTitle}>
+                    <h2 className={styles.caseStudyMetaTitle}>
                       {caseStudy.title}
-                    </h3>
+                    </h2>
                     <p className={styles.caseStudyMetaDesc}>
                       {caseStudy.description}
                     </p>
@@ -67,7 +67,7 @@ class CaseStudiesBlock extends React.Component {
 CaseStudiesBlock.propTypes = {
   caseStudies: PropTypes.array.isRequired,
   className: PropTypes.string,
-  listingUrl: PropTypes.string.isRequired,
+  listingUrl: PropTypes.string,
   sectionTitle: PropTypes.string,
 }
 
