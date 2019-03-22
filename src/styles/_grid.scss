@@ -17,6 +17,10 @@
 @mixin for-desktop-up {
   @media (min-width: 1280px) { @content; }
 }
+// specifically for navigation
+@mixin for-desktop-medium-up {
+  @media (min-width: 1400px) { @content; }
+}
 @mixin for-big-desktop-up {
   @media (min-width: 1800px) { @content; }
 }

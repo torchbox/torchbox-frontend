@@ -82,6 +82,12 @@
       line-height: 26px;
       text-decoration: none;
       color: $light-blue;
+
+      &:hover,
+      &:focus {
+        color: $light-blue;
+        border-bottom-color: $light-blue;
+      }
     }
 
   }

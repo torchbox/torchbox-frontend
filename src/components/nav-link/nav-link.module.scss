@@ -40,7 +40,7 @@ $header-link-underscrore-color: var(--header-link-underscrore-color, $accent);
     transition: all 0.2s ease;
   }
 
-  @include for-desktop-up {
+  @include for-desktop-medium-up {
     margin-right: 50px;
   }
 
