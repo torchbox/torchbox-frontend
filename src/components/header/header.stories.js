@@ -14,7 +14,6 @@ storiesOf('Components/Shared Components', module).add('Header', () => {
   return (
     <State store={store}>
       <Header
-        logoClick={action('Go to Homepage')}
         currentUrl={store.state.currentUrl}
         links={[
           {

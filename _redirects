@@ -1,0 +1,4 @@
+/	/wagtail-cms		302	Country=us
+/	/digital-products	302
+/*  /us/:splat          200 Country=us
+/*  /row/:splat         200

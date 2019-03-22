@@ -40,7 +40,6 @@ class Layout extends React.Component {
       nestedLinks,
       ignoreServiceTeaser,
       theme,
-      onLogoClick,
       twitterImage,
       facebookImage,
       seoTitle,
@@ -82,7 +81,6 @@ class Layout extends React.Component {
                 navigateTo={url => {
                   this.setState({ currentUrl: url })
                 }}
-                onLogoClick={onLogoClick}
               />
                 <main className={styles.pageContainer}>
                   {children}
@@ -125,7 +123,7 @@ class Layout extends React.Component {
   renderLinks = data => {
     return [
       {
-        href: '',
+        href: 'digital-products',
         title: 'Design + build products',
         strap: 'For digital design and engineering services',
       },

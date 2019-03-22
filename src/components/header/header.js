@@ -44,9 +44,7 @@ class Header extends React.Component {
       links,
       collapsed,
       navigateTo,
-      logoClick,
       nestedLinks,
-      onLogoClick,
     } = this.props
 
     return (
@@ -60,17 +58,22 @@ class Header extends React.Component {
           {collapsed ? (
             <div
               className={styles.collapsedLogoContainer}
-              onClick={onLogoClick}
             >
-              <Flame className={styles.logoFlame} onClick={logoClick} />
+              <a href="/">
+                <Flame className={styles.logoFlame} />
+              </a>
+
               <span className={styles.logoText}>{title}</span>
+
             </div>
           ) : (
             <div className={styles.logoContainer}>
-              <Logo className={styles.logo} onClick={logoClick} />
+              <a href="/">
+                <Logo className={styles.logo} />
+              </a>
+
             </div>
           )}
-
           <nav className={styles.primaryNavContainer} aria-label="Main navigation">
             <ul className={styles.primaryNavList}>
               {links.map((link, index) => (
@@ -146,12 +149,10 @@ class Header extends React.Component {
 Header.propTypes = {
   title: PropTypes.string,
   navigateTo: PropTypes.func,
-  logoClick: PropTypes.func,
   links: PropTypes.array,
   nestedLinks: PropTypes.array,
   shouldCollapse: PropTypes.bool,
   collapsed: PropTypes.bool,
-  onLogoClick: PropTypes.func,
 }
 
 Header.defaultProps = {
