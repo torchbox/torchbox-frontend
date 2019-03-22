@@ -16,7 +16,7 @@
         background-repeat: no-repeat !important;
         background-position: top;
 
-        @media (max-height: 725px) {
+        @include for-short-screen {
             height: 725px
         }
 

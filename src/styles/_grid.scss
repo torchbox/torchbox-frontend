@@ -20,6 +20,10 @@
 @mixin for-big-desktop-up {
   @media (min-width: 1800px) { @content; }
 }
+// short screen, for when hero elements are 100vh
+@mixin for-short-screen {
+  @media (max-height: 725px) { @content; }
+}
 
 @mixin container {
   position: relative;

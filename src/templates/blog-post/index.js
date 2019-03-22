@@ -70,7 +70,7 @@ export const query = graphql`
         }
       }
 
-      extraBlogPosts: blogPosts(limit: 3) {
+      extraBlogPosts: blogPosts(limit: 2) {
         slug
         title
         authors {
