@@ -2,18 +2,22 @@
   Torchbox.com Gatsby Frontend
 </h1>
 
-This is the frontend component of the new tbx.com site. It requires you to have the [backend graphql component](https://github.com/torchbox/wagtail-torchbox/tree/new) running locally or on the server.
+
+This is the frontend component of the new torchbox.com site. It requires you to have the [backend graphql component](https://github.com/torchbox/wagtail-torchbox/tree/new) running locally or on the server.
 
 ## 🚀 Quick start
 
 1.  **Download & Install.**
 
    `git clone https://github.com/torchbox/torchbox-frontend`
-   `yarn`
+   `npm install`
 
 2.  **Configure.**
 
-    If you don't want to run the backend component locally then you will have to change the `http://localhost:8000/graphql/` string in your `gatsby-config.json`to the graphql endpoint of your choosing.
+    If you don't want to run the backend component locally then you will have to change the `http://localhost:8000/graphql/` string in your `gatsby-config.json`. To use the live site CMS uses `https://cms.torchbox.com`. Obviously don't edit the live CMS data to test your changes though!
+
+    Note that if you change the endpoint in `gatsby-config.json` you need to restart gatsby to pick up the changes. A restart is also often needed to pick up changes published in the CMS.
+
 
 3.  **Start Developing!**
 
@@ -69,3 +73,19 @@ This is the frontend component of the new tbx.com site. It requires you to have 
 
   If you are sure that gatsby is confused and that the field `isCalledDave` does exist then you just need to refresh your cache 
   with a simple `rm -r ./.cache/*` command.
+
+
+  ## Site management
+
+  The site is hosted on Netlify, and you can get access to the build using the torchbox@gmail.com email - password in pwamn.
+
+  The gatsby site is rebuilt every time a change is published on the headless CMS. If a build fails for any reason, then Netlify will continue to serve up the older version.
+
+
+  ## Deployment
+
+  Pre-launch: pushing changes to the `develop` branch will automatically trigger a redeploy to https://tbx-staging.netlify.com/
+
+  Post-launch: we will have a staging and production version of the gatsby site, linked to `staging` and `master` branches.
+
+
