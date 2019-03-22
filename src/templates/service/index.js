@@ -158,7 +158,7 @@ export default ({ data, location, pageContext }) => {
         title={page.title}
         seoTitle={page.pageTitle}
         seoDesc={page.searchDescription}
-        theme={page.isDarktheme ? 'dark' : 'light'}
+        theme={page.theme}
         blocks={blocks}
         serviceSlug={page.slug}
         nestedNav={nestedNav}
@@ -177,7 +177,7 @@ export const query = graphql`
         pageTitle
         searchDescription
         slug
-        isDarktheme
+        theme
         strapline
         intro
         greetingImageType
@@ -277,7 +277,7 @@ export const previewQuery = `
       pageTitle
       searchDescription
       slug
-      isDarktheme
+      theme
       strapline
       intro
       greetingImageType

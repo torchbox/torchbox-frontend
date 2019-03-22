@@ -66,6 +66,10 @@ $hero-link-color: var(--hero-link-color, $link-color);
       font-size: 70px;
       line-height: 80px;
     }
+
+    span {
+      color: var(--hero-title-accent-color, $accent) !important;
+    }
   }
 
   &Desc {
@@ -123,7 +127,7 @@ $hero-link-color: var(--hero-link-color, $link-color);
         border-bottom: 2px solid $hero-background;
 
         &:hover {
-          border-bottom: 2px solid $accent;
+          border-bottom: 2px solid var(--hero-link-underscore-color, $accent);
         }
 
         @include for-tablet-landscape-up {

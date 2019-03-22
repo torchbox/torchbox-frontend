@@ -130,11 +130,9 @@ $get-in-touch-number-color: var(--get-in-touch-number-color);
         }
 
         &Email {
-            font-size: 24px;
             color: white;
             line-height: 24px;
             text-decoration: none;
-            border-bottom: 2px solid $accent;
             font-weight: bold;
         }
 
