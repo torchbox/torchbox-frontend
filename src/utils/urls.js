@@ -1,5 +1,5 @@
 export const caseStudiesUrl = (slug = '') => `/work/${slug}`
-export const blogsUrl = (slug = '') => `/blogs/${slug}`
+export const blogsUrl = (slug = '') => `/blog/${slug}`
 export const teamUrl = (slug = '') => `/team/${slug}`
 export const jobsUrl = (slug = '') => `/jobs/${slug}`
 export const serviceUrl = (slug = '', parentServiceSlug = null) => {
