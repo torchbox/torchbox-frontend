@@ -59,7 +59,7 @@ class Header extends React.Component {
             <div
               className={styles.collapsedLogoContainer}
             >
-              <a href="/">
+              <a href="/" className={styles.logoLink}>
                 <Flame className={styles.logoFlame} />
               </a>
 
@@ -68,7 +68,7 @@ class Header extends React.Component {
             </div>
           ) : (
             <div className={styles.logoContainer}>
-              <a href="/">
+              <a href="/" className={styles.logoLink}>
                 <Logo className={styles.logo} />
               </a>
 
