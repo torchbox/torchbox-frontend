@@ -88,7 +88,7 @@ export const query = graphql`
           }
         }
 
-        parentService {
+        service {
           name
           slug
           servicePage {
@@ -184,7 +184,7 @@ export const previewQuery = `
                 }
             }
 
-            parentService {
+            service {
                 name
                 slug
                 servicePage {

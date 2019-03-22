@@ -57,7 +57,7 @@ export default ({ data, location, pageContext }) => {
                   intro: page.intro,
                   links: nestedNav,
                   greetingImageType: page.greetingImageType,
-                  parentLink: page.parentService || null,
+                  parentLink: page.service || null,
                 },
               }
             : {}
@@ -172,7 +172,7 @@ export default ({ data, location, pageContext }) => {
 export const query = graphql`
   query($slug: String) {
     wagtail {
-      servicePages(serviceSlug: $slug) {
+      servicePages(slug: $slug) {
         title
         pageTitle
         searchDescription
