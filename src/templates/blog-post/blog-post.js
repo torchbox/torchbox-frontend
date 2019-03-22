@@ -21,6 +21,7 @@ const BlogPostPage = ({
   streamfield,
   extraBlogPosts,
   contact,
+  contactReasons,
 }) => (
   <div className={styles.page}>
     <TitleBlock className={styles.pageTitle} title={title} innerPage={true} />
@@ -45,7 +46,7 @@ const BlogPostPage = ({
         listingUrl={blogsUrl()}
       />
     ) : null}
-    <Contact className={styles.pageContact} {...contact} />
+    <Contact className={styles.pageContact} {...contact} {...contactReasons} />
   </div>
 )
 
@@ -58,6 +59,7 @@ BlogPostPage.propTypes = {
   streamfield: PropTypes.array,
   extraBlogPosts: PropTypes.array,
   contact: PropTypes.object,
+  contactReasons: PropTypes.object,
 }
 
 BlogPostPage.defaultProps = {

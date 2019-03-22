@@ -15,6 +15,8 @@ const TeamListingContainer = ({ data }) => {
       <TeamListingPage
         title={data.wagtail.personIndexPage.strapline}
         team={data.wagtail.personPages}
+        contact={data.wagtail.contact}
+        contactReasons={data.wagtail.contactReasons}
       />
     </Layout>
   )
@@ -27,9 +29,6 @@ export const query = graphql`
         pageTitle
         searchDescription
         strapline
-        contact {
-          ...contactSnippet
-        }
       }
       personPages {
         firstName
@@ -40,6 +39,12 @@ export const query = graphql`
         image {
           ...largeIconImage
         }
+      }
+      contact {
+        ...contactSnippet
+      }
+      contactReasons {
+        ...contactReasonsSnippet
       }
     }
   }

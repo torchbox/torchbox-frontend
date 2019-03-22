@@ -16,6 +16,8 @@ const CaseStudyListingContainer = ({ data }) => {
       <CaseStudyListingPage
         title={data.wagtail.caseStudiesIndexPage.title}
         caseStudies={data.wagtail.caseStudies}
+        contact={data.wagtail.contact}
+        contactReasons={data.wagtail.contactReasons}
       />
     </Layout>
   )
@@ -54,9 +56,12 @@ export const query = graphql`
         homepageImage {
           ...fullImage
         }
-        contact {
-          ...contactSnippet
-        }
+      }
+      contact {
+        ...contactSnippet
+      }
+      contactReasons {
+        ...contactReasonsSnippet
       }
     }
   }
