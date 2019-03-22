@@ -98,6 +98,10 @@ $header-logo-color: var(--header-logo-color, $primary);
   height: 25px;
 }
 
+.logoLink {
+  border-bottom: none;
+}
+
 .logo {
   width: 110px;
   height: 40px;
