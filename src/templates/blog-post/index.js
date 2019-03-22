@@ -22,6 +22,8 @@ const BlogPostContainer = ({ pageContext, data }) => {
     <Layout
       seoTitle={page.pageTitle}
       seoDesc={page.searchDescription}
+      facebookImage={page.facebookImage}
+      twitterImage={page.twitterImage}
     >
       <BlogPostPage
         title={page.title}
@@ -31,6 +33,8 @@ const BlogPostContainer = ({ pageContext, data }) => {
         readTime={readTime(page.bodyWordCount) || 0}
         tags={postTags(page.tags, blogsUrl('#filter='))}
         extraBlogPosts={extraBlogPosts.filter(b => b.slug !== pageContext.slug).slice(0, 2).map(blogListing)}
+        contact={page.contact}
+        contactReasons={page.contactReasons}
       />
     </Layout>
   )
@@ -43,6 +47,12 @@ export const query = graphql`
         title
         pageTitle
         searchDescription
+        facebookImage: searchImage {
+          ...facebookImage
+        }
+        twitterImage: searchImage {
+          ...twitterImage
+        }
         date
         tags: relatedServices {
           name
@@ -63,16 +73,14 @@ export const query = graphql`
         contact {
           ...contactSnippet
         }
+        contactReasons {
+          ...contactReasonsSnippet
+        }
       }
 
-      extraBlogPosts: blogPosts(limit: 3) {
+      extraBlogPosts: blogPosts(limit: 2) {
         slug
         title
-        date
-        tags: relatedServices {
-          name
-          slug
-        }
         authors {
           name
           personPage {
@@ -82,10 +90,6 @@ export const query = graphql`
               ...iconImage
             }
           }
-        }
-        body
-        contact {
-          ...contactSnippet
         }
       }
     }

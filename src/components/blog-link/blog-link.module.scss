@@ -1,12 +1,20 @@
 @import '../../styles/app.module';
 
+// Theme overrides:
+$blog-author: var(--testimonial-name);
+
 .blogLink {
     display: block;
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
-    padding: 50px 0 50px 0;
+    padding: 0 0 50px 0;
     margin: 20px 0 0;
     text-decoration: none;
     border-bottom: none;
+
+    &:hover {
+        .blogLinkTitle {
+            color: $light-blue;
+        }
+    }
 
     &Meta {
         display: flex;
@@ -18,12 +26,8 @@
         font-size: 30px;
         font-weight: bold;
         line-height: 40px;
-        margin: 0 0 10px;
+        margin: 0 0 20px;
         color: $primary;
-
-        &:hover {
-            color: $blue;
-        }
     }
 
     &Image {
@@ -44,7 +48,7 @@
         &Role {
             margin: 0 0 2px;
             line-height: 1.4;
-            color: $accent-small-text;
+            color: $blog-author;
             text-transform: uppercase;
             letter-spacing: 0.15em;
             font-weight: bold;

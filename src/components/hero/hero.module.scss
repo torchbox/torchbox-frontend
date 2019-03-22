@@ -16,8 +16,13 @@ $hero-link-color: var(--hero-link-color, $link-color);
     display: flex;
     flex-direction: column;
     width: 100vw;
+    height: 100vh;
     background: $hero-background;
     padding-top: 70px;
+
+    @include for-short-screen {
+      height: 725px
+    }
     
     @include for-tablet-landscape-up {
       padding-top: 120px;

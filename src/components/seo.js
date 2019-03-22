@@ -2,9 +2,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import { StaticQuery, graphql } from 'gatsby'
+import { StaticQuery, withPrefix, graphql } from 'gatsby'
 
-function SEO({ description, lang, meta, keywords, title }) {
+function SEO({ description, facebookImage, twitterImage, lang, location, meta, keywords, title }) {
+  const url = new URL(location.href);
+  url.pathname = withPrefix('images/default-search-image.jpg');
+  const defaultSearchImage = url.href;
   return (
     <StaticQuery
       query={detailsQuery}
@@ -28,6 +31,10 @@ function SEO({ description, lang, meta, keywords, title }) {
                 content: title,
               },
               {
+                name: `og:image`,
+                content: facebookImage || defaultSearchImage,
+              },
+              {
                 property: `og:description`,
                 content: metaDescription,
               },
@@ -38,6 +45,11 @@ function SEO({ description, lang, meta, keywords, title }) {
               {
                 name: `twitter:card`,
                 content: `summary`,
+              },
+              {
+                name: `twitter:image:src`,
+                content: twitterImage || defaultSearchImage,
+
               },
               {
                 name: `twitter:creator`,

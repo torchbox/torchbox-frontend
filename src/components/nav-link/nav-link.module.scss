@@ -6,7 +6,7 @@ $header-link-underscrore-color: var(--header-link-underscrore-color, $accent);
 
 @mixin navlink-underscore($height) {
   &::after {
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
     content: '';
     position: absolute;
     width: 100%;

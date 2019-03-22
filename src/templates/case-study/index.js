@@ -50,6 +50,8 @@ const CaseStudyContainer = ({ pageContext, data }) => {
     <Layout
       seoTitle={page.pageTitle}
       seoDesc={page.searchDescription}
+      facebookImage={page.facebookImage}
+      twitterImage={page.twitterImage}
     >
       <CaseStudy
         client={page.client}
@@ -58,6 +60,7 @@ const CaseStudyContainer = ({ pageContext, data }) => {
         author={authorDetails(page.authors)}
         tags={postTags(page.tags, caseStudiesUrl('#filter='))}
         contact={page.contact}
+        contactReasons={page.contactReasons}
         readTime={readTime(page.bodyWordCount) || 0}
         caseStudies={extraCaseStudies}
       />
@@ -76,6 +79,12 @@ export const query = graphql`
         title
         pageTitle
         searchDescription
+        facebookImage: searchImage {
+          ...facebookImage
+        }
+        twitterImage: searchImage {
+          ...twitterImage
+        }
         client
         feedImage {
           ...fullImage
@@ -102,6 +111,9 @@ export const query = graphql`
         contact {
           ...contactSnippet
         }
+        contactReasons {
+          ...contactReasonsSnippet
+        }
       }
 
       extraCaseStudies: caseStudies {
@@ -109,10 +121,6 @@ export const query = graphql`
         title
         client
         listingSummary
-        tags: relatedServices {
-          name
-          slug
-        }
         authors {
           name
           role
