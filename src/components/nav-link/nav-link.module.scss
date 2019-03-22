@@ -39,7 +39,7 @@ $header-nested-link-color: var(--header-nested-link-color, white);
     transition: all 0.2s ease;
   }
 
-  @include for-desktop-up {
+  @include for-desktop-medium-up {
     margin-right: 50px;
   }
 
