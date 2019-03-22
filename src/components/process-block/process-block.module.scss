@@ -82,6 +82,11 @@
       line-height: 26px;
       text-decoration: none;
       color: $light-blue;
+
+      &:hover {
+        color: $light-blue;
+        border-bottom-color: $light-blue;
+      }
     }
 
   }
