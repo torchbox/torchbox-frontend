@@ -40,7 +40,6 @@ class Layout extends React.Component {
       nestedLinks,
       ignoreServiceTeaser,
       theme,
-      onLogoClick,
       seoTitle,
       seoDesc,
       seoLang
@@ -77,7 +76,6 @@ class Layout extends React.Component {
                 navigateTo={url => {
                   this.setState({ currentUrl: url })
                 }}
-                onLogoClick={onLogoClick}
               />
                 <main className={styles.pageContainer}>
                   {children}

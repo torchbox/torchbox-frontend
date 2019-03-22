@@ -129,7 +129,6 @@ class ServicePage extends React.Component {
         collapsed={this.state.collapsed}
         nestedLinks={nestedNav}
         ignoreServiceTeaser={serviceSlug}
-        onLogoClick={() => this.navigateToSection('hero')}
         location={location}
       >
         <div className={[styles.page].join(' ')}>
