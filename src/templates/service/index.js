@@ -81,14 +81,13 @@ export default ({ data, location, pageContext }) => {
             : {}
 
         case 'testimonials-block':
-          return page.clientLogos.length ||
-            page.usaClientLogos.length ||
-            page.testimonials.length
+          let logos = pageContext.countryCode === 'US' ? page.usaClientLogos : page.clientLogos;
+          return logos.length || page.testimonials.length
             ? {
                 type: 'testimonials-block',
                 data: {
                   sectionTitle: page.testimonialsSectionTitle,
-                  logos: page.clientLogos.concat(page.usaClientLogos),
+                  logos: logos,
                   testimonials: page.testimonials,
                 },
               }
