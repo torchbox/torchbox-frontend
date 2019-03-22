@@ -27,14 +27,20 @@ export const lightTheme = {
   'page-section-title-color': 'var(--color-coral)',
 
   // Phone number
-  'contact-number-color': 'var(--color-coral)',
+  'contact-phone-number-color': 'var(--color-coral)',
+
+  // Get in touch numbers
+  'get-in-touch-number-color': 'white',
+
+  // Testimonial citation
+  'testimonial-name': 'var(--color-coral-dark)',
 }
 
 export const darkTheme = {
   // Base colors:
   'color-primary': 'var(--color-blue)',
   'color-accent': 'var(--color-green)',
-  'color-accent-small': 'var(--color-dark-blue)',
+  'color-accent-small': 'var(--color-blue)',
 
   // Hero Component
   'hero-background': 'var(--color-primary)',
@@ -54,10 +60,16 @@ export const darkTheme = {
   'color-link-badge': 'var(--color-primary)',
 
   // Page section title
-  'page-section-title-color': 'var(--color-dark-blue)',
+  'page-section-title-color': 'var(--color-blue)',
 
   // Phone number
-  'contact-number-color': 'var(--color-light-blue)',
+  'contact-phone-number-color': 'var(--color-light-blue)',
+
+  // Get in touch numbers
+  'get-in-touch-number-color': 'var(--color-blue)',
+
+  // Testimonial citation
+  'testimonial-name': 'var(--color-light-blue)',
 }
 
 export const darkThemeTransparent = {

@@ -60,11 +60,16 @@ const CaseStudyContainer = ({ pageContext, data }) => {
         author={authorDetails(page.authors)}
         tags={postTags(page.tags, caseStudiesUrl('#filter='))}
         contact={page.contact}
+        contactReasons={page.contactReasons}
         readTime={readTime(page.bodyWordCount) || 0}
         caseStudies={extraCaseStudies}
       />
     </Layout>
   )
+}
+
+CaseStudyContainer.propTypes = {
+  data: PropTypes.object,
 }
 
 export const query = graphql`
@@ -106,6 +111,9 @@ export const query = graphql`
         contact {
           ...contactSnippet
         }
+        contactReasons {
+          ...contactReasonsSnippet
+        }
       }
 
       extraCaseStudies: caseStudies {
@@ -113,10 +121,6 @@ export const query = graphql`
         title
         client
         listingSummary
-        tags: relatedServices {
-          name
-          slug
-        }
         authors {
           name
           role
@@ -138,8 +142,67 @@ export const query = graphql`
   }
 `
 
-CaseStudyContainer.propTypes = {
-  data: PropTypes.object,
-}
+export const previewQuery = `
+  query($previewToken: String) {
+    caseStudies(previewToken: $previewToken) {
+      title
+      pageTitle
+      searchDescription
+      client
+      feedImage {
+        ...fullImage
+      }
+      homepageImage {
+        ...fullImage
+      }
+      tags: relatedServices {
+        name
+        slug
+      }
+      authors {
+        name
+        personPage {
+          role
+          slug
+          image {
+            ...iconImage
+          }
+        }
+      }
+      body
+      bodyWordCount
+      contact {
+        ...contactSnippet
+      }
+    }
+
+    extraCaseStudies: caseStudies {
+      slug
+      title
+      client
+      listingSummary
+      tags: relatedServices {
+        name
+        slug
+      }
+      authors {
+        name
+        role
+        personPage {
+          slug
+          image {
+            ...iconImage
+          }
+        }
+      }
+      feedImage {
+        ...fullImage
+      }
+      homepageImage {
+        ...fullImage
+      }
+    }
+  }
+`
 
 export default CaseStudyContainer

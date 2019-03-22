@@ -12,7 +12,7 @@ import { ReactComponent as GreetingImage } from '@images/man-fruit.svg'
 // Styles
 import styles from './culture-page.module.scss'
 
-const CulturePage = ({ strapline, straplineVisible, heroImage, intro, links, body, contact }) => {
+const CulturePage = ({ strapline, straplineVisible, heroImage, intro, links, body, contact, contactReasons }) => {
   const Teasers = () => (
     <div className={styles.pageLinks}>
       {links.map((link, index) => (
@@ -53,7 +53,7 @@ const CulturePage = ({ strapline, straplineVisible, heroImage, intro, links, bod
         />
         <Teasers />
       </div>
-      <Contact className={styles.pageContact} {...contact} />
+      <Contact className={styles.pageContact} {...contact} {...contactReasons} />
     </div>
   )
 }
@@ -65,6 +65,8 @@ CulturePage.propTypes = {
   intro: PropTypes.string,
   links: PropTypes.array,
   body: PropTypes.array,
+  contact: PropTypes.object,
+  contactReasons: PropTypes.object,
 }
 
 CulturePage.defaultProps = {

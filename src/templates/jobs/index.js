@@ -7,13 +7,16 @@ import Layout from '@components/layout'
 import JobsListingPage from './jobs-listing'
 
 const JobsListingContainer = ({ data }) => {
+  const page = data.wagtail.jobsIndexPage
   return (
     <Layout
-      seoTitle={data.wagtail.jobsIndexPage.pageTitle}
-      seoDesc={data.wagtail.jobsIndexPage.searchDescription}>
+      seoTitle={page.pageTitle}
+      seoDesc={page.searchDescription}>
       <JobsListingPage
-        title={data.wagtail.jobsIndexPage.title}
-        jobs={data.wagtail.jobsIndexPage.jobs}
+        title={page.pageTitle}
+        jobs={page.jobs}
+        contact={page.contact}
+        contactReasons={page.contactReasons}
       />
     </Layout>
   )
@@ -36,6 +39,29 @@ export const query = graphql`
         contact {
           ...contactSnippet
         }
+        contactReasons {
+          ...contactReasonsSnippet
+        }
+      }
+    }
+  }
+`
+
+export const previewQuery = `
+  query($previewToken: String) {
+    jobsIndexPage(previewToken: $previewToken) {
+      title
+      strapline
+      pageTitle
+
+      jobs {
+        url
+        title
+        level
+        location
+      }
+      contact {
+        ...contactSnippet
       }
     }
   }

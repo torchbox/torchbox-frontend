@@ -25,6 +25,7 @@ const CulturePageContainer = ({ data, location }) => {
           links={page.links}
           body={page.body}
           contact={page.contact}
+          contactReasons={page.contactReasons}
         />
       </Layout>
     )
@@ -57,6 +58,35 @@ export const query = graphql`
         contact {
           ...contactSnippet
         }
+        contactReasons {
+          ...contactReasonsSnippet
+        }
+      }
+    }
+  }
+`
+
+export const previewQuery = `
+  query($previewToken: String) {
+    culturePages(previewToken: $previewToken) {
+      pageTitle
+      slug
+      strapline
+      intro
+      body
+      heroImage {
+        ...maxImage
+      }
+      links {
+        title
+        description
+        link {
+          type
+          slug
+        }
+      }
+      contact {
+        ...contactSnippet
       }
     }
   }

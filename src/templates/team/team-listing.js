@@ -12,7 +12,7 @@ import styles from './team-listing.module.scss'
 
 export class TeamListingPage extends React.Component {
   render() {
-    const { title, team, contact } = this.props
+    const { title, team, contact, contactReasons } = this.props
 
     const listing = team
       .map(person => ({
@@ -29,7 +29,7 @@ export class TeamListingPage extends React.Component {
       <div className={styles.page}>
         <TitleBlock className={styles.pageTitle} title={title} />
         <TeamListingBlock className={styles.pageTeamListing} team={listing} />
-        <Contact className={styles.pageContact} {...contact} />
+        <Contact className={styles.pageContact} {...contact} {...contactReasons} />
       </div>
     )
   }

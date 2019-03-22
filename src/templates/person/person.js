@@ -14,15 +14,15 @@ import styles from './person.module.scss'
 class PersonPage extends React.Component {
   constructor(props) {
     super(props)
-    this.title = `${props.firstName + ' ' + props.lastName || ''} [${props.intro ||
-        ''}]`
+    this.title = `${props.firstName + ' ' + props.lastName ||
+      ''} [${props.intro || ''}]`
     this.altTitle = `${props.firstName + ' ' + props.lastName ||
-        ''} [${props.altIntro || ''}]`
+      ''} [${props.altIntro || ''}]`
     this.state = { title: this.title }
   }
 
   render() {
-    const { firstName, role, avatar, alt, biography, blogs, contact } = this.props
+    const { firstName, role, avatar, alt, biography, blogs, contact, contactReasons } = this.props
 
     return (
       <div className={styles.page}>
@@ -30,12 +30,12 @@ class PersonPage extends React.Component {
           <TitleBlock
             onMouseEnter={() =>
               this.setState({
-                title: this.altTitle
+                title: this.altTitle,
               })
             }
             onMouseLeave={() =>
               this.setState({
-                title: this.title
+                title: this.title,
               })
             }
             className={styles.pageTitle}
@@ -63,7 +63,7 @@ class PersonPage extends React.Component {
           showFeatured={false}
           listingUrl={null}
         />
-        <Contact className={styles.pageContact} {...contact} />
+        <Contact className={styles.pageContact} {...contact} {...contactReasons} />
       </div>
     )
   }
@@ -79,6 +79,7 @@ PersonPage.propTypes = {
   biography: PropTypes.string,
   blogs: PropTypes.array,
   contact: PropTypes.object,
+  contactReasons: PropTypes.object,
 }
 
 PersonPage.defaultProps = {
