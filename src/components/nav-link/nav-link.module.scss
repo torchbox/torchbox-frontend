@@ -29,19 +29,27 @@ $header-nested-link-color: var(--header-nested-link-color, white);
   border-bottom: 2px solid rgba(255, 255, 255, 0.1);
   @include navlink-underscore(0);
 
-  @include for-desktop-up {
+  @include for-desktop-small-up {
     height: 40px;
     color: $header-link-color;
     border-bottom: none;
-    margin-right: 70px;
+    margin-right: 39px; // max we can go without nav label wrapping
     margin-bottom: 0;
     padding: 0 0 0px;
     transition: all 0.2s ease;
   }
 
+  @include for-desktop-up {
+    margin-right: 50px;
+  }
+
+  @include for-big-desktop-up {
+    margin-right: 70px;
+  }
+
   .parent:hover & {
     color: white;
-    @include for-desktop-up {
+    @include for-desktop-small-up {
       color: $header-link-color;
       @include navlink-underscore(4);
     }
@@ -49,7 +57,7 @@ $header-nested-link-color: var(--header-nested-link-color, white);
 
   &.active {
     border-bottom: none;
-    @include for-desktop-up {
+    @include for-desktop-small-up {
       @include navlink-underscore(4);
     }
   }
@@ -61,6 +69,11 @@ $header-nested-link-color: var(--header-nested-link-color, white);
     font-size: 22px;
     line-height: 35px;
     font-family: $mainFont;
+
+    @include for-desktop-small-up {
+      font-size: 17px;
+    }
+
     @include for-desktop-up {
       font-size: 18px;
     }
@@ -76,7 +89,7 @@ $header-nested-link-color: var(--header-nested-link-color, white);
     color: $light-blue;
     z-index: 5;
 
-    @include for-desktop-up {
+    @include for-desktop-small-up {
       position: absolute;
       top: -10px;
       right: -25px;
@@ -101,7 +114,7 @@ $header-nested-link-color: var(--header-nested-link-color, white);
   width: 100%;
   padding-top: 25px;
 
-  @include for-desktop-up {
+  @include for-desktop-small-up {
     transition: all 0.2s ease;
     transform: translateY(50%);
     opacity: 0;
@@ -124,7 +137,7 @@ $header-nested-link-color: var(--header-nested-link-color, white);
       border-top: 1px solid rgba(255, 255, 255, 0.1);
       line-height: 35px;
 
-      @include for-desktop-up {
+      @include for-desktop-small-up {
         color: $header-nested-link-color;
         padding: 7px 0;
         border: none;

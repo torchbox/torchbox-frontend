@@ -19,11 +19,13 @@ const CulturePageContainer = ({ data, location }) => {
       >
         <CulturePage
           strapline={page.strapline}
+          straplineVisible={page.straplineVisible}
           heroImage={page.heroImage.src.url}
           intro={page.intro}
           links={page.links}
           body={page.body}
           contact={page.contact}
+          contactReasons={page.contactReasons}
         />
       </Layout>
     )
@@ -39,6 +41,7 @@ export const query = graphql`
         searchDescription
         slug
         strapline
+        straplineVisible
         intro
         body
         heroImage {
@@ -55,6 +58,35 @@ export const query = graphql`
         contact {
           ...contactSnippet
         }
+        contactReasons {
+          ...contactReasonsSnippet
+        }
+      }
+    }
+  }
+`
+
+export const previewQuery = `
+  query($previewToken: String) {
+    culturePages(previewToken: $previewToken) {
+      pageTitle
+      slug
+      strapline
+      intro
+      body
+      heroImage {
+        ...maxImage
+      }
+      links {
+        title
+        description
+        link {
+          type
+          slug
+        }
+      }
+      contact {
+        ...contactSnippet
       }
     }
   }

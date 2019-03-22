@@ -31,6 +31,8 @@ const BlogPostContainer = ({ pageContext, data }) => {
         readTime={readTime(page.bodyWordCount) || 0}
         tags={postTags(page.tags, blogsUrl('#filter='))}
         extraBlogPosts={extraBlogPosts.filter(b => b.slug !== pageContext.slug).slice(0, 2).map(blogListing)}
+        contact={page.contact}
+        contactReasons={page.contactReasons}
       />
     </Layout>
   )
@@ -63,16 +65,14 @@ export const query = graphql`
         contact {
           ...contactSnippet
         }
+        contactReasons {
+          ...contactReasonsSnippet
+        }
       }
 
       extraBlogPosts: blogPosts(limit: 2) {
         slug
         title
-        date
-        tags: relatedServices {
-          name
-          slug
-        }
         authors {
           name
           personPage {
@@ -83,11 +83,51 @@ export const query = graphql`
             }
           }
         }
-        body
-        contact {
-          ...contactSnippet
+      }
+    }
+  }
+`
+export const previewQuery = `
+  query($slug: String, $previewToken: String) {
+    blogPosts(slug: $slug, previewToken: $previewToken) {
+      title
+      date
+      tags: relatedServices {
+        name
+        slug
+      }
+      authors {
+        name
+        personPage {
+          role
+          slug
+          image {
+            src
+          }
         }
       }
+      body
+      bodyWordCount
+    }
+
+    extraBlogPosts: blogPosts(limit: 2) {
+      title
+      date
+      tags: relatedServices {
+        name
+        slug
+      }
+      authors {
+        name
+        personPage {
+          role
+          slug
+          image {
+            src
+          }
+        }
+      }
+      body
     }
   }
 `

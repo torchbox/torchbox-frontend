@@ -25,6 +25,8 @@ const PersonPageContainer = ({ data }) => {
         alt={person.image.alt}
         biography={person.biography}
         blogs={blogs}
+        contact={person.contact}
+        contactReasons={person.contactReasons}
       />
     </Layout>
   )
@@ -49,6 +51,9 @@ export const query = graphql`
         contact {
           ...contactSnippet
         }
+        contactReasons {
+          ...contactReasonsSnippet
+        }
       }
 
       blogPosts(authorSlug: $slug, limit: 2) {
@@ -63,6 +68,43 @@ export const query = graphql`
             image {
               ...iconImage
             }
+          }
+        }
+      }
+    }
+  }
+`
+
+export const previewQuery = `
+  query($previewToken: String, $slug: String) {
+    personPages(previewToken: $previewToken) {
+      pageTitle
+      firstName
+      lastName
+      role
+      shortIntro
+      altShortIntro
+      biography
+      slug
+      image {
+        ...fullImage
+      }
+      contact {
+        ...contactSnippet
+      }
+    }
+
+    blogPosts(authorSlug: $slug, limit: 2) {
+      title
+      slug
+      date
+      authors {
+        name
+        personPage {
+          role
+          slug
+          image {
+            ...iconImage
           }
         }
       }

@@ -16,6 +16,8 @@ const BlogsListingContainer = ({ data }) => {
       <BlogListingPage
         title={data.wagtail.blogIndexPage.title}
         blogs={data.wagtail.blogPosts}
+        contact={data.wagtail.contact}
+        contactReasons={data.wagtail.contactReasons}
       />
     </Layout>
   )
@@ -48,6 +50,39 @@ export const query = graphql`
             image {
               ...iconImage
             }
+          }
+        }
+      }
+      contact {
+        ...contactSnippet
+      }
+      contactReasons {
+        ...contactReasonsSnippet
+      }
+    }
+  }
+`
+
+export const previewQuery = `
+  query($previewToken: String) {
+    blogPosts(previewToken: previewToken) {
+      slug
+      title
+      date
+      contact {
+        ...contactSnippet
+      }
+      tags: relatedServices {
+        name
+        slug
+      }
+      authors {
+        name
+        personPage {
+          slug
+          role
+          image {
+            ...iconImage
           }
         }
       }

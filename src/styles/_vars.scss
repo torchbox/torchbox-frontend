@@ -32,8 +32,8 @@ $mainFont: 'Apercu Pro';
 $small: '(max-width: 599px)';
 $tablet: '(min-width: 600px)';
 $tablet-landscape: '(min-width: 900px)';
+$desktop-small: '(min-width: 1080px)'; // specifically for navigation
 $desktop: '(min-width: 1200px)';
-$desktop-medium: '(min-width: 1310px)'; // specifically for navigation
 $desktop-big: '(min-width: 1800px)';
 $short-screen: '(max-height: 725px)'; // for when hero elements are 100vh
 

@@ -46,6 +46,10 @@
                 line-height: 100px;
                 margin: 0 8.33vw 20px 16.66vw;
             }
+
+            &Hidden {
+                @include visibility-hidden();
+            }
         }
 
         &::after {
@@ -97,7 +101,7 @@
             line-height: 50px;
         }
     }
-    
+
     &Links {
         @include container;
         display: flex;
