@@ -56,6 +56,14 @@ export const gatsbyFragments = graphql`
       ...iconImage
     }
   }
+
+  fragment contactReasonsSnippet on Wagtail_ContactReasonsObjectType {
+    heading
+    reasons {
+      title
+      description
+    }
+  }
 `
 
 export const previewFragments = `
@@ -111,6 +119,14 @@ export const previewFragments = `
     phoneNumber
     image {
       ...iconImage
+    }
+  }
+
+  fragment contactReasonsSnippet on ContactReasonsObjectType {
+    heading
+    reasons {
+      title
+      description
     }
   }
 `
