@@ -143,12 +143,16 @@ exports.createPages = ({ graphql, actions }) => {
       throw result.errors
     }
 
+
     if (process.env.GATSBY_ENVIRONMENT === 'netlify') {
       // On Netlify, render the whole site for each region
       // there is configuration in the '_redirects' file that tells Netlify which version should be served
       // Note: There are only minor changes between the different regions. For example, which logos to
       // display on service pages and tweaks to the "related pages" query. There should be no difference in
       // content or language.
+
+
+      /* Temporailiy commented out as this upsets gatsby
       [
         // Render whole site for USA
         ...getRoutes(result.data.wagtail, 'US').map(route => {
@@ -162,6 +166,10 @@ exports.createPages = ({ graphql, actions }) => {
           return route
         })
       ].map(page => createPage(page))
+
+      */
+
+      getRoutes(result.data.wagtail, null).map(page => createPage(page))
     } else {
       // In development mode, we want to avoid prefixing the URLs so the site works locally.
       // Note: if you want to test the US site, change the second parameter of getRoutes to 'US'

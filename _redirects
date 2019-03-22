@@ -1,5 +1,2 @@
 /   /wagtail-cms            302!    Country=us
 /   /digital-products       302!
-/preview    /preview        200!
-/*  /us/:splat              200    Country=us
-/*  /row/:splat             200
