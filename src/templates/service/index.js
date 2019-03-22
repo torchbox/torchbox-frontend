@@ -189,7 +189,6 @@ export const query = graphql`
           linkedPage {
             type
             slug
-            serviceSlug
           }
         }
 
@@ -227,7 +226,6 @@ export const query = graphql`
           pageLink {
             type
             slug
-            serviceSlug
           }
         }
 
@@ -289,7 +287,6 @@ export const previewQuery = `
         linkedPage {
           type
           slug
-          serviceSlug
         }
       }
 
@@ -327,7 +324,6 @@ export const previewQuery = `
         pageLink {
           type
           slug
-          serviceSlug
         }
       }
 
