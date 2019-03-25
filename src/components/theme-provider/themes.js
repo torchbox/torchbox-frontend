@@ -16,6 +16,8 @@ export const lightTheme = {
   'header-logo-color': 'var(--color-primary)',
   'header-icon-color': 'var(--color-accent)',
   'header-nested-link-color': 'var(--color-light-blue)',
+  'header-nested-link-hover-color': 'var(--color-coral)',
+  'header-link-underscrore-color': 'var(--color-coral)',
   'header-sub-link-color': 'var(--color-primary)',
   'header-sub-link-hover-color': 'var(--color-coral)',
 
@@ -58,7 +60,7 @@ export const coralTheme = {
   'header-logo-color': 'white',
   'header-icon-color': 'var(--color-primary)',
   'header-nested-link-color': 'white',
-  'header-nested-link-hover-color': 'white',
+  'header-nested-link-hover-color': 'var(--color-primary)',
   'header-link-underscrore-color': 'var(--color-primary)',
   'header-sub-link-color': 'var(--color-light-blue)',
   'header-sub-link-hover-color': 'var(--color-blue)',
@@ -102,6 +104,8 @@ export const darkTheme = {
   'header-logo-color': 'white',
   'header-icon-color': 'var(--color-green)',
   'header-nested-link-color': 'white',
+  'header-nested-link-hover-color': 'var(--color-accent)',
+  'header-link-underscrore-color': 'var(--color-accent)',
   'header-sub-link-color': 'white',
   'header-sub-link-hover-color': 'var(--color-accent)',
 
