@@ -103,6 +103,7 @@ export const darkTheme = {
   'header-logo-color': 'white',
   'header-icon-color': 'white',
   'header-nested-link-color': 'white',
+  'header-link-underscrore-color': 'var(--color-accent)',
   'header-sub-link-color': 'white',
   'header-sub-link-hover-color': 'var(--color-accent)',
 
