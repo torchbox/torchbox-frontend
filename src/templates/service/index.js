@@ -351,11 +351,6 @@ export const previewQuery = `
           }
         }
       }
-
-      service {
-        name
-        slug
-      }
     }
   }
 `
