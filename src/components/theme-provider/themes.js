@@ -16,6 +16,7 @@ export const lightTheme = {
   'header-logo-color': 'var(--color-primary)',
   'header-icon-color': 'var(--color-accent)',
   'header-nested-link-color': 'var(--color-light-blue)',
+  'header-sub-link-color': 'var(--color-primary)',
 
   // Links
   'color-link': 'var(--color-light-blue)',
