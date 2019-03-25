@@ -13,7 +13,7 @@ const JobsListingContainer = ({ data }) => {
       seoTitle={page.pageTitle}
       seoDesc={page.searchDescription}>
       <JobsListingPage
-        title={page.pageTitle}
+        title={page.strapline}
         jobs={page.jobs}
         contact={page.contact}
         contactReasons={page.contactReasons}
@@ -27,6 +27,7 @@ export const query = graphql`
     wagtail {
       jobsIndexPage {
         title
+        strapline
         pageTitle
         searchDescription
 
