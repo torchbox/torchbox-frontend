@@ -100,6 +100,7 @@ export const darkTheme = {
   'header-logo-color': 'white',
   'header-icon-color': 'white',
   'header-nested-link-color': 'white',
+  'header-sub-link-color': 'white',
 
   // Links
   'color-link': 'var(--color-primary)',

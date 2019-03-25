@@ -143,7 +143,7 @@ $header-link-underscrore-color: var(--header-link-underscrore-color, $accent);
       line-height: 35px;
 
       @include for-desktop-small-up {
-        color: var(--header-sub-link-color, white);
+        color: var(--header-sub-link-color, $primary);
         padding: 7px 0;
         border: none;
         line-height: initial;
@@ -151,7 +151,6 @@ $header-link-underscrore-color: var(--header-link-underscrore-color, $accent);
 
       &:hover {
         color: var(--header-sub-link-hover-color, $accent);
-        
       }
     }
   }
