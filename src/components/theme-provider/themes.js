@@ -98,7 +98,7 @@ export const darkTheme = {
   'header-background': 'var(--color-primary)',
   'header-link-color': 'white',
   'header-logo-color': 'white',
-  'header-icon-color': 'white',
+  'header-icon-color': 'var(--color-green)',
   'header-nested-link-color': 'white',
 
   // Links
