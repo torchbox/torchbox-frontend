@@ -73,7 +73,7 @@ export const query = graphql`
         }
 
         blogsSectionTitle
-        blogPosts(limit: 4) {
+        blogPosts(limit: 5) {
           title
           slug
           listingSummary
@@ -169,7 +169,7 @@ export const previewQuery = `
             }
 
             blogsSectionTitle
-            blogPosts(limit: 4) {
+            blogPosts(limit: 5) {
                 title
                 slug
                 listingSummary
