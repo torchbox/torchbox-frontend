@@ -258,11 +258,6 @@ export const query = graphql`
             }
           }
         }
-
-        service {
-          name
-          slug
-        }
       }
     }
   }
