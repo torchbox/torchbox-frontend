@@ -17,6 +17,7 @@ export const lightTheme = {
   'header-icon-color': 'var(--color-accent)',
   'header-nested-link-color': 'var(--color-light-blue)',
   'header-sub-link-color': 'var(--color-primary)',
+  'header-sub-link-hover-color': 'var(--color-coral)',
 
   // Links
   'color-link': 'var(--color-light-blue)',
@@ -60,7 +61,7 @@ export const coralTheme = {
   'header-nested-link-hover-color': 'white',
   'header-link-underscrore-color': 'var(--color-primary)',
   'header-sub-link-color': 'var(--color-light-blue)',
-  'header-sub-link-hover-color': 'var(--color-light-blue)',
+  'header-sub-link-hover-color': 'var(--color-blue)',
 
   // Links
   'color-link': 'var(--color-light-blue)',
@@ -102,6 +103,7 @@ export const darkTheme = {
   'header-icon-color': 'white',
   'header-nested-link-color': 'white',
   'header-sub-link-color': 'white',
+  'header-sub-link-hover-color': 'var(--color-accent)',
 
   // Links
   'color-link': 'var(--color-primary)',
