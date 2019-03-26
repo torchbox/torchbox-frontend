@@ -1,5 +1,17 @@
 export const caseStudiesUrl = (slug = '') => `/work/${slug}`
+export const caseStudiesFilterUrl = filter => {
+  if (!filter) {
+    return caseStudiesUrl()
+  }
+  return `/work/#filter=${filter}`
+};
 export const blogsUrl = (slug = '') => `/blog/${slug}`
+export const blogsFilterUrl = filter => {
+  if (!filter) {
+    return blogsUrl()
+  }
+  return `/blog/#filter=${filter}`
+};
 export const teamUrl = (slug = '') => `/team/${slug}`
 export const jobsUrl = (slug = '') => `/jobs/${slug}`
 export const serviceUrl = (slug = '', parentServiceSlug = null) => {

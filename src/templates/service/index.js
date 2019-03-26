@@ -6,7 +6,13 @@ import ServicePage from './service-page'
 import Layout from '@components/layout'
 // Utilities
 import { blogListing, caseStudyListing } from '@utils/selectors'
-import { caseStudiesUrl, blogsUrl, pageUrl } from '@utils/urls'
+import {
+  caseStudiesUrl,
+  caseStudiesFilterUrl,
+  blogsUrl,
+  blogsFilterUrl,
+  pageUrl
+} from '@utils/urls'
 import { safeGet } from '@utils/safeget'
 
 export default ({ data, location, pageContext }) => {
@@ -57,7 +63,7 @@ export default ({ data, location, pageContext }) => {
                   intro: page.intro,
                   links: nestedNav,
                   greetingImageType: page.greetingImageType,
-                  parentLink: page.service || null,
+                  parentLink: page.type === 'SubServicePage' ? page.service : null,
                 },
               }
             : {}
@@ -74,7 +80,7 @@ export default ({ data, location, pageContext }) => {
                     href: keyPoint.linkedPage
                       ? pageUrl({
                         ...keyPoint.linkedPage,
-                        serviceSlug: page.slug
+                        serviceSlug: page.service.slug
                       })
                       : null,
                   })),
@@ -123,7 +129,7 @@ export default ({ data, location, pageContext }) => {
                 data: {
                   sectionTitle: page.caseStudiesSectionTitle,
                   caseStudies: page.caseStudies.map(caseStudyListing),
-                  listingUrl: caseStudiesUrl(),
+                  listingUrl: caseStudiesFilterUrl(page.service.slug),
                 },
               }
             : {}
@@ -135,7 +141,7 @@ export default ({ data, location, pageContext }) => {
                 data: {
                   sectionTitle: page.blogsSectionTitle,
                   blogs: page.blogPosts.map(blogListing),
-                  listingUrl: blogsUrl(),
+                  listingUrl: blogsFilterUrl(page.service.slug),
                 },
               }
             : {}
@@ -163,7 +169,7 @@ export default ({ data, location, pageContext }) => {
         seoDesc={page.searchDescription}
         theme={page.theme}
         blocks={blocks}
-        serviceSlug={page.slug}
+        serviceSlug={page.service ? page.service.slug : page.slug}
         nestedNav={nestedNav}
       />
     )
@@ -217,6 +223,15 @@ export const query = graphql`
           name
           quote
           role
+        }
+
+        service {
+          name
+          slug
+          servicePage {
+            type
+            slug
+          }
         }
 
         headingForProcesses
