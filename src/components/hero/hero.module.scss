@@ -18,7 +18,7 @@ $hero-link-color: var(--hero-link-color, $link-color);
     width: 100vw;
     background: $hero-background;
     padding-top: 70px;
-    
+
     @include for-tablet-landscape-up {
       padding-top: 120px;
     }
@@ -94,7 +94,6 @@ $hero-link-color: var(--hero-link-color, $link-color);
       list-style: none;
       display: flex;
       margin-top: 20px;
-      margin-left: -10px;
       flex-wrap: wrap;
       @include for-tablet-landscape-up {
         padding-top: 0px;
