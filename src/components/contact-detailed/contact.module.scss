@@ -135,7 +135,8 @@ $get-in-touch-number-color: var(--get-in-touch-number-color);
             text-decoration: none;
             font-weight: bold;
 
-            &:hover {
+            &:hover,
+            &:focus {
                 color: white;
             }
         }

@@ -65,7 +65,8 @@ $contact-phone-number-color: var(--contact-phone-number-color);
             margin: 10px 15px 0 0;
         }
 
-        &:hover {
+        &:hover,
+        &:focus {
             color: $blue;
         }
     }
