@@ -18,28 +18,15 @@ class AnimatedCharacter extends React.Component {
 
   animate = () => {
     if (this.containerRef.current) {
-      const imagePosition = this.containerRef.current.offsetTop
-      const screenPosition = window.pageYOffset
-      if (screenPosition > imagePosition - window.innerHeight * 0.6) {
-        setTimeout(() => {
-          this.setState({ active: true })
-        }, 500)
-      }
-    } else {
-      window.removeEventListener('scroll', this.animate)
+      setTimeout(() => {
+        this.setState({ active: true })
+      }, 500)
     }
   }
 
   componentDidMount() {
     if (this.containerRef.current && window) {
       this.animate()
-      window.addEventListener('scroll', this.animate)
-    }
-  }
-
-  componentWillUnmount() {
-    if (typeof window !== `undefined`) {
-      window.removeEventListener('scroll', this.animate)
     }
   }
 
