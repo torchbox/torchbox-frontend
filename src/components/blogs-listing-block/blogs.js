@@ -24,7 +24,7 @@ class BlogsBlock extends React.Component {
 
     return (
       <div className={[styles.block, className].join(' ')}>
-        {blogs.length ? (
+        {sectionTitle ? (
           <span className={styles.pageSectionTitle}>{sectionTitle}</span>
         ) : null}
         <div className={styles.blockContent}>
