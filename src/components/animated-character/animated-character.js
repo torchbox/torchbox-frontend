@@ -79,7 +79,7 @@ class AnimatedCharacter extends React.Component {
       case 'man-left':
         return (
           <ManChar
-            className={active ? styles.imageWomanActive : styles.imageWoman}
+            className={active ? styles.imageManActive : styles.imageMan}
           />
         )
 
