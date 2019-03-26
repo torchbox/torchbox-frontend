@@ -28,6 +28,9 @@ export const query = graphql`
         contact {
           ...contactSnippet
         }
+        contactReasons {
+          ...contactReasonsSnippet
+        }
 
         testimonialsSectionTitle
         clientLogos {
@@ -123,6 +126,9 @@ export const previewQuery = `
 
             contact {
                 ...contactSnippet
+            }
+            contactReasons {
+              ...contactReasonsSnippet
             }
 
             testimonialsSectionTitle
