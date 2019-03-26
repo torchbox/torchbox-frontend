@@ -62,6 +62,24 @@
     right: 14vw;
     left: 0;
 
+    // animate the wagtail bird
+    > path {
+        &:nth-child(11),
+        &:nth-child(12),
+        &:nth-child(13),
+        &:last-child {
+            transition: all 1s ease;
+            transition-delay: 0.7s;
+            transform: translate3d(0, -30px, 0) rotate(5deg);
+        }
+    }
+
+    ellipse {
+        transition: all 1s ease;
+        transition-delay: 0.7s;
+        transform: translate3d(0, -30px, 0) rotate(5deg);
+    }
+
     @include for-tablet-portrait-up {
         margin-top: 60px;
     }
@@ -83,5 +101,19 @@
     &Active {
         @extend .imageWagtail;
         transform: translate3d(-100%, 0, 0) !important;
+
+        // animate the wagtail bird
+        > path {
+            &:nth-child(11),
+            &:nth-child(12),
+            &:nth-child(13),
+            &:last-child {
+                transform: translate3d(0, 0, 0) rotate(-5deg);
+            }
+        }
+
+        ellipse {
+            transform: translate3d(0, 0, 0) rotate(-5deg);
+        }
     }
 }
