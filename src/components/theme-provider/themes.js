@@ -7,6 +7,9 @@ export const lightTheme = {
 
   // Hero Component
   'hero-background': 'white',
+  'hero-parent-page-color':  'var(--color-primary)',
+  'hero-parent-page-slash-color': 'var(--color-coral)',
+  'hero-parent-page-hover-color': 'var(--color-link-hover)',
   'hero-title-color': 'var(--color-primary)',
   'hero-link-color': 'var(--color-light-blue)',
 
@@ -17,7 +20,7 @@ export const lightTheme = {
   'header-icon-color': 'var(--color-accent)',
   'header-nested-link-color': 'var(--color-light-blue)',
   'header-nested-link-hover-color': 'var(--color-coral)',
-  'header-link-underscrore-color': 'var(--color-coral)',
+  'header-link-underscore-color': 'var(--color-coral)',
   'header-sub-link-color': 'var(--color-primary)',
   'header-sub-link-hover-color': 'var(--color-coral)',
 
@@ -50,20 +53,23 @@ export const coralTheme = {
   // Hero Component
   'hero-background': 'var(--color-coral)',
   'hero-title-color': 'white',
+  'hero-parent-page-color':  'var(--color-primary)',
+  'hero-parent-page-slash-color': 'white',
+  'hero-parent-page-hover-color': 'white',
   'hero-title-accent-color': 'var(--color-primary)',
-  'hero-link-color': 'white',
+  'hero-link-color': 'var(--color-blue)',
   'hero-link-underscore-color': 'var(--color-primary)',
 
   // Header Component
   'header-background': 'var(--color-coral)',
-  'header-link-color': 'white',
+  'header-link-color': 'var(--color-blue)',
   'header-logo-color': 'white',
   'header-icon-color': 'var(--color-primary)',
-  'header-nested-link-color': 'white',
+  'header-nested-link-color': 'var(--color-primary)',
   'header-nested-link-hover-color': 'var(--color-primary)',
-  'header-link-underscrore-color': 'var(--color-primary)',
-  'header-sub-link-color': 'var(--color-light-blue)',
-  'header-sub-link-hover-color': 'var(--color-blue)',
+  'header-link-underscore-color': 'var(--color-primary)',
+  'header-sub-link-color': 'var(--color-primary)',
+  'header-sub-link-hover-color': 'white',
 
   // Links
   'color-link': 'var(--color-light-blue)',
@@ -95,6 +101,9 @@ export const darkTheme = {
 
   // Hero Component
   'hero-background': 'var(--color-primary)',
+  'hero-parent-page-color': 'white',
+  'hero-parent-page-slash-color': 'var(--color-green)',
+  'hero-parent-page-hover-color': 'var(--color-link-hover)',
   'hero-title-color': 'white',
   'hero-link-color': 'white',
 
@@ -105,7 +114,7 @@ export const darkTheme = {
   'header-icon-color': 'var(--color-green)',
   'header-nested-link-color': 'white',
   'header-nested-link-hover-color': 'var(--color-accent)',
-  'header-link-underscrore-color': 'var(--color-accent)',
+  'header-link-underscore-color': 'var(--color-accent)',
   'header-sub-link-color': 'white',
   'header-sub-link-hover-color': 'var(--color-accent)',
 
