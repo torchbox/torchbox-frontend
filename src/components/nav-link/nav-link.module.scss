@@ -41,10 +41,6 @@ $header-link-underscrore-color: var(--header-link-underscrore-color, $accent);
   }
 
   @include for-desktop-medium-up {
-    margin-right: 50px;
-  }
-
-  @include for-big-desktop-up {
     margin-right: 70px;
   }
 
