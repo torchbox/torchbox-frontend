@@ -13,16 +13,30 @@
     // animation
     transition: all 0.5s ease;
     transform: translate3d(-100%, 0, 0);
-
     position: relative;
     width: 66vw;
     max-width: 380px;
     top: 40px;
     z-index: 2;
+
+    // animate the hand and post it note
+    > path {
+        &:nth-child(7),
+        &:nth-child(8)  {
+            transition: transform 1s ease;
+            transition-delay: 0.3s;
+            transform: translate3d(-40px, 60px, 0);
+        }
+    }
+
+    @include for-tablet-portrait-up {
+        width: 40vw;
+    }
+
     @include for-desktop-up {
         width: 28vw;
         height: 18.8vw;
-        left: -14.66vw;
+        left: -16.66vw;
         top: 0px;
     }
 
@@ -45,6 +59,14 @@
     &Active {
         @extend .imageWoman;
         transform: translate3d(0%, 0, 0) !important;
+
+        // animate the hand and post it note
+        > path {
+            &:nth-child(7),
+            &:nth-child(8) {
+                transform: translate3d(0, 0, 0);
+            }
+        }
     }
 }
 
@@ -52,9 +74,8 @@
     // animation
     transition: all 0.8s ease;
     transform: translate3d(100%, 0, 0);
-
     position: relative;
-    width: 50vw;
+    width: 66vw;
     z-index: 2;
 
     margin-left: auto;
@@ -62,12 +83,26 @@
     right: 14vw;
     left: 0;
 
-    @include for-tablet-portrait-up {
-        margin-top: 60px;
+    // animate the wagtail bird
+    > path {
+        &:nth-child(11),
+        &:nth-child(12),
+        &:nth-child(13),
+        &:last-child {
+            transition: transform 1s ease;
+            transition-delay: 0.4s;
+            transform: translate3d(0, 200px, 0) rotate(60deg);
+        }
     }
 
-    @include for-tablet-landscape-up {
-        margin-top: 140px;
+    ellipse {
+        transition: transform 1s ease;
+        transition-delay: 0.4s;
+        transform: translate3d(0, 200px, 0) rotate(60deg);
+    }
+
+    @include for-tablet-portrait-up {
+        width: 40vw;
     }
 
     @include for-desktop-up {
@@ -83,5 +118,78 @@
     &Active {
         @extend .imageWagtail;
         transform: translate3d(-100%, 0, 0) !important;
+
+        // animate the wagtail bird
+        > path {
+            &:nth-child(11),
+            &:nth-child(12),
+            &:nth-child(13),
+            &:last-child {
+                transform: translate3d(0, 0, 0) rotate(-5deg);
+            }
+        }
+
+        ellipse {
+            transform: translate3d(0, 0, 0) rotate(-5deg);
+        }
+    }
+}
+
+.imageMan {
+    // animation
+    position: relative;
+    transition: all 0.5s ease;
+    transform: translate3d(-100%, 0, 0);
+    width: 66vw;
+    max-width: 380px;
+    top: 40px;
+    z-index: 2;
+
+    > path {
+        &:nth-child(14),
+        &:nth-child(15),
+        &:nth-child(16),
+        &:nth-child(18) {
+            transition: transform 1s ease;
+            transition-delay: 0.2s;
+            transform: translate3d(-40px, 60px, 0);
+            transform: rotate(8deg);
+        }
+    }
+
+    circle:last-of-type {
+        transition: transform 1s ease;
+        transition-delay: 0.2s;
+        transform: translate3d(-40px, 60px, 0);
+        transform: rotate(8deg);
+    }
+
+    @include for-tablet-portrait-up {
+        width: 40vw;
+    }
+
+    @include for-desktop-up {
+        width: 28vw;
+        height: 18.8vw;
+        left: -14.66vw;
+        top: 0px;
+    }
+
+    &Active {
+        @extend .imageMan;
+        transform: translate3d(0%, 0, 0) !important;
+
+        > path {
+            &:nth-child(14),
+            &:nth-child(15),
+            &:nth-child(16),
+            &:nth-child(18) {
+                transform: rotate(-10deg);
+            }
+        }
+
+        circle:last-of-type {
+            transform: rotate(-10deg);
+        }
     }
 }
