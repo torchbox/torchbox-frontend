@@ -134,6 +134,11 @@ $get-in-touch-number-color: var(--get-in-touch-number-color);
             line-height: 24px;
             text-decoration: none;
             font-weight: bold;
+
+            &:hover,
+            &:focus {
+                color: white;
+            }
         }
 
         &Number {

@@ -3,6 +3,9 @@
 // Component theme overrides:
 $hero-background: var(--hero-background, white);
 $hero-title-color: var(--hero-title-color, $primary);
+$hero-parent-page-color: var(--hero-parent-page-color);
+$hero-parent-page-slash-color: var(--hero-parent-page-slash-color);
+$hero-parent-page-hover-color: var(--hero-parent-page-hover-color);
 
 .parentLink {
     display: block;
@@ -17,20 +20,20 @@ $hero-title-color: var(--hero-title-color, $primary);
 
     a {
         border: none;
-        color: $hero-title-color;
+        color: $hero-parent-page-color;
         z-index: 2;
         background-color: $hero-background;
         padding: 11px 0;
 
         &:hover {
-            color: $link-hover-color;
+            color: $hero-parent-page-hover-color;
         }
 
         &::before {
             width: 4px;
             height: 80px;
             content: '';
-            background: $accent;
+            background: $hero-parent-page-slash-color;
             position: absolute;
             z-index: -1;
             transform: rotate(30deg);
