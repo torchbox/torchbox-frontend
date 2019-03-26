@@ -12,6 +12,10 @@ class CaseStudiesBlock extends React.Component {
   render() {
     const { caseStudies, className, sectionTitle, listingUrl } = this.props
 
+    if (!caseStudies || caseStudies.length === 0) {
+      return <div />;
+    }
+
     return (
       <div className={[styles.block, className].join(' ')}>
         {sectionTitle ? (

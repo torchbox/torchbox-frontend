@@ -117,7 +117,15 @@ export default ({ data, location, pageContext }) => {
                 data: {
                   sectionTitle: page.processSectionTitle,
                   title: page.headingForProcesses,
-                  processes: page.processes,
+                  processes: page.processes.map(process => {
+                    return {
+                      ...process,
+                      pageLink: {
+                        ...process.pageLink,
+                        serviceSlug: page.service.slug
+                      }
+                    }
+                  }),
                 },
               }
             : {}
