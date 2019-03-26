@@ -13,7 +13,6 @@
     // animation
     transition: all 0.5s ease;
     transform: translate3d(-100%, 0, 0);
-
     position: relative;
     width: 66vw;
     max-width: 380px;
@@ -25,9 +24,13 @@
         &:nth-child(7),
         &:nth-child(8)  {
             transition: transform 1s ease;
-            transition-delay: 0.5s;
+            transition-delay: 0.3s;
             transform: translate3d(-40px, 60px, 0);
         }
+    }
+
+    @include for-tablet-portrait-up {
+        width: 40vw;
     }
 
     @include for-desktop-up {
@@ -71,9 +74,8 @@
     // animation
     transition: all 0.8s ease;
     transform: translate3d(100%, 0, 0);
-
     position: relative;
-    width: 50vw;
+    width: 66vw;
     z-index: 2;
 
     margin-left: auto;
@@ -88,23 +90,19 @@
         &:nth-child(13),
         &:last-child {
             transition: transform 1s ease;
-            transition-delay: 0.7s;
-            transform: translate3d(0, -30px, 0) rotate(5deg);
+            transition-delay: 0.4s;
+            transform: translate3d(0, 200px, 0) rotate(60deg);
         }
     }
 
     ellipse {
         transition: transform 1s ease;
-        transition-delay: 0.7s;
-        transform: translate3d(0, -30px, 0) rotate(5deg);
+        transition-delay: 0.4s;
+        transform: translate3d(0, 200px, 0) rotate(60deg);
     }
 
     @include for-tablet-portrait-up {
-        margin-top: 60px;
-    }
-
-    @include for-tablet-landscape-up {
-        margin-top: 140px;
+        width: 40vw;
     }
 
     @include for-desktop-up {
@@ -153,7 +151,7 @@
         &:nth-child(16),
         &:nth-child(18) {
             transition: transform 1s ease;
-            transition-delay: 0.5s;
+            transition-delay: 0.2s;
             transform: translate3d(-40px, 60px, 0);
             transform: rotate(8deg);
         }
@@ -161,9 +159,13 @@
 
     circle:last-of-type {
         transition: transform 1s ease;
-        transition-delay: 0.5s;
+        transition-delay: 0.2s;
         transform: translate3d(-40px, 60px, 0);
         transform: rotate(8deg);
+    }
+
+    @include for-tablet-portrait-up {
+        width: 40vw;
     }
 
     @include for-desktop-up {
@@ -182,12 +184,12 @@
             &:nth-child(15),
             &:nth-child(16),
             &:nth-child(18) {
-                transform: rotate(0deg);
+                transform: rotate(-10deg);
             }
         }
 
         circle:last-of-type {
-            transform: rotate(0deg);
+            transform: rotate(-10deg);
         }
     }
 }
