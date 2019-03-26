@@ -23,16 +23,17 @@ $header-link-underscrore-color: var(--header-link-underscrore-color, $accent);
   line-height: 20px;
   font-family: $mainFont;
   text-decoration: none;
-  border-bottom: none;
   color: white;
   margin-right: 0;
-  padding: 25px 0;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  padding: 20px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: none;
   @include navlink-underscore(0);
 
   @include for-desktop-small-up {
     height: 40px;
     color: $header-link-color;
+    border-top: none;
     border-bottom: none;
     margin-right: 39px; // max we can go without nav label wrapping
     margin-bottom: 0;
@@ -57,7 +58,6 @@ $header-link-underscrore-color: var(--header-link-underscrore-color, $accent);
   }
 
   &.active {
-    border-bottom: none;
     @include for-desktop-small-up {
       @include navlink-underscore(4);
     }
@@ -67,7 +67,7 @@ $header-link-underscrore-color: var(--header-link-underscrore-color, $accent);
     display: flex;
     position: relative;
     transition: all 0.2s ease;
-    font-size: 22px;
+    font-size: 18px;
     line-height: 35px;
     font-family: $mainFont;
 
@@ -82,7 +82,7 @@ $header-link-underscrore-color: var(--header-link-underscrore-color, $accent);
 
   .badge {
     position: relative;
-    top: -15px;
+    top: -10px;
     right: -15px;
     font-size: 14px;
     font-weight: 700;
@@ -115,11 +115,11 @@ $header-link-underscrore-color: var(--header-link-underscrore-color, $accent);
 }
 
 .dropdown {
-  position: absolute;
+  display: block;
   width: 100%;
-  padding-top: 25px;
 
   @include for-desktop-small-up {
+    padding-top: 25px;
     transition: all 0.2s ease;
     transform: translateY(50%);
     opacity: 0;
@@ -137,9 +137,9 @@ $header-link-underscrore-color: var(--header-link-underscrore-color, $accent);
       width: 100%;
       height: auto;
       font-size: 16px;
-      color: white;
+      color: rgba(255, 255, 255, 0.8);
       padding: 10px 0;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
       line-height: 35px;
 
       @include for-desktop-small-up {
@@ -150,7 +150,9 @@ $header-link-underscrore-color: var(--header-link-underscrore-color, $accent);
       }
 
       &:hover {
-        color: var(--header-sub-link-hover-color, $accent);
+        @include for-desktop-small-up {
+          color: var(--header-sub-link-hover-color, $accent);
+        }
       }
     }
   }

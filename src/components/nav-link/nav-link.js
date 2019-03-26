@@ -29,15 +29,17 @@ const NavLink = ({
         {badge != null ? <div className={styles.badge}>{badge}</div> : null}
       </div>
     </Link>
-    <div className={styles.dropdown}>
-      <ul>
-        {dropdownLinks.map((link, index) => (
-          <li key={`dropdown-nav-link-${index}`}>
-            <Link to={link.href}>{link.title}</Link>
-          </li>
-        ))}
-      </ul>
-    </div>
+    {dropdownLinks && dropdownLinks.length !== 0 &&
+      <div className={styles.dropdown}>
+        <ul>
+          {dropdownLinks.map((link, index) => (
+            <li key={`dropdown-nav-link-${index}`}>
+              <Link to={link.href}>{link.title}</Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    }
   </li>
 )
 
