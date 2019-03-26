@@ -63,7 +63,7 @@ export default ({ data, location, pageContext }) => {
                   intro: page.intro,
                   links: nestedNav,
                   greetingImageType: page.greetingImageType,
-                  parentLink: page.type === 'SubServicePage' ? page.service : null,
+                  parentLink: (page.slug !== page.service.slug) ? page.service : null,
                 },
               }
             : {}
@@ -169,7 +169,7 @@ export default ({ data, location, pageContext }) => {
         seoDesc={page.searchDescription}
         theme={page.theme}
         blocks={blocks}
-        serviceSlug={page.service ? page.service.slug : page.slug}
+        serviceSlug={page.service.slug}
         nestedNav={nestedNav}
       />
     )
