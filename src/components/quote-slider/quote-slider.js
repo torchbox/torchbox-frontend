@@ -58,9 +58,11 @@ class QuoteSlider extends React.Component {
                   <span className={styles.quoteSlideCiteName}>
                     {quote.name}
                   </span>
-                  <span className={styles.quoteSlideCiteRole}>
-                    {quote.role}
-                  </span>
+                  { quote.role &&
+                    <span className={styles.quoteSlideCiteRole}>
+                      {quote.role}
+                    </span>
+                  }
                 </cite>
               </blockquote>
             ))}

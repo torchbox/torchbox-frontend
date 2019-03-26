@@ -19,7 +19,7 @@ $testimonial-name: var(--testimonial-name);
         grid-column: 1;
         grid-row: 1;
         @include for-tablet-landscape-up {
-            max-width: none;
+            max-width: 120px;
             width: 8.33vw;
             margin-top: -50px;
             margin-left: 4.33vw;
