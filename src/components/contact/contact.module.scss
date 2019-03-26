@@ -60,8 +60,13 @@ $contact-phone-number-color: var(--contact-phone-number-color);
         text-decoration: none;
         margin: 0px 15px 0 0;
         font-weight: bold;
+
         @include for-phone-only {
             margin: 10px 15px 0 0;
+        }
+
+        &:hover {
+            color: $blue;
         }
     }
 
