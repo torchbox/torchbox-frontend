@@ -3,6 +3,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 import cssVars from 'css-vars-ponyfill'
+import scrollIntoView from 'scroll-into-view';
 // Components
 import Header from '@components/header'
 import Footer from '@components/footer'
@@ -20,6 +21,7 @@ class Layout extends React.Component {
   constructor(props) {
     super(props)
     this.state = { currentUrl: '#1' }
+    this.topRef = React.createRef();
   }
 
   componentDidMount() {
@@ -80,8 +82,13 @@ class Layout extends React.Component {
                 navigateTo={url => {
                   this.setState({ currentUrl: url })
                 }}
+                navigateToTop={() => {
+                  scrollIntoView(this.topRef.current, {
+                    time: 400,
+                  })
+                }}
               />
-                <main className={styles.pageContainer}>
+                <main ref={this.topRef} className={styles.pageContainer}>
                   {children}
                   <TeaserBlock
                     title={`More from Torchbox...`}
@@ -160,6 +167,12 @@ class Layout extends React.Component {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  collapsed: PropTypes.bool,
+  facebookImage: PropTypes.string,
+  twitterImage: PropTypes.string,
+  seoTitle: PropTypes.string,
+  seoDesc: PropTypes.string,
+  seoLang: PropTypes.string,
   nestedLinks: PropTypes.array,
   headerShouldCollapse: PropTypes.bool,
   theme: PropTypes.string,

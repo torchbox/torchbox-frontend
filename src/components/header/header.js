@@ -44,6 +44,7 @@ class Header extends React.Component {
       links,
       collapsed,
       navigateTo,
+      navigateToTop,
       nestedLinks,
     } = this.props
 
@@ -63,7 +64,14 @@ class Header extends React.Component {
                 <Flame className={styles.logoFlame} />
               </a>
 
-              <span className={styles.logoText}>{title}</span>
+              <span className={styles.logoText}>
+                <a href="#" onClick={e => {
+                  e.preventDefault();
+                  navigateToTop();
+                }}>
+                  {title}
+                </a>
+              </span>
 
             </div>
           ) : (
@@ -151,6 +159,7 @@ Header.propTypes = {
   navigateTo: PropTypes.func,
   links: PropTypes.array,
   nestedLinks: PropTypes.array,
+  navigateToTop: PropTypes.func,
   shouldCollapse: PropTypes.bool,
   collapsed: PropTypes.bool,
 }
