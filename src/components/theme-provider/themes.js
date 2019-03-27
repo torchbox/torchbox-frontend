@@ -141,11 +141,17 @@ export const darkThemeTransparent = {
   'header-background': 'transparent',
 }
 
+export const lightThemeTransparent = {
+  ...lightTheme,
+  'header-background': 'transparent',
+}
+
 export const getTheme = theme =>
   ({
     light: lightTheme,
     dark: darkTheme,
     'dark--transparent': darkThemeTransparent,
+    'light--transparent': lightThemeTransparent,
     coral: coralTheme,
   }[theme || 'light'])
 

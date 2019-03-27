@@ -41,6 +41,7 @@ class Layout extends React.Component {
       title,
       nestedLinks,
       ignoreServiceTeaser,
+      hideTeasers,
       theme,
       twitterImage,
       facebookImage,
@@ -90,10 +91,12 @@ class Layout extends React.Component {
               />
                 <main ref={this.topRef} className={styles.pageContainer}>
                   {children}
-                  <TeaserBlock
-                    title={`More from Torchbox...`}
-                    ignoreSlug={ignoreServiceTeaser}
-                  />
+                  { !hideTeasers ? (
+                    <TeaserBlock
+                      title={`More from Torchbox...`}
+                      ignoreSlug={ignoreServiceTeaser}
+                    />
+                  ) : null }
                 </main>
                 <Footer
                   links={[
@@ -178,12 +181,14 @@ Layout.propTypes = {
   theme: PropTypes.string,
   title: PropTypes.string,
   ignoreServiceTeaser: PropTypes.string,
+  hideTeasers: PropTypes.bool,
   location: PropTypes.object,
 }
 
 Layout.defaultProps = {
   headerShouldCollapse: false,
   darkTheme: false,
+  hideTeasers: false,
 }
 
 export default Layout
