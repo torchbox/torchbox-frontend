@@ -3,12 +3,19 @@
 .page {
     &Hero {
         position: relative;
+        display: flex;
+        align-items: flex-end;
         width: 100vw;
         height: calc(100vh - 50px);
         background-image: url('../../images/404.jpg');
         background-size: cover;
         background-position: center;
         padding-top: 180px;
+        padding-bottom: 45vh;
+        @include for-tablet-landscape-up {
+            padding-bottom: 30vh;
+        }
+        
         &::after {
             content: '';
             background: linear-gradient(to bottom, white 1%, rgba(255, 255, 255, 0) 100%);
@@ -27,12 +34,10 @@
         line-height: 55px;
         margin: 0 8.33vw 20px 8.33vw;
         font-weight: 800;
-        bottom: 420px;
 
         @include for-tablet-landscape-up {
             font-size: 70px;
             line-height: 80px;
-            bottom: 285px;
             margin: 0 8.33vw 20px 24.99vw;
         }
     }
