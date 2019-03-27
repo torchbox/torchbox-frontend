@@ -17,7 +17,7 @@ class PersonPage extends React.Component {
     this.title = `${props.firstName + ' ' + props.lastName ||
       ''} [${props.intro || ''}]`
     this.altTitle = `${props.firstName + ' ' + props.lastName ||
-      ''} [${props.altIntro || props.intro}]`
+      ''} [${props.altIntro || props.intro || ''}]`
     this.state = { title: this.title }
   }
 
