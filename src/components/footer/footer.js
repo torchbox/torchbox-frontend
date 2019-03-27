@@ -45,7 +45,7 @@ const Footer = ({ links, className }) => (
       </ul>
 
       <div>
-        <span className={styles.footerCopyright}>© Torchbox 2018</span>
+        <span className={styles.footerCopyright}>© Torchbox {new Date().getFullYear()}</span>
         {links.map((link, index) => (
           <Link
             key={`footer-link-${index}`}
