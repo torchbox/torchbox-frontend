@@ -1,12 +1,11 @@
 /   /wagtail-cms            302!    Country=us
 /   /digital-products       302!
-/blog/?*	/blog/ :splat
-/privacy*	/privacy/ :splat
-/work/?*	/work/ :splat
-/cookie*	/cookies/ :splat
+/blog/?*	/blog/
+/privacy*	/privacy/
+/work/?*	/work/
+/cookie*	/cookies/
 /work/google-grant-management/	/digital-marketing/google-ad-grants-management/
-/	/
-/services/designing-user-experience	/wagtail-cms/user-research-and-prototyping
+/services/designing-user-experience/	/wagtail-cms/user-research-and-prototyping/
 /services/google-grant-management	/digital-marketing/google-ad-grants-management/
 /about/	/culture-and-jobs/
 /blog/contributing-drupal-drupalcamp-bristol-sprint-2016/	/blog/torchbox-has-dropped-drupal/
@@ -36,20 +35,18 @@
 /blog/wraith-lecture-drupalcamp-london-2015/	/blog/torchbox-has-dropped-drupal/
 /work/google-grant-management/	/digital-marketing/google-ad-grants-management/
 /contact/	/
-/documents/122/Torchbox_Wagtail_support_services.pdf	/wagtail-cms
+/documents/122/Torchbox_Wagtail_support_services.pdf	/wagtail-cms/
 /googleadgrants-best-practice-guide/	/digital-marketing/google-ad-grants-management/
 /our-services/	/
-/our-services/charity-websites/	/wagtail-cms
-/our-services/custom-web-applications/	/digital-products
+/our-services/charity-websites/	/wagtail-cms/
+/our-services/custom-web-applications/	/digital-products/
 /our-services/higher-education/	/
-/our-services/nhs-and-healthcare/	/wagtail-cms
+/our-services/nhs-and-healthcare/	/wagtail-cms/
 /our-services/ppc-management/	/digital-marketing/ppc-management/
 /our-services/search-engine-optimisation/	/digital-marketing/search-engine-optimisation-agency/
 /our-services/social-media-marketing/	/digital-marketing/social-media-management/
-/our-services/ux-design/	/wagtail-cms/user-research-and-prototyping
+/our-services/ux-design/	/wagtail-cms/user-research-and-prototyping/
 /our-services/wagtail-cms-development/	/wagtail-cms/
-/our-services/wagtail-developer-support-service/	/wagtail/wagtail-developer-support-service
-/services/designing-user-experience	/wagtail-cms/user-research-and-prototyping
-/services/designing-user-experience/	/wagtail-cms/user-research-and-prototyping
-/services/google-grant-management	/digital-marketing/google-ad-grants-management/
+/our-services/wagtail-developer-support-service/	/wagtail/wagtail-developer-support-service/
+/services/designing-user-experience/	/wagtail-cms/user-research-and-prototyping/
 /services/google-grant-management/	/digital-marketing/google-ad-grants-management/
