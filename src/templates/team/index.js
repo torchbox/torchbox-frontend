@@ -55,9 +55,6 @@ export const previewQuery = `
     personIndexPage(previewToken: $previewToken) {
       pageTitle
       strapline
-      contact {
-        ...contactSnippet
-      }
     }
     personPages {
       firstName
@@ -68,6 +65,12 @@ export const previewQuery = `
       image {
         ...largeIconImage
       }
+    }
+    contact {
+      ...contactSnippet
+    }
+    contactReasons {
+      ...contactReasonsSnippet
     }
   }
 `
