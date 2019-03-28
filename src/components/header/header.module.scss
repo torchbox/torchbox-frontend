@@ -263,6 +263,7 @@ $header-logo-color: var(--header-logo-color, $primary);
     svg {
       width: 20px;
       margin-top: -2px;
+      fill: $header-link-underscore-color;
     }
 
     span {
