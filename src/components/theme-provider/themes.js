@@ -128,6 +128,7 @@ export const darkTheme = {
 
   // Phone number
   'contact-phone-number-color': 'var(--color-light-blue)',
+  'contact-phone-number-hover-color': 'var(--color-blue)',
 
   // Get in touch numbers
   'get-in-touch-number-color': 'var(--color-blue)',
