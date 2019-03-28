@@ -67,6 +67,48 @@ export const query = graphql`
   }
 `
 
+export const previewQuery = `
+  query ($previewToken: String) {
+    caseStudiesIndexPage(previewToken: $previewToken) {
+      title
+      pageTitle
+      searchDescription
+    }
+    caseStudies {
+      slug
+      title
+      client
+      listingSummary
+      tags: relatedServices {
+        name
+        slug
+      }
+      authors {
+        name
+        role
+        personPage {
+          slug
+          image {
+            ...iconImage
+          }
+        }
+      }
+      feedImage {
+        ...fullImage
+      }
+      homepageImage {
+        ...fullImage
+      }
+    }
+    contact {
+      ...contactSnippet
+    }
+    contactReasons {
+      ...contactReasonsSnippet
+    }
+  }
+`
+
 CaseStudyListingContainer.propTypes = {
   data: PropTypes.object,
 }
