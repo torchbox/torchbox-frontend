@@ -102,9 +102,8 @@
 
   &AlignedImage {
     @include streamblockPadding;
-    display: flex;
-    flex-direction: column;
     width: 100%;
+    height: auto;
     margin: 60px 0 60px;
 
     &Img {
