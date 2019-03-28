@@ -4,6 +4,7 @@ export const lightTheme = {
   'color-primary': 'var(--color-blue)',
   'color-accent': 'var(--color-coral)',
   'color-accent-small': 'var(--color-coral-dark)',
+  'icon-color': 'var(--color-coral)',
 
   // Hero Component
   'hero-background': 'white',
@@ -99,6 +100,7 @@ export const darkTheme = {
   'color-primary': 'var(--color-blue)',
   'color-accent': 'var(--color-green)',
   'color-accent-small': 'var(--color-blue)',
+  'icon-color': 'var(--color-green)',
 
   // Hero Component
   'hero-background': 'var(--color-primary)',
