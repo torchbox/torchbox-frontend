@@ -252,6 +252,8 @@ $header-logo-color: var(--header-logo-color, $primary);
 
   .collapsedLogoContainer {
     display: flex;
+    border-bottom: none;
+
     @include for-desktop-up {
       padding: 10px 0;
       margin-left: -4.17vw;
