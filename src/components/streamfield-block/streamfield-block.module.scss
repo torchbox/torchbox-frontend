@@ -155,11 +155,12 @@
       left: 6vw;
       top: -3px;
       width: 12px;
-      height: 30px;
+      height: 20px;
       margin-right: 20px;
       background: url("../../images/icons/chevron.svg") no-repeat center;
 
       @supports (mask: url("")) {
+        background-image: none;
         background-color: $accent;
         mask: url("../../images/icons/chevron.svg") no-repeat center;
         mask-size: contain;
