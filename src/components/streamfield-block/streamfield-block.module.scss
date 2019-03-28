@@ -143,7 +143,6 @@
   li {
     position: relative;
     color: #333;
-    //font-size: 18px !important;
     padding: 0 0 25px calc(8.33vw + 20px);
     @include for-desktop-up {
       padding: 0 0 25px 8.33vw;
@@ -158,9 +157,13 @@
       width: 12px;
       height: 30px;
       margin-right: 20px;
-      background-color: $accent;
-      mask: url("../../images/icons/chevron.svg") no-repeat center;
-      mask-size: contain;
+      background: url("../../images/icons/chevron.svg") no-repeat center;
+
+      @supports (mask: url("")) {
+        background-color: $accent;
+        mask: url("../../images/icons/chevron.svg") no-repeat center;
+        mask-size: contain;
+      }
     }
   }
 
