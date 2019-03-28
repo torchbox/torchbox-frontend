@@ -28,6 +28,7 @@ export const lightTheme = {
   'color-link': 'var(--color-light-blue)',
   'color-link-hover': 'var(--color-light-blue)',
   'color-link-badge': 'white',
+  'badge-background-color': 'var(--color-coral)',
 
   // Page section title
   'page-section-title-color': 'var(--color-coral)',
@@ -122,6 +123,7 @@ export const darkTheme = {
   'color-link': 'var(--color-primary)',
   'color-link-hover': 'white',
   'color-link-badge': 'var(--color-primary)',
+  'badge-background-color': 'var(--color-green)',
 
   // Page section title
   'page-section-title-color': 'var(--color-blue)',
