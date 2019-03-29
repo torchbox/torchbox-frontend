@@ -11,7 +11,7 @@ import {
   caseStudiesFilterUrl,
   blogsUrl,
   blogsFilterUrl,
-  pageUrl
+  pageUrl,
 } from '@utils/urls'
 import { safeGet } from '@utils/safeget'
 
@@ -63,7 +63,8 @@ export default ({ data, location, pageContext }) => {
                   intro: page.intro,
                   links: nestedNav,
                   greetingImageType: page.greetingImageType,
-                  parentLink: (page.slug !== page.service.slug) ? page.service : null,
+                  parentLink:
+                    page.slug !== page.service.slug ? page.service : null,
                 },
               }
             : {}
@@ -79,9 +80,9 @@ export default ({ data, location, pageContext }) => {
                     title: keyPoint.text,
                     href: keyPoint.linkedPage
                       ? pageUrl({
-                        ...keyPoint.linkedPage,
-                        serviceSlug: page.service.slug
-                      })
+                          ...keyPoint.linkedPage,
+                          serviceSlug: page.service.slug,
+                        })
                       : null,
                   })),
                   contact: page.contact,
@@ -90,7 +91,10 @@ export default ({ data, location, pageContext }) => {
             : {}
 
         case 'testimonials-block':
-          let logos = pageContext.countryCode === 'US' ? page.usaClientLogos : page.clientLogos;
+          let logos =
+            pageContext.countryCode === 'US'
+              ? page.usaClientLogos
+              : page.clientLogos
           return logos.length || page.testimonials.length
             ? {
                 type: 'testimonials-block',
@@ -122,8 +126,8 @@ export default ({ data, location, pageContext }) => {
                       ...process,
                       pageLink: {
                         ...process.pageLink,
-                        serviceSlug: page.service.slug
-                      }
+                        serviceSlug: page.service.slug,
+                      },
                     }
                   }),
                 },
@@ -160,7 +164,7 @@ export default ({ data, location, pageContext }) => {
                 type: 'contact-detailed',
                 data: {
                   contact: page.contact,
-                  contactReasons: page.contactReasons
+                  contactReasons: page.contactReasons,
                 },
               }
             : {}
@@ -333,6 +337,15 @@ export const previewQuery = `
         name
         quote
         role
+      }
+
+      service {
+        name
+        slug
+        servicePage {
+          type
+          slug
+        }
       }
 
       headingForProcesses

@@ -7,13 +7,16 @@ import Layout from '@components/layout'
 import StandardPage from './standard'
 
 const StandardPageContainer = ({ data }) => {
+  const page = data.wagtail.standardPages[0]
   return (
     <Layout
-      seoTitle={data.wagtail.standardPages[0].pageTitle}
-      seoDesc={data.wagtail.standardPages[0].searchDescription}>
+      seoTitle={page.pageTitle}
+      seoDesc={page.searchDescription}>
       <StandardPage
-        title={data.wagtail.standardPages[0].title}
-        body={data.wagtail.standardPages[0].body}
+        title={page.title}
+        body={page.body}
+        contact={page.contact}
+        contactReasons={page.contactReasons}
       />
     </Layout>
   )
@@ -31,6 +34,9 @@ export const query = graphql`
         contact {
           ...contactSnippet
         }
+        contactReasons{
+          ...contactReasonsSnippet
+        }
       }
     }
   }
@@ -42,11 +48,15 @@ export const previewQuery = `
       slug
       title
       pageTitle
+      searchDescription
       body
       contact {
         ...contactSnippet
       }
-    }
+      contactReasons{
+        ...contactReasonsSnippet
+      }
+    } 
   }
 `
 
