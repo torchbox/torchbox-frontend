@@ -6,14 +6,16 @@ import { Link } from 'gatsby'
 import Avatar from '../avatar/avatar'
 // Styles
 import styles from './jobs-block.module.scss'
+//Utilities
+import { ReactComponent as Woman } from '@images/help-character.svg'
 
 class JobsBlock extends React.Component {
   render() {
-    const { jobs, className, listingUrl, greetingImage } = this.props
+    const { jobs, className, listingUrl } = this.props
 
     return (
       <div className={[styles.block, className].join(' ')}>
-        <img className={styles.blockImage} src={greetingImage} alt="" />
+        <Woman className={styles.blockImage} aria-hidden="true" />
 
         <div className={styles.blockContent}>
           <div className={styles.blockJobList}>
@@ -48,14 +50,12 @@ JobsBlock.propTypes = {
   jobs: PropTypes.array,
   className: PropTypes.string,
   listingUrl: PropTypes.string,
-  greetingImage: PropTypes.string,
 }
 
 JobsBlock.defaultProps = {
   className: '',
   jobs: [],
   sectionTitle: 'Thinking',
-  greetingImage: require('@images/help-character.svg').default,
 }
 
 export default JobsBlock
