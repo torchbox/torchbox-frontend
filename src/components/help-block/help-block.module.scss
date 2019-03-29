@@ -68,6 +68,7 @@
             }
 
             a {
+                display: inline-flex;
                 color: $primary;
                 font-family: $mainFont;
                 text-decoration: none;
@@ -90,6 +91,23 @@
                         color: $light-blue;
                         border-bottom: 2px solid $accent;
                         font-weight: 800;
+                    }
+                }
+
+                &::after {
+                    content: '';
+                    display: block;
+                    width: 12px;
+                    height: 20px; // changed from 30px to fix ie edge issue
+                    margin-left: 15px;
+                    margin-top: 10px;
+                    background: url("../../images/icons/chevron.svg") no-repeat center;
+
+                    @supports (mask: url("")) {
+                        background-image: none;
+                        background-color: $accent;
+                        mask: url("../../images/icons/chevron.svg") no-repeat center;
+                        mask-size: contain;
                     }
                 }
             }
