@@ -98,12 +98,17 @@
                     content: '';
                     display: block;
                     width: 12px;
-                    height: 20px;
-                    background-color: $accent;
-                    mask: url("../../images/icons/chevron.svg") no-repeat center;
-                    mask-size: contain;
+                    height: 20px; // changed from 30px to fix ie edge issue
                     margin-left: 15px;
                     margin-top: 10px;
+                    background: url("../../images/icons/chevron.svg") no-repeat center;
+
+                    @supports (mask: url("")) {
+                        background-image: none;
+                        background-color: $accent;
+                        mask: url("../../images/icons/chevron.svg") no-repeat center;
+                        mask-size: contain;
+                    }
                 }
             }
 
