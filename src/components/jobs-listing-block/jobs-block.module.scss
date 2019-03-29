@@ -62,13 +62,8 @@
         }
     }
 
-    &JobList {
-        display: grid;
-        grid-template-columns: 1fr;
-        //margin-left: 8.33vw;
-    }
-
     &JobLink {
+        display: block;
         padding: 40px 0 50px 0;
         text-decoration: none;
         border-bottom: none;

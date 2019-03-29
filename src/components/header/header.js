@@ -57,24 +57,16 @@ class Header extends React.Component {
       >
         <div className={styles.headerInner}>
           {collapsed ? (
-            <div
-              className={styles.collapsedLogoContainer}
-            >
-              <a href="/" className={styles.logoLink}>
-                <Flame className={styles.logoFlame} />
-              </a>
-
+            <a href="#" className={styles.collapsedLogoContainer} onClick={e => {
+                e.preventDefault();
+                navigateToTop();
+              }}>
+              <Flame className={styles.logoFlame} />
               <span className={styles.logoText}>
-                <a href="#" onClick={e => {
-                  e.preventDefault();
-                  navigateToTop();
-                }}>
-                  {title}
-                </a>
+                {title}
               </span>
-
-            </div>
-          ) : (
+            </a>
+        ) : (
             <div className={styles.logoContainer}>
               <a href="/" className={styles.logoLink}>
                 <Logo className={styles.logo} />

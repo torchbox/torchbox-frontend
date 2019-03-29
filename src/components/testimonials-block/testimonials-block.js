@@ -9,12 +9,13 @@ import styles from './testimonials-block.module.scss'
 class TestimonialsBlock extends React.Component {
   render() {
     const { testimonials, logos, className, sectionTitle } = this.props
+    const spacingClass = testimonials.length ? styles.testimonialsIconsListSpaced : '';
     return (
       <div className={[styles.testimonials, className].join(' ')}>
         <span className={styles.pageSectionTitle}>{sectionTitle}</span>
         <div className={styles.testimonialsContainer}>
           <section className={styles.testimonialsIconsBlock}>
-            <ul className={styles.testimonialsIconsList}>
+            <ul className={[styles.testimonialsIconsList, spacingClass].join(' ')}>
               {logos.map((logo, index) => (
                 <li
                   key={`logo-${index}`}
