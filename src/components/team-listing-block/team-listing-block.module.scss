@@ -19,11 +19,16 @@
         padding-bottom: 50px;
         text-decoration: none;
         border-bottom: none;
+        width: 100%;
 
-        width: 50%;
+        @include for-tablet-portrait-up {
+            width: 50%;
+        }
+
         @include for-tablet-landscape-up {
             width: 33.333%;
         }
+
         @include for-desktop-up {
             width: 25%;
         }
@@ -54,13 +59,6 @@
             font-size: 11px;
             margin: 0;
         }
-
-        &:hover {
-            &Name {
-                color: $blue !important;
-            }
-        }
-
     }
 
 }
