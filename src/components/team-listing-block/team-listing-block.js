@@ -17,7 +17,6 @@ const TeamListingBlock = ({ team, className }) => {
               to={person.href}
             >
               <img
-                key={person.key}
                 className={styles.blockPersonLinkAvatar}
                 src={person.avatar}
                 alt={person.alt}

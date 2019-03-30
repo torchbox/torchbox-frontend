@@ -23,16 +23,16 @@ export class TeamListingPage extends React.Component {
     let listing = []
     if (typeof window != `undefined`) {
       listing = listing.concat(team)
-      .map(person => ({
-        key: `person-${person.firstName}-${person.lastName}`,
-        name:`${person.firstName} ${person.lastName}`,
-        role: person.role,
-        avatar: person.image.src.url,
-        alt: person.image.alt,
-        href: teamUrl(person.slug),
-        isSenior: person.isSenior,
-      }))
-      .sort(person => (person.isSenior ? -1 : 1))
+        .map(person => ({
+          key: `person-${person.firstName}-${person.lastName}`,
+          name:`${person.firstName} ${person.lastName}`,
+          role: person.role,
+          avatar: person.image.src.url,
+          alt: person.image.alt,
+          href: teamUrl(person.slug),
+          isSenior: person.isSenior,
+        }))
+        .sort(person => (person.isSenior ? -1 : 1))
     }
 
     return (
