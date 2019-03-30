@@ -132,22 +132,22 @@ class Layout extends React.Component {
   renderLinks = data => {
     return [
       {
-        href: 'digital-products',
+        href: '/digital-products/',
         title: 'Design + build products',
         strap: 'For digital design and engineering services',
       },
       {
-        href: 'wagtail-cms',
+        href: '/wagtail-cms/',
         title: 'Wagtail CMS services',
         strap: 'For web builds with the Wagtail open source CMS',
       },
       {
-        href: 'digital-marketing',
+        href: '/digital-marketing/',
         title: 'Digital marketing',
         strap: 'For our data driven digital marketing services',
       },
       {
-        href: 'culture-and-jobs',
+        href: '/culture-and-jobs/',
         title: 'Culture + jobs',
         strap: 'For our data driven digital marketing services',
         badge: safeGet(data, 'wagtail.jobsIndexPage.jobs.length', 0),
