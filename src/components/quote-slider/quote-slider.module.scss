@@ -135,6 +135,12 @@ $testimonial-name: var(--testimonial-name);
             }
 
             &Role {
+                line-height: 1.5;
+
+                @include for-tablet-landscape-up {
+                    line-height: 1;
+                }
+
                 &::before {
                     @include for-tablet-landscape-up {
                         width: 10px;

@@ -19,11 +19,12 @@
         padding-bottom: 50px;
         text-decoration: none;
         border-bottom: none;
-
         width: 50%;
+
         @include for-tablet-landscape-up {
             width: 33.333%;
         }
+
         @include for-desktop-up {
             width: 25%;
         }
@@ -40,6 +41,10 @@
             font-weight: 800;
             color: $primary;
 
+            @include for-tablet-portrait-up {
+                font-size: 18px;
+            }
+
             &:hover {
                 color: $blue;
             }
@@ -51,16 +56,13 @@
             text-transform: uppercase;
             letter-spacing: 0.15em;
             font-weight: bold;
-            font-size: 11px;
+            font-size: 9px;
             margin: 0;
-        }
 
-        &:hover {
-            &Name {
-                color: $blue !important;
+            @include for-tablet-portrait-up {
+                font-size: 11px;
             }
         }
-
     }
 
 }

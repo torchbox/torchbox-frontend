@@ -26,7 +26,8 @@
     @include streamblockPadding;
   }
 
-  &Embed {
+  &Embed,
+  center {
     @include streamblockPadding;
     width: 100%;
 
@@ -153,7 +154,7 @@
       display: block;
       position: absolute;
       left: 6vw;
-      top: -3px;
+      top: 2px;
       width: 12px;
       height: 20px;
       margin-right: 20px;
