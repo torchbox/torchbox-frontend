@@ -8,9 +8,14 @@ module.exports = {
     author: `@Torchbox`,
   },
   plugins: [
-    `gatsby-plugin-remove-trailing-slashes`,
+    `gatsby-plugin-force-trailing-slashes`,
     `gatsby-plugin-react-helmet`,
-    // 'gatsby-plugin-offline',
+    {
+      resolve: 'gatsby-plugin-offline',
+      options: {
+          navigateFallbackWhitelist: [/\/$/],
+      }
+    },
     {
       resolve: `gatsby-plugin-sass`,
       options: {
