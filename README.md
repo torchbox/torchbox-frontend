@@ -1,4 +1,4 @@
-#Torchbox.com Gatsby Frontend
+# Torchbox.com Gatsby Frontend
 
 This is the frontend component of the new torchbox.com site. It requires you to have the [backend graphql component](https://github.com/torchbox/wagtail-torchbox/tree/new) running locally or on the server. Overall architectural details of the site can be found in the back-end readme.
 
