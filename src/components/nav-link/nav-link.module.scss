@@ -3,6 +3,7 @@
 $header-link-color: var(--header-link-color, $primary);
 $header-nested-link-color: var(--header-nested-link-color, white);
 $header-link-underscore-color: var(--header-link-underscore-color, $accent);
+$badge-background-color: var(--badge-background-color, $accent);
 
 @mixin navlink-underscore($height) {
   &::after {
@@ -104,7 +105,7 @@ $header-link-underscore-color: var(--header-link-underscore-color, $accent);
       top: 0;
 
       @include for-desktop-small-up {
-        background: var(--badge-background-color, $accent);
+        background: $badge-background-color;
       }
     }
   }

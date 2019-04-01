@@ -68,6 +68,8 @@
             }
 
             a {
+                display: inline;
+                position: relative;
                 color: $primary;
                 font-family: $mainFont;
                 text-decoration: none;
@@ -90,6 +92,29 @@
                         color: $light-blue;
                         border-bottom: 2px solid $accent;
                         font-weight: 800;
+                    }
+                }
+
+                &::after {
+                    content: '';
+                    display: inline;
+                    width: 12px;
+                    height: 20px; // changed from 30px to fix ie edge issue
+                    position: absolute;
+                    margin-left: 15px;
+                    margin-top: 5px;
+                    background: url("../../images/icons/chevron.svg") no-repeat center;
+
+                    @include for-tablet-landscape-up {
+                        margin-top: 10px;
+                    }
+
+
+                    @supports (mask: url("")) {
+                        background-image: none;
+                        background-color: $accent;
+                        mask: url("../../images/icons/chevron.svg") no-repeat center;
+                        mask-size: contain;
                     }
                 }
             }

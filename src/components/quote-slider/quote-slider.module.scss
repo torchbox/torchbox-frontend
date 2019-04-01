@@ -9,8 +9,6 @@ $testimonial-name: var(--testimonial-name);
         display: grid;
         grid-template-columns: auto 1fr;
         grid-template-rows: auto auto;
-        grid-column-gap: 50px;
-        margin-top: 200px;
     }
 
     &Icon {
@@ -19,6 +17,8 @@ $testimonial-name: var(--testimonial-name);
         max-width: 100px;
         grid-column: 1;
         grid-row: 1;
+        margin-right: 50px;
+
         @include for-tablet-landscape-up {
             max-width: 120px;
             width: 8.33vw;
@@ -135,6 +135,12 @@ $testimonial-name: var(--testimonial-name);
             }
 
             &Role {
+                line-height: 1.5;
+
+                @include for-tablet-landscape-up {
+                    line-height: 1;
+                }
+
                 &::before {
                     @include for-tablet-landscape-up {
                         width: 10px;

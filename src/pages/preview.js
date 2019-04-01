@@ -29,6 +29,10 @@ import ServicePageContainer, {
 import SubServicePageContainer, {
   previewQuery as subServicePageQuery,
 } from '@templates/sub-service'
+import TeamPage, { previewQuery as teamPageQuery } from '@templates/team'
+import CaseStudiesPage, {
+  previewQuery as caseStudiesPageQuery,
+} from '@templates/case-studies'
 // Utils
 import WagtailPreviewProvider from 'src/utils/wagtail-preview'
 
@@ -68,6 +72,14 @@ const previewMappings = {
   'services.subservicepage': {
     query: subServicePageQuery,
     template: SubServicePageContainer,
+  },
+  'people.personindexpage': {
+    query: teamPageQuery,
+    template: TeamPage,
+  },
+  'work.workindexpage': {
+    query: caseStudiesPageQuery,
+    template: CaseStudiesPage,
   },
 }
 

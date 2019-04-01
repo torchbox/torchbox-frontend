@@ -10,9 +10,9 @@ const TeamListingBlock = ({ team, className }) => {
     <div className={[styles.block, className].join(' ')}>
       <div className={styles.blockContent}>
         <div className={styles.blockPersonList}>
-          {team.map((person, index) => (
+          {team.map((person) => (
             <Link
-              key={`person-link-${index}`}
+              key={person.key}
               className={styles.blockPersonLink}
               to={person.href}
             >

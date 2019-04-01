@@ -13,6 +13,7 @@ $get-in-touch-number-color: var(--get-in-touch-number-color);
     }
 
     &Reasons {
+
         h1 {
             color: white;
             font-weight: 800;
@@ -30,6 +31,7 @@ $get-in-touch-number-color: var(--get-in-touch-number-color);
             justify-content: space-between;
             margin: 35px 0 0;
             flex-direction: column;
+
             @include for-tablet-landscape-up {
                 flex-direction: row;
                 align-items: center;
@@ -37,13 +39,25 @@ $get-in-touch-number-color: var(--get-in-touch-number-color);
         }
 
         &Item {
+            display: block;
             margin: 20px 10px;
-            padding: 60px 30px;
             position: relative;
 
             @include for-tablet-landscape-up {
                 margin: 0;
-                padding: 20px 40px 40px;
+                flex-basis: 33.33%;
+                flex-grow: 0;
+                flex-shrink: 0;
+            }
+
+            &Wrapper {
+                display: block;
+                padding: 60px 30px;
+
+                @include for-tablet-landscape-up {
+                    padding: 0;
+                    margin: 20px 40px 0;
+                }
             }
 
             &Num {
@@ -80,7 +94,7 @@ $get-in-touch-number-color: var(--get-in-touch-number-color);
                 left: 50px;
 
                 @include for-tablet-landscape-up {
-                    position: initial;
+                    position: static;
                 }
             }
 
@@ -105,6 +119,7 @@ $get-in-touch-number-color: var(--get-in-touch-number-color);
         align-items: center;
         justify-content: center;
         flex-wrap: wrap;
+        padding-top: 40px;
 
         @include for-tablet-portrait-up {
             flex-wrap: nowrap;
@@ -149,6 +164,10 @@ $get-in-touch-number-color: var(--get-in-touch-number-color);
             border-bottom: none;
             @include for-phone-only {
                 margin: 10px 15px 0 0;
+            }
+
+            &:hover {
+                color: white;
             }
         }
 

@@ -4,6 +4,7 @@ export const lightTheme = {
   'color-primary': 'var(--color-blue)',
   'color-accent': 'var(--color-coral)',
   'color-accent-small': 'var(--color-coral-dark)',
+  'icon-color': 'var(--color-coral)',
 
   // Hero Component
   'hero-background': 'white',
@@ -28,6 +29,7 @@ export const lightTheme = {
   'color-link': 'var(--color-light-blue)',
   'color-link-hover': 'var(--color-light-blue)',
   'color-link-badge': 'white',
+  'badge-background-color': 'var(--color-coral)',
 
   // Page section title
   'page-section-title-color': 'var(--color-coral)',
@@ -98,6 +100,7 @@ export const darkTheme = {
   'color-primary': 'var(--color-blue)',
   'color-accent': 'var(--color-green)',
   'color-accent-small': 'var(--color-blue)',
+  'icon-color': 'var(--color-green)',
 
   // Hero Component
   'hero-background': 'var(--color-primary)',
@@ -122,12 +125,14 @@ export const darkTheme = {
   'color-link': 'var(--color-primary)',
   'color-link-hover': 'white',
   'color-link-badge': 'var(--color-primary)',
+  'badge-background-color': 'var(--color-green)',
 
   // Page section title
   'page-section-title-color': 'var(--color-blue)',
 
   // Phone number
   'contact-phone-number-color': 'var(--color-light-blue)',
+  'contact-phone-number-hover-color': 'var(--color-blue)',
 
   // Get in touch numbers
   'get-in-touch-number-color': 'var(--color-blue)',

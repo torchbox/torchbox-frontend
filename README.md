@@ -1,9 +1,12 @@
-<h1 align="center">
-  Torchbox.com Gatsby Frontend
-</h1>
+# Torchbox.com Gatsby Frontend
 
+This is the front-end component of the new torchbox.com site.
 
-This is the frontend component of the new torchbox.com site. It requires you to have the [backend graphql component](https://github.com/torchbox/wagtail-torchbox/tree/new) running locally or on the server.
+It is a Gatsby site, hosted on Netlify, currently at https://tbx-staging.netlify.com.
+
+To develop locally you need to have the [backend headless Wagtail CMS](https://github.com/torchbox/wagtail-torchbox/) running locally or on the server (see 'configure' below).
+
+Overall architectural details of the site can be found in the back-end readme.
 
 ## 🚀 Quick start
 
@@ -14,7 +17,7 @@ This is the frontend component of the new torchbox.com site. It requires you to 
 
 2.  **Configure.**
 
-    If you don't want to run the backend component locally then you will have to change the `http://localhost:8000/graphql/` string in your `gatsby-config.json`. To use the live site CMS uses `https://cms.torchbox.com`. Obviously don't edit the live CMS data to test your changes though!
+    If you don't want to run the backend component locally then you will have to change the `http://localhost:8000/graphql/` string in your `gatsby-config.js`. To use the live site CMS uses `https://cms.torchbox.com`. Obviously don't edit the live CMS data to test your changes though, and don't commit the change to the `gatsby-config.js` file.
 
     Note that if you change the endpoint in `gatsby-config.json` you need to restart gatsby to pick up the changes. A restart is also often needed to pick up changes published in the CMS.
 
@@ -24,6 +27,7 @@ This is the frontend component of the new torchbox.com site. It requires you to 
     You can run dev mode by executing the following command:
     
     `yarn start // Runs dev server on port 800*`
+    `npm start` also works.
 
     You can also build and preview production code using:
     
@@ -36,8 +40,10 @@ This is the frontend component of the new torchbox.com site. It requires you to 
   typed components. Eslint will also complain about the order of the imports. Please keep them tidy :) (If you want to know more about the import ordering then you can look in the eslint config file).
 
   #### Gatsby builds will break if Wagtail returns an error.
-  If you have bad request or your code doesn't handle null values then the build will fail (remember building a gatsby site runs all 
-  your react code locally (or in CI) to produce loads of HTML files).
+  If you have bad request or your code doesn't handle null values then the build will fail (remember building a gatsby site runs all your react code locally (or in CI) to produce loads of HTML files).
+  
+  #### It is necessary to re-run `npm start` if you update data in the CMS
+  Otherwise Gatsby does not pick up the new data which can be confusing.
 
   #### Gatsby can get confused some times.
   The plugin used to pull data from Wagtail into Gatsby likes to cache the graphql 'schema types'. As such, when you add more query
@@ -80,12 +86,11 @@ This is the frontend component of the new torchbox.com site. It requires you to 
 
   ## Site management
 
-  The site is hosted on Netlify, and you can get access to the build using the torchbox@gmail.com email - password in pwamn.
+  The site is hosted on Netlify, and you can get access to the build using the torchbox@gmail.com email - password in pwamn. Tom Dyson and Helen Chapman also have access.
 
   The gatsby site is rebuilt every time a change is published on the headless CMS, and every time that changes are pushed to the `develop` branch.
 
   If a build fails for any reason, then Netlify will continue to serve up the older version.
-
 
   ## Deployment
 

@@ -28,16 +28,18 @@ const Contact = ({
                   key={`contact-reason-${index}`}
                   className={styles.contactBlockReasonsItem}
                 >
-                  <div className={styles.contactBlockReasonsItemNum}>
-                    <span>{index + 1}</span>
-                  </div>
-                  <div className={styles.contactBlockReasonsItemContent}>
-                    <h2 className={styles.contactBlockReasonsItemTitle}>
-                      {reason.title}
-                    </h2>
-                    <p className={styles.contactBlockReasonsItemText}>
-                      {reason.description}
-                    </p>
+                  <div className={styles.contactBlockReasonsItemWrapper}>
+                    <div className={styles.contactBlockReasonsItemNum}>
+                      <span>{index + 1}</span>
+                    </div>
+                    <div className={styles.contactBlockReasonsItemContent}>
+                      <h2 className={styles.contactBlockReasonsItemTitle}>
+                        {reason.title}
+                      </h2>
+                      <p className={styles.contactBlockReasonsItemText}>
+                        {reason.description}
+                      </p>
+                    </div>
                   </div>
                 </li>
               ))}
