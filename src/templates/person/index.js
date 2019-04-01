@@ -24,6 +24,7 @@ const PersonPageContainer = ({ data }) => {
         role={person.role}
         intro={person.shortIntro}
         altIntro={person.altShortIntro}
+        coreIntro={person.intro}
         avatar={person.image.src.url}
         alt={person.image.alt}
         biography={person.biography}
@@ -52,6 +53,7 @@ export const query = graphql`
         role
         shortIntro
         altShortIntro
+        intro
         biography
         slug
         image {
@@ -93,6 +95,7 @@ export const previewQuery = `
       role
       shortIntro
       altShortIntro
+      intro
       biography
       slug
       image {
