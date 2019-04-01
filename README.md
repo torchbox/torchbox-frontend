@@ -4,7 +4,7 @@ This is the front-end component of the new torchbox.com site.
 
 It is a Gatsby site, hosted on Netlify, currently at https://tbx-staging.netlify.com.
 
-To develop locally you need to have the [backend graphql component](https://github.com/torchbox/wagtail-torchbox/) running locally or on the server (see 'configure' below).
+To develop locally you need to have the [backend headless Wagtail CMS](https://github.com/torchbox/wagtail-torchbox/) running locally or on the server (see 'configure' below).
 
 Overall architectural details of the site can be found in the back-end readme.
 
