@@ -1,9 +1,6 @@
-<h1 align="center">
-  Torchbox.com Gatsby Frontend
-</h1>
+#Torchbox.com Gatsby Frontend
 
-
-This is the frontend component of the new torchbox.com site. It requires you to have the [backend graphql component](https://github.com/torchbox/wagtail-torchbox/tree/new) running locally or on the server.
+This is the frontend component of the new torchbox.com site. It requires you to have the [backend graphql component](https://github.com/torchbox/wagtail-torchbox/tree/new) running locally or on the server. Overall architectural details of the site can be found in the back-end readme.
 
 ## 🚀 Quick start
 
@@ -36,8 +33,7 @@ This is the frontend component of the new torchbox.com site. It requires you to 
   typed components. Eslint will also complain about the order of the imports. Please keep them tidy :) (If you want to know more about the import ordering then you can look in the eslint config file).
 
   #### Gatsby builds will break if Wagtail returns an error.
-  If you have bad request or your code doesn't handle null values then the build will fail (remember building a gatsby site runs all 
-  your react code locally (or in CI) to produce loads of HTML files).
+  If you have bad request or your code doesn't handle null values then the build will fail (remember building a gatsby site runs all your react code locally (or in CI) to produce loads of HTML files).
 
   #### Gatsby can get confused some times.
   The plugin used to pull data from Wagtail into Gatsby likes to cache the graphql 'schema types'. As such, when you add more query
