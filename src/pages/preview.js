@@ -33,6 +33,9 @@ import TeamPage, { previewQuery as teamPageQuery } from '@templates/team'
 import CaseStudiesPage, {
   previewQuery as caseStudiesPageQuery,
 } from '@templates/case-studies'
+import NotFoundPage, {
+  previewQuery as notFoundQuery
+} from '@pages/404'
 // Utils
 import WagtailPreviewProvider from 'src/utils/wagtail-preview'
 
@@ -81,6 +84,10 @@ const previewMappings = {
     query: caseStudiesPageQuery,
     template: CaseStudiesPage,
   },
+  'torchbox.notfoundpage': {
+    query: notFoundQuery,
+    template: NotFoundPage
+  }
 }
 
 export default WagtailPreviewProvider(previewMappings)

@@ -6,10 +6,10 @@ import Contact from '@components/contact-detailed'
 // Styles
 import styles from './404.module.scss'
 
-const NotFoundPage = ({ contact, contactReasons }) => (
+const NotFoundPage = ({ strapline, background, contact, contactReasons }) => (
     <Layout theme='light--transparent' hideTeasers={true}>
-        <div className={styles.pageHero}>
-            <h1 className={styles.pageStrapline}>Err...</h1>
+        <div className={styles.pageHero} style={{ backgroundImage: `url(${background})` }} >
+            <h1 className={styles.pageStrapline}>{strapline}</h1>
         </div>
         <Contact {...contact} {...contactReasons} />
     </Layout>
