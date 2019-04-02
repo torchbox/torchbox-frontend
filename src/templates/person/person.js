@@ -22,7 +22,7 @@ class PersonPage extends React.Component {
   }
 
   render() {
-    const { firstName, role, avatar, alt, biography, blogs, contact, contactReasons } = this.props
+    const { firstName, role, avatar, alt, coreIntro, biography, blogs, contact, contactReasons } = this.props
 
     return (
       <div className={styles.page}>
@@ -53,7 +53,10 @@ class PersonPage extends React.Component {
           </div>
         </div>
         <StreamfieldBlock
-          className={styles.pageStreamfield}
+          streamfield={[{ type: 'paragraph', value: coreIntro }]}
+        />
+        <StreamfieldBlock
+          className={styles.pageBiography}
           streamfield={[{ type: 'paragraph', value: biography }]}
         />
         <Blogs
