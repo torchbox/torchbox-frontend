@@ -10,6 +10,7 @@ export const query = graphql`
       subServicePages(slug: $slug) {
         title
         pageTitle
+        searchDescription
         theme
         strapline
         intro
@@ -109,6 +110,7 @@ export const previewQuery = `
         subServicePages(previewToken: $previewToken) {
             title
             pageTitle
+            searchDescription
             theme
             strapline
             intro
