@@ -91,6 +91,8 @@ Overall architectural details of the site can be found in the back-end readme.
   The gatsby site is rebuilt every time a change is published on the headless CMS, and every time that changes are pushed to the `master` branch.
 
   If a build fails for any reason, then Netlify will continue to serve up the older version.
+  
+  There is a staging site at https://tbx-staging.netlify.com/. This pulls in data from the wagtail staging site at https://tbxcms.staging.torchbox.com/graphql/ .
 
   ## Deployment
   
