@@ -3,6 +3,7 @@ var browserslist = require('browserslist')
 
 module.exports = {
   siteMetadata: {
+    siteUrl: `https://torchbox.com`,
     title: `Torchbox`,
     description: `The digital product agency for tomorrow's non-profits`,
     author: `@Torchbox`,
@@ -10,6 +11,12 @@ module.exports = {
   plugins: [
     `gatsby-plugin-force-trailing-slashes`,
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        exclude: ["/preview"],
+      }
+    },
     {
       resolve: 'gatsby-plugin-offline',
       options: {

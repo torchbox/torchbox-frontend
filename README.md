@@ -88,14 +88,16 @@ Overall architectural details of the site can be found in the back-end readme.
 
   The site is hosted on Netlify, and you can get access to the build using the torchbox@gmail.com email - password in pwamn. Tom Dyson and Helen Chapman also have access.
 
-  The gatsby site is rebuilt every time a change is published on the headless CMS, and every time that changes are pushed to the `develop` branch.
+  The gatsby site is rebuilt every time a change is published on the headless CMS, and every time that changes are pushed to the `master` branch.
 
   If a build fails for any reason, then Netlify will continue to serve up the older version.
+  
+  There is a staging site at https://tbx-staging.netlify.com/. This pulls in data from the wagtail staging site at https://tbxcms.staging.torchbox.com/graphql/ .
 
   ## Deployment
-
-  Pre-launch: pushing changes to the `develop` branch will automatically trigger a redeploy to https://tbx-staging.netlify.com/
-
-  Post-launch: we will have a staging and production version of the gatsby site, linked to `staging` and `master` branches.
+  
+  Pushing changes to the `staging` branch will automatically trigger a deployment to https://tbx-staging.netlify.com/
+  
+  Pushing changes to the `master` branch will automatically trigger a deployment to the production site.
 
 
