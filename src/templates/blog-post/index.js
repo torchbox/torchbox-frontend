@@ -99,6 +99,14 @@ export const previewQuery = `
   query($slug: String, $previewToken: String) {
     blogPosts(slug: $slug, previewToken: $previewToken) {
       title
+      pageTitle
+      searchDescription
+      facebookImage: searchImage {
+        ...facebookImage
+      }
+      twitterImage: searchImage {
+        ...twitterImage
+      }
       date
       tags: relatedServices {
         name
