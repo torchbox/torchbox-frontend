@@ -73,5 +73,15 @@ module.exports = {
         modules: [`query-string`, `strict-uri-encode`]
       }
     },
+    {
+    resolve: `gatsby-plugin-google-tagmanager`,
+    options: {
+      id: "GTM-K5HPMR",
+
+      // Include GTM in development.
+      // Defaults to false meaning GTM will only be loaded in production.
+      includeInDevelopment: false,
+    },
+  },
   ],
 }
