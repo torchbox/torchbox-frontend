@@ -57,7 +57,7 @@ class Header extends React.Component {
       >
         <div className={styles.headerInner}>
           {collapsed ? (
-            <a href="#" className={styles.collapsedLogoContainer} onClick={e => {
+            <a href="#" title="Back to top" className={styles.collapsedLogoContainer} onClick={e => {
                 e.preventDefault();
                 navigateToTop();
               }}>
@@ -68,7 +68,7 @@ class Header extends React.Component {
             </a>
         ) : (
             <div className={styles.logoContainer}>
-              <a href="/" className={styles.logoLink}>
+              <a href="/" title="Home" className={styles.logoLink}>
                 <Logo className={styles.logo} />
               </a>
 
