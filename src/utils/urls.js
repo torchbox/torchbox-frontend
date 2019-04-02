@@ -65,3 +65,5 @@ export const pageUrl = page => {
   }
   return '/'
 }
+
+export const removeSlashes = url => url.replace(/\//g, '')

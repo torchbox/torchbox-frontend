@@ -1,5 +1,6 @@
 // Vendor Modules
 import qs from 'query-string'
+import { removeSlashes } from './urls'
 
 export const postContainsTag = (tags, tagName) => {
   let tagExists = false
@@ -31,7 +32,7 @@ export const getCurrentFilterIndex = tags => {
     let selectedIndex = 0
     if (tags && filter) {
       tags.map((tag, index) => {
-        if (tag.slug === filter) {
+        if (tag.slug === removeSlashes(filter)) {
           selectedIndex = index
         }
       })
