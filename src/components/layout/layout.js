@@ -157,7 +157,7 @@ class Layout extends React.Component {
         ],
       },
     ].map(link => {
-    if (this.props.location && this.props.location.pathname.replace(/\//g, '') === link.href) {
+      if (this.props.location && this.props.location.pathname.replace(/\//g, '') === link.href.replace(/\//g, '')) {
         return {
           ...link,
           active: true,
