@@ -12,7 +12,7 @@ import ThemeProvider from '@components/theme-provider'
 import SEO from '@components/seo'
 // Utilities
 import { safeGet } from '@utils/safeget'
-import { blogsUrl, caseStudiesUrl, teamUrl, jobsUrl } from '@utils/urls'
+import { blogsUrl, caseStudiesUrl, teamUrl, jobsUrl, removeSlashes } from '@utils/urls'
 // Styles
 import '@styles/_fonts.scss'
 import styles from './layout.module.scss'
@@ -157,7 +157,7 @@ class Layout extends React.Component {
         ],
       },
     ].map(link => {
-    if (this.props.location && this.props.location.pathname.replace(/\//g, '') === link.href) {
+      if (this.props.location && removeSlashes(this.props.location.pathname) === removeSlashes(link.href)) {
         return {
           ...link,
           active: true,
