@@ -81,14 +81,14 @@ module.exports = {
       }
     },
     {
-    resolve: `gatsby-plugin-google-tagmanager`,
-    options: {
-      id: "GTM-K5HPMR",
+      resolve: `gatsby-plugin-google-tagmanager`,
+      options: {
+        id: "GTM-K5HPMR",
 
-      // Include GTM in development.
-      // Defaults to false meaning GTM will only be loaded in production.
-      includeInDevelopment: false,
+        // Include GTM in development.
+        // Defaults to false meaning GTM will only be loaded in production.
+        includeInDevelopment: false,
+      },
     },
-  },
   ],
 }
