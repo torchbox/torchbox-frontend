@@ -90,6 +90,13 @@ export const previewQuery = `
   query($previewToken: String, $slug: String) {
     personPages(previewToken: $previewToken) {
       pageTitle
+      searchDescription
+      facebookImage: searchImage {
+        ...facebookImage
+      }
+      twitterImage: searchImage {
+        ...twitterImage
+      }
       firstName
       lastName
       role

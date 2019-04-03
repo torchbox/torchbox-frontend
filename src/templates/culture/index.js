@@ -70,6 +70,7 @@ export const previewQuery = `
   query($previewToken: String) {
     culturePages(previewToken: $previewToken) {
       pageTitle
+      searchDescription
       slug
       strapline
       intro

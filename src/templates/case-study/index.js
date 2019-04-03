@@ -148,6 +148,12 @@ export const previewQuery = `
       title
       pageTitle
       searchDescription
+      facebookImage: searchImage {
+        ...facebookImage
+      }
+      twitterImage: searchImage {
+        ...twitterImage
+      }
       client
       feedImage {
         ...fullImage

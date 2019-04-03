@@ -54,6 +54,7 @@ export const previewQuery = `
       title
       strapline
       pageTitle
+      searchDescription
 
       jobs {
         url

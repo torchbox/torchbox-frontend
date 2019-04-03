@@ -54,6 +54,7 @@ export const previewQuery = `
   query($previewToken: String) {
     personIndexPage(previewToken: $previewToken) {
       pageTitle
+      searchDescription
       strapline
     }
     personPages {
