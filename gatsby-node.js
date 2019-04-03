@@ -111,8 +111,16 @@ function getRoutes(slugs, countryCode) {
   return routes
 }
 
+function getRedirects(redirects) {
+  return redirects.map(redirect => ({ 
+    fromPath: redirect.oldPath, 
+    toPath: redirect.link, 
+    isPermanent: redirect.isPermanent 
+  }))
+}
+
 exports.createPages = ({ graphql, actions }) => {
-  const { createPage } = actions
+  const { createPage, createRedirect } = actions
 
   return graphql(`
     {
@@ -136,13 +144,18 @@ exports.createPages = ({ graphql, actions }) => {
         standardPages {
           slug
         }
+        redirects {
+          oldPath
+          link
+          isPermanent
+        }
       }
     }
   `).then(result => {
     if (result.errors) {
       throw result.errors
     }
-
+      
 
     if (process.env.GATSBY_ENVIRONMENT === 'netlify') {
       // On Netlify, render the whole site for each region
@@ -168,7 +181,7 @@ exports.createPages = ({ graphql, actions }) => {
       ].map(page => createPage(page))
 
       */
-
+      getRedirects(result.data.wagtail.redirects).map(redirect => createRedirect(redirect))
       getRoutes(result.data.wagtail, null).map(page => createPage(page))
     } else {
       // In development mode, we want to avoid prefixing the URLs so the site works locally.
