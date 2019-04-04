@@ -10,10 +10,10 @@
     font-size: 22px;
     line-height: 36px;
     margin: 0 0 40px;
-    color: $primary !important;
+    color: $primary;
 
     p {
-      color: $primary !important;
+      color: $primary;
     }
 
     @include for-tablet-landscape-up {
@@ -64,15 +64,15 @@
   &Quote {
     width: 75vw;
     margin-left: 1vw;
-
     padding: 25px 0;
+
     @include for-desktop-up {
       padding-top: 60px;
       padding-bottom: 40px;
     }
 
     p {
-      margin-right: 0 !important;
+      margin-right: 0;
     }
   }
 
@@ -129,10 +129,11 @@
   a {
     cursor: pointer;
     font-weight: bold;
-    color: $link-color !important;
+    color: $link-color;
+
     &:hover {
       border-bottom: 2px solid $green;
-      color: $link-color !important;
+      color: $link-color;
     }
   }
 
