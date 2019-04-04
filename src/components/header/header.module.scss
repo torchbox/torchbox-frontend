@@ -153,6 +153,7 @@ $header-logo-color: var(--header-logo-color, $primary);
       float: left;
       width: auto;
       padding: 0 0 0 0;
+      white-space: nowrap;
     }
   }
 

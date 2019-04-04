@@ -89,7 +89,10 @@ $badge-background-color: var(--badge-background-color, $accent);
 
     @include for-desktop-small-up {
       position: absolute;
-      top: -10px;
+      right: 10px;
+    }
+
+    @include for-desktop-medium-up {
       right: -25px;
     }
 
