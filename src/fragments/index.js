@@ -130,6 +130,24 @@ export const previewFragments = `
     alt
   }
 
+  fragment facebookImage on ImageObjectType {
+    src: rendition(format: "facebook") {
+      url
+      width
+      height
+    }
+    alt
+  }
+
+  fragment twitterImage on ImageObjectType {
+    src: rendition(format: "twitter") {
+      url
+      width
+      height
+    }
+    alt
+  }
+
   fragment contactSnippet on ContactObjectType {
     name
     role
