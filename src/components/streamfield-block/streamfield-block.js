@@ -14,7 +14,6 @@ class StreamfieldBlock extends React.Component {
     return (
       <div className={[styles.streamfield, className].join(' ')}>
         {streamfield.map((block, index) => {
-          console.log(block)
           switch (block.type) {
             case 'intro':
               return (
