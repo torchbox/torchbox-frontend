@@ -99,5 +99,9 @@ Overall architectural details of the site can be found in the back-end readme.
   Pushing changes to the `staging` branch will automatically trigger a deployment to https://tbx-staging.netlify.com/
   
   Pushing changes to the `master` branch will automatically trigger a deployment to the production site.
+  
+  ## Redirects
+  
+  There are some redirects set up on the live site which set the home page according to your location. On the staging site and on a local build these will not be present, so on these builds the root of the site (or clicking on the torcbox logo in the main navigation) will give a 404.
 
 

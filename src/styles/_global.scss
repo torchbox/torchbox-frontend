@@ -21,7 +21,7 @@ body {
 }
 
 .accentedText {
-    color: $accent !important;
+    color: $accent;
 }
 
 .pageSectionTitle {
@@ -68,7 +68,7 @@ body {
         font-weight: bold;
         padding: 15px;
         border-bottom: 2px solid var(--read-more-background-color, $accent);
-        cursor: pointer !important;
+        cursor: pointer;
 
         &:hover {
             background: var(--read-more-background-color, $accent);
@@ -81,11 +81,11 @@ body {
 }
 
 .toolkit_svg__accented {
-    fill: $accent !important;
+    fill: $accent;
 }
 
 @mixin visibility-hidden {
-    position: absolute !important;
+    position: absolute;
     overflow: hidden;
     width: 1px;
     height: 1px;

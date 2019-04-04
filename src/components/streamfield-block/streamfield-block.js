@@ -66,11 +66,12 @@ class StreamfieldBlock extends React.Component {
               )
 
             case 'bustout':
+              {/* Note that the block.value.alignment is not something that is passed through or set in the cms, but leaving for now in case
+                this is functionality to be added later */}
               return (
                 <BustOut
                   src={block.value.image.src}
                   align={block.value.alignment}
-                  title={'TODO: Ask about title'} // TODO
                   caption={block.value.text}
                   key={`${block.type}-${index}`}
                 />
