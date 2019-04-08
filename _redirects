@@ -4,6 +4,8 @@
 /privacy*	/privacy/
 /work/?*	/work/
 /cookie*	/cookies/
+/digital-marketing/ppc-management/  /digital-marketing/ppc-management-agency/
+/wagtail/wagtail-developer-support-service/ /wagtail-cms/wagtail-developer-support-service/ 
 /work/google-grant-management/	/digital-marketing/google-ad-grants-management/
 /services/designing-user-experience/	/wagtail-cms/user-research-and-prototyping/
 /services/google-grant-management	/digital-marketing/google-ad-grants-management/
