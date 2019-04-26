@@ -4,7 +4,7 @@
 
 # Report with strictest possible CSP headers but don't enforce yet
 /*
- Content-Security-Policy-Report-Only: default-src https: 'unsafe-eval' 'unsafe-inline'; object-src 'none'; report-uri https://sentry.io/api/1221893/security/?sentry_key=7a1433f9760341a395675f8758cd0fb5
+ Content-Security-Policy-Report-Only: default-src https: 'unsafe-eval' 'unsafe-inline'; image-src https: data:; object-src 'none'; report-uri https://sentry.io/api/1221893/security/?sentry_key=7a1433f9760341a395675f8758cd0fb5
 
 # Allow iframes from CMS for page preview, block from everywhere else
 /*
