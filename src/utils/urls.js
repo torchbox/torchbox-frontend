@@ -16,9 +16,9 @@ export const teamUrl = (slug = '') => `/team/${slug}/`
 export const jobsUrl = (slug = '') => `/jobs/${slug}/`
 export const serviceUrl = (slug = '', parentServiceSlug = null) => {
   if (parentServiceSlug) {
-    return `${parentServiceSlug}/${slug}/`
+    return `/${parentServiceSlug}/${slug}/`
   } else {
-    return slug
+    return `/${slug}/`
   }
 }
 
