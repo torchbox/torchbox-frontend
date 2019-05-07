@@ -18,14 +18,7 @@ import {
 
 const CaseStudyContainer = ({ pageContext, data }) => {
   const page = data.wagtail.caseStudies[0]
-  let extraCaseStudies = data.wagtail.extraCaseStudies.filter(
-    c => c.slug !== pageContext.slug
-  );
-
-  if (extraCaseStudies) {
-    // Limit done client side == bad (Karl to fix his limiting on BE)
-    extraCaseStudies = extraCaseStudies.map(caseStudyListing).slice(0, 4)
-  }
+  const caseStudies = data.wagtail.caseStudies[0].relatedCaseStudies.map(caseStudyListing)
 
   const homepageImageSrc = safeGet(page, 'homepageImage.src.url', null)
   const feedImageSrc = safeGet(
@@ -62,7 +55,7 @@ const CaseStudyContainer = ({ pageContext, data }) => {
         contact={page.contact}
         contactReasons={page.contactReasons}
         readTime={readTime(page.bodyWordCount) || 0}
-        caseStudies={extraCaseStudies}
+        caseStudies={caseStudies}
       />
     </Layout>
   )
@@ -114,28 +107,29 @@ export const query = graphql`
         contactReasons {
           ...contactReasonsSnippet
         }
-      }
 
-      extraCaseStudies: caseStudies {
-        slug
-        title
-        client
-        listingSummary
-        authors {
-          name
-          role
-          personPage {
-            slug
-            image {
-              ...iconImage
+
+        relatedCaseStudies(limit: 4) {
+          slug
+          title
+          client
+          listingSummary
+          authors {
+            name
+            role
+            personPage {
+              slug
+              image {
+                ...iconImage
+              }
             }
           }
-        }
-        feedImage {
-          ...fullImage
-        }
-        homepageImage {
-          ...fullImage
+          feedImage {
+            ...fullImage
+          }
+          homepageImage {
+            ...fullImage
+          }
         }
       }
     }
@@ -183,32 +177,33 @@ export const previewQuery = `
       contactReasons {
         ...contactReasonsSnippet
       }
-    }
 
-    extraCaseStudies: caseStudies {
-      slug
-      title
-      client
-      listingSummary
-      tags: relatedServices {
-        name
+
+      relatedCaseStudies(limit: 4) {
         slug
-      }
-      authors {
-        name
-        role
-        personPage {
+        title
+        client
+        listingSummary
+        tags: relatedServices {
+          name
           slug
-          image {
-            ...iconImage
+        }
+        authors {
+          name
+          role
+          personPage {
+            slug
+            image {
+              ...iconImage
+            }
           }
         }
-      }
-      feedImage {
-        ...fullImage
-      }
-      homepageImage {
-        ...fullImage
+        feedImage {
+          ...fullImage
+        }
+        homepageImage {
+          ...fullImage
+        }
       }
     }
   }
