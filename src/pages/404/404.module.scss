@@ -15,7 +15,7 @@
         @include for-tablet-landscape-up {
             padding-bottom: 30vh;
         }
-        
+
         &::after {
             content: '';
             background: linear-gradient(to bottom, white 1%, rgba(255, 255, 255, 0) 100%);
@@ -28,18 +28,28 @@
         }
     }
 
-    &Strapline {
+    &HeroContent {
         position: absolute;
-        font-size: 50px;
-        line-height: 55px;
         margin: 0 8.33vw 20px 8.33vw;
-        font-weight: 800;
 
         @include for-tablet-landscape-up {
-            font-size: 70px;
-            line-height: 80px;
             margin: 0 8.33vw 20px 24.99vw;
         }
     }
 
+    &Strapline {
+        font-size: 50px;
+        line-height: 50px;
+        font-weight: 800;
+
+        @include for-tablet-landscape-up {
+            font-size: 70px;
+            line-height: 70px;
+        }
+    }
+
+    &Link {
+        font-weight: 700;
+        font-size: 20px;
+    }
 }

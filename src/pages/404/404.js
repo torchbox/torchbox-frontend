@@ -7,9 +7,12 @@ import Contact from '@components/contact-detailed'
 import styles from './404.module.scss'
 
 const NotFoundPage = ({ contact, contactReasons }) => (
-    <Layout theme='light--transparent' hideTeasers={true}>
+    <Layout theme='light--transparent' hideTeasers={true} seoTitle="Page not found">
         <div className={styles.pageHero}>
-            <h1 className={styles.pageStrapline}>Err...</h1>
+            <div className={styles.pageHeroContent}>
+                <h1 className={styles.pageStrapline}>Err...</h1>
+                <a className={styles.pageLink} href="/">Take me home</a>
+            </div>
         </div>
         <Contact {...contact} {...contactReasons} />
     </Layout>
