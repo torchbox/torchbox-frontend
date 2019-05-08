@@ -5,6 +5,7 @@ import PropTypes from 'prop-types'
 import BustOut from '@components/bustout'
 import QuoteSlider from '@components/quote-slider'
 import { ReactComponent as FragIcon } from '@images/frag-cluster3.svg'
+import Markdown from '@components/markdown';
 // Styles
 import styles from './streamfield-block.module.scss'
 
@@ -170,7 +171,9 @@ class StreamfieldBlock extends React.Component {
               )
 
             case 'markdown':
-              return null
+              return <div className={styles.streamfieldParagraph}>
+                <Markdown source={block.value} />
+              </div>
 
             default:
               // console.log('Unknown Streamfield Block: ', block.type)
