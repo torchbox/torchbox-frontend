@@ -54,6 +54,7 @@ const CaseStudyContainer = ({ pageContext, data }) => {
         tags={postTags(page.tags, caseStudiesUrl('#filter='))}
         contact={page.contact}
         contactReasons={page.contactReasons}
+        serviceSlug={(page.tags && page.tags.length !== 0) ? page.tags[0].slug : undefined}
         readTime={readTime(page.bodyWordCount) || 0}
         caseStudies={caseStudies}
       />
