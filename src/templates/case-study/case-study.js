@@ -8,7 +8,7 @@ import StreamfieldBlock from '@components/streamfield-block'
 import CaseStudiesBlock from '@components/case-studies-block'
 import Contact from '@components/contact-detailed'
 // Utilities
-import { caseStudiesUrl } from '@utils/urls'
+import { caseStudiesFilterUrl } from '@utils/urls'
 // Styles
 import styles from './case-study.module.scss'
 
@@ -20,6 +20,7 @@ const CaseStudyPage = ({
   readTime,
   streamfield,
   caseStudies,
+  serviceSlug,
   teasers,
   contact,
   contactReasons
@@ -44,7 +45,7 @@ const CaseStudyPage = ({
       className={styles.pageShowcase}
       sectionTitle="More of our work"
       caseStudies={caseStudies}
-      listingUrl={caseStudiesUrl()}
+      listingUrl={caseStudiesFilterUrl(serviceSlug)}
     />
     <Contact className={styles.pageContact} {...contact} {...contactReasons} />
   </div>
@@ -61,6 +62,7 @@ CaseStudyPage.propTypes = {
   teasers: PropTypes.array,
   contact: PropTypes.object,
   contactReasons: PropTypes.object,
+  serviceSlug: PropTypes.string,
 }
 
 CaseStudyPage.defaultProps = {
