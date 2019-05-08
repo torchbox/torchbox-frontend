@@ -111,6 +111,9 @@ export const previewQuery = `
       contact {
         ...contactSnippet
       }
+      contactReasons {
+        ...contactReasonsSnippet
+      }
     }
 
     blogPosts(authorSlug: $slug, limit: 2) {

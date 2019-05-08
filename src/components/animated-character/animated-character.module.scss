@@ -40,6 +40,10 @@
         top: 0px;
     }
 
+    @mixin for-desktop-medium-up {
+        left: -14.66vw;
+    }
+
     &Right {
         @extend .imageWoman;
         margin-left: auto;

@@ -124,6 +124,12 @@ export const previewQuery = `
       }
       body
       bodyWordCount
+      contact {
+        ...contactSnippet
+      }
+      contactReasons {
+        ...contactReasonsSnippet
+      }
     }
 
     extraBlogPosts: blogPosts(limit: 2) {

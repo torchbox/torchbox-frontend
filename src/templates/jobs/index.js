@@ -65,6 +65,9 @@ export const previewQuery = `
       contact {
         ...contactSnippet
       }
+      contactReasons {
+        ...contactReasonsSnippet
+      }
     }
   }
 `
