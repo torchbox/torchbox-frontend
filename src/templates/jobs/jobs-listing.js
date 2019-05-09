@@ -14,6 +14,7 @@ export class JobsListingPage extends React.Component {
 
     const listing = jobs.map(job => {
       return {
+        id: job.id,
         title: job.title,
         level: job.level,
         location: job.location,
