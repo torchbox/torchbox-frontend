@@ -9,12 +9,9 @@ $hero-parent-page-hover-color: var(--hero-parent-page-hover-color);
 
 .parentLink {
     display: block;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    font-weight: bold;
-    font-size: 12px;
+    font-size: 18px;
     color: $accent;
-    margin: 0 0 50px;
+    margin: 0 0 16px;
     position: relative;
     z-index: 0;
 
@@ -23,22 +20,9 @@ $hero-parent-page-hover-color: var(--hero-parent-page-hover-color);
         color: $hero-parent-page-color;
         z-index: 2;
         background-color: $hero-background;
-        padding: 11px 0;
 
         &:hover {
             color: $hero-parent-page-hover-color;
-        }
-
-        &::before {
-            width: 4px;
-            height: 80px;
-            content: '';
-            background: $hero-parent-page-slash-color;
-            position: absolute;
-            z-index: -1;
-            transform: rotate(30deg);
-            left: 40px;
-            top: -40px;
         }
     }
 }
