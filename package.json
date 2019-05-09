@@ -26,6 +26,7 @@
     "css-loader": "^2.1.0",
     "css-vars-ponyfill": "^1.16.4",
     "dayjs": "^1.8.0",
+    "esm": "^3.2.22",
     "gatsby": "^2.0.98",
     "gatsby-image": "^2.0.20",
     "gatsby-plugin-compile-es6-packages": "^1.0.6",
