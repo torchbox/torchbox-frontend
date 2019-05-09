@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 // Components
 import BustOut from '@components/bustout'
 import QuoteSlider from '@components/quote-slider'
+import RichText from '@components/rich-text'
 import { ReactComponent as FragIcon } from '@images/frag-cluster3.svg'
 // Styles
 import styles from './streamfield-block.module.scss'
@@ -19,9 +20,10 @@ class StreamfieldBlock extends React.Component {
               return (
                 <div
                   className={styles.streamfieldIntro}
-                  dangerouslySetInnerHTML={{ __html: block.value }}
                   key={`${block.type}-${index}`}
-                />
+                >
+                  <RichText value={block.value} />
+                </div>
               )
 
             case 'aligned_image':
@@ -155,9 +157,10 @@ class StreamfieldBlock extends React.Component {
               return (
                 <div
                   className={styles.streamfieldParagraph}
-                  dangerouslySetInnerHTML={{ __html: block.value }}
                   key={`${block.type}-${index}`}
-                />
+                >
+                  <RichText value={block.value} />
+                </div>
               )
 
             case 'raw_html':
