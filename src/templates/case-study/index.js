@@ -33,7 +33,7 @@ const CaseStudyContainer = ({ pageContext, data }) => {
       value: {
         image: {
           src: homepageImageSrc || feedImageSrc,
-          alt: page.homepageImage.alt || page.feedImage.src
+          alt: page.homepageImage && page.homepageImage.alt || page.feedImage && page.feedImage.src
         }
       },
     },
