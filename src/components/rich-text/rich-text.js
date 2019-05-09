@@ -1,16 +1,32 @@
 // Vendor Modules
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 
 import { pageUrl } from '@utils/urls'
 
-const RichText = (props) => {
-  const [newValue, setNewValue] = useState(props.value)
+export default class RichText extends React.Component {
+  static propTypes = {
+    value: PropTypes.string.isRequired
+  }
 
-  // Need to encompass document on the runtime only.
-  useEffect(() => {
+  state = {
+    processedHTML: ''
+  }
+
+  componentDidMount() {
+    this.parseAnchorsInHTML()
+  }
+
+  render() {
+    const { processedHTML } = this.state
+    return <div dangerouslySetInnerHTML={{ __html: processedHTML }} />
+  }
+
+  parseAnchorsInHTML() {
+    // This can be run during the runtime only due to use of web browser's API,
+    // i.e. "document".
     const el = document.createElement( 'body' )
-    el.innerHTML = props.value
+    el.innerHTML = this.props.value
 
     // Set "href" for page links.
     for (const link of el.querySelectorAll('a[data-page-slug][data-page-type]')) {
@@ -24,15 +40,6 @@ const RichText = (props) => {
       delete link.dataset.pageSlug
       delete link.dataset.pageServiceSlug
     }
-    setNewValue(el.innerHTML)
-  })
-
-
-  return <div dangerouslySetInnerHTML={{ __html: newValue }} />
+    this.setState({ processedHTML: el.innerHTML })
+  }
 }
-
-RichText.propTypes = {
-  value: PropTypes.string
-}
-
-export default RichText
