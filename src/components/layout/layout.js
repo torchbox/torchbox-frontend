@@ -171,8 +171,8 @@ class Layout extends React.Component {
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
   collapsed: PropTypes.bool,
-  facebookImage: PropTypes.string,
-  twitterImage: PropTypes.string,
+  facebookImage: PropTypes.object,
+  twitterImage: PropTypes.object,
   seoTitle: PropTypes.string,
   seoDesc: PropTypes.string,
   seoLang: PropTypes.string,
