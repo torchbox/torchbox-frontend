@@ -163,7 +163,6 @@ exports.createPages = ({ graphql, actions }) => {
     }
 
     for (const redirect of getRedirects(result.data.wagtail.redirects)) {
-      console.log("set up redirect", redirect);
       createRedirect(redirect)
     }
 
