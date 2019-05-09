@@ -32,6 +32,7 @@ export const query = graphql`
         searchDescription
 
         jobs {
+          id
           url
           title
           level
@@ -57,6 +58,7 @@ export const previewQuery = `
       searchDescription
 
       jobs {
+        id
         url
         title
         level

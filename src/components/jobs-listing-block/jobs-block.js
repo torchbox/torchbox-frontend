@@ -19,9 +19,9 @@ class JobsBlock extends React.Component {
 
         <div className={styles.blockContent}>
           <div className={styles.blockJobList}>
-            {jobs.map((job, index) => (
+            {jobs.map(job => (
               <a
-                key={`job-link-${index}`}
+                key={`job-link-${job.id}`}
                 className={styles.blockJobLink}
                 href={job.href}
                 target="_blank "
