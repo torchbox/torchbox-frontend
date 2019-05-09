@@ -9,6 +9,7 @@ module.exports = {
     author: `@Torchbox`,
   },
   plugins: [
+    `gatsby-plugin-netlify`,
     `gatsby-plugin-force-trailing-slashes`,
     `gatsby-plugin-react-helmet`,
     {
