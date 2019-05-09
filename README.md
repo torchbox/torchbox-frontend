@@ -34,7 +34,7 @@ Overall architectural details of the site can be found in the back-end readme.
 
 ## 🧐 Useful things to know:
   #### Prettier & Eslint are both used.
-  Please make your code pretty and eslint to make sure you aren't shipping baddly
+  Please make your code pretty and eslint to make sure you aren't shipping badly
   typed components. Eslint will also complain about the order of the imports. Please keep them tidy :) (If you want to know more about the import ordering then you can look in the eslint config file).
 
   #### Gatsby builds will break if Wagtail returns an error.
