@@ -2,7 +2,7 @@
 
 This is the front-end component of the new torchbox.com site.
 
-It is a Gatsby site, hosted on Netlify, currently at https://tbx-staging.netlify.com.
+It is a Gatsby site, hosted on Netlify, currently at https://torchbox.staging.torchbox.com.
 
 To develop locally you need to have the [backend headless Wagtail CMS](https://github.com/torchbox/wagtail-torchbox/) running locally or on the server (see 'configure' below).
 
@@ -34,7 +34,7 @@ Overall architectural details of the site can be found in the back-end readme.
 
 ## 🧐 Useful things to know:
   #### Prettier & Eslint are both used.
-  Please make your code pretty and eslint to make sure you aren't shipping baddly
+  Please make your code pretty and eslint to make sure you aren't shipping badly
   typed components. Eslint will also complain about the order of the imports. Please keep them tidy :) (If you want to know more about the import ordering then you can look in the eslint config file).
 
   #### Gatsby builds will break if Wagtail returns an error.
@@ -90,11 +90,11 @@ Overall architectural details of the site can be found in the back-end readme.
 
   If a build fails for any reason, then Netlify will continue to serve up the older version.
 
-  There is a staging site at https://tbx-staging.netlify.com/. This pulls in data from the wagtail staging site at https://tbxcms.staging.torchbox.com/graphql/ .
+  There is a staging site at https://torchbox.staging.torchbox.com/. This pulls in data from the wagtail staging site at https://cms.torchbox.staging.torchbox.com/graphql/ .
 
   ## Deployment
 
-  Pushing changes to the `staging` branch will automatically trigger a deployment to https://tbx-staging.netlify.com/
+  Pushing changes to the `staging` branch will automatically trigger a deployment to https://torchbox.staging.torchbox.com/
 
   Pushing changes to the `master` branch will automatically trigger a deployment to the production site.
 
