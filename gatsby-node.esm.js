@@ -162,6 +162,14 @@ exports.createPages = ({ graphql, actions }) => {
       throw result.errors
     }
 
+    for (const redirect of getRedirects(result.data.wagtail.redirects)) {
+      console.log("set up redirect", redirect);
+      createRedirect(redirect)
+    }
+
+    for (const page of getRoutes(result.data.wagtail, null)) {
+      createPage(page)
+    }
 
     if (process.env.GATSBY_ENVIRONMENT === 'netlify') {
       // On Netlify, render the whole site for each region
@@ -187,13 +195,6 @@ exports.createPages = ({ graphql, actions }) => {
       ].map(page => createPage(page))
 
       */
-      getRedirects(result.data.wagtail.redirects).map(
-        redirect => createRedirect(redirect))
-      getRoutes(result.data.wagtail, null).map(page => createPage(page))
-    } else {
-      // In development mode, we want to avoid prefixing the URLs so the site works locally.
-      // Note: if you want to test the US site, change the second parameter of getRoutes to 'US'
-      getRoutes(result.data.wagtail, null).map(page => createPage(page))
     }
   })
 }
