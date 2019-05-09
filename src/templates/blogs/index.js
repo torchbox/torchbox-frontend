@@ -16,8 +16,8 @@ const BlogsListingContainer = ({ data }) => {
       <BlogListingPage
         title={data.wagtail.blogIndexPage.title}
         blogs={data.wagtail.blogPosts}
-        contact={data.wagtail.blogIndexPage.contact}
-        contactReasons={data.wagtail.blogIndexPage.contactReasons}
+        contact={data.wagtail.contact}
+        contactReasons={data.wagtail.contactReasons}
       />
     </Layout>
   )
@@ -68,7 +68,7 @@ export const previewQuery = `
     blogIndexPage(previewToken: $previewToken) {
       pageTitle
       searchDescription
-      title 
+      title
     }
     blogPosts {
       slug
@@ -76,6 +76,9 @@ export const previewQuery = `
       date
       contact {
         ...contactSnippet
+      }
+      contactReasons {
+        ...contactReasonsSnippet
       }
       tags: relatedServices {
         name
