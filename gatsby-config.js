@@ -18,12 +18,6 @@ module.exports = {
       }
     },
     {
-      resolve: 'gatsby-plugin-offline',
-      options: {
-          navigateFallbackWhitelist: [/\/$/],
-      }
-    },
-    {
       resolve: `gatsby-plugin-sass`,
       options: {
         includePaths: ['./src/fonts/'],
@@ -53,6 +47,12 @@ module.exports = {
         display: `minimal-ui`,
         icon: `src/images/favicon.png`, // This path is relative to the root of the site.
       },
+    },
+    {
+      resolve: 'gatsby-plugin-offline',
+      options: {
+          navigateFallbackWhitelist: [/\/$/],
+      }
     },
     {
       resolve: "gatsby-source-graphql",

@@ -25,30 +25,28 @@ Overall architectural details of the site can be found in the back-end readme.
 3.  **Start Developing!**
 
     You can run dev mode by executing the following command:
-    
-    `yarn start // Runs dev server on port 800*`
-    `npm start` also works.
+
+    `npm start // Runs dev server on port 800*`
 
     You can also build and preview production code using:
-    
-    `yarn build // Builds prod code`
-    `yarn serve // Serves prod code on port 9000`
+
+    `npm run build // Builds prod code`
 
 ## 🧐 Useful things to know:
   #### Prettier & Eslint are both used.
-  Please make your code pretty and eslint to make sure you aren't shipping baddly 
+  Please make your code pretty and eslint to make sure you aren't shipping baddly
   typed components. Eslint will also complain about the order of the imports. Please keep them tidy :) (If you want to know more about the import ordering then you can look in the eslint config file).
 
   #### Gatsby builds will break if Wagtail returns an error.
   If you have bad request or your code doesn't handle null values then the build will fail (remember building a gatsby site runs all your react code locally (or in CI) to produce loads of HTML files).
-  
+
   #### It is necessary to re-run `npm start` if you update data in the CMS
   Otherwise Gatsby does not pick up the new data which can be confusing.
 
   #### Gatsby can get confused some times.
   The plugin used to pull data from Wagtail into Gatsby likes to cache the graphql 'schema types'. As such, when you add more query
   fields to the api, gatsby doesn't know the new types exist and will compain about graphql query syntax. This will error like so:
-  
+
   ```
   error GraphQL Error Unknown field `isCalledDave` on type `[Wagtail_PersonPageObjectType]`
 
@@ -77,12 +75,12 @@ Overall architectural details of the site can be found in the back-end readme.
   20 |
   ```
 
-  If you are sure that gatsby is confused and that the field `isCalledDave` does exist then you just need to refresh your cache 
+  If you are sure that gatsby is confused and that the field `isCalledDave` does exist then you just need to refresh your cache
   with a simple `rm -r ./.cache/*` command.
 
   ## Pattern library
 
-  The site uses Storybook which can be started locally by running `yarn storybook`. Note: this is currently failing.
+  The site uses Storybook which can be started locally by running `npm run storybook`. Note: this is currently failing.
 
   ## Site management
 
@@ -91,17 +89,17 @@ Overall architectural details of the site can be found in the back-end readme.
   The gatsby site is rebuilt every time a change is published on the headless CMS, and every time that changes are pushed to the `master` branch.
 
   If a build fails for any reason, then Netlify will continue to serve up the older version.
-  
+
   There is a staging site at https://tbx-staging.netlify.com/. This pulls in data from the wagtail staging site at https://tbxcms.staging.torchbox.com/graphql/ .
 
   ## Deployment
-  
+
   Pushing changes to the `staging` branch will automatically trigger a deployment to https://tbx-staging.netlify.com/
-  
+
   Pushing changes to the `master` branch will automatically trigger a deployment to the production site.
-  
+
   ## Redirects
-  
+
   There are some redirects set up on the live site which set the home page according to your location. On the staging site and on a local build these will not be present, so on these builds the root of the site (or clicking on the torcbox logo in the main navigation) will give a 404.
 
 
