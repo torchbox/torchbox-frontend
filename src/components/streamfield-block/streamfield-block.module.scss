@@ -43,7 +43,30 @@
         height: 400px;
       }
     }
+  }
 
+  &Embed {
+    position: relative;
+    z-index: 0;
+    height: 0;
+    overflow: hidden;
+    padding-bottom: 56%;
+    margin-bottom: 30px;
+
+    @include for-desktop-up {
+      // Change padding as vw is set by streamblockPadding
+      padding-bottom: 34.25%;
+    }
+
+    iframe,
+    object,
+    embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
   }
 
   &Paragraph {
