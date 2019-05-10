@@ -37,12 +37,12 @@
             display: block;
             margin: 10px 0 5px;
             line-height: 1;
-            font-size: 22px;
+            font-size: 18px;
             font-weight: 800;
             color: $primary;
 
             @include for-tablet-portrait-up {
-                font-size: 18px;
+                font-size: 22px;
             }
 
             &:hover {
