@@ -26,7 +26,7 @@ $link-color: var(--color-link);
 $link-hover-color: var(--color-link-hover);
 
 // Fonts
-$mainFont: 'Apercu Pro';
+$mainFont: 'Apercu Pro', arial, helvetica, sans-serif;
 
 // Sizes
 $small: '(max-width: 599px)';
