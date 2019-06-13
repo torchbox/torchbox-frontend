@@ -29,7 +29,7 @@ function SEO({ description, facebookImage, twitterImage, lang, meta, keywords, t
                 content: title,
               },
               {
-                name: `og:image`,
+                property: `og:image`,
                 content: facebookImage || defaultSearchImage,
               },
               {
