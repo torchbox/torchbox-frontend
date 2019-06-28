@@ -6,11 +6,12 @@ import StreamfieldBlock from '@components/streamfield-block'
 import Contact from '@components/contact-detailed'
 import TeaserLink from '@components/teaser-block/teaser'
 // Utilities
-import { renderTorchUp } from '@utils/torchup'
+import { renderTorchUp, parseToHtml } from '@utils/torchup'
 import { pageUrl } from '@utils/urls'
 import { ReactComponent as GreetingImage } from '@images/man-fruit.svg'
 // Styles
 import styles from './culture-page.module.scss'
+import RichText from 'src/components/rich-text/index';
 
 const CulturePage = ({ strapline, straplineVisible, heroImage, intro, links, body, contact, contactReasons }) => {
   const Teasers = () => (
@@ -45,7 +46,9 @@ const CulturePage = ({ strapline, straplineVisible, heroImage, intro, links, bod
 
       <div className={styles.pageContent}>
         <GreetingImage className={styles.pageImage} />
-        <h1 className={styles.pageIntro} {...renderTorchUp(intro)} />
+        <h1 className={styles.pageIntro}>
+          <RichText value={parseToHtml(intro)} />
+        </h1>
         <Teasers />
         <StreamfieldBlock
           className={styles.pageStreamfield}
