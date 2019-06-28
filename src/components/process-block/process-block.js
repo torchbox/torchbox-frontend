@@ -6,6 +6,8 @@ import { Link } from 'gatsby'
 import { ReactComponent as ToolkitImage } from '@images/toolkit.svg'
 import { renderTorchUp } from '@utils/torchup'
 import { pageUrl } from '@utils/urls'
+// Components
+import RichText from '@components/rich-text'
 // Styles
 import styles from './process-block.module.scss'
 
@@ -22,8 +24,10 @@ class ProcessBlock extends React.Component {
             {processes.map((process, index) => (
               <li key={`process-${index}`} className={styles.processItem}>
                 <h2 className={styles.processItemTitle}>{process.title}</h2>
-                <p className={styles.processItemDesc}>{process.description}</p>
-                {process.pageLinkLabel && process.pageLink && 
+                <div className={styles.processItemDesc}>
+                  <RichText value={process.description} />
+                </div>
+                {process.pageLinkLabel && process.pageLink &&
                   <Link
                     to={pageUrl(process.pageLink)}
                     className={styles.processItemLink}
