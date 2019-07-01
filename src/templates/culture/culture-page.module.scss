@@ -93,6 +93,9 @@
 
         * {
             color: $primary;
+            a:hover {
+                color: $green;
+            }
         }
 
         @include for-tablet-landscape-up {
