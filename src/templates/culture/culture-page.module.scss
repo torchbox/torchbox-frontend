@@ -62,12 +62,6 @@
             left: 0;
             z-index: 10;
         }
-
-        * {
-            a:hover {
-                color: $green;
-            }
-        }
     }
 
     &Content {
@@ -99,6 +93,9 @@
 
         * {
             color: $primary;
+            a:hover {
+                color: $green;
+            }
         }
 
         @include for-tablet-landscape-up {
