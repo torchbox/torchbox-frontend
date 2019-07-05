@@ -113,9 +113,13 @@ function getRoutes(slugs, countryCode) {
 }
 
 function getRedirects(redirects) {
+  function deleteDoubleSlashes (url) {
+    return url.replace('//', '/');
+  }
+
   return redirects.map(redirect => ({
     fromPath: redirect.oldPath,
-    toPath: redirect.link || pageUrl(redirect.page),
+    toPath: deleteDoubleSlashes(redirect.link || pageUrl(redirect.page)),
     isPermanent: redirect.isPermanent
   }))
 }
