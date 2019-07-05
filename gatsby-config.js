@@ -9,7 +9,27 @@ module.exports = {
     author: `@Torchbox`,
   },
   plugins: [
-    `gatsby-plugin-netlify`,
+    {
+      resolve: `gatsby-plugin-netlify`,
+      options: {
+        headers: {
+          "/*": [
+            "Strict-Transport-Security: max-age=86400",
+            "Content-Security-Policy-Report-Only: default-src 'self' 'unsafe-eval' 'unsafe-inline'",
+            "Content-Security-Policy-Report-Only: object-src 'none'",
+            "Content-Security-Policy-Report-Only: img-src 'self' data: https://media.torchbox.com",
+            "Content-Security-Policy-Report-Only: font-src 'self' data:",
+            "Content-Security-Policy-Report-Only: report-uri https://sentry.io/api/1221893/security/?sentry_key=7a1433f9760341a395675f8758cd0fb5",
+            "X-Frame-Options: allow-from https://cms.torchbox.com/",
+            "X-XSS-Protection: 1; mode=block",
+            "X-Content-Type-Options: nosniff",
+          ],
+          "/preview": [
+            "Referrer-Policy: origin",
+          ],
+        },
+      },
+    },
     `gatsby-plugin-force-trailing-slashes`,
     `gatsby-plugin-react-helmet`,
     {
