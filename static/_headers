@@ -4,7 +4,11 @@
 
 # Report with strictest possible CSP headers but don't enforce yet
 /*
- Content-Security-Policy-Report-Only: default-src https: data: 'unsafe-eval' 'unsafe-inline'; object-src 'none'; report-uri https://sentry.io/api/1221893/security/?sentry_key=7a1433f9760341a395675f8758cd0fb5
+ Content-Security-Policy-Report-Only: default-src 'self' 'unsafe-eval' 'unsafe-inline'
+ Content-Security-Policy-Report-Only: object-src 'none'
+ Content-Security-Policy-Report-Only: img-src 'self' data: https://media.torchbox.com
+ Content-Security-Policy-Report-Only: font-src 'self' data:
+ Content-Security-Policy-Report-Only: report-uri https://sentry.io/api/1221893/security/?sentry_key=7a1433f9760341a395675f8758cd0fb5
 
 # Allow iframes from CMS for page preview, block from everywhere else
 /*
