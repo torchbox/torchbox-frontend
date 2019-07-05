@@ -1,6 +1,6 @@
 # /   /wagtail-cms            302!    Country=us
 /   /digital-products       302!
-/blog/?*	/blog/
+/blog/*	/blog/
 /privacy*	/privacy/
-/work/?*	/work/
+/work/*	/work/
 /cookie*	/cookies/
