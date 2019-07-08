@@ -5,15 +5,34 @@ export const caseStudiesFilterUrl = filter => {
   }
   return `/work/#filter=${filter}`
 };
-export const blogsUrl = (slug = '') => `/blog/${slug}/`
+export const blogsUrl = (slug = '') => {
+  if (slug) {
+    return `/blog/${slug}/`;
+  }
+
+  return '/blog/';
+};
 export const blogsFilterUrl = filter => {
   if (!filter) {
     return blogsUrl()
   }
   return `/blog/#filter=${filter}`
 };
-export const teamUrl = (slug = '') => `/team/${slug}/`
-export const jobsUrl = (slug = '') => `/jobs/${slug}/`
+export const teamUrl = (slug = '') => {
+  if (slug) {
+    return `/team/${slug}/`;
+  }
+
+  return '/team/';
+};
+export const jobsUrl = (slug = '') => {
+  if (slug) {
+    return `/jobs/${slug}/`;
+  }
+
+  return '/jobs/';
+};
+
 export const serviceUrl = (slug = '', parentServiceSlug = null) => {
   if (parentServiceSlug) {
     return `/${parentServiceSlug}/${slug}/`
