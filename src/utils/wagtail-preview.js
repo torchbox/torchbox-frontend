@@ -2,8 +2,11 @@
 import React from 'react'
 import { request } from 'graphql-request'
 import qs from 'query-string'
+import { APIClient, initCommentsApp } from 'wagtail-review-ui';
+
 // Fragments
 import { previewFragments } from '../fragments'
+
 
 const WagtailPreviewProvider = previewMappings => {
   return class WagtailPreviewDecorator extends React.Component {
@@ -16,7 +19,7 @@ const WagtailPreviewProvider = previewMappings => {
     fetchToken = async () => {
       if (typeof window !== 'undefined') {
         const { pageContext } = this.props
-        const { token, content_type } = qs.parse(window.location.search)
+        const { token, content_type, review_token, allow_responses } = qs.parse(window.location.search)
 
         const previewMapping = previewMappings[content_type]
         if (token && previewMapping) {
@@ -31,7 +34,20 @@ const WagtailPreviewProvider = previewMappings => {
             )
             this.setState({
               propOverides: { ...this.state.propOverides, data: { wagtail } },
-            })
+            }, () => {
+              // Initialise review UI
+              if (review_token) {
+                let commentsElement = document.createElement('div');
+                document.body.appendChild(commentsElement);
+
+                let commentsApi = new APIClient('http://localhost:8000/review/api/', review_token);
+                initCommentsApp(commentsElement, commentsApi, function (addAnnotatableSection) {
+                    for (let element of document.querySelectorAll('[data-contentpath-field]')) {
+                        addAnnotatableSection(element.dataset.contentpathField, element);
+                    }
+                }, !!allow_responses);
+              }
+            });
           } catch (e) {
             console.error(e)
           }

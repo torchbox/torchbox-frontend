@@ -17,6 +17,7 @@
     "@storybook/addon-viewport": "^4.1.4",
     "@svgr/webpack": "^4.1.0",
     "animate-scss": "^3.2.1",
+    "annotator": "^2.0.0-alpha.3",
     "autoprefixer": "^9.4.8",
     "babel-plugin-module-resolver": "^3.2.0",
     "babel-polyfill": "^6.26.0",
@@ -58,7 +59,8 @@
     "sass-loader": "^7.1.0",
     "scroll-into-view": "^1.9.3",
     "smartquotes": "^2.3.1",
-    "style-loader": "^0.23.1"
+    "style-loader": "^0.23.1",
+    "wagtail-review-ui": "^0.2.1"
   },
   "keywords": [
     "gatsby"
