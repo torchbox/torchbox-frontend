@@ -40,7 +40,9 @@ const WagtailPreviewProvider = previewMappings => {
                 let commentsElement = document.createElement('div');
                 document.body.appendChild(commentsElement);
 
-                let commentsApi = new APIClient('http://localhost:8000/review/api/', review_token);
+                const reviewEndpoint = process.env.GATSBY_WAGTAIL_REVIEW_ENDPOINT || 'http://localhost:8000/review/api/';
+
+                let commentsApi = new APIClient(reviewEndpoint, review_token);
                 initCommentsApp(commentsElement, commentsApi, function (addAnnotatableSection) {
                     for (let element of document.querySelectorAll('[data-contentpath-field]')) {
                         addAnnotatableSection(element.dataset.contentpathField, element);
