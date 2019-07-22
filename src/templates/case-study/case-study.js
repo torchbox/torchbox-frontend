@@ -29,7 +29,7 @@ const CaseStudyPage = ({
     <div className={styles.pageClientContainer}>
       <span className={styles.pageClient}>{client}</span>
     </div>
-    <TitleBlock className={styles.pageTitle} title={title} innerPage={true} />
+    <TitleBlock className={styles.pageTitle} title={title} innerPage={true} contentPathField="title" />
     <AuthorBlock
       className={styles.pageAuthor}
       author={author}
@@ -39,6 +39,7 @@ const CaseStudyPage = ({
     <StreamfieldBlock
       className={styles.pageStreamfield}
       streamfield={streamfield}
+      contentPathField="body"
     />
     <AuthorBlock className={styles.pageAuthor} author={author} tags={tags} />
     <CaseStudiesBlock

@@ -40,19 +40,20 @@ const CulturePage = ({ strapline, straplineVisible, heroImage, intro, links, bod
         style={{ backgroundImage: `url(${heroImage})` }}
       >
         <div className={styles.pageHeroContent}>
-          <h1 className={heroTitleStyles.join(' ')} {...renderTorchUp(strapline)} />
+          <h1 className={heroTitleStyles.join(' ')} {...renderTorchUp(strapline)} data-contentpath-field="strapline" />
         </div>
       </div>
 
       <div className={styles.pageContent}>
         <GreetingImage className={styles.pageImage} />
-        <h1 className={styles.pageIntro}>
+        <h1 className={styles.pageIntro} data-contentpath-field="intro">
           <RichText value={parseToHtml(intro)} />
         </h1>
         <Teasers />
         <StreamfieldBlock
           className={styles.pageStreamfield}
           streamfield={body}
+          contentPathField="body"
         />
         <Teasers />
       </div>

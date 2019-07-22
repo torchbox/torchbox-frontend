@@ -13,10 +13,11 @@ export class StandardPage extends React.Component {
     const { title, body, contact, contactReasons } = this.props
     return (
       <div className={styles.page}>
-        <TitleBlock className={styles.pageTitle} title={title} />
+        <TitleBlock className={styles.pageTitle} title={title} contentPathField="title"/>
         <StreamfieldBlock
           className={styles.pageStreamfield}
           streamfield={body}
+          contentPathField="body"
         />
         <Contact className={styles.pageContact} {...contact} {...contactReasons} />
       </div>

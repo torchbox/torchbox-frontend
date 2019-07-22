@@ -24,7 +24,7 @@ const BlogPostPage = ({
   contactReasons,
 }) => (
   <div className={styles.page}>
-    <TitleBlock className={styles.pageTitle} title={title} innerPage={true} />
+    <TitleBlock className={styles.pageTitle} title={title} innerPage={true} contentPathField="title" />
     <AuthorBlock
       className={styles.pageAuthor}
       author={author}
@@ -35,6 +35,7 @@ const BlogPostPage = ({
     <StreamfieldBlock
       className={styles.pageStreamfield}
       streamfield={streamfield}
+      contentPathField="body"
     />
     <AuthorBlock className={styles.pageAuthor} author={author} tags={tags} />
     {extraBlogPosts ? (

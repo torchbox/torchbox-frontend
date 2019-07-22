@@ -14,7 +14,7 @@ export class TeamListingPage extends React.Component {
   render() {
     const { title, team, contact, contactReasons } = this.props
 
-    /* 
+    /*
      * Quick hack to stop the list being rendered during static build as the React diffing algorithm is having
      * issues replacing the static html (from Gatsby build) with dynamic html (from vanilla React) when this component
      * is rebuilt in runtime. The diffing messes up the ordering so the images and text don't match. Need someone to look
@@ -37,7 +37,7 @@ export class TeamListingPage extends React.Component {
 
     return (
       <div className={styles.page}>
-        <TitleBlock className={styles.pageTitle} title={title} />
+        <TitleBlock className={styles.pageTitle} title={title} contentPathField="title" />
         <TeamListingBlock className={styles.pageTeamListing} team={listing} />
         <Contact className={styles.pageContact} {...contact} {...contactReasons} />
       </div>
