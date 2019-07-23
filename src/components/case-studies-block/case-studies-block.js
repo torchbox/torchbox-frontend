@@ -33,6 +33,12 @@ class CaseStudiesBlock extends React.Component {
               >
                 {imgurl}
                 {caseStudy.title}
+                <div
+                    className={styles.caseStudyImageInner}
+                    style={{
+                      backgroundImage: `url(${imgurl})`,
+                    }}
+                  />
               </div>
             )
 
