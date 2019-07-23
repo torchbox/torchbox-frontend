@@ -50,6 +50,11 @@ export class CaseStudyListingPage extends React.Component {
         )
     }
 
+    console.log('case studies listing:')
+    console.log(listing)
+    console.log('case studies listing sliced:')
+    console.log(listing.slice(0, currentLimit))
+
     return (
       <div className={styles.page}>
         <TitleBlock className={styles.pageTitle} title={title} />
