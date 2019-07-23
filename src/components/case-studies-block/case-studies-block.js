@@ -23,7 +23,10 @@ class CaseStudiesBlock extends React.Component {
         ) : null}
         <div className={styles.blockList}>
           {(caseStudies || []).map((caseStudy, index) => {
+            console.log(index)
+            console.log(caseStudy)
             let imgurl = caseStudy.feedImage || caseStudy.homepageImage || require('../../images/default-featured.png')
+            console.log(imgurl)
 
             return (
               <Link
