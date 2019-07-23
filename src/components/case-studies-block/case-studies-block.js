@@ -31,14 +31,18 @@ class CaseStudiesBlock extends React.Component {
             return (
               <div key={`case-study-link-${index}`}
               >
-                {imgurl}
+                {imgurl}<br />
+                `url(${imgurl})`
                 {caseStudy.title}
                 <div
                     className={styles.caseStudyImageInner}
                     style={{
                       backgroundImage: `url(${imgurl})`,
                     }}
-                  />
+                  >
+                  {imgurl}<br />
+                  url(${imgurl})
+                  </div>
               </div>
             )
 
