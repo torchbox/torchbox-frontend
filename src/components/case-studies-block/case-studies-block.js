@@ -34,29 +34,30 @@ class CaseStudiesBlock extends React.Component {
                 className={styles.caseStudy}
                 to={caseStudy.href}
               >
-                <div className={styles.caseStudyMeta}>
-                  <div className={styles.caseStudyMetaContainer}>
-                    <span className={styles.caseStudyMetaClient}>
-                      {caseStudy.client}
-                    </span>
-                    <h2 className={styles.caseStudyMetaTitle}>
-                      {caseStudy.title}
-                    </h2>
-                    <p className={styles.caseStudyMetaDesc}>
-                      {caseStudy.description}
-                    </p>
+                <>
+                  <div className={styles.caseStudyMeta}>
+                    <div className={styles.caseStudyMetaContainer}>
+                      <span className={styles.caseStudyMetaClient}>
+                        {caseStudy.client}
+                      </span>
+                      <h2 className={styles.caseStudyMetaTitle}>
+                        {caseStudy.title}
+                      </h2>
+                      <p className={styles.caseStudyMetaDesc}>
+                        {caseStudy.description}
+                      </p>
+                    </div>
                   </div>
-                </div>
-
-                <div className={styles.caseStudyImage}>
-                  <FragCluster className={styles.caseStudyClusterIcon} />
-                  <div
-                    className={styles.caseStudyImageInner}
-                    style={{
-                      backgroundImage: `url(${imgurl})`,
-                    }}
-                  />
-                </div>
+                  <div className={styles.caseStudyImage}>
+                    <FragCluster className={styles.caseStudyClusterIcon} />
+                    <div
+                      className={styles.caseStudyImageInner}
+                      style={{
+                        backgroundImage: `url(${imgurl})`,
+                      }}
+                    />
+                  </div>
+                </>
               </Link>
             )
           })}
