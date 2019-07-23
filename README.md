@@ -17,7 +17,7 @@ Overall architectural details of the site can be found in the back-end readme.
 
 2.  **Configure.**
 
-    If you don't want to run the backend component locally then you will have to change the `http://localhost:8000/graphql/` string in your `gatsby-config.js`. To use the live site CMS uses `https://cms.torchbox.com`. Obviously don't edit the live CMS data to test your changes though, and don't commit the change to the `gatsby-config.js` file.
+    If you don't want to run the backend component locally then you will have to change the `http://localhost:8000/graphql/` string in your `gatsby-config.js`. To use the live site CMS use `https://cms.torchbox.com/graphql/`. Obviously don't edit the live CMS data to test your changes though, and don't commit the change to the `gatsby-config.js` file.
 
     Note that if you change the endpoint in `gatsby-config.json` you need to restart gatsby to pick up the changes. A restart is also often needed to pick up changes published in the CMS.
 
