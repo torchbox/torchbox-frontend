@@ -29,33 +29,43 @@ class CaseStudiesBlock extends React.Component {
             console.log(imgurl)
 
             return (
-              <div
-                key={`case-study-link-${index}`}
+              <div key={`case-study-link-${index}`}
               >
-                <div className={styles.caseStudyMeta}>
-                  <div className={styles.caseStudyMetaContainer}>
-                    <span className={styles.caseStudyMetaClient}>
-                      {caseStudy.client}
-                    </span>
-                    <h2 className={styles.caseStudyMetaTitle}>
-                      {caseStudy.title}
-                    </h2>
-                    <p className={styles.caseStudyMetaDesc}>
-                      {caseStudy.description}
-                    </p>
-                  </div>
-                </div>
-                <div className={styles.caseStudyImage}>
-                  <FragCluster className={styles.caseStudyClusterIcon} />
-                  <div
-                    className={styles.caseStudyImageInner}
-                    style={{
-                      backgroundImage: `url(${imgurl})`,
-                    }}
-                  />
-                </div>
+                {imgurl}
+                {caseStudy.title}
               </div>
             )
+
+            // return (
+            //   <Link
+            //     key={`case-study-link-${index}`}
+            //     className={styles.caseStudy}
+            //     to={caseStudy.href}
+            //   >
+            //     <div className={styles.caseStudyMeta}>
+            //       <div className={styles.caseStudyMetaContainer}>
+            //         <span className={styles.caseStudyMetaClient}>
+            //           {caseStudy.client}
+            //         </span>
+            //         <h2 className={styles.caseStudyMetaTitle}>
+            //           {caseStudy.title}
+            //         </h2>
+            //         <p className={styles.caseStudyMetaDesc}>
+            //           {caseStudy.description}
+            //         </p>
+            //       </div>
+            //     </div>
+            //     <div className={styles.caseStudyImage}>
+            //       <FragCluster className={styles.caseStudyClusterIcon} />
+            //       <div
+            //         className={styles.caseStudyImageInner}
+            //         style={{
+            //           backgroundImage: `url(${imgurl})`,
+            //         }}
+            //       />
+            //     </div>
+            //   </Link>
+            // )
           })}
         </div>
         {listingUrl ? (
