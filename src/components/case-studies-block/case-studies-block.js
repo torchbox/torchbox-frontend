@@ -29,10 +29,8 @@ class CaseStudiesBlock extends React.Component {
             console.log(imgurl)
 
             return (
-              <Link
+              <div
                 key={`case-study-link-${index}`}
-                className={styles.caseStudy}
-                to={caseStudy.href}
               >
                 <div className={styles.caseStudyMeta}>
                   <div className={styles.caseStudyMetaContainer}>
@@ -52,11 +50,11 @@ class CaseStudiesBlock extends React.Component {
                   <div
                     className={styles.caseStudyImageInner}
                     style={{
-                      backgroundImage: `url(${caseStudy.feedImage})`,
+                      backgroundImage: `url(${imgurl})`,
                     }}
                   />
                 </div>
-              </Link>
+              </div>
             )
           })}
         </div>
