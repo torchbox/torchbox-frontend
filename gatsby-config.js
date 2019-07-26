@@ -12,6 +12,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-netlify`,
       options: {
+        mergeSecurityHeaders: false,
         headers: {
           "/*": [
             "Strict-Transport-Security: max-age=86400",
