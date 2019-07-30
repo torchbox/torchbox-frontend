@@ -2,7 +2,6 @@
 import React from 'react'
 import { request } from 'graphql-request'
 import qs from 'query-string'
-import { APIClient, initCommentsApp } from 'wagtail-review-ui';
 
 // Fragments
 import { previewFragments } from '../fragments'
@@ -37,17 +36,19 @@ const WagtailPreviewProvider = previewMappings => {
             }, () => {
               // Initialise review UI
               if (review_token) {
-                let commentsElement = document.createElement('div');
-                document.body.appendChild(commentsElement);
+                import('wagtail-review-ui').then(({APIClient, initCommentsApp}) => {
+                  let commentsElement = document.createElement('div');
+                  document.body.appendChild(commentsElement);
 
-                const reviewEndpoint = process.env.GATSBY_WAGTAIL_REVIEW_ENDPOINT || 'http://localhost:8000/review/api/';
+                  const reviewEndpoint = process.env.GATSBY_WAGTAIL_REVIEW_ENDPOINT || 'http://localhost:8000/review/api/';
 
-                let commentsApi = new APIClient(reviewEndpoint, review_token);
-                initCommentsApp(commentsElement, commentsApi, function (addAnnotatableSection) {
-                    for (let element of document.querySelectorAll('[data-contentpath-field]')) {
-                        addAnnotatableSection(element.dataset.contentpathField, element);
-                    }
-                }, !!allow_responses);
+                  let commentsApi = new APIClient(reviewEndpoint, review_token);
+                  initCommentsApp(commentsElement, commentsApi, function (addAnnotatableSection) {
+                      for (let element of document.querySelectorAll('[data-contentpath-field]')) {
+                          addAnnotatableSection(element.dataset.contentpathField, element);
+                      }
+                  }, !!allow_responses);
+                });
               }
             });
           } catch (e) {
