@@ -41,8 +41,9 @@ class PersonPage extends React.Component {
             className={styles.pageTitle}
             title={this.state.title}
             innerPage={true}
+            contentPathField="title"
           />
-          <span className={styles.pageRole}>{role}</span>
+          <span className={styles.pageRole} data-contentpath-field="role">{role}</span>
           <div className={styles.pageAvatar}>
             <img
               className={styles.pageAvatarIcon}
@@ -54,10 +55,12 @@ class PersonPage extends React.Component {
         </div>
         <StreamfieldBlock
           streamfield={[{ type: 'paragraph', value: coreIntro }]}
+          contentPathField="intro"
         />
         <StreamfieldBlock
           className={styles.pageBiography}
           streamfield={[{ type: 'paragraph', value: biography }]}
+          contentPathField="biography"
         />
         <Blogs
           className={styles.pageShowcase}

@@ -52,7 +52,7 @@ export class CaseStudyListingPage extends React.Component {
 
     return (
       <div className={styles.page}>
-        <TitleBlock className={styles.pageTitle} title={title} />
+        <TitleBlock className={styles.pageTitle} title={title} contentPathField="title" />
         <FilterTags
           className={styles.pageFilterTags}
           tags={tags}

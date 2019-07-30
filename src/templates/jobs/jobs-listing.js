@@ -27,6 +27,7 @@ export class JobsListingPage extends React.Component {
         <TitleBlock
           className={styles.pageTitle}
           title={listing.length ? title : 'Sorry, [We have no jobs currently].'}
+          contentPathField="title"
         />
         <JobsBlock
           className={styles.pageJobListing}

@@ -12,9 +12,9 @@ import styles from './streamfield-block.module.scss'
 
 class StreamfieldBlock extends React.Component {
   render() {
-    const { streamfield, className } = this.props
+    const { streamfield, className, contentPathField } = this.props
     return (
-      <div className={[styles.streamfield, className].join(' ')}>
+      <div className={[styles.streamfield, className].join(' ')} data-contentpath-field={contentPathField}>
         {streamfield.map((block, index) => {
           switch (block.type) {
             case 'intro':
