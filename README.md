@@ -80,7 +80,7 @@ Overall architectural details of the site can be found in the back-end readme.
 
   ## Pattern library
 
-  The site uses Storybook which can be started locally by running `npm run storybook`. Note: this is currently failing.
+  The site uses Storybook which can be started locally by running `npm run storybook`.
 
   ## Site management
 
