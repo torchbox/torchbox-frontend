@@ -9,7 +9,7 @@ storiesOf('Components/Shared Components', module).add(
   () => {
     return (
       <div>
-        <AnimatedCharacter character="left-woman" />
+        <AnimatedCharacter character="woman-left" />
       </div>
     )
   }
