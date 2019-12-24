@@ -36,5 +36,21 @@ module.exports = ({ config }) => {
     include: path.resolve(__dirname, '../src/'),
   })
 
+  config.module.rules[3].test = /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|cur|ani|pdf)(\?.*)?$/
+
+  config.module.rules.push({
+    test: /\.svg$/,
+    use: ['@svgr/webpack'],
+    issuer: {
+      test: /\.(js|jsx|ts|tsx)$/,
+    },
+  })
+
+  config.module.rules.push({
+    test: /\.svg$/,
+    use: require.resolve('file-loader'),
+    query: config.module.rules[3].use,
+  })
+
   return config
 }
