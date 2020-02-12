@@ -36,6 +36,21 @@ const Footer = ({ links, className }) => (
         </li>
 
         <li className={styles.footerAddress}>
+          <h2 className={styles.footerAddressTitle}>Historic Cambridge</h2>
+          <p>
+            Allia Future Business Centre
+            <br />
+            Kings Hedge road
+            <br />
+            Cambridge
+            <br />
+            CB4 2HY
+            <br />
+            UK
+          </p>
+        </li>
+
+        <li className={styles.footerAddress}>
           <h2 className={styles.footerAddressTitle}>Working in the US</h2>
           <p>
             We have a special formula for working successfully with
