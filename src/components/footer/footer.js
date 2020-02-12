@@ -38,7 +38,7 @@ const Footer = ({ links, className }) => (
         <li className={styles.footerAddress}>
           <h2 className={styles.footerAddressTitle}>Historic Cambridge</h2>
           <p>
-            Allia Future Business Centre
+            Future Business Centre
             <br />
             Kings Hedge road
             <br />
