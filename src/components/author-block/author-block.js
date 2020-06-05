@@ -23,7 +23,7 @@ const AuthorBlock = ({ author, datePublished, tags, readTime, className }) => (
         </Link>
         <p className={styles.authorBlockMeta}>
           <span className={styles.authorBlockMetaRole}>
-            {author.role || 'Past Employee'}
+            {author.role || ''}
           </span>
           {datePublished ? (
             <span className={styles.authorBlockMetaDate}>
