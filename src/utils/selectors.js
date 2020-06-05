@@ -6,7 +6,7 @@ import { blogsUrl, caseStudiesUrl } from './urls'
 
 export const authorDetails = authors => ({
   name: safeGet(authors, '0.name', ''),
-  role: safeGet(authors, '0.personPage.role', 'Past Employee'),
+  role: safeGet(authors, '0.personPage.role', ''),
   avatar:
     safeGet(
       authors,
