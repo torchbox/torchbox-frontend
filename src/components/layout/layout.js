@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 import cssVars from 'css-vars-ponyfill'
 import scrollIntoView from 'scroll-into-view';
+import CookieConsent from 'react-cookie-consent';
 // Components
 import Header from '@components/header'
 import Footer from '@components/footer'
@@ -73,6 +74,20 @@ class Layout extends React.Component {
               twitterImage={safeGet(twitterImage, 'src.url', null)}
             />
             <ThemeProvider theme={theme}>
+              <CookieConsent
+                location="bottom"
+                buttonText={<div>&#10005;</div>}
+                declineButtonText="Opt-out"
+                cookieName="cookie-consent"
+                cookieValue={true}
+                declineCookieValue={false}
+                enableDeclineButton={true}
+                style={{ background: 'var(--color-blue)' }}
+                buttonStyle={{ background: 'transparent', color: 'white', padding: '5px 10px', margin: '0 10px 0 0', fontSize: '30px', position: 'relative', top: '5px' }}
+                declineButtonStyle={{ backgroundColor: 'var(--color-accent)', color: 'white', fontSize: '16px' }}
+              >
+                  We use cookies to provide you with a better service. Close this banner if you&apos;re happy with this, or <a style={{color: 'white'}} href="#">find out more</a>.
+              </CookieConsent>
               <Header
                 title={title}
                 currentUrl={this.state.currentUrl}
