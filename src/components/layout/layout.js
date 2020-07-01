@@ -1,7 +1,7 @@
 // Vendor Modules
 import React from 'react'
 import PropTypes from 'prop-types'
-import { StaticQuery, graphql } from 'gatsby'
+import { StaticQuery, graphql, Link } from 'gatsby'
 import cssVars from 'css-vars-ponyfill'
 import scrollIntoView from 'scroll-into-view';
 import CookieConsent from 'react-cookie-consent';
@@ -76,17 +76,15 @@ class Layout extends React.Component {
             <ThemeProvider theme={theme}>
               <CookieConsent
                 location="bottom"
-                buttonText={<div>&#10005;</div>}
+                buttonText="Opt-in"
                 declineButtonText="Opt-out"
                 cookieName="cookie-consent"
-                cookieValue={true}
-                declineCookieValue={false}
                 enableDeclineButton={true}
                 style={{ background: 'var(--color-blue)' }}
-                buttonStyle={{ background: 'transparent', color: 'white', padding: '5px 10px', margin: '0 10px 0 0', fontSize: '30px', position: 'relative', top: '5px' }}
-                declineButtonStyle={{ backgroundColor: 'var(--color-accent)', color: 'white', fontSize: '16px' }}
+                buttonStyle={{ backgroundColor: '#fd5765', color: 'white', fontSize: '16px' }}
+                declineButtonStyle={{ backgroundColor: 'transparent', color: 'white', fontSize: '16px', marginRight: '0' }}
               >
-                  We use cookies to provide you with a better service. Close this banner if you&apos;re happy with this, or <a style={{color: 'white'}} href="#">find out more</a>.
+                  We use cookies to provide you with a better service. Carry on browsing if you&apos;re happy with this, or <Link style={{ color: 'white', borderBottom: '2px solid #fd5765' }} to="/cookies">find out more</Link>.
               </CookieConsent>
               <Header
                 title={title}
