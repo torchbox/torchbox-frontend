@@ -21,7 +21,7 @@
     "autoprefixer": "^9.4.8",
     "babel-plugin-module-resolver": "^3.2.0",
     "babel-polyfill": "^6.26.0",
-    "babel-preset-gatsby": "^0.1.7",
+    "babel-preset-gatsby": "^0.1.11",
     "body-scroll-lock": "^2.6.1",
     "breakpoint-sass": "^2.7.1",
     "css-loader": "^2.1.0",
