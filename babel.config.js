@@ -16,7 +16,6 @@ module.exports = function (api) {
       ]
     ],
     "plugins": [
-      "@babel/plugin-proposal-optional-chaining",
       ["module-resolver", {
         "root": ["./"],
         "alias": pathMappings
