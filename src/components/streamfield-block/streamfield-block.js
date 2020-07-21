@@ -29,6 +29,13 @@ class StreamfieldBlock extends React.Component {
 
             case 'aligned_image':
               const aligned_image = React.createRef()
+              const aligmentClass = {
+                'half': styles.streamfieldAlignedImageHalfWidth,
+                'full': styles.streamfieldAlignedImageFullWidth,
+                'left': styles.streamfieldAlignedImageWrapLeft,
+                'right': styles.streamfieldAlignedImageWrapRight,
+              }[block.value?.alignment ?? "full"]
+
               return (
                 <div
                   className={styles.streamfieldAlignedImage}
@@ -38,12 +45,16 @@ class StreamfieldBlock extends React.Component {
                     ref={aligned_image}
                     src={block.value.image.src}
                     alt={block.value.image.alt || ""}
-                    className={styles.streamfieldAlignedImageImg}
+                    className={aligmentClass}
                     onError={() => {
                       aligned_image.current.src = require('@images/default-featured.png')
                     }}
                   />
-                  <div className={styles.streamfieldAlignedImageCaption}>
+                  <div className={
+                    block.value.alignment == "right"
+                      ? styles.streamfieldAlignedImageCaptionRight
+                      : styles.streamfieldAlignedImageCaption
+                  }>
                     <p>{block.value.caption}</p>
                   </div>
                 </div>
