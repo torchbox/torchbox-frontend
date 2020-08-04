@@ -84,7 +84,7 @@ class Layout extends React.Component {
                 buttonStyle={{ backgroundColor: 'var(--color-coral)', color: 'white', fontSize: '16px' }}
                 declineButtonStyle={{ backgroundColor: 'transparent', color: 'white', fontSize: '16px', marginRight: '0' }}
               >
-                  We use cookies to measure how you use the website. We want our site to be easy for you to use; understanding how you interact with it helps us know that. <Link style={{ color: 'white', borderBottom: '2px solid var(--color-blue)' }} to="/cookies">Find out more</Link>.
+                  We use cookies to measure how you use the website. We want our site to be easy for you to use; understanding how you interact with it helps us know that. <Link style={{ color: 'white', borderBottom: '2px solid var(--color-coral)' }} to="/cookies">Find out more</Link>.
               </CookieConsent>
               <Header
                 title={title}
