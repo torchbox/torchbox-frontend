@@ -84,7 +84,7 @@ class Layout extends React.Component {
                 buttonStyle={{ backgroundColor: '#fd5765', color: 'white', fontSize: '16px' }}
                 declineButtonStyle={{ backgroundColor: 'transparent', color: 'white', fontSize: '16px', marginRight: '0' }}
               >
-                  We use cookies to provide you with a better service. Carry on browsing if you&apos;re happy with this, or <Link style={{ color: 'white', borderBottom: '2px solid #fd5765' }} to="/cookies">find out more</Link>.
+                  We use cookies to measure how you use the website. We want our site to be easy for you to use; understanding how you interact with it helps us know that. <Link style={{ color: 'white', borderBottom: '2px solid #fd5765' }} to="/cookies">Find out more</Link>.
               </CookieConsent>
               <Header
                 title={title}
