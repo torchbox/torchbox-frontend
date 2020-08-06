@@ -80,7 +80,7 @@ class Layout extends React.Component {
                 declineButtonText="Opt-out"
                 cookieName="cookie-consent"
                 enableDeclineButton={true}
-                style={{ background: 'var(--color-blue)' }}
+                style={{ background: 'var(--color-blue)', borderTop: '1px solid white' }}
                 buttonStyle={{ backgroundColor: 'var(--color-coral)', color: 'white', fontSize: '16px' }}
                 declineButtonStyle={{ backgroundColor: 'transparent', color: 'white', fontSize: '16px', marginRight: '0' }}
               >
