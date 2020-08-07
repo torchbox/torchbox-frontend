@@ -18,6 +18,7 @@ export class JobsListingPage extends React.Component {
         title: job.title,
         level: job.level,
         location: job.location,
+        description: job.description,
         href: job.url,
       }
     })

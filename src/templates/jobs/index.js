@@ -37,6 +37,7 @@ export const query = graphql`
           title
           level
           location
+          description
         }
         contact {
           ...contactSnippet
@@ -63,6 +64,7 @@ export const previewQuery = `
         title
         level
         location
+        description
       }
       contact {
         ...contactSnippet
