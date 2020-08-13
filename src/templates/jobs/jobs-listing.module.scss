@@ -8,6 +8,28 @@
     }
   }
 
+  &Intro {
+    @include container;
+    &Text {
+      font-size: 22px;
+      line-height: 36px;
+      margin: 0 0 20px 0;
+
+      p {
+        color: $primary;
+      }
+
+      @include for-tablet-landscape-up {
+        font-size: 24px;
+        line-height: 42px;
+      }
+
+      @include for-desktop-up {
+        margin: 0 8.33vw 20px 16.66vw;
+      }
+    }
+  }
+
   &Contact {
     margin-top: 60px;
   }

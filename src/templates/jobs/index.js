@@ -14,6 +14,7 @@ const JobsListingContainer = ({ data }) => {
       seoDesc={page.searchDescription}>
       <JobsListingPage
         title={page.strapline}
+        intro={page.intro}
         jobs={page.jobs}
         contact={page.contact}
         contactReasons={page.contactReasons}
@@ -30,6 +31,7 @@ export const query = graphql`
         strapline
         pageTitle
         searchDescription
+        intro
 
         jobs {
           id
