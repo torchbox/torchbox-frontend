@@ -18,8 +18,9 @@ export default class RichText extends React.Component {
   }
 
   render() {
+    const { className } = this.props
     const { processedHTML } = this.state
-    return <div dangerouslySetInnerHTML={{ __html: processedHTML }} />
+    return <div className={className} dangerouslySetInnerHTML={{ __html: processedHTML }} />
   }
 
   parseAnchorsInHTML() {
