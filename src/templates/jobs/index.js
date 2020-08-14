@@ -28,10 +28,10 @@ export const query = graphql`
     wagtail {
       jobsIndexPage {
         title
+        intro
         strapline
         pageTitle
         searchDescription
-        intro
 
         jobs {
           id
@@ -56,6 +56,7 @@ export const previewQuery = `
   query($previewToken: String) {
     jobsIndexPage(previewToken: $previewToken) {
       title
+      intro
       strapline
       pageTitle
       searchDescription
