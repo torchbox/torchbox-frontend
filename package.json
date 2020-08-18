@@ -50,6 +50,7 @@
     "prop-types": "^15.6.2",
     "query-string": "^6.2.0",
     "react": "^16.8.2",
+    "react-cookie-consent": "^5.1.2",
     "react-dom": "^16.6.3",
     "react-helmet": "^5.2.0",
     "react-markdown": "^4.0.8",
