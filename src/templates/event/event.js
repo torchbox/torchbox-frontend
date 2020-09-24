@@ -8,7 +8,7 @@ import StreamfieldBlock from '@components/streamfield-block'
 import Contact from '@components/contact-detailed'
 import Blogs from '@components/blogs-listing-block'
 // Utilities
-import {format} from 'date-fns'
+import { format, isFuture } from 'date-fns'
 import { blogsUrl } from '@utils/urls'
 // Styles
 import styles from './event.module.scss'
@@ -93,7 +93,7 @@ const EventPage = ({
         streamfield={body}
         contentPathField="body"
       />
-      { (registrationStatus == "form" || registrationStatus == "error") && (
+      { (registrationStatus == "form" || registrationStatus == "error") && isFuture(new Date(event.startTime)) && (
         <div className={styles.pageRegistration}>
           {/* Show registration form */}
             <form ref={formRef} className={styles.pageRegisterForm} onSubmit={submitRegistrationForm}>
@@ -125,6 +125,11 @@ const EventPage = ({
           ) }
         </div>
       ) }
+
+      { !isFuture(new Date(event.startTime)) && (
+          <h4 className={styles.pageRegistrationExpired}>Registration for this event has expired.</h4>
+      ) }
+
       {/* Show success message */}
       { registrationStatus == "success" && (
         <StreamfieldBlock

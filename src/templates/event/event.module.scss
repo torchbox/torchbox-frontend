@@ -78,7 +78,7 @@
     }
   }
 
-  &Registration {
+  &Registration, &RegistrationExpired {
     @include container;
     @include for-tablet-landscape-up {
       padding: 0 16.66vw;
