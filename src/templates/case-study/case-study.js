@@ -23,13 +23,18 @@ const CaseStudyPage = ({
   serviceSlug,
   teasers,
   contact,
-  contactReasons
+  contactReasons,
 }) => (
   <div className={styles.page}>
     <div className={styles.pageClientContainer}>
       <span className={styles.pageClient}>{client}</span>
     </div>
-    <TitleBlock className={styles.pageTitle} title={title} innerPage={true} contentPathField="title" />
+    <TitleBlock
+      className={styles.pageTitle}
+      title={title}
+      innerPage={true}
+      contentPathField="title"
+    />
     <AuthorBlock
       className={styles.pageAuthor}
       author={author}

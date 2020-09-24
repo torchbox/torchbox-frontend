@@ -24,7 +24,12 @@ const BlogPostPage = ({
   contactReasons,
 }) => (
   <div className={styles.page}>
-    <TitleBlock className={styles.pageTitle} title={title} innerPage={true} contentPathField="title" />
+    <TitleBlock
+      className={styles.pageTitle}
+      title={title}
+      innerPage={true}
+      contentPathField="title"
+    />
     <AuthorBlock
       className={styles.pageAuthor}
       author={author}

@@ -4,17 +4,18 @@ import qs from 'query-string'
 import safeGet from '../utils/safeget'
 import { blogsUrl, caseStudiesUrl } from './urls'
 
-export const authorDetails = authors => ({
-  name: safeGet(authors, '0.name', ''),
-  role: safeGet(authors, '0.personPage.role', ''),
-  avatar:
-    safeGet(
-      authors,
-      '0.personPage.image.src.url',
-      require('../images/default-avatar.png')
-    ) || require('../images/default-avatar.png'),
-  slug: safeGet(authors, '0.personPage.slug', ''),
-})
+export const authorDetails = authors =>
+  authors.map(author => ({
+    name: safeGet(author, 'name', ''),
+    role: safeGet(author, 'personPage.role', ''),
+    avatar:
+      safeGet(
+        author,
+        'personPage.image.src.url',
+        require('../images/default-avatar.png')
+      ) || require('../images/default-avatar.png'),
+    slug: safeGet(authors, 'personPage.slug', ''),
+  }))
 
 export const postTags = (tags, hrefPrefix = '') =>
   tags.map(tag => ({
@@ -28,9 +29,9 @@ export const blogListing = blog => ({
   description: blog.listingSummary,
   href: blogsUrl(blog.slug),
   datePublished: blog.date,
-  authorRole: authorDetails(blog.authors).role,
-  authorName: authorDetails(blog.authors).name,
-  authorAvatar: authorDetails(blog.authors).avatar,
+  authorRole: authorDetails(blog.authors)[0].role,
+  authorName: authorDetails(blog.authors)[0].name,
+  authorAvatar: authorDetails(blog.authors)[0].avatar,
 })
 
 export const caseStudyListing = caseStudy => ({

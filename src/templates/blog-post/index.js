@@ -28,11 +28,14 @@ const BlogPostContainer = ({ pageContext, data }) => {
       <BlogPostPage
         title={page.title}
         streamfield={page.body}
-        author={authorDetails(page.authors)}
+        author={authorDetails(page.authors)[0]}
         datePublished={page.date}
         readTime={readTime(page.bodyWordCount) || 0}
         tags={postTags(page.tags, blogsUrl('#filter='))}
-        extraBlogPosts={extraBlogPosts.filter(b => b.slug !== pageContext.slug).slice(0, 2).map(blogListing)}
+        extraBlogPosts={extraBlogPosts
+          .filter(b => b.slug !== pageContext.slug)
+          .slice(0, 2)
+          .map(blogListing)}
         contact={page.contact}
         contactReasons={page.contactReasons}
       />

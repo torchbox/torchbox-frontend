@@ -50,7 +50,7 @@ const CaseStudyContainer = ({ pageContext, data }) => {
         client={page.client}
         title={page.title}
         streamfield={body}
-        author={authorDetails(page.authors)}
+        author={authorDetails(page.authors)[0]}
         tags={postTags(page.tags, caseStudiesUrl('#filter='))}
         contact={page.contact}
         contactReasons={page.contactReasons}

@@ -19,7 +19,7 @@ class BlogsBlock extends React.Component {
     const featuredPost = blogs[0]
 
     if (!blogs || blogs.length === 0) {
-      return <div />;
+      return <div />
     }
 
     return (
@@ -28,7 +28,7 @@ class BlogsBlock extends React.Component {
           <span className={styles.pageSectionTitle}>{sectionTitle}</span>
         ) : null}
         <div className={styles.blockContent}>
-          {(showFeatured && featuredPost) ? (
+          {showFeatured && featuredPost ? (
             <section className={styles.blockIntro}>
               <BlogLink
                 featured={true}

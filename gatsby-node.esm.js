@@ -8,6 +8,7 @@ function getRoutes(slugs, countryCode) {
   const serviceTemplate = path.resolve(`src/templates/service/index.js`)
   const subServiceTemplate = path.resolve(`src/templates/sub-service/index.js`)
   const standardTemplate = path.resolve(`src/templates/standard/index.js`)
+  const eventTemplate = path.resolve(`src/templates/event/index.js`)
 
   let routes = []
 
@@ -19,13 +20,25 @@ function getRoutes(slugs, countryCode) {
       slug: 'culture-and-jobs',
       countryCode,
     },
-  });
+  })
 
   // Listings
-  routes.push({ component: path.resolve('src/templates/blogs/index.js'), path: '/blog' })
-  routes.push({ component: path.resolve('src/templates/case-studies/index.js'), path: '/work' })
-  routes.push({ component: path.resolve('src/templates/team/index.js'), path: '/team' })
-  routes.push({ component: path.resolve('src/templates/jobs/index.js'), path: '/jobs' })
+  routes.push({
+    component: path.resolve('src/templates/blogs/index.js'),
+    path: '/blog',
+  })
+  routes.push({
+    component: path.resolve('src/templates/case-studies/index.js'),
+    path: '/work',
+  })
+  routes.push({
+    component: path.resolve('src/templates/team/index.js'),
+    path: '/team',
+  })
+  routes.push({
+    component: path.resolve('src/templates/jobs/index.js'),
+    path: '/jobs',
+  })
 
   // Blog posts
   for (let { slug } of slugs.blogPosts) {
@@ -109,6 +122,17 @@ function getRoutes(slugs, countryCode) {
     })
   }
 
+  // Event Pages
+  for (let { slug } of slugs.eventsPages) {
+    routes.push({
+      path: `/${slug}`,
+      component: eventTemplate,
+      context: {
+        slug,
+      },
+    })
+  }
+
   return routes
 }
 
@@ -116,7 +140,7 @@ function getRedirects(redirects) {
   return redirects.map(redirect => ({
     fromPath: redirect.oldPath,
     toPath: redirect.link || pageUrl(redirect.page),
-    isPermanent: redirect.isPermanent
+    isPermanent: redirect.isPermanent,
   }))
 }
 
@@ -143,6 +167,9 @@ exports.createPages = ({ graphql, actions }) => {
           }
         }
         standardPages {
+          slug
+        }
+        eventsPages {
           slug
         }
         redirects {
@@ -176,8 +203,6 @@ exports.createPages = ({ graphql, actions }) => {
       // Note: There are only minor changes between the different regions. For example, which logos to
       // display on service pages and tweaks to the "related pages" query. There should be no difference in
       // content or language.
-
-
       /* Temporailiy commented out as this upsets gatsby
       [
         // Render whole site for USA
