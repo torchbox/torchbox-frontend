@@ -39,11 +39,14 @@
             }
         }
 
-        p {
+        &Content {
             line-height: 22px;
             color: $grey;
             font-size: 14px;
             max-width: 300px;
+            p {
+                margin: 0;
+            }
         }
     }
 

@@ -5,57 +5,28 @@ import PropTypes from 'prop-types'
 // Styles
 import styles from './footer.module.scss'
 
-const Footer = ({ links, className }) => (
+const Footer = ({ offices, links, className }) => (
   <div className={[styles.footer, className].join(' ')} role="contentinfo">
     <div className={styles.footerContent}>
       <ul className={styles.footerAddressList}>
         <li className={styles.footerAddress}>
-          <h2 className={styles.footerAddressTitle}>Glorious Oxfordshire</h2>
-          <p>
-            Unit 9<br />
-            Southill Business Park<br />
-            Charlbury<br />
-            OX7 3EW<br />
-            UK
-          </p>
+          <h2 className={styles.footerAddressTitle}>{offices.oxfordAddressTitle}</h2>
+          <p className={styles.footerAddressContent} dangerouslySetInnerHTML={{__html: offices.oxfordAddress}} />
         </li>
 
         <li className={styles.footerAddress}>
-          <h2 className={styles.footerAddressTitle}>Vibrant Bristol</h2>
-          <p>
-            3rd Floor
-            <br />
-            15 Colston Street
-            <br />
-            Bristol
-            <br />
-            BS1 5AP
-            <br />
-            UK
-          </p>
+          <h2 className={styles.footerAddressTitle}>{offices.bristolAddressTitle}</h2>
+          <p className={styles.footerAddressContent} dangerouslySetInnerHTML={{__html: offices.bristolAddress}} />
         </li>
 
         <li className={styles.footerAddress}>
-          <h2 className={styles.footerAddressTitle}>Historic Cambridge</h2>
-          <p>
-            Future Business Centre
-            <br />
-            Kings Hedge road
-            <br />
-            Cambridge
-            <br />
-            CB4 2HY
-            <br />
-            UK
-          </p>
+        <h2 className={styles.footerAddressTitle}>{offices.cambridgeAddressTitle}</h2>
+          <p className={styles.footerAddressContent} dangerouslySetInnerHTML={{__html: offices.cambridgeAddress}} />
         </li>
 
         <li className={styles.footerAddress}>
-          <h2 className={styles.footerAddressTitle}>Working in the US</h2>
-          <p>
-            We have a special formula for working successfully with
-            organisations in the US
-          </p>
+          <h2 className={styles.footerAddressTitle}>{offices.usAddressTitle}</h2>
+          <p className={styles.footerAddressContent} dangerouslySetInnerHTML={{__html: offices.usAddress}} />
         </li>
       </ul>
 

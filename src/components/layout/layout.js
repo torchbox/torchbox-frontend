@@ -61,6 +61,20 @@ class Layout extends React.Component {
                   url
                 }
               }
+
+              offices: globalSettings {
+                usAddress
+                usAddressTitle
+
+                bristolAddress
+                bristolAddressTitle
+
+                oxfordAddress
+                oxfordAddressTitle
+
+                cambridgeAddress
+                cambridgeAddressTitle
+              }
             }
           }
         `}
@@ -112,6 +126,7 @@ class Layout extends React.Component {
                   ) : null }
                 </main>
                 <Footer
+                  offices={data.wagtail.offices}
                   links={[
                     {
                       label: 'Blog',
