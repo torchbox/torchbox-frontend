@@ -1,6 +1,10 @@
 # Torchbox.com Gatsby Frontend
 
-This is the front-end component of the new torchbox.com site.
+*Note: this repo is no longer used as part of the Torchbox site*
+
+This was the front-end component torchbox.com site for the period when it was a headless Wagtail site with a gatsby front-end.
+
+Notes below are for historical reference.
 
 It is a Gatsby site, hosted on Netlify, currently at https://torchbox.staging.torchbox.com.
 
